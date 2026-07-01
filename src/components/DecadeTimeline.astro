@@ -1,0 +1,39 @@
+---
+interface Decade {
+	label: string;
+	value: number;
+	note?: string;
+}
+
+interface Props {
+	title: string;
+	unit?: string;
+	decades: Decade[];
+	sourceLabel: string;
+	sourceUrl: string;
+	sourcePrefix?: string;
+}
+
+const { title, unit = '', decades, sourceLabel, sourceUrl, sourcePrefix = '出典：' } = Astro.props;
+
+const max = Math.max(...decades.map((d) => d.value), 1);
+---
+
+<figure class="chart chart--timeline">
+	<figcaption class="chart__title">{title}</figcaption>
+	<div class="timeline">
+		{decades.map((d) => (
+			<div class="timeline__col">
+				<div class="timeline__bar-wrap">
+					<div class="timeline__bar" style={`height:${(d.value / max) * 100}%`}></div>
+				</div>
+				<span class="timeline__value">{d.value > 0 ? '+' : ''}{d.value}{unit}</span>
+				<span class="timeline__label">{d.label}</span>
+				{d.note && <span class="timeline__note">{d.note}</span>}
+			</div>
+		))}
+	</div>
+	<figcaption class="chart__source">
+		{sourcePrefix}<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</figcaption>
+</figure>

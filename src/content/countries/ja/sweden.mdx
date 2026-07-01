@@ -1,0 +1,290 @@
+---
+slug: sweden
+name: "スウェーデン"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- スウェーデン統計局（Statistiska centralbyrån、SCB）— 国家統計機関：https://www.scb.se
+- 犯罪防止評議会（Brottsförebyggande rådet、BRÅ）— 国立犯罪防止研究機関
+- 移民庁（Migrationsverket）— 移民・庇護に関する統計
+- 警察庁（Polisen）— 「脆弱地区（utsatta områden）」の公式リストを管轄
+
+## 2. 主要データセット
+
+- SCB：出生国別・居住期間別の雇用率統計
+- BRÅ報告書（2005年版・2021年版）：犯罪と出身の関係、社会経済的要因による分解付き
+- 警察庁による「脆弱地区」公式リスト（定期的に改訂）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2024年12月31日時点・総人口10,587,700人）"
+	segments={[
+		{ label: 'スウェーデン国内出生', value: 79.0, color: '#1d3461' },
+		{ label: '外国出生（移民）', value: 21.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="SCB「Sveriges befolkning efter födelseland」"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2024/"
+	sourcePrefix="出典："
+/>
+
+<TrendChart
+	title="外国出生者の人口比率の推移（2000年→2024年）"
+	unit="%"
+	series={[
+		{ label: '外国出生者の人口比率', color: '#9c3b3b', points: [{ year: 2000, value: 11.3 }, { year: 2024, value: 21.0 }] },
+	]}
+	sourceLabel="SCB「Sveriges befolkning efter födelseland」"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2024/"
+/>
+
+- 2024年12月31日時点で、スウェーデンの総人口は10,587,700人。外国出生者（移民）は約220万人で、人口の21%を占める。2000年の11.3%から24年間で約2倍に増加した。
+  出典：SCB「Sveriges befolkning efter födelseland/-region, medborgarskap och bakgrund, 31 december 2024」—
+  https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2024/
+- 2024年の移民流入：116,200人（前年比+23%、+21,700人）。新規移民の出生国別主要グループ：ウクライナ（28,100人、ロシアの侵攻を受けた一時的保護ステータスのため庇護・保護のカテゴリーに該当）、スウェーデン生まれで海外から帰国した人（11,900人）、続いてインド、ドイツ、中国、シリア、ポーランド、パキスタン、トルコ、イラン出身者。2024年の移民純増（移民流入から移出を引いた値）は+29,700人。
+  出典：SCB「Befolkningen ökade 2024 – trots minskade födslar」—
+  https://www.scb.se/pressmeddelande/befolkningen-okade-2024---trots-minskade-fodslar/
+- 入国目的別（庇護／就労／家族）の年間流入データの分解：本調査では公的に確認できなかった。移民庁（Migrationsverket）の在留資格カテゴリー別の詳細統計表が必要であり、migrationsverket.se/statistik上で直接確認する必要がある。
+<ComingSoon label="入国目的別（庇護／就労／家族）の年間移民流入データは、Migrationsverketの統計ページで直接確認のうえ今後追加予定です。" />
+
+### 3.2 移民の出身地域別構成
+
+<ComingSoon label="移民の出身地域別（欧州／非欧州など）の構成比データは、SCB統計データベース（BE0101表）での追加照会が必要であり、本調査の範囲では確定的な数値を確認できなかったため、今後追加予定です。" />
+
+### 3.3 移民の波（1945年〜現在）
+
+- 1945年時点で、移民が人口に占める割合は2%未満であった。1945年〜1948年にナチス強制収容所からの生存者約30,000人が受け入れられ、さらにエストニア人約30,000人、ラトビア人約5,000人が戦後もスウェーデンに残留した。
+- **1950年代〜1960年代**：労働移民の時代。1952年の北欧共通労働市場協定により、特にフィンランドからの移民が北欧諸国間で活発化した。
+- **1967年〜1972年**：労働組合の圧力により非北欧諸国からの労働移民が制限され、1972年に非北欧諸国からの労働移民は正式に終了した。
+- **1970年代〜1980年代**：労働移民から難民移民への転換期。旧ユーゴスラビア、中東、中南米からの難民が増加。1970年代後半から1980年代にかけて、庇護希望者・定住難民の主要受け入れ国となり、イラン・イラク・レバノン・シリア・トルコ・エリトリア・ソマリアおよび南米諸国からの移民が増加した。
+- **1990年代**：旧ユーゴスラビアからの難民（数千人規模）を受け入れた。
+- **2010年代〜現在**：シリア内戦による難民、2022年以降はロシアのウクライナ侵攻に伴うウクライナ避難民（一時的保護ステータス、2024年の新規移民の最大グループ＝28,100人）。
+  出典：Migration Policy Institute「Sweden: By Turns Welcoming and Restrictive in its Immigration Policy」— https://www.migrationpolicy.org/article/sweden-turns-welcoming-and-restrictive-its-immigration-policy；
+  ウィキペディア（英語版）「Immigration to Sweden」— https://en.wikipedia.org/wiki/Immigration_to_Sweden
+- **限界**：これらの年代別記述は政策研究機関（migrationpolicy.org）および百科事典的な要約情報源に基づくものであり、SCB自身が公表する年代別の正確な移民流入数の時系列データ（Statistikbanken上の該当統計表）は、本調査の範囲では直接確認できなかった。
+
+<KeyPointTiles
+	title="期間別の主な特徴"
+	tiles={[
+		{ period: '1945–1948', value: '約65,000人', description: 'ナチス強制収容所生存者約30,000人、エストニア人約30,000人、ラトビア人約5,000人が受け入れられた。', color: '#1d3461' },
+		{ period: '1950s–1966', value: '労働移民', description: '1952年北欧共通労働市場協定によりフィンランドなど北欧諸国間で活発な労働移動。', color: '#5a8a6b' },
+		{ period: '1967–1972', value: '制限期', description: '労働組合の圧力により非北欧からの労働移民が制限。1972年に正式終了。', color: '#c9a23f' },
+		{ period: '1970s–1980s', value: '難民移民へ', description: '旧ユーゴスラビア、中東、中南米からの難民。イラン・イラク・レバノン・ソマリアなどからの移民増加。', color: '#9c3b3b' },
+		{ period: '1990s', value: '旧ユーゴ難民', description: 'ボスニア紛争など旧ユーゴスラビアからの難民を数千人規模で受け入れ。', color: '#6b5b95' },
+		{ period: '2010s–現在', value: '28,100人', description: 'シリア内戦による難民。2022年以降ウクライナ避難民（一時保護）。2024年新規移民の最大グループ。', color: '#9c3b3b' },
+	]}
+/>
+
+<ComingSoon label="1945年〜現在の年代別の正確な移民流入数（SCB Statistikbanken時系列データ）は今後追加予定です。" />
+
+### 3.4 年齢構成（人口ピラミッド）
+
+- SCBの公表資料は、外国出生者が国内出生者と異なる年齢構成を持つこと（労働年齢層の割合が高く、子供・高齢者の割合が相対的に低いこと）を文章で説明しており、移民の多くが25〜34歳であるとしている。
+  出典：SCB「Utrikes födda i Sverige」— https://www.scb.se/hitta-statistik/sverige-i-siffver/manniskorna-i-sverige/utrikes-fodda-i-sverige/
+- ただし、国内出生者と外国出生者を年齢層別（0-17歳、18-64歳、65歳以上など）に直接比較できる数値の組（デンマーク版で使用したAgePyramidに必要な形式のデータ）は、本調査で参照したSCB公表ページからは確認できなかった。年齢層別の正確な数値はSCB Statistikbanken（BE0101E表、Folkmängden efter födelseland, ålder och kön）への直接照会が必要である。
+<ComingSoon label="出身別（外国出生／国内出生）の年齢層別人口構成（人口ピラミッド用データ）は、SCB Statistikbanken BE0101E表への直接照会のうえ今後追加予定です。" />
+
+### 3.5 将来予測（2070年まで）
+
+<TrendChart
+	title="スウェーデン総人口の推移予測（2023年→2070年）"
+	unit="百万人"
+	series={[
+		{ label: '総人口', color: '#1d3461', points: [{ year: 2023, value: 10.5 }, { year: 2070, value: 11.8 }] },
+	]}
+	sourceLabel="SCB「Sveriges framtida befolkning 2024–2070」"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/pong/statistiknyhet/sveriges-framtida-befolkning-2024-2070/"
+	sourcePrefix="出典："
+/>
+
+<KeyFigure
+	value="1,180万人"
+	label="SCBの2070年人口推計（2023年の1,050万人から約130万人増加、+12%）"
+/>
+
+- SCBの2024年版人口推計によれば、スウェーデンの総人口は2023年の1,050万人から2070年には1,180万人に増加すると予測されている（+130万人、+12%）。長期的には年間およそ10万人弱の移民流入が見込まれ、移民純増（流入から流出を引いた値）は年平均約3万人と想定されている。
+  出典：SCB「Sveriges framtida befolkning 2024–2070」— https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/pong/statistiknyhet/sveriges-framtida-befolkning-2024-2070/
+- 出身別（外国出生／国内出生）の人口比率の将来予測値（デンマーク版で示した「デンマーク系人口比率」に相当する数値）は、本調査で参照したSCB公表資料からは確認できなかった。SCBの公表文には、外国出生者の人口比率が予測期間のほぼ全期間にわたり増加し続けると記載されているが、2070年時点の具体的な比率（%）は本調査の範囲内では確認できなかった。
+<ComingSoon label="2070年時点の外国出生者人口比率（具体的な%の数値）は、SCBの人口推計レポート本文（PDF）の追加確認のうえ今後追加予定です。" />
+
+## 4. 財政 — 純負担
+
+<KeyFigure
+	value="+60億SEK/年"
+	label="外国出生者全体による公的財政への純負担（Konjunkturinstitutet、直近年・2022年データ）"
+/>
+
+- スウェーデンには、出身別の公的財政への純負担を算定する手法が2つ並存しており、対象範囲（難民のみ／移民全体）や時間軸（単年／生涯）によって結果が大きく異なる。
+
+**手法1 — 難民1人当たりの生涯純負担（委任機関：ESO、公共経済研究専門家グループ、財務省傘下の独立委員会）：**
+
+<BarChart
+	title="難民1人当たりの公的財政への純負担（生涯平均、SEK/人）"
+	unit="千SEK"
+	bars={[
+		{ label: '2007年データ', value: 70 },
+		{ label: '2015/2018年データ', value: 74 },
+	]}
+	sourceLabel="Joakim Ruist（ヨーテボリ大学、ESO委託研究）"
+	sourceUrl="https://eso.expertgrupp.se/"
+	sourcePrefix="出典："
+/>
+
+- Joakim Ruist（ヨーテボリ大学、ESO委託）による2015/2018年の研究：難民および難民の家族構成員1人当たりの公的財政への純負担は、スウェーデン居住期間全体を平均すると74,000SEK（2007年データでは70,000SEK）。対象カテゴリーは庇護・難民家族のみであり、移民全体には及ばない。
+  出典：ESO（https://eso.expertgrupp.se/）
+- Lina AldénとMats Hammarstedt（2016年）の研究：難民登録後1年目の純負担は約190,000SEKであるが、7年目には約95,000SEKまで低下する——財政収支の均衡に向けた段階的な収斂が見られる。
+
+**手法2 — 移民全体の総合的な純負担、長期時系列（委任機関：Konjunkturinstitutet／国立経済研究所、政府の委託による）：**
+
+<BarChart
+	title="移民全体の公的財政への純負担（最新年データ）"
+	unit="億SEK/年"
+	bars={[
+		{ label: '直近年（最新データ）', value: 60, note: 'GDP比0.1%、外国出生者1人当たり約2,700SEK' },
+	]}
+	sourceLabel="Konjunkturinstitutet Specialstudie 117（2024年）「Invandrades nettobidrag till de offentliga finanserna 1983–2022」"
+	sourceUrl="https://www.konj.se/media/kpgnt5iw/specialstudie-117-invandrades-nettobidrag-till-de-offentliga-finanserna-1983-2022.pdf"
+	sourcePrefix="出典："
+/>
+
+- Specialstudie 117（2024年）：「Invandrades nettobidrag till de offentliga finanserna 1983–2022」によれば、1980年代以降、移民全体の公的財政への純負担は構造的に赤字であったが、調査対象期間の最新年では再びわずかに正の値（純貢献）に転じている——総額で60億SEK（GDP比0.1%）、外国出生者1人（約220万人）当たり約2,700SEKに相当する。出身国別では、インド出身者が最も純貢献度の高いグループとして特徴づけられている。
+  出典：https://www.konj.se/media/kpgnt5iw/specialstudie-117-invandrades-nettobidrag-till-de-offentliga-finanserna-1983-2022.pdf
+- 2025年6月の続報：Specialstudie 116「Samhällsekonomiska effekter av migrationen till Sverige」（こちらも政府委託）—
+  https://www.konj.se/media/44dkqfy1/specialstudie-116-samhallsekonomiska-effekter-av-migrationen-till-sverige.pdf
+- **SNS（独立系研究機関）：** SNSは2017年、Joakim Ruistによる国際移民全般を対象とした研究プロジェクト「Lärdomar om integration」に資金提供した。これはスウェーデン単独の純負担額算定ではなく、学術的な参照枠組みである。
+  https://snsse.cdn.triggerfish.cloud/uploads/2020/02/global-migration--orsaker-och-konsekvenser-web.pdf
+- **デンマークとの比較**：本調査では公的に確認できなかった——デンマーク財務省（Finansministeriet）の世代会計モデル（一般に非欧州系移民に対してスウェーデンのESO／Konjunkturinstitutet手法より高い純負担額を示すとされるが、正確な比較数値は本調査では確認できておらず、推測で記載することはできない）に直接照会する必要がある。
+- **方法論上の限界**：本調査時点で、これらPDF原本（Specialstudie 117等）は検索ツールによる直接抽出ができなかった（403または抽出不可）。報道・要約情報源との整合性は確認したが、原本PDFの直接閲読による確認はできていない。
+
+### 4.1 年金制度・現役世代比率
+
+<ComingSoon label="出身別（外国出生／国内出生）の人口学的依存度（高齢者・子供対労働年齢人口比）、および年金制度に特化した現役世代対年金受給者比率は、本調査では確認できなかったため今後追加予定です。SCB Statistikdatabasen「Försörjningskvot」表（全国値で2024年60.6%）は出身別には分解されておらず、出典：https://www.statistikdatabasen.scb.se/goto/en/ssd/FkvotHVD 。" />
+
+## 5. 労働市場
+
+<BarChart
+	title="雇用率・失業率（出生地別、2024年平均）"
+	unit="%"
+	bars={[
+		{ label: 'スウェーデン国内出生・雇用率', value: 70.0 },
+		{ label: '外国出生・雇用率', value: 65.8, note: '前年比-1.3ポイント' },
+		{ label: 'スウェーデン国内出生・失業率', value: 5.7 },
+		{ label: '外国出生・失業率', value: 16.2, note: '前年比拡大' },
+	]}
+	sourceLabel="SCB 労働力調査（Arbetskraftsundersökningarna、AKU）2025年版"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/pong/statistiknyhet/arbetskraftsundersokningarna-aku-2025/"
+	sourcePrefix="出典："
+/>
+
+<BarChart
+	title="失業率の比較（2024年平均）"
+	unit="%"
+	bars={[
+		{ label: 'スウェーデン国内出生者', value: 5.7, color: '#1d3461' },
+		{ label: '外国出生者', value: 16.2, color: '#9c3b3b' },
+	]}
+	sourceLabel="SCB 労働力調査（AKU）2025年版"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/pong/statistiknyhet/arbetskraftsundersokningarna-aku-2025/"
+/>
+
+- スウェーデンは、国内出生者と外国出生者の雇用率の差について、欧州で最も詳細に記録されている国の一つである——SCB。
+- 2024年（年平均）の雇用率：スウェーデン国内出生者70.0%（男性71.5%、女性68.5%）；外国出生者65.8%（前年比-1.3ポイント）。2024年第4四半期時点では、国内出生者83.2%に対し外国出生者73.1%（測定方法が異なり、対象を労働力人口に限定した値）。測定方法により差は4〜10ポイントの範囲となる。
+- 2024年の失業率：スウェーデン国内出生者5.7%；外国出生者16.2%（差は約10.5ポイントで、前年より拡大）。
+  出典：SCB 労働力調査（AKU）— https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/pong/statistiknyhet/arbetskraftsundersokningarna-aku-2025/
+  詳細統計表（出身別・居住期間別）：https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__AM__AM0401__AM0401R/
+- 入国目的別（就労／家族／庇護）に分解した雇用データ：本調査では公的に確認できなかった。SCBの在留資格カテゴリー別クロス集計が必要だが、直接リンク可能な公式ページは確認できなかった。
+<ComingSoon label="入国目的別（就労／家族／庇護）の雇用率データは今後追加予定です。" />
+
+## 6. 治安・司法
+
+- BRÅ（犯罪防止評議会）の2021年報告書：犯罪統計における出身別の過剰代表性について、社会経済的要因による分解付きで分析している——重要な方法論上のポイントとして説明が必要。
+- 報告書2021:9「Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund」（BRÅ、2021年8月25日公表、対象期間2007〜2018年）：犯罪の被疑者として登録される頻度は、外国出生者の方がスウェーデン人の両親を持つスウェーデン国内出生者よりも約2.5倍高い。両グループとも、被疑者となる人口の割合は2007年から2018年にかけて低下した（経年比較）。外国出生の両親を持つスウェーデン国内出生者の過剰代表性については、年齢・性別・可処分所得・教育水準・自治体の種類を統制すると、その約半分が消失するが、統制後も差は完全には解消しない。
+  公式報告書（PDF）：https://bra.se/download/18.45e4b8e192705389a34b52/1729514247826/2021_9_Misstankta_for_brott_bland_personer_med_inrikes_respektive_utrikes_bakgrund.pdf
+  参照ページ：https://bra.se/rapporter/arkiv/2021-08-25-misstankta-for-brott-bland-personer-med-inrikes-respektive-utrikes-bakgrund
+- 補足研究 ESO 2025:4「Särskilt utsatta」：民族的セグリゲーションと非行の関係について — https://eso.expertgrupp.se/rapporter/2025_4-sarskilt-utsatta/
+- 合法／不法在留の区分による犯罪統計の分解：本調査では公的に確認できなかった（BRÅの統計は国内出生／外国出生という出身区分によるものであり、在留資格の合法性による区分ではない）。
+<ComingSoon label="合法／不法在留別の犯罪統計データは今後追加予定です。" />
+
+## 7. 教育
+
+<BarChart
+	title="高校進学資格取得率（2024年春、出身別）"
+	unit="%"
+	bars={[
+		{ label: 'スウェーデン系出身の生徒', value: 87.6 },
+		{ label: '外国系背景（utländsk bakgrund）の生徒', value: 73.3, note: '差は14.3ポイント' },
+	]}
+	sourceLabel="Skolverket（スウェーデン国立教育庁）"
+	sourceUrl="https://www.skolverket.se/download/18.6b8c1151936aed25c029/1732702300971/pdf13172.pdf"
+	sourcePrefix="出典："
+/>
+
+- 2024年春の高校進学資格（gymnasiebehörighet）取得率：スウェーデン系出身の生徒87.6% に対し、外国系背景（utländsk bakgrund）の生徒は73.3%——差は14.3ポイント。外国系背景の生徒内では、女子74.8%・男子71.9%。
+  この比率は、スウェーデン国内で生まれた、または就学年齢前に渡来した生徒で最も高く、就学年齢に達してから渡来した生徒では明確に低い——スウェーデンでの就学期間の長さが決定的な要因である。2024年の高校卒業時平均評価点（全生徒）：14.4点。
+  出典：Skolverket — https://www.skolverket.se/download/18.6b8c1151936aed25c029/1732702300971/pdf13172.pdf
+
+## 8. 住宅
+
+<BarChart
+	title="脆弱地区（utsatta områden）の数（2023年版→2025年版）"
+	unit="地区"
+	bars={[
+		{ label: '2023年版（合計）', value: 59 },
+		{ label: '2025年版（合計）', value: 65, note: 'うち脆弱地区46、特に脆弱な地区19' },
+	]}
+	sourceLabel="警察庁（Polisen）「Lägesbild över utsatta områden 2025」"
+	sourceUrl="https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf"
+	sourcePrefix="出典："
+/>
+
+- 居住地におけるセグリゲーションは、警察庁が公表する「脆弱地区（utsatta områden）」を通じて記録されている。
+- Lägesbild 2025（警察庁、政府への報告書）：総計65地区が分類され、うち46地区が「脆弱地区」、19地区が「特に脆弱な地区」——2023年版の前回調査では合計59地区であった。この増加は一部、7地区がより小さな複数の小地区に再区分されたことによるものであり、経年比較には方法論的な留保が必要である。
+  公式報告書（PDF）：https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf
+- 「社会的排除地域（utanförskapsområden）」の人口構成（Boverket、報告書2024:18）：住民の55%が外国出生、40%が欧州外出身国生まれ（2023年データ）。全国平均の外国出生者比率21%（セクション3参照）と比較すると、これらの地区への明確な集中が見られる。
+  出典：Boverket — https://www.boverket.se/globalassets/publikationer/dokument/2024/boendesegregationens-utveckling.pdf
+- 全国的には、外国出生者210万人の多数派は実際には社会経済的条件の良好な地区（「地域タイプ4」、約845,000人）に居住している——セグリゲーションは移民人口全体ではなく一部の地区に集中している。
+  出典：SCB — https://www.scb.se/hitta-statistik/artiklar/2023/segregationen-synlig-aven-i-vara-dagliga-resmonster/
+- 補足報告書：Boverket 2025:13「Livsvillkor i utanförskapsområden」— https://www.boverket.se/globalassets/publikationer/dokument/2025/livsvillkor-i-utanforskapsomraden2.pdf
+
+## 9. 社会的結束
+
+- 参照すべき意見調査：SOM-institutet（ヨーテボリ大学の社会・意見・メディア調査研究機関、公的研究インフラ）は、毎年、移民・庇護政策に関する章を含む全国意見調査「SOM」を公表している。SOM 2024:4「Flykting- och invandringspolitiken」（2023年全国調査に基づく）— https://www.gu.se/sites/default/files/2024-02/R2024_4.pdf
+  2023年版の方法論注記：https://www.gu.se/sites/default/files/2024-03/4.%20Den%20nationella%20SOM-unders%C3%B6kningen%202023%20-%20En%20metod%C3%B6versikt.pdf
+  正確な数値（年別の賛成・反対比率）：本調査では公的に確認できなかった——SOM研究所のPDFは本調査で用いた検索手段では抽出不可能であり、引用前に手動での確認が必要である。
+<ComingSoon label="SOM-institutetの年別の移民政策に対する賛成・反対比率（具体的な%）は、PDF本文の手動確認のうえ今後追加予定です。" />
+- 出身別の対人・制度的信頼度：学術論文「Förtroende och tillit i en segregerad stad」（Rönnerstrand & Solevid、SOM-institutet）— https://www.gu.se/sites/default/files/2021-10/115-130%20R%C3%B6nnerstrand%20o%20Solevid.pdf
+  この文献が報告する定性的な知見：対人信頼度は、スウェーデン国外出生者（特に欧州外出身者）の方が、スウェーデン国内出生者よりも低く測定される。制度に対する信頼度の差は、対人信頼度の差より概して小さい。正確な数値：本調査では公的に確認できなかった（PDFの確実な抽出ができなかったため）——引用前に手動確認が必要。
+<ComingSoon label="出身別の対人・制度的信頼度の正確な数値は、PDF本文の手動確認のうえ今後追加予定です。" />
+- 学校におけるセグリゲーション：Skolverketは学校別の「外国系背景」生徒比率に関する公式統計を公表しているが、本調査では正確な差の数値を確実に確認できなかった。
+  https://www.skolverket.se/download/18.954e82318e64549b9f1d/1711120454132/pdf12612.pdf
+- 帰化（統合の代理指標）：SCBは旧国籍別・性別のスウェーデン国籍取得者数の時系列統計表（2000〜2024年）を公表している：https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101N/MedborgarByteLandK/
+  2020年には80,175人がスウェーデン国籍を取得した（前年比+25%、ただし2020年は特異的な増加年）。2017年は68,898人。
+  出典：SCB年次統計発表 — https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/statistiknyhet/befolkningsstatistik-helaret-20202/
+  この数値は上記SCB統計表で入手可能な最新年のデータに更新する必要がある。
+
+## 10. 近年の政治的背景
+
+- 2015年には欧州で最も寛容な受け入れ国であったが、2022年以降、スウェーデン民主党（Sverigedemokraterna）の圧力下で劇的な政策の厳格化が進んだ。
+- 庇護受け入れはほぼ完全に凍結され、「ネットゼロ帰還」政策が採用された。
+- 注目すべき事例：きわめて短期間での政策路線の転換であり、リアルタイムで記録可能な事例である。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+BRÅの犯罪統計報告書はスウェーデン国内でも政治的に敏感な問題であり（公表の是非自体が議論の対象となっている）、透明性のため明記する必要がある。また、本稿で参照した複数のPDF一次資料（Konjunkturinstitutet Specialstudie 117、Skolverketの教育統計、Boverketの住宅統計、SOM-institutetおよびRönnerstrand & Solevidの社会的結束研究）は、検索ツールによる直接抽出ができず（PDF抽出不可または403エラー）、報道・要約情報源との整合性確認のみにとどまっている。公開前に、これらの一次資料への直接アクセスによる追加確認が推奨される。
+</div>

@@ -1,0 +1,15 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85458NED/$metadata#Cbs.OData.WebAPI.TypedDataSet","value":[
+    {
+      "ID":43527,"Geslacht":"T001038","Leeftijd":"10000","Herkomstland":"H008766","Geboorteland":"T001638","RegioS":"NL01  ","Perioden":"2025JJ00","Bevolking_1":468726
+    },{
+      "ID":43531,"Geslacht":"T001038","Leeftijd":"10000","Herkomstland":"H008766","Geboorteland":"T001638","RegioS":"LD01  ","Perioden":"2025JJ00","Bevolking_1":11485
+    },{
+      "ID":43535,"Geslacht":"T001038","Leeftijd":"10000","Herkomstland":"H008766","Geboorteland":"T001638","RegioS":"LD02  ","Perioden":"2025JJ00","Bevolking_1":89585
+    },{
+      "ID":43539,"Geslacht":"T001038","Leeftijd":"10000","Herkomstland":"H008766","Geboorteland":"T001638","RegioS":"LD03  ","Perioden":"2025JJ00","Bevolking_1":291811
+    },{
+      "ID":43543,"Geslacht":"T001038","Leeftijd":"10000","Herkomstland":"H008766","Geboorteland":"T001638","RegioS":"LD04  ","Perioden":"2025JJ00","Bevolking_1":75845
+    }
+  ]
+}

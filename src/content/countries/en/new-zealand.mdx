@@ -1,0 +1,206 @@
+---
+slug: new-zealand
+name: "New Zealand"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+
+## 1. Official institutions
+
+- Stats NZ: https://www.stats.govt.nz
+- Immigration New Zealand (under the Ministry of Business, Innovation and Employment)
+- The Treasury (NZ) — fiscal and economic impact analyses
+
+## 2. Key datasets
+
+- Stats NZ: foreign-born population, net migration (quarterly statistics among the most responsive in the West)
+- Immigration NZ: statistics on work/study/residence visas
+- Treasury: analyses on the link between immigration, productivity, and housing
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (2023 Census — usually resident population 4.99 million)"
+	segments={[
+		{ label: 'New Zealand-born', value: 71.2, color: '#1d3461' },
+		{ label: 'Overseas-born', value: 28.8, color: '#9c3b3b' },
+	]}
+	sourceLabel="Stats NZ, '2023 Census population, dwelling, and housing highlights'"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+	sourcePrefix="Source: "
+/>
+
+- At the 2023 Census, New Zealand's usually resident population stood at 4,993,923 (up 294,168, or +6.3%, from 2018). Of this total, about 3.5 million were New Zealand-born and about 1.4 million were overseas-born; the overseas-born share reached 28.8%, up 1.4 percentage points from 27.4% in 2018. More than 200 distinct birthplaces were recorded.
+- Source: Stats NZ, "Census results reflect Aotearoa New Zealand's diversity" — https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/
+
+### 3.2 Country/region of origin breakdown
+
+<StackedBar
+	title="Top 3 countries of birth among the overseas-born population (2023 Census, share of total population)"
+	segments={[
+		{ label: 'England', value: 4.2, color: '#1d3461' },
+		{ label: 'China', value: 2.9, color: '#9c3b3b' },
+		{ label: 'India', value: 2.9, color: '#c9a23f' },
+		{ label: 'All other overseas-born', value: 18.8, color: '#8a8a8a' },
+	]}
+	sourceLabel="Stats NZ, 'Census results reflect Aotearoa New Zealand's diversity'"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+	sourcePrefix="Source: "
+/>
+
+- At the 2023 Census, among the overseas-born population (28.8% of the total population), the leading country of birth was England (4.2% of the total population), followed by China (2.9%) and India (2.9%).
+- The largest numerical increase between 2018 and 2023 came from the Philippines, up 31,632 people (+46.8%) — one of the fastest-changing source countries.
+- Source: Stats NZ, "Census results reflect Aotearoa New Zealand's diversity" — https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/
+<ComingSoon label="A detailed breakdown by country of birth (level-3 classification, all 200+ countries) from Stats NZ's Aotearoa Data Explorer or NZ.Stat is planned for a future update." />
+
+### 3.3 Immigration waves (1950s – present)
+
+- **1950s–1960s (postwar European migration)**: a 1946 parliamentary select committee set principles for immigration regulation that lasted until the early 1970s, prioritizing British migrants and, failing those, migrants from Scandinavia and Northern Europe. More than 28,000 Dutch migrants arrived between 1951 and 1968, actively promoted by both governments. From the mid-1960s, migrants from Samoa, Tonga, the Cook Islands, and other Pacific islands arrived in growing numbers seeking work; during the economic expansion of the 1960s and early 1970s, temporary visas and quotas for Pacific Islanders were often not strictly enforced.
+- **1970s (policy shift and crackdown on Pacific migrants)**: in 1971, Prime Minister Norman Kirk argued that New Zealand's future lay with Asia and the Pacific, advocating an immigration policy that ignored race, color, and religion. From 1974, permanent entry was officially granted on the basis of demand for skills and qualifications. However, the mid-1970s economic downturn led to the "dawn raids" of 1974–1979, in which police targeted Pacific Island overstayers — controversial for disproportionately targeting Pasifika communities.
+- **1980s–1990s (shift to a skills-based points system)**: economic growth took on greater importance in immigration policy through the 1980s and 1990s, aiming to attract "quality migrants." In 1991, a points system assessing skills and other largely economic characteristics was introduced. The 1986 reforms explicitly sought to "enrich the multicultural fabric of New Zealand society." As a result, annual net immigration rose from about 7,500 in 1980–84 to 32,000 in 1995–99, and the share of arrivals from countries other than Australia, the UK, and Ireland rose from 21% in the early 1980s to more than 70% throughout the 1990s. The 1990s also marked the first significant arrivals from India, China, and South Africa.
+  Sources: migrationpolicy.org, "New Zealand: From Settler Colony to Country Reliant on Temporary Immigration" — https://www.migrationpolicy.org/article/new-zealand-migration-profile-history; Te Ara, "History of immigration" — https://teara.govt.nz/en/history-of-immigration
+- **2010s – present (high migration and reliance on temporary labor)**: annual net migration neared or exceeded 50,000 in nearly every year from 2015 to 2020. Over 2015–2024, the average net migration rate was about 10 per 1,000 population per year — high by Western standards. Net migration peaked at +128,900 for the year ending October 2023, then fell sharply to +23,800 in calendar year 2024 and +14,200 (provisional) in calendar year 2025 (see section 4.1 for further detail).
+  Sources: macrotrends.net, "New Zealand Net Migration"; Stats NZ, "Net migration gain of 14,200" — https://www.stats.govt.nz/news/net-migration-gain-of-14200/
+
+<TrendChart
+	title="Overseas-born population share (2018 → 2023)"
+	unit="%"
+	series={[
+		{ label: 'Overseas-born share', color: '#9c3b3b', points: [
+			{ year: 2018, value: 27.4 }, { year: 2023, value: 28.8 },
+		]},
+	]}
+	sourceLabel="Stats NZ, 'Census results reflect Aotearoa New Zealand's diversity'"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+	sourcePrefix="Source: "
+/>
+
+<ComingSoon label="A continuous decade-by-decade time series for the overseas-born population share between the 1950s and 2018 is planned for a future update. This research could only confirm the 2018 and 2023 census figures directly; an official continuous series for earlier decades was not located within the scope of this research." />
+
+### 3.4 Age structure
+
+<div class="callout-limits">
+<strong>⚠️ Data not available</strong>
+No official statistic directly comparing the age structure of the New Zealand-born and overseas-born populations could be identified during this research. The 2023 Census reports an overall median age of 38.1 years (up from 37.4 in 2018), but a breakdown by birthplace could not be directly confirmed in Stats NZ's published materials. Stats NZ's "Interactive population pyramid" tool (https://www.stats.govt.nz/tools/interactive-population-pyramid-for-new-zealand/) may support a birthplace breakdown, but this could not be verified during this research.
+</div>
+<ComingSoon label="Age structure data broken down by birthplace (New Zealand-born / overseas-born) is planned for a future update." />
+
+### 3.5 Long-term projection (to 2078)
+
+<KeyFigure
+	value="5.29 million (2024) → 6.61–9.05 million (90% interval, 2078)"
+	label="Stats NZ, 'National population projections: 2024(base)–2078' (median scenario, probability interval)"
+/>
+
+- Stats NZ's latest national population projections (2024 base, through 2078) estimate that the 2024 population of 5.29 million has a 90% probability of reaching between 5.36 and 5.62 million by 2028, between 5.46 and 5.86 million by 2031, between 6.12 and 7.21 million by 2051, and between 6.61 and 9.05 million by 2078.
+- The median net migration assumption is 25,000 for the year ending June 2025 and 30,000 for the year ending June 2026, rising gradually to 37,500 for the year ending June 2031 and to 42,500 for the year ending June 2051. Stats NZ explicitly notes that this median assumption is not an assumed fixed trajectory but the median of migration simulations that vary annually around it.
+- Because fertility and migration assumptions were updated, the 2024-base projections generally assume lower fertility and higher net migration levels than the previous 2018-base ethnic population projections.
+- Source: Stats NZ, "National population projections: 2024(base)–2078" — https://www.stats.govt.nz/information-releases/national-population-projections-2024base2078/
+<ComingSoon label="A detailed long-term population projection broken down by birthplace (New Zealand-born / overseas-born) is planned for a future update." />
+
+## 4. Public finances — net cost
+
+Not publicly available: no official New Zealand study (by Treasury or another public body) quantifying an aggregate net fiscal cost or contribution of immigration could be identified and verified at the primary source. Figures circulating in the press (e.g., amounts in billions of dollars, or shares of tax revenue attributed to migrants) could not be confirmed on stats.govt.nz or treasury.govt.nz and are therefore not included here.
+
+The closest official study (a unique methodology, focused on productivity rather than the fiscal balance) is the report "Immigration: Fit for the Future" (April 2022), commissioned by the New Zealand Productivity Commission (a public body, dissolved in February 2024, with its archives transferred to the Treasury). Its main finding is that immigration is presented neither as the cause nor the solution to New Zealand's productivity challenges, with a weak and generally positive effect on native wages and employment over the preceding 20 years. Source: https://www.treasury.govt.nz/sites/default/files/2024-05/pc-inq-is-immigration-fit-for-the-future.pdf. Government response (MBIE, Ministry of Business, Innovation and Employment): https://www.mbie.govt.nz/immigration-and-tourism/immigration/immigration-consultations/productivity-commission-inquiry/detailed-response-to-the-productivity-commissions-report-immigration-fit-for-the-future
+
+A second, independent official methodology (e.g., a migration module within the Treasury's long-term fiscal model) could not be located — not publicly available at this time.
+<ComingSoon label="An official aggregate calculation of immigration's net fiscal cost (or contribution) is planned for a future update. No primary-source calculation comparable to those for Denmark or Australia could be identified for New Zealand." />
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<TrendChart
+	title="Old-age dependency ratio (people aged 65+ per 100 people aged 15–64, mid-1960s → 2048)"
+	unit=" per 100"
+	series={[
+		{ label: 'Old-age dependency ratio', color: '#9c3b3b', points: [
+			{ year: 1965, value: 14 }, { year: 2022, value: 25 }, { year: 2048, value: 36.5 },
+		]},
+	]}
+	sourceLabel="Stats NZ, 'National population projections: 2022(base)–2073'"
+	sourceUrl="https://www.stats.govt.nz/information-releases/national-population-projections-2022base2073/"
+	sourcePrefix="Source: "
+/>
+
+- The 65+ population share is projected to rise from 16% in 2020 to about 23% by 2050.
+- The old-age dependency ratio (people aged 65+ per 100 people aged 15–64) rose gradually from 14 in the mid-1960s to 25 in 2022. It is projected to reach a range of 34–39 (median around 36.5) by 2048 — meaning the number of working-age people (15–64) per person aged 65+ falls from 4.0 in 2022 to about 2.7 in 2048.
+- Source: Stats NZ, "National population projections: 2022(base)–2073" — https://www.stats.govt.nz/information-releases/national-population-projections-2022base2073/
+<ComingSoon label="A dependency ratio broken down by birthplace (New Zealand-born / overseas-born) is planned for a future update. The figures above are national totals, not disaggregated by birthplace." />
+
+## 5. Labor market
+
+Not publicly available: a current, detailed breakdown of employment rates by visa category (skilled, student, work, residence) compared with native-born New Zealanders.
+
+The closest available data are as follows. MBIE's Migrant Employment Data (monthly, by visa type/sector/region, current to approximately September 2025) measures employment engagement but does not provide an explicit comparison rate against native-born workers. Source: https://www.mbie.govt.nz/immigration-and-tourism/immigration/migration-research-and-evaluation/migrant-employment-data. Stats NZ's Survey of Working Life (December 2012 quarter, dated data) found that 25% of employed people were born overseas; 36-40% of recent/settled migrants held a bachelor's degree or higher, compared with 21% of native-born workers; job satisfaction stood at 85.5% for recent migrants versus 76.7% for native-born workers. This data dates to 2012 and no updated version has been found. Source: http://m.stats.govt.nz/browse_for_stats/income-and-work/employment_and_unemployment/snapshot-working-migrants.aspx. NZ Treasury's working paper "Impacts of immigration on the labour market and productivity" (2024) addresses the topic, but precise figures could not be extracted and verified; this requires confirmation by direct reading. Source: https://www.treasury.govt.nz/sites/default/files/2024-05/pc-wp-impacts-of-immigration-on-the-labour-market-and-productivity.pdf
+
+## 6. Security / justice
+
+Confirmed: New Zealand does not publish crime statistics broken down by country of birth, citizenship, or visa/migration status. This was verified against the following three official sources, which break data down only by age, sex, and self-identified ethnicity (a category not comparable to migration status): NZ Police, PoliceData.nz: https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/proceedings-offender-demographics. Ministry of Justice: https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/. Stats NZ, Crime & Justice theme: https://www.stats.govt.nz/topics/crime-and-justice/
+
+A methodological caveat to note explicitly: self-identified ethnicity is not a valid indicator of migration status (a New Zealand citizen and a recent migrant may share the same ethnicity category) — these two concepts must never be conflated.
+
+Not publicly available: no official statistical link between migration status and offending can be established in New Zealand.
+
+## 7. Education
+
+International student enrollments (Education New Zealand) reached 83,425 in 2024, up 21% from 69,135 in 2023. The pre-Covid reference level (2019) was 115,705 — a level not yet recovered. The 2025 figure (provisional, the latest available) was 92,580, about 80% of the pre-Covid peak. The 2024 breakdown by sector was: universities 33,485; schools 18,350; polytechnics (Te Pūkenga) 10,270; private training establishments (PTEs) 10,185; with master's-level enrollments at 14,695 in 2024, up from 7,945 in 2019. The leading countries of origin were China (~34%), India (~14%), and Japan (~9%). Source: https://www.enz.govt.nz/news-and-research/ed-news/international-student-enrolments-continue-upward-surge
+
+In economic terms, international education-related exports are estimated at NZD 3.6 billion for the year ending December 2024, and NZD 4.52 billion for the year ending September 2025. Export revenue for the 2024-25 fiscal year was NZD 4.3 billion (+22.8%), about 13.6% of total services exports. The government's stated goal is to double this figure to NZD 7.2 billion by 2034. Source: https://www.enz.govt.nz/news-and-research/ed-news/international-education-drives-nz4-5-billion-economic-boost-as-sector-grows-with-strong-public-support
+
+## 8. Housing
+
+The link between immigration and New Zealand's housing crisis (particularly in Auckland) is heavily debated and is comparable to the Canadian case, providing a useful point of cross-country comparison.
+
+The Reserve Bank of New Zealand (RBNZ), in its Monetary Policy Statement of February 2024, noted that net migration reached about 2.4% of the population annually by late 2023, and observed that "the demand effects of strong migration have shown through into higher rent inflation." Source: https://www.rbnz.govt.nz/hub/publications/monetary-policy-statement/2024/monetary-policy-statement-february-2024
+
+The RBNZ's Financial Stability Report of November 2024 (special topic) found that the slowdown in population growth linked to declining net migration is "easing demand for housing" — a reversal compared with the 2022-2023 period. Source: https://www.rbnz.govt.nz/-/media/project/sites/rbnz/files/publications/financial-stability-reports/2024/november-2024-special-topic-1/fsr-special-topic-update-on-housing-market.pdf
+
+As a temporal comparison benchmark, the migration-housing link therefore reversed between 2023 (upward pressure) and 2024-2025 (easing pressure alongside the decline in net migration).
+
+An exact quotation to reconfirm before publication (sourced via indexed search, not read in full page-by-page in the PDF): https://www.rbnz.govt.nz
+
+## 9. Social cohesion
+
+Stats NZ's general official survey, the General Social Survey (biennial), contains no dedicated module on attitudes toward immigration — a gap that should be flagged explicitly. Source: https://www.stats.govt.nz/help-with-surveys/list-of-stats-nz-surveys/about-the-general-social-survey/
+
+The closest official source is MBIE's "Public Perceptions of Immigration" survey (waves conducted from 2017 to 2023), commissioned by the Ministry of Business, Innovation and Employment (a public body). The most recent report identified with a stable URL dates to December 2020; a 2023 edition exists but its exact URL could not be confirmed and would need to be located via the program's homepage. Source: https://www.mbie.govt.nz/immigration-and-tourism/immigration/migration-research-and-evaluation/migrant-and-community-experience-of-migration
+
+Not publicly available: a recent, fully verified government survey specifically measuring the evolution of attitudes toward immigration in 2024-2025. Reports from private/philanthropic organizations (e.g., the Helen Clark Foundation, Ipsos NZ Issues Monitor) exist but are not official sources and are not included here, in line with the editorial charter.
+
+## 10. Recent political context
+
+Temporary work visa conditions were tightened in 2024 under the Luxon government, following the post-Covid migration peak — to be documented with precise dates.
+
+The precise chronology of the Accredited Employer Work Visa (AEWV) is as follows. On April 7, 2024 (under Minister Erica Stanford), a major reform introduced a new English-language requirement for ANZSCO (Australian and New Zealand Standard Classification of Occupations) skill levels 4-5; a requirement of 3 years' experience or a level-4+ qualification (except for "Green List" roles or salaries at or above twice the median wage); a reduction of the maximum visa duration for levels 4-5 from 5 years to 2 years, with a mandatory 12-month stand-down after 3 continuous years; an extension of the job-advertising period from 14 to 21 days; mandatory engagement with Work and Income (MSD, Ministry of Social Development); and a minimum of 30 hours per week. The franchisee accreditation category was removed on June 16, 2024. Source: https://www.immigration.govt.nz/about-us/news-centre/changes-to-the-accredited-employer-work-visa-aewv
+
+On December 17, 2024 (with phased implementation through March 2025), a partial easing took effect: removal of the median-wage threshold for most roles, a reduced experience requirement of 2 years, restoration of the visa duration to 3 years for levels 4-5, and a reduction of the temporary labor cap in construction from 35% to 15% (effective January 2025). Source: https://www.beehive.govt.nz/release/securing-skills-and-experience-nz-needs
+
+On December 2, 2024, work rights were restored for spouses of high-salary AEWV holders (at or above 80% of the median wage). Effective November 3, 2025, permitted working hours for student visa holders were raised from 20 to 25 hours per week. On July 1, 2025, the 2,000-visa queue cap for the parent residence visa category was removed (an easing measure, not a new intake opening).
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Under Stats NZ's 12/16-month rule, migrant status is definitively classified only once 12 months have been observed within a rolling 16-month window of travel history, resulting in a lag of about 17 months before final classification.
+
+Pending this finalization, Stats NZ publishes provisional estimates based on a statistical model, with 95% confidence intervals, revised monthly; the most recent months carry the greatest uncertainty.
+
+This travel-history-based method replaced the former "Permanent and Long-Term" (PLT) measure, which was based on declared travel intentions and which Stats NZ judged to be less reliable.
+
+Data from the Covid border-closure period (March 2020 - December 2022) are unadjusted raw values; seasonally adjusted series prior to March 2020 are fixed and are no longer revised.
+
+The structural absence of cross-tabulated data on country of birth by crime (see section 6), the lack of recent updates to employment surveys by migration status (see section 5), and the absence of age-structure data broken down by birthplace (see section 3.4) are major limitations for fine-grained analysis by migrant category.
+</div>
+
+Methodological source: https://www.stats.govt.nz/methods/defining-migrants-using-travel-histories-and-the-1216-month-rule/

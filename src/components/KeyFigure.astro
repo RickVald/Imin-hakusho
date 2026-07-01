@@ -1,0 +1,14 @@
+---
+interface Props {
+	value: string;
+	label: string;
+	tone?: 'primary' | 'accent';
+}
+
+const { value, label, tone = 'primary' } = Astro.props;
+---
+
+<div class={`key-figure key-figure--${tone}`}>
+	<div class="key-figure__value">{value}</div>
+	<div class="key-figure__label">{label}</div>
+</div>

@@ -1,0 +1,255 @@
+---
+slug: sweden
+name: "Sweden"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- Statistics Sweden (Statistiska centralbyrån, SCB) — national statistical institute: https://www.scb.se
+- The Swedish National Council for Crime Prevention (Brottsförebyggande rådet, BRÅ)
+- The Swedish Migration Agency (Migrationsverket) — migration and asylum statistics
+- The Swedish Police Authority (Polisen) — maintains the official list of "vulnerable areas" (utsatta områden)
+
+## 2. Key datasets
+
+- SCB: employment rate by country of birth and length of residence
+- BRÅ reports (2005 and 2021 editions): crime and origin, with breakdowns by socioeconomic factors
+- Official police list of "vulnerable areas," revised periodically
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (December 31, 2024 — total population 10,587,700)"
+	segments={[
+		{ label: 'Born in Sweden', value: 79.0, color: '#1d3461' },
+		{ label: 'Foreign-born (immigrants)', value: 21.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="SCB, population by country of birth"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2024/"
+	sourcePrefix="Source: "
+/>
+
+- As of December 31, 2024, Sweden's total population was 10,587,700. Approximately 2.2 million people are foreign-born, or 21% of the population — up from 11.3% in 2000, roughly doubling over 24 years.
+  Source: SCB, "Sweden's population by country of birth/region, citizenship and background, December 31, 2024" —
+  https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/tabell-och-diagram/utrikes-fodda--medborgarskap-och-utlandsksvensk-bakgrund/sveriges-befolkning-efter-fodelseland-region-medborgarskap-och-bakgrund-31-december-2024/
+- 2024 immigration inflow: 116,200 people (+23% vs. 2023, or +21,700). Leading countries of birth among new immigrants: Ukraine (28,100, under temporary protection status following Russia's invasion — therefore an asylum/protection category), followed by people born in Sweden returning from abroad (11,900), then India, Germany, China, Syria, Poland, Pakistan, Turkey, and Iran. Net migration in 2024 (inflows minus outflows): +29,700.
+  Source: SCB, "Population increased in 2024 – despite fewer births" —
+  https://www.scb.se/pressmeddelande/befolkningen-okade-2024---trots-minskade-fodslar/
+- Breakdown of annual flows by motive (asylum/work/family): not publicly confirmed during this research. Migrationsverket's detailed permit-category statistics would be required and should be checked directly at migrationsverket.se/statistik.
+<ComingSoon label="Annual immigration flow data broken down by motive (asylum/work/family) is planned for a future update, pending direct verification on Migrationsverket's statistics pages." />
+
+### 3.2 Origin breakdown
+
+<ComingSoon label="A breakdown of immigrants by region of origin (e.g. Europe vs. non-Europe) could not be confirmed with a specific figure during this research and would require a further query of SCB's Statistikdatabasen (table BE0101). Planned for a future update." />
+
+### 3.3 Immigration waves (1945 – present)
+
+- As of 1945, immigrants made up less than 2% of the population. Between 1945 and 1948, approximately 30,000 survivors of Nazi concentration camps were resettled in Sweden, and roughly 30,000 Estonians and 5,000 Latvians remained in Sweden after the war.
+- **1950s–1960s**: era of labor migration. The 1952 Nordic common labor market agreement drove significant migration, especially from Finland.
+- **1967–1972**: under union pressure, labor migration from non-Nordic countries was restricted by new laws; non-Nordic labor migration formally ended in 1972.
+- **1970s–1980s**: transition from labor-driven to refugee-driven migration, with growing arrivals from the former Yugoslavia, the Middle East, and Latin America. From the late 1970s through the 1980s, Sweden became a major receiving country for both asylum seekers and resettled refugees, with rising numbers from Iran, Iraq, Lebanon, Syria, Turkey, Eritrea, Somalia, and South American countries.
+- **1990s**: thousands of refugees arrived from the former Yugoslavia.
+- **2010s – present**: refugees from the Syrian civil war; from 2022, Ukrainian arrivals under temporary protection status following Russia's invasion (the largest single group of new immigrants in 2024, at 28,100).
+  Sources: Migration Policy Institute, "Sweden: By Turns Welcoming and Restrictive in its Immigration Policy" — https://www.migrationpolicy.org/article/sweden-turns-welcoming-and-restrictive-its-immigration-policy;
+  Wikipedia, "Immigration to Sweden" — https://en.wikipedia.org/wiki/Immigration_to_Sweden
+- **Limitation**: this decade-by-decade account relies on policy-research and encyclopedic summary sources; a precise year-by-year immigration flow time series directly from SCB's own Statistikbanken tables could not be confirmed during this research.
+<ComingSoon label="Precise decade-by-decade immigration flow figures from SCB's Statistikbanken time series (1945–present) are planned for a future update." />
+
+### 3.4 Age structure (population pyramid)
+
+- SCB's published material states in narrative form that foreign-born residents have a different age structure from native-born residents, with a higher share in working age and relatively fewer children and elderly, noting that a large share of immigrants are aged 25–34.
+  Source: SCB, "Utrikes födda i Sverige" — https://www.scb.se/hitta-statistik/sverige-i-siffror/manniskorna-i-sverige/utrikes-fodda-i-sverige/
+- However, a directly comparable numeric pair (native-born vs. foreign-born, by age bracket such as 0–17 / 18–64 / 65+, in the format required for an age-pyramid chart) could not be confirmed from the SCB pages consulted. This would require a direct query of SCB's Statistikdatabasen (table BE0101E, "Population by country of birth, age and gender").
+<ComingSoon label="Age structure by origin (foreign-born vs. native-born, by age bracket) is planned for a future update, pending a direct query of SCB Statistikdatabasen table BE0101E." />
+
+### 3.5 Long-term projection (to 2070)
+
+<TrendChart
+	title="Projected total population of Sweden (2023 → 2070)"
+	unit="million"
+	series={[
+		{ label: 'Total population', color: '#1d3461', points: [{ year: 2023, value: 10.5 }, { year: 2070, value: 11.8 }] },
+	]}
+	sourceLabel="SCB, 'Sveriges framtida befolkning 2024–2070'"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/pong/statistiknyhet/sveriges-framtida-befolkning-2024-2070/"
+	sourcePrefix="Source: "
+/>
+
+<KeyFigure
+	value="11.8 million"
+	label="SCB's projected population for 2070 (up from 10.5 million in 2023, +12%)"
+/>
+
+- According to SCB's 2024 population projection, Sweden's population is projected to grow from 10.5 million in 2023 to 11.8 million in 2070 (+1.3 million, +12%). Long-term, annual immigration is projected at just under 100,000 people per year, with net migration (inflows minus outflows) averaging around 30,000 per year.
+  Source: SCB, "Sveriges framtida befolkning 2024–2070" — https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsframskrivningar/pong/statistiknyhet/sveriges-framtida-befolkning-2024-2070/
+- A projected future share of the population that is foreign-born (analogous to the "share of Danish origin" figure used for Denmark) could not be confirmed from the SCB material consulted. SCB's published text states the foreign-born share is expected to keep rising through nearly the entire projection period, but no specific percentage for 2070 could be confirmed within the scope of this research.
+<ComingSoon label="The projected share of the foreign-born population in 2070 (specific percentage) is planned for a future update, pending further review of SCB's full projection report (PDF)." />
+
+## 4. Public finances — net cost
+
+<KeyFigure
+	value="+6bn SEK/yr"
+	label="Overall net contribution of the foreign-born population to public finances (Konjunkturinstitutet, most recent year, 2022 data)"
+/>
+
+- Two distinct methodologies coexist in Sweden, producing opposing results depending on scope (refugees only vs. all immigrants) and time horizon (single year vs. lifetime):
+
+**Methodology 1 — lifetime net cost per refugee (commissioned by ESO, the Expert Group on Public Economics, an independent committee under the Ministry of Finance):**
+
+<BarChart
+	title="Lifetime average net cost per refugee (thousand SEK)"
+	unit="k SEK"
+	bars={[
+		{ label: '2007 data', value: 70 },
+		{ label: '2015/2018 data', value: 74 },
+	]}
+	sourceLabel="Joakim Ruist (University of Gothenburg, commissioned by ESO)"
+	sourceUrl="https://eso.expertgrupp.se/"
+	sourcePrefix="Source: "
+/>
+
+- Joakim Ruist (University of Gothenburg, commissioned by ESO), 2015/2018: average net cost per refugee and refugee family member, averaged over their time in Sweden, of 74,000 SEK (70,000 SEK in 2007 data). This category covers asylum/refugee families only, not all immigration.
+  Source: ESO (https://eso.expertgrupp.se/)
+- Lina Aldén and Mats Hammarstedt (2016): net cost of approximately 190,000 SEK in the first year after registration, declining to approximately 95,000 SEK in the seventh year — a gradual convergence toward fiscal balance.
+
+**Methodology 2 — aggregate net balance for all immigrants, long time series (commissioned by Konjunkturinstitutet / National Institute of Economic Research, on government mandate):**
+
+<BarChart
+	title="Aggregate net contribution of all immigrants to public finances (most recent year)"
+	unit="bn SEK/yr"
+	bars={[
+		{ label: 'Most recent year', value: 6, note: '0.1% of GDP; approx. 2,700 SEK per foreign-born person' },
+	]}
+	sourceLabel="Konjunkturinstitutet, Specialstudie 117 (2024), 'Invandrades nettobidrag till de offentliga finanserna 1983–2022'"
+	sourceUrl="https://www.konj.se/media/kpgnt5iw/specialstudie-117-invandrades-nettobidrag-till-de-offentliga-finanserna-1983-2022.pdf"
+	sourcePrefix="Source: "
+/>
+
+- Specialstudie 117 (2024), "Invandrades nettobidrag till de offentliga finanserna 1983–2022": the net contribution of all immigrants to public finances has been persistently negative since the 1980s, but turned slightly positive again in the most recent year studied — an aggregate net positive contribution of 6 billion SEK (0.1% of GDP), or approximately 2,700 SEK per foreign-born person (out of 2.2 million). People born in India stand out as the most positive net-contributing group.
+  Source: https://www.konj.se/media/kpgnt5iw/specialstudie-117-invandrades-nettobidrag-till-de-offentliga-finanserna-1983-2022.pdf
+- Follow-up, June 2025: Specialstudie 116, "Samhällsekonomiska effekter av migrationen till Sverige" (also government-commissioned) —
+  https://www.konj.se/media/44dkqfy1/specialstudie-116-samhallsekonomiska-effekter-av-migrationen-till-sverige.pdf
+- **SNS (independent institute):** in 2017, SNS funded the research project "Lärdomar om integration," led by Joakim Ruist, on global migration generally (not an isolated estimate of Sweden's net cost, but an academic reference framework):
+  https://snsse.cdn.triggerfish.cloud/uploads/2020/02/global-migration--orsaker-och-konsekvenser-web.pdf
+- **Comparison with Denmark:** not publicly confirmed during this research — would require direct reference to the Danish Ministry of Finance's generational-accounting model (generally cited as producing a higher net cost for non-European immigration than the Swedish ESO/Konjunkturinstitutet methodology, but the exact comparative figure could not be confirmed and is not invented here).
+- **Methodological limitation**: the primary PDF documents (Specialstudie 117 and others) could not be directly extracted by the research tools used here (extraction failure or 403 error). Consistency with press/summary sources was checked, but the primary documents themselves were not read directly.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<ComingSoon label="A demographic dependency ratio broken down by origin (foreign-born vs. native-born), and a pension-system-specific contributor-to-pensioner ratio, could not be confirmed during this research and are planned for a future update. SCB's Statistikdatabasen 'Försörjningskvot' table (national figure: 60.6% in 2024) is not broken down by origin. Source: https://www.statistikdatabasen.scb.se/goto/en/ssd/FkvotHVD" />
+
+## 5. Labor market
+
+<BarChart
+	title="Employment and unemployment rate by country of birth (2024 average)"
+	unit="%"
+	bars={[
+		{ label: 'Born in Sweden — employment rate', value: 70.0 },
+		{ label: 'Foreign-born — employment rate', value: 65.8, note: '-1.3 points vs. previous year' },
+		{ label: 'Born in Sweden — unemployment rate', value: 5.7 },
+		{ label: 'Foreign-born — unemployment rate', value: 16.2, note: 'gap widened vs. previous year' },
+	]}
+	sourceLabel="SCB Labour Force Survey (Arbetskraftsundersökningarna, AKU) 2025 edition"
+	sourceUrl="https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/pong/statistiknyhet/arbetskraftsundersokningarna-aku-2025/"
+	sourcePrefix="Source: "
+/>
+
+- Sweden has one of the most thoroughly documented employment gaps between native-born and foreign-born populations in Europe — SCB.
+- 2024 (annual average) employment rate: native-born 70.0% (men 71.5%, women 68.5%); foreign-born 65.8% (down 1.3 points vs. 2023). In Q4 2024: 83.2% for native-born vs. 73.1% for foreign-born (a different measure, restricted to the labor-force population). The gap ranges from 4 to 10 points depending on the measure used.
+- 2024 unemployment rate: native-born 5.7%; foreign-born 16.2% (a gap of roughly 10.5 points, widening vs. 2023).
+  Source: SCB Labour Force Survey (AKU) — https://www.scb.se/hitta-statistik/statistik-efter-amne/arbetsmarknad/utbud-av-arbetskraft/arbetskraftsundersokningarna-aku/pong/statistiknyhet/arbetskraftsundersokningarna-aku-2025/
+  Detailed table (by origin, length of residence): https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__AM__AM0401__AM0401R/
+- Employment data broken down by entry motive (work/family/asylum): not publicly confirmed during this research. This would require an SCB cross-tabulation by residence-permit category, for which no directly linkable official page was identified.
+<ComingSoon label="Employment data broken down by entry motive (work/family/asylum) is planned for a future update." />
+
+## 6. Security / justice
+
+- BRÅ's 2021 report addresses the overrepresentation of certain groups in crime statistics by origin, with a breakdown by socioeconomic factors — an important methodological point requiring explanation.
+- Report 2021:9, "Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund" (BRÅ, published August 25, 2021, covering 2007–2018): being registered as a crime suspect is approximately 2.5 times more frequent among foreign-born people than among Swedish-born people with two Swedish-born parents. The share of suspects in the population declined in both groups between 2007 and 2018 (a temporal comparison). For Swedish-born people with two foreign-born parents, roughly half of the overrepresentation disappears once age, sex, disposable income, education level, and municipality type are controlled for — though the gap does not fully close even after adjustment.
+  Official report (PDF): https://bra.se/download/18.45e4b8e192705389a34b52/1729514247826/2021_9_Misstankta_for_brott_bland_personer_med_inrikes_respektive_utrikes_bakgrund.pdf
+  Reference page: https://bra.se/rapporter/arkiv/2021-08-25-misstankta-for-brott-bland-personer-med-inrikes-respektive-utrikes-bakgrund
+- Complementary study, ESO 2025:4, "Särskilt utsatta," on the link between ethnic segregation and delinquency: https://eso.expertgrupp.se/rapporter/2025_4-sarskilt-utsatta/
+- A breakdown of crime statistics by legal/illegal residence status: not publicly confirmed (BRÅ's statistics classify by native-born/foreign-born origin, not by legality of residence status).
+<ComingSoon label="Crime statistics broken down by legal/illegal residence status are planned for a future update." />
+
+## 7. Education
+
+<BarChart
+	title="Eligibility for upper secondary school (spring 2024, by background)"
+	unit="%"
+	bars={[
+		{ label: 'Students of Swedish background', value: 87.6 },
+		{ label: 'Students with foreign background (utländsk bakgrund)', value: 73.3, note: 'gap of 14.3 points' },
+	]}
+	sourceLabel="Skolverket (Swedish National Agency for Education)"
+	sourceUrl="https://www.skolverket.se/download/18.6b8c1151936aed25c029/1732702300971/pdf13172.pdf"
+	sourcePrefix="Source: "
+/>
+
+- Spring 2024 eligibility rate for upper secondary school (gymnasiebehörighet): 87.6% for students of Swedish background versus 73.3% for students with a foreign background (utländsk bakgrund) — a gap of 14.3 points. Within the foreign-background group: 74.8% for girls versus 71.9% for boys.
+  The rate is highest among students born in Sweden or who arrived before school age, and notably lower among students who arrived at an older school age — length of schooling in Sweden is the determining factor. Average final grade score in 2024 (all students): 14.4 points.
+  Source: Skolverket — https://www.skolverket.se/download/18.6b8c1151936aed25c029/1732702300971/pdf13172.pdf
+
+## 8. Housing
+
+<BarChart
+	title="Number of 'vulnerable areas' (utsatta områden) — 2023 vs. 2025 editions"
+	unit=" areas"
+	bars={[
+		{ label: '2023 edition (total)', value: 59 },
+		{ label: '2025 edition (total)', value: 65, note: 'of which 46 vulnerable, 19 especially vulnerable' },
+	]}
+	sourceLabel="Swedish Police Authority (Polisen), 'Lägesbild över utsatta områden 2025'"
+	sourceUrl="https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf"
+	sourcePrefix="Source: "
+/>
+
+- Residential segregation is documented through the Police Authority's "vulnerable areas" (utsatta områden) classification.
+- Lägesbild 2025 (Police Authority, a report to the government): a total of 65 areas classified, of which 46 are "vulnerable" and 19 "especially vulnerable" — up from 59 in the previous 2023 edition. Part of this increase is due to 7 areas being reclassified into smaller sub-areas, so the year-over-year comparison requires a methodological caveat.
+  Official report (PDF): https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf
+- Population composition of "exclusion areas" (utanförskapsområden) (Boverket, report 2024:18): 55% of residents are foreign-born, 40% born in a non-European country (2023 data). Compared with the national average foreign-born share of 21% (see Section 3), this shows clear concentration in these areas.
+  Source: Boverket — https://www.boverket.se/globalassets/publikationer/dokument/2024/boendesegregationens-utveckling.pdf
+- Nationally, the majority of Sweden's 2.1 million foreign-born residents actually live in areas with favorable socioeconomic conditions ("area type 4," approximately 845,000 people) — segregation is concentrated in a minority of areas, not across the immigrant population as a whole.
+  Source: SCB — https://www.scb.se/hitta-statistik/artiklar/2023/segregationen-synlig-aven-i-vara-dagliga-resmonster/
+- Complementary report: Boverket 2025:13, "Livsvillkor i utanförskapsområden" — https://www.boverket.se/globalassets/publikationer/dokument/2025/livsvillkor-i-utanforskapsomraden2.pdf
+
+## 9. Social cohesion
+
+- Reference opinion surveys: the SOM Institute (a survey research institute on society, opinion, and media at the University of Gothenburg, a public research infrastructure) publishes an annual chapter on immigration and asylum policy as part of its national SOM survey. SOM 2024:4, "Flykting- och invandringspolitiken" (based on the 2023 national survey) — https://www.gu.se/sites/default/files/2024-02/R2024_4.pdf
+  Methodology note for the 2023 edition: https://www.gu.se/sites/default/files/2024-03/4.%20Den%20nationella%20SOM-unders%C3%B6kningen%202023%20-%20En%20metod%C3%B6versikt.pdf
+  Precise figures (% favorable/unfavorable opinion by year): not publicly confirmed during this research — the SOM Institute's PDFs could not be extracted with the research tools used here, and would require manual verification before citation.
+<ComingSoon label="The SOM Institute's year-by-year figures on attitudes toward immigration policy (specific percentages) are planned for a future update, pending manual review of the PDF." />
+- Interpersonal and institutional trust by origin: academic chapter "Förtroende och tillit i en segregerad stad" (Rönnerstrand & Solevid, SOM Institute) — https://www.gu.se/sites/default/files/2021-10/115-130%20R%C3%B6nnerstrand%20o%20Solevid.pdf
+  Qualitative finding reported in this literature: interpersonal trust is measured as lower among people born outside Sweden (particularly outside Europe) than among Swedish-born people, with the gap in institutional trust generally smaller than the gap in interpersonal trust. Precise figures: not publicly confirmed during this research (the PDF could not be reliably extracted) — manual verification needed before citing a specific number.
+<ComingSoon label="Precise figures on interpersonal and institutional trust by origin are planned for a future update, pending manual review of the PDF." />
+- School segregation: Skolverket publishes official statistics on the share of students with a "foreign background" by school, but a precise gap figure could not be reliably confirmed during this research.
+  https://www.skolverket.se/download/18.954e82318e64549b9f1d/1711120454132/pdf12612.pdf
+- Naturalization (a proxy for integration): SCB publishes an official time series of the number of people who acquired Swedish citizenship, by prior nationality and sex, 2000–2024: https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BE__BE0101__BE0101N/MedborgarByteLandK/
+  80,175 people acquired Swedish citizenship in 2020 (+25% vs. 2019, an atypically high year), versus 68,898 in 2017.
+  Source: SCB annual statistical release — https://www.scb.se/hitta-statistik/statistik-efter-amne/befolkning-och-levnadsforhallanden/befolkningens-sammansattning-och-utveckling/befolkningsstatistik/pong/statistiknyhet/befolkningsstatistik-helaret-20202/
+  This figure should be updated to the most recent year available in the SCB table above.
+
+## 10. Recent political context
+
+- Sweden was the most welcoming country in Europe in 2015; a dramatic policy tightening has occurred since 2022 under pressure from the Sweden Democrats (Sverigedemokraterna).
+- Asylum acceptance has been nearly frozen entirely, alongside a "net-zero return" policy.
+- Notable case: an unusually rapid policy reversal, documentable in close to real time.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+BRÅ's crime statistics are themselves a politically sensitive subject within Sweden (their publication has been a subject of debate) — worth noting for transparency. In addition, several primary PDF sources cited here (Konjunkturinstitutet's Specialstudie 117, Skolverket's education statistics, Boverket's housing statistics, and the SOM Institute / Rönnerstrand & Solevid social-cohesion research) could not be directly extracted by the research tools used (extraction failure or 403 error), and consistency was checked only against press/summary sources. Direct access to these primary documents is recommended before final publication.
+</div>

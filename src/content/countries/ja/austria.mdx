@@ -1,0 +1,223 @@
+---
+slug: austria
+name: "オーストリア"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- Statistik Austria（オーストリア統計局）— 国家統計機関：https://www.statistik.at
+- BMI（Bundesministerium für Inneres、連邦内務省）— 庇護統計を担当
+- Österreichischer Integrationsfonds（ÖIF、オーストリア統合基金）— 公的統合機関
+- WIFO（オーストリア経済研究所）— 経済的影響に関する研究
+
+## 2. 主要データセット
+
+- Statistik Austria：出身／国籍別人口、雇用、Migrationsbericht（移民に関する年次報告書）、「Statistisches Jahrbuch Migration & Integration」（ÖIFと共同で毎年公表）
+- BMI：詳細な庇護統計（オーストリアは2022〜2023年に欧州で人口当たりの庇護申請数が最も多い国の一つであった）
+- WIFO：財政的影響および労働市場に関する研究
+- Statistik Austria：人口推計（Bevölkerungsprognose、2025年11月版）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2026年4月1日時点・総人口9,220,882人）"
+	segments={[
+		{ label: 'オーストリア国籍', value: 79.5, color: '#1d3461' },
+		{ label: '外国籍', value: 20.5, color: '#9c3b3b' },
+	]}
+	sourceLabel="Statistik Austria「Bevölkerung nach Staatsangehörigkeit」"
+	sourceUrl="https://www.statistik.at/en/statistics/population-and-society/population/population-stock/population-by-citizenship/country-of-birth"
+/>
+
+- 2026年4月1日時点で、オーストリアの人口は9,220,882人。うち外国籍者は約189万人（20.5%）。出生地（国籍ではなく出生国）による測定では外国出身者は22.9%に達する。
+  経年比較：外国籍人口比率は1981年の4.0%から大きく上昇した（後述3.3参照）。
+- 帰化した人および移民の親を持つ子ども（「Migrationshintergrund」＝移民的背景）を含む、より広い定義による測定：2024年平均で250.9万人、私的家計人口の27.8%に相当する。時系列比較：この割合は2015年の21.4%から2024年の27.8%へ上昇した（10年間で+794,400人、+46%）。2025年の暫定値では総数2,553,600人（第一世代1,901,200人、第二世代652,400人）に達している。
+- 庇護：2025年1月から11月にかけて15,337件の庇護申請が提出され、前年同期（2024年、23,483件）と比較して35%減少した。このうち初回申請はわずか42%で、残りは続行申請・更新申請である。
+- 2024年について、庇護申請者の主な出身国はシリアである（申請の55%）。家族呼び寄せは大幅に減少した：2023年11月の1,146件の入国から、2024年11月の241件、2025年11月にはわずか1件となった。
+- 合法／不法および労働／家族／庇護の区別：BMIの統計は庇護申請（国際保護）、家族呼び寄せ、労働移民（赤白赤カードなど別個の許可制度）を区別している。これらは上記の外国籍人口全体の数値と単純に合算してはならない。後者にはEU／EEA域内の自由移動（ドイツ人、ルーマニア人、ハンガリー人が上位を占める）も含まれているためである。
+- 出典：Statistik Austria／ÖIF「Statistisches Jahrbuch Migration & Integration 2025」— https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf；BMI「Asyl-Statistik 2024」— https://www.bmi.gv.at/301/Statistiken/files/Jahresstatistiken/Asylstatistik_Jahresstatistik_2024.pdf
+
+### 3.2 移民の出身地域別構成
+
+<ComingSoon label="国籍グループ別（EU/EWR、旧ユーゴスラビア、トルコ、その他）の100%構成比は、Statistik AustriaのSTATatlas／STATcubeに存在するが、本調査では一次資料からテキスト形式で正確な比率を抽出できなかった。最新人口（2026年4月）の上位国籍（ドイツ239,500人、ルーマニア155,700人、トルコ124,800人、セルビア122,500人、ハンガリー112,400人、2025年1月時点）は確認済みだが、全体に対する完全な構成比は今後追加予定です。" />
+
+- 確認済みの上位国籍（2025年1月1日時点）：ドイツ（239,500人）、ルーマニア（155,700人）、トルコ（124,800人）、セルビア（122,500人）、ハンガリー（112,400人）。
+  出典：Statistik Austria（前掲リンク）。
+
+### 3.3 移民の波（1960年代〜現在）
+
+- **1961年**：ラープ・オラー協定（Raab-Olah-Abkommen）により、外国人労働者の簡易雇用手続きが創設された。
+- **1964年5月15日締結／同年7月23日発効**：オーストリア・トルコ間の労働者募集協定（Anwerbeabkommen）。
+  出典：ザルツブルク大学（連邦首相府の委託研究）「50 Jahre österreichisch-türkisches Anwerbeabkommen」— https://www.bundeskanzleramt.gv.at/dam/jcr:e61b32db-f2e9-4524-8834-0386ba97160c/studie_anwerbeabkommen_-_uni_salzburg.pdf
+- **1966年4月発効**：オーストリア・旧ユーゴスラビア間の労働者募集協定。
+- **1961〜1974年**：いわゆる「フレムデンアルバイター（外国人労働者）」制度のもとで約265,000人がオーストリアに移住。1973年時点で外国人労働者の78.5%が旧ユーゴスラビア国籍、11.8%がトルコ国籍であった。1973年のピーク時には約230,000人の外国人労働者が雇用されており、これは被雇用者全体の8.7%に相当した。1973〜74年の石油危機を受け、新規労働許可の発給は停止された。
+  出典：オーストリア歴史博物館（Haus der Geschichte Österreich、hdgö）「Arbeitsmigration」— https://hdgoe.at/arbeitsmigration
+- **1981年**：外国籍人口は304,000人、総人口に対する比率は4.0%（オーストリア国籍727万人との対比）。
+  出典：Statistik Austria「Volkszählung 2001」（1869年以降の人口動態を含む）— https://www.statistik.at/fileadmin/publications/Volkszaehlung_2001__Wohnbevoelkerung_nach_Gemeinden__mit_der_Bevoelkerungsentwicklung_seit_1869_.pdf
+- **1990年代**：旧ユーゴスラビア紛争による難民の波。1990〜1996年に約300,000人の難民がオーストリアに到着したとされ、特に1992〜1995年にはボスニア出身難民が約86,500人受け入れられた（当時のオーストリア総人口の約1.1%に相当）。
+  出典：efms（バンベルク大学・欧州移民研究所、UNHCR系統データの集計）— https://www.efms.uni-bamberg.de/ds27_2_e.htm（一次資料による厳密な再検証が必要な二次的集計）
+- **1991〜2001年**：外国籍人口は193,236人増加（前の10年間〔1981〜1991年〕の増加幅は約226,000人）。
+  出典：Statistik Austria「Volkszählung 2001」（前掲リンク）
+- **2015年**：シリア内戦・アフガニスタン情勢を背景に庇護申請が88,340件に急増（2010〜2014年の5年間の合計を上回る）。シリア出身24,547件、アフガニスタン出身25,563件。
+  出典：BMI Asylstatistik（年次アーカイブ）— https://www.bmi.gv.at/301/Statistiken/files/2025/Asylstatistik_Jaenner_2025.pdf；Statistik Austria「Statistische Nachrichten 4/2017」— https://www.statistik.at/stddoku/subdokumente/b_asylstatistik_stat-nachr_04_17.pdf
+<KeyPointTiles
+	title="移民の波：期間別の主な特徴"
+	tiles={[
+		{ period: '1961–1974', value: '約265,000人', description: 'ラープ・オラー協定・トルコ（1964年）・旧ユーゴスラビア（1966年）との招聘協定。ピーク時（1973年）に外国人労働者約230,000人、被雇用者全体の8.7%。', color: '#1d3461' },
+		{ period: '1973–1974', value: '停止', description: '石油危機を受け新規労働許可の発給を停止。', color: '#9c3b3b' },
+		{ period: '1981年', value: '4.0%', description: '外国籍人口304,000人、総人口比4.0%。', color: '#c9a23f' },
+		{ period: '1990年代', value: '約300,000人', description: '旧ユーゴスラビア紛争難民。1992〜1995年にボスニア出身難民約86,500人受入（当時の総人口の約1.1%）。', color: '#5a8a6b' },
+		{ period: '2015年', value: '88,340件', description: '庇護申請が急増（シリア24,547件、アフガニスタン25,563件）。', color: '#6b5b95' },
+		{ period: '2025年時点', value: '20.5%', description: '外国籍人口189万人。移民的背景を持つ人口は27.8%（250.9万人）に達している。', color: '#8a5a2a' },
+	]}
+/>
+
+- **2025年時点**：外国籍人口は20.5%（189万人）に達している。
+- **限界**：1961年から2025年までの完全な10年ごとの外国籍人口比率の時系列（1971年・2011年等の中間データ点を含む）は、Statistik Austriaの「Historische Volkszählungen」ページに存在するとみられるが、本調査ではPDF資料からテキスト形式で正確な数値を抽出できなかった。
+<ComingSoon label="1960年代から2025年までの10年ごとの外国籍人口比率の完全な時系列データ（Statistik Austria「Historische Volkszählungen」の数表）は今後追加予定です。" />
+
+### 3.4 年齢構成
+
+<KeyFigure
+	value="69.0%"
+	label="移民的背景を持つ人口のうち労働年齢（20-64歳）の割合（2024/2025年）"
+/>
+
+- Statistik Austria／ÖIFによれば、移民的背景を持つ人口の69.0%が労働年齢（20-64歳）に該当する（2024/2025年時点）。
+  出典：Statistik Austria「Statistisches Jahrbuch Migration & Integration 2025」プレスリリース — https://www.statistik.at/fileadmin/announcement/2025/07/20250716MigrationIntegration2025.pdf
+- 出身別の年齢層（0-17歳、18-39歳、40-64歳、65歳以上）を完全に分解した構成比表は、Statistik Austriaが「Migrationshintergrund」に関する数表集（.ods形式）として公表しているとみられるが、本調査ではテキスト形式での抽出ができなかった。
+<ComingSoon label="出身別の年齢構成比（0-17歳、18-39歳、40-64歳、65歳以上の各層におけるオーストリア国籍・移民的背景別の割合）は今後追加予定です。Statistik Austriaの「Tabellensammlung Migrationshintergrund」数表（.ods形式）の直接確認が必要です。" />
+
+### 3.5 将来予測
+
+<TrendChart
+	title="総人口の推移予測（2026年→2070年）"
+	unit="万人"
+	series={[
+		{ label: '総人口', color: '#1d3461', points: [
+			{ year: 2026, value: 922 }, { year: 2045, value: 940 }, { year: 2070, value: 915 },
+		]},
+	]}
+	sourceLabel="Statistik Austria「Bevölkerungsprognose」（2025年11月版）"
+	sourceUrl="https://www.statistik.at/web_de/statistiken/menschen_und_gesellschaft/bevoelkerung/demographische_prognosen/bevoelkerungsprognosen/122070.html"
+/>
+
+<KeyFigure
+	value="940万人"
+	label="Statistik Austriaの推計による2040年代半ばのピーク人口（2026年は922万人）"
+/>
+
+- Statistik Austriaの2025年11月版人口推計によれば、総人口は現在の922万人から2040年代半ばに940万人前後でピークに達し、その後2070年には915万人へ緩やかに減少すると予測されている。
+- 重要な留意点：Statistik Austriaはこの推計が「国籍別」予測（Ausländerprognose）ではないことを明示的に述べている。同局は出生国（Geburtsland）別の区分までは行うが、将来の外国籍人口比率は帰化率の前提（政治的に変動しうる要因）に強く依存するため、外国籍／移民的背景別の人口比率を予測年ごとに示す公式数値は確認できなかった。
+  出典：Statistik Austria「Bevölkerungsprognose」プレスリリース（2025年11月12日）— https://www.statistik.at/fileadmin/announcement/2025/11/20251112Bevoelkerungsprognose.pdf
+<ComingSoon label="出身別（国籍／移民的背景別）の将来人口比率の予測値は今後追加予定です。Statistik Austriaは出生国別の区分は行うものの、帰化率の前提に依存するため、公式な国籍別予測は現時点で確認されていません。" />
+
+## 4. 財政 — 純コスト
+
+<BarChart
+	title="移民形態別の財政的・経済的効果（累積、2020年まで）"
+	unit="億ユーロ"
+	bars={[
+		{ label: '全移民形態合計（労働移民含む）', value: 14 },
+		{ label: '2015年以降の庇護移民（152,495人）', value: -81, note: '貢献46億ユーロ − 支出127億ユーロ' },
+	]}
+	sourceLabel="EcoAustria（ÖIF委託）「Fiskalische und ökonomische Effekte verschiedener Migrationsformen」"
+	sourceUrl="https://www.integrationsfonds.at/fileadmin/content/AT/Fotos/Publikationen/Forschungsbericht/EcoAustria_Fiskalische_Effekte_verschiedener_Migrationsformen_Web.pdf"
+/>
+
+- 方法論1 — マクロ経済一般均衡モデル（PuMA）：Österreichischer Integrationsfonds（ÖIF、オーストリアの公的統合機関）の委託によるEcoAustriaの研究。結果：すべての移民形態を合わせた財政への純効果は、2020年までの累積で14億ユーロの正の効果と推計される（労働移民を含む全形態合算）。しかし移民の種類によって効果は大きく異なる。2015年以降の流入波で到着した152,495人の庇護申請者は、同期間に46億ユーロの貢献（税金・社会保険料）を生んだのに対し、127億ユーロの公的支出（社会扶助、住宅、教育、医療）を発生させた。すなわちこの特定の部分集団については純額がマイナスである。
+- 方法論2 — 難民移民に関する長期研究（2015〜2060年）。同じくEcoAustria／ÖIFによるもので、2015年以降の庇護移民が数十年にわたって財政に与える動的効果（単純な静態的効果ではない）をモデル化している。出典（委託者：ÖIF）：https://ecoaustria.ac.at/wp-content/uploads/2024/01/FB_EcoAustria_2023-09-13.pdf
+- WIFO（公的経済研究機関）による歴史的な基準研究：「Die Zuwanderung von Ausländern nach Österreich. Kosten-Nutzen-Überlegungen und Fragen der Sozialtransfers」。出典（委託者：WIFO）：https://www.wifo.ac.at/publication/84682/
+- 方法論上の注記：デンマークのFinansministeriet（財務省）の手法（年齢・滞在期間・出身別に年次の縦断系列で体系的に算定する方式）とは異なり、利用可能なオーストリアの研究はマクロ経済の総合モデル（PuMA）を用いており、移民1人当たりの純コストをそこまで詳細な形では公表していない。デンマークと同等の粒度を持つ公表物は、現段階でオーストリアについては確認されていない。
+
+### 4.1 年金制度・依存度比率
+
+<ComingSoon label="出身別（オーストリア国籍／移民的背景別）の年金制度依存度比率または年金財政への貢献度に関する一次資料は、本調査では確認できませんでした。社会省（Sozialministerium）は年金制度全体の概況を公表していますが、国籍別の内訳は含まれていません。WIFOの労働力供給に関する研究（「Die Entwicklung des Arbeitskräfteangebotes in Österreich bis 2040」）は移民が労働力供給全体に与える影響を分析していますが、年金依存度比率を出身別に分解した数値は今後追加予定です。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="移民的背景の有無による就業率（2024年）"
+	unit="%"
+	series={[
+		{ label: '移民的背景なし', color: '#1d3461', points: [{ year: 2024, value: 76.4 }] },
+		{ label: '移民的背景あり', color: '#9c3b3b', points: [{ year: 2024, value: 69 }] },
+		{ label: 'アフガニスタン・シリア・イラク出身', color: '#c97a7a', points: [{ year: 2024, value: 44.1 }] },
+	]}
+	sourceLabel="Statistik Austria／ÖIF「Statistisches Jahrbuch Migration & Integration 2025」"
+	sourceUrl="https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf"
+/>
+
+<BarChart
+	title="失業率の比較（2024年・国籍別）"
+	unit="%"
+	bars={[
+		{ label: 'オーストリア国籍者', value: 5.7, color: '#1d3461' },
+		{ label: '外国籍者（全体）', value: 10.5, color: '#9c3b3b' },
+		{ label: 'アフガン・シリア・イラク出身', value: 31.3, color: '#c97a7a' },
+	]}
+	sourceLabel="Statistik Austria／ÖIF「Statistisches Jahrbuch Migration & Integration 2025」"
+	sourceUrl="https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf"
+/>
+
+- 2024年、移民的背景（「Migrationshintergrund」）を持つ人々の就業率は69%であり、移民的背景を持たない人口の就業率（76.4%）よりも約7ポイント低かった。
+- 出身国による著しい異質性：2024年に最も低い就業率が見られるのはアフガニスタン、シリア、イラク出身者で（44.1%）、この集団の女性ではさらに低く（2024年に24.3%、2023年の32.3%から8ポイント低下）となっている。
+- 2024年の失業率：オーストリア国籍者が5.7%であるのに対し、外国籍者は10.5%。最も高い失業率が見られるのはアフガニスタン、シリア、イラク出身者である（31.3%）。
+- 方法論上の限界：これらの統計は入国経路（労働、家族、庇護）を問わず移民労働力人口全体を集計したものである。観察される差異は出身時点での移民資格（最近の庇護申請者・難民と、直ちに就労可能なEU／EEA労働者との対比）と一部相関しているが、Statistik Austriaは同じ系列において入国経路別の就業分解を系統的には公表していない。
+- 出典：Statistik Austria／ÖIF「Statistisches Jahrbuch Migration & Integration 2025」— https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf
+
+## 6. 治安・司法
+
+- 一次資料の直接読解により確認（2026年6月24日）— 2024年、オーストリアでは335,911人の被疑者が特定され、そのうち178,853人がオーストリア国籍（53.2%）、157,058人が外国籍であった（被疑者全体の46.8%。総人口における外国人比率約20.5%との比較が人口統計上の参照基準となる）。2024年には534,193件の犯罪が報告された（前年比+1.2%）。解決率は52.9%である。出典：Bundesministerium für Inneres（BMI）、「Kriminalstatistik 2024」：https://www.bmi.gv.at/magazin/2025_05_06/02_Kriminalstatistik.aspx
+- 2024年の外国籍被疑者のうち、最も多い国籍はルーマニア（18,925人）、ドイツ（13,631人）、シリア（11,867人）、セルビア（11,688人）、トルコ（9,688人）であった。出典：BMI（上記リンク）。
+- 10〜14歳における非行の著しい増加（2020年以降、報告された犯罪件数がほぼ倍増）が見られ、そのうち48%は外国籍、特にシリア国籍の未成年者が関与している。出典：BMI（上記リンク）。
+- 公式の方法論上の注意：国籍別の被疑者統計は、滞在資格（長期居住者、庇護申請者、EU／EEA市民）を系統的には区別していない。1つの事案に複数の被疑者が関与する場合もある。外国籍人口は基準となるオーストリア人人口よりも人口統計的に若く、男性比率が高い。この2つの要因は、国籍とは無関係に、登録された犯罪への関与の可能性が統計的に高いことと相関していることが知られている。
+
+## 7. 教育
+
+- 2023／24学年度、オーストリアの生徒の26%が日常的に使用する言語としてドイツ語以外の言語（「nicht-deutsche Umgangssprache」）を持っており、そのうち5%がボスニア語／クロアチア語／セルビア語、5%がトルコ語であった。これは数値が停滞していた過去数年と比べてわずかに低下しており、この系列で観察された初めての下降への転換である。出典：Statistik Austria、「Bildung in Zahlen 2023/24」：https://www.statistik.at/fileadmin/publications/BiZ-2023-24.pdf　補足データ：ÖIF、「Factsheet Schule und Integration 2025」：https://www.integrationsfonds.at/fileadmin/content/AT/monitor/Factsheet_Schule_und_Integration_2025-08-29.pdf
+- 地域差が大きい：ドイツ語以外を日常使用言語とする生徒の割合は、ウィーンで約50%であるのに対し、フォアアールベルク州では25%、ザルツブルク州では21%、チロル州ではわずか17%、ケルンテン州では16%である——国内の地域比較の参照基準。出典：Statistik Austria（上記リンク）。
+- ドイツ語以外で最も多く使用される言語：ボスニア語／クロアチア語／セルビア語（21%）、トルコ語（18%）、アラビア語（9%）、ルーマニア語（7%）、アルバニア語（6%）。出典：Statistik Austria（上記リンク）。
+- 公的に十分な精度・検証された形で入手できないデータ：使用言語別の学業成績の差異（成績、標準化試験の合格率）については、利用可能な時間内で直接の出典リンクによる確認ができなかった——上記の生徒数のデータとは区別して扱うべきである。
+
+## 8. 住宅
+
+- ウィーンへの著しい地理的集中：2025年1月1日時点で、ウィーンの外国籍人口の割合は36.4%（約739,000人）に達し、全国平均の20.2%と対比される——地域間比較の参照基準。ウィーンは外国出身人口の割合が最も高いオーストリアの州であり（40.2%）、これにフォアアールベルク州（23.2%）が続く。出典：Statistik Austria／ÖIF、「Statistisches Jahrbuch Migration & Integration 2025」：https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf
+- 一部の出身については集中がさらに著しい：オーストリアに居住するアフガニスタン、シリア、イラク出身者の約53%がウィーンに住んでいる。出典：Statistik Austria／ÖIF（上記リンク）。
+- ウィーンの自治体公営住宅（「Gemeindebau」）：OECDを引用した分析によれば、両親が第三国（EU域外）で生まれたウィーン市民の約40%が自治体公営住宅に居住している。毎年、住宅の20%が若いウィーン市民に割り当てられており、そのうち相当な割合が移民的背景を持つ。出典：OECD（Statistik Austria／専門メディアにより引用）——この数値は最終公開前にOECDの一次資料で直接再確認すべき項目である。現時点では、直接確認したOECD文書による裏付けのない二次的出典にとどまる。
+- 都市／地方の分布：オーストリア生まれの人の約43%が人口5,000人未満の市町村に居住しているのに対し、外国出身者ではわずか18%にとどまる——移民の都市集中を示す比較基準。出典：Statistik Austria（前掲のJahrbuch Migration & Integrationを参照、上記リンク）。
+
+## 9. 社会的結束
+
+- ÖIFの「Integrationsbarometer」（オーストリア統合基金〔公的機関〕の委託によりPeter Hajek Public Opinion Strategies研究所が実施、16歳以上のオーストリア国民1,000人を対象とし、2015年以降定期的に実施されている調査）によると、2024〜2025年には回答者の61%が難民・移民の統合について頻繁に懸念していると回答し、約10人に7人がオーストリアは現在難民・庇護申請者の受け入れをうまく管理していないと考えている。出典（委託者：公的機関であるÖIF）：https://www.integrationsfonds.at/fileadmin/content/AT/monitor/OeIF-Integrationsbarometer-2-2024_Final.pdf　および最新版：Integrationsbarometer 1/2025。
+- 同じ調査は出身グループ別に異なる認識を示している：回答者の55%がウクライナ避難民との共生を肯定的に評価しているのに対し、難民全般については31%のみ、ムスリムの人々については25%にとどまる（これらの数値は主観的な認識の指標として理解すべきであり、客観的な社会的結束の指標ではない）。出典：ÖIF（上記リンク）。
+- 回答者の89%が移民にオーストリア文化への適応を期待しており、10人中9人が統合に関連する義務的なドイツ語講習への不参加に対する制裁を支持している。出典：ÖIF（上記リンク）。
+- 指摘すべき方法論上の限界：これは統合の推進を任務に含む公的機関が委託した意見調査である。設問とその表現方法が結果に影響を与える可能性がある。可能であれば他の調査（Eurobarometerなど）と比較して相互検証することが望ましいが、ここではまだ実施されていない。
+
+## 10. 最近の政治的文脈
+
+- ÖVP（国民党）・緑の党連立政権（2020〜2024年）による庇護政策の制限的な方針、2024年9月の選挙でのFPÖ（自由党）の勝利——正確な日付による文書化が必要
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+国籍別の犯罪統計（BMI）は外国籍人口の年齢・性別構成の効果（より若く、より男性比率が高い）を統制していない。これは犯罪学において既知の交絡因子であり、横断的分析の際には常に言及すべきである。
+ÖIFの意見調査（Integrationsbarometer）は、まさに統合の推進を任務とする公的機関の委託によるものである。引用するたびに委託者を明示すべきである（潜在的な資金提供バイアス）。
+外国籍人口のデータはEU／EEA（自由移動、例：ドイツ人、ルーマニア人、ハンガリー人）と第三国籍者（庇護、家族呼び寄せ、熟練労働）を合算している。EU域内移民と欧州域外移民の混同を避けるため、どのサブカテゴリーについて言及しているかを常に明示すべきである。
+ウィーンの公営住宅に関するOECDの数値（第8節）は、OECDの一次資料で直接確認されていない二次的データである。その旨を明示しており、後日一次資料が特定された場合は修正する必要がある。
+国籍グループ別の出身構成比（3.2節）は、Statistik AustriaのSTATatlas／STATcubeに存在するとみられるが、本調査では一次資料からテキスト形式で正確な比率を抽出できなかったため、ComingSoonとした。
+</div>

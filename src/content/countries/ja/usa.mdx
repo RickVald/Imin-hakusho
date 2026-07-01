@@ -1,0 +1,226 @@
+---
+slug: usa
+name: "アメリカ合衆国"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- 米国センサス局（US Census Bureau）：https://www.census.gov
+- 国土安全保障省（DHS、Department of Homeland Security）— 国土安全保障統計局（Office of Homeland Security Statistics）。合法移民および国境での拘束に関するデータを所管。
+- 司法統計局（BJS、Bureau of Justice Statistics）— 刑事司法統計（連邦レベルでは移民資格との直接的な突合がほとんど行われていない — 重大な限界として明記すべき点）
+- 議会予算局（CBO、Congressional Budget Office）— 移民に関連する財政見通し（2023〜2024年に発表された、近年の移民増加がGDPおよび財政に与える影響に関する注目度の高い報告書）
+- 全米科学・工学・医学アカデミー（National Academies of Sciences）— 基準とされる報告書「The Economic and Fiscal Consequences of Immigration」（2016年、引用回数の多い独立した学術研究）
+
+## 2. 主要データセット
+
+- センサス局：アメリカン・コミュニティ・サーベイ（American Community Survey、ACS）（外国生まれ人口、雇用、所得）
+- CBP（Customs and Border Protection、税関・国境警備局、DHS傘下）：南部国境における月次の拘束統計 — 政治的に最も注目されているデータセットの一つ
+- CBO：近年の移民純増が財政に与える影響に関する報告書（2023〜2024年）
+- 全米科学アカデミー（2016年）：短期的影響（多くの場合、州・地方自治体レベルでは負の影響）と長期的影響（多くの場合、連邦レベルでは複数世代にわたり正の影響）を区別した基準的研究
+- ピュー・リサーチ・センター（Pew Research Center）：センサス局ACSデータの分析に基づく出身地域別の経年比較（民間調査機関であり、一次資料ではないが、ACSデータの可視化として有用）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2023年・総人口約3億3,400万人）"
+	segments={[
+		{ label: '米国生まれ', value: 85.7, color: '#1d3461' },
+		{ label: '外国生まれ', value: 14.3, color: '#9c3b3b' },
+	]}
+	sourceLabel="US Census Bureau, American Community Survey 2023"
+	sourceUrl="https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html"
+/>
+
+- 米国に居住する外国生まれ人口は2023年に4,783万人に達し、総人口の14.3%を占めた。2022年の13.9%から上昇しており、この年間増加（+165万人）と到達水準は、アメリカン・コミュニティ・サーベイ開始以来で最も高い。
+- 出典：US Census Bureau、2024年9月10日付プレスリリース（https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html）およびACS／CPSの詳細データ（https://www.census.gov/data/tables/2023/demo/foreign-born/cps-2023.html）。
+
+### 3.2 出身地域別構成
+
+<StackedBar
+	title="外国生まれ人口の出身地域（2023年）"
+	segments={[
+		{ label: 'メキシコ', value: 22, color: '#9c3b3b' },
+		{ label: 'その他の中南米', value: 30, color: '#c97a7a' },
+		{ label: 'アジア', value: 27, color: '#c9a23f' },
+		{ label: '欧州', value: 10, color: '#1d3461' },
+		{ label: 'サブサハラ・アフリカ', value: 5, color: '#5a8a6b' },
+		{ label: '中東・北アフリカ', value: 4, color: '#7a5a8a' },
+		{ label: 'カナダ・その他北米', value: 2, color: '#8a8a8a' },
+	]}
+	sourceLabel="Pew Research Center（センサス局2023年ACSデータの分析）"
+	sourceUrl="https://www.pewresearch.org/short-reads/2025/08/21/key-findings-about-us-immigrants/"
+/>
+
+- 2023年時点で、外国生まれ人口のうちメキシコ出身が22%（その他の中南米諸国を含めると中南米全体で約52%）、アジア出身が27%、欧州出身が10%、サブサハラ・アフリカが5%、中東・北アフリカが4%、カナダ・その他北米諸国が2%。
+- 経年比較：メキシコ出身者の比率は2010年の29%から2023年には22%に低下している。1965年以降に到着した移民全体では、中南米出身が51%、アジア出身が約25%を占める。
+- 出典：Pew Research Center「How the origins of America's immigrants have changed since 1850」（センサス局ACS／IPUMSデータの分析）— https://www.pewresearch.org/short-reads/2024/07/22/how-the-origins-of-americas-immigrants-have-changed-since-1850/ および「Key findings about U.S. immigrants」（2025年8月）— https://www.pewresearch.org/short-reads/2025/08/21/key-findings-about-us-immigrants/
+- 注：ピュー・リサーチ・センターは政府機関ではなく民間調査機関であるが、ここで引用する数値はセンサス局ACS（一次資料）の集計・分析結果であり、独自の調査データではない。
+
+### 3.3 移民の波（1850年〜現在）
+
+<TrendChart
+	title="外国生まれ人口の推移（1850年→2023年）"
+	unit="人"
+	series={[
+		{ label: '外国生まれ人口', color: '#9c3b3b', points: [
+			{ year: 1850, value: 2244602 }, { year: 1860, value: 4295510 }, { year: 1870, value: 5567229 },
+			{ year: 1880, value: 6679943 }, { year: 1890, value: 9249547 }, { year: 1900, value: 10341276 },
+			{ year: 1910, value: 13515886 }, { year: 1920, value: 13920692 }, { year: 1930, value: 14204149 },
+			{ year: 1960, value: 9738091 }, { year: 1970, value: 9619302 }, { year: 1980, value: 14079906 },
+			{ year: 1990, value: 19767316 }, { year: 2000, value: 31107889 }, { year: 2023, value: 47830000 },
+		]},
+	]}
+	sourceLabel="US Census Bureau（各年人口調査・ACS、Wikipedia「United States immigration statistics」経由で集計）"
+	sourceUrl="https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html"
+/>
+
+- **1850年〜1910年（第一の波）**：欧州からの大規模移民。外国生まれ人口は224万人（1850年）から1,352万人（1910年）に増加し、総人口に対する割合は1910年に14.7%という史上最高水準に達した。
+- **1920年〜1930年代**：1924年移民法（出身国別の入国制限枠）により流入が制限され、外国生まれ人口の増加は鈍化（1,392万人→1,420万人）。
+- **1940年代〜1970年代（長期的な低下期）**：大恐慌・第二次世界大戦・厳格な国別制限を背景に、外国生まれ人口は絶対数でも減少（1930年の1,420万人から1970年には962万人へ）。総人口比は1970年に4.7%まで低下し、20世紀の最低水準を記録した。
+- **1965年〜現在（第二の波）**：1965年移民・国籍法（出身国別制限枠の撤廃）を起点として、中南米・アジアからの移民が急増。外国生まれ人口は1980年の1,408万人から2000年には3,111万人、2023年には4,783万人に達した。
+<KeyPointTiles
+	title="移民の波：期間別の主な特徴"
+	tiles={[
+		{ period: '1850–1910', value: '224万→1,352万人', description: '欧州からの大規模移民（第一の波）。1910年に外国生まれの割合は14.7%という史上最高水準に達した。', color: '#1d3461' },
+		{ period: '1924年', value: '制限', description: '1924年移民法（出身国別の入国制限枠）により流入が制限。外国生まれ人口の増加が鈍化。', color: '#9c3b3b' },
+		{ period: '1930–1970', value: '4.7%まで低下', description: '大恐慌・第二次世界大戦・厳格な国別制限。1970年に外国生まれ比率が4.7%まで低下（20世紀の最低水準）。', color: '#c9a23f' },
+		{ period: '1965年〜', value: '第二の波', description: '1965年移民・国籍法（出身国別制限枠の撤廃）を起点として中南米・アジアからの移民が急増。', color: '#5a8a6b' },
+		{ period: '1980–2023', value: '1,408万→4,783万人', description: '外国生まれ人口が3倍以上に急増。2023年は14.3%と1910年の歴史的水準（14.7%）に迫る。', color: '#6b5b95' },
+	]}
+/>
+
+- **2023年時点の14.3%という割合は、1910年の14.7%という歴史的最高水準に近い**。
+- 出典：US Census Bureau（各回人口調査データ、Wikipedia「United States immigration statistics」での集計を参照）— https://en.wikipedia.org/wiki/United_States_immigration_statistics ；US Census Bureau可視化資料「U.S. Foreign-Born Population: 2019-2023」— https://www.census.gov/library/visualizations/interactive/foreign-born-population-2019-2023.html
+<ComingSoon label="1930年〜1960年の間の中間データ点、および合法移民（LPR）取得者数のDHSイヤーブック（Table 1）に基づく10年単位の正確なフロー集計は今後追加予定です。" />
+
+### 3.4 年齢構成
+
+- 外国生まれ人口の median age（中位年齢）は46.7歳であり、米国生まれの36.9歳と比較して約10歳高い。
+- 出典：US Census Bureau, American Community Survey 2023（VOA News およびセンサス局公表資料の分析より）— https://www.census.gov/library/visualizations/interactive/foreign-born-population-2019-2023.html
+<ComingSoon label="出身地域別の年齢構成（0-17歳／18-64歳／65歳以上の年齢層別バンド、ACS表S0501）を用いた人口ピラミッドは今後追加予定です。本調査では年齢バンド別の正確な数値をデータポータルから直接抽出することができませんでした。" />
+
+### 3.5 将来予測
+
+<ComingSoon label="センサス局による出身（外国生まれ／米国生まれ）別の長期人口予測（Population Projections）は今後追加予定です。" />
+
+## 4. 財政 — 純コスト
+
+<KeyFigure
+	value="連邦財政赤字 −9,000億ドル（2024〜2034年累計）"
+	label="CBO推計：2021〜2026年の移民純増による連邦財政への影響（2024年7月）"
+/>
+
+<BarChart
+	title="CBO推計：移民純増による連邦財政への影響（2024〜2034年累計、連邦レベルのみ）"
+	unit="億ドル"
+	bars={[
+		{ label: '追加税収', value: 12000 },
+		{ label: '社会保障関連の追加義務的支出', value: -1770 },
+		{ label: '追加公的債務への利払い増', value: -1010 },
+		{ label: '純効果（財政赤字削減）', value: 9000 },
+	]}
+	sourceLabel="CBO「Effects of the Immigration Surge on the Federal Budget and the Economy」（2024年7月）"
+	sourceUrl="https://www.cbo.gov/publication/60165"
+/>
+
+- 全米科学アカデミー（2016年）の研究：結果は政府レベル（州・地方 対 連邦）と時間軸に大きく依存する — 方法論上の論争を示す好例として強調すべき事例（本観測サイトの編集方針を参照）。
+- ジョージ・ボージャス（George Borjas、ハーバード大学）の研究 — 移民制限を支持する側でしばしば引用される。その学術的文脈とともに紹介すべき。
+- 入手可能な中で最も新しく、かつ最も精緻な総合的数値：CBO、「Effects of the Immigration Surge on the Federal Budget and the Economy」（2024年7月）— 2021〜2026年の期間に見込まれる移民純増は、2024〜2034年の期間における連邦財政赤字を約9,000億（0.9兆）ドル削減すると推計されている。これは、追加税収が約1.2兆ドルと推計される一方、社会保障関連の義務的支出の増加（約1,770億ドル）と、追加された公的債務に対する利払いの増加（約1,010億ドル）によって部分的に相殺された結果である。この推計は連邦レベルのみを対象としており、州・地方自治体レベルの純コストについては何も示していない。州・地方レベルでは結果が大きく異なる可能性がある。
+- 一次出典：CBO（Congressional Budget Office、米国議会の非党派機関）、https://www.cbo.gov/publication/60165 。2024年11月の補足報告書：https://www.cbo.gov/publication/60988。
+- 方法論について：デンマーク財務省のような出身・居住期間別の精緻な世代会計分析に相当する、連邦・州・地方を横断した単一の公式モデルは米国には存在しない。CBOの推計は連邦財政のみを対象とした静的な10年予測であり、全米科学アカデミー（2016年）の75年間にわたる動的な世代会計モデルとは方法論が異なる——この2つの異なる結果を並べて提示することが、本観測サイトの編集方針が求める「複数手法の並記」に相当する。
+
+### 4.1 年金制度・現役世代比率
+
+<div class="callout-limits">
+<strong>⚠️ データなし</strong>
+出身（外国生まれ／米国生まれ）別の人口学的依存度（年金受給者・子供対労働年齢人口比）を示す連邦政府の公式統計は、本調査では確認できなかった。社会保障局（Social Security Administration）は移民が社会保障財政に与える影響について報告書を公表しているが、出身別に分解された依存度指標としては本ページの基準を満たす一次資料を特定できていない。
+</div>
+<ComingSoon label="出身別の人口学的依存度（年金受給者・子供対労働年齢人口比）は今後追加予定です。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="失業率の推移（外国生まれ・米国生まれ別、2023年→2024年）"
+	unit="%"
+	series={[
+		{ label: '外国生まれ', color: '#9c3b3b', points: [{ year: 2023, value: 3.6 }, { year: 2024, value: 4.2 }] },
+	]}
+	sourceLabel="BLS「Foreign-Born Workers: Labor Force Characteristics — 2024」（2025年5月20日発表）"
+	sourceUrl="https://www.bls.gov/news.release/forbrn.htm"
+/>
+
+<BarChart
+	title="労働参加率の比較（2024年・性別）"
+	unit="%"
+	bars={[
+		{ label: '外国生まれ男性', value: 77.3, color: '#9c3b3b' },
+		{ label: '米国生まれ男性', value: 65.9, color: '#1d3461' },
+	]}
+	sourceLabel="BLS「Foreign-Born Workers: Labor Force Characteristics — 2024」（2025年5月20日発表）"
+	sourceUrl="https://www.bls.gov/news.release/forbrn.htm"
+/>
+
+- 一次出典：BLS（Bureau of Labor Statistics、労働統計局）、「Foreign-Born Workers: Labor Force Characteristics — 2024」、2025年5月20日発表 — https://www.bls.gov/news.release/forbrn.htm
+- 2024年の失業率：外国生まれの労働者で4.2%、2023年の3.6%から上昇（前年比増）。米国生まれの労働者との比較は同じBLS報告書内の詳細表に記載されている。
+- 民間労働力人口における外国生まれの割合：2024年は19.2%で、2023年の18.6%から上昇 — 複数年にわたり継続的に上昇しており、セクション3で示した人口動態の上昇傾向と一致する。
+- 労働参加率（労働市場への参加割合）：外国生まれの男性は2024年に77.3%であり、米国生まれの男性の65.9%と比較される — 注目すべき構造的な差であり、一般的には年齢構成の違い（近年の移民には退職者が少ないこと）が一因とされる。
+- 週当たり中位所得（フルタイム賃金労働者）：2024年は外国生まれが1,001ドル、米国生まれが1,190ドルであり、差は189ドル。外国生まれの所得は米国生まれの中位所得の約84%に相当する。
+- 合法・不法という法的資格による雇用区分：連邦レベルで公的に入手可能なデータはない（BLSのカレント・ポピュレーション・サーベイ調査では移民資格は調査対象とされておらず、出生国と市民権のみが調査されている）。
+
+## 6. 治安・司法
+
+<div class="callout-limits">
+<strong>⚠️ 重大な限界 — 連邦レベルで移民資格と犯罪を体系的に突合した統計は存在しない</strong>
+米国では大多数の犯罪が州レベルで訴追されており、連邦レベルでは訴追されていないため、全犯罪種別を移民資格と体系的に突合した連邦刑事統計は存在しない。各州の司法管轄区も、移民資格別の全国集計統計を系統的に公表していない。これは米国国内で政治的に争点化している論点であるが、本観測サイトでは非公式統計や党派的な推計値を引用するのではなく、重要な方法論上の限界として明記する。
+</div>
+
+- 範囲を厳密に限定した上で存在する、部分的な連邦公式データ：米国量刑委員会（U.S. Sentencing Commission）、「Federally Sentenced Non-U.S. Citizens」（Quick Facts、2025会計年度）— 連邦で審理された66,662件の事案のうち28,886件が非市民によるものであった（連邦判決全体の44%）。平均刑期は21か月（2021会計年度の25か月から短縮）。罪状は移民法そのものに関連するものが大半を占め（79%、例：強制送還後の不法再入国）、薬物密輸が12%を占める。一次出典：米国量刑委員会、https://www.ussc.gov/research/quick-facts/federally-sentenced-non-us-citizens
+- 読者に明示すべき重要な限界：この統計は連邦犯罪（米国で起きる犯罪のうち少数派）のみを対象としており、移民法そのものへの違反（不法再入国、文書偽造等）が構造的に過大に反映されている。したがって、移民資格別の一般的な犯罪率への外挿は一切できない。窃盗や暴力犯罪など一般的な犯罪（州の管轄下にある）に関する妥当な一般化は、この数値からは導き出せない。
+
+## 7. 教育
+
+- NCES（National Center for Education Statistics、全米教育統計センター）は、「English Learner」（EL、英語学習者。最近の移民資格を示す不完全な代理指標であり、出生国や法的資格そのものとは異なる）という区分に基づく分解データを、NAEP Data Explorer（https://www.nces.ed.gov/nationsreportcard/）経由で公表している。
+- 公立学校制度におけるEL区分の生徒の割合：2021年秋時点で10.6%（530万人）、2011年秋の9.4%から上昇。出典：NCES、「Fast Facts: English Learners」（https://nces.ed.gov/fastfacts/display.asp?id=96）。
+<ComingSoon label="EL区分の生徒と非EL区分の生徒との間の正確な学力差（読解・数学）の直近年データは今後追加予定です。NAEP Data Explorerは対話的な手動抽出を必要とするため、本調査では確認できませんでした。" />
+
+## 8. 住宅
+
+- 「サンクチュアリ」都市、特に2023〜2024年のニューヨークおよびシカゴにおける自治体サービスへの負荷との関連（国境州から移送された庇護希望者の流入）— 政治的には広く取り上げられている現象だが、今回の調査では連邦レベルでの費用や規模についての公式な全国集計統計は見当たらなかった。
+- センサス局（アメリカン・コミュニティ・サーベイ）は、出生国・市民権との関連で持ち家・賃貸の状況を記録している。表は https://www.census.gov/topics/population/foreign-born/data/tables/acs-tables.html で入手可能。
+<ComingSoon label="米国における公営住宅入居者中の移民の割合についての、単一かつ公開された総合的な数値は今後追加予定です。なお、不法在留状態にある移民の大半は、いずれにせよ連邦の公営住宅制度の対象外であることに留意。" />
+
+## 9. 社会的結束
+
+- 米国には、移民に関する認識や社会的結束を専門に扱う連邦政府の公式調査は確認されなかった（英国のCommunity Life Surveyやスウェーデンのソム・インスティテュート（SOM-institutet）のような、米国政府機関に相当するものは存在しない）。
+- 留意すべき境界的な事例：アメリカン・ナショナル・エレクション・スタディーズ（American National Election Studies、ANES）は移民に対する態度に関する項目を含み、全米科学財団（National Science Foundation、連邦機関）から資金提供を受けているが、設計・運営を行っているのは複数大学からなるコンソーシアムであり、部分的な公的資金提供ではあるが厳密な意味では政府の公式調査ではない。
+- 日本の読者に向けて確認すべき結論：米国で広く引用される移民に関する世論調査（Gallup、ピュー・リサーチ・センター）は民間団体によるものであり、政府の公式統計ではない — 本観測サイトの編集方針（公式出典を要件とする）に照らせば、公的に入手可能なデータには該当しない。
+
+## 10. 最近の政治的文脈
+
+- 2021〜2023年における南部国境での不法越境の増加、2024年のピークとその後の減少、バイデン政権下での政策、続くトランプ政権（2025年）下での取り締まり強化 — 正確な日付とDHS／CBPの出典に基づき記録すべき事項。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+不法在留人口に関する連邦データ（DHS／センサス局）とNGO・シンクタンクによる推計との間には大きな相違がある — 用いられた推計方法を常に明示すべきである。
+</div>
+
+<div class="callout-limits">
+<strong>⚠️ 連邦犯罪統計と移民資格の突合の欠如</strong>
+6節で述べた通り、米国には州レベルの犯罪と移民資格を体系的に突合した全国統計が存在しない。これは欧州諸国（デンマーク、スウェーデンなど）との比較において、米国データの構造的な限界として明記すべき点である。
+</div>

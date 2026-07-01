@@ -1,0 +1,307 @@
+---
+slug: netherlands
+name: "オランダ"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- CBS（Centraal Bureau voor de Statistiek、中央統計局）：https://www.cbs.nl
+- CPB（Centraal Planbureau、中央計画局）— 経済計画を担う公的機関。労働移民に関連する研究を発表しているが、4項で引用する移住理由別の基準的研究の作成元ではない（4項・11項の方法論上の注記を参照。当該研究はCPBの刊行物ではない）
+- SCP（Sociaal en Cultureel Planbureau、社会文化計画局）— 統合および社会的結合に関する調査を行う
+- IND（Immigratie- en Naturalisatiedienst、移民・国籍局）
+- CBS Open Data（OData API、https://opendata.cbs.nl/ODataApi/odata/）— 本ページの3.3・3.4・3.5節のデータ出典
+
+## 2. 主要データセット
+
+- 『Grenzeloze verzorgingsstaat』（2021年、van de Beek et al.著、一部資金提供：Renaissance Instituut／FvD — 帰属に関する正確な記述は4項・11項を参照。当初は誤ってCPBの刊行物として記載されていた）— 欧州大陸における重要な方法論的参照例であり、移住理由（就労／留学／庇護／家族）別に分解し、カテゴリーによって大きく異なる純額の結果を示している — デンマーク方式の大陸欧州における対応例として、横断的総括において委託元を明示しつつ取り上げる
+- CBS：StatLine、出身別の人口・雇用データ
+- SCP：社会的認識・結合に関する調査
+- CBSデータセット37325「Bevolking; geslacht, leeftijd, generatie en migratieachtergrond」（1996-2022年、廃止済み）、85458NED「Bevolking; herkomstland, geboorteland, leeftijd, regio」、CBS人口推計（Bevolkingsprognose／Kernprognose 2024-2070）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="出身別人口構成の参考値（2025年・「移住背景」を有する人口の規模）"
+	segments={[
+		{ label: 'オランダ出身（推計）', value: 75.4, color: '#1d3461' },
+		{ label: '移住背景を有する人口（推計）', value: 24.6, color: '#9c3b3b' },
+	]}
+	sourceLabel="CBSデータセット37325（2022年時点の最終値、総人口1,805万人に対する比率として算出）"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet"
+/>
+
+- 総人口（2024年）：1,805万人、年間103,000人増加。2022年・2023年と同様、増加分はすべて国際移住によるもの。
+  出典：CBS『Lagere bevolkingsgroei in 2024』（https://www.cbs.nl/nl-nl/nieuws/2025/05/lagere-bevolkingsgroei-in-2024）
+- 総移入（2024年）：316,000人（前年比-19,000人）；移出：205,000人（前年比+7,000人）；移住差分：+108,000人。出身別の内訳：EU・EEA以外49%、EU・EEA37%、帰国したオランダ国籍者14%。
+  出典：CBS『Minder immigratie in 2024, vooral minder kennismigranten』（https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten）
+- **注**：上図の「移住背景を有する人口」24.6%という比率は、CBSが2024年に廃止した分類（migratieachtergrond、データセット37325、2022年が最終年）の総数（4,438,900人）を、本観察サイトが2024年の総人口（1,805万人）に対する比率として参考的に算出したものであり、CBSが現在公式に用いている「出生国（geboorteland）」分類とは厳密には一致しない。CBSは両親の出生国を含む「移住背景」概念を段階的に廃止しており、最新の公式な総人口比は本調査では確認できなかった。
+  出典：CBSデータセット37325 — https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet
+
+### 3.2 移住理由別の内訳
+
+<StackedBar
+	title="移入者の出身別構成（2024年）"
+	segments={[
+		{ label: 'EU・EEA以外の国', value: 49, color: '#9c3b3b' },
+		{ label: 'EU・EEA加盟国', value: 37, color: '#1d3461' },
+		{ label: '帰国したオランダ国籍者', value: 14, color: '#c9a23f' },
+	]}
+	sourceLabel="CBS『Minder immigratie in 2024, vooral minder kennismigranten』"
+	sourceUrl="https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten"
+/>
+
+- 移住理由別の内訳（2023年、最新の完全な分類が入手可能）：家族呼び寄せ約73,000人（総数の約25%）、留学約41,000人（約12%）、EU・EEA域内からの就労移住43,900人、EU域外からのその他の労働者3,600人、EU域外からの高度技能移民（kennismigranten）は2024年に26%減少し16,000人。庇護（2024年）：36,400件の申請、2023年比3,100件増加。ウクライナ関連の一時移住（2024年）：約30,000人、2023年比8,000人減少。
+  出典：CBS、上記と同じ刊行物（https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten）
+- 主要な出身国籍別の移入数（2024年、主要な流入の一部）：トルコ14,200人、オランダ領カリブ4,050人、スリナム4,050人、モロッコ3,330人。地域別：欧州172,200人、アジア90,400人、アメリカ大陸27,900人、アフリカ23,800人。
+  出典：CBS『Immigratie en emigratie; geslacht, leeftijd, geboorteland, regio』（https://www.cbs.nl/nl-nl/cijfers/detail/85468NED）
+
+### 3.3 移民の波（1996年〜現在）
+
+<TrendChart
+	title="主要出身国別の人口推移（1996年→2022年）"
+	unit="人"
+	series={[
+		{ label: 'トルコ', color: '#9c3b3b', points: [
+			{ year: 1996, value: 271514 }, { year: 2004, value: 351648 }, { year: 2015, value: 396555 }, { year: 2022, value: 429978 },
+		]},
+		{ label: 'モロッコ', color: '#c9a23f', points: [
+			{ year: 1996, value: 225088 }, { year: 2004, value: 306219 }, { year: 2015, value: 380755 }, { year: 2022, value: 419272 },
+		]},
+		{ label: 'スリナム', color: '#5a8a6b', points: [
+			{ year: 1996, value: 280615 }, { year: 2004, value: 325281 }, { year: 2015, value: 348662 }, { year: 2022, value: 359814 },
+		]},
+		{ label: 'ポーランド', color: '#1d3461', points: [
+			{ year: 1996, value: 25125 }, { year: 2004, value: 35542 }, { year: 2015, value: 137794 }, { year: 2022, value: 220980 },
+		]},
+	]}
+	sourceLabel="CBS StatLineデータセット37325（廃止済み、1996-2022年）"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet"
+/>
+
+<KeyPointTiles
+	title="移民の波：主な時代区分"
+	tiles={[
+		{ period: '1960〜1973年', value: 'ガストアルバイダー', description: 'トルコ・モロッコとの二国間協定による労働移民。1973年石油危機で新規受け入れ停止。トルコ系は1996年時点で271,514人。', color: '#1d3461' },
+		{ period: '1975年', value: 'スリナム独立', description: 'スリナム独立に伴い大規模な移住が発生。スリナム系は1996年時点で280,615人、2022年には359,814人。', color: '#9c3b3b' },
+		{ period: '1990年代', value: '家族呼び寄せ', description: '1974年の労働移民停止後、家族呼び寄せが主要な入国経路に転換。トルコ系・モロッコ系コミュニティが定着・拡大。', color: '#c9a23f' },
+		{ period: '2004〜2007年', value: 'EU東方拡大', description: 'ポーランド系が35,542人（2004年）から137,794人（2015年）へ急増。2004年から2022年で約6.2倍に達した。', color: '#5a8a6b' },
+		{ period: '2015〜2016年', value: '庇護危機', description: 'シリア・アフガニスタン・イラク出身者の申請急増。2024年でも36,400件の庇護申請。', color: '#6b5b95' },
+		{ period: '2022年〜現在', value: '約30,000人', description: 'ウクライナ避難民（一時保護）。2024年は30,000人、2023年比8,000人減少。移住背景全体：2022年に4,438,900人。', color: '#8b4513' },
+	]}
+/>
+
+- 「移住背景」を有する人口全体（すべての世代を含む）は、1996年の2,498,715人から2022年の4,438,900人へと増加した（約1.78倍）。
+- 出身国別の動き：トルコ系・モロッコ系人口は1996年から2022年にかけて着実に増加（トルコ：271,514人→429,978人、モロッコ：225,088人→419,272人）し、1960〜70年代の労働移民（「ガストアルバイダー」）とその後の家族呼び寄せの蓄積を反映している。スリナム系人口は同期間、増加が比較的緩やか（280,615人→359,814人）であり、1975年のスリナム独立前後の主要な移住の波が既に1996年以前に完了していたことと整合的である。ポーランド系人口は2004年のEU東方拡大を境に急増し（35,542人→2015年137,794人）、2004年から2022年で約6.2倍に達した。
+  出典：CBS StatLineデータセット37325 — https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet
+- **限界**：CBSのOData APIで確認できた当該データセットは1996年以降のものに限られ、1945年〜1995年（1960〜70年代のトルコ・モロッコ人ガストアルバイダー受け入れ、1975年のスリナム独立に伴う移住、オランダ領東インド〔インドネシア〕からの引き揚げ者・残留オランダ人の受け入れ等）の年次別・出身国別の確定的な数値データは、本調査で利用可能なAPI経由では取得できなかった。これらの歴史的局面はCBSの定性的な解説資料（例：CBS『Migrantenouderen in Nederland』）で説明されているが、年次系列としての確認には至っていない。
+<ComingSoon label="1945年〜1995年の移民人口データ（1960〜70年代のガストアルバイダー、1975年のスリナム独立移住、インドネシアからの引き揚げ者等）の年次別・出身国別の確定数値は今後追加予定です。CBSのOData APIで確認できる系列は1996年以降に限られています。" />
+
+### 3.4 年齢構成（人口ピラミッド）
+
+<AgePyramid
+	title="出身別の年齢構成（2025年1月1日時点、各グループ内の割合）"
+	bands={[
+		{ label: '0-15歳', groups: [
+			{ label: 'オランダ出身', value: 14.5, color: '#1d3461' },
+			{ label: 'トルコ出身', value: 15.2, color: '#9c3b3b' },
+			{ label: 'モロッコ出身', value: 19.1, color: '#c9a23f' },
+		]},
+		{ label: '65歳以上', groups: [
+			{ label: 'オランダ出身', value: 24.5, color: '#1d3461' },
+			{ label: 'トルコ出身', value: 6.0, color: '#9c3b3b' },
+			{ label: 'モロッコ出身', value: 7.6, color: '#c9a23f' },
+		]},
+	]}
+	sourceLabel="CBSデータセット85458NED「Bevolking; herkomstland, geboorteland, leeftijd, regio」（2025年）"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/85458NED/TypedDataSet"
+/>
+
+- 2025年時点で、トルコ出身者は468,726人（0-15歳71,091人＝15.2%、65歳以上27,997人＝6.0%）、モロッコ出身者は433,337人（0-15歳82,587人＝19.1%、65歳以上32,802人＝7.6%）。一方、オランダ出身者は12,902,189人（0-15歳1,873,285人＝14.5%、65歳以上3,164,310人＝24.5%）。
+  出典：CBSデータセット85458NED — https://opendata.cbs.nl/ODataApi/odata/85458NED/TypedDataSet
+- トルコ系・モロッコ系人口はオランダ出身者と比較して著しく若く、65歳以上の割合がオランダ出身者の4分の1程度に過ぎない。これは1960〜70年代に主に若年男性として移住したガストアルバイダー世代の高齢化が始まっているものの、その子・孫世代の人口規模が大きいことを反映している。なお、より近年に移住したポーランド系人口（高齢化がさらに進んでいない）の年齢構成データは、今回参照したAPIクエリの範囲では取得できなかった。
+<ComingSoon label="ポーランド系・スリナム系など他の主要出身グループの年齢構成、および出身別の人口ピラミッドのより詳細な年齢区分（5歳刻み等）は今後追加予定です。" />
+
+### 3.5 将来予測
+
+<TrendChart
+	title="オランダ総人口および65歳以上人口の推移予測（2024年→2070年・Kernprognose中位シナリオ）"
+	unit="百万人"
+	series={[
+		{ label: '総人口', color: '#1d3461', points: [
+			{ year: 2024, value: 17.943 }, { year: 2030, value: 18.445 }, { year: 2040, value: 19.139 },
+			{ year: 2050, value: 19.637 }, { year: 2060, value: 20.007 }, { year: 2070, value: 20.559 },
+		]},
+		{ label: 'うち65歳以上', color: '#9c3b3b', points: [
+			{ year: 2024, value: 3.677 }, { year: 2030, value: 4.178 }, { year: 2040, value: 4.758 },
+			{ year: 2050, value: 4.798 }, { year: 2060, value: 4.981 }, { year: 2070, value: 5.375 },
+		]},
+	]}
+	sourceLabel="CBS『Bevolkingsprognose（Kernprognose 2024-2070）』"
+	sourceUrl="https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren"
+/>
+
+<KeyFigure
+	value="2,060万人"
+	label="CBSの2070年人口推計・Kernprognose中位シナリオ（2024年の1,794万人から増加）"
+/>
+
+- 国外出生人口は2023年の280万人から、Midden（中位）シナリオで2050年には460万人に達すると推計されている。
+  出典：CBS『Verkenning bevolking 2050』— https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten
+- CBSは2025年の発表で、2025年以降オランダでは65歳以上の人口が20歳未満の人口を上回る転換点に達したと明示している。
+  出典：CBS『Bevolkingsprognose: vanaf nu meer ouderen dan jongeren』— https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren
+
+## 4. 公共財政 — 財政負担純額
+
+<KeyFigure
+	value="約4,000億ユーロ"
+	label="移民の公的財政への累積純負担（1995-2019年、生涯収支の現在価値による算定）"
+/>
+
+- 重要な方法論上の注記：当初の記載とは異なり、移住理由別の財政負担純額に関するオランダの基準的研究は、CPB（中央計画局、公的機関）の刊行物ではなく、独立した研究『Grenzeloze verzorgingsstaat. De gevolgen van immigratie voor de overheidsfinanciën』（2021年）である。著者はJan van de Beek、Hans Roodenburg、Joop Hartog、Gerrit Kreffer。資金の一部はRenaissance Instituut（フォルム・フォール・デモクラシー党の科学部門）から提供された。CPB自体は労働移民に関連する研究を発表しているが、この移住理由別の分解は行っていない。全文：https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf
+
+<BarChart
+	title="参考：財政収支の傾向（移住理由別、van de Beek et al. 2021年の定性的結論）"
+	unit=""
+	bars={[
+		{ label: '西側諸国・東アジアからの就労・留学', value: 1, note: '純額でプラスと報告' },
+		{ label: '家族呼び寄せ', value: -1, note: '生涯純額でマイナスと報告（具体的なユーロ額は未確認）' },
+		{ label: '庇護', value: -1, note: '生涯純額でマイナスと報告（具体的なユーロ額は未確認）' },
+	]}
+	sourceLabel="van de Beek et al. (2021)『Grenzeloze verzorgingsstaat』"
+	sourceUrl="https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf"
+/>
+
+- van de Beek et al.（2021年）の方法：生涯にわたる（出生または移入から移出または死亡まで）財政収支の現在価値を、CBSのオランダ居住者全体に関するミクロデータから算出。
+  集計結果（1995-2019年）：当該期間における累積の財政負担純額は約4,000億ユーロ。西側諸国および東アジアからの就労・留学による流入は純額でプラスと示され、家族呼び寄せおよび庇護は生涯を通じて純額でマイナスと示される。公開データなし：移住理由別（就労／留学／庇護／家族）のユーロ単位の正確な金額は、報告書本文（PDFが自動処理に適さない）から直接確認できなかった。集計された要旨のみが、複数の二次的出典を通じて確認できた。
+- 方式／結果／出典の簡易表（現時点で確認できた、直接リンクで検証可能な公的または学術的方式は1つのみ）：
+
+  | 方式 | 結果 | 出典／委託元 |
+  |---|---|---|
+  | CBSミクロデータに基づく生涯財政収支の現在価値（1995-2019年） | 累積財政負担純額 ≈ 25年間で4,000億ユーロ；庇護および家族呼び寄せは大幅にマイナス、西側諸国からの就労・留学はプラスの結果 | Jan van de Beek他（2021年）、Renaissance Instituut（FvD）からの一部資金提供 — https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf |
+
+  第二の独立した方式（例：PVVの委託によるNyfer社の2010年研究）は調査により確認されたが、利用可能な時間内に一次資料を直接開いて検証することができなかった：この第二の研究の正確な数値については公開データなし。
+<ComingSoon label="移住理由別（就労／留学／庇護／家族）の具体的なユーロ単位の純負担額、および第二の独立した算定方式（Nyfer 2010年研究等）の検証済みの数値は今後追加予定です。" />
+
+### 4.1 年金制度・高齢化率
+
+<BarChart
+	title="高齢化率（grijze druk：65歳以上÷20-64歳、全国・出身別の区分なし）"
+	unit=""
+	bars={[
+		{ label: '2023年', value: 34 },
+		{ label: '2024年', value: 35 },
+		{ label: '2050年（Midden中位シナリオ）', value: 44 },
+		{ label: '2050年（低出生率シナリオ）', value: 50 },
+	]}
+	sourceLabel="CBS『Verkenning bevolking 2050』および『Bevolkingsprognose 2025』"
+	sourceUrl="https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten"
+/>
+
+- CBSの高齢化率（grijze druk：65歳以上人口÷20-64歳人口×100）は2023年の34から2024年には35に上昇し、Midden（中位）シナリオでは2050年に44、出生率が低く推移するシナリオでは最大50まで上昇すると推計されている。
+  出典：CBS『Verkenning bevolking 2050』— https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten
+- 同資料では、労働年齢人口（20-65歳）の割合が現在の約59%から2040年には約55%に低下すると見込まれている。
+  出典：CBS『Bevolkingsprognose: vanaf nu meer ouderen dan jongeren』— https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren
+- **限界**：これらの高齢化率・依存度の指標は全国レベルのものであり、出身別（移民／オランダ出身）に分解されたCBSの公式統計は、本調査で参照したデータセットの範囲では見当たらなかった。
+<ComingSoon label="出身別に分解された高齢化率・年金依存度（移民・移民の子対オランダ出身の比較）は今後追加予定です。CBSの公開データセットでは出身別の依存度指標が見当たりませんでした。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="雇用率（主な収入源が労働である割合）の推移（2022年→2023年）"
+	unit="%"
+	series={[
+		{ label: '全人口', color: '#1d3461', points: [{ year: 2022, value: 57.0 }, { year: 2023, value: 73.1 }] },
+		{ label: '国外出生者', color: '#9c3b3b', points: [{ year: 2022, value: 49.5 }, { year: 2023, value: 66.3 }] },
+	]}
+	sourceLabel="CBS『Integratie en samenleven 2024』および『Hoe verschillen arbeid en inkomen naar herkomst?』"
+	sourceUrl="https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/"
+/>
+
+<BarChart
+	title="出身別の雇用率（nettoarbeidsparticipatie、2023年）"
+	unit="%"
+	bars={[
+		{ label: '直近のEU加盟国出身', value: 82.7, color: '#1d3461' },
+		{ label: 'その他の欧州', value: 75.2, color: '#5a8a6b' },
+		{ label: '全人口', value: 73.1, color: '#c9a23f' },
+		{ label: 'スリナム', value: 58.7, color: '#6b5b95' },
+		{ label: 'トルコ', value: 59.0, color: '#9c3b3b' },
+		{ label: 'モロッコ', value: 58.3, color: '#8b4513' },
+	]}
+	sourceLabel="CBS『Integratie en samenleven 2024 — Sociaaleconomische positie』"
+	sourceUrl="https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/"
+/>
+
+- 注：2022年と2023年の数値は算定基準が異なる（2022年：15歳以上人口における労働を主な収入源とする者の割合。2023年：nettoarbeidsparticipatie、就労参加率）ため、上図は厳密な経年比較ではなく、両年の最新入手可能なデータを参考として並べたものである。
+- 雇用率（nettoarbeidsparticipatie、2023年）：全人口73.1%。両親ともにオランダ生まれのオランダ生まれの人々：74.3%。第二世代（オランダ生まれで、少なくとも一方の親が外国生まれ）：75.0%。外国生まれの人々：66.3%、基準人口との差は8ポイント。
+  出典：CBS『Integratie en samenleven 2024 — Sociaaleconomische positie』（https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/）
+- 外国生まれの人々内の差異（2023年）：直近のEU加盟国出身82.7%、その他の欧州75.2%、トルコ59.0%、モロッコ58.3%、スリナム58.7%。
+  出典：CBS、上記と同じ刊行物（https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/）
+- 以前のデータ（2022年、異なる算定基準 — 主な収入源が労働である15歳以上の人口の割合）：全人口57.0%；ポーランド生まれ81.0%、ルーマニア生まれ78.4%；トルコ生まれ49.5%、モロッコ生まれ42.7%、シリア生まれ29.7%。
+  出典：CBS『Hoe verschillen arbeid en inkomen naar herkomst?』（https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-arbeid-en-inkomen-naar-herkomst-）
+
+## 6. 治安・司法
+
+- 12歳以上の人口における、出身別の登録被疑者の割合（2023年、暫定データ）：オランダ出身者（自国民）0.6%；外国生まれ1.1%；一方の親が外国生まれの第二世代1.2%；両親ともに外国生まれの第二世代2.8%（測定されたカテゴリーの中で最も高い率）。
+  出典：CBS『Integratie en samenleven 2024 — Criminaliteit』（https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/）
+- CBS自身が指摘する方法論上の限界：「migratieachtergrond（移住背景）」による分類は段階的に廃止され、出生国による分類に置き換えられている；1999-2022年の長期系列は2024年に中断され、まだ安定化中の新しい表に置き換えられた。
+  出典：CBS『Hoe verschillen veiligheid en criminaliteit naar herkomst?』（https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-veiligheid-en-criminaliteit-naar-herkomst-）
+- 被疑者の合法／不法在留資格別、または移住理由別（就労／庇護／家族／留学）の分解：確認されたCBSの表には公開データなし。
+
+## 7. 教育
+
+- 中等教育3年目におけるhavo/vwo（最も学業要求が高いコース）への進学（2023/24学年度）：全出身を合わせて49%。2011/12年度以降、外国出身の生徒で継続的に上昇：両親が外国生まれの第二世代は30%から41%へ；外国生まれの生徒は39%から46%へ。
+  出典：CBS『Leerlingen met buitenlandse herkomst steeds vaker naar havo of vwo』（https://www.cbs.nl/nl-nl/nieuws/2024/47/leerlingen-met-buitenlandse-herkomst-steeds-vaker-naar-havo-of-vwo）
+- havo/vwo試験の合格率（2022/23学年度）：全出身を合わせて86%、トルコ系の生徒69%、モロッコ系70%、スリナム系74%、オランダ領アンティル系79%。
+  出典：CBS、上記と同じ刊行物（https://www.cbs.nl/nl-nl/nieuws/2024/47/leerlingen-met-buitenlandse-herkomst-steeds-vaker-naar-havo-of-vwo）
+
+## 8. 住宅
+
+- オランダの住宅危機と人口増加との関連性に関する議論 — 2022-2023年以降、政治的に非常に注目されているテーマ
+- 住宅ストック（2024年末）：約830万戸、年間で純増70,000戸（新築69,000戸、転用による増加13,000戸、取り壊しによる減少11,800戸）— 過去5年間の増加ペースを下回る。
+  出典：CBS『82 duizend woningen erbij in 2024, minder dan voorgaande vijf jaar』（https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar）
+- Primos 2024人口予測：今後15年間（2024-2039年）で117万2,000人の人口増加が見込まれ、そのうち95%は国際移住差分、5%は自然増による。許容できる市場の緊張度（約2%）に戻すために必要な住宅不足は226,000戸と推定される。
+  出典：Primos-prognose 2024、住宅・経済問題省を通じて上院（Eerste Kamer）に提出（https://www.eerstekamer.nl/overig/20240712/primos_prognose_2024_prognose_van/document3/f=/vmevf1o2qsyk.pdf）
+- 出身別の持ち家率（2022年12月31日時点）：30歳未満では、オランダ生まれの人口で持ち家率27%、外国生まれの人々で8%；30-45歳では、第二世代44%に対し外国生まれの人々33%。出身による差が大きい：モロッコ生まれ5-14%（年齢層により異なる）、インドネシア生まれ7-51%。
+  出典：CBS『Integratie en samenleven 2024 — Wonen』（https://longreads.cbs.nl/integratie-en-samenleven-2024/wonen/）
+
+## 9. 社会的結合
+
+- SCPの政策メモ（2025年7月11日）『Arbeidsmigratie en sociale cohesie in Nederland』、労働移民に関する省庁間研究（IBO Arbeidsmigratie）のために作成：労働移民は社会的結合を弱めるが、その効果は限定的で地域によって大きく異なるという総括的な結論。東欧出身の労働移民は、対人信頼や団体活動への参加について平均より低いスコアを示し、これは特に在留の一時的な性質によるものとされる。
+  出典：SCP（https://www.scp.nl/actueel/nieuws/2025/07/11/arbeidsmigratie-en-sociale-cohesie-een-genuanceerd-beeld）
+- SCPの報告書（2025年4月1日）『Migratie als spiegel van maatschappijbeelden』、移住への認識とオランダ社会観との関係を扱う。公開データなし：調査の詳細な数値（項目別の同意率、調査の正確な実施年）は検証時にPDF文書から抽出できなかった；公式ページを開いて確認できたのは表題、公表日、テーマのみ。報告書全文への確認済みリンク：https://www.scp.nl/documenten/2025/04/01/migratie-als-spiegel-van-maatschappijbeelden
+<ComingSoon label="SCP報告書『Migratie als spiegel van maatschappijbeelden』の詳細な調査数値（項目別の同意率等）は今後追加予定です。" />
+
+## 10. 近年の政治的動向
+
+- リュッテ第4次内閣の崩壊（2023年7月）：庇護政策をめぐる対立が原因。2023年11月の選挙でPVV（ウィルダース党首）が勝利 — 正確な日付とともに文書化すべき重要な事実の経緯
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+CBSは「migratieachtergrond（移住背景）」の概念（オランダ生まれで少なくとも一方の親が外国生まれの第二世代を含む）を段階的に廃止し、本人の出生国に基づく分類に置き換えつつある；複数の長期系列（例：1999-2022年の被疑者、2003-2022年の労働市場参加、本ページ3.3節で用いたデータセット37325）は2024年に中断され、まだ安定化中の新しい表に置き換えられた。これは経年比較を複雑にする。
+
+出典：CBS『Asiel, migratie en integratie』ファイル（https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie）
+
+オランダにおいて移住理由別の分解として唯一確認できた『Grenzeloze verzorgingsstaat』（2021年）は、フォルム・フォール・デモクラシー党の科学部門であるRenaissance Instituutから一部資金提供を受けた独立研究であり、CPB（公的機関）の刊行物ではない；その方法論および一部の結論は学術的な批判的議論の対象となっている（特にTPEdigitaal誌や2025年のWRR会合において）。これは集計された金額の引用に慎重さを要する理由となる。
+
+複数のCBSの表（犯罪、移住理由別の詳細な内訳）における2024-2025年のデータは、執筆時点で暫定値であり、改訂される可能性がある。
+
+出身別の住宅データ（8項）は2022年12月31日時点のものであり、2023-2025年の住宅危機が最も深刻化した時期より前のものである；出身別の最新の更新データは公開上見つからなかった。
+
+本ページの3.3節（移民の波）で用いたデータセット37325は2022年で系列が終了しており、1945年〜1995年の年次別データはCBSのOData APIでは確認できなかった。3.4節（年齢構成）も、トルコ・モロッコ以外の主要出身グループ（ポーランド、スリナム等）の年齢別データは今回のAPI調査の範囲では取得できていない。
+</div>

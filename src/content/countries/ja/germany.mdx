@@ -1,0 +1,230 @@
+---
+slug: germany
+name: "ドイツ"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- Destatis（Statistisches Bundesamt、連邦統計局）：https://www.destatis.de
+- BAMF（Bundesamt für Migration und Flüchtlinge、連邦移民難民局）
+- IAB（Institut für Arbeitsmarkt- und Berufsforschung、労働市場・職業研究所）— 連邦雇用庁に付属する労働市場研究機関
+- BKA（Bundeskriminalamt、連邦刑事警察庁）— PKS（Polizeiliche Kriminalstatistik、警察犯罪統計）を公表。自国民／外国人を区別
+
+## 2. 主要データセット
+
+- Destatis：Mikrozensus（標本調査による国勢調査）、「Migrationshintergrund（移住背景）」別の人口（第二世代を含むカテゴリー）
+- PKS（BKA）：国籍別の犯罪統計。非常に詳細かつメディアで注目度の高い年次報告書（「Zuwanderer（移住者）」というカテゴリーが別途追跡されている）
+- IAB：難民の労働市場統合に関する研究（2015-2016年到着コホート）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="Migrationshintergrund（移住背景）別の人口構成（2024年）"
+	segments={[
+		{ label: '移住背景を持たない', value: 74.4, color: '#1d3461' },
+		{ label: '移住背景を持つ（第一世代・第二世代以降を含む）', value: 25.6, color: '#9c3b3b' },
+	]}
+	sourceLabel="Destatis、2025年5月14日付プレスリリース第181号"
+	sourceUrl="https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_181_125.html"
+/>
+
+- 2024年のMigrationshintergrundを持つ人口は2,120万人、総人口の25.6%（2023年比で1ポイント増加）。2015年以降の累積純移住は650万人。
+  出典：Destatis、2025年5月14日付プレスリリース第181号 — https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/05/PD25_181_125.html
+- 「Migrationshintergrund（移住背景）」（Destatis／Mikrozensus）：本人自身が移民である者（第一世代）と、ドイツで生まれたが少なくとも一方の親が移民または外国生まれである者（調査によっては第二世代以降も含む）をまとめた統計上のカテゴリー。
+- 注：本観測サイトが別途確認した2025年（2026年4月公表の暫定値）データでは、移住背景を持つ人口は2,576万人・総人口の31.1%という、本節で引用した2024年確定値（25.6%）よりも高い数値が示されている。両者は調査年・確定値か暫定値かが異なり単純比較できないため、本節では2024年確定値（25.6%）を基準として用いる。
+  参考出典：Destatis、Bevölkerung mit Migrationshintergrund nach Altersgruppen — https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Tabellen/migrationshintergrund-alter.html
+
+### 3.2 出身地域別構成
+
+<ComingSoon label="Migrationshintergrundを持つ人口の出身国・出身地域別の詳細な内訳（Destatis Mikrozensusの国籍・出身国別表）は今後追加予定です。" />
+
+### 3.3 移民の波（1950年代〜現在）
+
+<DecadeTimeline
+	title="主要な移民の波（人数の規模、参考値）"
+	unit=""
+	decades={[
+		{ label: 'ガストアルバイター 1955-1973年', value: 14000000, note: '招聘労働者。1973年の募集停止後、1100万人が帰国' },
+		{ label: '帰還移住者 1988-2011年', value: 3100000, note: 'アウスシードラー／シュペートアウスシードラー。1990年に単年で約40万人のピーク' },
+		{ label: '庇護申請 2015年', value: 476649, note: 'BAMF登録の新規＋再申請件数' },
+		{ label: '庇護申請 2016年', value: 745545, note: 'BAMF登録の新規＋再申請件数（ピーク）' },
+	]}
+	sourceLabel="BAMF／bpb（連邦政治教育センター）の移民史概説、BAMF庇護統計"
+	sourceUrl="https://www.bpb.de/themen/migration-integration/dossier-migration/252241/geschichte-der-migration-in-deutschland/"
+/>
+
+<KeyPointTiles
+	title="主要な移民の波（1955年〜現在）"
+	tiles={[
+		{ period: '1955–1973年', value: '1,400万人入国', description: 'ガストアルバイター（招聘労働者）時代。1973年石油危機後の募集停止後、1,100万人が帰国。ピークは1970年（年間約100万人）。', color: '#1d3461' },
+		{ period: '1988–2011年', value: '310万人', description: 'アウスシードラー（ドイツ系帰還移住者）の受け入れ。1950年以降累計約450万人。1990年（再統一の年）が単年ピーク（約40万人）。', color: '#9c3b3b' },
+		{ period: '2015年', value: '476,649件', description: 'シリア内戦などを背景とした庇護申請急増（BAMF登録の新規＋再申請件数）。', color: '#c9a23f' },
+		{ period: '2016年', value: '745,545件', description: '庇護申請のピーク年（BAMF登録の新規＋再申請件数）。', color: '#5a8a6b' },
+		{ period: '2022年〜', value: 'ウクライナ避難民', description: 'ロシアによるウクライナ侵攻を受けた一時保護ステータスでの受け入れ。', color: '#6b5b95' },
+	]}
+/>
+
+- **1955年〜1973年**：イタリア（1955年）、ギリシャ・スペイン（1960年）、トルコ（1961年）、モロッコ（1963年）、ポルトガル（1964年）、チュニジア（1965年）、旧ユーゴスラビア（1968年）との二国間協定に基づき、「ガストアルバイター（招聘労働者）」として約1,400万人が西ドイツに入国した。ピークは1970年（年間約100万人の入国）。1973年の石油危機を受けた募集停止後、1,400万人のうち1,100万人が出身国へ帰国した。
+  出典：bpb「Geschichte der Migration in Deutschland」— https://www.bpb.de/themen/migration-integration/dossier-migration/252241/geschichte-der-migration-in-deutschland/
+- **1988年〜2011年**：旧ソ連・東欧諸国からのドイツ系帰還移住者（アウスシードラー／シュペートアウスシードラー）約310万人が入国。1950年以降の累計では約450万人。1990年（ドイツ再統一の年）が単年では最大の受け入れ年で、約40万人。
+  出典：bpb（上記リンク）
+- **2015年〜2016年**：シリア内戦などを背景とした庇護申請の急増。BAMF登録の庇護申請（新規＋再申請）は2015年に476,649件、2016年に745,545件のピークを記録した（「2015-2016年に100万人以上が到着した」という頻繁に引用される数字は、入国時のEASY登録数と正式な庇護申請数を混同したものであり、両者の系列は同一視できない）。
+  検証上の注記：このページが当初引用していたURL（「Das Bundesamt in Zahlen 2016」）は現在404エラーを返す。476,649件・745,545件という数値はBAMF・Destatisの他資料でも広く確認されている規模と一致するが、本検証時点で稼働中の一次資料を直接確認して再確認することはできなかった — 最終公表前に最新のBAMFのURLで照合する必要がある。
+- **2022年〜現在**：ロシアによるウクライナ侵攻を受けたウクライナ避難民の受け入れ（一時保護ステータス）。
+<ComingSoon label="ウクライナ避難民の正確な累計受け入れ数、および2017-2024年の年次庇護申請数の完全な時系列データ（BAMF統計）は今後追加予定です。" />
+
+### 3.4 出身別の年齢構成（人口ピラミッド）
+
+<ComingSoon label="出身（移住背景の有無）別の年齢構成データ（人口ピラミッド形式）は、Destatisの年齢階級別表（migrationshintergrund-alter）の詳細値を一次資料から確認のうえ今後追加予定です。" />
+
+### 3.5 将来予測
+
+<ComingSoon label="Migrationshintergrundを持つ人口比率の長期将来予測（Destatis第16回人口推計）は、確認可能な数値が一次資料から得られなかったため今後追加予定です。" />
+
+## 4. 財政 — 財政負担純額
+
+<KeyFigure
+	value="-21億ユーロ/年"
+	label="DIW Berlin／IABの推計：2015年到着難民コホートの2030年までの平均財政収支純額（BMAS委託研究）"
+/>
+
+<BarChart
+	title="2015年到着難民コホートの財政効果に関する3機関の推計比較"
+	unit=""
+	bars={[
+		{ label: 'IW Köln（経営者団体系シンクタンク）：年間統合コスト', value: -28, note: '億ユーロ/年（2017年1月時点推計）' },
+		{ label: 'DIW Berlin／IAB（公的資金、BMAS委託）：年平均財政収支純額', value: -21, note: '億ユーロ/年（2030年まで平均）' },
+	]}
+	sourceLabel="IW Köln プレスリリース第6号／2017年；DIW Wochenbericht 3/2017"
+	sourceUrl="https://www.iwkoeln.de/fileadmin/publikationen/2017/321603/IW-Pressemitteilung_6_2017_Migrationseffekte.pdf"
+/>
+
+- IW Köln（経済研究機関、ドイツ経営者団体連合からの資金提供を受ける民間機関）：2017年1月の発表で、2015年以降に到着した難民の統合コストを年間280億ユーロまでと推計。効果的な職業訓練投資が行われれば税収によって部分的に回収可能とされる；中期的効果として2020年までの累積GDPに+900億ユーロの効果があると推計されたが、一人当たり所得および財政収支純額への効果はわずかにマイナスとされる。
+  出典：IW Köln、プレスリリース第6号／2017年「Migrationseffekte」— https://www.iwkoeln.de/fileadmin/publikationen/2017/321603/IW-Pressemitteilung_6_2017_Migrationseffekte.pdf（PDFは自動検証ツールによる全文確認が不可能；数値は当該機関の公開要旨から引用したもので、最終的な引用の前に全文刊行物との照合が必要）
+- DIW Berlin（経済研究機関、主に連邦・ベルリン州の公的資金により運営）とIABによる、連邦労働社会省（BMAS）委託の共同研究：DIW Wochenbericht 3/2017は、2015年到着難民コホートについて、2030年までの年平均財政収支純額の赤字を21億ユーロと推計（2015年GDPの約0.07%、または一人当たり26ユーロに相当）。語学・職業訓練統合の取り組みが強化されれば、2030年時点で累積約110億ユーロの節約が可能になるとされる。
+  出典：DIW Berlin／IAB、DIW Wochenbericht 3/2017（BMAS委託研究）— PDF原典は自動検証ツールによる全文確認が不可能；数値は機関の要旨から引用したもので、最終的な引用の前に照合が必要。
+- ifo研究所による数値を伴った直接検証可能な研究は、当該機関のサイトを直接確認しても確認できなかった（検証時点で入手可能な刊行物はすべてPDF形式で、自動抽出に適さなかった）。3機関（IW Köln、DIW Berlin、ifo）はいずれも異なる世代会計または財政収支純額の方法論を採用しており、これが結果の不一致を部分的に説明する；この方法論上の論点は、決着していない論争として扱うべきであり、単一の合意された数値として扱うべきではない。
+
+### 4.1 年金制度・現役世代比率
+
+<ComingSoon label="出身（Migrationshintergrundの有無）別の年金制度・現役世代対年金受給者比率は今後追加予定です。" />
+
+## 5. 労働市場
+
+<BarChart
+	title="2015年到着シリア難民コホートの雇用率（2024年、到着9年後）"
+	unit="%"
+	bars={[
+		{ label: '難民男性', value: 76 },
+		{ label: '全国男性平均', value: 72 },
+		{ label: '難民女性', value: 35 },
+		{ label: '全国女性平均', value: 70 },
+	]}
+	sourceLabel="IAB「10 Jahre Fluchtmigration」"
+	sourceUrl="https://iab.de/presseinfo/10-jahre-fluchtmigration-beschaeftigungsquote-von-gefluechteten-naehert-sich-dem-durchschnitt-in-deutschland-an/"
+/>
+
+- IAB：2015年に到着したシリア人難民コホートについて、2024年（到着9年後）の雇用率は64%。これに対し、すべての在留資格を合わせた全国平均は70%（6ポイントの差）。性別による差は非常に大きい：難民男性76%（全国男性平均72%を上回る）；難民女性35%（全国女性平均70%との差は35ポイント）。
+  出典：IAB「10 Jahre Fluchtmigration: Beschäftigungsquote von Geflüchteten nähert sich dem Durchschnitt in Deutschland an」— https://iab.de/presseinfo/10-jahre-fluchtmigration-beschaeftigungsquote-von-gefluechteten-naehert-sich-dem-durchschnitt-in-deutschland-an/
+
+## 6. 治安・司法
+
+<BarChart
+	title="被疑者数（国籍別、2024年、外国人法に特有の違反を除く）"
+	unit="人"
+	bars={[
+		{ label: 'ドイツ国籍の被疑者', value: 1270858 },
+		{ label: '非ドイツ国籍の被疑者', value: 696873 },
+	]}
+	sourceLabel="BKA、Polizeiliche Kriminalstatistik（PKS）2024"
+	sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
+/>
+
+- PKS（BKA）：欧州で最も詳細な報告書の一つであり、国籍と居住資格を区別する。その読み方（移民の年齢・性別構成による影響）については継続的な議論がある。
+- BKAの2024年版PKS統計表によると、ドイツ国籍以外の被疑者（「Tatverdächtige」）は、外国人法違反を含む2024年の全被疑者の約17.6%を占める（2023年は17.9%）。外国人法に特有の違反を除くと、非ドイツ国籍の被疑者は約696,873人、ドイツ国籍の被疑者は1,270,858人。BKA自身は、非ドイツ国籍の人口がドイツ国籍の人口に比べて明らかに若く男性比率が高い人口構成を持つことを指摘しており、この2つの要因は国籍に関わらず統計的に犯罪率の高さと関連している；TVBZ（Tatverdächtigenbelastungszahl、被疑者負荷指数）は、比較においてこの構成上の効果を部分的に中和するために設計されている。
+  出典：BKA、Polizeiliche Kriminalstatistik（PKS）2024、「Bund TV Nationalität」表 — https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html（ここで引用した集計値は当該ページにリンクされた表に基づくものであり、詳細な数値はこれに付随するExcelファイルに記載されているが、自動検証ツールでは全文抽出できなかった — 最終公表前の照合が必要）
+
+## 7. 教育
+
+<TrendChart
+	title="自宅でドイツ語を話すMigrationshintergrundを持つ若者の割合（2012年→2022年）"
+	unit="%"
+	series={[
+		{ label: 'Migrationshintergrund全体', color: '#9c3b3b', points: [
+			{ year: 2012, value: 72 },
+			{ year: 2022, value: 52 },
+		]},
+		{ label: '第一世代（外国生まれ）のみ', color: '#c9a23f', points: [
+			{ year: 2012, value: 36 },
+			{ year: 2022, value: 13 },
+		]},
+	]}
+	sourceLabel="各州文部大臣会議（KMK）、2023年12月5日付PISA 2022プレスリリース"
+	sourceUrl="https://www.kmk.org/aktuelles/pressearchiv/mitteilung/pisa.html"
+/>
+
+- PISA 2022（OECD）および各州文部大臣会議（Kultusministerkonferenz、KMK）による分析：2022年時点でMigrationshintergrundを持つ若者のうち、自宅でドイツ語を話すのはわずか約52%（2012年の約72%から減少）；第一世代（外国生まれ）の生徒に限ると、自宅でドイツ語を話すのはわずか13%（2012年の36%から減少）。KMKは、Migrationshintergrundを持つ生徒とそれを持たない生徒との学業成績の差は、社会経済的要因および自宅でのドイツ語使用、特に第二世代におけるそれによって大部分が説明されると指摘している。
+  出典：各州文部大臣会議（KMK）、2023年12月5日付PISA 2022に関するプレスリリース — https://www.kmk.org/aktuelles/pressearchiv/mitteilung/pisa.html
+
+## 8. 住宅
+
+<BarChart
+	title="一人当たり居住面積（住居形態・移住背景の有無別、2022年）"
+	unit="m²"
+	bars={[
+		{ label: '持ち家・移住背景なし', value: 56.5 },
+		{ label: '賃貸・移住背景なし', value: 45.5 },
+		{ label: '持ち家・移住背景あり', value: 43.0 },
+		{ label: '賃貸・移住背景あり', value: 31.2 },
+	]}
+	sourceLabel="Destatis、Mikrozensus 2022"
+	sourceUrl="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Tabellen/bevoelkerung-migstatus-typ-wohnflaeche.html"
+/>
+
+- Destatis、Mikrozensus 2022：一人当たり居住面積は、移住背景を持たない持ち家層で56.5平方メートル、移住背景を持たない賃貸層で45.5平方メートルであるのに対し、移住背景を持つ持ち家層では43.0平方メートル、移住背景を持つ賃貸層では31.2平方メートル — 賃貸層において一人当たり約14平方メートルの差がある。この4つの面積に関する数値は出典の直接確認により確かめられた。持ち家率について：「移住背景なし46.4%」対「移住背景あり22.1%」という数値はこのページではそのままの形で確認できなかった — 出典の表は持ち家率を直接パーセンテージで公表しておらず、居住形態別の粗い人数のみを提供しており、これに基づく算出が必要である；実数に基づいて2回試みた算出はそれぞれ引用された数値とは異なる結果（移住背景なしの人口について方式により47-54%程度）となった。最終公表前に再計算し、確認済みとしてではなく正確に位置づけ直す必要があるデータ。
+  出典：Destatis、Mikrozensus 2022、「Bevölkerung nach Migrationsstatus und Wohnfläche」表 — https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Migration-Integration/Tabellen/bevoelkerung-migstatus-typ-wohnflaeche.html
+- 公営住宅（補助金付き住宅、「sozialer Wohnungsbau」）におけるMigrationshintergrundの比率に関する詳細データ：Destatisによる全国的かつ集計された形での公開データなし；ドイツの公営住宅に関する統計は各州（Länder）レベルで管理されており、入手可能な連邦レベルの刊行物において移住状況と体系的に組み合わせて公表されていない。
+
+## 9. 社会的結合
+
+<KeyFigure
+	value="66.3 / 100"
+	label="SVR統合風土指数（Integrationsklima-Index、2024年版、2020年と比較し変化なし、2022年の68.5から低下）"
+/>
+
+- SVR-統合バロメーター（SVR-Integrationsbarometer、専門家委員会SVR — ドイツの財団、特にMercator財団とBertelsmann財団から資金提供を受ける独立した専門家委員会）2024年版：統合風土指数（Integrationsklima-Index）は100点満点中66.3点で、2020年と比較すると変化なしだが、2022年の68.5点からは低下。2023年11月から2024年7月にかけて15,020人を対象に実施された調査。
+  出典：SVR「SVR-Integrationsbarometer 2024」— https://www.svr-migration.de/presse/svr-integrationsbarometer-2024/
+
+## 10. 近年の政治的動向
+
+- 2015年8月31日、連邦政府の夏季記者会見において、アンゲラ・メルケル首相は難民受け入れに関して「Wir schaffen das（私たちはやり遂げられる）」という言葉を発した。これは連邦内務省が当該年に予想される庇護申請数を約80万件と発表した直後のことであった。当時はさほど注目されなかったこの発言は、後に2015-2016年の受け入れ政策（いわゆる「Willkommenskultur（歓迎文化）」）を象徴する言葉として遡及的に位置づけられるようになった。
+  出典：連邦政府「Vor allem ein Satz des Anpackens」— https://www.bundesregierung.de/breg-de/aktuelles/-vor-allem-ein-satz-des-anpackens--353854
+- 「Gesetz zur Verbesserung der Rückführung（送還改善法、Rückführungsverbesserungsgesetz）」は2024年1月末に連邦議会（Bundestag）で可決され、2024年2月2日に調停委員会への付託なしで連邦参議院（Bundesrat）の承認を得て、2024年2月26日に連邦法律公報（BGBl. 2024 I 第54号）に公布され、主要部分は2024年2月27日に施行された。この法律は、退去義務のある者の所在確認・身元確認のための当局の権限を拡大し、送還措置前の失踪を防止し、また庇護手続きおよびAsylbewerberleistungsgesetz（庇護申請者給付法）の規定の一部を変更するものである。
+  出典：連邦内務省（BMI）「Rückführungsverbesserungsgesetz im Bundestag beschlossen」— https://www.bmi.bund.de/SharedDocs/kurzmeldungen/DE/2024/01/bt_verbesserte_rueckfuehrung.html
+- 連邦内務省は、2024年9月16日より、フランス、ルクセンブルク、オランダ、ベルギー、デンマークとの陸上国境において一時的な検問を命じた。これは、2023年10月16日より既に実施されていたポーランド、チェコ、オーストリア、スイスとの国境検問に加えてのものであり、結果としてドイツのすべての陸上国境において検問が実施されることとなった。これにより連邦警察（Bundespolizei）による入国拒否（Zurückweisungen）が可能となる。この措置は6か月ごとに延長されており、特に2025年2月にはナンシー・フェーザー内務大臣の決定によって延長された。
+  出典：連邦内務省（BMI）「Begrenzung irregulärer Migration und Schutz der inneren Sicherheit: Binnengrenzkontrollen an allen deutschen Landgrenzen ab dem 16. September 2024」— https://www.bmi.bund.de/SharedDocs/pressemitteilungen/DE/2024/09/binnengrenzkontrollen_pm.html
+- 庇護申請者は原則として、一般的な基礎生活保障であるBürgergeldではなく、Asylbewerberleistungsgesetz（庇護申請者給付法）の適用を受ける；AsylbLGに基づく給付額は政令により定められ、定期的に見直される。連邦労働社会省（BMAS）は2024年1月1日以降適用される給付基準額を公表している（2024年から給付の一部を現金ではなく支払いカードの形で支給できる新基準を含む）；2026年1月1日以降適用される基準額は2025年10月27日に連邦法律公報に公布された（例：単身者の場合月額455ユーロ）。
+  出典：連邦労働社会省（BMAS）「Leistungssätze nach dem Asylbewerberleistungsgesetz」— https://www.bmas.de/DE/Soziales/Sozialhilfe/LeistungenAsylbewerberleistungsgesetz/leistungssaetze-asylbewerberleistungsgesetz.html
+- 2025年11月以降、連邦政府（2025年5月以降在任のフリードリヒ・メルツ首相が率いるCDU／CSUとSPDの連立政権）は、連立協定に記された方針の一環として、2025年4月1日以降にドイツに到着したウクライナ難民をBürgergeldではなくAsylbewerberleistungsgesetzの対象とすることを決定した — これにより当該グループへの給付は以前の制度に比べて減額される。
+  出典：連邦労働社会省（BMAS）「Leistungssätze nach dem Asylbewerberleistungsgesetz」— https://www.bmas.de/DE/Soziales/Sozialhilfe/LeistungenAsylbewerberleistungsgesetz/leistungssaetze-asylbewerberleistungsgesetz.html
+- 公開データなし：報道によれば、2025年5月初旬の就任時、アレクサンダー・ドブリント連邦内務大臣（メルツ政権）は連邦警察に対し入国拒否（Zurückweisungen）の強化を指示したとされ、この措置についてはEU法との適合性を近隣諸国が異議を唱えたとされる；しかし、当該指示の正確な内容を確認できるBMIの公式文書は本調査時において直接確認・検証することができなかった（検証時点でBMIのページにアクセスできず）。本観測所の編集方針に従い、一次資料の公式文書を確認できていない以上、この点は確定した事実として記載しない。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+「Migrationshintergrund（移住背景）」という統計カテゴリーは非常に範囲が広く（調査によっては第三世代まで含む）、混乱のリスクがあるため明示的に説明する必要がある。財政負担に関する3機関（IW Köln、DIW Berlin、ifo）の推計は異なる方法論を用いており、結果を単純に比較すべきではない。本ページの大部分の数値は「figuresVerified: false」の状態であり、PDF原典の全文照合が完了していない点に留意すること。
+</div>

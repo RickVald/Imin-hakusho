@@ -1,0 +1,205 @@
+---
+slug: ireland
+name: "Ireland"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+
+## 1. Official institutions
+
+- CSO (Central Statistics Office): https://www.cso.ie
+- Department of Justice — immigration and asylum statistics (IPAS, accommodation for asylum seekers)
+- ESRI (Economic and Social Research Institute) — semi-public economic research institute, studies on integration and housing
+
+## 2. Key datasets
+
+- CSO: Population and Migration Estimates (annual), census data by nationality
+- Department of Justice: IPAS (International Protection Accommodation Service) statistics — sharp rise in asylum applications since 2022
+- ESRI: studies on the housing crisis and demographics
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<KeyFigure
+	value="5,458,600"
+	label="Total population (April 2025), up 78,300 (+1.5%) over twelve months"
+/>
+
+- Total population (April 2025): 5,458,600 inhabitants, up 78,300 (+1.5%) over twelve months.
+  Source: CSO, *Population and Migration Estimates, April 2025*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/keyfindings/)
+- Non-Irish citizens resident in Ireland: 631,785 people at the 2022 census, or 12% of the usually resident and present population (up from 11% in 2016).
+  Source: CSO, *Census of Population 2022 Profile 5 — Citizenship*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-cpp5/censusofpopulation2022profile5-diversitymigrationethnicityirishtravellersreligion/citizenship/)
+- Recent sharp rise in asylum applications (multiplied since 2022), to be documented precisely (CSO, Department of Justice)
+
+### 3.2 Origin breakdown
+
+<ComingSoon label="A detailed breakdown of immigrants and their descendants by country or region of origin (CSO census nationality tables) is planned for a future update — the data this research could confirm covers only a list of the main nationalities (UK, Poland, Romania, India, Ukraine), not a full compositional breakdown." />
+
+- Main non-Irish nationalities among resident population: United Kingdom, Poland, Romania, India, Ukraine.
+  Source: CSO, *Migration and Ireland — What CSO data tells us* (2025)
+  (https://www.cso.ie/en/csolatestnews/featurearticles/featurearticles2025/migrationandireland-whatcsodatatellsus/)
+
+### 3.3 Immigration flows (recent trend, sharp rise since 2022)
+
+<TrendChart
+	title="First-instance international protection (asylum) applications (2021 → 2025)"
+	unit=""
+	series={[
+		{ label: 'First-instance applications', color: '#9c3b3b', points: [
+			{ year: 2021, value: 2900 }, { year: 2024, value: 18500 }, { year: 2025, value: 13160 },
+		]},
+	]}
+	sourceLabel="Department of Justice (written replies to the Dáil), reported by RTÉ News"
+	sourceUrl="https://www.rte.ie/news/ireland/2026/0201/1556267-ipas-costs/"
+	sourcePrefix="Source: "
+/>
+
+- Total immigration (12 months to April 2025): 125,300 people (-16% vs. April 2024), including 31,500 returning Irish citizens, 25,300 EU citizens, 4,900 UK citizens and 63,600 citizens of the rest of the world (work, family, study and asylum combined — the CSO series does not distinguish by motive). Emigration: 65,600 people (-6.2%). Natural increase: +18,600. Source: CSO, same publication
+  (https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/data/)
+- International protection (asylum) applications, first instance: 13,160 in 2025 versus 18,500 in 2024, a -29% year-on-year decrease; for comparison, around 2,900 in 2021 (before the post-2022 rise). People accommodated by IPAS (International Protection Accommodation Service) at end of period: 33,241 at end of 2025 versus 33,774 at end of 2024, including more than 9,700 children. Refusal rate of first-instance decisions in 2025: 81.39% (more than 20,200 decisions issued). Source: Department of Justice, written replies from Minister Jim O'Callaghan to the Dáil (Irish Parliament), reported by RTÉ News
+  (https://www.rte.ie/news/ireland/2026/0201/1556267-ipas-costs/) — see also official IPAS statistics: https://www.gov.ie/en/department-of-justice/publications/international-protection-accommodation-services-ipas-statistics/
+- Legal/illegal status: CSO and IPAS statistics cover legal flows only (regularized on entry: work, family, study, asylum under examination). No publicly available data on the number of people in an irregular situation (not officially quantified in Ireland).
+- **Limitation**: Ireland's immigration history offers a much shorter statistical record than Denmark or Sweden, and the IPAS series only covers the post-2022 surge period, so this research could not reconstruct a multi-decade time series of historical "immigration waves" for this section.
+<ComingSoon label="A longer-run time series of immigration and emigration flows including pre-2010s data (CSO's historical Population and Migration Estimates series) is planned for a future update." />
+
+### 3.4 Age structure by nationality
+
+<ComingSoon label="Age structure data broken down by nationality (population pyramid format) is planned for a future update, pending direct verification of the detailed values in CSO Census 2022 Table 1.5 (age group, sex and citizenship). This research could only confirm summary figures: the average age of non-Irish nationals is 36, versus 39 for Irish nationals." />
+
+- The average age of non-Irish citizens was 36, younger than the average age of Irish citizens (39). The gap is also wide by nationality: Brazilian citizens were 79% aged 23-43; Indian citizens approximately 75% aged 23-43; Ukrainian citizens had an average age of 25; UK citizens had an average age of nearly 50.
+  Source: CSO, *Census of Population 2022 Profile 5 — Citizenship*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-cpp5/censusofpopulation2022profile5-diversitymigrationethnicityirishtravellersreligion/citizenship/)
+
+### 3.5 Long-term projection
+
+<BarChart
+	title="CSO population projections (2057, by scenario, baseline 2022 census)"
+	unit=" million"
+	bars={[
+		{ label: 'High migration scenario', value: 7.005, note: 'net migration assumed to fall to 45,000/yr by 2027, then constant' },
+		{ label: 'Medium migration scenario', value: 6.446, note: 'net migration assumed to fall to 30,000/yr by 2032, then constant' },
+		{ label: 'Low migration scenario', value: 5.734, note: 'net migration assumed to fall to 10,000/yr by 2032, then constant' },
+	]}
+	sourceLabel="CSO, Population and Labour Force Projections 2023-2057"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-plfp/populationandlabourforceprojections2023-2057/"
+	sourcePrefix="Source: "
+/>
+
+- The CSO publishes three population projection scenarios for the 35-year period 2023-2057, using the 2022 census as a base. All three start from an assumed net migration of 75,000 per year in 2022, then diverge: the high migration scenario converges to 45,000/year by 2027, reaching 7.005 million by 2057 (+35.1%); the medium migration scenario converges to 30,000/year by 2032, reaching 6.446 million (+24.4%); the low migration scenario converges to 10,000/year by 2032, reaching 5.734 million (+10.6%).
+  The CSO presents these as "projections" illustrating sensitivity to migration assumptions, not as forecasts of a single most-likely outcome.
+  Source: CSO, *Population and Labour Force Projections 2023-2057*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-plfp/populationandlabourforceprojections2023-2057/)
+<ComingSoon label="A long-term projection broken down by nationality or origin (future share of the population that is foreign-born or of foreign origin) is planned for a future update — the CSO's published projections do not disaggregate by nationality." />
+
+## 4. Public finances — net cost
+
+- Little official study equivalent to the Danish model (which calculates a net balance in kroner by origin group) — a limitation worth noting. No publicly available figure for an aggregated overall net cost in euros.
+- ESRI (semi-public institute, study commissioned and funded by the Department of Justice, Home Affairs and Migration) published two reports on June 10, 2026: a literature review on the fiscal impact of immigration, and a study on welfare receipt. Result (qualitative/comparative method, no aggregated euro figure): over the past twenty years, foreign-born residents made on average a higher fiscal contribution than Irish-born residents. Source: ESRI, *The fiscal impact of migration and welfare receipt among immigrants* (June 10, 2026) (https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants)
+
+<BarChart
+	title="Social transfer receipt rate (immigrants vs. Irish-born, 2024 data)"
+	unit="%"
+	bars={[
+		{ label: 'Any broad social transfer — immigrants', value: 61 },
+		{ label: 'Any broad social transfer — Irish-born', value: 56 },
+		{ label: 'Unemployment benefit — immigrants', value: 9 },
+		{ label: 'Unemployment benefit — Irish-born', value: 9 },
+		{ label: 'Disability allowance — immigrants', value: 4 },
+		{ label: 'Disability allowance — Irish-born', value: 6 },
+	]}
+	sourceLabel="ESRI, Social transfers utilisation among migrants and Irish-born in Ireland (June 10, 2026)"
+	sourceUrl="https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants"
+	sourcePrefix="Source: "
+/>
+
+- Summary table of available methodologies:
+
+  | Method | Result | Source / commissioning body |
+  |---|---|---|
+  | Comparative literature review (fiscal impact, over 20 years) | Immigrants' fiscal contribution on average higher than that of natives (no single euro figure) | ESRI, funded by Department of Justice, Home Affairs and Migration (2026) |
+  | Welfare receipt rate, 2024 data (CSO) | 61% of immigrants vs. 56% of natives received at least one broad social transfer in 2024; for unemployment benefit, identical rate (9% vs. 9%); for disability allowance, lower rate among immigrants (4% vs. 6%) | ESRI, *Social transfers utilisation among migrants and Irish-born in Ireland*, funded by Department of Justice, Home Affairs and Migration (June 10, 2026) (https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants) |
+  | Fiscal cost of asylum-seeker accommodation (IPAS) — distinct from an overall net cost, covers asylum accommodation only | Figures available separately (see Section 3, minister's replies to the Dáil) but not comparable to a net immigration/state balance calculation as in Denmark | Department of Justice, parliamentary replies (2025-2026) |
+- No official Irish study to date produces a single overall net-cost figure for immigration's impact on public finances, unlike the Danish Ministry of Finance model — no publicly available data on this specific point.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<ComingSoon label="A demographic dependency ratio (pensioners and children relative to working-age population) broken down by nationality or origin could not be confirmed from Irish official sources and is planned for a future update." />
+
+## 5. Labor market
+
+<BarChart
+	title="Share of total employment, by nationality (2024)"
+	unit="%"
+	bars={[
+		{ label: 'Irish nationals', value: 72.5 },
+		{ label: 'Non-Irish nationals', value: 27.5 },
+	]}
+	sourceLabel="CSO, Distribution of Earnings by Nationality 2024"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/"
+	sourcePrefix="Source: "
+/>
+
+- In 2024, non-Irish nationals accounted for 27.5% of total employment in Ireland, versus 72.5% for Irish nationals. Over 2019-2024, employment of Irish nationals grew by 137,071 positions while employment of non-Irish nationals grew by 218,261 positions (61.4% of total employment growth over the period). Source: CSO, *Distribution of Earnings by Nationality 2024* (https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/)
+- After Irish nationals, the most represented nationalities in employment in 2024 are Polish (3.2%), Indian (3.1%) and British (2.7%). Source: CSO, same publication
+- Non-Irish nationals are overrepresented in certain sectors in 2024: 45.6% of administrative support services jobs, 45.1% of accommodation and food service jobs, and 41.4% of information and communication jobs (these three overall percentages were not directly cross-checked during this verification — reading the source confirms strong sectoral concentration by nationality, notably Indian nationals in health/social work at 32.2% and Ukrainian nationals in accommodation and food service at 25.3%, but without literal confirmation of the three overall percentages cited here; further verification needed). Source: CSO, *Distribution of Earnings by Nationality 2024* (https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/)
+- Ireland's overall employment rate (ages 15-64) in Q3 2025: 74.7% (down from 75.3% in Q3 2024, the first year-on-year decline since Q1 2021). Comparison with the EU average (71.0%) could not be confirmed within this CSO publication itself (which presents only Irish data) — EU figure to be cross-checked with Eurostat before final publication. No publicly available data for a separate employment rate for Irish vs. non-Irish nationals (CSO publishes the distribution of employment by nationality, but not an employment rate relative to the labor force by nationality in this same publication). Source: CSO, *Labour Force Survey Quarter 3 2025*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-lfs/labourforcesurveyquarter32025/keyfindings/)
+
+## 6. Security / justice
+
+- Dated incident: on November 23, 2023, around 1:30pm, a knife attack occurred near a school (Gaelscoil Choláiste Mhuire, Parnell Square East, Dublin), injuring three children and one adult. Unrest occurred the same evening in Dublin city center (vehicle fires, clashes). An Garda Síochána (national police) reported 34 arrests that evening, a total exceeding 50 arrests in the following weeks according to subsequent law enforcement updates. Source: statements from An Garda Síochána relayed via official communiqué and judicial follow-up; see Garda Síochána (https://www.garda.ie) for official statements — no publicly available consolidated official figure for material damage (cost estimate).
+- The Department of Justice, Home Affairs and Migration / CSO do not compile crime statistics by nationality of suspects: the CSO has confirmed it receives no nationality data on victims or suspects in the quarterly PULSE extract provided by An Garda Síochána (only sex and age group of suspects are available). No publicly available data for any breakdown of crime by nationality. Source: CSO, *Background Notes — Recorded Crime Victims 2024 and Suspected Offenders 2023* (https://www.cso.ie/en/releasesandpublications/ep/p-rcvo/recordedcrimevictims2024andsuspectedoffenders2023/backgroundnotes/)
+
+## 7. Education
+
+- The CSO maintains a tracking infrastructure (Educational Longitudinal Database, ELD) that records students' nationality via the Programme and Learner Support System (PLSS). The figure of 27,454 PLC (Post-Leaving Certificate) learners in 2017, from more than 119 different nationalities, could not be confirmed by direct reading of the ELD methodology page (which describes the tracking infrastructure but does not reproduce this figure) — data not verifiable with certainty at this time; to be cross-checked against a specific ELD statistical publication before final publication. Source consulted: CSO, *Educational Longitudinal Database (ELD)*
+  (https://www.cso.ie/en/methods/education/educationallongitudinaldatabase/educationallongitudinaldatabaseeld/)
+- No publicly available data for school outcomes (Leaving Certificate pass rates, progression to further study) broken down and published by nationality or country of birth of students — the CSO publications consulted (post-primary outcomes by cohort) do not cross-tabulate outcomes with nationality in the published aggregates. Source verified: CSO, *Outcomes Overview — Post-Primary Outcomes*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-ppo/post-primaryoutcomes-academicyearsending20122013/outcomesoverview/)
+
+## 8. Housing
+
+<BarChart
+	title="New dwelling completions (2024 → 2025)"
+	unit=""
+	bars={[
+		{ label: '2024', value: 30147 },
+		{ label: '2025', value: 36284 },
+	]}
+	sourceLabel="CSO, New Dwelling Completions Q4 2025"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-ndc/newdwellingcompletionsq42025/"
+	sourcePrefix="Source: "
+/>
+
+- The Irish housing crisis was already severe before the recent rise in migration — correlation and causation must be clearly distinguished, cross-checked against construction data (CSO).
+- New dwelling completions: 36,284 in 2025, up 20.4% from 2024 (30,147 dwellings, not 30,330 as stated in a previous version of this page — figure corrected after direct verification of the source), the highest level since the series began in 2011. Apartments accounted for 33.2% of completions in 2025 (12,047 units, +38.7% year-on-year, versus 28.8% and 8,687 units in 2024). Source: CSO, *New Dwelling Completions Q4 2025*
+  (https://www.cso.ie/en/releasesandpublications/ep/p-ndc/newdwellingcompletionsq42025/)
+- Total population rose by 78,300 people (+1.5%) over the twelve months to April 2025 (see Section 3), compared with 30,147 dwellings completed in 2024 and 36,284 in 2025: comparing population growth with construction volume does not establish a direct causal link between immigration and housing shortage — the housing crisis predates the recent rise in migration and also has structural causes (land, construction costs, planning) not quantified here.
+  Sources: CSO, *Population and Migration Estimates April 2025* and *New Dwelling Completions Q4 2025* (links above and in Section 3).
+- No publicly available data for an official estimate quantifying the share of price or rent increases specifically attributable to immigration (no official causal study identified to date).
+
+## 9. Social cohesion
+
+- ESRI published a study (2025) combining a Department of Equality survey from April 2023 on attitudes toward immigration in Ireland with 2022 census data on community characteristics. Result: people living in disadvantaged communities (high proportion of single-parent families, unemployed people, low education levels) report more negative attitudes toward immigration; rural areas and more segregated areas (where migrants reside in concentrated groups) also show less favorable attitudes. The study found no link between living in an area with high pressure on public services (health, housing, education) and holding a more negative attitude toward immigration. Source: ESRI, *Community context affects attitudes towards immigration* (2025)
+  (https://www.esri.ie/news/community-context-affects-attitudes-towards-immigration)
+- No publicly available data for a recurring, dedicated CSO series measuring the evolution of social cohesion over time (the ESRI study above is a one-off analysis based on a 2023 survey, not an annual statistical series).
+
+## 10. Recent political context
+
+- Growing social tensions in 2023-2024 (protests against asylum-seeker accommodation in several localities), hardening of government rhetoric in late 2023-2024.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Recent case study (few long time series) — limits historical comparisons, unlike Denmark/Sweden. Crime statistics (CSO/An Garda Síochána) contain no nationality variable for suspects or victims: any public claim about a link between immigration and crime in Ireland cannot be based on an official Irish source, as no such data exists. IPAS series (asylum-seeker accommodation) cover only the recent period (sharp rise since 2022); there is no comparable long-term series allowing the current level to be placed in a multi-decade historical perspective. No official measure of the number of people in an irregular (undocumented) situation is published; available data (CSO, Department of Justice) cover only legal flows or those undergoing regularization (see Section 3).
+</div>

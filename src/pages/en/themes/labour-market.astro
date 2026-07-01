@@ -1,0 +1,371 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Immigration Employment Gap: 20-Country Official Statistics | Immigration Factbook" lang="en" altHref="/themes/marche-travail/" description="Official employment and unemployment rate gaps between immigrants and native-born populations across 20 Western countries. Primary sources from national statistics offices only.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Compare by Theme</span>
+    </nav>
+    <h1>Immigration Employment Gap — 20-Country Official Statistics</h1>
+    <p class="intro">
+      This page compiles official employment and unemployment rate data comparing immigrants and native-born populations across 20 Western countries. Definitions of "immigrant" vary significantly between countries (foreign-born, foreign national, migration background, etc.) — direct cross-country comparisons must be interpreted with care. "No official data available" means no official comparable statistic was found at the time of research.
+    </p>
+    <div class="lang-switch">
+      <a href="/themes/marche-travail/">🌐 日本語で見る</a>
+    </div>
+  </div>
+
+  <section class="table-section">
+    <h2>Employment / Unemployment Gaps: Country-by-Country Official Statistics</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Native-born (employment/unemployment rate)</th>
+            <th>Immigrant (employment/unemployment rate)</th>
+            <th>Gap</th>
+            <th>Source</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name"><a href="/en/countries/denmark/">Denmark</a></td>
+            <td>Danish-origin men: 81%, women: 78% (employment rate)</td>
+            <td>Non-Western immigrant men: 71%, women: 61%</td>
+            <td class="gap">Men: 10pp gap<br/>Women: 17pp gap</td>
+            <td>Statistics Denmark (RAS register data)</td>
+            <td>2024</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/sweden/">Sweden</a></td>
+            <td>Native-born: employment rate 70.0%, unemployment 5.7%</td>
+            <td>Foreign-born: employment rate 65.8%, unemployment 16.2%</td>
+            <td class="gap">Employment: 4.2pp<br/>Unemployment: 10.5pp</td>
+            <td>SCB Labour Force Survey (AKU)</td>
+            <td>2024 annual average</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/norway/">Norway</a></td>
+            <td>Without immigrant background: 80% employment rate (age 20–66)</td>
+            <td>Immigrants: 68%</td>
+            <td class="gap">12pp gap</td>
+            <td>IMDi (Indikatorrapport 2025)</td>
+            <td>2024</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/finland/">Finland</a></td>
+            <td>Finnish-origin: 79% employment rate (age 20–64)</td>
+            <td>Foreign-origin: 70.3%</td>
+            <td class="gap">8.7pp gap (down from 15pp in 2016)</td>
+            <td>Statistics Finland</td>
+            <td>2023</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/germany/">Germany</a></td>
+            <td>National avg. men: 72%, women: 70% employment rate</td>
+            <td>2015 refugee cohort men: 76% (above avg.)<br/>Refugee women: 35% (−35pp vs national avg.)</td>
+            <td class="gap">Men: refugees above average<br/>Women: extreme gap (−35pp)</td>
+            <td>IAB "10 Jahre Fluchtmigration"</td>
+            <td>2024 (9 years after arrival)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/france/">France</a></td>
+            <td>Population without immigrant background: 7% unemployment (age 15–64)</td>
+            <td>Immigrants: 12%<br/>Children of immigrants: 10.2%</td>
+            <td class="gap">5pp gap</td>
+            <td>INSEE / DGEF</td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/netherlands/">Netherlands</a></td>
+            <td>Total population: 73.1% (primary income from labour)</td>
+            <td>Foreign-born: 66.3%</td>
+            <td class="gap">6.8pp gap</td>
+            <td>CBS "Integratie en samenleven 2024"</td>
+            <td>2023</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/belgium/">Belgium</a></td>
+            <td>Belgian-origin: 75.8% employment rate (age 20–64)</td>
+            <td>North African origin: 51.3%<br/>Sub-Saharan African origin: 54.3%<br/>EU candidate countries: 58.2%</td>
+            <td class="gap">20–24pp gap</td>
+            <td>Statbel (2022 data)</td>
+            <td>2022</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/ireland/">Ireland</a></td>
+            <td>Irish nationals: 72.5% of total employment</td>
+            <td>Non-Irish nationals: 27.5% of employment (61.4% of all job gains 2019–2024)</td>
+            <td class="gap">Share data only (no direct rate gap)</td>
+            <td>CSO "Distribution of Earnings by Nationality 2024"</td>
+            <td>2024</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/italy/">Italy</a></td>
+            <td>Italian nationals: 61.5% employment rate</td>
+            <td>EU citizens: 63.8%<br/>Non-EU citizens: 60.7%</td>
+            <td class="gap">Non-EU: −0.8pp (slight gap)</td>
+            <td>ISTAT "Noi Italia — Labour Market"</td>
+            <td>Recent data</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/spain/">Spain</a></td>
+            <td class="no-data">No comparable employment rate data published</td>
+            <td>2.855m foreign nationals in social security (+7.93%/yr)<br/>Foreign workers: 44.85% of net job creation in Q4 2024</td>
+            <td class="gap">No comparable gap data</td>
+            <td>SEPE/MITES "Foreign Labour Market Report"</td>
+            <td>2024</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/portugal/">Portugal</a></td>
+            <td>Total population: 6.6% unemployment</td>
+            <td>Foreign nationals: 11.9% unemployment (over-qualification rate 42.8%)</td>
+            <td class="gap">5.3pp unemployment gap</td>
+            <td>INE / IEFP / Ministry of Labour (GEP)</td>
+            <td>2025 Q1</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/czechia/">Czechia</a></td>
+            <td class="no-data">No comparable data published</td>
+            <td>Ukrainian TPS beneficiaries: ~80% employed among economically active</td>
+            <td class="gap">No comparable gap data</td>
+            <td>Czech Academy of Sciences (Sociological Institute)</td>
+            <td>2025</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/austria/">Austria</a></td>
+            <td>Without migration background: 76.4% employment rate<br/>Austrian nationals: 5.7% unemployment</td>
+            <td>With migration background: 69% employment<br/>Foreign nationals: 10.5% unemployment<br/>Afghan/Syrian/Iraqi origin: 44.1% employment, 31.3% unemployment</td>
+            <td class="gap">Employment: 7.4pp gap<br/>Unemployment: 4.8pp (by nationality)</td>
+            <td>Statistik Austria / ÖIF "Statistisches Jahrbuch Migration &amp; Integration 2025"</td>
+            <td>2024</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/uk/">United Kingdom</a></td>
+            <td class="no-data">No single comparable indicator (available in EMP06 dataset)</td>
+            <td>Non-EU-born employment rate in 2025 higher than in 2019</td>
+            <td class="gap">Available in ONS EMP06 dataset (Excel download only)</td>
+            <td>ONS EMP06 dataset</td>
+            <td>2025</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/switzerland/">Switzerland</a></td>
+            <td>Swiss residents: 3.3% ILO unemployment</td>
+            <td>Foreign nationals: 7.7% ILO unemployment</td>
+            <td class="gap">4.4pp unemployment gap</td>
+            <td>OFS "Labour Market Bulletin"</td>
+            <td>2025 Q2</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/usa/">United States</a></td>
+            <td>Native-born men: 65.9% labour force participation rate</td>
+            <td>Foreign-born: 4.2% unemployment<br/>Foreign-born men: 77.3% labour participation</td>
+            <td class="gap">Men: immigrants higher participation (+11.4pp)<br/>Unemployment rates similar</td>
+            <td>BLS "Foreign-Born Workers: Labor Force Characteristics — 2024"</td>
+            <td>2024</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/canada/">Canada</a></td>
+            <td class="no-data">No comparable data published</td>
+            <td class="no-data">Origin- and status-specific employment data: to be added</td>
+            <td class="gap no-data">No official data available</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/australia/">Australia</a></td>
+            <td class="no-data">No single comparable indicator</td>
+            <td>NW Europe origin: 3.0% unemployment (lowest)<br/>N. Africa / Middle East origin: 6.9% (highest)<br/>Recent migrants avg. employment rate: 68%</td>
+            <td class="gap">Up to 3.9pp gap between origin regions</td>
+            <td>Jobs and Skills Australia (Jan 2025) / ABS CoRMS</td>
+            <td>November 2024 data</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/new-zealand/">New Zealand</a></td>
+            <td class="no-data">No comparable data published</td>
+            <td class="no-data">No explicit comparison rate with citizens published</td>
+            <td class="gap no-data">No official data available</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="methodology-note">
+    <h2>Important Caveats for Comparison</h2>
+    <ul>
+      <li><strong>Definition of "immigrant"</strong>: Countries use different measures — foreign-born (Sweden, Norway), foreign nationals (Portugal, Switzerland), migration background (Germany, Austria). These are not equivalent.</li>
+      <li><strong>Age group differences</strong>: Denmark uses age 20–64, Norway 20–66, France 15–64. Gaps may partially reflect age composition.</li>
+      <li><strong>Within-group heterogeneity</strong>: Aggregate "immigrant" averages mask large differences between Western-origin and non-Western-origin immigrants. Austria, Denmark, and Australia publish this breakdown.</li>
+      <li><strong>Duration effects</strong>: Multiple studies confirm that employment rates rise with time since arrival. Figures for recent arrivals and long-settled migrants differ substantially.</li>
+    </ul>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header { margin-bottom: 2.5rem; }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a { color: var(--color-accent); text-decoration: none; }
+  .breadcrumb span { margin: 0 0.4rem; }
+
+  h1 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .lang-switch { margin-top: 1.25rem; }
+
+  .lang-switch a {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .lang-switch a:hover { background: var(--color-accent); color: var(--color-bg); }
+
+  .table-section { margin-bottom: 3rem; }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 900px;
+  }
+
+  .comparison-table thead tr { background: var(--color-surface-raised); }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a:hover { text-decoration: underline; }
+
+  .gap { font-weight: 700; color: #ff9800; font-size: 0.88rem; }
+
+  .no-data {
+    color: var(--color-muted);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .methodology-note h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+</style>
+
+</BaseLayout>

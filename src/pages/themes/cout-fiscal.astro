@@ -1,0 +1,403 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="移民の財政コスト：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/fiscal-cost/" description="西欧20カ国における移民の財政的純負担・純貢献を公式データで比較。財務省・中央銀行・OECD等の一次資料のみを使用。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
+    </nav>
+    <h1>移民の財政コスト — 国別公式データ比較</h1>
+    <p class="intro">
+      このページは、各国政府・中央銀行・国際機関が公表した移民の財政的純負担または純貢献に関するデータを一か所に集約したものです。各国で算出方式・対象範囲・期間が大きく異なるため、単純な数値比較には注意が必要です。「データ非公開」の表記は、本サイトの調査時点で公式な算定値が発表されていないことを示すものであり、本サイトの調査漏れではありません。
+    </p>
+    <p class="intro-sub">
+      デンマーク財務省のように体系的・反復的な算定を行っている国は少数です。多くの国では単発研究・部分的な試算・研究機関による試算のみが存在します。これは国際比較の構造的な限界として明記します。
+    </p>
+    <div class="lang-switch">
+      <a href="/en/themes/fiscal-cost/">🌐 View in English</a>
+    </div>
+  </div>
+
+  <section class="table-section">
+    <h2>財政コスト・純貢献：国別公式データ一覧</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>国</th>
+            <th>推計コスト／貢献</th>
+            <th>算出機関</th>
+            <th>対象</th>
+            <th>年・期間</th>
+            <th>詳細</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
+            <td class="figure negative">−160億DKK/年</td>
+            <td>財務省（Finansministeriet）</td>
+            <td>移民・移民の子孫全体（非欧米系単独：−270億DKK、欧米系：+110億DKK）</td>
+            <td>2019年データ（2023年9月改訂）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
+            <td class="figure negative">+60億SEK/年（純負担）</td>
+            <td>Konjunkturinstitutet（国立経済研究所）</td>
+            <td>外国出生者全体</td>
+            <td>2022年データ</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/norway/">ノルウェー</a></td>
+            <td class="figure negative">+410万NOK/人（R3グループ）</td>
+            <td>SSB（Holmøy &amp; Strøm、財務省委託）</td>
+            <td>R3グループ（その他の国々）出身者1人当たり純現在価値コスト。西欧・北米出身（R1）は純貢献</td>
+            <td>2015年追加移民・2015-2100年推計</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
+            <td class="figure no-data">データ非公開</td>
+            <td>VATT（研究中）</td>
+            <td>調査開始2025年2月、結果公表予定2027年上半期</td>
+            <td>算定なし（公開予定）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/germany/">ドイツ</a></td>
+            <td class="figure negative">−21億EUR/年（平均）</td>
+            <td>DIW Berlin／IAB（連邦労働社会省委託）</td>
+            <td>2015年到着難民コホート、2030年まで平均。IW Köln推計は−28億EUR/年</td>
+            <td>2017年（2030年予測）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
+            <td class="figure negative">累積約4,000億EUR（1995-2019年）</td>
+            <td>van de Beek et al.（CBSミクロデータ使用）</td>
+            <td>生涯財政収支の現在価値。庇護・家族呼び寄せは大幅マイナス、就労・留学はプラス</td>
+            <td>1995-2019年累積（2021年研究）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a></td>
+            <td class="figure positive">+約30億EUR（GDP比+0.75%）</td>
+            <td>OECD（International Migration Outlook）</td>
+            <td>移民全体（別試算：NBBはGDP+3.5%/5年間と算定）</td>
+            <td>参照年不明（OECD試算）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
+            <td class="figure no-data">データ非公開</td>
+            <td>—</td>
+            <td>デンマーク型の定期公式算定なし。出身統計の法的制限あり</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
+            <td class="figure mixed">方法による（±）</td>
+            <td>CReAM（UCL）／OBR／Oxford Economics</td>
+            <td>EU移民2001-2011年：+221億GBP（純貢献）。静的手法では非EEA移民に年間負担も。OBR：25歳移民の生涯純貢献+341,000GBP</td>
+            <td>2014年・2018年・2025年各研究</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/ireland/">アイルランド</a></td>
+            <td class="figure positive">純財政貢献（定性）</td>
+            <td>ESRI（司法・移民省委託）</td>
+            <td>過去20年間、海外生まれ居住者はアイルランド生まれより平均的に財政貢献が大きい（集計ユーロ数値なし）</td>
+            <td>2026年6月</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/austria/">オーストリア</a></td>
+            <td class="figure mixed">全移民形態合計：+14億EUR（累積）<br/>2015年以降の庇護移民：−81億EUR</td>
+            <td>EcoAustria（ÖIF委託）</td>
+            <td>全移民形態合算（労働移民含む）対2015年以降庇護移民の区別。PuMAマクロ均衡モデル使用</td>
+            <td>2020年まで累積</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
+            <td class="figure positive">+12億EUR/年</td>
+            <td>レオーネ・モレッサ財団（民間研究財団）</td>
+            <td>外国籍居住者の税・社会保険料収入−社会保障支出。外国籍納税者460万人が101億EUR所得税納付（2023年）</td>
+            <td>2024年版年次報告書</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/spain/">スペイン</a></td>
+            <td class="figure positive">+0.4〜+0.7pt/年（一人当たりGDP）</td>
+            <td>スペイン銀行（中央銀行）</td>
+            <td>外国籍人口による一人当たりGDP成長への直接貢献。財政収支純負担ではなくGDP貢献の分析</td>
+            <td>2022-2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
+            <td class="figure positive">社会保険収入の17.5%</td>
+            <td>AIMA（移民・庇護庁）</td>
+            <td>移民が社会保障全収入に占める割合（約22億EUR相当）。移民ゼロシナリオでは財政負担がGDP比+2.8pt増加との試算あり</td>
+            <td>2024年</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/czechia/">チェコ</a></td>
+            <td class="figure mixed">ウクライナ一時保護のみ：収入82億CZK 対 支出39億CZK（四半期）</td>
+            <td>MPSV（労働社会省）モデル計算</td>
+            <td>ウクライナ一時保護受給者のみの部分的試算。完全なコスト・ベネフィット分析ではない</td>
+            <td>2025年Q3推計</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
+            <td class="figure no-data">データ非公開</td>
+            <td>—</td>
+            <td>SECO・OFSによる移民1人当たり純コストの公式算定は未確認。GDP・生産性への影響分析は存在</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
+            <td class="figure positive">財政赤字削減 約9,000億USD（累計）</td>
+            <td>CBO（議会予算局、非党派機関）</td>
+            <td>2021-2026年の移民純増による連邦財政への影響（2024-2034年累計）。追加税収1.2兆USD、義務支出増1,770億USD。連邦レベルのみ</td>
+            <td>2024年7月CBO報告</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/canada/">カナダ</a></td>
+            <td class="figure no-data">データ非公開（公式算定なし）</td>
+            <td>—</td>
+            <td>デンマーク型の定期公式算定なし。Fraser Institute（民間）推計は移民1人当たり約6,051CAD/年のコスト（方法論に批判あり）</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
+            <td class="figure positive">技能移民：正の純効果（最大）<br/>人道移民：正の純効果（最小）</td>
+            <td>オーストラリア財務省・人口センター</td>
+            <td>永住移民プログラムの生涯財政インパクト。ビザ区分別：技能＞家族＞人道の順で正の効果。到着時年齢が最大の決定要因</td>
+            <td>2021年12月報告書</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/new-zealand/">ニュージーランド</a></td>
+            <td class="figure no-data">データ非公開</td>
+            <td>—</td>
+            <td>財政コスト・純貢献の集計公式研究は未確認。生産性委員会（2022年）は生産性への中立的影響を報告</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="methodology-note">
+    <h2>比較上の注意点</h2>
+    <ul>
+      <li><strong>算出方式の違い</strong>：静的会計（年次の税収−支出）と動的会計（生涯現在価値）では結果が大きく異なります。デンマークとオーストラリアは動的・生涯アプローチを採用しています。</li>
+      <li><strong>対象範囲の違い</strong>：移民全体を対象とする国と、難民・特定コホートのみを対象とする国があります。</li>
+      <li><strong>政府レベルの違い</strong>：アメリカのCBO推計は連邦レベルのみで、州・地方政府の負担を含みません。オーストラリアでは連邦と州の間でコストと恩恵の非対称性が指摘されています。</li>
+      <li><strong>委託機関の立場</strong>：各研究の委託機関（政府機関・民間財団・経営者団体など）によって前提や強調点が異なります。</li>
+    </ul>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .intro-sub {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 80ch;
+    border-left: 3px solid var(--color-surface-raised);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lang-switch {
+    margin-top: 1.25rem;
+  }
+
+  .lang-switch a {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .lang-switch a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .table-section {
+    margin-bottom: 3rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 800px;
+  }
+
+  .comparison-table thead tr {
+    background: var(--color-surface-raised);
+  }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a:hover {
+    text-decoration: underline;
+  }
+
+  .figure {
+    font-weight: 700;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  .figure.positive {
+    color: #4caf50;
+  }
+
+  .figure.negative {
+    color: #ef5350;
+  }
+
+  .figure.mixed {
+    color: #ff9800;
+  }
+
+  .figure.no-data {
+    color: var(--color-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+</style>
+
+</BaseLayout>

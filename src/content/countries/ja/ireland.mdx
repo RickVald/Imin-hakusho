@@ -1,0 +1,240 @@
+---
+slug: ireland
+name: "アイルランド"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- CSO（Central Statistics Office、中央統計局）：https://www.cso.ie
+- 司法省（Department of Justice）— 移民・庇護統計（IPAS、庇護希望者の収容を管理）
+- ESRI（Economic and Social Research Institute、経済社会研究所）— 半官半民の経済研究機関。統合・住宅に関する研究を実施
+
+## 2. 主要データセット
+
+- CSO：Population and Migration Estimates（人口・移民推計、年次）、国籍別人口調査
+- 司法省：IPAS（International Protection Accommodation Service、国際保護収容サービス）統計 — 2022年以降の庇護申請の急増
+- ESRI：住宅危機・人口動態に関する研究
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<KeyFigure
+	value="5,458,600人"
+	label="総人口（2025年4月時点。前年同月比+78,300人、+1.5%）"
+/>
+
+- 総人口（2025年4月）：5,458,600人。12か月で78,300人増加（+1.5%）。
+  出典：CSO『Population and Migration Estimates, April 2025』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/keyfindings/）
+- アイルランド以外の国籍を持つ居住者は、2022年国勢調査時点で631,785人、調査対象人口の12%（2016年の11%から上昇）。
+  出典：CSO『Census of Population 2022 Profile 5 — Citizenship』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-cpp5/censusofpopulation2022profile5-diversitymigrationethnicityirishtravellersreligion/citizenship/）
+- 庇護申請の最近の急増（2022年以降の増加）について、CSOおよび司法省のデータで正確な記録が必要
+
+### 3.2 出身国籍別構成
+
+<ComingSoon label="移民・移民の子孫の出身国・出身地域別の詳細な内訳（CSO国勢調査の国籍別表）は、本観察サイトが確認できた範囲では主要国籍（英国・ポーランド・ルーマニア・インド・ウクライナ）の列挙にとどまるため、構成比を示すグラフは今後追加予定です。" />
+
+- アイルランド以外の国籍を持つ居住者の主な国籍：英国、ポーランド、ルーマニア、インド、ウクライナ。
+  出典：CSO『Migration and Ireland — What CSO data tells us』（2025年）
+  （https://www.cso.ie/en/csolatestnews/featurearticles/featurearticles2025/migrationandireland-whatcsodatatellsus/）
+
+### 3.3 移民の流れ（近年の動向、2022年以降の急増）
+
+<TrendChart
+	title="国際保護（庇護）一次申請件数の推移（2021年→2025年）"
+	unit="件"
+	series={[
+		{ label: '一次申請件数', color: '#9c3b3b', points: [
+			{ year: 2021, value: 2900 }, { year: 2024, value: 18500 }, { year: 2025, value: 13160 },
+		]},
+	]}
+	sourceLabel="司法省（ダーイルへの大臣文書回答）、RTÉ Newsの報道"
+	sourceUrl="https://www.rte.ie/news/ireland/2026/0201/1556267-ipas-costs/"
+/>
+
+- 移民総数（2025年4月までの12か月間）：125,300人（前年同月比-16%）。うちアイルランド国籍者の帰国31,500人、EU市民25,300人、英国市民4,900人、その他世界各国の市民63,600人（労働・家族・留学・庇護の動機を区別せず合算。CSOの統計シリーズは目的別の区分を行っていない）。出国者：65,600人（-6.2%）。自然増加：+18,600人。
+  出典：CSO、同publication
+  （https://www.cso.ie/en/releasesandpublications/ep/p-pme/populationandmigrationestimatesapril2025/data/）
+- 国際保護（庇護）の一次申請件数：2025年は13,160件（2024年の18,500件から-29%）。比較として2021年（2022年以降の急増前）は約2,900件。
+  IPAS（International Protection Accommodation Service）による収容者数（期末時点）：2025年末で33,241人（2024年末の33,774人とほぼ同水準）、うち9,700人超が児童。
+  2025年における一次判断の拒否率：81.39%（判断件数20,200件超）。
+  出典：司法省、ジム・オキャラハン司法大臣のダーイル（アイルランド議会）への文書回答、RTÉ Newsによる報道
+  （https://www.rte.ie/news/ireland/2026/0201/1556267-ipas-costs/）— 公式IPAS統計も参照：
+  https://www.gov.ie/en/department-of-justice/publications/international-protection-accommodation-services-ipas-statistics/
+<KeyPointTiles
+	title="近年の移民動向：主な転換点"
+	tiles={[
+		{ period: '2022年以前', value: '約2,900件', description: '国際保護一次申請件数（2021年）。2022年以前は比較的低水準で推移していた。', color: '#1d3461' },
+		{ period: '2022〜2024年', value: '18,500件', description: '庇護一次申請件数（2024年）。2021年の約2,900件から急増。収容者数：2025年末に33,241人（うち9,700人超が児童）。', color: '#9c3b3b' },
+		{ period: '2025年', value: '13,160件', description: '庇護一次申請件数（2025年）。2024年比-29%。拒否率81.39%（判断件数20,200件超）。', color: '#c9a23f' },
+		{ period: '2025年4月', value: '125,300人', description: '直近12か月間の総移入者数（前年比-16%）。うちその他世界各国の市民63,600人。出国者65,600人、自然増加+18,600人。', color: '#5a8a6b' },
+	]}
+/>
+
+- 合法／不法滞在の区分：CSOおよびIPASの統計は合法的な流入（入国時点で資格を得たもの：労働、家族、留学、審査中の庇護）のみを対象とする。不法滞在者数についての公式な統計は公表されていない（アイルランドでは公的に数値化されていない）。
+- **限界**：アイルランドの移民の歴史は、デンマークやスウェーデンと比較して長期の統計シリーズが乏しく、IPAS統計シリーズも2022年以降の急増期のみを対象とするため、過去数十年単位での歴史的な「移民の波」を本節で時系列に再構成することはできなかった。
+<ComingSoon label="2010年代以前を含む長期の移民流入・出国の時系列データ（CSO Population and Migration Estimatesの過去分シリーズ）は今後追加予定です。" />
+
+### 3.4 出身（国籍）別の年齢構成
+
+<ComingSoon label="国籍別の年齢構成データ（人口ピラミッド形式）は、CSO国勢調査2022のTable 1.5（年齢階級・性別・国籍別表）の詳細値を一次資料から確認のうえ今後追加予定です。本調査で確認できたのは、非アイルランド国籍者の平均年齢が36歳（アイルランド国籍者は39歳）という要約値のみです。" />
+
+- 非アイルランド国籍者の平均年齢は36歳で、アイルランド国籍者（39歳）より若い。国籍別の差も大きい：ブラジル国籍者は79%が23〜43歳、インド国籍者は約75%が23〜43歳、ウクライナ国籍者の平均年齢は25歳、英国国籍者の平均年齢は約50歳。
+  出典：CSO『Census of Population 2022 Profile 5 — Citizenship』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-cpp5/censusofpopulation2022profile5-diversitymigrationethnicityirishtravellersreligion/citizenship/）
+
+### 3.5 将来予測
+
+<BarChart
+	title="CSOの人口予測（2057年、シナリオ別。2022年国勢調査を基準）"
+	unit="百万人"
+	bars={[
+		{ label: '高移民シナリオ', value: 7.005, note: '年間純移民数を2027年までに45,000人へ減少させ、その後一定とする前提' },
+		{ label: '中位移民シナリオ', value: 6.446, note: '年間純移民数を2032年までに30,000人へ減少させ、その後一定とする前提' },
+		{ label: '低移民シナリオ', value: 5.734, note: '年間純移民数を2032年までに10,000人へ減少させ、その後一定とする前提' },
+	]}
+	sourceLabel="CSO『Population and Labour Force Projections 2023-2057』"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-plfp/populationandlabourforceprojections2023-2057/"
+/>
+
+- CSOは2022年国勢調査を基準に、2023年から2057年までの35年間の人口予測を3つのシナリオで公表している。いずれのシナリオも当初（2022年）の年間純移民数を75,000人と仮定し、その後の収束水準が異なる：高移民シナリオは2027年までに45,000人/年に収束し2057年に700.5万人（+35.1%）、中位移民シナリオは2032年までに30,000人/年に収束し644.6万人（+24.4%）、低移民シナリオは2032年までに10,000人/年に収束し573.4万人（+10.6%）に達する。
+  CSOはこれらのシナリオを「予測」ではなく、移民前提の違いによる結果の幅を示す「人口推計（projections）」として位置づけている。
+  出典：CSO『Population and Labour Force Projections 2023-2057』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-plfp/populationandlabourforceprojections2023-2057/）
+<ComingSoon label="国籍別・出身別に分解された長期人口予測（移民・移民の子孫の将来人口比率）は、CSOの公表資料が国籍別の細分化を行っていないため、現時点では確認できておらず今後追加予定です。" />
+
+## 4. 財政 — 純負担
+
+- デンマーク方式（出身グループ別に純負担額をクローネで算出する手法）に相当する公式研究は乏しい — これは限界として明記すべき点である。ユーロでの集計された純負担額についての公的データは存在しない。
+- ESRI（半官半民の研究機関、司法・国内事情・移民省の委託・資金提供による研究）は2026年6月10日に2本の報告書を公表した。移民の財政的影響に関する文献レビューと、社会保障給付の利用状況に関する研究である。結果（定性的・比較的手法であり、集計されたユーロ単位の数値はない）：過去20年間、海外生まれの居住者は平均してアイルランド生まれの居住者よりも財政への貢献が大きかった。
+  出典：ESRI『The fiscal impact of migration and welfare receipt among immigrants』（2026年6月10日）
+  （https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants）
+
+<BarChart
+	title="社会保障給付の利用率（移民／自国生まれ、2024年データ）"
+	unit="%"
+	bars={[
+		{ label: '何らかの広義の社会保障給付を受給（移民）', value: 61 },
+		{ label: '何らかの広義の社会保障給付を受給（自国生まれ）', value: 56 },
+		{ label: '失業給付（移民）', value: 9 },
+		{ label: '失業給付（自国生まれ）', value: 9 },
+		{ label: '障害給付（移民）', value: 4 },
+		{ label: '障害給付（自国生まれ）', value: 6 },
+	]}
+	sourceLabel="ESRI『Social transfers utilisation among migrants and Irish-born in Ireland』（2026年6月10日）"
+	sourceUrl="https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants"
+/>
+
+- 利用可能な手法の概要：
+
+  | 手法 | 結果 | 出典／委託機関 |
+  |---|---|---|
+  | 比較的文献レビュー（財政的影響、過去20年間） | 移民の財政貢献は平均して自国生まれの人々を上回る（単一のユーロ数値はなし） | ESRI、司法・国内事情・移民省の資金提供（2026年） |
+  | 社会保障給付の利用率、2024年データ（CSO） | 2024年に何らかの社会保障給付を受けた割合は移民61%、自国生まれ56%；失業給付に関しては両者とも9%で同水準；障害給付については移民の方が低い（4% 対 6%） | ESRI『Social transfers utilisation among migrants and Irish-born in Ireland』、司法・国内事情・移民省の資金提供（2026年6月10日）（https://www.esri.ie/news/the-fiscal-impact-of-migration-and-welfare-receipt-among-immigrants） |
+  | 庇護希望者の収容（IPAS）にかかる財政コスト — 全体的な純負担額とは別物で、庇護収容のみを対象 | 別途の数値データは存在する（第3節、大臣のダーイルへの回答を参照）が、デンマークのような移民／国家間の純負担計算とは比較不能 | 司法省、議会答弁（2025～2026年） |
+- これまでのところ、デンマーク財務省の方式とは異なり、アイルランドの公的研究は移民が公的財政に与える単一の集計的な純負担額を算出していない — この点について公的データは存在しない。
+
+### 4.1 年金制度・現役世代比率
+
+<ComingSoon label="国籍別・出身別の人口学的依存度（年金受給者・子供対労働年齢人口比）は、アイルランドの公的資料からは確認できず今後追加予定です。" />
+
+## 5. 労働市場
+
+<BarChart
+	title="全雇用に占める国籍別シェア（2024年）"
+	unit="%"
+	bars={[
+		{ label: 'アイルランド国籍者', value: 72.5 },
+		{ label: 'アイルランド以外の国籍者', value: 27.5 },
+	]}
+	sourceLabel="CSO『Distribution of Earnings by Nationality 2024』"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/"
+/>
+
+<KeyFigure
+	value="61.4%"
+	label="2019〜2024年の賃金雇用総増加のうち、アイルランド以外の国籍者が占める割合（218,261人分の増加）"
+/>
+
+- 2024年、アイルランド以外の国籍を持つ人々が全雇用の27.5%を占め、アイルランド国籍者は72.5%であった。2019年から2024年の期間、アイルランド国籍者の雇用は137,071人分増加したのに対し、アイルランド以外の国籍者の雇用は218,261人分増加した（同期間の賃金雇用総増加の61.4%に相当）。
+  出典：CSO『Distribution of Earnings by Nationality 2024』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/）
+- アイルランド国籍者に次いで、2024年の雇用で最も多くを占める国籍はポーランド（3.2%）、インド（3.1%）、英国（2.7%）である。
+  出典：CSO、同publication
+- 2024年、アイルランド以外の国籍者は一部の業種で過大に代表されている：管理支援サービス業の45.6%、宿泊・飲食業の45.1%、情報通信業の41.4%（この検証の過程ではこれら3つの全体的な比率を直接確認できておらず、出典を読む限りでは国籍別の業種集中傾向は確認できる ── 例えばインド国籍者は保健・社会福祉分野で32.2%、ウクライナ国籍者は宿泊・飲食業で25.3% ── が、ここで挙げた3つの全体比率については字句どおりの確認ができていない。さらなる検証が必要）。
+  出典：CSO『Distribution of Earnings by Nationality 2024』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-den/distributionofearningsbynationality2024/）
+- アイルランドの全体雇用率（15～64歳、2025年第3四半期）：74.7%（2024年第3四半期の75.3%から低下。2021年第1四半期以降で初めての前年同期比の低下）。EU平均（71.0%）との比較については、このCSOの公表資料自体（アイルランドの数値のみを示す）では確認できなかった ── EUの数値はEurostatで照合の上、最終版で確定すべき点である。アイルランド国籍者とアイルランド以外の国籍者の別の雇用率についての公的データは存在しない（CSOは国籍別の雇用分布は公表しているが、同publicationでは国籍別に労働力人口に対する雇用率を示していない）。
+  出典：CSO『Labour Force Survey Quarter 3 2025』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-lfs/labourforcesurveyquarter32025/keyfindings/）
+
+## 6. 治安・司法
+
+- 特定された事件：2023年11月23日午後1時30分頃、ダブリン市内の小学校（Gaelscoil Choláiste Mhuire、Parnell Square East）付近で刃物を用いた襲撃事件が発生し、児童3人と成人1人が負傷した。同日夜、ダブリン市中心部で騒乱が発生した（車両への放火、衝突）。
+  ガーダ・シオハーナ（国家警察）は当夜34人を逮捕したと発表、その後の続報によれば後続の数週間で逮捕者数は50人を超えた。
+  出典：ガーダ・シオハーナの公式発表および司法手続きの追跡報道。公式発表はガーダ・シオハーナ（https://www.garda.ie）を参照 — 損害額を含む統一的な公的被害集計データは存在しない。
+- 司法・国内事情・移民省／CSOは、被疑者の国籍別の犯罪統計を集計していない。CSOは、ガーダ・シオハーナから提供される四半期PULSEデータ抽出には被害者・被疑者の国籍に関するデータが含まれていないことを確認している（被疑者については性別と年齢層のみが利用可能）。国籍別の犯罪内訳についての公的データは存在しない。
+  出典：CSO『Background Notes — Recorded Crime Victims 2024 and Suspected Offenders 2023』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-rcvo/recordedcrimevictims2024andsuspectedoffenders2023/backgroundnotes/）
+
+## 7. 教育
+
+- CSOはPLSS（Programme and Learner Support System）を通じて生徒の国籍を記録する追跡基盤（ELD、Educational Longitudinal Database、教育縦断データベース）を有している。2017年のPLC（Post-Leaving Certificate、後期中等教育後課程）学習者27,454人、119以上の異なる国籍出身という数値は、ELDの方法論ページ（追跡基盤の説明はあるが、この数値自体は再現されていない）の直接確認では確認できなかった ── 現時点では確実性をもって検証できないデータであり、最終版公表前に正確なELD統計の公表資料で照合すべき点である。
+  出典（参照済み）：CSO『Educational Longitudinal Database (ELD)』
+  （https://www.cso.ie/en/methods/education/educationallongitudinaldatabase/educationallongitudinaldatabaseeld/）
+- 国籍または出生国別に分類・公表された学業成績（Leaving Certificate合格率、進学率）についての公的データは存在しない ── 確認したCSOの公表資料（コホート別中等教育後成果）は、公表された集計において成績と国籍を交差させていない。
+  出典（確認済み）：CSO『Outcomes Overview — Post-Primary Outcomes』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-ppo/post-primaryoutcomes-academicyearsending20122013/outcomesoverview/）
+
+## 8. 住宅
+
+<BarChart
+	title="新築住宅完成件数（2024年→2025年）"
+	unit="戸"
+	bars={[
+		{ label: '2024年', value: 30147 },
+		{ label: '2025年', value: 36284 },
+	]}
+	sourceLabel="CSO『New Dwelling Completions Q4 2025』"
+	sourceUrl="https://www.cso.ie/en/releasesandpublications/ep/p-ndc/newdwellingcompletionsq42025/"
+/>
+
+- アイルランドの住宅危機は近年の移民増加以前から既に深刻であった ── 相関関係と因果関係を明確に区別し、CSOの建設データと照合する必要がある。
+- 新築住宅完成件数：2025年は36,284戸、2024年（30,147戸。以前のバージョンに記載された30,330戸ではなく、出典の直接確認後に修正済みの数値）から+20.4%、2011年の統計開始以来最高水準。アパートが2025年の完成件数の33.2%（12,047戸、前年比+38.7%。2024年は28.8%、8,687戸）を占めた。
+  出典：CSO『New Dwelling Completions Q4 2025』
+  （https://www.cso.ie/en/releasesandpublications/ep/p-ndc/newdwellingcompletionsq42025/）
+- 2025年4月までの12か月間で総人口が78,300人（+1.5%）増加した（第3節参照）ことと、2024年の30,147戸、2025年の36,284戸の住宅完成件数を並べてみると、人口増加と建設量の比較からは移民と住宅不足の間に直接的な因果関係を立証することはできない ── 住宅危機は近年の移民増加以前から存在し、土地、建設コスト、計画許可などの構造的要因（本稿では数値化していない）も影響している。
+  出典：CSO『Population and Migration Estimates April 2025』および『New Dwelling Completions Q4 2025』（上記および第3節のリンクを参照）。
+- 住宅価格や賃料の上昇のうち移民に特に起因する割合を算定した公式な推計についての公的データは存在しない（現時点でそうした因果関係の公式研究は確認されていない）。
+
+## 9. 社会的結束
+
+- ESRIは2025年、平等省（Department of Equality）による2023年4月の移民への態度に関する調査と、2022年の国勢調査による地域特性データを組み合わせた研究を公表した。
+  結果：不利な状況にある地域（一人親家庭、失業者、低学歴の割合が高い地域）に住む人々は移民に対してより否定的な態度を示す傾向がある。農村部や、より分離が進んだ地域（移民が集中して居住する地域）も同様に好意的でない態度を示す。
+  この研究では、公共サービス（医療、住宅、教育）への需要圧力が高い地域に住んでいることと移民へのより否定的な態度の間には関連性が見られなかった。
+  出典：ESRI『Community context affects attitudes towards immigration』（2025年）
+  （https://www.esri.ie/news/community-context-affects-attitudes-towards-immigration）
+- 社会的結束の時系列的な変化を測定する、定期的かつ専用のCSO統計シリーズについての公的データは存在しない（上記ESRIの研究は2023年の調査に基づく一時的な分析であり、年次の統計シリーズではない）。
+
+## 10. 最近の政治的背景
+
+- 2023～2024年に社会的緊張が高まった（複数の地域で庇護希望者の収容施設に反対する抗議活動）。2023年末から2024年にかけて政府の発言が厳格化した。
+
+## 11. データの限界・偏り
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+比較的新しい事例（長期にわたる統計シリーズが少ない）── デンマーク・スウェーデンとは異なり、歴史的な比較には限界がある。犯罪統計（CSO／ガーダ・シオハーナ）には被疑者・被害者の国籍に関する変数が一切含まれていない。したがって、アイルランドにおける移民と犯罪の関連性に関するいかなる公的な主張も、データが存在しないため、アイルランドの公式な出典に基づくことができない。IPAS（庇護希望者の収容）統計は近年（2022年以降の急増）のみを対象としており、数十年単位の歴史的観点から現在の水準を位置づけるための比較可能な長期統計シリーズは存在しない。不法滞在者数についての公式な統計は公表されていない。利用可能なデータ（CSO、司法省）は合法的な、または資格取得手続き中の流入のみを対象としている（第3節参照）。
+</div>

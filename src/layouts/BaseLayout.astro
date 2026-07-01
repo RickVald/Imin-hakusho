@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	lang: 'ja' | 'en';
+	altHref?: string;
+	description?: string;
+	canonicalUrl?: string;
+}
+
+const { title, lang, altHref, description: descriptionProp, canonicalUrl: canonicalUrlProp } = Astro.props;
+
+const defaultDescription =
+	lang === 'en'
+		? 'Immigration data from official sources for 20 Western countries. Fiscal impact, labor market, crime, education, housing — facts only.'
+		: '西欧20カ国の移民データを一次公式資料のみで分析。財政・労働・治安・教育・住宅の実態を数字で把握する。';
+
+const description = descriptionProp ?? defaultDescription;
+const canonicalUrl = canonicalUrlProp ?? Astro.url.href;
+
+const footerText =
+	lang === 'ja'
+		? '本サイトの内容はすべて公的機関・研究機関の一次資料に基づきます。各統計の出典は本文中のリンクをご確認ください。'
+		: 'All content on this site is based on primary sources from public institutions and research bodies. See in-text links for each source.';
+---
+
+<html lang={lang}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- SEO de base -->
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={canonicalUrl} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="移民白書" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:locale" content={lang === 'en' ? 'en_US' : 'ja_JP'} />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+
+		<!-- JSON-LD Organisation -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "移民白書",
+			"alternateName": "Immigration Factbook",
+			"url": "https://imin-hakusho.jp",
+			"description": "移民が西欧20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータジャーナリズムサイト",
+			"inLanguage": ["ja", "en"]
+		})} />
+
+		{altHref && (
+			<link rel="alternate" hreflang={lang === 'ja' ? 'en' : 'ja'} href={altHref} />
+		)}
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="site-header">
+			<div class="site-header__inner">
+				<a class="site-header__brand" href={lang === 'ja' ? '/' : '/en/'}>
+					{lang === 'ja' ? '移民白書' : 'Immigration Factbook'}
+				</a>
+				{altHref && (
+					<a class="site-header__lang" href={altHref}>
+						{lang === 'ja' ? 'English' : '日本語'}
+					</a>
+				)}
+			</div>
+		</header>
+		<main>
+			<slot />
+		</main>
+		<footer class="site-footer">
+			<div class="site-footer__inner">
+				<p>{footerText}</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,235 @@
+---
+slug: portugal
+name: "Portugal"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- INE Portugal (Instituto Nacional de Estatística): https://www.ine.pt
+- AIMA (Agência para a Integração, Migrações e Asilo) — Agency for Integration, Migration and Asylum (replaced SEF in 2023)
+- Bank of Portugal (Banco de Portugal) — macroeconomic analyses
+
+## 2. Key datasets
+
+- INE: resident foreign population by nationality, employment, population estimates (methodology shifted in 2025 to fully administrative data sources)
+- AIMA: residence permit and asylum statistics (strong recent increase, notably Portuguese-speaking immigration — Brazil, Portuguese-speaking African countries)
+- Reports on the "golden visa" program and its effects on real estate (distinct from labor/asylum immigration, to be clearly differentiated)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (December 31, 2025 — total population 11,424,031)"
+	segments={[
+		{ label: 'Portuguese nationals', value: 86.0, color: '#1d3461' },
+		{ label: 'Foreign nationals', value: 14.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="INE (Statistics Portugal), 2025 population estimates"
+	sourceUrl="https://www.ine.pt"
+	sourcePrefix="Source: "
+/>
+
+- According to INE's 2025 estimates, Portugal's total population stood at 11,424,031 as of December 31, 2025, of whom 1,597,539 were foreign nationals, or 14.0% of the total — an increase of 59,113 from 2024. Between 2021 and 2025, the foreign resident population more than doubled (+849,384).
+  Methodological note: for this 2025 estimate, INE adopted a methodology based "entirely on administrative data sources," a shift from its previous approach — this should be kept in mind when making year-over-year comparisons.
+  Source: INE (Statistics Portugal), "Estimativas de população residente em Portugal 2025": https://www.ine.pt
+- A different source (AIMA, administrative basis, including permits being processed) puts the figure at between 1,543,697 and 1,546,521 foreign citizens residing in Portugal at the end of December 2024 (the discrepancy between the two figures stems from different versions of AIMA's interim report). AIMA and INE use different methodologies (administrative data vs. strict statistical validation), and a growing gap between the two sources has been documented since 2022 — to be flagged as an official methodological divergence, not an error.
+  Sources: AIMA, Relatório de Migrações e Asilo 2024: https://aima.gov.pt/media/pages/documents/fec4d6a712-1760603125/relatorio-migracoes-e-asilo-2024.pdf ; Migration Observatory (AIMA), "Análise Comparativa entre a AIMA e o INE": https://om.aima.gov.pt/wp-content/uploads/2025/10/Indicadores-Migratorios-em-Portugal_Analise-Comparativa-entre-a-AIMA-e-o-INE.pdf
+- 218,332 residence permits were issued in 2024. The leading reason for new permits was "professional activity" (63,527 grants).
+  Source: AIMA, Relatório de Migrações e Asilo 2024 (link above)
+- International protection (asylum) applications in 2024: 2,677 applications, 1,244 provisional residence authorizations or refugee/subsidiary protection statuses granted. Unaccompanied minors seeking asylum increased by 151.9% year on year, to 204 (more than half originating from Gambia) — to be clearly distinguished from labor or family immigration, far higher in volume.
+  Source: AIMA, Relatório de Migrações e Asilo 2024 (link above)
+
+### 3.2 Breakdown by nationality
+
+<StackedBar
+	title="Foreign nationals by nationality (end of 2025, INE estimates)"
+	segments={[
+		{ label: 'Brazil', value: 35.9, color: '#9c3b3b' },
+		{ label: 'Angola', value: 6.5, color: '#1d3461' },
+		{ label: 'India', value: 5.9, color: '#c9a23f' },
+		{ label: 'Other', value: 51.7, color: '#999999' },
+	]}
+	sourceLabel="INE (Statistics Portugal), 2025 population estimates"
+	sourceUrl="https://www.ine.pt"
+	sourcePrefix="Source: "
+/>
+
+- As of the end of 2025, Brazilian nationals form the largest group at 574,195 (35.9% of the foreign population), followed by Angolans (103,140, 6.5%) and Indians (93,683, 5.9%).
+  Leading nationalities by residence permit (AIMA, end of 2024): Brazil (484,596), India (98,616), Angola (92,348) — INE and AIMA broadly agree on the ranking of Brazil versus India/Angola, but the exact counts differ owing to their respective methodologies.
+  Cape Verde (76,099), Nepal (56,866), Bangladesh (56,724), and Guinea-Bissau (53,555) also rank among the leading nationalities.
+  Source: INE (Statistics Portugal); AIMA, Relatório de Migrações e Asilo 2024 (link above)
+
+### 3.3 Immigration waves (1975 – present)
+
+- Portugal's immigration history begins with the 1974 Carnation Revolution and the subsequent decolonization (1975) of its African colonies (Angola, Mozambique, Cape Verde, Guinea-Bissau, São Tomé and Príncipe).
+- **1975–1977 (the "retornados" period)**: a mass return of Portuguese citizens previously resident in the former African colonies, with over 500,000 people relocating to Portugal during this period. According to the 1981 census, 61% of returnees came from Angola and 34% from Mozambique. Strictly speaking this was a return of Portuguese nationals rather than immigration, but it is significant in that African immigration (continuing after decolonization, unlike the one-off repatriation) began around the same time.
+  Source: Portuguese Wikipedia, "Retornados": https://pt.wikipedia.org/wiki/Retornados (summary source, to be cross-checked against primary sources)
+- **1980s–1990s**: continued labor migration from the Portuguese-speaking African countries (PALOP: Angola, Cape Verde, Guinea-Bissau, etc.).
+- **2000s–2010s**: a sharp rise in immigration from Brazil, becoming the central component of Lusophone immigration. Over the same period, labor migration from Eastern Europe (notably Ukraine and Romania) also increased.
+- **2012–2023**: the "golden visa" program (residence permits granted via real estate investment) was in operation, generating a wave of investment-linked immigration (see section 8 for detail).
+- **2021–2025 (recent surge)**: the foreign resident population more than doubled between 2021 and 2025 (+849,384), driven mainly by continued immigration from Brazil and a sharp rise in labor migration from South Asia (India, Nepal, Bangladesh).
+  Source: INE (Statistics Portugal) (link above)
+
+<ComingSoon label="A precise year-by-year time series of the foreign population from 1975 to 2020 (INE historical series) is planned for a future update. This research could confirm the broad historical narrative but could not directly confirm a precise year-by-year population time series from a primary source." />
+
+### 3.4 Age structure (population pyramid)
+
+<AgePyramid
+	title="Age structure: foreign nationals vs. total population (December 31, 2025)"
+	bands={[
+		{ label: '0–14', groups: [
+			{ label: 'Foreign nationals', value: 8.9, color: '#9c3b3b' },
+			{ label: 'Total population', value: 12.4, color: '#1d3461' },
+		]},
+		{ label: '15–64', groups: [
+			{ label: 'Foreign nationals', value: 86.1, color: '#9c3b3b' },
+			{ label: 'Total population', value: 64.3, color: '#1d3461' },
+		]},
+		{ label: '65+', groups: [
+			{ label: 'Foreign nationals', value: 5.0, color: '#9c3b3b' },
+			{ label: 'Total population', value: 23.0, color: '#1d3461' },
+		]},
+	]}
+	sourceLabel="INE (Statistics Portugal), 2025 population estimates"
+	sourceUrl="https://www.ine.pt"
+	sourcePrefix="Source: "
+/>
+
+- The foreign population shows a markedly different age structure from the total population: working age (15–64) accounts for 86.1% of foreign nationals (versus 64.3% of the total population), while only 5.0% are 65 or older (versus 23.0% for the total population). The 0–14 share is also slightly lower among foreign nationals (8.9%) than in the total population (12.4%).
+  Trend: the concentration of the foreign population in working age rose by 3.6 percentage points compared with 2021. INE states explicitly that "the foreign population shows a markedly different age structure from the total population, characterized by a predominance of men and of working-age individuals."
+  Gender breakdown: 913,249 foreign nationals (57.2%) are men, 684,290 (42.8%) are women.
+  Source: INE (Statistics Portugal), "Estimativas de população residente em Portugal 2025": https://www.ine.pt
+- A detailed age breakdown by nationality of origin (Brazil, Cape Verde, Angola, Guinea-Bissau, etc.) could not be directly confirmed from a primary INE/AIMA source during this research.
+<ComingSoon label="A detailed age structure broken down by nationality (Brazil, Cape Verde, Angola, Guinea-Bissau, etc.) is planned for a future update." />
+
+### 3.5 Long-term projection
+
+<ComingSoon label="A long-term population projection for Portugal broken down by origin is planned for a future update. No primary source equivalent to Statistics Denmark's Befolkningsfremskrivning, with a projected foreign-population share broken down by origin, could be confirmed during this research." />
+
+## 4. Public finances — net cost
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Portugal has no comprehensive net fiscal contribution calculation broken down by origin and length of residence comparable to the Danish Ministry of Finance (Finansministeriet). Methods 1 and 2 below are both partial calculations, not a complete cost-benefit analysis in the Danish sense.
+</div>
+
+- Method 1 (observed social contributions): according to AIMA, immigrants accounted for 17.5% of total Social Security revenue in Portugal in 2024. Social contributions paid by foreign residents amounted to approximately €2.2 billion in 2024 (compared with €2.677 billion in 2023 according to another estimate, a discrepancy likely linked to different calculation scopes, to be clarified). Brazil is said to account for €1.4 billion of this contribution.
+  Source: AIMA / Social Security, figures relayed in the Portuguese business press (ECO/Jornal de Negócios); to be confirmed directly with the Social Security Institute (Instituto da Segurança Social) — https://www.seg-social.pt
+
+<BarChart
+	title="Fiscal burden under a zero-immigration scenario (% of GDP, estimate)"
+	unit="%"
+	bars={[
+		{ label: 'Current (with immigration)', value: 35.2 },
+		{ label: 'Zero-immigration scenario (estimate)', value: 38 },
+	]}
+	sourceLabel="Relayed by Jornal de Negócios (sponsor not confirmed at time of writing)"
+	sourceUrl="https://www.jornaldenegocios.pt/economia/financas-publicas/detalhe/acabar-com-imigracao-obrigaria-carga-fiscal-a-subir-de-35-2-para-43-1-do-pib"
+	sourcePrefix="Source: "
+/>
+
+- Method 2 (projection of fiscal burden under a zero-immigration scenario): CORRECTED AFTER DIRECT VERIFICATION OF THE SOURCE — the Jornal de Negócios article indicates that in an extreme zero-immigration scenario, Portugal's fiscal burden would need to rise from 35.2% to 38% of GDP (not 43.1% as previously written on this page, now corrected) to finance demographic aging, equivalent to an additional cost of about €1,700 per taxpayer per year (this latter figure is confirmed by the article). The exact title of the study and its sponsor do not appear in the freely accessible text of the article — to be verified directly with the study's author before final publication; should not be cited as a Bank of Portugal study without direct confirmation.
+  Source: relayed by Jornal de Negócios — https://www.jornaldenegocios.pt/economia/financas-publicas/detalhe/acabar-com-imigracao-obrigaria-carga-fiscal-a-subir-de-35-2-para-43-1-do-pib
+- No consolidated Danish-style study (Finansministeriet, net balance by age cohort and origin) has been identified for Portugal at the time of writing. No publicly available data for a second, fully official and independent methodology.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<ComingSoon label="A demographic dependency ratio (pensioners and children relative to working-age population) broken down by origin for Portugal is planned for a future update. The extreme concentration of foreign nationals in working age (86.1%, see section 3.4) is an indirect indicator of pension-system impact, but an official dependency ratio broken down by origin could not be confirmed during this research." />
+
+## 5. Labor market
+
+<BarChart
+	title="Overqualification, temporary employment, and unemployment: foreign nationals vs. total population"
+	unit="%"
+	bars={[
+		{ label: 'Overqualification rate: foreign nationals', value: 42.8 },
+		{ label: 'Overqualification rate: total population', value: 15.7 },
+		{ label: 'Temporary contract rate: foreign nationals', value: 35.8 },
+		{ label: 'Temporary contract rate: total population', value: 15.9 },
+		{ label: 'Unemployment (Q1 2025): foreign nationals', value: 11.9 },
+		{ label: 'Unemployment (Q1 2025): total population', value: 6.6 },
+	]}
+	sourceLabel="INE / IEFP / Office for Strategy and Planning (Ministry of Labor)"
+	sourceUrl="https://www.gep.mtsss.gov.pt/documents/10182/10925/benov2025.pdf"
+	sourcePrefix="Source: "
+/>
+
+- According to INE/IEFP/Eurostat/Social Security data relayed by a recruitment industry player (Randstad Portugal): foreigners are markedly more present than Portuguese nationals in agriculture (6.2% vs. 2.4%), hospitality and food service (18.3% vs. 8.7%), and administrative and support activities (20.8% vs. 9.8%). Overqualification rate (employment below diploma level): 42.8% among foreigners versus 15.7% for the total population. 35.8% of foreigners hold a temporary contract versus 15.9% for the total population. In Q1 2025, the unemployment rate among foreigners was 11.9%, versus 6.6% for the total population. 31.6% of foreign residents have a higher education level, above the EU average (27.4%).
+  Primary source to be preferred: INE / IEFP / Office for Strategy and Planning (Ministry of Labor, Gabinete de Estratégia e Planeamento), Statistical Bulletin —
+  https://www.gep.mtsss.gov.pt/documents/10182/10925/benov2025.pdf
+  (data also relayed by Randstad Portugal based on these public sources)
+
+## 6. Security / justice
+
+<KeyFigure
+	value="17.4%"
+	label="Share of foreign nationals among Portugal's prison population (December 31, 2024)"
+/>
+
+- As of December 31, 2024: 11,360 people detained in total in Portuguese prisons, of whom 2,151 were of foreign nationality, or 17.4% of the total — a stable proportion compared with the previous year. For comparison, the resident foreign population represented around 13–14% of the total population in 2024: a more moderate gap than in Italy or Spain. By continent of origin among foreign detainees: Africa 43.3%, South America 34.3% (including 644 Brazilian nationals, 29.9% of foreign detainees — Brazil therefore does not constitute a majority of foreign detainees, contrary to a widespread belief, according to a fact-check by the daily Público based on official data).
+  Source: DGRSP (Direção-Geral de Reinserção e Serviços Prisionais, Directorate-General for Reintegration and Prison Services, a public body), Estatísticas Prisionais 2024 —
+  https://dgrsp.justica.gov.pt/Estat%C3%ADsticas-e-indicadores/Prisionais/2024
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Prison statistics (DGRSP) do not distinguish offenses related to irregular stay from other criminal offenses, limiting direct comparability of crime rates between nationals and foreigners.
+</div>
+
+## 7. Education
+
+<KeyFigure
+	value="13.9%"
+	label="Share of migrant students in national enrollment, 2023–2024 school year"
+/>
+
+- 2023–2024 school year: migrant students accounted for 13.9% of national enrollment, a much higher share than a few years earlier (53,000 students of foreign origin in public schools about five years ago, versus more than 140,000 in 2023, or +160% in five years according to the OECD/DGEEC). In certain municipalities (Sintra, Amadora, Braga, Porto), these students make up 30 to 40% of classes.
+  Source: DGEEC (Direção-Geral de Estatísticas da Educação e Ciência, Directorate-General for Education and Science Statistics, a public body) —
+  https://www.dgeec.medu.pt/ ; data also cited by the OECD (2024)
+- The National Education Council (CNE, Conselho Nacional de Educação, a public advisory body) reports that migrant children and young people have a grade-repetition rate roughly four times higher than their Portuguese peers (CNE, 2023). At the national level, across all origins, the repetition/dropout rate in the third cycle of basic education rose from 4.5% to 6.2% between 2021–2022 and 2022–2023; no distinct official national statistic by nationality with a verified methodology has been located for this specific rate — no publicly available data for an officially consolidated differentiated rate.
+  Source: Conselho Nacional de Educação; Tribunal de Contas (Court of Auditors), Follow-up Audit "Abandono Escolar Precoce" (2024) —
+  https://www.tcontas.pt/pt-pt/ProdutosTC/Relatorios/RelatoriosAuditoria/Documents/2024/rel002-2024-2s.pdf
+
+## 8. Housing
+
+- Link between golden visas/real estate and the housing crisis in Lisbon/Porto — distinct from labor immigration, a point requiring careful methodological clarification.
+- The real estate component of the "golden visa" program (granting a residence permit in exchange for real estate investment of at least €500,000) was abolished in October 2023, as part of the "Mais Habitação" housing-supply law, officially in response to the housing crisis.
+  From the program's launch (October 2012) through the end of September 2023, a cumulative total of 12,718 main applicants and 20,424 accompanying family members were granted residence permits, for approximately €7.3 billion in cumulative investment (a separate estimate puts the figure at approximately 11,600 permits and roughly €6.8 billion over the preceding decade — the difference between the two estimates likely reflects different reporting periods or scope). Leading investor nationalities varied by year but were mainly Brazilian and Chinese.
+  Over the same period, real estate prices rose by about 55% while average incomes grew by only 9% — a documented correlation, but the golden visa is a residential investment program, not a channel for labor or family immigration; it should not be aggregated with economic immigration statistics without specifying this.
+  Source: golden visa program, legal framework amended by Law No. 56/2023 — summary relayed by Get Golden Visa/Connaught Law; for official program figures, primary source: AIMA — https://aima.gov.pt
+- No publicly available data for a consolidated official indicator measuring the geographic concentration of foreign residents (labor/family/asylum) in the social housing stock, distinct from the golden visa phenomenon.
+
+## 9. Social cohesion
+
+- Eurobarometer (European Commission), October 2024 wave: only 10% of Portuguese cite immigration as one of the country's main problems, versus 20% on European average — though sharply higher than the previous wave (6%) and the year before (3%), reflecting a rapid shift in opinion rather than a high absolute level of concern.
+  Source: Eurobarometer, analysis relayed by Diário de Notícias —
+  https://www.dn.pt/opiniao-dn/opiniao/as-preocupa%C3%A7%C3%B5es-dos-portugueses-e-o-sucesso-da-desinforma%C3%A7%C3%A3o
+  (primary source: European Commission, Eurobarometer — https://europa.eu/eurobarometer/)
+- An independent study (relayed by Público in August 2025) describes Portugal as an "epicenter of disinformation on immigration in Europe" in 2025 — a point of context on the reliability of public debate, mentioned without endorsing the value judgment itself, citing the body behind the study if confirmed.
+
+## 10. Recent political context
+
+- Dissolution of SEF (Serviço de Estrangeiros e Fronteiras) and creation of AIMA, effective October 29, 2023.
+- The Montenegro government has been in office since April 2024. An "anti-immigration package" took effect on October 23, 2025, tightening conditions for regularization and family reunification after years of comparatively more open policy. Prime Minister Luís Montenegro publicly stated that "immigrants in an illegal situation must return to their country" (October 2025).
+  Source: AIMA (legal framework); statement relayed by Público —
+  https://www.publico.pt/2025/10/27/publico-brasil/noticia/imigrantes-ilegais-regressar-pais-primeiroministro-portugal-2152354
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+The administrative transition from SEF to AIMA (2023) created processing delays documented by AIMA itself, affecting the reliability and updating of 2023–2024 statistics. A growing, documented methodological gap exists between the foreign population figures published by AIMA (administrative basis, including permits being processed) and those of INE (strict statistical validation, and from 2025 a new methodology based on administrative data sources) — the two sources should never be cited as interchangeable.
+Source: Migration Observatory (AIMA), AIMA/INE comparative analysis (link in section 3).
+The net fiscal cost figure of "€1,700 per taxpayer" under a zero-immigration scenario comes from a study whose sponsor could not be confirmed with certainty in the sources consulted for this page; it is reported here with this explicit caveat and should not be presented as a Bank of Portugal analysis without direct verification against the primary source.
+Prison statistics (DGRSP) do not distinguish offenses related to irregular stay from other criminal offenses, limiting direct comparability of crime rates between nationals and foreigners.
+</div>

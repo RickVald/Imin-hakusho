@@ -1,0 +1,29 @@
+---
+interface Tile {
+	period: string;
+	value: string;
+	description: string;
+	color?: string;
+}
+
+interface Props {
+	title: string;
+	tiles: Tile[];
+}
+
+const { title, tiles } = Astro.props;
+const palette = ['#1d3461', '#9c3b3b', '#c9a23f', '#5a8a6b', '#6b5b95'];
+---
+
+<div class="key-tiles">
+	<p class="key-tiles__title">{title}</p>
+	<div class="key-tiles__grid">
+		{tiles.map((tile, i) => (
+			<div class="key-tiles__tile" style={`--accent:${tile.color ?? palette[i % palette.length]}`}>
+				<span class="key-tiles__period">{tile.period}</span>
+				<span class="key-tiles__value">{tile.value}</span>
+				<span class="key-tiles__desc">{tile.description}</span>
+			</div>
+		))}
+	</div>
+</div>

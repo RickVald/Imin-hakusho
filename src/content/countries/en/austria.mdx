@@ -1,0 +1,202 @@
+---
+slug: austria
+name: "Austria"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- Statistik Austria — national statistical institute: https://www.statistik.at
+- BMI (Bundesministerium für Inneres, Federal Ministry of the Interior) — asylum statistics
+- Österreichischer Integrationsfonds (ÖIF, Austrian Integration Fund) — public integration agency
+- WIFO (Austrian Institute of Economic Research) — economic impact studies
+
+## 2. Key datasets
+
+- Statistik Austria: population by origin/nationality, employment, Migrationsbericht (annual migration report), "Statistisches Jahrbuch Migration & Integration" (published jointly with ÖIF every year)
+- BMI: detailed asylum statistics (Austria had one of the highest per-capita asylum application rates in Europe in 2022-2023)
+- WIFO: studies on fiscal impact and the labor market
+- Statistik Austria: population projections (Bevölkerungsprognose, November 2025 edition)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (April 1, 2026 — total population 9,220,882)"
+	segments={[
+		{ label: 'Austrian nationality', value: 79.5, color: '#1d3461' },
+		{ label: 'Foreign nationality', value: 20.5, color: '#9c3b3b' },
+	]}
+	sourceLabel="Statistik Austria, Bevölkerung nach Staatsangehörigkeit"
+	sourceUrl="https://www.statistik.at/en/statistics/population-and-society/population/population-stock/population-by-citizenship/country-of-birth"
+	sourcePrefix="Source: "
+/>
+
+- As of April 1, 2026, Austria's population stood at 9,220,882, of whom approximately 1.89 million (20.5%) hold foreign nationality. Measured by country of birth rather than nationality, the foreign-born share reaches 22.9%.
+  Trend: the foreign-national share has risen sharply from 4.0% in 1981 (see section 3.3 below).
+- Broader measure including naturalized persons and children of immigrant parents ("Migrationshintergrund," migration background): on average in 2024, 2.509 million people, or 27.8% of the private household population. Time comparison: this share rose from 21.4% in 2015 to 27.8% in 2024 (+794,400 people over ten years, or +46%). Provisional 2025 figures show a total of 2,553,600 (first generation 1,901,200; second generation 652,400).
+- Asylum: 15,337 asylum applications filed from January to November 2025, down 35% compared with the same period in 2024 (23,483 applications), of which only 42% were initial applications.
+- For 2024, the leading country of origin for asylum seekers is Syria (55% of applications). Family reunification has fallen sharply: 1,146 entries in November 2023, 241 in November 2024, just 1 in November 2025.
+- Legal/illegal and work/family/asylum distinction: BMI statistics distinguish between asylum applications (international protection), family reunification, and labor migration (separate permits, e.g., the red-white-red card); these should not be aggregated with the total foreign population figures above, which also include EU/EEA free movement (Germans, Romanians, and Hungarians being the largest groups).
+- Sources: Statistik Austria/ÖIF, "Statistisches Jahrbuch Migration & Integration 2025" — https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf; BMI, "Asyl-Statistik 2024" — https://www.bmi.gv.at/301/Statistiken/files/Jahresstatistiken/Asylstatistik_Jahresstatistik_2024.pdf
+
+### 3.2 Origin breakdown
+
+<ComingSoon label="A full breakdown summing to 100% by nationality group (EU/EEA, former Yugoslavia, Turkey, other) exists in Statistik Austria's STATatlas/STATcube tools, but this research could not extract exact percentages in text form from the primary source. The top individual nationalities as of January 2025 (Germany 239,500; Romania 155,700; Turkey 124,800; Serbia 122,500; Hungary 112,400) are confirmed, but a complete share-of-total breakdown is planned for a future update." />
+
+- Confirmed top nationalities (as of January 1, 2025): Germany (239,500), Romania (155,700), Turkey (124,800), Serbia (122,500), Hungary (112,400).
+  Source: Statistik Austria (link above).
+
+### 3.3 Immigration waves (1960s – present)
+
+- **1961**: the Raab-Olah Agreement created a simplified employment procedure for foreign workers.
+- **Signed May 15, 1964 / entered into force July 23, 1964**: Austria-Turkey labor recruitment agreement (Anwerbeabkommen).
+  Source: University of Salzburg (study commissioned by the Federal Chancellery), "50 Jahre österreichisch-türkisches Anwerbeabkommen" — https://www.bundeskanzleramt.gv.at/dam/jcr:e61b32db-f2e9-4524-8834-0386ba97160c/studie_anwerbeabkommen_-_uni_salzburg.pdf
+- **April 1966**: Austria-Yugoslavia labor recruitment agreement enters into force.
+- **1961-1974**: approximately 265,000 people migrated to Austria under the "Fremdenarbeiter" (foreign worker) system. In 1973, 78.5% of foreign workers held Yugoslav nationality and 11.8% Turkish nationality. At the 1973 peak, approximately 230,000 foreign workers were employed, equivalent to 8.7% of the employed population. Following the 1973-74 oil crisis, new work permits were halted.
+  Source: House of Austrian History (Haus der Geschichte Österreich, hdgö), "Arbeitsmigration" — https://hdgoe.at/arbeitsmigration
+- **1981**: foreign-national population at 304,000, or 4.0% of the total population (versus 7.27 million Austrian nationals).
+  Source: Statistik Austria, "Volkszählung 2001" (including population trends since 1869) — https://www.statistik.at/fileadmin/publications/Volkszaehlung_2001__Wohnbevoelkerung_nach_Gemeinden__mit_der_Bevoelkerungsentwicklung_seit_1869_.pdf
+- **1990s**: wave of refugees from the Yugoslav wars. Approximately 300,000 refugees are reported to have arrived in Austria between 1990 and 1996, including approximately 86,500 Bosnian refugees admitted between 1992 and 1995 (about 1.1% of Austria's population at the time).
+  Source: efms (University of Bamberg, European Forum for Migration Studies, compiling UNHCR-era data) — https://www.efms.uni-bamberg.de/ds27_2_e.htm (a secondary compilation requiring direct verification against a primary source)
+- **1991-2001**: the foreign-national population grew by 193,236 people (versus approximately 226,000 in the prior decade, 1981-1991).
+  Source: Statistik Austria, "Volkszählung 2001" (link above)
+- **2015**: asylum applications surged to 88,340, driven by the Syrian civil war and the situation in Afghanistan — more than the combined total for 2010-2014. Syria accounted for 24,547 applications and Afghanistan for 25,563.
+  Source: BMI Asylstatistik archives — https://www.bmi.gv.at/301/Statistiken/files/2025/Asylstatistik_Jaenner_2025.pdf; Statistik Austria, "Statistische Nachrichten 4/2017" — https://www.statistik.at/stddoku/subdokumente/b_asylstatistik_stat-nachr_04_17.pdf
+- **2025**: the foreign-national share reached 20.5% (1.89 million).
+- **Limitation**: a complete decade-by-decade time series of the foreign-national share from 1961 to 2025 (including intermediate data points such as 1971 and 2011) appears to exist on Statistik Austria's "Historische Volkszählungen" page, but this research could not extract exact figures from the underlying PDF tables in text form.
+<ComingSoon label="A complete decade-by-decade time series of the foreign-national population share from the 1960s to 2025 (Statistik Austria, 'Historische Volkszählungen' data tables) is planned for a future update." />
+
+### 3.4 Age structure
+
+<KeyFigure
+	value="69.0%"
+	label="Share of working age (20-64) within the population with a migration background (2024/2025)"
+/>
+
+- According to Statistik Austria/ÖIF, 69.0% of the population with a migration background falls within working age (20-64), as of 2024/2025.
+  Source: Statistik Austria, "Statistisches Jahrbuch Migration & Integration 2025" press release — https://www.statistik.at/fileadmin/announcement/2025/07/20250716MigrationIntegration2025.pdf
+- A full breakdown by age band (0-17, 18-39, 40-64, 65+) comparing the Austrian-origin and migration-background populations appears to exist in a Statistik Austria data table collection ("Tabellensammlung Migrationshintergrund," in .ods format), but this research could not extract it in text form.
+<ComingSoon label="A detailed age-structure breakdown (shares within the 0-17, 18-39, 40-64, and 65+ age bands, separately for the Austrian-origin and migration-background populations) is planned for a future update, pending direct review of Statistik Austria's 'Tabellensammlung Migrationshintergrund' (.ods format)." />
+
+### 3.5 Long-term projection
+
+<TrendChart
+	title="Total population projection (2026 → 2070)"
+	unit=" million"
+	series={[
+		{ label: 'Total population', color: '#1d3461', points: [
+			{ year: 2026, value: 9.22 }, { year: 2045, value: 9.40 }, { year: 2070, value: 9.15 },
+		]},
+	]}
+	sourceLabel="Statistik Austria, Bevölkerungsprognose (November 2025 edition)"
+	sourceUrl="https://www.statistik.at/web_de/statistiken/menschen_und_gesellschaft/bevoelkerung/demographische_prognosen/bevoelkerungsprognosen/122070.html"
+	sourcePrefix="Source: "
+/>
+
+<KeyFigure
+	value="9.4 million"
+	label="Statistik Austria's projected peak population in the mid-2040s (up from 9.22 million in 2026)"
+/>
+
+- According to Statistik Austria's November 2025 population projection, the total population is expected to rise from the current 9.22 million to a peak of around 9.4 million in the mid-2040s, before gradually declining to 9.15 million by 2070.
+- Important caveat: Statistik Austria explicitly states that this is not a projection "by nationality" (Ausländerprognose). The institute breaks projections down by country of birth at most, and the future foreign-national share depends heavily on naturalization-rate assumptions, a politically contingent factor. No official figure showing the foreign-national or migration-background share by projection year was identified.
+  Source: Statistik Austria, Bevölkerungsprognose press release (November 12, 2025) — https://www.statistik.at/fileadmin/announcement/2025/11/20251112Bevoelkerungsprognose.pdf
+<ComingSoon label="A projected breakdown of the future population share by nationality or migration background is planned for a future update. Statistik Austria breaks projections down by country of birth but, given the dependence on naturalization-rate assumptions, no official nationality-based projection has been identified at this stage." />
+
+## 4. Public finances — net cost
+
+<BarChart
+	title="Fiscal and economic effects by migration type (cumulative, through 2020)"
+	unit=" bn EUR"
+	bars={[
+		{ label: 'All migration types combined (incl. labor migration)', value: 1.4 },
+		{ label: 'Post-2015 asylum migrants (152,495 people)', value: -8.1, note: 'EUR 4.6bn contributions vs. EUR 12.7bn expenditure' },
+	]}
+	sourceLabel="EcoAustria (commissioned by ÖIF), Fiskalische und ökonomische Effekte verschiedener Migrationsformen"
+	sourceUrl="https://www.integrationsfonds.at/fileadmin/content/AT/Fotos/Publikationen/Forschungsbericht/EcoAustria_Fiskalische_Effekte_verschiedener_Migrationsformen_Web.pdf"
+	sourcePrefix="Source: "
+/>
+
+- Methodology 1 — macroeconomic general equilibrium model (PuMA): a EcoAustria study commissioned by the Österreichischer Integrationsfonds (ÖIF, Austria's public integration agency). Result: the net effect of all immigration combined on the public budget is estimated at a cumulative positive EUR 1.4 billion through 2020 (all migration types combined, including labor migration). However, the effect varies sharply by migration type: the 152,495 asylum seekers who arrived in the 2015+ wave generated EUR 4.6 billion in contributions (taxes, social security contributions) against EUR 12.7 billion in public expenditure (social assistance, housing, education, health) over the same period — a negative net balance for this specific subgroup.
+- Methodology 2 — a long-term study on refugee migration (2015-2060), also by EcoAustria/ÖIF, modeling the dynamic fiscal effect of post-2015 asylum migration over several decades. Source (sponsor: ÖIF): https://ecoaustria.ac.at/wp-content/uploads/2024/01/FB_EcoAustria_2023-09-13.pdf
+- A historical reference study by WIFO (the public economic research institute): "Die Zuwanderung von Ausländern nach Österreich. Kosten-Nutzen-Überlegungen und Fragen der Sozialtransfers." Source (sponsor: WIFO): https://www.wifo.ac.at/publication/84682/
+- Methodological note: unlike the Danish Finansministeriet method (a systematic calculation by age/length of stay/origin using annual longitudinal series), the available Austrian studies use an overall macroeconomic model (PuMA) that does not publish a net cost per immigrant at the same level of detail. No publication matching the Danish level of granularity has been located for Austria at this stage.
+
+### 4.1 Pension system / dependency ratio
+
+<ComingSoon label="No primary source breaking down pension-system dependency ratios or pension contributions by origin (Austrian nationality versus migration background) was identified during this research. The Ministry of Social Affairs (Sozialministerium) publishes general pension system overviews without a nationality breakdown. A WIFO study on labor supply ('Die Entwicklung des Arbeitskräfteangebotes in Österreich bis 2040') analyzes migration's overall effect on labor supply, but an origin-disaggregated dependency ratio is planned for a future update." />
+
+## 5. Labor market
+
+<TrendChart
+	title="Employment rate by migration background (2024)"
+	unit="%"
+	series={[
+		{ label: 'No migration background', color: '#1d3461', points: [{ year: 2024, value: 76.4 }] },
+		{ label: 'Migration background', color: '#9c3b3b', points: [{ year: 2024, value: 69 }] },
+		{ label: 'Afghanistan / Syria / Iraq origin', color: '#c97a7a', points: [{ year: 2024, value: 44.1 }] },
+	]}
+	sourceLabel="Statistik Austria/ÖIF, Statistisches Jahrbuch Migration & Integration 2025"
+	sourceUrl="https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf"
+	sourcePrefix="Source: "
+/>
+
+- In 2024, the employment rate of people with a migration background was 69%, about 7 percentage points lower than that of the population without a migration background (76.4%).
+- Strong heterogeneity by country of origin: the lowest employment rate in 2024 is observed among people from Afghanistan, Syria, or Iraq (44.1%), with an even lower rate among women in this group (24.3% in 2024, down 8 points from 32.3% in 2023).
+- 2024 unemployment rate: 5.7% for Austrian citizens versus 10.5% for foreign nationals; the highest rate is observed among people from Afghanistan, Syria, and Iraq (31.3%).
+- Methodological limitation: these statistics aggregate the immigrant labor force across all entry pathways (work, family, asylum); the gaps observed are partly correlated with migration status at origin, but Statistik Austria does not systematically publish an employment breakdown by entry pathway within this same series.
+- Source: Statistik Austria/ÖIF, "Statistisches Jahrbuch Migration & Integration 2025" — https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf
+
+## 6. Security / justice
+
+- VERIFIED BY DIRECT READING (June 24, 2026) — in 2024, 335,911 suspects were identified in Austria, of whom 178,853 held Austrian nationality (53.2%) and 157,058 held foreign nationality, or 46.8% of all suspects (compared with a roughly 20.5% share of foreigners in the total population — a demographic comparison benchmark). 534,193 offenses were reported in 2024 (+1.2% year-on-year); the clearance rate is 52.9%. Source: Bundesministerium für Inneres (BMI), "Kriminalstatistik 2024": https://www.bmi.gv.at/magazin/2025_05_06/02_Kriminalstatistik.aspx
+- Among foreign suspects in 2024, the most represented nationalities are Romania (18,925), Germany (13,631), Syria (11,867), Serbia (11,688), and Turkey (9,688). Source: BMI (link above).
+- A marked rise in offending among 10-14-year-olds (a near-doubling of reported offenses since 2020), of which 48% involve minors of foreign nationality, notably Syrian. Source: BMI (link above).
+- Official methodological caveat: suspect statistics by nationality do not systematically distinguish residency status (long-term resident, asylum seeker, EU/EEA citizen); a single offense may involve multiple suspects; the foreign population is demographically younger and more male than the reference Austrian population, two factors statistically correlated with a higher probability of involvement in recorded offenses, independent of nationality.
+
+## 7. Education
+
+- In the 2023/24 school year, 26% of Austrian students had a daily-use language other than German ("nicht-deutsche Umgangssprache"), including 5% Bosnian/Croatian/Serbian and 5% Turkish. This represents a slight decline from previous years where the figure had stagnated — the first downward inflection observed in this series. Source: Statistik Austria, "Bildung in Zahlen 2023/24": https://www.statistik.at/fileadmin/publications/BiZ-2023-24.pdf Supplementary data: ÖIF, "Factsheet Schule und Integration 2025": https://www.integrationsfonds.at/fileadmin/content/AT/monitor/Factsheet_Schule_und_Integration_2025-08-29.pdf
+- Strong regional disparity: the share of students with a non-German daily-use language is about 50% in Vienna, versus 25% in Vorarlberg, 21% in Salzburg, and only 17% in Tyrol and 16% in Carinthia — a geographic comparison benchmark within the country. Source: Statistik Austria (link above).
+- Most frequent non-German daily-use languages: Bosnian/Croatian/Serbian (21%), Turkish (18%), Arabic (9%), Romanian (7%), Albanian (6%). Source: Statistik Austria (link above).
+- Data not publicly available in a sufficiently precise and verified form: gaps in school outcomes (grades, standardized exam pass rates) by daily-use language could not be confirmed with a direct source link in the time available.
+
+## 8. Housing
+
+- Strong geographic concentration in Vienna: as of January 1, 2025, the share of foreign population in Vienna reaches 36.4% (about 739,000 people), against the national average of 20.2% — an inter-regional comparison benchmark. Vienna is the Austrian Land with the highest share of foreign-born population (40.2%), followed by Vorarlberg (23.2%). Source: Statistik Austria/ÖIF, "Statistisches Jahrbuch Migration & Integration 2025": https://www.statistik.at/fileadmin/publications/Migration-Integration_2025.pdf
+- Concentration is even more pronounced for certain origins: about 53% of people from Afghanistan, Syria, and Iraq residing in Austria live in Vienna. Source: Statistik Austria/ÖIF (link above).
+- Municipal social housing ("Gemeindebau") in Vienna: according to an analysis cited by the OECD, nearly 40% of Viennese residents whose parents were born in a third country (outside the EU) live in municipal social housing; 20% of dwellings are allocated each year to young Viennese residents, among whom a significant share have a migration background. Source: OECD (cited by Statistik Austria/specialist media) — this figure should be re-verified directly against a primary OECD publication before final publication; as it stands, it is a secondary source not confirmed by a directly consulted OECD document.
+- Urban/rural distribution: about 43% of Austrian-born people live in municipalities of fewer than 5,000 inhabitants, compared with only 18% of foreign-born people — a comparison benchmark showing the urban concentration of immigration. Source: Statistik Austria (see Jahrbuch Migration & Integration, link above).
+
+## 9. Social cohesion
+
+- According to the ÖIF's "Integrationsbarometer" (a survey conducted by the institute Peter Hajek Public Opinion Strategies on behalf of the Österreichischer Integrationsfonds, a public agency, among 1,000 Austrian citizens aged 16 and over, a series conducted regularly since 2015): in 2024-2025, 61% of respondents said they are frequently concerned about the integration of refugees and immigrants; about 7 in 10 believe Austria is not currently managing the arrival of refugees and asylum seekers well. Source (sponsor: ÖIF, a public agency): https://www.integrationsfonds.at/fileadmin/content/AT/monitor/OeIF-Integrationsbarometer-2-2024_Final.pdf and the most recent edition: Integrationsbarometer 1/2025.
+- The same survey shows a differentiated perception by group of origin: 55% of respondents view coexistence with Ukrainian displaced persons positively, compared with only 31% for refugees in general and 25% for Muslim people (these figures should be understood as a measure of subjective perception, not an objective measure of social cohesion). Source: ÖIF (link above).
+- 89% of respondents expect immigrants to adapt to Austrian culture; 9 in 10 support sanctions for non-participation in mandatory German-language courses linked to integration. Source: ÖIF (link above).
+- A methodological limitation to flag: this is an opinion survey commissioned by a public agency whose mission includes promoting integration — the questions asked and their wording may shape the results; ideally this should be cross-checked against other surveys (e.g., the Eurobarometer) for validation, which has not yet been done here.
+
+## 10. Recent political context
+
+- The restrictive line on asylum taken by the ÖVP-Greens government (2020-2024), and the FPÖ's victory in the September 2024 elections — to be documented with precise dates
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limitations</strong>
+Crime statistics by nationality (BMI) do not control for the age/sex structure effect of the foreign population (younger, more male), a confounding factor well known in criminology — to be noted systematically in cross-sectional analysis.
+The ÖIF opinion survey (Integrationsbarometer) is commissioned by a public agency whose mission is precisely the promotion of integration; the sponsor must be mentioned in every citation (potential funding bias).
+Foreign population data aggregate EU/EEA nationals (free movement, e.g., Germans, Romanians, Hungarians) and third-country nationals (asylum, family reunification, skilled labor); always specify which subcategory is being cited to avoid conflating intra-EU and extra-European immigration.
+The OECD figure regarding Viennese social housing (section 8) is secondary data not directly verified against a primary OECD publication — flagged as such, to be corrected if a primary source is located later.
+The origin breakdown by nationality group (section 3.2) appears to exist in Statistik Austria's STATatlas/STATcube tools, but this research could not extract exact percentages from the primary source in text form, hence the ComingSoon placeholder.
+</div>

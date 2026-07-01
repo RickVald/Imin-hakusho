@@ -1,0 +1,50 @@
+---
+interface Bar {
+	label: string;
+	value: number;
+	note?: string;
+}
+
+interface Props {
+	title: string;
+	unit?: string;
+	bars: Bar[];
+	sourceLabel: string;
+	sourceUrl: string;
+	sourcePrefix?: string;
+}
+
+const { title, unit = '', bars, sourceLabel, sourceUrl, sourcePrefix = '出典：' } = Astro.props;
+
+const max = Math.max(...bars.map((b) => Math.abs(b.value)), 1);
+---
+
+<figure class="chart chart--bar">
+	<figcaption class="chart__title">{title}</figcaption>
+	<div class="chart__bars">
+		{bars.map((bar) => {
+			const widthPct = Math.max((Math.abs(bar.value) / max) * 100, 6);
+			const isNegative = bar.value < 0;
+			return (
+				<div class="chart__row">
+					<div class="chart__row-head">
+						<span class="chart__label">{bar.label}</span>
+						<span class={`chart__value ${isNegative ? 'chart__value--negative' : ''}`}>
+							{bar.value > 0 ? '+' : ''}{bar.value}{unit}
+						</span>
+					</div>
+					<div class="chart__track">
+						<div
+							class={`chart__fill ${isNegative ? 'chart__fill--negative' : ''}`}
+							style={`width:${widthPct}%`}
+						></div>
+					</div>
+					{bar.note && <span class="chart__note">{bar.note}</span>}
+				</div>
+			);
+		})}
+	</div>
+	<figcaption class="chart__source">
+		{sourcePrefix}<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</figcaption>
+</figure>

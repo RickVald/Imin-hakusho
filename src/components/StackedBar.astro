@@ -1,0 +1,47 @@
+---
+interface Segment {
+	label: string;
+	value: number;
+	color?: string;
+}
+
+interface Props {
+	title: string;
+	segments: Segment[];
+	sourceLabel: string;
+	sourceUrl: string;
+	sourcePrefix?: string;
+}
+
+const { title, segments, sourceLabel, sourceUrl, sourcePrefix = '出典：' } = Astro.props;
+
+const total = segments.reduce((sum, s) => sum + s.value, 0);
+const palette = ['#1d3461', '#9c3b3b', '#c9a23f', '#5a8a6b', '#6b5b95'];
+---
+
+<figure class="chart chart--stacked">
+	<figcaption class="chart__title">{title}</figcaption>
+	<div class="stacked-bar">
+		{segments.map((seg, i) => (
+			<div
+				class="stacked-bar__segment"
+				style={`width:${(seg.value / total) * 100}%; background:${seg.color ?? palette[i % palette.length]}`}
+				title={`${seg.label}: ${seg.value}%`}
+			>
+				{(seg.value / total) * 100 >= 8 && <span class="stacked-bar__pct">{seg.value}%</span>}
+			</div>
+		))}
+	</div>
+	<ul class="stacked-bar__legend">
+		{segments.map((seg, i) => (
+			<li>
+				<span class="chart__legend-swatch" style={`background:${seg.color ?? palette[i % palette.length]}`}></span>
+				{seg.label}
+				<strong>{seg.value}%</strong>
+			</li>
+		))}
+	</ul>
+	<figcaption class="chart__source">
+		{sourcePrefix}<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</figcaption>
+</figure>

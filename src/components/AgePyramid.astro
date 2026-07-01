@@ -1,0 +1,73 @@
+---
+interface Segment {
+	label: string;
+	value: number;
+	color?: string;
+}
+
+interface Band {
+	label: string;
+	// `segments` (preferred): absolute counts -> renders a true pyramid where bar
+	// width reflects each band's relative population size.
+	// `groups` (legacy, percentage-based): still supported so older country pages
+	// keep working; bands render at uniform width since percentages alone can't
+	// establish relative band size.
+	segments?: Segment[];
+	groups?: Segment[];
+}
+
+interface Props {
+	title: string;
+	bands: Band[];
+	sourceLabel: string;
+	sourceUrl: string;
+	sourcePrefix?: string;
+	unit?: string;
+}
+
+const { title, bands, sourceLabel, sourceUrl, sourcePrefix = '出典：', unit = '' } = Astro.props;
+
+const palette = ['#c9a23f', '#9c3b3b', '#5a8a6b', '#6b5b95', '#1d3461'];
+const segsOf = (band: Band): Segment[] => band.segments ?? band.groups ?? [];
+const bandTotals = bands.map((b) => segsOf(b).reduce((sum, s) => sum + s.value, 0));
+const maxTotal = Math.max(...bandTotals, 1);
+const groupLabels = segsOf(bands[0]).map((s) => s.label);
+---
+
+<figure class="chart chart--pyramid">
+	<figcaption class="chart__title">{title}</figcaption>
+	<div class="pyramid">
+		{bands.map((band, bi) => {
+			const segs = segsOf(band);
+			const total = bandTotals[bi];
+			const widthPct = (total / maxTotal) * 100;
+			return (
+				<div class="pyramid__row">
+					<div class="pyramid__bar-area">
+						<div class="pyramid__bar" style={`width:${widthPct}%`}>
+							{segs.map((seg, i) => (
+								<span
+									class="pyramid__segment"
+									style={`width:${(seg.value / total) * 100}%; background:${seg.color ?? palette[i % palette.length]}`}
+									title={`${seg.label}: ${seg.value}${unit}`}
+								></span>
+							))}
+						</div>
+					</div>
+					<span class="pyramid__label">{band.label}</span>
+				</div>
+			);
+		})}
+	</div>
+	<ul class="chart__legend">
+		{groupLabels.map((label, i) => (
+			<li>
+				<span class="chart__legend-swatch" style={`background:${palette[i % palette.length]}`}></span>
+				{label}
+			</li>
+		))}
+	</ul>
+	<figcaption class="chart__source">
+		{sourcePrefix}<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</figcaption>
+</figure>

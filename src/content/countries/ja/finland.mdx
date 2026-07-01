@@ -1,0 +1,204 @@
+---
+slug: finland
+name: "フィンランド"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- フィンランド統計局（Tilastokeskus）— 国家統計機関：https://www.stat.fi
+- Migri（Maahanmuuttovirasto、移民局）
+- VATT（財務省傘下の政府系経済研究機関）— 経済的影響に関する研究を実施
+
+## 2. 主要データセット
+
+- フィンランド統計局 StatFinデータベース：出身（syntyperä）・背景国（taustamaa）別人口、出生国別雇用、出身別犯罪
+- Migri：庇護・滞在許可に関する統計
+- VATT：財政負担／貢献に関する個別研究（進行中の調査、結果は2027年公表予定）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2025年12月31日時点・総人口5,652,881人）"
+	segments={[
+		{ label: 'フィンランド系', value: 88.3, color: '#1d3461' },
+		{ label: '外国出身（移民背景）', value: 11.7, color: '#9c3b3b' },
+	]}
+	sourceLabel="フィンランド統計局「Väkiluvun kasvu hidastui vuonna 2025」"
+	sourceUrl="https://stat.fi/fi/julkaisu/cmg6f46k91y0e07w0qtdt6yl7"
+/>
+
+- 2025年12月31日時点で、フィンランドの人口は5,652,881人。外国出身者（ulkomaalaistaustainen、第1世代・第2世代を含む）は660,800人で、総人口の11.7%を占める。この比率は2010年代以降、継続的かつ大幅に上昇している。
+- 2025年の人口増加は+16,910人で、2023～2024年（ウクライナからの移民が多かった年）の約半分の水準。
+- 移民の親を持ちフィンランドで生まれた第2世代：102,183人で、この11年間で2倍に増加。この第2世代のうち、43.5%が欧州系、32.1%がアジア系、22.1%がアフリカ系の背景を持つ。
+- 出典：フィンランド統計局「Väkiluvun kasvu hidastui vuonna 2025」— https://stat.fi/fi/julkaisu/cmg6f46k91y0e07w0qtdt6yl7
+
+### 3.2 出身地域別構成
+
+<StackedBar
+	title="外国出身者の出身地域別構成（2020年末時点）"
+	segments={[
+		{ label: '欧州系', value: 53, color: '#1d3461' },
+		{ label: 'アジア系', value: 30, color: '#9c3b3b' },
+		{ label: 'アフリカ系', value: 11, color: '#c9a23f' },
+		{ label: 'その他・不明', value: 6, color: '#5a8a6b' },
+	]}
+	sourceLabel="フィンランド統計局「Väestörakenne 2020 — Ulkomaalaistaustainen väestö」"
+	sourceUrl="https://stat.fi/til/vaerak/2020/02/vaerak_2020_02_2021-05-28_fi.pdf"
+/>
+
+- 2020年末時点（完全な地域別比率を確認できた最新の年）で、外国出身者のうち53%が欧州系、30%がアジア系、11%がアフリカ系の背景を持つ。残りの比率は確認した出典では明示されていないため、推計せず「その他・不明」として示している。
+- 個別の背景国としては、ロシア／旧ソ連が最大の単一グループで、2020年末時点で90,801人（外国出身者の5分の1）、次いでエストニア（50,590人）、イラク（25,439人）、ソマリア（22,534人）の順。
+  2024年末時点では、エストニア・ロシア・旧ソ連を背景とする人の合計は約180,000人に達している。
+- 出典：フィンランド統計局「Väestörakenne 2020 — Ulkomaalaistaustainen väestö」— https://stat.fi/til/vaerak/2020/02/vaerak_2020_02_2021-05-28_fi.pdf；フィンランド統計局「Vieraskielisten määrä kasvoi yli 50 000:lla vuonna 2024」— https://www.sttinfo.fi/tiedote/71052757/vieraskielisten-maara-kasvoi-yli-50-000lla-vuonna-2024-uudenmaan-vaestosta-lahes-viidennes-ulkomaista-syntyperaa?publisherId=69818838&lang=fi
+
+### 3.3 移民の波（1990年〜現在）
+
+- 1990年以前、フィンランドは歴史的に移出国であった（主にスウェーデンや北米へ）。西欧諸国の中では移入の水準が非常に低かった。
+- **1990年代**：ソビエト連邦の崩壊、ソマリア内戦、ユーゴスラビア解体戦争を背景に、本格的な移民の流入が始まった。1990年、マウノ・コイヴィスト大統領はインゲリアン・フィン人（inkerinsuomalaiset、サンクトペテルブルク地域のフィンランド系移住者の子孫）に帰還権を認め、その後10年間で約20,000人が移住した。最初のソマリア難民は1990年にソビエト連邦経由で到着し、同年代末までにフィンランド在住のソマリア生まれの人は4,000人を超えた。この10年間で、人口に占める移民の比率はおおむね倍増した。
+- **1995年**：フィンランドが欧州連合（EU）に加盟し、EU域内の労働移動が可能になった。
+- **2000年代**：EU東方拡大（2004年・2007年）に伴い、エストニアなど新規加盟国からの労働移民が増加。エストニア系は最大級の背景国グループの一つとなった。
+- **2015〜2016年**：欧州庇護危機。フィンランドでも一時的に庇護申請が急増し、主にイラク・アフガニスタン出身者が中心であった（この時期の正確な申請件数は今回の更新では再確認できていない）。
+- **2022年〜現在**：ロシアによるウクライナ侵攻を受け、フィンランドはウクライナ国籍者を一時保護ステータスで受け入れた。これは2023〜2024年に2025年と比べて人口増加が顕著に高かったことの一因となっている。
+- 出典：Yle「1990-luvun Suomi maahanmuuttajan silmin」— https://yle.fi/a/20-136249；ウィキペディア（フィンランド語版）「Suomen somalit」— https://fi.wikipedia.org/wiki/Suomen_somalit；フィンランド統計局「Väkiluvun kasvu hidastui vuonna 2025」— https://stat.fi/fi/julkaisu/cmg6f46k91y0e07w0qtdt6yl7
+
+<KeyPointTiles
+	title="期間別の主な特徴"
+	tiles={[
+		{ period: '〜1989', value: '移出国', description: 'フィンランドは歴史的に移出国（主にスウェーデン・北米へ）。西欧諸国の中で移入水準が非常に低かった。', color: '#1d3461' },
+		{ period: '1990s', value: '約20,000人', description: 'ソ連崩壊後、インゲリアン・フィン人に帰還権付与（10年間で約20,000人移住）。最初のソマリア難民到着。', color: '#9c3b3b' },
+		{ period: '1995', value: 'EU加盟', description: 'フィンランドがEUに加盟。EU域内の労働移動が可能になった。', color: '#5a8a6b' },
+		{ period: '2000s', value: 'EU東方拡大', description: '2004年・2007年のEU拡大に伴いエストニアなど新規加盟国からの労働移民が増加。', color: '#c9a23f' },
+		{ period: '2015–2016', value: '庇護危機', description: '欧州庇護危機。主にイラク・アフガニスタン出身者を中心に庇護申請が急増。', color: '#6b5b95' },
+		{ period: '2022–現在', value: 'ウクライナ', description: 'ロシアのウクライナ侵攻を受け、ウクライナ国籍者を一時保護ステータスで受け入れ。', color: '#9c3b3b' },
+	]}
+/>
+
+<ComingSoon label="出身別人口の年代別正確な時系列データ（StatFin統計表11rt・159s）、および2015〜2016年の庇護申請件数の正確な値は今後追加予定です。" />
+
+### 3.4 出身別の年齢構成
+
+<ComingSoon label="出身別（フィンランド系／外国出身）の年齢ピラミッドは、今回の調査では直接検証可能な最新の公表形式で見つけることができませんでした（2013年の数値のみ確認できましたが、利用には古すぎます）。StatFinの統計表（例：11rt）を直接照会できるようになった時点で、今後追加予定です。" />
+
+- 一般的な傾向（確認できた最新の定性的記述）：外国出身者は平均してフィンランド系住民より若く、労働年齢層への集中度が高い。一方、フィンランド系住民には退職年齢層の比率が明らかに高い。
+
+### 3.5 将来予測
+
+<ComingSoon label="出身別（フィンランド系／外国出身の比率、2040年または2070年まで）に分解された長期人口推計は今後追加予定です。出身別に分解されていない全国推計（フィンランド統計局の人口推計、väestöennuste）は存在しますが、出身別の分解版は今回の調査では見つかりませんでした。" />
+
+## 4. 財政 — 純負担
+
+<ComingSoon label="移民の財政的純負担を数値化した、現時点で完了済みのVATT（または他の政府系研究機関）の研究は存在しません。VATTは2025年2月にこのテーマに関する研究を開始し、結果は2027年上半期に公表予定です。" />
+
+- VATT（財務省傘下の政府系経済研究機関）は2025年2月、滞在許可の種類・出身国別に分類した移民の財政効果に関する研究を開始した。結果は2027年上半期に発表予定。
+  出典：VATT「Selvitys maahanmuuton vaikutuksista julkiseen talouteen」— https://vatt.fi/-/selvitys-maahanmuuton-vaikutuksista-julkiseen-talouteen
+- フィンランド／スウェーデン／デンマーク／ノルウェーを統合した数値を示す北欧諸国間の公的比較研究は確認されていない。デンマークとは異なり、フィンランドには出身別の公式純負担算定を定期的に公表する仕組みがまだ存在しない。
+
+### 4.1 年金制度・依存度比率
+
+<ComingSoon label="出身別の人口学的依存度（年金受給者・子供対労働年齢人口比）は、今回の調査ではフィンランド統計局の一次資料で確認できなかったため、今後追加予定です。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="雇用率の推移（20-64歳・出身別、2016年→2023年）"
+	unit="%"
+	series={[
+		{ label: '外国出身', color: '#9c3b3b', points: [{ year: 2016, value: 64 }, { year: 2022, value: 70.4 }, { year: 2023, value: 70.3 }] },
+		{ label: 'フィンランド系', color: '#1d3461', points: [{ year: 2016, value: 79 }, { year: 2022, value: 79 }, { year: 2023, value: 79 }] },
+	]}
+	sourceLabel="フィンランド統計局「Ulkomaalaistaustaisten työllisyyden kasvu pysähtyi」（2024年）"
+	sourceUrl="https://stat.fi/tietotrendit/artikkelit/2024/ulkomaalaistaustaisten-tyollisyyden-kasvu-pysahtyi"
+/>
+
+<KeyFigure
+	value="8.7ポイント"
+	label="2023年の雇用率格差（フィンランド系79% vs 外国出身70.3%）。2016年の15ポイントから縮小。"
+/>
+
+- 2016年、外国出身者とフィンランド系住民の雇用率の差は約15ポイント（外国出身約64%、フィンランド系約79%）。2022年にはこの差は6ポイントまで縮小し、外国出身者の雇用率は初めて70%を超えた（ピークの年）。2023年にはわずかに低下して70.3%となり、フィンランド系の79%（安定）との差は8.7ポイントであった。
+  出典：フィンランド統計局「Ulkomaalaistaustaisten työllisyyden kasvu pysähtyi」— https://stat.fi/tietotrendit/artikkelit/2024/ulkomaalaistaustaisten-tyollisyyden-kasvu-pysahtyi
+
+<BarChart
+	title="背景国グループ別の雇用率（20-64歳、2023年）"
+	unit="%"
+	bars={[
+		{ label: 'EU/EFTA諸国（フィンランド・エストニアを除く）＋北米', value: 83 },
+		{ label: 'フィンランド系', value: 79 },
+		{ label: 'その他アフリカ', value: 66 },
+		{ label: '中東・北アフリカ', value: 53, note: '最も低いグループ。より低い水準から最も急速に上昇した。' },
+	]}
+	sourceLabel="フィンランド統計局「Ulkomaalaistaustaisten työllisyyden kasvu pysähtyi」（2024年）"
+	sourceUrl="https://stat.fi/tietotrendit/artikkelit/2024/ulkomaalaistaustaisten-tyollisyyden-kasvu-pysahtyi"
+/>
+
+- 2023年、外国出身グループの中で最も高い雇用率を示したのはEU/EFTA諸国（フィンランド・エストニアを除く）または北米を背景とするグループで83%——フィンランド系の79%を上回った。最も低かったのは中東・北アフリカを背景とするグループで53%。ただしフィンランド統計局は、このグループの雇用率がより低い水準からすべてのグループの中で最も強く上昇したと指摘している。「その他アフリカ」を背景とするグループは66%であった。
+  出典：フィンランド統計局「Ulkomaalaistaustaisten työllisyyden kasvu pysähtyi」— https://stat.fi/tietotrendit/artikkelit/2024/ulkomaalaistaustaisten-tyollisyyden-kasvu-pysahtyi
+- この雇用率の差が北欧諸国の中で最も大きいとするOECDの主張については、今回の調査ではアクセス可能な公式OECD出典で直接確認することができなかった。OECDの一次資料に成功裏にアクセスできるまでは未検証の主張として扱うべきである。
+
+## 6. 治安・司法
+
+- フィンランド統計局は「Rikos- ja pakkokeinotilasto」シリーズにおいて、出身（syntyperä）別の犯罪被疑者に関する統計を公表している。2023年版（2024年5月16日公表）：フィンランド出身の被疑者310,600人（2022年比+19.5%）、外国出身の被疑者41,100人（2022年比+17.2%）── 両グループはほぼ近い速度で増加しているが、これらは総人口に占める比率や年齢・性別構成による調整を行っていない生の件数である。
+  出典：フィンランド統計局「Rikos- ja pakkokeinotilasto 2023」— https://stat.fi/fi/julkaisu/cln328ikz5bck0bvzrnax22se
+<ComingSoon label="近年（2017〜2018年以降）の年齢・性別調整済みの出身別被疑率は、今回の調査では一次資料で確認できなかったため、今後追加予定です。" />
+
+## 7. 教育
+
+<BarChart
+	title="PISA2022における低い能力水準の生徒の割合（世代別・数学・読解）"
+	unit="%"
+	bars={[
+		{ label: '自国出身の生徒 — 数学', value: 22 },
+		{ label: '第2世代移民生徒 — 数学', value: 43 },
+		{ label: '第1世代移民生徒 — 数学', value: 58 },
+		{ label: '第2世代移民生徒 — 読解', value: 39 },
+		{ label: '第1世代移民生徒 — 読解', value: 61 },
+	]}
+	sourceLabel="フィンランド政府（Valtioneuvosto）「Performance of immigrant students in PISA 2022」"
+	sourceUrl="https://valtioneuvosto.fi/en/-/1410845/performance-of-immigrant-students-in-pisa-2022"
+/>
+
+- PISA2022（OECD）、フィンランド政府が発表した国内結果：数学において、第1世代移民生徒の58%、第2世代移民生徒の43%が低い能力水準にあるのに対し、自国出身の生徒は22%。読解においては低水準の割合が第1世代61%、第2世代39%であり、自国出身の生徒に対応する数値はこの概要ページには明記されていない。
+  出典：フィンランド政府（Valtioneuvosto）「Performance of immigrant students in PISA 2022」— https://valtioneuvosto.fi/en/-/1410845/performance-of-immigrant-students-in-pisa-2022
+
+## 8. 住宅
+
+- ウーシマー地方（ヘルシンキを含む）は2024年末時点で外国出身者の人口比率が19.3%（2019年は14.2%）に達し、全国平均（11.1〜11.7%）を大きく上回る。これは首都圏における移民の地理的な集中傾向を示す。オーランド諸島がこれに次ぎ18.7%。
+  出典：フィンランド統計局「Vieraskielisten määrä kasvoi yli 50 000:lla vuonna 2024」— https://www.sttinfo.fi/tiedote/71052757/vieraskielisten-maara-kasvoi-yli-50-000lla-vuonna-2024-uudenmaan-vaestosta-lahes-viidennes-ulkomaista-syntyperaa?publisherId=69818838&lang=fi
+<ComingSoon label="都市別（ヘルシンキ／エスポー／ヴァンター）の詳細な数値、および移民の在留資格別に分類した公営住宅（ARA）の比率は今後追加予定です。今回の調査では直接アクセス可能な一次資料で確認できませんでした。" />
+
+## 9. 社会的結束
+
+- 労働経済省（TEM）は統合状況に関する定期的な追跡報告書「Kotoutumisen kokonaiskatsaus」を発行している。2023年版は2024年2月14日に発表された。
+  出典：TEM「Kotoutumisen kokonaiskatsaus 2023 julkaistu」— https://tem.fi/-/kotoutumisen-kokonaiskatsaus-2023-julkaistu
+<ComingSoon label="この報告書から得られる統合に関する認識についての正確で確認済みの数値は、今回の調査では確認できませんでした（PDF全文の抽出が不能であったため）。今後追加予定です。" />
+
+## 10. 最近の政治的背景
+
+- ペッテリ・オルポ（国民連合党、Kokoomus、右派）を首班とする連立政権が、国民保守系のフィン人党（Perussuomalaiset）、スウェーデン語系国民党（RKP）、キリスト教民主党（KD）とともに2023年6月20日に発足した。
+  出典：フィンランド政府（Valtioneuvosto）「Prime Minister Orpo's Government appointed」— https://valtioneuvosto.fi/en/-/10616/prime-minister-orpo-s-government-appointed
+- 国籍法改正、2024年10月1日施行：帰化に必要な居住期間が8年に延長された（より短い期間が適用される例外的な場合もあるが、確認した出典では完全には詳述されていない）。
+  出典：Migri「Longer period of residence required for citizenship as of 1 October 2024」— https://migri.fi/en/-/longer-period-of-residence-required-for-citizenship-as-of-1-october-2024
+- 家族呼び寄せ条件の厳格化：政府は2024年9月11日から10月25日まで、家族を呼び寄せようとする者に対して最低所得基準を設定する政令についての意見公募を実施した。
+  出典：フィンランド政府（Valtioneuvosto）「Provisions on income thresholds for family reunification to be issued by Government Decree」— https://valtioneuvosto.fi/en/-/1410869/provisions-on-income-thresholds-for-family-reunification-to-be-issued-by-government-decree
+- 長期失業後の労働許可取り消しに関する法案（HE 179/2024 vp、「3か月モデル」）：2024年10月17日に閣議決定され、2025年4月1日施行予定。就労に紐づく在留資格は、3か月を超える失業（または、複合許可を2年以上保有している場合は6か月超）の場合に取り消し可能となる。
+  出典：フィンランド政府（Valtioneuvosto）、2024年10月17日の閣議決定 — https://valtioneuvosto.fi/paatokset/paatos?decisionId=2254
+
+## 11. データの限界・偏り
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+フィンランド統計局が用いる「ulkomaalaistaustainen」（外国出身）という分類は、外国生まれの人（第1世代）と、両親ともに外国生まれでフィンランドで生まれた人（第2世代）の双方を含む区分であり、公表資料では入国時の在留資格（労働、庇護、家族呼び寄せ）や居住期間を体系的に区別していない。フィンランドの犯罪統計は出身別の被疑者の生数を公表しているが、自由にアクセス可能な最新の公表資料では人口比または年齢・性別調整済みの比率を示していない ── これはドイツのBKAデータで指摘された限界と同様の方法論的制約だが、透明性はそれより低い。複数の関連データ（VATT財政研究、TEMの社会的結束バロメーターの詳細、出身別の年齢ピラミッド・人口推計）は今回の調査では入手・検証できなかった。これらの欠落は未検証の数値で埋めるのではなく、<code>ComingSoon</code>として明示することとした。
+</div>

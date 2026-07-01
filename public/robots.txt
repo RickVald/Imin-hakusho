@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://imin-hakusho.jp/sitemap-index.xml

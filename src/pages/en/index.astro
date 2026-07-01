@@ -1,0 +1,126 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StatsBanner from '../../components/StatsBanner.astro';
+import { flagUrl, regionColor } from '../../data/flags';
+
+const countries = (await getCollection('countriesEn')).sort((a, b) =>
+	a.data.name.localeCompare(b.data.name)
+);
+
+const stats = [
+	{ value: '20', label: 'Countries covered' },
+	{ value: '14', label: 'Countries with comparable net-cost methodologies' },
+	{ value: '−16bn DKK', label: 'Denmark: net annual cost to public finances' },
+	{ value: '3 countries', label: 'Reversed migration policy after housing strain (CA, AU, NZ)' },
+];
+---
+
+<BaseLayout title="Immigration Factbook — Official Statistics for 20 Countries" lang="en" altHref="/">
+	<div class="hero">
+		<h1>Immigration Observatory</h1>
+		<p>Sourced, country-by-country data on the fiscal, labour-market, security, education, housing, and social-cohesion effects of recent immigration in Western countries, based on primary sources from public institutions.</p>
+	</div>
+	<StatsBanner stats={stats} />
+
+	<section class="themes-section">
+		<h2 class="themes-title">Compare by Theme</h2>
+		<p class="themes-subtitle">20-country cross-comparisons on a single metric — data compilations that don't exist anywhere else on the web</p>
+		<div class="themes-grid">
+			<a href="/en/themes/fiscal-cost/" class="theme-card">
+				<div class="theme-icon">💴</div>
+				<div class="theme-content">
+					<h3>Net Fiscal Impact</h3>
+					<p>Official data from treasuries, central banks, and OECD comparing 20 countries: Denmark, Sweden, Norway, Germany, US, and more</p>
+				</div>
+			</a>
+			<a href="/en/themes/labour-market/" class="theme-card">
+				<div class="theme-icon">📊</div>
+				<div class="theme-content">
+					<h3>Employment Gap</h3>
+					<p>Employment and unemployment rate gaps between immigrants and native-born, from official national statistics offices across 20 countries</p>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<ul class="country-grid">
+		{countries.map((country) => (
+			<li>
+				<a
+					href={`/en/countries/${country.data.slug}/`}
+					style={`--accent:${regionColor[country.data.slug] ?? '#1d3461'}`}
+				>
+					<img class="country-grid__flag" src={flagUrl(country.data.slug)} alt="" width="32" height="24" loading="lazy" />
+					<span class="country-grid__name">{country.data.name}</span>
+				</a>
+			</li>
+		))}
+	</ul>
+
+<style>
+.themes-section {
+	max-width: 1100px;
+	margin: 2.5rem auto 2rem;
+	padding: 0 1.5rem;
+}
+
+.themes-title {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 0.4rem;
+}
+
+.themes-subtitle {
+	font-size: 0.9rem;
+	color: var(--color-muted);
+	margin-bottom: 1.5rem;
+}
+
+.themes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1rem;
+}
+
+.theme-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	background: var(--color-surface-raised);
+	border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+	border-radius: 10px;
+	padding: 1.25rem 1.5rem;
+	text-decoration: none;
+	color: var(--color-text);
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.theme-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+	border-color: var(--color-accent);
+}
+
+.theme-icon {
+	font-size: 1.75rem;
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.theme-content h3 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.35rem;
+	color: var(--color-accent);
+}
+
+.theme-content p {
+	font-size: 0.85rem;
+	color: var(--color-muted);
+	line-height: 1.5;
+	margin: 0;
+}
+</style>
+
+</BaseLayout>

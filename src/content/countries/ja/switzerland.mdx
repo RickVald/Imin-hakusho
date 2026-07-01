@@ -1,0 +1,277 @@
+---
+slug: switzerland
+name: "スイス"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- OFS/BFS（連邦統計局、Office fédéral de la statistique）— 国家統計機関：https://www.bfs.admin.ch
+- SEM（移民庶務局、Secrétariat d'État aux migrations）— 庇護および滞在許可に関する統計
+- KOF（コンジャンクチャー研究センター、チューリッヒ工科大学（EPF Zurich）付属）— 経済分析
+
+## 2. 主要データセット
+
+- OFS：国籍・滞在許可別の外国人居住人口、雇用に関する統計
+- SEM：庇護統計の詳細版（月次報告）。滞在許可カテゴリー（B、C、F、N等）別の滞在許可統計はヨーロッパで最も細かい系列の一つ
+- OFSは国籍別の内訳を伴う犯罪警察統計（SPC）も公表しており、スイス国内の議論で頻繁に引用されるデータである。人口構成や滞在資格に関する公式の方法論的留意事項とともに提示する必要がある
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2025年12月31日時点・総人口9,124,300人）"
+	segments={[
+		{ label: 'スイス国籍', value: 72.3, color: '#1d3461' },
+		{ label: '外国籍（永住居住者）', value: 27.7, color: '#9c3b3b' },
+	]}
+	sourceLabel="OFS「人口の推移（2025年暫定値）」"
+	sourceUrl="https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z"
+/>
+
+- 2025年12月31日時点で、スイスの常住人口は9,124,300人（前年比+73,300人、+0.8%）。このうち外国籍の永住居住者は約2,526,642人で、人口全体の約27.7%を占める。
+  経年比較：外国籍人口比率は2003年の21.7%（162.4万人）、2007年の20.7%（155.5万人）から、2025年には約28%へ上昇している——スイスはヨーロッパで最も外国人居住人口比率が高い国の一つである。
+  出典：OFS、人口推移プレスリリース（2026年4月1日発表、2025年暫定値）— https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z
+- スイスにおける外国人永住者の多数派はEU/EFTA市民であり、主にイタリア、ドイツ、ポルトガル、フランス出身者である——欧州域外からの移民および庇護とは明確に区別する必要がある重要な方法論的論点である。
+  出典：OFS、「外国人人口の構成（Composition de la population étrangère）」：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere/composition.html
+- 直接確認済み（2026年6月24日）— 帰化者および第二世代も含むより広範な指標（「移民的背景（statut migratoire）」）によると、2024年には15歳以上の永住居住人口の41%が移民的背景を有しており（3,086,000人）、そのうち3分の1以上（1,140,000人）がスイス国籍、つまりすでに帰化済みである。移民的背景を持つ人口のうち約5分の4（2,456,000人）が第一世代、残りの約5分の1（630,000人）がスイス生まれの第二世代である。OFS出典により数値は正確に確認された。
+  出典：OFS、「移民的背景別人口（Population selon le statut migratoire）」：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/selon-statut-migratoire.html
+- 庇護（移民庶務局、SEM）：2025年に提出された庇護申請は25,781件で、2024年比で約7%減少した。申請者の主な出身国はアフガニスタン（6,207件、前年比-28.1%）、エリトリア（3,415件、前年比+63.2%）。検証上の注記：2026年6月24日に確認したSEMページはナビゲーション／インデックスページであり、確認時点でこれらの数値を直接表示していなかった（2026年5月31日時点の最新統計を指し示している）——直接確認による裏付けが取れておらず、SEMがダウンロード提供する表で再確認が必要。
+  出典：SEM、「庇護統計（Statistique en matière d'asile）」：
+  https://www.sem.admin.ch/sem/fr/home/publiservice/statistik/asylstatistik.html
+
+### 3.2 移民の出身地域別構成（EU/EFTA／欧州域外）
+
+<StackedBar
+	title="外国籍人口・上位5カ国籍（参考値、概数）"
+	segments={[
+		{ label: 'イタリア', value: 348306, color: '#1d3461' },
+		{ label: 'ドイツ', value: 334111, color: '#9c3b3b' },
+		{ label: 'ポルトガル', value: 264355, color: '#c9a23f' },
+		{ label: 'フランス', value: 175757, color: '#5a8a6b' },
+		{ label: 'コソボ', value: 117350, color: '#6b5b95' },
+	]}
+	sourceLabel="OFS／Wikipedia仏語版「Démographie de la Suisse」（OFSデータの集計）"
+	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+/>
+
+- 上位5カ国籍はイタリア（348,306人）、ドイツ（334,111人）、ポルトガル（264,355人）、フランス（175,757人）、コソボ（117,350人）——このうち上位4カ国はすべてEU/EFTA加盟国であり、コソボのみが欧州域外（旧ユーゴスラビア系）である。
+  注：この数値はOFS一次データを集計したWikipedia仏語版の表に基づく参考値であり、最終的にはOFS「Composition de la population étrangère」の一次統計表での再確認が必要である。
+- 滞在許可の種類別の区分（スイスの許可制度はヨーロッパで最も詳細なものの一つ）：B/L許可（滞在許可、2024年第3四半期から2025年第3四半期にかけて+2.9%）、C許可（定住許可、+0.7%）、G許可（国境通勤者、+1.5%、2025年第3四半期時点で約410,000人、5年間で+20%）、L許可（短期滞在、-5.8%）。F許可は暫定的受入（仮滞在許可）、N許可は手続き中の庇護申請者に対応し、EU/EFTA労働移民とは別カテゴリーである。
+  出典：OFS／SEM、就労人口および滞在許可統計：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+<ComingSoon label="EU/EFTA出身者と欧州域外出身者（庇護・家族呼び寄せ等）の100%構成比による正確なStackedBar（OFS「Composition de la population étrangère」の一次統計表に基づく）は今後追加予定です。本節の国籍別数値は二次的な集計に基づく参考値であり、最終確認が必要です。" />
+
+### 3.3 移民の波（1950年代〜現在）
+
+- **1951〜1970年**：スイス史上最大の移民の波。経済の急成長を受けて年間滞在許可または定住許可を得た外国人が268万人に達した。1950年から1970年にかけて、スイスで働くイタリア人の数は4倍に増加し、583,855人に達した。当初はイタリア人が中心だったが、後にスペイン人、最終的にはポルトガル人が中心となった。
+  出典：RTS（スイス公共放送）「Historique des migrations en Suisse」— https://www.rts.ch/decouverte/monde-et-societe/monde/migrations/9369277-historique-des-migrations-en-suisse.html
+- **1931年導入・1963年7月にカントン別年間上限枠導入**：「季節労働者（サイズニエ）」制度（通称「permis A」）。労働シーズンに限定（最長9カ月）した滞在を認める制度で、社会保障給付が制限され、雇用主・住所の変更が禁止され、家族の呼び寄せもできなかった。
+  出典：スイス歴史辞典（Dictionnaire historique de la Suisse、HLS-DHS-DSS）「Saisonniers」— https://hls-dhs-dss.ch/textes/f/F25738.php
+- **2002年**：スイスとEUが人の自由移動協定（accord de libre circulation des personnes）に署名したことを受けて、季節労働者制度が廃止された。以降、EU/EFTA市民は90日以内の就労であれば許可を必要としない。
+  出典：RTS、上記リンクおよび「Saisonnier, un statut qui renaît de ses cendres」— https://swissinfo.ch/fre/politique/permis-de-travail_saisonnier--un-statut-qui-rena%C3%AEt-de-ses-cendres/37740086
+- **1990年代**：旧ユーゴスラビア紛争による難民の波——コソボ出身者を含む南東欧出身者の定着が進んだ時期であり、現在もコソボがスイスにおける上位外国籍国籍の一つとなっている背景である（3.2節参照）。
+- **2010年代〜現在**：シリア内戦・アフガニスタン情勢を背景とした庇護申請の増加。2025年の庇護申請（25,781件）の主要出身国はアフガニスタンとエリトリアである（3.1節参照）。
+
+<KeyPointTiles
+	title="移民の波：期間別の主な特徴"
+	tiles={[
+		{ period: '1951–1970', value: '268万人', description: 'スイス史上最大の移民の波。1950〜1970年にスイスで働くイタリア人が4倍に増加し、583,855人に達した。当初はイタリア人中心、後にスペイン人、ポルトガル人へ移行。', color: '#1d3461' },
+		{ period: '1963年', value: '季節制度強化', description: 'カントン別年間上限枠導入（「サイズニエ（季節労働者）」制度）。最長9カ月の滞在、社会保障給付制限、家族呼び寄せ禁止。', color: '#9c3b3b' },
+		{ period: '1990年代', value: '旧ユーゴ難民', description: '旧ユーゴスラビア紛争による難民の波。コソボ出身者を含む南東欧出身者の定着が進んだ時期。現在もコソボが上位外国籍国籍の一つ（117,350人）。', color: '#c9a23f' },
+		{ period: '2002年', value: '自由移動開始', description: 'EUとの人の自由移動協定発効。季節労働者制度が廃止。EU/EFTA市民は90日以内の就労であれば許可不要に。', color: '#5a8a6b' },
+		{ period: '2010s〜現在', value: '25,781件（2025年）', description: 'シリア内戦・アフガニスタン情勢を背景とした庇護申請の増加。外国籍人口比率は2003年の21.7%から2025年の約28%へ上昇。', color: '#6b5b95' },
+	]}
+/>
+
+<DecadeTimeline
+	title="スイスの総人口の推移（1861年→2024年、節目となった年）"
+	unit="人"
+	decades={[
+		{ label: '1861年', value: 2500000 },
+		{ label: '1891年', value: 3000000 },
+		{ label: '1926年', value: 4000000 },
+		{ label: '1955年', value: 5000000 },
+		{ label: '1967年', value: 6000000 },
+		{ label: '1994年', value: 7000000 },
+		{ label: '2012年', value: 8000000 },
+		{ label: '2024年', value: 9050000 },
+	]}
+	sourceLabel="Wikipedia仏語版「Démographie de la Suisse」（OFS人口統計に基づく節目年データ）"
+	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+/>
+
+- 総人口が100万人増加するのに要した期間は短縮傾向にある：5百万人から6百万人（1955→1967年、12年）、7百万人から8百万人（1994→2012年、18年）、8百万人から9百万人（2012→2024年、12年）。1945年以降の人口増加の主因は移民純流入である（4.財政の節およびAvenir Suisseの分析も参照）。
+- **限界**：1950年代〜1970年代の年代別の正確な外国籍人口比率（10年ごとの%系列）は、Statistik Austriaのケースと同様、本調査では一次統計表からテキスト形式で抽出できなかった。
+<ComingSoon label="1950年代から2025年までの10年ごとの外国籍人口比率の完全な時系列データ（OFSの歴史統計表）は今後追加予定です。" />
+
+### 3.4 年齢構成（移民的背景別）
+
+<KeyFigure
+	value="32.9"
+	label="65歳以上人口100人当たりの老年人口指数（2025年、20-64歳人口比）"
+/>
+
+- OFSによれば、2025年には65歳以上の人口が初めて20歳未満の人口を上回った（65歳以上1,811,000人 対 20歳未満1,802,000人、暫定値）。老年人口指数（65歳以上人口／20-64歳人口×100）は2025年に32.9に達し、2005年の25.7、2015年の29.0から上昇を続けている。
+  出典：OFS、「人口の推移（2025年暫定値）」プレスリリース（2026年4月1日発表）— https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z
+- 移民的背景別（出身別）に分解された年齢構成比表は、OFSが「statut migratoire」の数表集として公表しているとみられるが、本調査ではテキスト形式での正確な抽出ができなかった。OFSは、スイス国外で生まれた15歳未満の子どもの年齢構成は「逆ピラミッド型」（年少層が薄い、すなわち幼少期に移住してきた子どもが中心）であるのに対し、スイス国内で生まれた子どもの年齢構成は「長方形型」であると説明している——出身別の年齢構成パターンが構造的に異なることを示す重要な記述的観察である。
+  出典：OFS、「年齢（Age）」：https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution/age.html
+<ComingSoon label="移民的背景別（非移民／第一世代／第二世代）の年齢層別構成比（0-17歳・18-39歳・40-64歳・65歳以上の各層における割合）を示す完全なAgePyramidは今後追加予定です。OFSの「Statut migratoire selon diverses caractéristiques」数表での直接確認が必要です。" />
+
+### 3.5 将来予測（2055年まで）
+
+<TrendChart
+	title="総人口の推移予測（2024年→2055年・3シナリオ）"
+	unit="万人"
+	series={[
+		{ label: '基準シナリオ', color: '#1d3461', points: [{ year: 2024, value: 905 }, { year: 2055, value: 1050 }] },
+		{ label: '高位シナリオ', color: '#9c3b3b', points: [{ year: 2024, value: 905 }, { year: 2055, value: 1170 }] },
+		{ label: '低位シナリオ', color: '#5a8a6b', points: [{ year: 2024, value: 905 }, { year: 2055, value: 930 }] },
+	]}
+	sourceLabel="OFS「スイスおよび州の人口推計シナリオ2025-2055年」"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/evolution-future/scenarios-suisse.html"
+/>
+
+<KeyFigure
+	value="1,050万人"
+	label="OFSの基準シナリオによる2055年の総人口推計（2024年末は905万人）"
+/>
+
+- OFSの基準シナリオでは、スイスの総人口は2024年末の905万人から2055年には1,050万人に達するとされ、増加の主因は移民であるとOFS自身が明記している。高位シナリオでは1,170万人、低位シナリオでは930万人。
+  出典：OFS「Les scénarios de l'évolution de la population de la Suisse et des cantons」プレスリリース— https://www.bfs.admin.ch/bfsstatic/dam/assets/14963222/master
+- 2035年以降、自然人口増加（出生数−死亡数）はマイナスに転じる見通しであり、それ以降の人口成長は移民純流入のみによるものとなり、移民の動向は今後ますます経済情勢に依存するようになるとOFSは予測している。
+- 高齢化の進行：65歳以上人口は2024年から2055年にかけて約50%増加すると見込まれ、老年人口指数は2025年の38（20-64歳100人当たりの65歳以上人口、上記とは算定基準が異なる値）から2055年には50以上に達すると推計される。
+  出典：OFS「Scénarios de l'évolution démographique de la Suisse 2025 à 2055」— https://bevoelkerungsszenarien.bfs.admin.ch/fr
+- 重要な留意点：デンマークDSTやオーストリアStatistik Austriaと同様、OFSの人口推計シナリオは出身国籍別（スイス国籍／外国籍）の将来人口比率を予測年ごとに示す公式数値を、本調査で確認した資料の範囲では提供していない。
+<ComingSoon label="出身別（スイス国籍／外国籍）の将来人口比率の予測値は今後追加予定です。" />
+
+## 4. 財政 — 純コスト
+
+- 現時点で確認されたスイスの研究の中で、デンマーク財務省（Finansministeriet）の方法論（年齢・出身・在留期間別の年次系列）と同水準の縦断的な詳細さに達しているものはない。入手可能な分析はより限定的で、マクロ経済的または部門別の性質を持つ。
+- 方法論1 — Ecoplan（民間経済調査会社）が連邦の公的機関である経済庶務局（SECO、Secrétariat d'État à l'économie）から委託を受けて実施した、地域経済振興策と労働移民の関係に関する調査：地域経済振興策は約4%の追加的な労働移民を生み出し、そのうち4分の3が農村部または構造的に弱い地域に集中している。同調査は、支援を受けた企業が他の企業より海外採用を増やしているとは結論づけていない。
+  出典（委託者：SECO）：
+  https://www.seco.admin.ch（Ecoplan調査「Standortförderung und Zuwanderung」— SECOの出版物ポータル経由で確認可能。執筆時点でPDFへの直接リンクは確実には特定できておらず、最終公開前に確認が必要）。
+- 方法論2 — SECO（2015年）による特別景気分析note「移民と経済成長（Immigration et croissance économique）」。EU人の自由移動導入以降、移民純流入がスイスのGDPおよび1人当たりGDPに与える影響を分析している。
+  出典（委託者：SECO、連邦の公的機関）：
+  https://www.seco.admin.ch/dam/seco/fr/dokumente/Publikationen_Dienstleistungen/Publikationen_Formulare/Wirtschaftslage/Konjunkturtendenzen/Spezialthema/Immigration%20und%20Wirtschaftwachstum.pdf.download.pdf
+- 連邦行政当局が委託したとされる調査（経済専門紙で引用されているが、執筆時点で正確な出典と直接リンクは未確認）によれば、移民の長期的な制限はスイスの構造的問題（人口の高齢化、労働力不足、医療費の上昇）を悪化させるという結論に至るとされる——一次資料が正確に確認され、委託者が明確に特定されるまでは慎重に扱うべきデータである。
+- 自由主義系シンクタンクであるアブニール・スイス（Avenir Suisse）は、移民純流入に関連する人口増加についての分析を公表している（スイスの人口増加のうち約5分の4が移民純流入に起因する）が、デンマークの方法論に相当する1人当たり純コストの算定は、現時点で同団体のサイト上には見当たらない。留意すべき委託者情報：アブニール・スイスはスイスの企業および雇用者団体から資金提供を受けている（言及すべき資金提供上の偏りである）。直接確認済み（2026年6月24日）：「5分の4」という数値は出典により正確に確認された（原文："about four fifths of that increase is attributable to the international net migration balance"）。
+  出典：アブニール・スイス、「Switzerland Keeps Growing」：https://www.avenir-suisse.ch/en/blog-switzerland-keeps-growing/
+- 公的に入手不可能なデータ：滞在許可カテゴリー別に分解した、移民1人当たり（対自国民）の純コストに関するOFS／SECOによる公式の算定は、確認可能な直接リンクをもって特定できなかった。
+
+### 4.1 年金制度・老年人口指数
+
+<BarChart
+	title="老年人口指数（65歳以上人口／20-64歳人口×100）の推移"
+	unit=""
+	bars={[
+		{ label: '2005年', value: 25.7 },
+		{ label: '2015年', value: 29.0 },
+		{ label: '2025年', value: 32.9 },
+	]}
+	sourceLabel="OFS「人口の推移（2025年暫定値）」プレスリリース"
+	sourceUrl="https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z"
+/>
+
+- 老年人口指数（65歳以上人口100人当たりの20-64歳人口に対する比率）は2005年の25.7から2015年の29.0、2025年の32.9へと上昇を続けている。50年前のスイスでは現役世代5人に対し年金受給者1人の比率であったが、現在は3人に1人、OFSの推計では2055年までに2人に1人に近づく可能性があるとされる。
+  出典：OFS「人口の推移（2025年暫定値）」プレスリリース（2026年4月1日発表）— https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z；OFS「Scénarios de l'évolution démographique de la Suisse 2025 à 2055」— https://bevoelkerungsszenarien.bfs.admin.ch/fr
+- 重要な留意点：この老年人口指数は国籍／移民的背景別には分解されていない全国指標である。デンマークの事例（4.1節）と同様、出身別（スイス国籍／外国籍、第一世代／第二世代）に分解された年金制度依存度や財政純貢献者の比率に関する公式データは、本調査では確認できなかった。
+<ComingSoon label="出身別（スイス国籍／外国籍）の年金制度依存度比率、または財政への純貢献者の割合に関する一次資料は今後追加予定です。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="就業者数の推移（前年比、2025年第2四半期）"
+	unit="%"
+	series={[
+		{ label: '外国人就業者', color: '#9c3b3b', points: [{ year: 2024, value: 0 }, { year: 2025, value: 2.3 }] },
+		{ label: 'スイス人就業者', color: '#1d3461', points: [{ year: 2024, value: 0 }, { year: 2025, value: -0.3 }] },
+	]}
+	sourceLabel="OFS「労働市場の動向（Bilan du marché du travail）」"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration.html"
+/>
+
+<BarChart
+	title="ILO基準の失業率（2025年第2四半期・国籍別）"
+	unit="%"
+	bars={[
+		{ label: 'スイス人居住者', value: 3.3, color: '#1d3461' },
+		{ label: '全国平均', value: 4.6, color: '#c9a23f' },
+		{ label: '外国人人口', value: 7.7, color: '#9c3b3b' },
+	]}
+	sourceLabel="OFS「労働市場の動向（Bilan du marché du travail）」"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration.html"
+/>
+
+- 直接確認済み（2026年6月24日）— 2025年第2四半期、外国人就業者は前年比2.3%増加し、約187万人に達した一方、スイス人就業者は同期間に0.3%減少した。OFS出典により数値は正確に確認された。
+  出典：OFS、「労働市場の動向（Bilan du marché du travail）」／雇用・失業の四半期発表：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration.html
+- ILO基準の失業率、2025年第2四半期：全国平均で4.6%（失業者237,000人）だが、外国人人口では7.7%、スイス人居住者では3.3%——倍以上の差があり、自国民と外国人人口の間の明確な比較基準となる。OFS出典により数値は正確に確認された。
+  出典：OFS（上記リンク）。
+- 滞在許可種類別の動向（2024年第3四半期から2025年第3四半期）：B/L許可（滞在許可）保持者は+2.9%、国境通勤者（G許可、約410,000人）は+1.5%、C許可（定住許可）保持者は+0.7%、L許可（短期滞在）保持者は-5.8%の減少——滞在許可カテゴリー別の大きな異質性を示している。検証上の注記：OFSの出典ページは2026年6月24日に確認したが、取得ツールによりこれらの正確な数値の手前でコンテンツが切り取られていた——直接確認による裏付けが取れておらず、再確認が必要。
+  出典：OFS／SEM、滞在許可統計：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+
+## 6. 治安・司法
+
+- 犯罪警察統計（SPC、OFS）：国籍別および滞在資格別の内訳が利用可能であり、この点においてヨーロッパで最も詳細なデータセットの一つである。方法論的な厳密さをもって活用すべきデータである。
+- 直接確認済み（2026年6月24日）— 2024年には91,929人が刑法違反の嫌疑（被疑者）として記録され、2023年比で1,526人増（+1.7%）であった。滞在資格別の内訳：スイス国籍42.3%、定住許可または滞在許可（B/C許可）を有する外国人31.4%、庇護申請者または暫定的に受入／保護対象とされた者（N/F許可）6.7%。OFS出典により数値は正確に確認された（ポイント単位の変化については、確認した抜粋では裏付けが取れなかった）。
+  出典：OFS、「犯罪警察統計（SPC）— 2024年版年次報告」：
+  https://www.bfs.admin.ch/asset/en/34847184
+- 2024年には警察により563,633件の刑事犯罪が記録され、前年比7.9%増——出典により確認された。「サイバー犯罪+35%」という詳細については、確認した抜粋では裏付けが取れなかった。
+  出典：OFS（上記リンク）。
+- OFSによる公式の方法論的留意事項：SPCが滞在資格別に内訳を示すのは、定住居住者（C許可）、一時的居住者（B許可）、庇護申請者（N許可）、保護対象者／暫定的受入者（F許可）を明確に区別するためである——これらのカテゴリーを「外国人」という総称のもとに集約することは避けるべきであり、それは非常に異なる人口的・移民的背景を混同することになる（例：長期にわたるEU/EFTA居住者は、最近の庇護申請者とは異なる属性を持つ）。
+
+## 7. 教育
+
+- OECDの国際調査PISA（OFSが転載）によると、第二世代移民出身の生徒は、スイスにおいて移民的背景を持たない生徒と概ね同等の成績を上げている。一方、スイスは恵まれない環境の生徒と恵まれた環境の生徒との間の成績差が特に顕著であるという特徴を持ち、PISA参加国の中でも最大級の差の一つである。
+  出典：OECD、PISA調査（スイスの専門報道で引用されたデータ。最終版ではOECDのPISA 2022/2023年版報告書への直接リンクを優先すべき：
+  https://www.oecd.org/pisa/ ；スイスの国別報告書はスイス教育研究調整センター（CSRE/SKBF）「スイスの教育 — 2026年報告書（L'éducation en Suisse — Rapport 2026）」経由でも入手可能：
+  https://www.skbf-csre.ch/fileadmin/files/pdf/bildungsberichte/2026/BiBer_2026_FR.pdf）
+- 現時点で確認された正確な数値をもって公的に入手不可能なデータ：2024/2025年度における学校段階別（初等／中等）の外国籍または移民的背景を持つ生徒の正確な割合について、OFSによる国レベルの内訳は、限られた時間内では具体的な統計表への直接リンクをもって確認できなかった——OFS「教育と科学（Éducation et science）」経由で補完が必要：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/education-science.html
+
+## 8. 住宅
+
+- 外国人人口比率には州（カントン）間で大きな差異がある：ジュネーブ州（37.6%）が最も比率の高い州であり、ティチーノ州、バーゼル・シュタット州、ヴォー州がこれに続く（いずれも25%超）——全国平均（全体で27.7%だが、採用する定義によって変動する。第3節参照）と比較すべきである。
+  出典：OFS、州別居住人口データ：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+- 直接確認済み（2026年6月24日）— スイスの住宅所有率は国際比較において全体的に低い水準にとどまっている（2023年時点で全国平均35.8%、州によって差異あり。例：フリブール州41.7%）。スイスの世帯の多数派は賃貸住宅に居住している。OFS出典により数値は正確に確認された。
+  出典：OFS、「賃借人／所有者（Locataires / propriétaires）」：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/construction-logement/logements/conditions-habitation/locataires-proprietaires.html
+- 直接比較可能な形での公的入手不可能データ：外国人人口とスイス人人口との間で住宅所有率または公営住宅への集中度を区別した、統合済みかつ確認済みの全国統計は、限られた時間内では直接リンクをもって特定できなかった——後日補完が必要。
+
+## 9. 社会的結束
+
+- OFSは移民統合指標体系を公表しており、移民出身人口（第一世代および第二世代）の社会経済的状況、社会的結束、生活の質を非移民出身人口と比較し、過去数年間にわたって体系的に追跡している。10年間の推移も追跡対象である（2025年7月24日発表）。
+  出典：OFS、「スイスにおける移民の統合：近年の課題と動向（L'intégration des migrants en Suisse : enjeux et évolutions ces dernières années）」：
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration.html
+- 現時点で正確かつ確認済みの数値をもって公的に入手不可能なデータ：この統合指標調査における、自国民人口による社会的結束の認識に関する詳細な結果（正確な比率）は、限られた時間内では確実に抽出できなかった——上記で言及した2025年7月24日付のOFS発表を直接確認することで補完が必要。
+- 移民は2025年のスイスの一般的な意識調査において、スイス国民が挙げる懸念事項の一つとして挙げられているが、この点について一次資料にリンクされた公式の専用バロメーターが確認できなかった——ここで引用するには十分な厳密性をもって公的に入手可能なデータとは言えない。
+
+## 10. 最近の政治的文脈
+
+- スイスの直接民主制：移民に関する複数の国民投票が実施されている（例：2014年の「大量移民反対イニシアチブ」、庇護に関する国民投票）——同様の制度を持たない日本の読者に説明する価値のあるスイス独自の制度的特徴である。
+- 2002年の人の自由移動協定の発効は、季節労働者制度の廃止という構造的な政策転換を伴うものであった（3.3節参照）——EUとの二者間協定によって移民政策の大枠が規定されるという、スイス特有の制度的制約である。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+スイスの「外国籍人口」という分類は、EU/EFTA市民（自由な人の移動、長期居住者が多く、高所得国出身者が多い）と欧州域外からの移民・庇護申請者という、社会経済的属性が大きく異なる集団を一つに集約してしまう。いかなる分析においても、この2集団を明確に区別する必要がある——頻繁に見られる混同であり、避けるべきである。
+老年人口指数（4.1節）および犯罪統計（6節）はいずれも、国籍別・移民的背景別の年齢構成の差（外国籍人口は概してスイス国籍人口より若い）を統制していない全国集計値であり、解釈には注意が必要である。
+</div>

@@ -1,0 +1,29 @@
+---
+interface Props {
+	url: string;
+	label: string;
+	publisher?: string;
+}
+
+const { url, label, publisher } = Astro.props;
+---
+
+<cite class="source">
+	<a href={url} target="_blank" rel="noopener noreferrer">{label}</a>
+	{publisher && <span class="publisher"> — {publisher}</span>}
+</cite>
+
+<style>
+	.source {
+		font-style: normal;
+		font-size: 0.85em;
+		color: var(--color-muted, #666);
+	}
+	.source a {
+		color: inherit;
+		text-decoration: underline;
+	}
+	.publisher {
+		color: var(--color-muted, #666);
+	}
+</style>

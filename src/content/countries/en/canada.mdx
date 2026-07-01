@@ -1,0 +1,238 @@
+---
+slug: canada
+name: "Canada"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- Statistics Canada (StatCan): https://www.statcan.gc.ca
+- Immigration, Refugees and Citizenship Canada (IRCC) — annual reports to Parliament
+- Bank of Canada
+- Canada Mortgage and Housing Corporation (CMHC)
+
+## 2. Key datasets
+
+- StatCan: employment income by arrival-year cohort and admission category (skilled worker / family sponsorship / refugee) — detailed longitudinal time series
+- IRCC's annual immigration targets versus housing supply growth
+- Data on international students and temporary workers (a post-2021 surge, with caps reintroduced in 2024)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<KeyFigure
+	value="23.0%"
+	label="Immigrant share of Canada's population, 2021 Census — the highest level since Confederation"
+/>
+
+- In the 2021 Census, immigrants made up 23.0% of Canada's population, the highest share since Confederation in 1867. The previous record was 22.3% in 1921.
+  Source: Statistics Canada, "The Daily — Immigrants make up the largest share of the population in over 150 years" (October 26, 2022) —
+  https://www150.statcan.gc.ca/n1/daily-quotidien/221026/dq221026a-eng.htm
+- Canada's population grew by 1,271,872 people between January 1, 2023, and January 1, 2024, an annual growth rate of 3.2% — the highest since 1957 (3.3%).
+  Source: Statistics Canada, "The Daily — Canada's population estimates: strong population growth in 2023" (March 27, 2024) —
+  https://www150.statcan.gc.ca/n1/daily-quotidien/240327/dq240327c-eng.htm
+- Breakdown of 2023 growth: 97.6% attributable to international migration (permanent immigration plus temporary non-permanent residents combined), and only 2.4% to natural increase (births minus deaths). Over the year, 471,771 permanent immigrants and 804,901 non-permanent residents (mostly temporary workers and international students) were added to the population. Without the temporary component, population growth would have been only about 1.2% — roughly a third of the actual rate.
+  Source: Statistics Canada, same release.
+- Longer time series: StatCan table 17-10-0009-01, "Population estimates on July 1, by age and sex," allows the annual trend to be reconstructed over 10–20 years (https://www150.statcan.gc.ca/t1/tbl1/fr/tv.action?pid=1710000901). Before 2022, Canada's annual population growth rate was typically between 1.0% and 1.4% (e.g. +1.1% in 2019, before the pandemic).
+  Source: Statistics Canada, "Annual Demographic Estimates: Canada, Provinces and Territories" (2023) —
+  https://www150.statcan.gc.ca/n1/pub/91-215-x/91-215-x2023001-eng.htm
+- Comparison with OECD countries / previous decades: the StatCan publications consulted during this research do not provide a direct, quantified comparison with the OECD average; this could not be confirmed.
+
+### 3.2 Origin breakdown
+
+<ComingSoon label="A breakdown of immigrants by region of origin (e.g. Asia / Europe / Africa) could not be confirmed with a specific figure during this research and would require a further query of StatCan's 2021 Census detailed table ('Immigrant population by selected places of birth, admission category and period of immigration'). Planned for a future update. Reference page: https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/dv-vd/imm/index-en.cfm" />
+
+### 3.3 Immigration waves (by period of immigration)
+
+- In the 2021 Census, 12.1% of "recent immigrants" who arrived in 1971 were born in Asia — the regional composition of immigration has since shifted considerably.
+  Source: Statistics Canada, "The Daily" (October 26, 2022, link above)
+- Of the 1.3 million recent immigrants who arrived between 2016 and 2021, 56.0% settled in the three largest metropolitan areas: Toronto, Montréal, and Vancouver.
+  Source: same release.
+- StatCan publishes a detailed census table broken down by "period of immigration," allowing the population size of each arrival cohort (e.g. before 1980, 1980s, 1990s, 2000s, 2011–2015, 2016–2021) to be examined by country of birth.
+  Source: StatCan, "Immigrant population by selected places of birth, admission category and period of immigration, 2021 Census" —
+  https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/dv-vd/imm/index-en.cfm
+- **Limitation**: precise numeric values by arrival cohort (e.g. the current population of people who arrived in the 1980s versus the 1990s) could not be directly extracted from this table during this research. It is an interactive data visualization tool not well suited to automated extraction by the research tools used here.
+<ComingSoon label="Precise population figures by period of immigration (1980s, 1990s, 2000s, 2010s, etc.) are planned for a future update, pending direct interaction with StatCan's census visualization tool." />
+
+### 3.4 Age structure (population pyramid)
+
+<BarChart
+	title="Share of working-age population (15–64) — immigrants vs. total population, July 1, 2022"
+	unit="%"
+	bars={[
+		{ label: 'Immigrants', value: 81.9 },
+		{ label: 'Total population', value: 65.6 },
+	]}
+	sourceLabel="Statistics Canada, 'Analysis: Population by age and sex' (2022 Annual Demographic Estimates)"
+	sourceUrl="https://www150.statcan.gc.ca/n1/pub/91-215-x/2022001/sec2-eng.htm"
+	sourcePrefix="Source: "
+/>
+
+- As of July 1, 2022, the share of the population that was working age (15–64) was 81.9% among immigrants versus 65.6% for the total population — immigrants are markedly younger and more concentrated in the working-age range than the general population.
+  Source: Statistics Canada, "Annual Demographic Estimates 2022," Analysis section — https://www150.statcan.gc.ca/n1/pub/91-215-x/2022001/sec2-eng.htm
+- Age structure of "recent immigrants" (1.3 million people who arrived between 2016 and 2021): 95.8% under 65, 64.2% of core working age (25–54), 10.9% aged 15–24, 17.1% under 15, and 3.6% aged 55–64. This contrasts with Canada's aging general population, where more than one in five people were aged 55–64 — an all-time high.
+  Source: Statistics Canada, "The Daily" (October 26, 2022, link above)
+- **Limitation**: a full set of comparative figures broken down by age bracket (0–17 / 18–64 / 65+) for immigrants versus native-born residents, in the detailed format used for the Denmark page's age pyramid, could not be confirmed within the scope of this research.
+
+### 3.5 Long-term projection
+
+<TrendChart
+	title="Projected population of Canada, medium-growth scenario (2023 → 2068)"
+	unit="million"
+	series={[
+		{ label: 'Population (medium scenario)', color: '#1d3461', points: [{ year: 2023, value: 39.6 }, { year: 2043, value: 47.8 }, { year: 2068, value: 56.5 }] },
+	]}
+	sourceLabel="Statistics Canada, 'Population Projections for Canada (2021 to 2068)' (2022 edition)"
+	sourceUrl="https://www150.statcan.gc.ca/n1/daily-quotidien/220822/dq220822b-eng.htm"
+	sourcePrefix="Source: "
+/>
+
+<KeyFigure
+	value="29.1%–34.0%"
+	label="Projected range for the immigrant share of Canada's population in 2041 (StatCan 2022 projection, multiple scenarios)"
+/>
+
+- Under StatCan's medium-growth scenario, Canada's population is projected to reach 47.8 million by 2043 and 56.5 million by 2068. Across all scenarios, the range by 2068 is wide: 44.9 to 74.0 million. Immigration is expected to remain the main driver of population growth for decades to come, though at varying levels depending on the scenario. Natural growth (births minus deaths) could turn negative around 2049–2058 under the medium scenario.
+  Source: Statistics Canada, "The Daily — Population Projections for Canada, Provinces and Territories, 2021 to 2068" (August 22, 2022) — https://www150.statcan.gc.ca/n1/daily-quotidien/220822/dq220822b-eng.htm
+- The same release projects that by 2041, immigrants will make up between 29.1% and 34.0% of Canada's total population (the range reflecting different scenarios) — a further rise from 23.0% in 2021 (see Section 3.1).
+  Source: Statistics Canada, "The Daily" (October 26, 2022, link above)
+- Note: since 2023, StatCan has published annually revised editions — "Population Projections for Canada (2023 to 2073)," "(2024 to 2074)," and "(2025 to 2075)." The specific updated figures in the latest edition (reflecting the 2024 reduction in immigration targets) were not individually confirmed during this research and an update from the most recent edition is recommended.
+<ComingSoon label="Updated immigrant population share figures from the most recent population projection edition (published 2024–2025) are planned for a future update." />
+
+## 4. Public finances — net cost
+
+- Canada has no equivalent of Denmark's recurring, official government calculation of net fiscal contribution and benefit costs broken down by admission category and age. No equivalent official study by StatCan or the Department of Finance was identified during this research. This is documented here as a clear limitation of this observatory's Canada page.
+<ComingSoon label="No Danish-style official, recurring net fiscal contribution calculation has been identified for Canada (noted here as a limitation)." />
+- An existing (non-governmental) study: the Fraser Institute (a libertarian/conservative-leaning think tank funded by private donations — its sponsorship should be weighed accordingly), "Immigration and the Canadian Welfare State" (Grubel & Grady, 2011, based on roughly 2005–2006 fiscal data):
+  immigrants paid an average of $10,340 CAD in taxes versus $16,501 CAD for Canadians overall, for an estimated net cost of between $16.3 and $23.6 billion CAD per year (approximately $6,051 CAD per immigrant).
+  Source: Fraser Institute — https://www.fraserinstitute.org/studies/immigration-and-welfare-state-revisited-fiscal-transfers-immigrants-canada-2014
+  Methodological criticism: this estimate aggregates all immigration categories (economic, family, refugee) without distinction, which academic economists (Javdani & Pendakur, Simon Fraser University) argue biases the result; using the same Census/National Household Survey data, they derive a substantially lower alternative estimate (approximately $450 CAD per immigrant).
+
+<BarChart
+	title="Comparison of methodologies on the fiscal impact of immigration (annual cost estimates)"
+	unit=""
+	bars={[
+		{ label: 'Fraser Institute (static aggregate method, all categories combined)', value: 6051, note: 'per immigrant; total $16.3–23.6bn CAD/yr' },
+		{ label: 'Javdani & Pendakur (methodological re-analysis of same data)', value: 450, note: 'per immigrant (substantially lower result)' },
+	]}
+	sourceLabel="Fraser Institute (2011/2014) and Javdani & Pendakur (Simon Fraser University)"
+	sourceUrl="https://www.fraserinstitute.org/studies/immigration-and-welfare-state-revisited-fiscal-transfers-immigrants-canada-2014"
+	sourcePrefix="Source: "
+/>
+
+- An official, recurring government calculation (equivalent to the Danish model): not identified during this research.
+- Link to GDP per capita: Canada's real GDP per capita declined for several consecutive quarters in 2023, as documented in StatCan's quarterly economic accounts (table 36-10-0104-01), a period that coincided with rapid population growth driven by temporary immigration.
+  Source: StatCan table 36-10-0104-01 — https://www150.statcan.gc.ca/t1/tbl1/fr/tv.action?pid=3610010401
+  No StatCan or Bank of Canada study establishing a direct, quantified causal link between immigration and GDP per capita was identified during this research. A temporal correlation is documented, but the precise causal decomposition is not publicly available data at this level of detail.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<ComingSoon label="A precise demographic dependency ratio (pensioners and children relative to working-age population), broken down by origin (immigrant vs. non-immigrant), could not be confirmed during this research and is planned for a future update. The working-age population share shown in Section 3.4 (81.9% for immigrants vs. 65.6% for the total population, 2022) is a related indicator but is not itself a pension-system contributor-to-pensioner ratio." />
+
+## 5. Labor market
+
+- StatCan: employment income data by arrival-year cohort and admission category
+- Research by Mikal Skuterud (University of Waterloo) on the gap between immigration targets and economic absorption capacity
+<ComingSoon label="Detailed time-series data on employment and unemployment rates broken down by origin and admission category are planned for a future update." />
+
+## 6. Security / justice
+
+- Statistics Canada conducts the Homicide Survey, which records characteristics of homicide offenders and victims, but its publicly released tables do not include an official breakdown by immigration status (immigrant/non-immigrant) — this could not be confirmed from standard StatCan publications.
+  Source: StatCan, "Homicide Survey" — https://www.statcan.gc.ca/fr/enquete/menages/3315
+- An academic study (outside StatCan): peer-reviewed research analyzing international immigration, internal migration, and homicide across Canadian provinces concludes that increases in immigration are not associated with increases in homicide rates once other variables are controlled for (Ouimet et al.).
+  Source: peer-reviewed academic article, independent university research — https://pubmed.ncbi.nlm.nih.gov/22436732/
+- A related academic study (on violent victimization, not homicide specifically): based on StatCan's General Social Survey and published in a peer-reviewed journal (CMAJ Open), finds an adjusted risk ratio for exposure to violent victimization of 0.41 among immigrants/refugees compared with non-immigrants (a lower risk).
+  Source: peer-reviewed academic article, independent university/hospital research — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7057130/
+- Official StatCan figures on overall crime rates broken down by immigration status (beyond homicide/violent victimization specifically): not publicly confirmed during this research.
+<ComingSoon label="Official statistics on overall crime rates broken down by immigration status are planned for a future update." />
+
+## 7. Education
+
+<BarChart
+	title="Share of 15-year-old students with an immigrant background (OECD PISA)"
+	unit="%"
+	bars={[
+		{ label: '2012', value: 30 },
+		{ label: '2022', value: 34, note: '+4 points over 10 years' },
+	]}
+	sourceLabel="OECD, 'PISA 2022 Results,' Canada Country Note"
+	sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i-and-ii-country-notes_ed6fbcc5-en/canada_901942bb-en.html"
+	sourcePrefix="Source: "
+/>
+
+- According to the OECD's PISA 2022 survey, the share of 15-year-old Canadian students with an immigrant background (first- or second-generation) reached 34% in 2022, up 4 percentage points from 30% in 2012.
+  Source: OECD, "PISA 2022 Results," Canada Country Note — https://www.oecd.org/en/publications/pisa-2022-results-volume-i-and-ii-country-notes_ed6fbcc5-en/canada_901942bb-en.html
+- Students with an immigrant background are, on average, more socioeconomically disadvantaged than non-immigrant students in Canada (28% classified as socioeconomically disadvantaged versus 25% of all students), but Canada is among the countries/economies that combine both a high share of immigrant-background students and high average performance. Once socioeconomic status and the language spoken at home are accounted for, immigrant-background students outperform non-immigrant students in more countries than the reverse — and Canada is among the cases where the raw (unadjusted) performance gap is small.
+  Source: OECD, "PISA 2022 Results" (Volume I), chapter "Immigrant background and student performance" —
+  https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html
+- Historical comparison: an OECD analysis of PISA 2003 results already showed that performance gaps between immigrant and native-born students were less pronounced in Australia, Canada, and New Zealand than the OECD average.
+  Source: https://www.oecd.org/content/dam/oecd/en/publications/reports/2006/05/where-immigrant-students-succeed_g1gh6a2d/9789264023611-en.pdf
+- Equivalent data broken down by admission category (international student / skilled-worker dependent / refugee) on academic outcomes: not publicly confirmed during this research.
+<ComingSoon label="Academic outcome data broken down by admission category are planned for a future update." />
+
+## 8. Housing
+
+<BarChart
+	title="Share of housing price/rent increases attributable to immigration growth (IRCC, 2024 study)"
+	unit="%"
+	bars={[
+		{ label: 'Share attributable to immigration growth', value: 11, note: 'effect more pronounced in major cities' },
+	]}
+	sourceLabel="IRCC, 'Immigration and housing prices across municipalities in Canada'"
+	sourceUrl="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/research/immigration-housing-prices-municipalities-canada.html"
+	sourcePrefix="Source: "
+/>
+
+- An IRCC study on immigration and housing prices across Canadian municipalities (2024) estimates that immigration growth explains approximately 11% of the rise in median housing prices and rents over the period studied, with a more pronounced effect in the large cities where most newcomers settle.
+  Source: Government of Canada / IRCC — https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/research/immigration-housing-prices-municipalities-canada.html
+- The Bank of Canada notes that population growth contributed more to housing demand than to supply during 2022 and 2023, helping sustain prices in the face of rising interest rates; since a significant share of newcomers depend on the rental market, the demographic inflow may have boosted demand for rental housing and lowered vacancy rates in some regions.
+  Source: Bank of Canada, 2024 analysis — https://www.bankofcanada.ca
+- CMHC documents in its 2025 Rental Market Report that the slowdown in population growth in major metropolitan areas (Toronto, Vancouver), linked to the tightening of temporary immigration policy in late 2024, led to a slowdown in rental demand.
+  Source: CMHC, "Rental Market Report 2025" — https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres
+- Time reference point: Canada's population growth rate fell from a multi-decade peak of 3.2% in Q2 2024 to approximately 0.9% in early 2025, following the reduction in permanent immigration targets (from 500,000 to 395,000 planned admissions for 2025) and caps on study and temporary work permits announced by the federal government in October 2024.
+
+## 9. Social cohesion
+
+<TrendChart
+	title="Share saying there is 'too much immigration' to Canada (fall 2023 → fall 2024)"
+	unit="%"
+	series={[
+		{ label: 'Share saying "too much"', color: '#9c3b3b', points: [{ year: 2023, value: 44 }, { year: 2024, value: 58 }] },
+	]}
+	sourceLabel="Environics Institute, 'Focus Canada' annual survey"
+	sourceUrl="https://www.environicsinstitute.org/projects/project-details/canadian-public-opinion-and-immigration-and-refugees---fall-2024"
+	sourcePrefix="Source: "
+/>
+
+- According to the Environics Institute for Survey Research's annual "Focus Canada" survey (an academic, non-profit, non-partisan polling organization), the share of Canadians who believe there is "too much immigration" to Canada rose from 44% in fall 2023 to 58% in fall 2024 — a 14-percentage-point increase in a single year, marking a reversal from several decades of majority support for immigration.
+  (Note: an earlier version of this page stated "+20 points"; this has been corrected to "44% → 58%, +14 points" after direct verification of press sources reporting the survey.)
+  Source: Environics Institute, "Canadian public opinion about immigration and refugees" (fall 2024) —
+  https://www.environicsinstitute.org/projects/project-details/canadian-public-opinion-and-immigration-and-refugees---fall-2024
+  These figures were also reported by The Globe and Mail and CIC News (October 2024).
+  **Limitation**: the full Environics report PDF could not be opened directly during this research (403 Forbidden). The 44%/58%/+14-point figures are corroborated by multiple press articles citing the study, but were not confirmed by direct reading of the primary source document itself.
+- This rise in concern is attributed largely by the Environics Institute to growing concerns about the impact of immigration on housing availability and affordability.
+- Regional variation (2024 survey): 63% of respondents in Alberta and 68% in Manitoba and Saskatchewan said there is too much immigration, versus 46% in Quebec (47% disagreeing) — the rise in concern also reaches Quebec, but at a slower pace than the rest of Canada.
+  Source: Environics Institute, same survey.
+- Qualitative comparison point: despite this shift in views on desirable immigration levels, the Environics survey finds no change in Canadians' views of immigrants themselves, their perceived integration, or their perceived contribution to society — the decline in support concerns admission volumes specifically, not judgments of immigrants as individuals.
+
+## 10. Recent political context
+
+- A unique case study: the Western country with the most stable pro-immigration consensus shifted abruptly in 2023–2024 (official reduction in admission targets, caps on international students and temporary workers).
+- This shift correlates temporally with a housing crisis and a slowdown in GDP per capita.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Canada has no equivalent of Denmark's official, recurring net fiscal contribution calculation broken down by admission category and age. Several figures cited on this page (Fraser Institute, Javdani & Pendakur, Ouimet et al., and the CMAJ Open study) were not re-verified by direct reading of the primary source during this research pass; their internal consistency was judged plausible but not confirmed against the primary documents. The Environics Institute's full report PDF was also inaccessible (403 error), and its figures rely on corroboration from press sources rather than direct reading of the primary document.
+</div>

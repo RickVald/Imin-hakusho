@@ -1,0 +1,186 @@
+---
+slug: spain
+name: "Spain"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- INE (Instituto Nacional de Estadística): https://www.ine.es
+- Ministry of the Interior (Ministerio del Interior) — irregular immigration statistics (arrivals in the Canary Islands, Strait of Gibraltar)
+- Ministry of Inclusion, Social Security and Migration (Ministerio de Inclusión, Seguridad Social y Migraciones)
+- Bank of Spain (Banco de España) — macroeconomic analyses of immigration and the labor market (has published notable work on its positive contribution to GDP growth)
+
+## 2. Key datasets
+
+- INE: municipal population register (padrón municipal), employment by nationality
+- Ministry of the Interior: statistics on irregular sea arrivals
+- Bank of Spain: studies on immigration's contribution to growth and the pension system
+
+## 3. Demographics
+
+Spain is one of the European countries with the strongest recent population growth, driven by immigration, against a backdrop of very low native birth rates.
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (January 1, 2025 — total population 49,077,984)"
+	segments={[
+		{ label: 'Spanish nationality', value: 86.04, color: '#1d3461' },
+		{ label: 'Foreign nationality', value: 13.96, color: '#9c3b3b' },
+	]}
+	sourceLabel="INE, Continuous Population Statistics (ECP), Q4 2024"
+	sourceUrl="https://www.ine.es/dyngs/Prensa/ECP4T24.htm"
+	sourcePrefix="Source: "
+/>
+
+- Discrepancy found during verification: the source consulted (INE press release, Continuous Population Statistics, Q4 2024) indicates a resident foreign-national population as of January 1, 2025 of 6,852,348 people, or 13.96% of the total population (49,077,984 inhabitants). An initially stated figure of 6,911,971 / 14.1% was incorrect and has been corrected. The figure for January 1, 2024 would be approximately 6,751,555 (calculated from the annual increase of 100,793 mentioned in the release).
+  Source: INE, Continuous Population Statistics (ECP), press release — https://www.ine.es/dyngs/Prensa/ECP4T24.htm
+
+### 3.2 Breakdown by nationality of origin
+
+<StackedBar
+	title="Leading nationalities among foreign residents (illustrative, top 3 from press reporting)"
+	segments={[
+		{ label: 'Morocco', value: 14.1, color: '#9c3b3b' },
+		{ label: 'Colombia', value: 9.9, color: '#c9a23f' },
+		{ label: 'Romania', value: 8.9, color: '#5a8a6b' },
+		{ label: 'Other', value: 67.1, color: '#9e9e9e' },
+	]}
+	sourceLabel="Press reporting based on INE aggregated data"
+	sourceUrl="https://www.ine.es/dyngs/Prensa/ECP4T24.htm"
+	sourcePrefix="Source: "
+/>
+
+- Figures by nationality (Morocco 968,999, Colombia 676,534, Romania 609,270 — the shares shown above are an illustrative figure calculated by this observatory using the January 1, 2025 foreign population total of 6,852,348 as denominator) could not be confirmed by direct reading: the press release consulted gives only quarterly flow data (arrivals/departures), not stock data by nationality — to be checked via INEbase.
+  Source: INE, Continuous Population Statistics (ECP), press release — https://www.ine.es/dyngs/Prensa/ECP4T24.htm
+<ComingSoon label="A confirmed breakdown by nationality, based on INEbase (jaxiT3 table 36825: foreign population by nationality and age group), is planned for a future update." />
+
+### 3.3 Immigration waves (1990s – present)
+
+- In 1998, Spain's foreign resident population was a mere 637,085 (1.60% of the total population) — closer to a net-emigration profile — before undergoing one of the fastest transformations seen anywhere in Europe.
+- **Late 1990s – early 2000s**: labor migration from North Africa (Morocco) and Latin America (Ecuador, Colombia) accelerated, driven by labor demand in construction, tourism, and agriculture, and by preferential naturalization rules for Spanish-speaking nationals.
+- **2000s (to 2008)**: combined with EU enlargement (2004, 2007) bringing Romanian and Bulgarian migration, the foreign resident population reached 5,268,762 (11.41% of the total population) by 2008 — roughly an 8.3-fold increase over the 1998–2008 decade. This period overlaps with Spain's construction boom.
+- **2008–2014 (post-crisis)**: the 2008 global financial crisis and the subsequent collapse of Spain's property bubble sharply slowed immigration inflows, with departures exceeding arrivals in some years.
+- **2015 – present**: immigration flows reaccelerated alongside the economic recovery. Recent years have seen growth in both Latin American migration (Colombia, Venezuela) and irregular sea arrivals from North Africa. As of January 2025, the foreign resident population reached 6,852,348 (13.96% of the total population).
+  Sources: INE, Continuous Population Statistics (ECP) — https://www.ine.es/dyngs/Prensa/ECP4T24.htm; INE population series by nationality since 1998 — https://www.ine.es/jaxi/Tabla.htm?path=%2Ft20%2Fe245%2Fp08%2Fl0%2F&file=01006.px&L=0
+- **Limitation**: a detailed year-by-year, nationality-by-nationality population series from 1998 to 2024 (the data needed for a trend chart) could not be directly extracted from INE's interactive query interface (the jaxi system) during this research — the interface returns only a query-parameter selection screen, with actual figures generated only after a query is executed.
+<ComingSoon label="A detailed trend chart of the foreign population from 1998 to 2024 (based on INE jaxiT3 table 01006 and similar) is planned for a future update." />
+
+### 3.4 Age structure
+
+<AgePyramid
+	title="Largest age cohort by nationality (Spanish vs. foreign, 2024)"
+	bands={[
+		{ label: 'Largest cohort', groups: [
+			{ label: 'Spanish nationals (peak: ages 50–59, 6,762,403)', value: 100, color: '#1d3461' },
+			{ label: 'Foreign nationals (peak: 30s, 1,485,526)', value: 100, color: '#9c3b3b' },
+		]}
+	]}
+	sourceLabel="INE demographic data (aggregated via press analysis, 2024 baseline)"
+	sourceUrl="https://www.ine.es/jaxi/Tabla.htm?path=%2Ft20%2Fe245%2Fp08%2Fl0%2F&file=01002.px&L=0"
+	sourcePrefix="Source: "
+/>
+
+- The largest age cohort among Spanish nationals is ages 50–59 (6,762,403 people), while among foreign nationals it is people in their thirties (1,485,526) — the foreign population is clearly concentrated in working age.
+  Comparison point: foreign residents aged 65+ numbered 508,847 in 2024 (5.1% of all elderly residents). This figure has risen steadily: under 100,000 in 2002, over 284,000 in 2012, 426,134 in 2022, and a further +38,138 increase in the most recent year alone. Among foreign residents aged 65+, the British account for 21.3% (down from 23.4% in 2023), Germans 6.8% (down from 7.5%), and Italians 6.0% (up from 5.9%).
+  Source: INE, Continuous Population Statistics (jaxiT3 tables 01002/01003: population by age group and nationality) — https://www.ine.es/jaxi/Tabla.htm?path=%2Ft20%2Fe245%2Fp08%2Fl0%2F&file=01002.px&L=0
+- The nationality breakdown of the 65+ foreign population above mainly reflects settlement patterns of EU-origin retirees (British, German, Italian) and follows a different logic from the aging of labor migrants originally from North Africa or Latin America — worth noting to avoid conflating the two trends.
+<ComingSoon label="A complete dataset for a detailed age pyramid by nationality (Morocco, Colombia, Romania, UK, etc.), broken down by 5-year age bands and sex, is planned for a future update." />
+
+### 3.5 Long-term projection
+
+<ComingSoon label="An INE long-term population projection broken down by nationality (e.g. for a milestone year such as 2050 or 2070) is planned for a future update. This research could not directly confirm, from INE's public materials, a long-term projection by origin equivalent to Statistics Denmark's Befolkningsfremskrivning." />
+
+## 4. Public finances — net cost
+
+<KeyFigure
+	value="+0.4 to +0.7 pts/yr"
+	label="Direct contribution of the foreign population to per capita GDP growth (2022–2024, Bank of Spain estimate)"
+/>
+
+- Method 1 (macroeconomic decomposition of growth): the Bank of Spain (a public institution, the central bank) estimates that the direct contribution of the foreign population to per capita GDP growth between 2022 and 2024 was between +0.4 and +0.7 percentage points per year, a level comparable to that observed during previous economic expansion phases. This analysis concerns the contribution to GDP growth, not a consolidated net fiscal balance (tax revenue minus social spending): an important distinction, not to be confused with a Danish-style study.
+  Not verified: the source PDF could not be extracted by the retrieval tool used. The figure could not be confirmed by direct reading — to be checked manually by opening the PDF.
+  Source: Bank of Spain, Economic Bulletin 2025/Q2 — https://www.bde.es/f/webbe/SES/Secciones/Publicaciones/InformesBoletinesRevistas/BoletinEconomico/25/T2/Fich/be2502-art10.pdf
+- Method 2 (Danish-style net fiscal balance): no publicly available data. No official Spanish study equivalent to the methodology of the Danish Finansministeriet (net balance by age cohort and origin, static and dynamic) has been identified at the time of writing. Spanish public bodies (Bank of Spain, Ministry of Inclusion, Social Security and Migration) do not publish a comparable consolidated net balance; their work concerns the contribution to growth or partial indicators (social contributions paid).
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+- The number of foreign nationals registered with Social Security (2,855,563 as of December 31, 2024) is itself an indicator of the scale of the working-age contribution to the pension system, but a confirmed, origin-disaggregated pensioner-to-working-age ratio could not be identified within the scope of this research.
+<ComingSoon label="Specific figures for a pension-system contributor-to-beneficiary ratio by nationality (or a dependency ratio of elderly and children relative to working-age population) are planned for a future update." />
+
+## 5. Labor market
+
+<KeyFigure
+	value="2,855,563"
+	label="Foreign nationals registered with Social Security (December 31, 2024, +7.93% year on year)"
+/>
+
+<BarChart
+	title="Sectoral distribution of Social Security registrations (foreign nationals, 2024)"
+	unit="%"
+	bars={[
+		{ label: 'Services', value: 73.28 },
+		{ label: 'Construction', value: 9.62 },
+	]}
+	sourceLabel="Ministry of Labor and Social Economy (SEPE/MITES), Report on the Labor Market for Foreign Nationals"
+	sourceUrl="https://www.sepe.es/SiteSepe/contenidos/que_es_el_sepe/publicaciones/pdf/pdf_mercado_trabajo/2024/Informe-del-Mercado-de-Trabajo-de-las-Personas-Extranjeras.-Estatal-2024--Datos-2023-.pdf"
+	sourcePrefix="Source: "
+/>
+
+- As of December 31, 2024: 2,855,563 foreign nationals registered with Social Security, up 7.93% year on year (+209,808 people). 73.28% of these registrations fall under the services sector, 9.62% under construction. In Q4 2024, foreign workers accounted for 44.85% of net job creation in Spain for the year, while representing about 13.47% of the labor force — a gap to be interpreted with caution (a sectoral structure effect, not necessarily "replacement").
+  Not verified: the source PDF could not be extracted by the retrieval tool used. The figures could not be confirmed by direct reading — to be checked manually. Note also that the report's title ("Estatal 2024 — Datos 2023") suggests the data covers 2023, not 2024 as stated in the text — to be clarified.
+  Source: Ministry of Labor and Social Economy (SEPE/MITES), Report on the Labor Market for Foreign Nationals — https://www.sepe.es/SiteSepe/contenidos/que_es_el_sepe/publicaciones/pdf/pdf_mercado_trabajo/2024/Informe-del-Mercado-de-Trabajo-de-las-Personas-Extranjeras.-Estatal-2024--Datos-2023-.pdf
+- Most-recruited occupations among foreign workers: agricultural laborers (13.39% of contracts), waiters (9.83%), manufacturing workers (7.74%).
+  Source: same SEPE/MITES report.
+
+## 6. Security / justice
+
+- As of December 2024: 59,226 people detained in total in Spain, of whom 19,339 were of foreign nationality, or 32.65% of the total — up 9.1% year on year. For comparison, the foreign population represents 13.96% of the total population: overrepresentation to be interpreted with caution (age structure, offenses tied to irregular stay with no equivalent among nationals). Catalonia is the only region where foreign detainees are a majority (51.83%, 4,437 of 8,594). The most represented nationality among foreign detainees is Moroccan, according to a government parliamentary response from September 2024.
+  Not verified: the interior.gob.es website returned an HTTP 403 error (access blocked to automated requests) at the time of verification. The figures could not be confirmed by direct reading — to be checked manually.
+  Source: Ministry of the Interior, Secretaría General de Instituciones Penitenciarias, General Report 2024 —
+  https://www.interior.gob.es/opencms/pdf/archivos-y-documentacion/documentacion-y-publicaciones/publicaciones-descargables/instituciones-penitenciarias/informe-general/Informe-General_2024_12615039X_pdfWEB.pdf
+
+## 7. Education
+
+- 2024–2025 school year: 1,124,767 students without Spanish nationality, or 12.9% of the total, up 4.5% (+48,777 students) year on year. For 2023–2024, the share was measured at 15.5% using another calculation method by the ministry — a methodological discrepancy worth flagging, possibly linked to a change in definition or scope between the two publications.
+  Figures confirmed by direct reading of the source.
+  Source: Ministry of Education, Vocational Training and Sports — https://www.educacionfpydeportes.gob.es/prensa/actualidad/2025/06/20250627-datosavance.html
+- National early school-leaving rate (ages 18–24): confirmed by direct reading for 2024 (13.0%, a historic low, -0.7 point vs. 2023) and 2023 (13.7%); the 2022 figure (13.9%) does not appear in the press release consulted and could not be confirmed directly. Also confirmed: the press release does not publish a rate differentiated by nationality, only by sex (men 15.8%, women 10% in 2024) — the statement "no publicly available data for a rate differentiated between foreign nationals and nationals" is therefore consistent with the source.
+  Source: Ministry of Education, Vocational Training and Sports, press release of January 28, 2025 — https://www.educacionfpydeportes.gob.es/prensa/actualidad/2025/01/20250128-abandonoeducativo.html
+
+## 8. Housing
+
+- No publicly available data in the form of a consolidated official statistic: no INE indicator precisely quantifying geographic concentration or access to social housing by nationality has been identified for a recent period. The academic literature (e.g., the Institute for Fiscal Studies, Colectivo IOÉ) documents a concentration of immigrant populations in neighborhoods with older, cheaper housing as well as difficulties accessing the social housing stock, but without a recent, officially verifiable national figure at the time of writing.
+  Not verified: an SSL certificate error occurred when attempting to retrieve the PDF (technical verification impossible with the tool used) — content not confirmed.
+  Academic reference (non-official, to be used with caution): Institute for Fiscal Studies (Instituto de Estudios Fiscales), "Vivienda e inmigración en España" — https://www.ief.es/docs/destacados/publicaciones/revistas/pgp/61_15.pdf
+
+## 9. Social cohesion
+
+- CIS barometer (Centro de Investigaciones Sociológicas, a public body): in September 2024, immigration appeared for the first time as the "main problem" cited by respondents at the national level (30.4%), ahead of unemployment and economic problems. Important methodological note flagged by the verifiers: this September 2024 barometer preceded the questions on the country's problems with five questions on inequalities between countries and immigration, which may have influenced the response (priming effect). The trend has since largely reversed: in July 2025, immigration fell to 8th place with only 4% of mentions as the country's main problem. When respondents are asked about problems that affect them personally, immigration ranks 5th with 13.7% of mentions (end of 2024).
+  Not directly verified: the CIS homepage consulted displays only the most recent barometer (June 2026, showing housing at 41.5% as the main problem, followed by the economy at 19.2% and immigration at 18.9%), not the historical waves from September 2024 or July 2025 cited in the text. These specific figures could not be confirmed by direct reading — to be checked via the CIS study catalog.
+  Source: CIS, Barometers — https://www.cis.es/
+
+## 10. Recent political context
+
+- The rise of the Vox party in the political debate on immigration since the mid-2020s (presence in regional coalition governments from 2023) — to be documented more precisely by election if necessary.
+- Irregular sea arrivals: 63,970 in 2024 (+12.5% vs. 56,852 in 2023), a level close to the historic record of 2018 (64,298). The Canary Islands route accounted for 73.9% to 74% of total arrivals in 2024 (46,843 people, +17.4% year on year), ahead of the peninsular/Balearic Islands route (21.2%).
+  Not verified: the interior.gob.es website returned an HTTP 403 error (access blocked to automated requests). The figures could not be confirmed by direct reading — to be checked manually.
+  Source: Ministry of the Interior, cumulative biweekly report 01-01 to 31-12-2024 —
+  https://www.interior.gob.es/opencms/export/sites/default/.galleries/galeria-de-prensa/documentos-y-multimedia/balances-e-informes/2024/24_informe_quincenal_acumulado_01-01_al_31-12-2024.pdf
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Irregular arrival statistics (Ministry of the Interior) cover only detections at sea/land borders; they do not measure entries via visa overstaying, a significant component of irregular immigration but not officially quantified as an annual flow. Opinion barometers (CIS) are sensitive to question order and wording, as illustrated by the gap between the September 2024 wave and subsequent waves — a methodological bias documented by independent fact-checking organizations (Maldita.es). Prison statistics by nationality do not systematically distinguish offenses tied to migration status (irregular stay) from other offenses, which limits direct comparisons of crime rates between nationals and foreigners. No consolidated, longitudinal net fiscal balance study comparable to the Danish methodology (Finansministeriet) has been identified for Spain: the available work (Bank of Spain) measures the contribution to GDP growth, not a tax revenue/social spending balance by cohort.
+</div>

@@ -1,0 +1,398 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="移民の雇用率格差：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/labour-market/" description="西欧20カ国における移民と現地人の雇用率・失業率格差を公式統計で比較。各国統計局・労働省の一次資料のみを使用。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
+    </nav>
+    <h1>移民と現地人の雇用率格差 — 国別比較</h1>
+    <p class="intro">
+      このページは、各国統計局・労働省・国際機関が公表した移民と現地生まれ住民の雇用率・失業率の格差データを集約したものです。「移民」の定義（外国出生・外国籍・移民的背景など）は国によって異なり、直接比較には注意が必要です。「データ非公開」は本サイト調査時点での公式統計の不在を示します。
+    </p>
+    <div class="lang-switch">
+      <a href="/en/themes/labour-market/">🌐 View in English</a>
+    </div>
+  </div>
+
+  <section class="table-section">
+    <h2>雇用率・失業率格差：国別公式統計一覧</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>国</th>
+            <th>現地人（雇用率/失業率）</th>
+            <th>移民（雇用率/失業率）</th>
+            <th>格差</th>
+            <th>出典機関</th>
+            <th>年</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
+            <td>デンマーク系男性81%・女性78%（雇用率）</td>
+            <td>非欧米系移民男性71%・女性61%（雇用率）</td>
+            <td class="gap">男性10pt・女性17pt</td>
+            <td>デンマーク統計局（RAS登録データ）</td>
+            <td>2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
+            <td>国内出生：雇用率70.0%・失業率5.7%</td>
+            <td>外国出生：雇用率65.8%・失業率16.2%</td>
+            <td class="gap">雇用率4.2pt差<br/>失業率10.5pt差</td>
+            <td>SCB 労働力調査（AKU）</td>
+            <td>2024年平均</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/norway/">ノルウェー</a></td>
+            <td>移民的背景なし：雇用率80%（20-66歳）</td>
+            <td>移民：雇用率68%</td>
+            <td class="gap">12pt差</td>
+            <td>IMDi（Indikatorrapport 2025）</td>
+            <td>2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
+            <td>フィンランド系：雇用率79%（20-64歳）</td>
+            <td>外国出身：雇用率70.3%</td>
+            <td class="gap">8.7pt差（2016年の15pt差から縮小）</td>
+            <td>フィンランド統計局</td>
+            <td>2023年</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/germany/">ドイツ</a></td>
+            <td>全国男性平均：雇用率72%・全国女性平均：70%</td>
+            <td>2015年到着難民男性：76%（全国平均超）<br/>難民女性：35%（全国比−35pt）</td>
+            <td class="gap">女性に極大格差（−35pt）<br/>男性は難民が全国平均超</td>
+            <td>IAB「10 Jahre Fluchtmigration」</td>
+            <td>2024年（到着9年後）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
+            <td>移民系譜のない人口：失業率7%（15-64歳）</td>
+            <td>移民：失業率12%<br/>移民の子：失業率10.2%</td>
+            <td class="gap">5pt差</td>
+            <td>INSEE／DGEF</td>
+            <td>2024年</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
+            <td>全人口：雇用率73.1%（主な収入源が労働）</td>
+            <td>国外出生者：雇用率66.3%</td>
+            <td class="gap">6.8pt差</td>
+            <td>CBS『Integratie en samenleven 2024』</td>
+            <td>2023年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a></td>
+            <td>ベルギー出身：雇用率75.8%（20-64歳）</td>
+            <td>北アフリカ出身：51.3%<br/>サブサハラ・アフリカ出身：54.3%<br/>EU加盟候補国出身：58.2%</td>
+            <td class="gap">20〜24pt差</td>
+            <td>Statbel（2022年データ）</td>
+            <td>2022年</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/ireland/">アイルランド</a></td>
+            <td>アイルランド国籍者：全雇用の72.5%</td>
+            <td>アイルランド以外の国籍者：全雇用の27.5%（2019-2024年の雇用増の61.4%を占める）</td>
+            <td class="gap">比率データのみ（格差の直接算出なし）</td>
+            <td>CSO『Distribution of Earnings by Nationality 2024』</td>
+            <td>2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
+            <td>イタリア国籍者：雇用率61.5%</td>
+            <td>EU市民：63.8%<br/>EU域外市民：60.7%</td>
+            <td class="gap">EU域外市民はわずかに低い（−0.8pt）</td>
+            <td>ISTAT「Noi Italia — 労働市場」</td>
+            <td>直近データ</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/spain/">スペイン</a></td>
+            <td class="no-data">雇用率比較データ非公開</td>
+            <td>社会保障加入外国籍者285万人（+7.93%/年）<br/>外国人労働者は純雇用増の44.85%を創出</td>
+            <td class="gap">比較可能な格差データなし</td>
+            <td>SEPE/MITES「外国人労働市場報告書」</td>
+            <td>2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
+            <td>全人口：失業率6.6%</td>
+            <td>外国籍者：失業率11.9%（過剰資格率42.8%）</td>
+            <td class="gap">失業率5.3pt差</td>
+            <td>INE／IEFP／戦略計画局（労働省）</td>
+            <td>2025年Q1</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/czechia/">チェコ</a></td>
+            <td class="no-data">比較データ非公開</td>
+            <td>ウクライナ一時保護受給者：経済活動者の80%が就業</td>
+            <td class="gap">比較可能な格差データなし</td>
+            <td>チェコ科学アカデミー社会学研究所</td>
+            <td>2025年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/austria/">オーストリア</a></td>
+            <td>移民的背景なし：就業率76.4%<br/>オーストリア国籍者：失業率5.7%</td>
+            <td>移民的背景あり：就業率69%<br/>外国籍者：失業率10.5%<br/>アフガン・シリア・イラク出身：就業率44.1%・失業率31.3%</td>
+            <td class="gap">就業率7.4pt差<br/>失業率4.8pt差（国籍別）</td>
+            <td>Statistik Austria／ÖIF「Statistisches Jahrbuch Migration &amp; Integration 2025」</td>
+            <td>2024年</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
+            <td class="no-data">比較可能な単一指標なし（EMP06データセットにて公表）</td>
+            <td>非EU出身者の雇用率は2025年には2019年より高水準</td>
+            <td class="gap">EMP06データセットで確認可能（Excelダウンロードのみ）</td>
+            <td>ONS EMP06データセット</td>
+            <td>2025年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
+            <td>スイス人居住者：ILO失業率3.3%</td>
+            <td>外国人人口：ILO失業率7.7%</td>
+            <td class="gap">失業率4.4pt差</td>
+            <td>OFS「労働市場の動向」</td>
+            <td>2025年Q2</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
+            <td>米国生まれ男性：労働参加率65.9%</td>
+            <td>外国生まれ：失業率4.2%<br/>外国生まれ男性：労働参加率77.3%</td>
+            <td class="gap">男性参加率では移民が高い（+11.4pt）<br/>失業率は米国生まれと近似</td>
+            <td>BLS「Foreign-Born Workers: Labor Force Characteristics — 2024」</td>
+            <td>2024年</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/canada/">カナダ</a></td>
+            <td class="no-data">比較データ非公開</td>
+            <td class="no-data">出身別・在留資格別の具体的データは今後追加予定</td>
+            <td class="gap no-data">データ非公開</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
+            <td class="no-data">単一の比較指標なし</td>
+            <td>北西ヨーロッパ出身：失業率3.0%<br/>北アフリカ・中東出身：失業率6.9%<br/>最近の移民の就業率：平均68%</td>
+            <td class="gap">出生地域間で最大3.9pt差</td>
+            <td>Jobs and Skills Australia（2025年1月）／ABS CoRMS</td>
+            <td>2024年11月データ</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/new-zealand/">ニュージーランド</a></td>
+            <td class="no-data">比較データ非公開</td>
+            <td class="no-data">国民との明示的比較率は未公表</td>
+            <td class="gap no-data">データ非公開</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="methodology-note">
+    <h2>比較上の注意点</h2>
+    <ul>
+      <li><strong>「移民」の定義の違い</strong>：外国出生（スウェーデン・ノルウェー）、外国籍（ポルトガル・スイス）、移民的背景（ドイツ・オーストリア）など、国によって指標の定義が異なります。</li>
+      <li><strong>年齢層の違い</strong>：デンマーク20-64歳、ノルウェー20-66歳など、対象年齢層が異なります。</li>
+      <li><strong>出身地域の異質性</strong>：「移民全体」の平均は、西欧出身移民と非欧米出身移民の格差を隠す場合があります。オーストリア・デンマーク・オーストラリアはこの内訳を公表しています。</li>
+      <li><strong>滞在期間の効果</strong>：多くの研究が、滞在期間が長いほど雇用率が上昇することを確認しています。到着直後の数値と長期定住者の数値は大きく異なります。</li>
+    </ul>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .lang-switch {
+    margin-top: 1.25rem;
+  }
+
+  .lang-switch a {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .lang-switch a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  .table-section {
+    margin-bottom: 3rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 900px;
+  }
+
+  .comparison-table thead tr {
+    background: var(--color-surface-raised);
+  }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a:hover {
+    text-decoration: underline;
+  }
+
+  .gap {
+    font-weight: 700;
+    color: #ff9800;
+    font-size: 0.88rem;
+  }
+
+  .no-data {
+    color: var(--color-muted);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+</style>
+
+</BaseLayout>

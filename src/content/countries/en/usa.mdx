@@ -1,0 +1,208 @@
+---
+slug: usa
+name: "United States"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+
+## 1. Official institutions
+
+- US Census Bureau: https://www.census.gov
+- Department of Homeland Security (DHS) — Office of Homeland Security Statistics, data on legal immigration and border apprehensions
+- Bureau of Justice Statistics (BJS) — criminal justice statistics (little direct cross-tabulation with migration status at the federal level — an important limitation to flag)
+- Congressional Budget Office (CBO) — budget projections related to immigration (notable 2023-2024 reports on the impact of the recent immigration surge on GDP and public finances)
+- National Academies of Sciences — the reference report "The Economic and Fiscal Consequences of Immigration" (2016, a widely cited independent academic study)
+
+## 2. Key datasets
+
+- Census Bureau: American Community Survey (foreign-born population, employment, income)
+- Customs and Border Protection (CBP, under DHS): monthly statistics on apprehensions at the southern border — one of the most politically followed datasets
+- CBO: budget impact reports (2023-2024) on the increase in net immigration
+- National Academies (2016): a reference study distinguishing short-term impact (often negative at the state/local level) from long-term impact (generally positive at the federal level over several generations)
+- Pew Research Center: analysis of Census Bureau ACS data providing historical comparisons by region of origin (a private research organization, not a primary source, but a useful synthesis of ACS data)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (2023 — total population approx. 334 million)"
+	segments={[
+		{ label: 'US-born', value: 85.7, color: '#1d3461' },
+		{ label: 'Foreign-born', value: 14.3, color: '#9c3b3b' },
+	]}
+	sourceLabel="US Census Bureau, American Community Survey 2023"
+	sourceUrl="https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html"
+	sourcePrefix="Source: "
+/>
+
+- The foreign-born population residing in the United States reached 47.83 million people in 2023, or 14.3% of the total population, up from 13.9% in 2022 — both the annual increase (+1.65 million) and the level reached are the highest recorded since the American Community Survey began.
+- Source: US Census Bureau, press release of September 10, 2024 (https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html) and detailed ACS/CPS data (https://www.census.gov/data/tables/2023/demo/foreign-born/cps-2023.html).
+
+### 3.2 Origin breakdown
+
+<StackedBar
+	title="Region of origin of the foreign-born population (2023)"
+	segments={[
+		{ label: 'Mexico', value: 22, color: '#9c3b3b' },
+		{ label: 'Other Latin America', value: 30, color: '#c97a7a' },
+		{ label: 'Asia', value: 27, color: '#c9a23f' },
+		{ label: 'Europe', value: 10, color: '#1d3461' },
+		{ label: 'Sub-Saharan Africa', value: 5, color: '#5a8a6b' },
+		{ label: 'Middle East / North Africa', value: 4, color: '#7a5a8a' },
+		{ label: 'Canada / other North America', value: 2, color: '#8a8a8a' },
+	]}
+	sourceLabel="Pew Research Center (analysis of Census Bureau 2023 ACS data)"
+	sourceUrl="https://www.pewresearch.org/short-reads/2025/08/21/key-findings-about-us-immigrants/"
+	sourcePrefix="Source: "
+/>
+
+- As of 2023, 22% of the foreign-born population was born in Mexico (rising to roughly 52% for Latin America as a whole including other countries), 27% in Asia, 10% in Europe, 5% in Sub-Saharan Africa, 4% in the Middle East/North Africa, and 2% in Canada or another North American country.
+- Trend: the Mexican share fell from 29% in 2010 to 22% in 2023. Among all immigrants who arrived since 1965, 51% are from Latin America and roughly 25% from Asia.
+- Source: Pew Research Center, "How the origins of America's immigrants have changed since 1850" (analysis of Census Bureau ACS/IPUMS data) — https://www.pewresearch.org/short-reads/2024/07/22/how-the-origins-of-americas-immigrants-have-changed-since-1850/ and "Key findings about U.S. immigrants" (August 2025) — https://www.pewresearch.org/short-reads/2025/08/21/key-findings-about-us-immigrants/
+- Note: Pew Research Center is a private research organization, not a government agency, but the figures cited here are a synthesis of Census Bureau ACS data (the primary source), not Pew's own survey data.
+
+### 3.3 Immigration waves (1850 – present)
+
+<TrendChart
+	title="Foreign-born population (1850 → 2023)"
+	unit=""
+	series={[
+		{ label: 'Foreign-born population', color: '#9c3b3b', points: [
+			{ year: 1850, value: 2244602 }, { year: 1860, value: 4295510 }, { year: 1870, value: 5567229 },
+			{ year: 1880, value: 6679943 }, { year: 1890, value: 9249547 }, { year: 1900, value: 10341276 },
+			{ year: 1910, value: 13515886 }, { year: 1920, value: 13920692 }, { year: 1930, value: 14204149 },
+			{ year: 1960, value: 9738091 }, { year: 1970, value: 9619302 }, { year: 1980, value: 14079906 },
+			{ year: 1990, value: 19767316 }, { year: 2000, value: 31107889 }, { year: 2023, value: 47830000 },
+		]},
+	]}
+	sourceLabel="US Census Bureau (decennial censuses and ACS, aggregated via Wikipedia, 'United States immigration statistics')"
+	sourceUrl="https://www.census.gov/newsroom/press-releases/2024/foreign-born-population.html"
+	sourcePrefix="Source: "
+/>
+
+- **1850–1910 (first wave)**: large-scale European immigration. The foreign-born population rose from 2.24 million (1850) to 13.52 million (1910), reaching a historic peak share of 14.7% of the total population in 1910.
+- **1920s–1930s**: the Immigration Act of 1924 (national-origin quotas) restricted inflows; growth of the foreign-born population slowed sharply (13.92 million → 14.20 million).
+- **1940s–1970s (long decline)**: against the backdrop of the Great Depression, World War II, and strict national quotas, the foreign-born population fell in absolute terms (from 14.20 million in 1930 to 9.62 million in 1970). Its share of the total population dropped to 4.7% by 1970, the lowest level of the 20th century.
+- **1965 – present (second wave)**: starting with the Immigration and Nationality Act of 1965 (which abolished national-origin quotas), immigration from Latin America and Asia surged. The foreign-born population grew from 14.08 million in 1980 to 31.11 million in 2000 and 47.83 million in 2023.
+- **The 14.3% share recorded in 2023 approaches the historic peak of 14.7% reached in 1910.**
+- Sources: US Census Bureau (decennial census data, as compiled in Wikipedia, "United States immigration statistics") — https://en.wikipedia.org/wiki/United_States_immigration_statistics; US Census Bureau visualization "U.S. Foreign-Born Population: 2019-2023" — https://www.census.gov/library/visualizations/interactive/foreign-born-population-2019-2023.html
+<ComingSoon label="Intermediate data points for 1930–1960, and precise decade-by-decade flow totals based on the DHS Yearbook of Immigration Statistics (Table 1, Lawful Permanent Residents), are planned for a future update." />
+
+### 3.4 Age structure
+
+- The median age of the foreign-born population is 46.7 years, compared with 36.9 years for the US-born population — a gap of nearly 10 years.
+- Source: US Census Bureau, American Community Survey 2023 (as reported via VOA News and Census Bureau publications) — https://www.census.gov/library/visualizations/interactive/foreign-born-population-2019-2023.html
+<ComingSoon label="An age pyramid by region of origin (age bands 0-17 / 18-64 / 65+, drawing on ACS table S0501) is planned for a future update — this research could not extract verified age-band figures directly from the data portal." />
+
+### 3.5 Long-term projection
+
+<ComingSoon label="Census Bureau long-term population projections broken down by nativity (foreign-born / US-born) are planned for a future update." />
+
+## 4. Public finances — net cost
+
+<KeyFigure
+	value="−$0.9 trillion (2024–2034 cumulative)"
+	label="CBO estimate: effect of the 2021–2026 immigration surge on the federal deficit (July 2024)"
+/>
+
+<BarChart
+	title="CBO estimate: effect of the immigration surge on the federal budget (2024–2034 cumulative, federal level only)"
+	unit="$bn"
+	bars={[
+		{ label: 'Additional tax revenue', value: 1200 },
+		{ label: 'Additional mandatory spending (Social Security/programs)', value: -177 },
+		{ label: 'Additional debt interest', value: -101 },
+		{ label: 'Net effect (deficit reduction)', value: 900 },
+	]}
+	sourceLabel='CBO, "Effects of the Immigration Surge on the Federal Budget and the Economy" (July 2024)'
+	sourceUrl="https://www.cbo.gov/publication/60165"
+	sourcePrefix="Source: "
+/>
+
+- National Academies study (2016): the result depends heavily on the level of government (state/local versus federal) and the time horizon — a key example to highlight to illustrate the methodological debate (see editorial charter).
+- Work by George Borjas (Harvard) — often cited on the restrictionist side, to be presented with its academic context.
+- The most recent and most precise summary figure available: CBO, "Effects of the Immigration Surge on the Federal Budget and the Economy" (July 2024) — the estimated net immigration surge over 2021-2026 would reduce the net federal deficit by approximately $0.9 trillion over the 2024-2034 period: additional tax revenue is estimated at approximately +$1.2 trillion, partially offset by approximately +$177 billion in additional mandatory spending (social programs) and approximately +$101 billion in interest on the additional public debt. This estimate covers the federal level only and says nothing about net costs at the state and local level, which can diverge significantly.
+- Primary source: CBO (Congressional Budget Office, a non-partisan body of the US Congress), https://www.cbo.gov/publication/60165 — supplementary report from November 2024: https://www.cbo.gov/publication/60988.
+- Methodology note: unlike the Danish Ministry of Finance's detailed generational accounting by origin and length of residence, the United States has no single official model spanning federal, state, and local levels. The CBO estimate is a static 10-year federal-only projection, methodologically distinct from the National Academies' (2016) dynamic 75-year generational accounting model — presenting these two different results side by side satisfies this observatory's editorial requirement to display multiple methodologies.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<div class="callout-limits">
+<strong>⚠️ Data not available</strong>
+No official federal statistic breaking down the demographic dependency ratio (pensioners and children relative to working-age population) by nativity (foreign-born/US-born) could be identified during this research. The Social Security Administration publishes reports on immigration's effect on Social Security finances, but no primary source meeting this page's bar for an origin-disaggregated dependency indicator was found.
+</div>
+<ComingSoon label="A demographic dependency ratio (pensioners and children relative to working-age population) broken down by nativity is planned for a future update." />
+
+## 5. Labor market
+
+<TrendChart
+	title="Unemployment rate trend (foreign-born, 2023 → 2024)"
+	unit="%"
+	series={[
+		{ label: 'Foreign-born', color: '#9c3b3b', points: [{ year: 2023, value: 3.6 }, { year: 2024, value: 4.2 }] },
+	]}
+	sourceLabel='BLS, "Foreign-Born Workers: Labor Force Characteristics — 2024" (published May 20, 2025)'
+	sourceUrl="https://www.bls.gov/news.release/forbrn.htm"
+	sourcePrefix="Source: "
+/>
+
+- Primary source: BLS (Bureau of Labor Statistics), "Foreign-Born Workers: Labor Force Characteristics — 2024," published May 20, 2025 — https://www.bls.gov/news.release/forbrn.htm
+- 2024 unemployment rate: 4.2% for the foreign-born, up from 3.6% in 2023 (year-over-year increase). A comparison with US natives is available in the same BLS report (detailed table).
+- Share of the foreign-born in the civilian labor force: 19.2% in 2024, up from 18.6% in 2023 — a continued rise over several years, consistent with the demographic increase documented in section 3.
+- Labor force participation rate of foreign-born men: 77.3% in 2024, compared with 65.9% for US-born men — a notable structural gap, generally attributed in part to a different age composition (fewer retirees among recent immigrants).
+- Median weekly earnings (full-time wage and salary workers): $1,001 for the foreign-born versus $1,190 for the US-born in 2024 — a gap of $189, meaning the foreign-born earn approximately 84% of the median income of natives.
+- Breakdown by legal/illegal status on employment: not publicly available at the federal level (the BLS does not ask about migration status in its Current Population Survey, only country of birth and citizenship).
+
+## 6. Security / justice
+
+<div class="callout-limits">
+<strong>⚠️ Major limitation — no systematic federal cross-tabulation of crime by migration status</strong>
+The majority of crimes in the United States are prosecuted at the state level rather than the federal level, and these jurisdictions do not publish a systematic, aggregated national statistic by migration status. There is therefore no federal criminal statistic systematically cross-tabulated with migration status across all offense types. This is a politically disputed topic in the United States, documented here as a major methodological limitation rather than citing unofficial figures or advocacy-driven estimates.
+</div>
+
+- A partial official federal data point that nonetheless exists, to be carefully scoped: the U.S. Sentencing Commission, "Federally Sentenced Non-U.S. Citizens" (Quick Facts, fiscal year 2025) — 28,886 non-citizens out of 66,662 federal cases adjudicated (44% of federal sentencings), an average sentence of 21 months (down from 25 months in fiscal year 2021), with offenses predominantly related to immigration itself (79% of cases, e.g., illegal reentry after deportation) and drug trafficking (12%). Primary source: United States Sentencing Commission, https://www.ussc.gov/research/quick-facts/federally-sentenced-non-us-citizens
+- A critical limitation to flag explicitly for the reader: this statistic covers only federal offenses (a minority of crimes committed in the United States), mechanically over-represents violations of immigration law itself (illegal reentry, document fraud), and therefore allows no extrapolation to a general crime rate by migration status. No valid generalization can be drawn from this figure regarding ordinary crime (theft, violence, etc.), which falls under state jurisdictions.
+
+## 7. Education
+
+- The National Center for Education Statistics (NCES) publishes data disaggregated by "English Learner" (EL) status (students learning English, used as an imperfect proxy for recent migration status — not equivalent to country of birth or legal status) via the NAEP Data Explorer: https://www.nces.ed.gov/nationsreportcard/
+- Share of EL students in the public school system: 10.6% in fall 2021 (5.3 million students), up from 9.4% in fall 2011. Source: NCES, "Fast Facts: English Learners": https://nces.ed.gov/fastfacts/display.asp?id=96.
+<ComingSoon label="Precise score gap (reading/mathematics) between EL and non-EL students for the most recent year is planned for a future update — the NAEP Data Explorer requires interactive manual extraction and could not be confirmed during this research." />
+
+## 8. Housing
+
+- Link to "sanctuary" cities and pressure on municipal services, notably New York and Chicago in 2023-2024 (influx of asylum seekers transported from border states) — a politically documented phenomenon, but no aggregated official national statistic on the exact cost or scale at the federal level was found in this research.
+- The Census Bureau (American Community Survey) records homeownership/renter status cross-tabulated with country of birth and citizenship: tables available at https://www.census.gov/topics/population/foreign-born/data/tables/acs-tables.html
+<ComingSoon label="A single, public summary figure on the share of immigrants in social/assisted housing in the United States is planned for a future update. A regulatory note to keep in mind: most immigrants in irregular status are in any case ineligible for federal social housing." />
+
+## 9. Social cohesion
+
+- No official federal survey dedicated to perceptions of immigration or social cohesion has been identified in the United States (there is no equivalent, at the level of a US government agency, to the UK's Community Life Survey or Sweden's SOM Institute).
+- A borderline case worth mentioning with nuance: the American National Election Studies (ANES) contains items on attitudes toward immigration and is funded by the National Science Foundation (a federal agency), but it is designed and operated by a consortium of universities — partial public funding, not a strict official state instrument.
+- A conclusion for the Japanese reader to note: any widely cited public opinion measure on immigration in the United States (Gallup, Pew Research Center) comes from private organizations, not from an official state statistic — not publicly available within the meaning of this dossier's editorial charter (an official source is required).
+
+## 10. Recent political context
+
+- Increase in irregular crossings at the southern border 2021-2023, a peak and subsequent decline in 2024, policies under the Biden administration followed by a tightening under the Trump administration (2025) — to be documented with precise dates and DHS/CBP sources.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+A strong divergence exists between federal data (DHS/Census) and NGO/think tank estimates of the population in irregular status — the estimation method used should always be specified.
+</div>
+
+<div class="callout-limits">
+<strong>⚠️ Absence of a federal crime/migration-status cross-tabulation</strong>
+As noted in section 6, the United States has no national statistic systematically cross-tabulating state-level crime with migration status. This is a structural limitation of US data that should be flagged explicitly when comparing with European countries (Denmark, Sweden, etc.) that do publish such cross-tabulations.
+</div>

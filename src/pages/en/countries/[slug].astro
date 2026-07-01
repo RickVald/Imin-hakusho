@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { flagUrl } from '../../../data/flags';
+
+export async function getStaticPaths() {
+	const countries = await getCollection('countriesEn');
+	return countries.map((country) => ({
+		params: { slug: country.data.slug },
+		props: { country },
+	}));
+}
+
+const { country } = Astro.props;
+const { Content } = await render(country);
+---
+
+<BaseLayout title={`Immigration in ${country.data.name} — Official Statistics | Immigration Factbook`} lang="en" altHref={`/countries/${country.data.slug}/`}>
+	<Breadcrumbs items={[{ label: 'Immigration Observatory', href: '/en/' }, { label: country.data.name }]} />
+	<h1 class="country-title">
+		<img class="country-title__flag" src={flagUrl(country.data.slug, 80)} alt="" width="48" height="36" />
+		{country.data.name}
+	</h1>
+	<div class="country-page">
+		<Content />
+	</div>
+</BaseLayout>

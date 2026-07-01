@@ -1,0 +1,269 @@
+---
+slug: canada
+name: "カナダ"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- カナダ統計局（Statistics Canada、StatCan）：https://www.statcan.gc.ca
+- 移民・難民・市民権省（Immigration, Refugees and Citizenship Canada、IRCC）— 議会への年次報告書
+- カナダ銀行（Bank of Canada）
+- カナダ住宅・抵当公社（Canada Mortgage and Housing Corporation、CMHC）
+
+## 2. 主要データセット
+
+- StatCan：到着年次コホート別・在留資格カテゴリー別（技能労働者／家族呼び寄せ／難民）の就労収入——詳細な縦断的時系列データ
+- IRCCの年間移民受け入れ目標数 対 住宅供給の伸び
+- 留学生・一時的労働者に関するデータ（2021年以降急増、2024年に上限が再導入された）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<KeyFigure
+	value="23.0%"
+	label="2021年カナダ国勢調査における移民人口の割合——連邦結成以来最高水準"
+/>
+
+- 2021年国勢調査において、移民はカナダ人口の23.0%を占め、これは1867年の連邦結成以来最高の水準である。これに次ぐ過去の最高水準は1921年の22.3%。
+  出典：カナダ統計局「The Daily — Immigrants make up the largest share of the population in over 150 years」（2022年10月26日）—
+  https://www150.statcan.gc.ca/n1/daily-quotidien/221026/dq221026a-eng.htm
+- カナダの人口は2023年1月1日から2024年1月1日までの間に1,271,872人増加し、年間成長率は3.2%——1957年（3.3%）以来最も高い水準であった。
+  出典：カナダ統計局「Le Quotidien — 人口推計：2023年に高い人口成長」（2024年3月27日）—
+  https://www150.statcan.gc.ca/n1/daily-quotidien/240327/dq240327c-eng.htm
+- 2023年の人口増加の内訳：97.6%が国際的な人口移動（永住移民＋一時的非永住居住者の合計）に由来し、自然増加（出生から死亡を引いた値）はわずか2.4%。同年中に永住移民471,771人、一時的非永住居住者（主に一時的労働者・留学生）804,901人が人口に加わった。一時的居住者の増加分を除けば、人口成長率は約1.2%にとどまり、実際の約3分の1の水準であったと推計される。
+  出典：カナダ統計局（同上）
+- 長期時系列：StatCan統計表17-10-0009-01「人口推計（7月1日時点、年齢・性別）」により、過去10〜20年間の年次推移を再構成できる（https://www150.statcan.gc.ca/t1/tbl1/fr/tv.action?pid=1710000901）。2022年以前、カナダの年間人口成長率は通常1.0%〜1.4%の範囲であった（例：パンデミック前の2019年は+1.1%）。
+  出典：カナダ統計局「年次人口推計：カナダ、州・準州」（2023年）—
+  https://www150.statcan.gc.ca/n1/pub/91-215-x/91-215-x2023001-eng.htm
+- OECD諸国・過去数十年との比較：本調査で参照したStatCan公表資料には、OECD平均との直接的・数値的な比較は含まれておらず、確認できなかった。
+
+### 3.2 移民の出身地域別構成
+
+<ComingSoon label="出身地域別（アジア／欧州／アフリカなど）の移民構成比データは、本調査の範囲では確定的な数値を確認できなかったため、StatCanの2021年国勢調査詳細表（Immigrant population by selected places of birth, admission category and period of immigration）への追加照会のうえ今後追加予定です。参照ページ：https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/dv-vd/imm/index-en.cfm" />
+
+### 3.3 移民の波（移民流入期間別）
+
+<TrendChart
+	title="移民人口比率の長期推移（1921年→2021年）"
+	unit="%"
+	series={[
+		{ label: '移民人口比率', color: '#9c3b3b', points: [
+			{ year: 1921, value: 22.3 },
+			{ year: 2021, value: 23.0 },
+		]},
+	]}
+	sourceLabel="カナダ統計局「The Daily — Immigrants make up the largest share of the population in over 150 years」（2022年10月26日）"
+	sourceUrl="https://www150.statcan.gc.ca/n1/daily-quotidien/221026/dq221026a-eng.htm"
+	sourcePrefix="出典："
+/>
+
+<KeyPointTiles
+	title="主要移民流入期間の特徴"
+	tiles={[
+		{ period: '〜1921年', value: '22.3%', description: '連邦結成後の移民ピーク。欧州からの入植者中心。以来の最高水準。', color: '#1d3461' },
+		{ period: '1971年以前', value: 'アジア系12.1%', description: '1971年到着移民のうちアジア出身者は12.1%。その後、出身地域の構成が大きく変化。', color: '#9c3b3b' },
+		{ period: '2016–2021年', value: '130万人', description: '5年間で130万人が到着。56.0%がトロント・モントリオール・バンクーバーの三大都市圏に定住。', color: '#c9a23f' },
+		{ period: '2021年', value: '23.0%', description: '1867年の連邦結成以来最高の移民比率。1921年の22.3%を100年ぶりに超えた。', color: '#5a8a6b' },
+		{ period: '2023年', value: '97.6%', description: '人口増加の97.6%が国際的な人口移動（永住移民＋一時的非永住居住者）に由来。自然増加はわずか2.4%。', color: '#6b5b95' },
+	]}
+/>
+
+- 2021年国勢調査において、1971年に到着した「最近の移民」のうち12.1%がアジア出身であった——その後、出身地域の構成は大きく変化している。
+  出典：カナダ統計局「The Daily」（2022年10月26日、上記リンク）
+- 2016年〜2021年に到着した最近の移民（130万人）のうち、56.0%がトロント・モントリオール・バンクーバーの三大都市圏に定住した。
+  出典：同上
+- StatCanは「移民流入期間別（period of immigration）」の詳細な国勢調査表を公表しており、これにより各年代（1980年以前、1980年代、1990年代、2000年代、2011〜2015年、2016〜2021年など）に到着した移民の人口規模を出身国別に確認できる。
+  出典：StatCan「Immigrant population by selected places of birth, admission category and period of immigration, 2021 Census」—
+  https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/dv-vd/imm/index-en.cfm
+- **限界**：本調査では、この統計表から年代別の正確な人口数値（例：1980年代到着者の現在人口、1990年代到着者の現在人口）を直接抽出することができなかった。これはインタラクティブなデータ可視化ツールであり、検索ツールによる自動抽出には適していない。
+<ComingSoon label="移民流入期間別（1980年代、1990年代、2000年代、2010年代等）の正確な人口数値は、StatCanの国勢調査インタラクティブツールへの直接照会のうえ今後追加予定です。" />
+
+### 3.4 年齢構成（人口ピラミッド）
+
+<BarChart
+	title="労働年齢人口（15〜64歳）の割合（移民 対 全人口、2022年7月1日時点）"
+	unit="%"
+	bars={[
+		{ label: '移民', value: 81.9 },
+		{ label: '全人口', value: 65.6 },
+	]}
+	sourceLabel="カナダ統計局「Analysis: Population by age and sex」（2022年人口推計年報）"
+	sourceUrl="https://www150.statcan.gc.ca/n1/pub/91-215-x/2022001/sec2-eng.htm"
+	sourcePrefix="出典："
+/>
+
+- 2022年7月1日時点で、労働年齢人口（15〜64歳）の割合は、移民で81.9%、全人口で65.6%——移民は全人口よりも著しく若く、働く現役世代に集中していることを示す。
+  出典：カナダ統計局「人口推計年報2022」分析セクション — https://www150.statcan.gc.ca/n1/pub/91-215-x/2022001/sec2-eng.htm
+- 2016年〜2021年に到着した「最近の移民」（130万人）の年齢構成：65歳未満が95.8%、コア労働年齢（25〜54歳）が64.2%、15〜24歳が10.9%、15歳未満が17.1%、55〜64歳が3.6%。これは、カナダの高齢化する一般人口（55〜64歳が人口の5分の1超に達し過去最高水準）とは対照的な構成である。
+  出典：カナダ統計局「The Daily」（2022年10月26日、上記リンク）
+- **限界**：移民・国内出生者を年齢層別（0-17歳、18-64歳、65歳以上等）に直接対比できる、デンマーク版で使用した形式の詳細な人口ピラミッド用データ一式は、本調査の範囲では確定的に確認できなかった。
+
+### 3.5 将来予測
+
+<TrendChart
+	title="カナダの将来人口推計（中位シナリオ、2023年→2068年）"
+	unit="百万人"
+	series={[
+		{ label: '人口（中位シナリオ）', color: '#1d3461', points: [{ year: 2023, value: 39.6 }, { year: 2043, value: 47.8 }, { year: 2068, value: 56.5 }] },
+	]}
+	sourceLabel="カナダ統計局「Population Projections for Canada (2021 to 2068)」（2022年版）"
+	sourceUrl="https://www150.statcan.gc.ca/n1/daily-quotidien/220822/dq220822b-eng.htm"
+	sourcePrefix="出典："
+/>
+
+<KeyFigure
+	value="29.1%〜34.0%"
+	label="2041年における移民人口比率の推計レンジ（StatCan 2022年版推計、複数シナリオ）"
+/>
+
+- StatCanの中位シナリオによれば、カナダの人口は2043年に4,780万人、2068年に5,650万人に達すると推計されている。シナリオによる幅は2068年時点で4,490万人〜7,400万人と広い。移民は今後数十年にわたり人口成長の主要な要因であり続けると見込まれているが、その水準はシナリオによって大きく異なる。自然増加（出生から死亡を引いた値）は中位シナリオで2049〜2058年頃にマイナスに転じる可能性がある。
+  出典：カナダ統計局「The Daily — Population Projections for Canada, Provinces and Territories, 2021 to 2068」（2022年8月22日）— https://www150.statcan.gc.ca/n1/daily-quotidien/220822/dq220822b-eng.htm
+- 同推計によれば、2041年までに移民はカナダの総人口の29.1%〜34.0%を占めると予測されている（シナリオにより幅がある）。2021年時点の23.0%（セクション3.1参照）からさらに上昇する見通しである。
+  出典：カナダ統計局「The Daily」（2022年10月26日、上記リンク）
+- 注：2023年以降、StatCanは「Population Projections for Canada (2023 to 2073)」「(2024 to 2074)」「(2025 to 2075)」と毎年改訂版を公表している。最新の改訂版における具体的な数値（2024年の移民受け入れ目標引き下げを反映した値）は、本調査では個別に確認できておらず、最新版での更新が望ましい。
+<ComingSoon label="最新版（2024〜2025年公表）の人口推計における移民人口比率の更新値は今後追加予定です。" />
+
+## 4. 財政 — 純負担
+
+<KeyFigure
+	value="97.6%"
+	label="2023年の人口増加のうち国際的な人口移動（永住移民＋一時的居住者）に由来する割合"
+/>
+
+- カナダには、デンマークのような国家による年次・反復的な公式算定（在留資格カテゴリー・年齢別の財政純負担・給付コストの算定）に相当する制度が存在しない。本調査では、StatCanまたは財務省による同等の政府公式研究を確認できなかった。これは本観察サイトのカナダに関する明確な限界として明記する。
+<ComingSoon label="デンマーク型の政府公式・反復的な財政純負担算定はカナダには確認されていません（限界として明記）。" />
+- 既存の研究（非政府系）：Fraser Institute（リバタリアン・保守系の傾向を持つシンクタンク、民間献金により運営——委託主体としてその立場性を考慮する必要がある）、「Immigration and the Canadian Welfare State」（Grubel & Grady、2011年、2005〜2006年頃の財政データに基づく）：
+  移民の平均納税額は10,340カナダドルであったのに対し、カナダ人全体の平均は16,501カナダドル。推計される純コストは年間163億〜236億カナダドル（移民1人当たり約6,051カナダドル）。
+  出典：Fraser Institute — https://www.fraserinstitute.org/studies/immigration-and-welfare-state-revisited-fiscal-transfers-immigrants-canada-2014
+  方法論への批判：この推計は経済移民・家族移民・難民を区別せず全カテゴリーを合算しており、これが結果に偏りを生じさせているとサイモンフレーザー大学の学術系経済学者（Javdani & Pendakur）が指摘している。彼らは同じ国勢調査／全国家庭調査データから、著しく低い代替推計値（移民1人当たり約450カナダドル）を導いている。
+
+<BarChart
+	title="移民の公的財政への影響に関する手法比較（年間コスト推計）"
+	unit=""
+	bars={[
+		{ label: 'Fraser Institute（静的集計手法、全カテゴリー合算）', value: 6051, note: '移民1人当たり、合計163億〜236億CAD/年' },
+		{ label: 'Javdani & Pendakur（同データの方法論的再検証）', value: 450, note: '移民1人当たり（大幅に低い結果）' },
+	]}
+	sourceLabel="Fraser Institute (2011/2014) および Javdani & Pendakur（サイモンフレーザー大学）"
+	sourceUrl="https://www.fraserinstitute.org/studies/immigration-and-welfare-state-revisited-fiscal-transfers-immigrants-canada-2014"
+	sourcePrefix="出典："
+/>
+
+- 政府公式の反復的な算定（デンマーク型モデルに相当するもの）：本調査では確認できなかった。
+- GDP・人口1人当たりとの関連：カナダの実質GDP（人口1人当たり）は2023年に複数四半期連続で低下したことがStatCanの四半期経済統計（統計表36-10-0104-01）に記録されており、この時期は移民（特に一時的居住者）による人口急増と時期的に重なる。
+  出典：StatCan統計表36-10-0104-01 — https://www150.statcan.gc.ca/t1/tbl1/fr/tv.action?pid=3610010401
+  ただし、移民とGDP／人口1人当たりの間の因果関係を直接かつ数値的に立証したStatCanまたはカナダ銀行による研究は、本調査では確認できなかった。時間的相関は記録されているが、正確な因果分解は公的に確認できないデータである。
+
+### 4.1 年金制度・現役世代比率
+
+<ComingSoon label="出身（移民／非移民）別の人口学的依存度（年金受給者・子供対労働年齢人口比）の正確な数値は、本調査では確認できなかったため今後追加予定です。セクション3.4で示した労働年齢人口比率（移民81.9% 対 全人口65.6%、2022年）は関連指標ですが、年金制度に特化した現役世代対年金受給者比率そのものではありません。" />
+
+## 5. 労働市場
+
+- StatCan：到着年次コホート別・在留資格カテゴリー別の就労収入データ
+- ウォータールー大学のMikal Skuterud氏の研究：移民受け入れ目標数と経済的吸収能力の間のギャップに関する分析
+<ComingSoon label="移民の雇用率・失業率の出身別・在留資格別の具体的な時系列データは今後追加予定です。" />
+
+## 6. 治安・司法
+
+- カナダ統計局は殺人事件調査（Homicide Survey）を実施しており、加害者・被害者の特性を記録しているが、公表されている統計表では移民／非移民の在留資格別の公式な分解は行われていない——標準的なStatCan公表資料からは確認できないデータである。
+  出典：StatCan「殺人事件調査」— https://www.statcan.gc.ca/fr/enquete/menages/3315
+- 学術研究（StatCan以外）：カナダの州における国際移民・国内移動と殺人率の関係を分析した査読付き研究によれば、他の変数を統制した場合、移民の増加は殺人率の上昇と関連していないと結論づけられている（Ouimet等）。
+  出典：査読付き学術論文、独立した大学研究 — https://pubmed.ncbi.nlm.nih.gov/22436732/
+- 関連する学術研究（暴力的襲撃、殺人以外）：StatCanの一般社会調査（General Social Survey）に基づき、査読付き学術誌（CMAJ Open）に発表された研究によれば、移民・難民が暴力的襲撃に遭遇する調整済みリスク比は非移民と比較して0.41（リスクが低い）であった。
+  出典：査読付き学術論文、大学・医療機関による独立研究 — https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7057130/
+- 在留資格別の全体的な犯罪率に関するStatCan公式統計データ（殺人・暴行を除く）：本調査では公的に確認できなかった。
+<ComingSoon label="在留資格別の全体的な犯罪率に関する公式統計データは今後追加予定です。" />
+
+## 7. 教育
+
+<BarChart
+	title="移民を背景に持つ15歳の生徒の割合（OECD PISA調査）"
+	unit="%"
+	bars={[
+		{ label: '2012年', value: 30 },
+		{ label: '2022年', value: 34, note: '10年で+4ポイント' },
+	]}
+	sourceLabel="OECD「PISA 2022 Results」カナダ国別ノート"
+	sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i-and-ii-country-notes_ed6fbcc5-en/canada_901942bb-en.html"
+	sourcePrefix="出典："
+/>
+
+- OECDのPISA 2022調査によれば、移民を背景に持つ（第一世代または第二世代の）15歳のカナダ人生徒の割合は2022年に34%に達し、2012年の30%から10年間で4ポイント増加した。
+  出典：OECD「PISA 2022 Results」カナダ国別ノート — https://www.oecd.org/en/publications/pisa-2022-results-volume-i-and-ii-country-notes_ed6fbcc5-en/canada_901942bb-en.html
+- 移民を背景に持つ生徒は、非移民の生徒と比較して社会経済的に不利な状況にある割合が平均して高い（28%が社会経済的に不利と判定されるのに対し、全生徒平均は25%）。しかし、カナダは移民を背景に持つ生徒の比率が高く、かつ平均的な学業成績も高い国・地域の一つである。社会経済的状況と家庭での使用言語を統制すると、移民を背景に持つ生徒の成績が非移民の生徒を上回る国が、逆の場合より多く、カナダはその成績差（未調整値）が小さい事例の一つに数えられる。
+  出典：OECD「PISA 2022 Results」（第I巻）、「Immigrant background and student performance」章 —
+  https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html
+- 歴史的比較：OECDによるPISA 2003分析でも、移民生徒と国内出生生徒の成績差は、OECD平均と比較してオーストラリア・カナダ・ニュージーランドで既に小さかったことが示されている。
+  出典：https://www.oecd.org/content/dam/oecd/en/publications/reports/2006/05/where-immigrant-students-succeed_g1gh6a2d/9789264023611-en.pdf
+- 在留資格カテゴリー別（留学生／技能労働者の子／難民）の学業成績データ：本調査では公的に確認できなかった。
+<ComingSoon label="在留資格カテゴリー別の学業成績データは今後追加予定です。" />
+
+## 8. 住宅
+
+<BarChart
+	title="住宅価格・賃料上昇のうち移民増加に起因する割合（IRCC、2024年研究）"
+	unit="%"
+	bars={[
+		{ label: '移民増加の寄与分', value: 11, note: '大都市ほど効果が大きい' },
+	]}
+	sourceLabel="移民・難民・市民権省（IRCC）「Immigration and housing prices across municipalities in Canada」"
+	sourceUrl="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/research/immigration-housing-prices-municipalities-canada.html"
+	sourcePrefix="出典："
+/>
+
+- IRCCによるカナダ各自治体の移民と住宅価格に関する研究（2024年）：調査対象期間における住宅価格・賃料の上昇のうち約11%が移民の増加によって説明されると推計され、新規移民の大半が定住する大都市ほど効果が大きい。
+  出典：カナダ政府／IRCC — https://www.canada.ca/en/immigration-refugees-citizenship/corporate/reports-statistics/research/immigration-housing-prices-municipalities-canada.html
+- カナダ銀行は、2022年・2023年において人口成長が住宅供給よりも住宅需要に大きく寄与したと指摘しており、これが金利上昇の中で住宅価格を支える一因となった。新規入国者の多くが賃貸市場に依存するため、人口流入は賃貸住宅需要を押し上げ、一部地域で空室率を低下させた可能性がある。
+  出典：カナダ銀行、2024年分析 — https://www.bankofcanada.ca
+- CMHC（カナダ住宅・抵当公社）の賃貸市場報告書2025年版は、2024年末の一時的移民政策の引き締めに関連して、トロント・バンクーバー等の大都市圏での人口成長の鈍化が賃貸需要の減速をもたらしたと記録している。
+  出典：CMHC「Rental Market Report 2025」— https://www.cmhc-schl.gc.ca/professionals/housing-markets-data-and-research/market-reports/rental-market-reports-major-centres
+- 時系列の参照点：カナダの人口成長率は2024年第2四半期の数十年来の最高水準である3.2%から、2025年初頭には約0.9%まで低下した。これは、2025年の永住移民受け入れ目標が50万人から395,000人に削減されたこと、および2024年10月に連邦政府が発表した留学・一時労働許可証の上限導入を反映している。
+
+## 9. 社会的結束
+
+<TrendChart
+	title="「カナダの移民は多すぎる」と回答した割合（2023年秋→2024年秋）"
+	unit="%"
+	series={[
+		{ label: '「多すぎる」と回答した割合', color: '#9c3b3b', points: [{ year: 2023, value: 44 }, { year: 2024, value: 58 }] },
+	]}
+	sourceLabel="Environics Institute「Focus Canada」年次調査"
+	sourceUrl="https://www.environicsinstitute.org/projects/project-details/canadian-public-opinion-and-immigration-and-refugees---fall-2024"
+	sourcePrefix="出典："
+/>
+
+- Environics Instituteの年次調査「Focus Canada」（学術系・非営利・無党派の調査機関）によれば、カナダで「移民が多すぎる」と考える国民の割合は2023年秋の44%から2024年秋には58%に上昇し、1年間で14ポイントの増加となった——数十年にわたる移民への多数派支持からの転換点を示す。
+  （注：本ページの旧版では「+20ポイント」と記載していたが、報道情報源の直接確認により「44%→58%、+14ポイント」に修正済み。）
+  出典：Environics Institute「Canadian public opinion about immigration and refugees」（2024年秋）—
+  https://www.environicsinstitute.org/projects/project-details/canadian-public-opinion-and-immigration-and-refugees---fall-2024
+  この数値はThe Globe and MailおよびCIC News（2024年10月）等の報道でも報じられている。
+  **限界**：Environicsの報告書本文PDFは本調査で直接開くことができなかった（403 Forbidden）。44%/58%/+14ポイントという数値は、この調査結果を引用する複数の報道記事により裏付けられているが、一次資料（報告書本文）を直接閲読して確認されたものではない。
+- この懸念の高まりは、Environics Instituteにより、主として住宅の供給・取得可能性に対する移民の影響に関する懸念の増大に起因すると分析されている。
+- 地域差（2024年調査）：アルバータ州の63%、マニトバ州・サスカチュワン州の68%が「移民が多すぎる」と回答したのに対し、ケベック州では46%（47%が反対）——懸念の高まりはケベック州にも及んでいるが、他の地域よりも緩やかなペースである。
+  出典：Environics Institute（同上）
+- 定性的な比較ポイント：受け入れ可能な移民水準についての意見の転換にもかかわらず、Environics調査は、移民本人やその統合状況・社会への貢献に対するカナダ人の評価そのものには変化が見られないとしている——支持の低下は受け入れ数に関するものであり、移民個人に対する評価の変化ではない。
+
+## 10. 近年の政治的背景
+
+- 特異な事例：西側諸国で最も安定した移民支持の合意を持っていた国が、2023〜2024年に転換（受け入れ目標数の公式削減、留学生・一時労働者の上限設定）。
+- この転換は住宅危機および1人当たりGDPの鈍化と時期的に相関している。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+カナダには、デンマーク型の政府公式・反復的な財政純負担算定（在留資格・年齢別の正確な計算）に相当する仕組みが存在しない。本ページで参照した数値の一部（Fraser Institute、Javdani & Pendakur、Ouimet等、CMAJ Open掲載研究）は今回の調査で一次資料の直接再読を行っておらず、内部整合性は妥当と判断したが一次資料による直接確認は今回完了していない。Environics Instituteの報告書原本もPDFへの直接アクセスができず（403エラー）、報道情報源による裏付けのみにとどまっている。
+</div>

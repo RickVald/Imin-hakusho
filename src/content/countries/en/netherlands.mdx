@@ -1,0 +1,287 @@
+---
+slug: netherlands
+name: "Netherlands"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- CBS (Centraal Bureau voor de Statistiek, Statistics Netherlands): https://www.cbs.nl
+- CPB (Centraal Planbureau) — public economic planning bureau; has published related work on labor migration, but is not the author of the reference study on net fiscal cost by migration motive cited in section 4 (see the methodological note in sections 4 and 11 — that study is not a CPB publication)
+- SCP (Sociaal en Cultureel Planbureau) — Social and Cultural Planning Office, studies on integration and social cohesion
+- IND (Immigratie- en Naturalisatiedienst) — Immigration and Naturalisation Service
+- CBS Open Data (OData API, https://opendata.cbs.nl/ODataApi/odata/) — source for sections 3.3, 3.4, and 3.5 of this page
+
+## 2. Key datasets
+
+- *Grenzeloze verzorgingsstaat* (2021, van de Beek et al., partly funded by the Renaissance Instituut / FvD — see sections 4 and 11 for the precise attribution; this study was initially and incorrectly listed as a CPB publication) — an important methodological reference in continental Europe, disaggregating by migration motive (work/study/asylum/family) with very different net results by category — to be highlighted in the cross-country synthesis as the continental counterpart to the Danish model, with the sponsor clearly noted
+- CBS: StatLine, population and employment data by origin
+- SCP: surveys on perception and social cohesion
+- CBS datasets 37325 "Bevolking; geslacht, leeftijd, generatie en migratieachtergrond" (1996–2022, discontinued), 85458NED "Bevolking; herkomstland, geboorteland, leeftijd, regio", and CBS population projections (Bevolkingsprognose / Kernprognose 2024–2070)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Illustrative origin breakdown (2025 — size of the population with a 'migration background')"
+	segments={[
+		{ label: 'Dutch origin (estimated)', value: 75.4, color: '#1d3461' },
+		{ label: 'Population with a migration background (estimated)', value: 24.6, color: '#9c3b3b' },
+	]}
+	sourceLabel="CBS dataset 37325 (final value, 2022, expressed as a share of the 2024 total population)"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet"
+	sourcePrefix="Source: "
+/>
+
+- Total population (2024): 18.05 million, up 103,000 over the year. As in 2022 and 2023, all of the growth came from international migration.
+  Source: CBS, *Lagere bevolkingsgroei in 2024* (https://www.cbs.nl/nl-nl/nieuws/2025/05/lagere-bevolkingsgroei-in-2024)
+- Total immigration (2024): 316,000 people (−19,000 vs. 2023); emigration: 205,000 (+7,000 vs. 2023); net migration: +108,000. Breakdown by origin: 49% from outside the EU/EEA, 37% from the EU/EEA, 14% returning Dutch nationals.
+  Source: CBS, *Minder immigratie in 2024, vooral minder kennismigranten* (https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten)
+- **Note**: the 24.6% figure for "population with a migration background" shown above is a reference value calculated by this observatory, dividing the total under CBS's now-discontinued classification (migratieachtergrond, dataset 37325, last year available 2022 = 4,438,900 people) by the 2024 total population (18.05 million). It does not strictly correspond to CBS's current official classification by country of birth (geboorteland). CBS is phasing out the "migration background" concept (which included parents' country of birth), and no current official total share could be confirmed during this research.
+  Source: CBS dataset 37325 — https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet
+
+### 3.2 Breakdown by migration motive
+
+<StackedBar
+	title="Origin breakdown of immigrants (2024)"
+	segments={[
+		{ label: 'Non-EU/EEA countries', value: 49, color: '#9c3b3b' },
+		{ label: 'EU/EEA member states', value: 37, color: '#1d3461' },
+		{ label: 'Returning Dutch nationals', value: 14, color: '#c9a23f' },
+	]}
+	sourceLabel="CBS, Minder immigratie in 2024, vooral minder kennismigranten"
+	sourceUrl="https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten"
+	sourcePrefix="Source: "
+/>
+
+- Breakdown by migration motive (2023, the latest complete breakdown available): family reunification approx. 73,000 (≈25% of the total), study approx. 41,000 (≈12%), EU/EEA labor migration 43,900, other non-EU workers 3,600, highly skilled non-EU migrants (kennismigranten) fell 26% in 2024 to 16,000. Asylum (2024): 36,400 applications, up 3,100 from 2023. Temporary Ukraine-related migration (2024): approximately 30,000, down 8,000 from 2023.
+  Source: CBS, same publication as above (https://www.cbs.nl/nl-nl/nieuws/2025/26/minder-immigratie-in-2024-vooral-minder-kennismigranten)
+- Main countries of origin among immigration flows (2024, among the largest): Turkey 14,200, Dutch Caribbean 4,050, Suriname 4,050, Morocco 3,330. By region: Europe 172,200, Asia 90,400, the Americas 27,900, Africa 23,800.
+  Source: CBS, *Immigratie en emigratie; geslacht, leeftijd, geboorteland, regio* (https://www.cbs.nl/nl-nl/cijfers/detail/85468NED)
+
+### 3.3 Immigration waves (1996 – present)
+
+<TrendChart
+	title="Population by main country of origin (1996 → 2022)"
+	unit=""
+	series={[
+		{ label: 'Turkey', color: '#9c3b3b', points: [
+			{ year: 1996, value: 271514 }, { year: 2004, value: 351648 }, { year: 2015, value: 396555 }, { year: 2022, value: 429978 },
+		]},
+		{ label: 'Morocco', color: '#c9a23f', points: [
+			{ year: 1996, value: 225088 }, { year: 2004, value: 306219 }, { year: 2015, value: 380755 }, { year: 2022, value: 419272 },
+		]},
+		{ label: 'Suriname', color: '#5a8a6b', points: [
+			{ year: 1996, value: 280615 }, { year: 2004, value: 325281 }, { year: 2015, value: 348662 }, { year: 2022, value: 359814 },
+		]},
+		{ label: 'Poland', color: '#1d3461', points: [
+			{ year: 1996, value: 25125 }, { year: 2004, value: 35542 }, { year: 2015, value: 137794 }, { year: 2022, value: 220980 },
+		]},
+	]}
+	sourceLabel="CBS StatLine dataset 37325 (discontinued, 1996–2022)"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet"
+	sourcePrefix="Source: "
+/>
+
+- The total population with a "migration background" (all generations combined) rose from 2,498,715 in 1996 to 4,438,900 in 2022 (roughly ×1.78).
+- Trends by origin: the Turkish- and Moroccan-origin populations grew steadily from 1996 to 2022 (Turkey: 271,514 → 429,978; Morocco: 225,088 → 419,272), reflecting the accumulated legacy of 1960s–70s labor migration ("gastarbeiders") and subsequent family reunification. The Surinamese-origin population grew comparatively slowly over the same period (280,615 → 359,814), consistent with the main wave of migration around Suriname's 1975 independence having already largely occurred before 1996. The Polish-origin population surged after the 2004 EU enlargement (35,542 → 137,794 by 2015), roughly ×6.2 between 2004 and 2022.
+  Source: CBS StatLine dataset 37325 — https://opendata.cbs.nl/ODataApi/odata/37325/TypedDataSet
+- **Limitation**: the dataset accessible via CBS's OData API only goes back to 1996. Definitive year-by-year, origin-disaggregated figures for 1945–1995 — covering the 1960s–70s recruitment of Turkish and Moroccan "gastarbeiders," migration around Suriname's 1975 independence, and the post-colonial return migration from the Dutch East Indies (Indonesia) — could not be obtained through the API used in this research. These historical episodes are described qualitatively in CBS background material (e.g. CBS, *Migrantenouderen in Nederland*), but a confirmed annual time series was not found.
+<ComingSoon label="Year-by-year, origin-disaggregated immigration figures for 1945–1995 (1960s–70s gastarbeiders, 1975 Suriname independence migration, returnees from Indonesia) are planned for a future update. The series available through CBS's OData API only goes back to 1996." />
+
+### 3.4 Age structure (population pyramid)
+
+<AgePyramid
+	title="Age structure by origin (January 1, 2025 — share within each group)"
+	bands={[
+		{ label: '0–15', groups: [
+			{ label: 'Dutch origin', value: 14.5, color: '#1d3461' },
+			{ label: 'Turkish origin', value: 15.2, color: '#9c3b3b' },
+			{ label: 'Moroccan origin', value: 19.1, color: '#c9a23f' },
+		]},
+		{ label: '65+', groups: [
+			{ label: 'Dutch origin', value: 24.5, color: '#1d3461' },
+			{ label: 'Turkish origin', value: 6.0, color: '#9c3b3b' },
+			{ label: 'Moroccan origin', value: 7.6, color: '#c9a23f' },
+		]},
+	]}
+	sourceLabel="CBS dataset 85458NED, 'Bevolking; herkomstland, geboorteland, leeftijd, regio' (2025)"
+	sourceUrl="https://opendata.cbs.nl/ODataApi/odata/85458NED/TypedDataSet"
+	sourcePrefix="Source: "
+/>
+
+- As of 2025, the Turkish-origin population stood at 468,726 (71,091 aged 0–15 = 15.2%; 27,997 aged 65+ = 6.0%), and the Moroccan-origin population at 433,337 (82,587 aged 0–15 = 19.1%; 32,802 aged 65+ = 7.6%). By comparison, the Dutch-origin population stood at 12,902,189 (1,873,285 aged 0–15 = 14.5%; 3,164,310 aged 65+ = 24.5%).
+  Source: CBS dataset 85458NED — https://opendata.cbs.nl/ODataApi/odata/85458NED/TypedDataSet
+- The Turkish- and Moroccan-origin populations are markedly younger than the Dutch-origin population, with a 65+ share only about a quarter as large. This reflects the fact that the original "gastarbeider" generation, who migrated mainly as young men in the 1960s–70s, is now beginning to age, while their (much larger) children's and grandchildren's generations keep the overall age profile young. Age-structure data for other major origin groups (e.g. Poland, which migrated more recently and has not aged as much) could not be retrieved within the scope of the API queries used here.
+<ComingSoon label="Age structure data for other major origin groups (Poland, Suriname, etc.), and a more granular age-pyramid breakdown (e.g. 5-year bands), are planned for a future update." />
+
+### 3.5 Long-term projection
+
+<TrendChart
+	title="Projected total population and population aged 65+ (2024 → 2070, Kernprognose medium scenario)"
+	unit=" million"
+	series={[
+		{ label: 'Total population', color: '#1d3461', points: [
+			{ year: 2024, value: 17.943 }, { year: 2030, value: 18.445 }, { year: 2040, value: 19.139 },
+			{ year: 2050, value: 19.637 }, { year: 2060, value: 20.007 }, { year: 2070, value: 20.559 },
+		]},
+		{ label: 'Of which aged 65+', color: '#9c3b3b', points: [
+			{ year: 2024, value: 3.677 }, { year: 2030, value: 4.178 }, { year: 2040, value: 4.758 },
+			{ year: 2050, value: 4.798 }, { year: 2060, value: 4.981 }, { year: 2070, value: 5.375 },
+		]},
+	]}
+	sourceLabel="CBS, Bevolkingsprognose (Kernprognose 2024–2070)"
+	sourceUrl="https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren"
+	sourcePrefix="Source: "
+/>
+
+<KeyFigure
+	value="20.56 million"
+	label="CBS's projected total population in 2070, Kernprognose medium scenario (up from 17.94 million in 2024)"
+/>
+
+- The foreign-born population is projected to grow from 2.8 million in 2023 to 4.6 million by 2050 under the "Midden" (medium) scenario.
+  Source: CBS, *Verkenning bevolking 2050* — https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten
+- In its 2025 release, CBS explicitly states that from 2025 onward, the Netherlands has reached the point where the population aged 65 and older now exceeds the population under 20.
+  Source: CBS, *Bevolkingsprognose: vanaf nu meer ouderen dan jongeren* — https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren
+
+## 4. Public finances — net cost
+
+<KeyFigure
+	value="≈ €400 billion"
+	label="Cumulative net fiscal cost of immigration (1995–2019, lifetime present-value calculation)"
+/>
+
+- Important methodological note: contrary to an earlier description, the Dutch reference study on net fiscal cost by migration motive is not a publication of the CPB (Centraal Planbureau, a public body), but an independent study, *Grenzeloze verzorgingsstaat. De gevolgen van immigratie voor de overheidsfinanciën* (2021), by Jan van de Beek, Hans Roodenburg, Joop Hartog, and Gerrit Kreffer. Part of the funding came from the Renaissance Instituut, the scientific arm of the Forum voor Democratie party. The CPB itself has published related work on labor migration but not this breakdown by motive. Full text: https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf
+
+<BarChart
+	title="Reference: fiscal balance trend by migration motive (qualitative conclusions, van de Beek et al. 2021)"
+	unit=""
+	bars={[
+		{ label: 'Work/study from Western countries & East Asia', value: 1, note: 'reported as net positive' },
+		{ label: 'Family reunification', value: -1, note: 'reported as net negative over lifetime (exact euro figures not confirmed)' },
+		{ label: 'Asylum', value: -1, note: 'reported as net negative over lifetime (exact euro figures not confirmed)' },
+	]}
+	sourceLabel="van de Beek et al. (2021), Grenzeloze verzorgingsstaat"
+	sourceUrl="https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf"
+	sourcePrefix="Source: "
+/>
+
+- Method of van de Beek et al. (2021): present value of lifetime fiscal balance (from birth or immigration to emigration or death), calculated using CBS microdata covering the entire resident population of the Netherlands.
+  Aggregate result (1995–2019): a cumulative net fiscal cost of approximately €400 billion over the period. Work and study flows from Western countries and East Asia are reported as net positive; family reunification and asylum are reported as net negative over the lifetime. Data not publicly available: precise euro amounts by migration motive (work/study/asylum/family) could not be directly confirmed in the report's full text (the PDF is not machine-readable); only aggregated summaries could be confirmed through multiple secondary sources.
+- Method / result / source summary table (only one official or academic methodology verifiable via a direct link has been identified at this stage):
+
+  | Method | Result | Source / sponsor |
+  |---|---|---|
+  | Present value of lifetime fiscal balance, CBS microdata (1995–2019) | Cumulative net cost ≈ €400bn over 25 years; strongly negative for asylum and family reunification, positive for Western work/study migration | Jan van de Beek et al. (2021), partly funded by the Renaissance Instituut (FvD) — https://dnpprepo.ub.rug.nl/87031/1/Grenzeloze_verzorgingsstaat_2021-3.pdf |
+
+  A second independent methodology (e.g. the 2010 Nyfer study, commissioned by the PVV) was identified through research but could not be opened and verified directly against its primary source document within the time available: precise figures from this second study are not publicly available at this stage.
+<ComingSoon label="Precise euro-denominated net cost figures by migration motive (work/study/asylum/family), and verified figures from a second independent methodology (e.g. the 2010 Nyfer study), are planned for a future update." />
+
+### 4.1 Pension system / aging ratio
+
+<BarChart
+	title="Aging ratio (grijze druk: population 65+ ÷ population 20–64, national level, not broken down by origin)"
+	unit=""
+	bars={[
+		{ label: '2023', value: 34 },
+		{ label: '2024', value: 35 },
+		{ label: '2050 (Midden / medium scenario)', value: 44 },
+		{ label: '2050 (low-fertility scenario)', value: 50 },
+	]}
+	sourceLabel="CBS, Verkenning bevolking 2050 and Bevolkingsprognose 2025"
+	sourceUrl="https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten"
+	sourcePrefix="Source: "
+/>
+
+- CBS's aging ratio (grijze druk: population aged 65+ divided by population aged 20–64, ×100) rose from 34 in 2023 to 35 in 2024, and is projected to reach 44 by 2050 under the "Midden" (medium) scenario, or as high as 50 under a low-fertility scenario.
+  Source: CBS, *Verkenning bevolking 2050* — https://www.cbs.nl/nl-nl/longread/aanvullende-statistische-diensten/2024/verkenning-bevolking-2050-editie-2024/3-uitkomsten-bevolkingsvarianten
+- The same source projects that the working-age population (20–65) will fall from approximately 59% today to approximately 55% by 2040.
+  Source: CBS, *Bevolkingsprognose: vanaf nu meer ouderen dan jongeren* — https://www.cbs.nl/nl-nl/nieuws/2025/51/bevolkingsprognose-vanaf-nu-meer-ouderen-dan-jongeren
+- **Limitation**: these aging-ratio and dependency figures are national-level only. No official CBS statistic breaking down the aging ratio by origin (immigrants vs. Dutch-origin population) could be found within the datasets consulted during this research.
+<ComingSoon label="An aging/pension dependency ratio broken down by origin (immigrants and their children vs. Dutch-origin population) is planned for a future update. No such breakdown could be found in CBS's public datasets." />
+
+## 5. Labor market
+
+<TrendChart
+	title="Employment rate (share with work as main income source) trend (2022 → 2023)"
+	unit="%"
+	series={[
+		{ label: 'Total population', color: '#1d3461', points: [{ year: 2022, value: 57.0 }, { year: 2023, value: 73.1 }] },
+		{ label: 'Foreign-born', color: '#9c3b3b', points: [{ year: 2022, value: 49.5 }, { year: 2023, value: 66.3 }] },
+	]}
+	sourceLabel="CBS, Integratie en samenleven 2024 and Hoe verschillen arbeid en inkomen naar herkomst?"
+	sourceUrl="https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/"
+	sourcePrefix="Source: "
+/>
+
+- Note: the 2022 and 2023 figures use different methodologies (2022: share of the population aged 15+ for whom work is the main income source; 2023: nettoarbeidsparticipatie, net labor participation rate), so the chart above is not a strict year-on-year comparison but a side-by-side presentation of the latest available data for each year.
+- Employment rate (nettoarbeidsparticipatie, 2023): total population 73.1%. People born in the Netherlands to two Dutch-born parents: 74.3%. Second generation (born in the Netherlands, at least one parent born abroad): 75.0%. Foreign-born people: 66.3%, an 8-point gap versus the reference population.
+  Source: CBS, *Integratie en samenleven 2024 — Sociaaleconomische positie* (https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/)
+- Disparities among the foreign-born (2023): recent EU member states 82.7%, rest of Europe 75.2%, Turkey 59.0%, Morocco 58.3%, Suriname 58.7%.
+  Source: CBS, same publication as above (https://longreads.cbs.nl/integratie-en-samenleven-2024/sociaaleconomische-positie/)
+- Earlier data (2022, different methodology — share of the population aged 15+ for whom work is the main income source): total population 57.0%; born in Poland 81.0%, born in Romania 78.4%; born in Turkey 49.5%, born in Morocco 42.7%, born in Syria 29.7%.
+  Source: CBS, *Hoe verschillen arbeid en inkomen naar herkomst?* (https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-arbeid-en-inkomen-naar-herkomst-)
+
+## 6. Security / justice
+
+- Share of registered suspects in the population aged 12+, by origin (2023, provisional data): people of Dutch origin (native) 0.6%; foreign-born 1.1%; second generation with one parent born abroad 1.2%; second generation with both parents born abroad 2.8% (the highest rate among the categories measured).
+  Source: CBS, *Integratie en samenleven 2024 — Criminaliteit* (https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/)
+- Methodological limitation noted by CBS itself: the classification by "migratieachtergrond" is being phased out in favor of a classification by country of birth; long time series for 1999–2022 were discontinued in 2024 in favor of new tables still being stabilized.
+  Source: CBS, *Hoe verschillen veiligheid en criminaliteit naar herkomst?* (https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-veiligheid-en-criminaliteit-naar-herkomst-)
+- Breakdown of suspects by legal/illegal residence status, or by migration motive (work/asylum/family/study): not publicly available in the CBS tables identified.
+
+## 7. Education
+
+- Placement in havo/vwo (the most academically demanding tracks) in the third year of secondary school, 2023/24 school year: 49% across all origins combined. Continuous rise among students of foreign origin since 2011/12: second generation (both parents born abroad) up from 30% to 41%; foreign-born students up from 39% to 46%.
+  Source: CBS, *Leerlingen met buitenlandse herkomst steeds vaker naar havo of vwo* (https://www.cbs.nl/nl-nl/nieuws/2024/47/leerlingen-met-buitenlandse-herkomst-steeds-vaker-naar-havo-of-vwo)
+- havo/vwo exam pass rate, 2022/23 school year: 86% across all origins combined, versus 69% for students of Turkish origin, 70% for Moroccan origin, 74% for Surinamese origin, and 79% for Dutch Antillean origin.
+  Source: CBS, same publication as above (https://www.cbs.nl/nl-nl/nieuws/2024/47/leerlingen-met-buitenlandse-herkomst-steeds-vaker-naar-havo-of-vwo)
+
+## 8. Housing
+
+- The Dutch housing crisis and the debate over its link to population growth — a politically prominent topic since 2022–2023.
+- Housing stock (end of 2024): nearly 8.3 million dwellings, up a net 70,000 units over the year (69,000 new constructions, 13,000 from conversions, minus 11,800 demolitions) — a slower pace than the previous five years.
+  Source: CBS, *82 duizend woningen erbij in 2024, minder dan voorgaande vijf jaar* (https://www.cbs.nl/nl-nl/nieuws/2025/05/82-duizend-woningen-erbij-in-2024-minder-dan-voorgaande-vijf-jaar)
+- Primos 2024 demographic projection: population growth of 1.172 million expected over fifteen years (2024–2039), 95% attributable to net international migration and 5% to natural increase; the housing shortage estimated to be needed to return to an acceptable market tension level (around 2%) is 226,000 units.
+  Source: Primos-prognose 2024, submitted to the Senate (Eerste Kamer) via the Ministry of Housing and Economic Affairs (https://www.eerstekamer.nl/overig/20240712/primos_prognose_2024_prognose_van/document3/f=/vmevf1o2qsyk.pdf)
+- Homeownership by origin (as of December 31, 2022): under age 30, 27% homeownership for the Dutch-born population versus 8% for the foreign-born; ages 30–45, 44% for the second generation versus 33% for the foreign-born. Sharp variation by origin: those born in Morocco 5–14% depending on age bracket, those born in Indonesia 7–51%.
+  Source: CBS, *Integratie en samenleven 2024 — Wonen* (https://longreads.cbs.nl/integratie-en-samenleven-2024/wonen/)
+
+## 9. Social cohesion
+
+- SCP policy brief (July 11, 2025), *Arbeidsmigratie en sociale cohesie in Nederland*, prepared for the interdepartmental policy review on labor migration (IBO Arbeidsmigratie): general conclusion that labor migration weakens social cohesion, but with effects judged to be limited and highly variable by neighborhood; labor migrants from Eastern Europe show lower-than-average scores on interpersonal trust and associational participation, attributed in particular to the temporary nature of their stay.
+  Source: SCP (https://www.scp.nl/actueel/nieuws/2025/07/11/arbeidsmigratie-en-sociale-cohesie-een-genuanceerd-beeld)
+- SCP report (April 1, 2025), *Migratie als spiegel van maatschappijbeelden*, on perceptions of migration and their relationship to views of Dutch society. Data not publicly available: detailed survey figures (agreement rates by item, exact fieldwork year) could not be extracted from the PDF document during verification; only the title, publication date, and theme were confirmed by opening the official page. Verified link to the full report: https://www.scp.nl/documenten/2025/04/01/migratie-als-spiegel-van-maatschappijbeelden
+<ComingSoon label="Detailed survey figures from the SCP report Migratie als spiegel van maatschappijbeelden (agreement rates by item, etc.) are planned for a future update." />
+
+## 10. Recent political context
+
+- The collapse of the Rutte IV government (July 2023) over disagreement on asylum policy, followed by the PVV's (Wilders's) victory in the November 2023 elections — an important factual sequence to document with precise dates.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+CBS is gradually phasing out the concept of "migratieachtergrond" (migration background, which included the second generation born in the Netherlands with at least one parent born abroad) in favor of a classification based on the person's own country of birth. Several long time series (e.g. suspects 1999–2022, labor market participation 2003–2022, and the dataset 37325 used in section 3.3 of this page) were discontinued in 2024 and replaced by new tables still being stabilized, complicating comparisons over time.
+
+Source: CBS, *Asiel, migratie en integratie* dossier (https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie)
+
+*Grenzeloze verzorgingsstaat* (2021), the only breakdown by migration motive identified for the Netherlands, is an independent study partly funded by the Renaissance Instituut, the scientific arm of the Forum voor Democratie party, and not a publication of the CPB (a public body). Its methodology and some of its conclusions have been the subject of critical academic debate (notably in the journal TPEdigitaal and at a 2025 WRR session), which warrants caution in citing its aggregate figures.
+
+Data for 2024–2025 in several CBS tables (crime, detailed breakdown by migration motive) remain provisional as of this writing and may be revised.
+
+Housing data by origin (section 8) dates from December 31, 2022, predating the most acute phase of the 2023–2025 housing crisis; no more recent update by origin was found publicly.
+
+The dataset used for immigration waves in section 3.3 (37325) ends in 2022, and no year-by-year data for 1945–1995 could be confirmed via CBS's OData API. Section 3.4 (age structure) likewise lacks age data for major origin groups other than Turkey and Morocco (e.g. Poland, Suriname) within the scope of the API research conducted here.
+</div>

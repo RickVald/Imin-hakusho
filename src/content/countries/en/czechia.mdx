@@ -1,0 +1,210 @@
+---
+slug: czechia
+name: "Czechia"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+
+## 1. Official institutions
+
+- ČSÚ (Czech Statistical Office, Český statistický úřad) — national statistical institute: https://www.czso.cz
+- Ministry of the Interior (Ministerstvo vnitra) — immigration and asylum statistics
+- OAMP (Department of Asylum and Migration Policy, Odbor azylové a migrační politiky), within the Ministry of the Interior
+
+## 2. Key datasets
+
+- ČSÚ: resident foreign population by nationality, employment
+- Ministry of the Interior: residence permit and asylum statistics (volumes much lower than Western Europe — Czechia is an interesting counter-example for cross-country comparison)
+- Specific data on the reception of Ukrainian refugees since 2022 (EU temporary protection scheme), a distinct case to be clearly separated from the rest of immigration
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Share of foreign nationals in the population (December 31, 2025)"
+	segments={[
+		{ label: 'Czech nationals', value: 89.62, color: '#1d3461' },
+		{ label: 'Foreign nationals', value: 10.38, color: '#9c3b3b' },
+	]}
+	sourceLabel='ČSÚ, "Cizinci" (Foreigners)'
+	sourceUrl="https://csu.gov.cz/cizinci"
+	sourcePrefix="Source: "
+/>
+
+- As of December 31, 2025, 1,131,197 foreign nationals resided in the Czech Republic, or 10.38% of the total population (103.8 per 1,000 inhabitants), an increase of 37,108 people (+3.4%) year on year.
+  Comparison: at the end of 2024, the figure stood at 1,090,089 (some sources cite 1,094,090), an annual increase of around 3.4%.
+  Limitation found on direct reading: the total of 1,131,197 is consistent with the figure found on the cross-referenced page "Počet cizinců, demografické události," but the csu.gov.cz/cizinci page itself displays only a navigation summary without the detailed figures in its own content.
+  Source: ČSÚ, "Cizinci" (Foreigners): https://csu.gov.cz/cizinci ; ČSÚ, "Počet cizinců, demografické události": https://csu.gov.cz/pocet-cizincu-demograficke-udalosti
+- By type of residence permit: 35% hold permanent residence (394,265 people), 65% hold various temporary residence statuses (736,932 people, including Ukrainian temporary protection).
+  Source: ČSÚ, "Počet cizinců, demografické události" (link above)
+
+### 3.2 Breakdown by nationality
+
+<StackedBar
+	title="Breakdown of foreign nationals by nationality (December 31, 2025)"
+	segments={[
+		{ label: 'Ukraine', value: 54.2, color: '#9c3b3b' },
+		{ label: 'Slovakia', value: 11.1, color: '#1d3461' },
+		{ label: 'Vietnam', value: 6.2, color: '#c9a23f' },
+		{ label: 'Russia', value: 3.3, color: '#5a8a6b' },
+		{ label: 'Other EU member states', value: 21.0, color: '#6b5b95' },
+		{ label: 'Other', value: 4.2, color: '#999999' },
+	]}
+	sourceLabel='ČSÚ, "Počet cizinců, demografické události"'
+	sourceUrl="https://csu.gov.cz/pocet-cizincu-demograficke-udalosti"
+	sourcePrefix="Source: "
+/>
+
+- Breakdown by nationality (end of 2025): Ukrainians 612,953 (54.2% of foreigners), Slovaks 125,280 (11.1%), Vietnamese 69,685 (6.2%), Russians 37,524 (3.3%), other EU member states 235,699 (21.0%). Figures confirmed by direct reading of the source.
+  Source: ČSÚ, "Počet cizinců, demografické události" (Number of foreigners, demographic events): https://csu.gov.cz/pocet-cizincu-demograficke-udalosti
+- On the Ukrainian temporary protection scheme: the quarterly report consulted (Q1 2025) indicates 388,879 beneficiaries as of December 31, 2024 (and about 351,000 electronic renewals recorded in Q1 2025). The scheme, activated by an EU Council decision in March 2022, grants a right of residence and work without going through individual asylum procedures.
+  Discrepancy found during verification: a figure of approximately 398,000 previously cited on this page for "Q1 2025" could not be reconciled exactly with the 388,879 figure (end of 2024) confirmed by direct reading — the discrepancy likely stems from a different reference date.
+  Source: Ministry of the Interior of the Czech Republic, quarterly migration reports: https://mv.gov.cz/clanek/ctvrtletni-zprava-o-migraci-za-i-ctvrtleti-2025.aspx
+- For comparison, the number of new "regular" asylum applications (excluding Ukrainian temporary protection) remains very low: 1,363 applications in 2024, the most represented nationalities being Uzbekistan (224), Ukraine (205, excluding temporary protection), and Vietnam (186).
+  Not confirmed: the page consulted links to PDF/Excel documents containing these specific figures, but they are not displayed directly in the retrieved page content — to be checked by opening the full report.
+  Source: Ministry of the Interior of the Czech Republic, "Souhrnná zpráva o mezinárodní ochraně za rok 2024": https://mv.gov.cz/clanek/souhrnna-zprava-o-mezinarodni-ochrane-za-rok-2024.aspx
+
+### 3.3 Immigration waves (1950s – present)
+
+- Czechia (including the Czechoslovak period) followed a historical migration trajectory distinct from Western Europe: bilateral labor agreements within the socialist bloc during the Cold War, a new wave tied to market liberalization after the 1989 Velvet Revolution, and humanitarian reception of a different scale following Russia's invasion of Ukraine in 2022.
+- **1950s–1989 (socialist period)**: a bilateral agreement between Czechoslovakia and North Vietnam, signed in 1967, initiated the reception of Vietnamese workers and trainees. Numbers peaked at approximately 23,000 in 1983 (some research estimates the 1980s community at around 30,000), employed mainly in machine-building and light industry, including textiles. Following the 1990 regime change, intergovernmental labor agreements were progressively wound down, and by April 1993 covered no more than 1,330 people.
+  Source: ILO, "Legal and illegal labour migration in the Czech Republic" (International Migration Papers 32): https://fudepa.org/Biblioteca/recursos/ficheros/BMI20060000434/imp32.pdf ; Wikipedia (English), "Vietnamese people in the Czech Republic" (summary source, to be cross-checked against primary sources): https://en.wikipedia.org/wiki/Vietnamese_people_in_the_Czech_Republic
+- **1993–2004 (post-Czechoslovak dissolution)**: the 1993 dissolution of Czechoslovakia meant that movement from Slovakia to Czechia began to be recorded as movement between separate states (governed by bilateral agreements prior to EU accession). For the Vietnamese community, a new wave of entrepreneurial migration emerged via trade licenses and business visas issued by the newly formed Czech Republic, centered on import-export trade (textiles, electronics).
+  Source: 3 Seas Europe, "The Czech-Vietnamese Connection": https://3seaseurope.com/czechia-vietnamese-minority/
+- **2004–2021 (post-EU accession)**: the 2004 EU accession established freedom of movement for EU citizens, including Slovaks. Over the same period, labor migration from Ukraine increased (under ordinary work and residence permits, prior to the temporary protection scheme).
+- **2022 – present (post-invasion)**: following the activation of the EU temporary protection scheme in March 2022, large numbers of Ukrainian refugees arrived; 388,879 temporary protection beneficiaries were recorded at the end of 2024. As a result, the share of foreigners in the population rose from about 5.3% in 2015 (569,000 people) to more than 10% in 2025, nearly doubling in a decade.
+  Source: ČSÚ (historical "Cizinci" series): https://csu.gov.cz/cizinci ; Ministry of the Interior of the Czech Republic, quarterly migration reports (link above)
+
+<ComingSoon label="A precise year-by-year and nationality-by-nationality time series of the foreign population from the 1950s to 2021 (ČSÚ DataStat/VDB tables), and an age structure breakdown by origin (population pyramid), are planned for a future update. The ČSÚ data product 'Cizinci podle státního občanství, věku a pohlaví' could not be directly confirmed with specific figures during this research." />
+
+### 3.4 Age structure
+
+<ComingSoon label="An age structure breakdown by nationality or origin (population pyramid) is planned for a future update. ČSÚ publishes an overall sex ratio (47.8% women among foreigners at the end of 2025), but an age breakdown by origin could not be directly confirmed from a primary source during this research." />
+
+### 3.5 Long-term projection
+
+<ComingSoon label="A long-term population projection for Czechia broken down by origin is planned for a future update. No primary source equivalent to Statistics Denmark's Befolkningsfremskrivning, with a projected foreign-population share broken down by origin, could be confirmed during this research." />
+
+## 4. Public finances — net cost
+
+- No Czech national methodology comparable in rigor or longitudinal depth to that of Denmark (Finansministeriet) has been identified to date for the immigrant population as a whole. No publicly available data in this form.
+
+<BarChart
+	title="Fiscal balance related to Ukrainian temporary protection beneficiaries (Q3 2025, estimate)"
+	unit=" bn CZK/quarter"
+	bars={[
+		{ label: 'Tax and social contribution revenue', value: 82 },
+		{ label: 'Related public spending', value: -39 },
+	]}
+	sourceLabel="Consortium of NGOs working with migrants (Konsorcium nevládních organizací pracujících s migranty)"
+	sourceUrl="https://migracnikonsorcium.cz/cs/data-statistiky-a-analyzy/uprchlici-z-ukrajiny-v-datech/"
+	sourcePrefix="Source: "
+/>
+
+- For the Ukrainian temporary protection scheme alone, quarterly estimates exist: as of Q3 2025, tax and social contribution revenue generated by temporary protection beneficiaries is estimated at CZK 8.2 billion, against public spending related to their support (social assistance, emergency housing, etc.) estimated at CZK 3.9 billion over the same period — a positive net balance on this partial basis of calculation (excluding indirect health/education costs not detailed in the source).
+  Source: modeling cited by the Ministry of Labor and Social Affairs (MPSV), relayed in analyses by the consortium of NGOs working with migrants: https://migracnikonsorcium.cz/cs/data-statistiky-a-analyzy/uprchlici-z-ukrajiny-v-datech/
+  Not confirmed: the page consulted does not contain the precise figures (CZK 8.2bn revenue, CZK 3.9bn spending) in the retrieved content — not verified by direct reading.
+  Methodological caution: this figure does not constitute a complete cost-benefit analysis in the Danish sense (no breakdown by age, length of stay, or long-term actuarial projection).
+- No study of the "net cost per immigrant resident vs. native" type modeled on the Danish approach has been located for the Czech Republic as a whole (excluding Ukrainians). No publicly available data.
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Czechia has no comprehensive net fiscal contribution calculation broken down by origin and length of residence comparable to the Danish Ministry of Finance. Only partial estimates for the Ukrainian temporary protection scheme are available — not a long-term, systematic, country-wide analysis.
+</div>
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<ComingSoon label="A demographic dependency ratio (pensioners and children relative to working-age population) broken down by origin for Czechia is planned for a future update. No primary source from ČSÚ or the Ministry of Finance (MF ČR) with a breakdown by nationality could be confirmed during this research." />
+
+## 5. Labor market
+
+<BarChart
+	title="Occupational structure of Ukrainian temporary protection beneficiaries, before vs. after migration (2024 survey)"
+	unit="%"
+	bars={[
+		{ label: 'Specialists (before, in Ukraine)', value: 45 },
+		{ label: 'Specialists (after, in Czechia)', value: 16 },
+		{ label: 'Unskilled labor (before)', value: 3 },
+		{ label: 'Unskilled labor (after)', value: 15 },
+	]}
+	sourceLabel='Institute of Sociology, Czech Academy of Sciences, "Hlas Ukrajinců" survey'
+	sourceUrl="https://www.soc.cas.cz/cz/aktuality/integrace-ukrajinskych-uprchliku-trh-prace-bydleni-znalost-cestiny-a-vzdelavani-deti"
+	sourcePrefix="Source: "
+/>
+
+- Among economically active beneficiaries of Ukrainian temporary protection, the employment rate reached approximately 80% in 2025 (confirmed by direct reading: "four-fifths (80%) of the potential labor force" employed, based on waves 8–9 of the survey, June–November 2024).
+  Source: Institute of Sociology of the Czech Academy of Sciences (Sociologický ústav AV ČR), "Hlas Ukrajinců" (Voice of Ukrainians) survey: https://www.soc.cas.cz/cz/aktuality/integrace-ukrajinskych-uprchliku-trh-prace-bydleni-znalost-cestiny-a-vzdelavani-deti
+  Detailed employment data also available via: ČSÚ, "Ekonomická aktivita cizinců" (Economic activity of foreigners): https://csu.gov.cz/ekonomicka-aktivita-cizincu
+- The same survey reports frequent occupational downgrading: the share of "specialists" fell from 45% in Ukraine to 16% in Czechia after migration; unskilled jobs rose from 3% to 15%; the education-wage correlation among refugees is measured at 0.1, compared with about 0.3 in Czech society in general. The high employment rate does not translate into wages aligned with education level (structural overqualification).
+  Source: Institute of Sociology of the Czech Academy of Sciences (link above).
+- For the foreign population excluding Ukrainians (notably Slovaks, Vietnamese), employment series by nationality are published by ČSÚ but have not been detailed here by occupation.
+  Source: ČSÚ, "Cizinci": https://csu.gov.cz/cizinci
+
+## 6. Security / justice
+
+- Not confirmed by direct reading: in 2024, 2,877 foreign nationals are reported to have been criminally prosecuted in the Czech Republic (about 100 more than in 2023) and 6,334 convicted (a level comparable to 2023), foreigners representing 12% of all persons criminally prosecuted in 2024 (+0.2 point vs. 2023). The page consulted is a landing page linking to monthly Excel files; these specific figures do not appear in the retrieved content of the page itself.
+  Source: Police of the Czech Republic, "Statistické přehledy kriminality za rok 2024": https://policie.gov.cz/clanek/statisticke-prehledy-kriminality-za-rok-2024.aspx
+  Supplementary data: ČSÚ, "Kriminalita cizinců" (Crime by foreigners): https://csu.gov.cz/kriminalita-cizincu
+- Not confirmed, same limitation: the number of solved offenses committed by foreigners in 2024 (9,441 cases, +307 or +3.4% year on year) and the breakdown of the most frequent offenses (driving under the influence 1,512, obstruction of enforcement 1,049, document forgery 975, negligent accidents 715, simple theft 513) could not be confirmed by direct reading for the same reason.
+  Source: Police of the Czech Republic (link above).
+- Not confirmed, same limitation: 9,461 foreigners intercepted in situations of irregular migration in 2024 (4,437 fewer than in 2023) could not be confirmed by direct reading of the page.
+  Source: Police of the Czech Republic (link above).
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+These statistics aggregate all foreign nationalities (EU and non-EU, long-term residents and recent arrivals, including Ukrainian temporary protection) without a systematic breakdown by migration status in publicly available publications.
+</div>
+
+## 7. Education
+
+<KeyFigure
+	value="173,121"
+	label="Foreign-national students enrolled across the Czech education system, 2024/2025 school year (7.49% of total enrollment)"
+/>
+
+- During the 2024/2025 school year, 173,121 students of foreign nationality were enrolled across the Czech education system as a whole, or 7.49% of the 2,179,959 children, pupils, and students in total. Breakdown: 20,371 in kindergarten, 74,355 in primary/lower secondary school ("základní škola"), 21,227 in upper secondary school ("střední škola").
+  Verification: the breakdown by level is confirmed exactly by direct reading of the source, which also mentions 55,996 foreign students at university (18% of university students). The aggregate total found in the source is approximately 172,948 (close to but not strictly identical to the 173,121 cited here); a minor discrepancy likely related to rounding or a slightly different reference date.
+  Source: ČSÚ / Ministry of Education, Youth and Sports (MŠMT), "Vzdělávání cizinců": https://csu.gov.cz/vzdelavani-cizincu
+- Trend over time: the number of foreign students in primary/lower secondary school rose by 43,812 between 2021/2022 and 2024/2025, an increase directly linked to the arrival of Ukrainian children since 2022.
+  Source: ČSÚ (link above).
+- No publicly available data: no official statistic distinguishing academic outcomes (grades, exam pass rates) of foreign students from Czech students has been located at this stage.
+
+## 8. Housing
+
+<KeyFigure
+	value="about one-third"
+	label="Share of all foreigners residing in the Czech Republic who live in Prague"
+/>
+
+- Strong geographic concentration: about one-third of all foreigners residing in the Czech Republic live in Prague (one in three Prague residents is a foreign national). The regions of Central Bohemia (Středočeský) and South Moravia (Jihomoravský) follow, with a notable presence also in the Plzeň and Hradec Králové regions.
+  Not verified: the source PDF exceeds the maximum retrieval size of the tool used (more than 10 MB) — not confirmed by direct reading.
+  Source: ČSÚ, "Statistical Yearbook of the City of Prague 2025": https://csu.gov.cz/docs/107508/7d81c2b0-553e-dca0-9b0a-b3673094ad83/33012025.pdf
+- Trend: the number of foreigners residing in Prague rose from about 61,000 in 2001 to 345,000 in 2022, a 5.6-fold increase in two decades.
+  Source: ČSÚ (link above); data cross-referenced with the Prague Institute of Planning and Development (IPR Praha): https://iprpraha.cz/page/4170
+- Within Prague, concentration differs by nationality: Ukrainian citizens are overrepresented in the Prague 9 and Prague 4 districts, Vietnamese citizens in Prague 4, and Russian citizens in Prague 5.
+  Source: ČSÚ / IPR Praha (links above).
+- No publicly available data: no consolidated official statistic on the rate of social housing occupied by foreigners (vs. natives) has been located for the Czech Republic.
+
+## 9. Social cohesion
+
+<ComingSoon label="A comparable and up-to-date official or peer-reviewed academic survey measuring Czech public perception of post-2022 Ukrainian immigration is planned for a future update, if a dedicated Eurobarometer or STEM/CVVM survey is located and verified." />
+
+## 10. Recent political context
+
+- Czechia's historically restrictive position on non-European asylum (refusal of EU relocation quotas 2015–2017), contrasting with the large-scale reception of Ukrainians since 2022 — an important political distinction to document.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Czechia is an atypical case in this list (historically very low non-European immigration) and should be treated as a counter-example rather than a "crisis" case in cross-country synthesis. Statistics that aggregate Ukrainian temporary protection beneficiaries with "regular" immigration (labor, family, asylum) without distinction can be misleading — this page separates the two wherever possible.
+</div>

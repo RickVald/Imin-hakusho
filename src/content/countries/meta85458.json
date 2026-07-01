@@ -1,0 +1,27 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85458NED/$metadata","value":[
+    {
+      "name":"TableInfos","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/TableInfos"
+    },{
+      "name":"UntypedDataSet","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/UntypedDataSet"
+    },{
+      "name":"TypedDataSet","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/TypedDataSet"
+    },{
+      "name":"DataProperties","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/DataProperties"
+    },{
+      "name":"CategoryGroups","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/CategoryGroups"
+    },{
+      "name":"Geslacht","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/Geslacht"
+    },{
+      "name":"Leeftijd","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/Leeftijd"
+    },{
+      "name":"Herkomstland","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/Herkomstland"
+    },{
+      "name":"Geboorteland","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/Geboorteland"
+    },{
+      "name":"RegioS","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/RegioS"
+    },{
+      "name":"Perioden","url":"https://opendata.cbs.nl/ODataApi/odata/85458NED/Perioden"
+    }
+  ]
+}

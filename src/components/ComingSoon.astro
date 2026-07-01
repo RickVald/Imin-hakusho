@@ -1,0 +1,12 @@
+---
+interface Props {
+	label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div class="coming-soon">
+	<span class="coming-soon__icon">📊</span>
+	<span>{label}</span>
+</div>

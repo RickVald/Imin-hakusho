@@ -1,0 +1,231 @@
+---
+slug: uk
+name: "イギリス"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- ONS（国家統計局、Office for National Statistics）：https://www.ons.gov.uk
+- 内務省（Home Office）— 四半期ごとの移民統計（「Immigration system statistics」）
+- 移民観測機構（Migration Observatory、オックスフォード大学）— 公的データに基づく独立分析、質の高い学術的基準点
+- 予算責任局（Office for Budget Responsibility、OBR）— 人口動態に関連する財政予測
+
+## 2. 主要データセット
+
+- ONS：労働力調査（出生国別の雇用状況）、国勢調査
+- 内務省：「スモールボート」（イギリス海峡の不正規渡航）、労働・留学ビザ、庇護
+- OBR：移民の長期的な財政への影響に関する報告書（純移動と財政の持続可能性）
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="出生地別の人口構成（2024年6月時点・推計）"
+	segments={[
+		{ label: '英国生まれ', value: 81.0, color: '#1d3461' },
+		{ label: '外国生まれ', value: 19.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="ONS「Population estimates by grouped country of birth and nationality, UK, 2024」"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024"
+/>
+
+<TrendChart
+	title="外国生まれ人口比率の推移（2021年→2024年）"
+	unit="%"
+	series={[
+		{ label: '外国生まれの人口比率', color: '#9c3b3b', points: [
+			{ year: 2021, value: 16.0 },
+			{ year: 2024, value: 19.0 },
+		]},
+	]}
+	sourceLabel="ONS「Population estimates by grouped country of birth and nationality, UK, 2024」"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024"
+/>
+
+- ブレグジット後の純移民数の急増（2021〜2023年）— EUの自由移動終了にもかかわらず発生した点であり、説明すべき重要な事項（流入の構成の変化であり、単なる量の変化ではない）。
+- **外国生まれの人口**：2024年6月時点で英国の人口の約19%（ONS推計）であり、2021年国勢調査時点の16.0%（イングランド／ウェールズ／北アイルランドは2021年、スコットランドは2022年）から急速に上昇した。
+  出典：ONS「Population estimates by grouped country of birth and nationality, UK, 2024」 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024
+  （検証状況：データセットの説明ページは確認したが、正確な割合（19%／16.0%）はダウンロード可能なデータファイルにのみ記載されており、自動検証ツールでは抽出できなかった。今回のパスでは数値を再確認できておらず、手動での確認が必要）。
+
+### 3.2 国籍別の純移動構成（2025年12月終了年）
+
+<StackedBar
+	title="国籍別の純移動構成（2025年12月終了年・暫定値）"
+	segments={[
+		{ label: '非EU+国籍（純流入）', value: 350, color: '#9c3b3b' },
+		{ label: 'EU+国籍（純流出、絶対値）', value: 42, color: '#1d3461' },
+		{ label: '英国籍（純流出、絶対値）', value: 136, color: '#c9a23f' },
+	]}
+	sourceLabel="ONS「Long-term international migration, provisional, year ending December 2025」（単位：千人。EU+・英国籍は純流出のため絶対値で表示）"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingdecember2025"
+/>
+
+- **純移動（合法・長期）**：2025年12月終了年で171,000人（暫定値）、2024年12月終了年（確定値）の331,000人から、1年でほぼ半減した。ブレグジット後のピーク（2022〜2023年）はこの急減前に年間90万人を超えていた。
+  一次出典：ONS「Long-term international migration, provisional, year ending December 2025」 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingdecember2025
+- **国籍別構成（2025年12月終了年、暫定値）**：非EU+国籍者の純移動はプラス35万人（前年のプラス511,000人から減少、主に非EU+の労働目的の入国が47%減少したことによる）；EU+国籍者の純移動はマイナス42,000人；英国籍者の純移動はマイナス136,000人（純流出）。
+  出典：ONS、同上（上記リンク）。
+- **スモールボート／イギリス海峡渡航（不正規入国）**：2025年に約41,500人が検知され、2024年比13%増。2022年のピーク（約46,000人）に次ぐ、過去最多2番目の年間記録となった。重要な区別：この流入は合法的なビザによる入国（毎年発行されるビザ数十万件に対し、数万人規模）と比較すると数値的には小さいが、政治的議論において不釣り合いに大きな位置を占めている。
+  一次出典：移民観測機構（オックスフォード大学）「People crossing the English Channel in small boats」 — https://migrationobservatory.ox.ac.uk/resources/briefings/people-crossing-the-english-channel-in-small-boats/
+- **庇護申請**：2025年12月終了年に英国で庇護を申請した人は100,625人（前年比4%減）で、2019年と比べると2倍以上の水準である。承認率（grant rate）は2025年12月終了年で42%、1年前は47%、2022年9月終了年のピークは77%であった。
+  一次出典：内務省「Immigration system statistics, year ending December 2025 — How many people claim asylum in the UK?」 — https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-december-2025/how-many-people-claim-asylum-in-the-uk
+- 方法論上の注記：ONSの統計（純移動、国勢調査）と内務省の統計（庇護、ビザ、スモールボート）は異なる定義と期間に基づいており、直接合算してはならない。
+
+### 3.3 移民の歴史的展開（1945年〜現在）
+
+<TrendChart
+	title="コモンウェルス出身者を中心とする1971年以前入国の累積居住人口（参考値・出典：移民観測機構推計）"
+	unit="人"
+	series={[
+		{ label: '1971年以前に入国し現在も居住するコモンウェルス出身者（推計）', color: '#9c3b3b', points: [{ year: 1948, value: 0 }, { year: 1971, value: 500000 }] },
+	]}
+	sourceLabel="移民観測機構（オックスフォード大学）— ウィンドラッシュ世代に関する推計"
+	sourceUrl="https://migrationobservatory.ox.ac.uk/resources/commentaries/windrush-lessons-learned-review-evidence-from-the-migration-observatory-at-the-university-of-oxford/"
+/>
+
+<KeyPointTiles
+	title="主要な移民の波（1948年〜現在）"
+	tiles={[
+		{ period: '1948–1971年', value: '50万人超', description: 'ウィンドラッシュ世代・コモンウェルス移民。1971年以前入国で現在も英国に居住するコモンウェルス出身者（移民観測機構推計）。', color: '#1d3461' },
+		{ period: '1962年', value: 'コモンウェルス移民法', description: 'それまで自由だったコモンウェルス市民の入国を初めて制限し、就労許可制度を導入。', color: '#9c3b3b' },
+		{ period: '1970–1990年代', value: '南アジア・アフリカ', description: 'インド・パキスタン・バングラデシュ出身者の家族呼び寄せが継続。アフリカ・カリブ海地域からの移民も継続。', color: '#c9a23f' },
+		{ period: '2004年〜', value: 'EU8拡大', description: 'EU拡大によりポーランドを中心とする中東欧8カ国からの労働移民が急増。ブレグジット後のピーク時（2022-2023年）にEU就労者がピーク比13%減少。', color: '#5a8a6b' },
+		{ period: '2020年〜', value: '年間90万人超', description: 'ブレグジット後にポイント制ビザへ移行。逆説的に非EU圏からの純移民数が急増し、2022〜2023年に年間90万人超のピークに達した。', color: '#6b5b95' },
+	]}
+/>
+
+- **ウィンドラッシュ世代・コモンウェルス移民（1948〜1971年）**：1948年に「エンパイア・ウィンドラッシュ号」で最初の移民が到着したことにちなみ、1948年から1971年の間にカリブ海諸国からイギリスへ定住した人々は「ウィンドラッシュ世代」と呼ばれる。移民観測機構（オックスフォード大学）の推計によれば、1971年以前に入国したコモンウェルス出身者（ウィンドラッシュ世代を含む）のうち、現在も英国に居住している人は50万人を超える。
+- **1962年コモンウェルス移民法（Commonwealth Immigrants Act 1962）**：それまで自由だったコモンウェルス市民の入国を初めて制限し、就労許可制度を導入した。
+- **1970年代〜1990年代**：南アジア（インド、パキスタン、バングラデシュ）出身者の家族呼び寄せが継続。アフリカ・カリブ海地域からの移民も継続。
+- **EU加盟期・EU8拡大（2004年）**：2004年のEU拡大により、ポーランドを中心とする中東欧8カ国（EU8）からの自由移動による労働移民が急増した。
+- **ブレグジット以降（2020年〜現在）**：EU市民の自由移動が終了し、新たな就労・留学ビザ制度（ポイント制）に移行。2024年末までにEU就労者数はピーク比13%減少し、特にEU8出身者の減少幅（20%減）が最も大きかった。ブレグジット後にもかかわらず非EU圏からの純移民数が増加し、2022〜2023年に純移動が年間90万人超のピークに達した（3.2節参照）。
+  出典：移民観測機構（オックスフォード大学）「The Migration Observatory and the Decade of Migration」 — https://migrationobservatory.ox.ac.uk/resources/reports/the-migration-observatory-and-the-decade-of-migration/；「EU Migration to and from the UK」 — https://migrationobservatory.ox.ac.uk/resources/briefings/eu-migration-to-and-from-the-uk/；ウィンドラッシュ世代に関する移民観測機構のコメンタリー — https://migrationobservatory.ox.ac.uk/resources/commentaries/windrush-lessons-learned-review-evidence-from-the-migration-observatory-at-the-university-of-oxford/
+- **限界**：上記のグラフは1948年から1971年までの単一区間（コモンウェルス出身者の累積居住人口、50万人超という移民観測機構の推計値）のみを示す参考値であり、ONS・内務省の一次統計表による年次別の国籍別流入数の完全な時系列（1945年〜現在）は今回の調査では確認できなかった。
+<ComingSoon label="国籍別・年次別の移民流入数の完全な時系列データ（1945年→現在）は、ONS「International migration historical time series」やHome Office Migration Statisticsの長期表を用いて今後追加予定です。" />
+
+### 3.4 年齢構成（人口ピラミッド）
+
+- ONSは2021年国勢調査（イングランド・ウェールズ）に基づく「出生国別×年齢別」のデータセット（RM011: Country of birth by age）を公表しており、Nomis・UK Data Service経由でアクセス可能である。
+- 限界：このデータセットは英国国勢調査統計局のExcel／CSV形式の詳細表として提供されており、本調査では自動検証ツールによる正確な年齢層別・出生地別の数値（4区分以上のクロス集計）を直接抽出することができなかった。出生国別の年齢構成を示すには、本来この一次データの直接ダウンロードと再集計が必要である。
+<ComingSoon label="出生国別の年齢構成（人口ピラミッド）は、ONS国勢調査2021データセット「RM011: Country of birth by age」（Nomis経由）を用いて今後追加予定です。" />
+
+### 3.5 将来人口予測
+
+<KeyFigure
+	value="280 → 329"
+	label="老年人口依存率（労働年齢人口1,000人当たりの年金年齢人口）の予測。2024年央の280から2049年央に329へ上昇（ONS 2024年版人口推計）"
+/>
+
+- ONSの最新の人口推計（2024年版、2026年4月公表）によれば、老年人口依存率（pensionable age人口を労働年齢人口1,000人当たりで示す指標）は2024年央の280から2049年央には329に上昇すると予測されている。
+  出典：ONS「National population projections」2024年版 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/2024based
+- ONSは「主推計（principal projection）」に加えて、出生率・死亡率・移動（純移動）について代替の前提を置いた「変動推計（variant projections）」を複数公表している（例：移動高位、移動低位、若年人口型など、各前提を組み合わせた変動シナリオ）。ただし、これらの変動推計は純移動の総量を変化させるシナリオであり、デンマークDSTのような「出生国別の将来人口比率」を予測するものではない。
+- 重要な限界：ONSの人口推計は出生国別（外国生まれ／英国生まれ）の将来人口比率を予測する形では公表されていない——変数となるのは移動・出生・死亡の総量のシナリオのみであり、出生国別の将来構成比は公的な推計の対象外である。
+  出典：ONS「National population projections quality and methods guide」 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsqmi
+<ComingSoon label="出生国別（外国生まれ／英国生まれ）の将来人口比率予測は、ONSの公式人口推計の対象外であるため公的に存在しません。ONSの変動推計は移動の総量のみをシナリオ変数としています。" />
+
+## 4. 財政 — 純コスト
+
+- クリスチャン・ダストマン氏（UCL／CReAM）の研究 — EU移民／非EU移民の財政的純貢献に関する学術的基準点であり、英国の議論で頻繁に引用される
+- OBRによる長期財政持続可能性に関する報告書
+- 単一の公式研究による合意は存在しない：結果は方法（静態的／動態的・生涯サイクル）と対象期間によって大きく異なる。下表に比較を示す。
+
+| 方法 | 結果 | 出典／期間 | 委託者 |
+|---|---|---|---|
+| 静態的・年次会計アプローチ（1995〜2011年、学術研究） | EU／EEA移民：2001〜2011年の期間で財政的純貢献はプラス（累計約221億ポンド、受給した給付・サービスより約34%多く税金を支払っている）；非EU／EEA移民：2001〜2011年の財政的純貢献はほぼ中立からわずかにプラス（プラス29億ポンド、受給より約2%多く支払い）；より長期の1995〜2011年の期間では、非EU／EEA移民は自国出身者の傾向に近づく（平均でわずかにマイナスの財政的純貢献）。 | Dustmann & Frattini「The Fiscal Effects of Immigration to the UK」、*The Economic Journal*、2014年；CReAMディスカッションペーパー — https://www.cream-migration.org/publ_uploads/CDP_22_13.pdf | UCL移民研究分析センター（CReAM）、独立した学術研究（ESRC資金提供）（検証状況：出典のPDF（811KB）は自動検証ツールによる信頼できる抽出ができなかった——バイナリ内容が正しく復号されなかった。今回のパスでは数値を行単位で再確認できておらず、公開前にPDFでの手動確認が必要） |
+| 静態的対動態的（生涯サイクル）の比較 | 静態的アプローチ：平均的な非EEA移民の年間純コストは約1,700ポンド。動態的アプローチ（生涯にわたる純現在価値）：同じコホートは現役期間全体で約28,000ポンドの純貢献をもたらす——選択する方法によって結果がいかに大きく変わるかを示す事例。 | オックスフォード・エコノミクス、2018年、移民観測機構が要約「The Fiscal Impact of Immigration in the UK」 — https://migrationobservatory.ox.ac.uk/resources/briefings/the-fiscal-impact-of-immigration-in-the-uk/ | オックスフォード・エコノミクス（経済コンサルティング会社、独立した研究）（検証状況：移民観測機構のページは2018年のオックスフォード・エコノミクスによる静態的推計を確認しているが、それは非EEA移民全体の国全体の集計値（2016／17年で約マイナス90億ポンド）であり、ここで引用した1人当たり約1,700ポンド／年、または生涯で約28,000ポンドという動態的な数値はページの閲覧可能な内容には記載されていなかった。1人当たりの数値は今回のパスでは再確認できておらず、公開前にオックスフォード・エコノミクスの完全版報告書での手動確認が必要） |
+| 入国時の年齢コホート別の長期動態的予測 | 25歳で平均的な賃金で入国した移民は、生涯全体で約341,000ポンドの純貢献をもたらすと予測される（財政予測）；純移動の増加は短期的（2024〜2029年の予測期間）には財政赤字を減少させるが、移民の将来的な高齢化は財政負担を将来に先送りする。 | OBR、2025年3月の方法論補足資料および「Fiscal risks and sustainability report」2025年7月 — https://obr.uk/frs/fiscal-risks-and-sustainability-july-2025/ および https://obr.uk/docs/dlm_uploads/FRS-migration-supplementary-forecast-information-release-Mar-2025.pdf | 予算責任局（独立した法定の公的財政機関）（検証状況：直接確認した「Fiscal risks and sustainability July 2025」報告書には、この341,000ポンドという数値も、年齢コホート別の詳細な分析も記載されていなかった——この内容はおそらく2025年3月の方法論補足資料（2番目のリンク）に含まれているが、今回のパスでは別途確認していない。数値は再確認できておらず、手動での確認が必要） |
+| より制約的な前提を用いた批判的研究 | 調査対象期間における近年の移民の財政的純影響を全体としてマイナスと推計している（移民にとって不利と判断される前提を用いているとして、学術研究者から方法論が批判されている）。 | Migration Watch UK「The Fiscal Effects of Immigration to the UK」、2014／2016年 — https://www.migrationwatchuk.org/briefing-paper/381 | Migration Watch UK（移民削減を訴える団体であり、中立的な機関ではなく利害関係者として明示すべきである） |
+
+- 日本の読者に向けた要点：移民観測機構による学術的な合意によれば、方法を問わず、英国における移民の財政的純影響は一般にGDPの1%未満であり、医療・年金などの大規模な公共支出項目と比較すると、実在する効果ではあるが規模は控えめである。
+
+### 4.1 老年人口依存率・年金制度
+
+<BarChart
+	title="老年人口依存率の推移予測（労働年齢人口1,000人当たりの年金年齢人口）"
+	unit=""
+	bars={[
+		{ label: '2024年央', value: 280 },
+		{ label: '2049年央（予測）', value: 329 },
+	]}
+	sourceLabel="ONS「National population projections」2024年版"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/2024based"
+/>
+
+- 移動（移民）が依存率に与える影響：ONSの分析では、移動水準が高いほど将来の人口学的依存度は低下する傾向があるが、結果はより高齢層の経済活動率（就労継続）の変化の影響をより強く受けるとされている。すなわち、移民の純流入の増減は依存率を緩和する一因ではあるが、唯一あるいは主要な決定要因ではない。
+  出典：ONS「Living longer and old-age dependency — what does the future hold?」 — https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/ageing/articles/livinglongerandoldagedependencywhatdoesthefuturehold/2019-06-24
+- OBRは国家年金を福祉支出の最大項目と位置づけ、人口高齢化とトリプルロック制度のコストにより、2028/29年度から2073/74年度にかけて国家年金支出がGDP比+2.7ポイント増加すると予測している。これは出生国別に分解された予測ではなく、全国レベルの財政予測である。
+  出典：予算責任局（OBR）、人口動態関連報告書 — https://obr.uk/cross_cutting/demographics/
+<ComingSoon label="出生国別（移民／英国生まれ）の年金制度加入・受給状況および出自別の依存率データは、ONS・OBRの公表資料からは確認できておらず、今後追加予定です。" />
+
+## 5. 労働市場
+
+- 非EU出身者の雇用率は2025年には2019年よりも高くなっており、2019年と比較して労働市場への参入が加速している（ONSは構成の変化を指摘している：調査回答者のうち非EU生まれの割合は2025年第4四半期で13.1%、2019年第3四半期では10.2%であった）。これは調査サンプルにおける割合として表現されたデータであり、単独の雇用率ではない。出生国別の詳細な雇用率はONSのデータセットEMP06に収録されている。
+  一次出典：ONS「Employment by country of birth and nationality (EMP06)」 — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbycountryofbirthandnationalityemp06
+  （検証状況：EMP06データセットの説明ページは確認したが、正確な数値（13.1%／10.2%）はダウンロード可能なExcelファイルにのみ記載されており、自動検証ツールでは抽出できなかった。今回のパスでは数値を再確認できておらず、手動での確認が必要）。
+- 明示すべき方法論上の限界：ONSはパンデミック中、サンプル品質の問題を理由に主要データセットA01から雇用／出生国の内訳を一時的に削除した。EMP06／A12系列は2025年2月以降再加重されており、長期系列の厳密な比較可能性に影響している。
+  出典：ONS「Labour Force Survey quality update」、2025年9月 — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/labourforcesurveyqualityupdate/september2025
+
+## 6. 治安・司法
+
+<KeyFigure
+	value="約12%"
+	label="2025年3月31日時点でイングランド・ウェールズの受刑者人口に占める外国籍受刑者の割合（約88,000人中約10,400人）"
+/>
+
+- 司法省（Ministry of Justice）は四半期ごとに「Offender management statistics quarterly」を公表しており、受刑者数と**届け出上の国籍**（出生国でも移民資格でもない）を組み合わせている。2025年3月31日時点で、外国籍の受刑者はイングランド・ウェールズの受刑者人口の約12%を占めていた（約88,000人中約10,400人）。これは直近数四半期で概ね安定した水準である。英国籍に次いで多い国籍は、おおよそ次の順序であった：アルバニア、アイルランド、ポーランド、ルーマニア、インド。
+  一次出典：gov.uk、「Offender management statistics quarterly」コレクション — https://www.gov.uk/government/collections/offender-management-statistics-quarterly（司法省）。
+  （検証状況：閲覧したページは四半期コレクションの索引であり、正確な数値（約12%、約88,000人中約10,400人、国籍別の順位）を含む詳細な「2025年1〜3月」報告書は今回のパスでは別途抽出できなかった。行単位での再確認はできておらず、日付の入った報告書での手動確認が必要）。
+- 明示すべき重要な方法論上の限界（編集方針の指示による）：この統計は届け出上の国籍に基づくものであり、出生国でも在留資格でもない。「外国籍」の受刑者は長期間の合法的居住者である場合もあれば、二重国籍者である場合もある。逆に、外国生まれで英国籍を取得した受刑者はこの数値に表れない。移民資格（合法／不法）と犯罪を体系的に組み合わせたイングランドの全国的な犯罪統計は存在しない。
+
+## 7. 教育
+
+- 教育省（DfE）は公式サービス「Explore Education Statistics」を通じて、EAL（English as an Additional Language、英語を母語としない生徒）の状況別にKey Stage 4（GCSE）の結果を公表している。これは出生国の直接的な代替ではないが、近似的な代理指標として機能する。2024／25年度データ：https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance/2024-25（委託者：DfE、公式データ）。
+- これらの公式データに基づく分析が報告する知見：構成の効果を考慮すると、EAL生徒と英語を母語とする生徒との間で全体的な平均成績（「best-8」）に有意な差はないが、言語・出自の背景別（特に「White Other」「Black African」のグループは平均してより困難な状況にある）、および英国における就学期間の長さによって内部的な異質性が大きい——英国の学校制度における在籍期間の長さは決定的な要因であり、これはスウェーデンでも観察されている（スウェーデン案件7節参照）。
+- 詳細な民族グループ別・比較年別の正確な数値データ：今回の調査では検証済みの形で公的に入手できなかった——正確な数値を引用する前に、上記のDfEデータ表を直接確認する必要がある。
+
+## 8. 住宅
+
+<BarChart
+	title="住宅占有形態（自己所有率、2021年国勢調査）"
+	unit="%"
+	bars={[
+		{ label: '英国生まれ', value: 67 },
+		{ label: '外国生まれ（居住10年超は約57%に収束）', value: 43 },
+	]}
+	sourceLabel="ONS「Analysis of social characteristics of international migrants living in England and Wales: Census 2021」"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/analysisofsocialcharacteristicsofinternationalmigrantslivinginenglandandwales/census2021"
+/>
+
+- 移民と住宅危機との関連は政治的にますます記録されるようになっている。
+- ONS、2021年国勢調査（イングランド・ウェールズ）：外国生まれの人々の43%が自己所有住宅に居住しているのに対し、英国生まれの人々は67%である——この差は居住期間が長くなるにつれて縮小する（英国での居住が10年を超えると約57%の所有率に収束する）。
+  一次出典：ONS「Analysis of social characteristics of international migrants living in England and Wales: Census 2021」、2023年9月18日発表 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/analysisofsocialcharacteristicsofinternationalmigrantslivinginenglandandwales/census2021
+- 社会住宅：英国住宅調査（English Housing Survey、住宅・コミュニティ・地方自治省MHCLG）によれば、社会住宅の居住者のうち英国外で生まれた人の割合は約15%であり、これは総人口における外国生まれの割合（3節参照、2024年時点で約19%）に近い、あるいはわずかに低い水準である。すなわち、このデータでは一般人口と比較した社会住宅における明確な過剰代表は確認されていない。出典の表：英国住宅調査、MHCLG — https://www.gov.uk/government/collections/english-housing-survey 確定的な割合を引用する前に、最新版での正確な数値を上記のページで直接確認する必要がある。
+
+## 9. 社会的結束
+
+- コミュニティ生活調査（Community Life Survey、文化・メディア・スポーツ省DCMSによる、コミュニティの結束、ボランティア活動、地域への帰属感に関する公式調査）は2025年3月30日に現地調査を終了し、「コミュニティ・エンゲージメント調査」（CES）に引き継がれたが、2025／26年度のパイロット報告書にはまだ移民に対する認識に関する利用可能な確定データが含まれていない。
+  出典：gov.uk「Community Life Survey」コレクション — https://www.gov.uk/government/collections/community-life-survey--2
+- 明示すべき限界：コミュニティ生活調査／CES（厳密な意味での国家調査）には移民に対する認識を直接尋ねる項目が確認されなかった。移民に関する質問を定期的に行っている英国社会意識調査（British Social Attitudes、NatCen Social Research）は一部公的資金で運営されているが、あくまで独立した研究機関であり、国家統計ではない——本案件の今後のバージョンで引用する場合はこの留保とともに扱う必要がある。移民に対する認識に関する国家統計局の公式な数値データ：今回の調査では検証済みの形で公的に入手できなかった。
+
+## 10. 近年の政治的背景
+
+- ブレグジット（一部はEU移民の管理を目的としていた）は、逆説的に非EU圏からの純移民数の増加を伴った——日本の読者に説明すべき重要な事実。
+- ルワンダ計画／「スモールボートを止める」をめぐる議論、2023〜2024年の取り締まり強化。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+2019〜2021年のONSによる純移動推計の方法論変更——前後の比較を困難にしており、明示すべき点。加えて：(1) ONSの将来人口推計は出生国別の将来構成比を予測対象としておらず（3.5節参照）、デンマークDSTのような出自別将来比率は公的に存在しない。(2) 4節の財政純コストについては単一の公式研究による合意がなく、方法論によって結果が大きく異なる点を必ず明示する必要がある。(3) 6節の犯罪統計は届け出上の国籍のみに基づき、出生国・在留資格とは異なる点に留意。
+</div>

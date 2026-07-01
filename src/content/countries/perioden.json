@@ -1,0 +1,13 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85458NED/$metadata#Cbs.OData.WebAPI.Perioden","value":[
+    {
+      "Key":"2022JJ00","Title":"2022","Description":"","Status":"Definitief"
+    },{
+      "Key":"2023JJ00","Title":"2023","Description":null,"Status":"Definitief"
+    },{
+      "Key":"2024JJ00","Title":"2024","Description":null,"Status":"Definitief"
+    },{
+      "Key":"2025JJ00","Title":"2025","Description":null,"Status":"Definitief"
+    }
+  ]
+}

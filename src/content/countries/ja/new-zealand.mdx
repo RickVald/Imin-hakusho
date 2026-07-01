@@ -1,0 +1,219 @@
+---
+slug: new-zealand
+name: "ニュージーランド"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- Stats NZ（ニュージーランド統計局）：https://www.stats.govt.nz
+- Immigration New Zealand（ニュージーランド移民局、Ministry of Business, Innovation and Employmentの傘下機関）
+- The Treasury（ニュージーランド財務省）— 財政・経済への影響分析
+
+## 2. 主要データセット
+
+- Stats NZ：海外生まれ人口、移民純流入（西側諸国の中でも特に更新頻度が高い四半期統計）
+- Immigration NZ：就労／留学／永住ビザの統計
+- Treasury：移民と生産性・住宅の関連についての分析
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2023年国勢調査・通常居住人口499万人）"
+	segments={[
+		{ label: 'ニュージーランド生まれ', value: 71.2, color: '#1d3461' },
+		{ label: '海外生まれ', value: 28.8, color: '#9c3b3b' },
+	]}
+	sourceLabel="Stats NZ「2023 Census population, dwelling, and housing highlights」"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+/>
+
+- 2023年国勢調査時点で、ニュージーランドの通常居住人口は499万3,923人（2018年から294,168人増、+6.3%）。このうち約350万人がニュージーランド生まれ、約140万人が海外生まれで、海外生まれの割合は28.8%に達し、2018年の27.4%から1.4ポイント上昇した。200以上の出生国が記録されている。
+- 出典：Stats NZ「Census results reflect Aotearoa New Zealand's diversity」— https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/
+
+### 3.2 出身国・地域別構成
+
+<StackedBar
+	title="海外生まれ人口の出身国（上位3カ国、2023年国勢調査・総人口に対する割合）"
+	segments={[
+		{ label: 'イングランド', value: 4.2, color: '#1d3461' },
+		{ label: '中国', value: 2.9, color: '#9c3b3b' },
+		{ label: 'インド', value: 2.9, color: '#c9a23f' },
+		{ label: 'その他の海外生まれ', value: 18.8, color: '#8a8a8a' },
+	]}
+	sourceLabel="Stats NZ「Census results reflect Aotearoa New Zealand's diversity」"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+/>
+
+- 2023年国勢調査時点で、海外生まれ人口（総人口の28.8%）のうち最大の出生国はイングランド（総人口の4.2%）、続いて中国（2.9%）、インド（2.9%）。
+- 2018年から2023年の間で人数増加が最大だったのはフィリピン出身者で、31,632人増（+46.8%）——出身国構成の変化が最も速い国の一つである。
+- 出典：Stats NZ「Census results reflect Aotearoa New Zealand's diversity」— https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/
+<ComingSoon label="出生国別の詳細な内訳（レベル3分類・全200カ国以上）は、Stats NZのAotearoa Data ExplorerまたはNZ.Statから今後追加予定です。" />
+
+### 3.3 移民の波（1950年代〜現在）
+
+- **1950年代〜1960年代（戦後欧州系移民）**：1946年の議会特別委員会が1970年代初頭まで続く移民規制の原則を定め、英国系移民が優先され、不足分はスカンディナビア・北欧諸国から補うとされた。1951年から1968年の間に28,000人以上のオランダ系移民が入国し、両国政府が積極的に移住を推進した。1960年代半ば以降、サモア・トンガ・クック諸島など太平洋諸島からの移民が労働機会を求めて増加し、1960年代〜1970年代初頭の経済拡大期には太平洋諸島出身者向けの一時ビザ・クオータが厳格に運用されないことが多かった。
+- **1970年代（政策転換と太平洋諸島移民の取り締まり）**：1971年、首相ノーマン・カークはニュージーランドの将来はアジア・太平洋にあるとし、出願者の人種・皮膚の色・宗教を問わない移民政策を主張。1974年以降、公式には技能・資格に対する需要に基づいて永住許可が与えられるようになった。しかし1970年代半ばの経済停滞を受け、1974年から1979年にかけて「夜明けの急襲（dawn raids）」と呼ばれる、警察による太平洋諸島系オーバーステイヤーの摘発が行われ、パシフィカ系住民を標的とした点で問題視されている。
+- **1980年代〜1990年代（技能重視のポイント制への転換）**：1980年代〜1990年代に経済成長を重視する移民政策への転換が進み、「質の高い移民」の誘致が目標とされた。1991年、技能やその他の経済的特性を重視するポイント制が導入された。1986年の改革は「ニュージーランド社会の多文化的構成を豊かにする」ことを明示的に目指した。この結果、年間移民純流入は1980〜84年の約7,500人から1995〜99年には32,000人に増加し、オーストラリア・英国・アイルランド以外からの入国者の割合は1980年代初頭の21%から1990年代を通じて70%超に上昇した。1990年代にはインド・中国・南アフリカからの入国が初めて顕著になった。
+  出典：migrationpolicy.org「New Zealand: From Settler Colony to Country Reliant on Temporary Immigration」— https://www.migrationpolicy.org/article/new-zealand-migration-profile-history ；Te Ara「History of immigration」— https://teara.govt.nz/en/history-of-immigration
+- **2010年代〜現在（高水準の移民流入と一時的労働への依存）**：2015年から2020年まで毎年の移民純流入がほぼ全ての年で50,000人前後またはそれを超える水準に達した。2015年から2024年にかけての平均では、人口1,000人当たり年間約10人の移民純流入があり、これは西側諸国の中でも高水準である。2023年10月終了年には純流入が+128,900人のピークに達した後、2024年には+23,800人、2025年（暫定値）には+14,200人へと急減した（詳細は4.1節および本観測サイトの既存記述を参照）。
+  出典：macrotrends.net「New Zealand Net Migration」；Stats NZ「Net migration gain of 14,200」— https://www.stats.govt.nz/news/net-migration-gain-of-14200/
+
+<KeyPointTiles
+	title="移民の波：期間別の主な特徴"
+	tiles={[
+		{ period: '1950s–1960s', value: '英国系優先', description: '1951〜1968年に28,000人以上のオランダ系移民が入国。1960年代半ばより太平洋諸島からの移民が労働機会を求めて増加。', color: '#1d3461' },
+		{ period: '1970s', value: '政策転換', description: '1974年以降、技能・資格に基づく永住許可へ移行。1974〜1979年に「夜明けの急襲」による太平洋諸島系オーバーステイヤーの取り締まり。', color: '#9c3b3b' },
+		{ period: '1980s–1990s', value: '年間32,000人', description: '1991年にポイント制導入。年間移民純流入は1980〜84年の約7,500人から1995〜99年には32,000人に増加。', color: '#c9a23f' },
+		{ period: '2015–2020', value: '年間約50,000人', description: '移民純流入がほぼ全ての年で50,000人前後またはそれを超える水準に達した。', color: '#5a8a6b' },
+		{ period: '2023年10月', value: '+128,900人', description: '純流入がピーク（+128,900人）。その後2024年には+23,800人、2025年（暫定値）には+14,200人へ急減。', color: '#6b5b95' },
+	]}
+/>
+
+<TrendChart
+	title="海外生まれ人口比率の推移（2018年→2023年）"
+	unit="%"
+	series={[
+		{ label: '海外生まれ人口比率', color: '#9c3b3b', points: [
+			{ year: 2018, value: 27.4 }, { year: 2023, value: 28.8 },
+		]},
+	]}
+	sourceLabel="Stats NZ「Census results reflect Aotearoa New Zealand's diversity」"
+	sourceUrl="https://www.stats.govt.nz/news/census-results-reflect-aotearoa-new-zealands-diversity/"
+/>
+
+<ComingSoon label="1950年代〜2018年の間の海外生まれ人口比率の連続的な時系列データ（国勢調査ごとの数値）は今後追加予定です。本調査では2018年・2023年の2回分の国勢調査データのみを直接確認でき、それ以前の連続的な公式統計は本調査の範囲では確認できませんでした。" />
+
+### 3.4 年齢構成
+
+<div class="callout-limits">
+<strong>⚠️ データなし</strong>
+出生地別（ニュージーランド生まれ／海外生まれ）の年齢構成を直接比較する公的統計は、本調査では確認できなかった。2023年国勢調査によれば全人口の中位年齢は38.1歳（2018年の37.4歳から上昇）であるが、これを出生地別に分解した数値はStats NZの公開資料から直接確認できていない。Stats NZの「インタラクティブ人口ピラミッド」ツール（https://www.stats.govt.nz/tools/interactive-population-pyramid-for-new-zealand/）が出生地別の分解に対応している可能性があるが、本調査では確認できなかった。
+</div>
+<ComingSoon label="出生地別（ニュージーランド生まれ／海外生まれ）の年齢構成データは今後追加予定です。" />
+
+### 3.5 将来予測（2078年まで）
+
+<KeyFigure
+	value="529万人（2024年）→ 90%予測区間で661万〜905万人（2078年）"
+	label="Stats NZ「National population projections: 2024(base)–2078」中位シナリオによる予測区間"
+/>
+
+- Stats NZの最新の全国人口推計（2024年基準、2078年まで）によれば、2024年の人口529万人は、90%の確率で2028年に536万〜562万人、2031年に546万〜586万人、2051年に612万〜721万人、2078年に661万〜905万人の範囲に達するとされている。
+- 移民純流入の中位仮定は、2025年6月終了年で25,000人、2026年6月終了年で30,000人とされ、2031年6月終了年には37,500人、2051年6月終了年には42,500人へ段階的に上昇するとされている。Stats NZは、この中位仮定は「想定される軌道」ではなく、毎年その中位値の周辺で変動するシミュレーションの中央値であることを明示している。
+- 出生率・移民の前提が更新されたことにより、2024年基準の推計は、前回（2018年基準）の推計と比較して出生率が概して低く、移民純流入の水準が高く設定されている。
+- 出典：Stats NZ「National population projections: 2024(base)–2078」— https://www.stats.govt.nz/information-releases/national-population-projections-2024base2078/
+<ComingSoon label="出生地別（ニュージーランド生まれ／海外生まれ）に分解された長期人口予測の詳細は今後追加予定です。" />
+
+## 4. 財政 — 純コスト
+
+公的に入手可能なデータなし：移民の財政コストまたは財政上の純貢献を集計値で示すニュージーランドの公式研究（Treasuryその他の公的機関による）は、一次資料で確認できる形では特定できなかった。報道で見られる数値（数十億ドル単位の金額や、移民に帰属するとされる税収の割合など）は、stats.govt.nzまたはtreasury.govt.nz上で確認できなかったため、本ページには採用していない。
+
+最も近い公式研究（独自の方法論によるが、財政バランスではなく生産性に焦点を当てたもの）として、New Zealand Productivity Commission（ニュージーランド生産性委員会、公的機関。2024年2月に解散し、資料はTreasuryに引き継がれた）が委託した報告書「Immigration: Fit for the Future」（2022年4月）がある。この報告書の主な結論は、移民はニュージーランドの生産性問題の原因でも解決策でもないとされ、過去20年間における自国民の賃金・雇用への影響は弱く、総じて好影響であったとしている。出典：https://www.treasury.govt.nz/sites/default/files/2024-05/pc-inq-is-immigration-fit-for-the-future.pdf 。政府（MBIE、Ministry of Business, Innovation and Employment）の回答：https://www.mbie.govt.nz/immigration-and-tourism/immigration/immigration-consultations/productivity-commission-inquiry/detailed-response-to-the-productivity-commissions-report-immigration-fit-for-the-future
+
+これとは別の独立した公式方法論（例えばTreasuryの長期財政モデルにおける移民モジュールなど）は特定できなかった——現時点では公的に入手可能なデータがない。
+<ComingSoon label="移民の公的財政への純負担（または純貢献）を集計した公式の算定値は今後追加予定です。デンマーク・オーストラリアのような一次資料に基づく算定はニュージーランドでは確認できませんでした。" />
+
+### 4.1 年金制度・現役世代比率
+
+<TrendChart
+	title="65歳以上人口の依存度比率の推移（65歳以上人口100人当たりの15-64歳人口、1960年代→2048年）"
+	unit="人/100人"
+	series={[
+		{ label: '65歳以上依存度比率', color: '#9c3b3b', points: [
+			{ year: 1965, value: 14 }, { year: 2022, value: 25 }, { year: 2048, value: 36.5 },
+		]},
+	]}
+	sourceLabel="Stats NZ「National population projections: 2022(base)–2073」"
+	sourceUrl="https://www.stats.govt.nz/information-releases/national-population-projections-2022base2073/"
+/>
+
+- 65歳以上の人口比率は2020年の16%から2050年には約23%へ上昇すると予測されている。
+- 65歳以上の依存度比率（15-64歳人口100人当たりの65歳以上人口）は、1960年代半ばの14人から2022年には25人へ緩やかに上昇した。2048年には34〜39人（中央値約36.5人）の範囲に達すると予測されており、これは2022年時点で65歳以上1人当たり15-64歳人口が4.0人であったのに対し、2048年には2.7人に減少することを意味する。
+- 出典：Stats NZ「National population projections: 2022(base)–2073」— https://www.stats.govt.nz/information-releases/national-population-projections-2022base2073/
+<ComingSoon label="出生地別（ニュージーランド生まれ／海外生まれ）に分解された依存度比率は今後追加予定です。上記の比率は出生地別ではなく全国全体の数値です。" />
+
+## 5. 労働市場
+
+公的に入手可能なデータなし：ビザ区分（技能、留学、就労、永住）別の雇用率を、ニュージーランド国民と比較して示す最新かつ詳細な内訳データは確認できなかった。
+
+これに最も近いデータとして、まずMBIEのMigrant Employment Data（毎月更新、ビザ種別・産業分野・地域別、2025年9月頃まで更新）があるが、雇用への関与は測定しているものの、国民との明示的な比較率は示していない。出典：https://www.mbie.govt.nz/immigration-and-tourism/immigration/migration-research-and-evaluation/migrant-employment-data 。次に、Stats NZのSurvey of Working Life（2012年12月期、古いデータ）によれば、就業者の25%が海外生まれであり、最近の移民・定住移民の36〜40%が学士以上の学位を持っていたのに対し、国民は21%であった。職業生活への満足度は最近の移民で85.5%、国民で76.7%であった。このデータは2012年のものであり、更新版は見つかっていない。出典：http://m.stats.govt.nz/browse_for_stats/income-and-work/employment_and_unemployment/snapshot-working-migrants.aspx 。さらに、NZ Treasuryのワーキングペーパー「Impacts of immigration on the labour market and productivity」（2024年）はこの主題を扱っているが、正確な数値は抽出・検証できておらず、直接の読解による確認が必要である。出典：https://www.treasury.govt.nz/sites/default/files/2024-05/pc-wp-impacts-of-immigration-on-the-labour-market-and-productivity.pdf
+
+## 6. 治安・司法
+
+確認済み：ニュージーランドは出生国、国籍、ビザ・移民ステータス別に区分した犯罪統計を公表していない。これは以下の3つの公式資料で確認されたものであり、これらは年齢・性別・自己申告による民族性別の区分のみを示しており（民族性は移民ステータスと比較可能な区分ではない）、次の通りである。NZ Police、PoliceData.nz：https://www.police.govt.nz/about-us/publications-statistics/data-and-statistics/policedatanz/proceedings-offender-demographics 。Ministry of Justice：https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/ 。Stats NZ、犯罪・司法（Crime & Justice）テーマ：https://www.stats.govt.nz/topics/crime-and-justice/
+
+方法論上の注意点として明示すべき点がある。自己申告による民族性は移民ステータスの妥当な指標ではない（ニュージーランド国籍者と最近の移民が同じ民族区分を共有することがあり得る）——この二つの概念は決して混同してはならない。
+
+公的に入手可能なデータなし：ニュージーランドにおいて移民ステータスと犯罪の間に公式な統計的関連を示すものは確認できない。
+
+## 7. 教育
+
+<KeyFigure
+	value="83,425人"
+	label="2024年の留学生数（2023年の69,135人から21%増加。コロナ前のピーク2019年は115,705人）"
+/>
+
+留学生数（Education New Zealand）については、2024年に83,425人の留学生が在籍し、2023年の69,135人から21%増加した。コロナ前の参照値（2019年）は115,705人であり、この水準にはまだ達していない。2025年（暫定値、最新の入手可能データ）は92,580人で、コロナ前のピークの約80%に相当する。2024年の分野別内訳は、大学33,485人、学校18,350人、ポリテクニック（Te Pūkenga）10,270人、民間教育機関（PTE）10,185人であり、修士課程への登録者数は2024年に14,695人で、2019年の7,945人から増加した。主な出身国は中国（約34%）、インド（約14%）、日本（約9%）である。出典：https://www.enz.govt.nz/news-and-research/ed-news/international-student-enrolments-continue-upward-surge
+
+経済的な規模として、国際教育関連の輸出額は2024年12月終了年で36億NZドル、2025年9月終了年で45.2億NZドルと推計されている。2024-25会計年度の輸出収入は43億NZドル（+22.8%）であり、サービス輸出全体の約13.6%を占める。政府が掲げる目標は、2034年までにこの金額を72億NZドルへ倍増させることである。出典：https://www.enz.govt.nz/news-and-research/ed-news/international-education-drives-nz4-5-billion-economic-boost-as-sector-grows-with-strong-public-support
+
+## 8. 住宅
+
+移民とニュージーランドの住宅危機（特にオークランド）との関連は活発に議論されており、カナダの事例と比較可能であり、横断的な比較の良い材料となる。
+
+Reserve Bank of New Zealand（RBNZ、ニュージーランド準備銀行）のMonetary Policy Statement（2024年2月）によれば、移民純流入は2023年末時点で年率にして人口の約2.4%に達しており、RBNZは「強い移民の需要効果が、より高い賃料インフレに反映された」と指摘している。出典：https://www.rbnz.govt.nz/hub/publications/monetary-policy-statement/2024/monetary-policy-statement-february-2024
+
+RBNZのFinancial Stability Report（2024年11月、特別トピック）では、移民純流入の減少に伴う人口成長の鈍化が「住宅需要を緩和している」とされ、2022-2023年の状況からの転換を示している。出典：https://www.rbnz.govt.nz/-/media/project/sites/rbnz/files/publications/financial-stability-reports/2024/november-2024-special-topic-1/fsr-special-topic-update-on-housing-market.pdf
+
+時系列の比較の目安として、移民と住宅の関連は2023年（上昇圧力）と2024-2025年（移民純流入の減少に伴う圧力の緩和）の間で逆転したことになる。
+
+公開前に再確認すべき正確な引用（索引検索により出典確認されたが、PDFを全文通読していないもの）：https://www.rbnz.govt.nz
+
+## 9. 社会的結束
+
+Stats NZの一般的な公式調査であるGeneral Social Survey（隔年実施）には、移民に対する態度を扱う専用の調査項目が含まれておらず、これは明示すべき欠落点である。出典：https://www.stats.govt.nz/help-with-surveys/list-of-stats-nz-surveys/about-the-general-social-survey/
+
+これに最も近い公式資料は、MBIEによる調査「Public Perceptions of Immigration」（2017年から2023年にかけて複数回実施、委託機関はMinistry of Business, Innovation and Employment、公的機関）である。安定したURLが確認できた最新の報告書は2020年12月のものであり、2023年版は存在するもののその正確なURLは確認できておらず、プログラムのホームページから探す必要がある。出典：https://www.mbie.govt.nz/immigration-and-tourism/immigration/migration-research-and-evaluation/migrant-and-community-experience-of-migration
+
+公的に入手可能なデータなし：2024-2025年における移民への態度の変化を具体的に測定した、最近かつ完全に検証された政府調査は存在しない。民間・慈善団体による報告書（例えばHelen Clark Foundation、Ipsos NZ Issues Monitorなど）は存在するが、公式資料ではないため、編集方針に従い本ページでは採用していない。
+
+## 10. 最近の政治的文脈
+
+ポストコロナの移民ピークを経て、Luxon政権下の2024年に一時的就労ビザの条件が厳格化された——正確な日付とともに記録すべき事項である。
+
+Accredited Employer Work Visa（AEWV、認定雇用主就労ビザ）の正確な経緯は以下の通りである。2024年4月7日（Erica Stanford移民担当大臣）には大規模な改革が行われ、ANZSCO（オーストラリア・ニュージーランド標準職業分類）の技能レベル4-5に対する新たな英語能力要件、3年の経験または レベル4以上の資格要件（「グリーンリスト」職種または賃金が中央値の2倍以上である場合を除く）、レベル4-5のビザ最長期間を5年から2年へ短縮し3年連続後に12カ月の必須休止期間を設定、求人広告期間を14日から21日へ延長、Work and Income（MSD、社会開発省）との連携の義務化、週30時間の最低労働時間が導入された。フランチャイズ加盟店の認定区分は2024年6月16日に廃止された。出典：https://www.immigration.govt.nz/about-us/news-centre/changes-to-the-accredited-employer-work-visa-aewv
+
+2024年12月17日（2025年3月まで段階的に実施）には部分的な緩和が行われ、大半の職種における中央賃金しきい値の撤廃、経験要件の2年への短縮、レベル4-5のビザ期間の3年への復元、建設業における派遣労働者の比率上限の35%から15%への引き下げ（2025年1月施行）が実施された。出典：https://www.beehive.govt.nz/release/securing-skills-and-experience-nz-needs
+
+2024年12月2日には、高賃金のAEVW保持者（中央賃金の80%以上）の配偶者の就労権が復元された。2025年11月3日（施行）には、留学生ビザ保持者の許可労働時間が週20時間から25時間へ引き上げられた。2025年7月1日には、親族向け永住ビザ区分の待機列における2,000件の上限が撤廃された（これは新たな受付開始ではなく、緩和措置である）。
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+12/16カ月ルール（Stats NZ）により、移民ステータスは16カ月の移動履歴のうち12カ月が観測された時点で確定的に分類されるため、最終分類までに約17カ月の遅れが生じる。
+
+この確定までの間、Stats NZは統計モデルに基づく暫定推定値を公表しており、95%信頼区間を付して毎月更新している。直近の月ほど不確実性が大きい。
+
+この移動履歴に基づく方式は、申告された旅行意図に基づく旧来の指標「Permanent and Long-Term」（PLT）に代わるものであり、Stats NZはPLTの信頼性をより低いと判断している。
+
+コロナ禍の国境閉鎖期間（2020年3月〜2022年12月）のデータは未調整の生値であり、2020年3月以前の季節調整済み系列は固定されており、もはや改訂されていない。
+
+出生国×犯罪のクロスデータの構造的欠如（第6節参照）、移民ステータス別雇用調査の更新の欠如（第5節参照）、および出生地別の年齢構成データの欠如（3.4節参照）は、移民カテゴリー別の詳細な分析にとって主要な限界となっている。
+</div>
+
+方法論に関する出典：https://www.stats.govt.nz/methods/defining-migrants-using-travel-histories-and-the-1216-month-rule/

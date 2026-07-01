@@ -1,0 +1,5 @@
+{
+  "odata.metadata":"https://opendata.cbs.nl/ODataApi/OData/85458NED/$metadata#Cbs.OData.WebAPI.TypedDataSet&$select=Leeftijd,Bevolking_1","value":[
+    
+  ]
+}

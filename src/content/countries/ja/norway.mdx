@@ -1,0 +1,308 @@
+---
+slug: norway
+name: "ノルウェー"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import KeyPointTiles from '../../../components/KeyPointTiles.astro';
+
+## 1. 公的機関
+
+- SSB（Statistisk sentralbyrå、ノルウェー統計局）— 国家統計機関：https://www.ssb.no
+- UDI（Utlendingsdirektoratet、移民局）
+- IMDi（Integrerings- og mangfoldsdirektoratet、統合・多様性局）
+
+## 2. 主要データセット
+
+- SSB：出身グループ別の財政負担純額に関する分析を公表している（デンマーク方式に近い手法）— 国別横断的な比較分析の際に確認・比較が必要
+- UDI：庇護申請および在留許可に関する統計
+- IMDi：統合指標（出身および居住期間別の雇用・教育）
+- SSB StatBank API（表05182「Persons, by region, sex, immigration category」、表07111・07459「人口、年齢別」、表14740-14744「人口推計」）— 本ページの3.3・3.4・3.5節のデータ出典
+
+## 3. 人口動態
+
+### 3.1 現在の人口構成
+
+<StackedBar
+	title="人口構成（2026年1月1日時点・推計総人口5,627,400人）"
+	segments={[
+		{ label: 'ノルウェー系', value: 78.2, color: '#1d3461' },
+		{ label: '移民', value: 17.5, color: '#9c3b3b' },
+		{ label: '移民の子（ノルウェー生まれ）', value: 4.2, color: '#c9a23f' },
+	]}
+	sourceLabel="SSB「Innvandrere og norskfødte med innvandrerforeldre」"
+	sourceUrl="https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre"
+/>
+
+- 2026年1月1日時点で、ノルウェーには987,120人の移民（innvandrere、両親ともに外国出生で本人も外国出生の者）が居住し、総人口の17.5%を占める。また、ノルウェーで生まれた移民の子（両親が移民）は238,507人（4.2%）。
+  出典：SSB「Innvandrere og norskfødte med innvandrerforeldre」— https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre
+
+### 3.2 出身地域別の内訳
+
+<StackedBar
+	title="移民の出身地域（2026年1月1日時点・主要グループ）"
+	segments={[
+		{ label: 'アジア', value: 5.1, color: '#9c3b3b' },
+		{ label: '東欧（2004年以降のEU加盟国）', value: 3.9, color: '#c9a23f' },
+		{ label: 'アフリカ', value: 2.0, color: '#5a8a6b' },
+		{ label: 'その他の出身地域', value: 6.5, color: '#1d3461' },
+	]}
+	sourceLabel="SSB「Innvandrere og norskfødte med innvandrerforeldre」"
+	sourceUrl="https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre"
+/>
+
+- 出身別の内訳（人口全体に対する割合）：アジア288,439人（5.1%）、2004年以降にEUに加盟した国々（東欧）出身218,757人（3.9%）、アフリカ112,410人（2.0%）。「その他の出身地域」は移民総数からこの3グループを除いた残差であり、本観察サイトが算出した参考値である。
+  出典は同上（SSB）。
+
+### 3.3 移民の波（1970年〜現在）
+
+<TrendChart
+	title="移民および移民の子の人口推移（1970年→2026年）"
+	unit="人"
+	series={[
+		{ label: '移民+移民の子（合計）', color: '#9c3b3b', points: [
+			{ year: 1970, value: 59196 }, { year: 1980, value: 95202 }, { year: 1990, value: 168298 },
+			{ year: 2000, value: 282487 }, { year: 2010, value: 552313 }, { year: 2020, value: 979254 },
+			{ year: 2026, value: 1225627 },
+		]},
+		{ label: 'うち移民（本人が外国出生）', color: '#1d3461', points: [
+			{ year: 1970, value: 57041 }, { year: 1980, value: 88929 }, { year: 1990, value: 150973 },
+			{ year: 2000, value: 238462 }, { year: 2010, value: 459346 }, { year: 2020, value: 790497 },
+			{ year: 2026, value: 987120 },
+		]},
+	]}
+	sourceLabel="SSB StatBank API（表05182、各年1月1日時点）"
+	sourceUrl="https://data.ssb.no/api/v0/en/table/05182"
+/>
+
+- 1970年から2026年にかけて、移民および移民の子の合計人口は約20.7倍（59,196人→1,225,627人）に増加した。うち移民本人（外国出生）は約17.3倍（57,041人→987,120人）。
+- 主な歴史的局面：1970年代は労働移民（パキスタンなど）が中心。1975年のスリナム独立に類するような単一の大規模事象はノルウェーにはないが、1980年代以降は庇護希望者の受け入れが拡大し、1990年代にはボスニア紛争による旧ユーゴスラビア出身難民、2000年代にはEU東方拡大（2004年・2007年）に伴う東欧出身労働者の増加、2010年代にはシリア内戦・アフガニスタン情勢を背景とした難民、2022年以降はウクライナ避難民が一時保護ステータスで受け入れられている。
+  出典：SSB StatBank API（表05182）— https://data.ssb.no/api/v0/en/table/05182
+- **限界**：表05182は1970年以降のデータのみを提供しており、1945年〜1969年の期間は本調査で確認できなかった。また、年代別・出身国別の詳細な分解（1970年代パキスタン移民、1980年代ベトナム系難民等の個別の流入規模）は今回参照したAPIクエリの範囲では取得できなかった。
+
+<KeyPointTiles
+	title="期間別の主な特徴"
+	tiles={[
+		{ period: '1970s', value: '労働移民', description: 'パキスタンなどからの労働移民が中心。1970年の総移民数は57,041人。', color: '#1d3461' },
+		{ period: '1980s', value: '庇護拡大', description: '1980年代以降、庇護希望者の受け入れが拡大。ベトナム系難民なども増加。', color: '#9c3b3b' },
+		{ period: '1990s', value: 'ボスニア難民', description: 'ボスニア紛争による旧ユーゴスラビア出身難民を受け入れ。', color: '#c9a23f' },
+		{ period: '2000s', value: 'EU東方拡大', description: '2004年・2007年のEU加盟に伴い東欧出身労働者が急増。2010年時点で合計552,313人。', color: '#5a8a6b' },
+		{ period: '2010s', value: 'シリア・アフガン', description: 'シリア内戦・アフガニスタン情勢を背景とした難民の増加。', color: '#6b5b95' },
+		{ period: '2022–現在', value: 'ウクライナ', description: 'ウクライナ避難民を一時保護ステータスで受け入れ。2026年時点の合計は1,225,627人。', color: '#9c3b3b' },
+	]}
+/>
+
+<ComingSoon label="1945年〜1969年の移民人口データ、および年代ごとの出身国別の詳細な流入規模（パキスタン、ベトナム、旧ユーゴスラビア等）は今後追加予定です。" />
+
+### 3.4 年齢構成（人口ピラミッド）
+
+<AgePyramid
+	title="年齢構成（2026年1月1日時点、各グループ内の割合）"
+	bands={[
+		{ label: '0-19歳', groups: [
+			{ label: 'ノルウェー全人口', value: 22.0, color: '#1d3461' },
+			{ label: '移民+移民の子', value: 23.6, color: '#9c3b3b' },
+		]},
+		{ label: '20-44歳', groups: [
+			{ label: 'ノルウェー全人口', value: 33.2, color: '#1d3461' },
+			{ label: '移民+移民の子', value: 44.0, color: '#9c3b3b' },
+		]},
+		{ label: '45-66歳', groups: [
+			{ label: 'ノルウェー全人口', value: 27.8, color: '#1d3461' },
+			{ label: '移民+移民の子', value: 27.3, color: '#9c3b3b' },
+		]},
+		{ label: '67歳以上', groups: [
+			{ label: 'ノルウェー全人口', value: 17.0, color: '#1d3461' },
+			{ label: '移民+移民の子', value: 5.8, color: '#9c3b3b' },
+		]},
+	]}
+	sourceLabel="SSB StatBank API（表07111・07459、2026年1月1日時点）"
+	sourceUrl="https://data.ssb.no/api/v0/en/table/07111"
+/>
+
+- 移民・移民の子は20-44歳に強く集中している（44.0%、ノルウェー全人口は33.2%）。一方、67歳以上の割合は移民・移民の子で5.8%に過ぎず、ノルウェー全人口の17.0%より著しく低い——これは移民人口が比較的若く、労働年齢層への集中度が高いことを反映している。
+- 注：この区分は本観察サイトがSSBの生データ（0歳、1-5歳、6-12歳、13-15歳、16-19歳、20-44歳、45-66歳、67-79歳、80歳以上の各表）を独自に統合した参考値であり、SSBが公式に発表する区分そのものではない。
+
+### 3.5 将来予測
+
+<TrendChart
+	title="ノルウェー総人口の推移予測（2026年→2100年・中位シナリオMMM）"
+	unit="人"
+	series={[
+		{ label: '総人口（MMMシナリオ）', color: '#1d3461', points: [
+			{ year: 2026, value: 5627400 }, { year: 2050, value: 6214071 }, { year: 2100, value: 6384547 },
+		]},
+	]}
+	sourceLabel="SSB「Befolkningsframskrivinger」（国家人口推計）"
+	sourceUrl="https://www.ssb.no/en/befolkning/befolkningsframskrivinger/statistikk/nasjonale-befolkningsframskrivinger"
+/>
+
+<KeyFigure
+	value="638万人"
+	label="SSBの2100年人口推計・中位シナリオMMM（2026年の563万人から増加）"
+/>
+
+- SSBの中位シナリオ（MMM：中位出生率・中位死亡率・中位移住）によれば、年間純移住数は2050年に17,071人、2100年に15,113人と推計されている。
+  出典：SSB「Befolkningsframskrivinger」— https://www.ssb.no/en/befolkning/befolkningsframskrivinger/statistikk/nasjonale-befolkningsframskrivinger
+- **限界**：SSBの公開資料では、2050年・2100年時点での移民・移民の子の人口比率（%）は明示的に公表されておらず、出生率・死亡率・純移住数といった構成要素のみが詳細に示されている。デンマークのDST推計（デンマーク系人口比率の将来推移を公式に発表）とは異なり、ノルウェーでは出身別の将来人口比率の直接の公式推計を本調査では確認できなかった。
+<ComingSoon label="2050年・2100年時点での移民・移民の子の人口比率（出身別の将来推計）は今後追加予定です。SSBの人口推計ページでは構成要素（出生・死亡・移住数）は公表されているが、出身別の将来人口比率の直接の数値は確認できませんでした。" />
+
+## 4. 公共財政 — 財政負担純額
+
+<KeyFigure
+	value="+410万NOK"
+	label="R3グループ（その他の国々）出身者1人当たりの純現在価値コスト（2015年追加移民、2015-2100年・2012年クローネ基準）"
+/>
+
+<BarChart
+	title="追加移民5,000人の純現在価値（出身グループ別、2015年基準・2012年クローネ）"
+	unit="万NOK/人"
+	bars={[
+		{ label: 'R1：西欧・北米・オーストラリア', value: -80, note: '純財政貢献はプラス' },
+		{ label: 'R2：東欧（EU加盟国）', value: 80 },
+		{ label: 'R3：その他の国々（庇護・欧州外家族移住中心）', value: 410 },
+	]}
+	sourceLabel="SSB Rapporter 2017/31（Holmøy & Strøm、NOU 2017:2委託）"
+	sourceUrl="https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0"
+/>
+
+- 方式1（SSB、委託元：財務省／NOU 2017:2「高水準移民の長期的影響」）。Holmøy & Strøm報告書（SSB、Rapporter 2017/31）、DEMECモデル、2015年の追加移民5,000人について2015年から2100年までの期間で測定した純現在価値（2012年クローネ基準）：
+  - R1グループ（西欧、北米、オーストラリア）：-80万クローネ（純財政貢献はプラス）
+  - R2グループ（EU加盟の東欧諸国）：純コスト+80万クローネ
+  - R3グループ（その他の国々。庇護・欧州外からの家族移住の大半を含む）：純コスト+410万クローネ
+  直接リンク：https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0
+  SSBによる概要：https://www.ssb.no/offentlig-sektor/artikler-og-publikasjoner/kostnaden-for-det-offentlige-av-flere-innvandrere
+- 方式2（別の委託元）：公開データなし — 執筆時点において、比較可能な数値と直接確認可能なリンクを伴う、独立した第二の方式（例：民間研究機関や別の省庁による分析）は確認されていない。今後の調査課題（例：NHO、Civita、またはNOU 2017:2以降の更新分析）。
+<ComingSoon label="独立した第二の財政負担算定方式（NHO、Civita等による分析）は今後追加予定です。NOU 2017:2以降の更新分析も現時点では確認できていません。" />
+- 比較の指標：当該報告書は、高所得国（西欧、北米）からの移民は財政的圧力（高齢化、税収）を緩和する一方、低所得国からの移民はそれを増大させると明示的に述べている — したがって出身国別の区分は確立されているが、合法／不法あるいは就労／家族／庇護の区分による正式な分析は本報告書には含まれていない。
+
+### 4.1 年金制度・現役世代比率
+
+<BarChart
+	title="人口学的依存度（2026年・全国、出身別の区分なし）"
+	unit="%"
+	bars={[
+		{ label: '高齢者依存度（65歳以上÷20-64歳）', value: 32.8 },
+		{ label: '総依存度（0-19歳+65歳以上÷20-64歳）', value: 70.2 },
+	]}
+	sourceLabel="本観察サイトによる算出（SSB StatBank API表07459の生データに基づく）"
+	sourceUrl="https://data.ssb.no/api/v0/en/table/07459"
+/>
+
+- 上記の依存度は、SSBが「forsørgerbyrde（扶養負担）」という名称で公式に発表している指標ではなく、本観察サイトが表07459の年齢別人口データから独自に算出した参考値である。出身別（移民／移民の子／ノルウェー系）に分解された依存度のSSB公式統計は、本調査では確認できなかった。
+- デンマークの事例（DSTでは出身別に分解されていない全国指標として73%→91%の依存度上昇が示されている）と同様、ノルウェーにおいても出身別の年金制度依存度は公的に確認できる一次資料が見当たらなかった。
+<ComingSoon label="出身別の人口学的依存度（年金受給者・子供対労働年齢人口比、移民／移民の子／ノルウェー系の分解）は今後追加予定です。SSBの公開統計では出身別の依存度指標が見当たりませんでした。" />
+
+## 5. 労働市場
+
+<TrendChart
+	title="雇用率の推移（2015年→2024年、20-66歳）"
+	unit="%"
+	series={[
+		{ label: '移民', color: '#9c3b3b', points: [{ year: 2015, value: 66 }, { year: 2024, value: 68 }] },
+		{ label: 'ノルウェー生まれの移民の子', color: '#c9a23f', points: [{ year: 2015, value: 72 }, { year: 2024, value: 74 }] },
+		{ label: '移民を背景としない人々', color: '#1d3461', points: [{ year: 2015, value: 80 }, { year: 2024, value: 80 }] },
+	]}
+	sourceLabel="IMDi, Indikatorrapport 2025「Arbeid」"
+	sourceUrl="https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/arbeid/"
+/>
+
+<BarChart
+	title="雇用率の比較（20-66歳、2024年）"
+	unit="%"
+	bars={[
+		{ label: '移民を背景としない人々', value: 80, color: '#1d3461' },
+		{ label: 'ノルウェー生まれの移民の子', value: 74, color: '#c9a23f' },
+		{ label: '移民', value: 68, color: '#9c3b3b' },
+	]}
+	sourceLabel="IMDi, Indikatorrapport 2025「Arbeid」"
+	sourceUrl="https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/arbeid/"
+/>
+
+- 2024年、雇用率（20-66歳）は移民で68%、ノルウェー生まれの移民の子で74%であったのに対し、移民を背景としない人々では80%だった。
+  出典：IMDi、Indikatorrapport 2025、「Arbeid（労働）」の項 — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/arbeid/
+- 性別による差（2024年）：移民男性の71%、移民女性の65%が就労していた。アジア、アフリカ、EU/EEA・英国以外の欧州出身の移民女性において、この差は特に大きい。
+  出典は同上（IMDi）。
+- 経年変化：移民とその他の人口との間の雇用率差は、2015年の14ポイントから2024年の12ポイントへ縮小した。2015年以降、移民の雇用は他の人口よりわずかに速いペースで伸びている。
+  出典は同上（IMDi）。
+- 移住理由別（就労・家族・庇護）の区分：このIMDiのページでは単一の統合された形での公開データはない — 当該指標は出身国と居住期間別に集計されており、当初の許可カテゴリー別ではない。
+
+## 6. 治安・司法
+
+- 2010年から2013年の期間における被疑者（siktede）の粗率：移民6.7%、ノルウェー生まれの移民の子11.3%に対し、移民を背景としない人々は4.5%。
+  年齢・性別補正後：移民5.8%（粗率比-13%）、移民の子6.8%（粗率比-40%）。
+  出典：SSB「Innvandrere mindre overrepresentert blant siktede enn før」— https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
+- 経年変化（年齢・性別補正後の過剰代表率）：2002年に移民62%、移民の子141%だったのに対し、2015年にはそれぞれ21%、76%に低下 — 2000年代初頭以降、継続的な低下傾向。
+  出典は同上（SSB）。
+- より近年（2015-2017年）：被疑者の年平均78,000人のうち、約18%が移民、2.5%がノルウェー生まれの移民の子であり、68%がその他の居住人口、12%が形式上ノルウェーの居住者ではなかった。
+  出典：SSB「Mer detaljerte tall for siktede med innvandrerbakgrunn」— https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/mer-detaljerte-tall-for-siktede-med-innvandrerbakgrunn
+- SSBによる公式の方法論上の留意点：犯罪は統計的に若年男性の間でより頻発する傾向があり、これは移民の中で過剰に代表されるカテゴリーである。雇用状況や居住地による補正は、この差を部分的に縮小するが、説明されない残差を完全には消去しない。これらの統計は当局に把握された犯罪のみを対象とし、未登録の庇護希望者は対象外。
+- 合法／不法の区分：「形式上の居住者ではない」カテゴリー内における、合法・不法の在留資格別に分解されたSSBの統計データは公開されていない。
+
+## 7. 教育
+
+- 2024年の高校（videregående opplæring）修了率：移民65%、ノルウェー生まれの移民の子84%、その他の人口85%。
+  出典：IMDi、Indikatorrapport 2025、「Utdanning og kvalifisering（教育と資格）」の項 — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/utdanning-og-kvalifisering/
+- 居住期間の影響：2018年に高校入学時点で居住期間3〜5年だった移民の生徒のうち、2024年までに卒業したのは57%。居住期間10年以上の生徒では、この割合は77%まで上昇する。
+  出典は同上（IMDi）。
+- 就学前教育（1〜5歳、少数言語家庭の児童）：参加率は2015年の78%から2024年の90%に上昇した。
+  出典は同上（IMDi）。
+- 総体的傾向：移民を背景とする児童・若者の教育への参加は、2015年以降、保育園、高校、高等教育のすべての段階で進展している一方、初等教育の平均成績はその他の人口に比べて依然低い。
+  出典は同上（IMDi）。
+
+## 8. 住宅
+
+- 過密居住（trangboddhet）、2024年：「グループ1」（西欧／北米／オーストラリア／ニュージーランド）の移民の14%、「グループ2」（アジア、アフリカ、ラテンアメリカ、EU圏外の東欧）の移民の26%が過密住宅に居住しているのに対し、その他の人口では7%。
+  出典：IMDi、Indikatorrapport 2025、「Økonomi og levekår（経済と生活水準）」の項 — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
+- 住宅占有形態、2024年：グループ1の移民の38%、グループ2の移民の43%が賃貸住宅に居住しているのに対し、その他の人口では約12%（つまり移民の持ち家率は著しく低い）。
+  出典は同上（IMDi）。
+- 所得（比較指標）、2023年：移民の所得中央値は372,000クローネで、全人口平均の481,000クローネとの差は109,000クローネ。
+  出典は同上（IMDi）。
+- 持続的貧困（2021-2023年、低所得世帯に持続的に属する0〜39歳）：移民27%、ノルウェー生まれの移民の子24%に対し、その他の人口では7%。
+  出典は同上（IMDi）。
+
+## 9. 社会的結合
+
+- 経済的困難の自己申告、2024年：移民の19%が生活費を切り詰めるのに苦労していると回答したのに対し、その他の人口では6%。
+  出典：IMDi、Indikatorrapport 2025、「Økonomi og levekår（経済と生活水準）」の項 — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
+- 居住期間の統合への影響：ノルウェーでの居住期間が長いほど、ノルウェー語能力、高校修了、雇用、所得、住宅、市民社会への参加など、ほとんどの指標で良好な結果と関連している。
+  出典は同上（IMDi）。
+- 社会的結合に関する具体的指標（対人・制度への信頼、帰属感、被差別感）について、正確な数値と直接的なリンクを伴うデータ：執筆時点で公開データなし — SSBの調査「Levekårsundersøkelsen blant personer med innvandrerbakgrunn（移民を背景とする人々の生活水準調査）」（最新版をssb.noで確認する必要あり）で調査が必要。
+<ComingSoon label="社会的結合に関する具体的指標（対人信頼、帰属感、被差別感の数値）は今後追加予定です。SSBの生活水準調査の最新版を確認する必要があります。" />
+
+## 10. 近年の政治的動向
+
+- 永住許可取得条件の厳格化：2025年9月以降、永住許可の申請者は、語学講座の受講義務だけだった従来制度に代わり、ノルウェー語のA2レベルの口頭試験および市民知識試験に合格する必要がある。
+  出典：ノルウェー政府によるOECDへの報告書 — https://www.imdi.no/tall-og-fakta/rapporter/migration-and-integration-2024-2025/（参照：regjeringen.no：https://www.regjeringen.no/en/documents/migrasjon-og-integrering-20242025/id3146744/）
+- 再定住難民（overføringsflyktninger）の受け入れ枠の削減：2024年の1,000人分から2025年には500人分へ。
+  出典は同上。
+- ノルウェー国会（Storting）は、迅速に発動可能な追加的厳格化措置の提案を政府に準備するよう要請した。具体的には、永住許可要件の引き上げ、家族呼び寄せに対する収入条件の強化、国籍取得前の居住期間の延長など。
+  出典：ノルウェー国会、Dokument 8:94 S（2024-2025年度）— https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Representantforslag/2024-2025/dok8-202425-094s/?all=true
+- 政治的比較の指標：NGO「NOAS」は、今回の新たな厳格化以前から、ノルウェーの庇護政策をすでに欧州で最も厳格な政策の一つだと評している（検証済みの引用：「現実として、ノルウェーは既に欧州で最も厳格な運用の一つを行っている」）。ただし、NOASの当該記事はデンマークやスウェーデンへの追随を明示的には言及していない — 当ページの以前の版に記載されていたこの具体的な国名比較は、引用元によって裏付けられておらず、削除された。この一般的な比較評価はNGO（NOAS）によるものであり、政府系の出典ではない — 統計ではなく分析として扱うべき。
+  出典：NOAS — https://www.noas.no/norge-forer-allerede-en-av-europas-strengeste-praksiser-like-fullt-strammes-det-ytterligere-inn/
+- 公式の総括的参考文書：Meld. St. 1（2025-2026年度）、移民に関する方針を含む政府の予算演説 — https://www.regjeringen.no/en/documents/meld.-st.-1-20252026/id3123808/
+
+## 11. データの限界とバイアス
+
+<div class="callout-limits">
+<strong>⚠️ 限界</strong>
+SSBの定義：「innvandrer（移民）」とは、両親（および祖父母4人）すべてが外国出生である、本人も外国出生の者を指す。ノルウェーで生まれた移民の子は、別の統計カテゴリーを構成する。国際比較を行う際には、他国（例：デンマーク）が類似しているが完全には同一ではない定義を用いていることに留意する必要がある。
+
+人口構成：移民とその他の人口との雇用、所得、住宅、犯罪に関する粗い差異は、一部、年齢・性別構成の違い（一部の移民グループにおける若年男性の多さ）を反映している。SSBおよびIMDiは通常、補正済みの数値も公表しているが、すべての指標について系統的に行っているわけではない（例：本稿の住宅・教育に関する数値は出身グループ別の粗率として示されている）。
+
+「グループ」による集約：IMDiは出身国を「グループ1」（西欧、北米、オーストラリア、ニュージーランド）と「グループ2」（その他の国々。庇護・欧州外からの家族移住の大半を含む）に分類しているが、これは各グループ内の重要な多様性を覆い隠している。
+
+犯罪統計の網羅性：SSBのデータは、当局に把握された犯罪（siktede）のみを対象とし、未登録の不法滞在者や、公式な通報につながらなかった庇護希望者の案件は明示的に除外している — これは移民人口における不法・未正規化部分について、統計上の捕捉漏れバイアスを生じさせている。
+
+テーマ別のデータ充実度の不均衡：財政負担純額に関するデータ（4項）は2017年のSSB報告書（NOU 2017:2）に基づいており、現時点で確認できる独立した第二の方式による更新は存在しない。社会的結合の指標（9項）については、直接確認可能なリンクを伴う最新の数値が不足している。出身別の人口学的依存度（4.1項）、および出身別の将来人口比率推計（3.5項）も、公開された一次資料を確認できなかった。これらの不足は、推定値で補うのではなく、関連する各項で「公開データなし」として明示されている。
+
+明示的な方法論上の限界の出典：SSBは犯罪に関する自らの公表物の中で、「犯罪は若年男性においてより頻発する」こと、また補正後も残る差異が未説明であることを認めている — https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
+</div>

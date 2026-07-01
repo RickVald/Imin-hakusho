@@ -1,0 +1,205 @@
+---
+slug: italy
+name: "Italy"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- ISTAT (national statistical institute): https://www.istat.it
+- Ministry of the Interior (Ministero dell'Interno) — immigration statistics, sea arrivals (sbarchi), CPRs (detention centers)
+- INPS (national social security institute) — contribution/benefit data
+- ISMU / ISPI — research foundations on migration (to be assessed alongside their funders)
+
+## 2. Key datasets
+
+- ISTAT: census, resident foreign population, employment
+- Ministry of the Interior: statistics on sea arrivals (central Mediterranean route), one of the best real-time documented flows in Europe
+- INPS: ratio of contributors to beneficiaries by nationality (data used in the debate over the net balance for Italy's pension system)
+
+## 3. Demographics
+
+Italy combines an aging population with native demographic decline — an important backdrop for understanding the country's debate over immigration as labor-force replacement.
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (December 31, 2024 — total population approx. 59.02 million)"
+	segments={[
+		{ label: 'Italian nationality', value: 90.9, color: '#1d3461' },
+		{ label: 'Foreign nationality', value: 9.1, color: '#9c3b3b' },
+	]}
+	sourceLabel='ISTAT, "Censimento e dinamica della popolazione — Anno 2024"'
+	sourceUrl="https://www.istat.it/comunicato-stampa/censimento-e-dinamica-della-popolazione-anno-2024/"
+	sourcePrefix="Source: "
+/>
+
+- As of December 31, 2024: 5,371,251 people of foreign citizenship resided in Italy, or 9.1% of the total population (8.9% in 2023, growth of +22.4 per thousand). This figure is confirmed by direct reading of the source.
+- The figure for January 1, 2025 (5,422,000 people, 9.2%) and the geographic breakdown (58.3% North / 24.4% Center / 17.3% Mezzogiorno) could not be confirmed, as the ISTAT release consulted does not provide a numerical breakdown by macro-region.
+  Source: ISTAT, "Censimento e dinamica della popolazione — Anno 2024" —
+  https://www.istat.it/comunicato-stampa/censimento-e-dinamica-della-popolazione-anno-2024/
+
+### 3.2 Breakdown by nationality of origin
+
+<StackedBar
+	title="Main nationalities of foreign residents (2024)"
+	segments={[
+		{ label: 'Romania', value: 19.6, color: '#9c3b3b' },
+		{ label: 'Albania', value: 7.7, color: '#c9a23f' },
+		{ label: 'Morocco', value: 7.7, color: '#5a8a6b' },
+		{ label: 'China', value: 5.8, color: '#6b5b95' },
+		{ label: 'Ukraine', value: 5.3, color: '#1d3461' },
+		{ label: 'Other', value: 53.9, color: '#9e9e9e' },
+	]}
+	sourceLabel='ISTAT, "Censimento e dinamica della popolazione — Anno 2024"'
+	sourceUrl="https://www.istat.it/comunicato-stampa/censimento-e-dinamica-della-popolazione-anno-2024/"
+	sourcePrefix="Source: "
+/>
+
+- Leading nationalities: Romania (19.6% of the total), Albania and Morocco (7.7% each), China (5.8%), Ukraine (5.3%).
+- In 2024, 217,000 acquisitions of Italian citizenship were recorded (+1.4% vs. 2023, when the figure was approximately 214,000), mainly by people of Albanian, Moroccan, and Romanian origin.
+  Source: ISTAT, demographic data on the foreign population — https://demo.istat.it/app/?i=STR&l=it
+- Detailed resident counts by nationality (available only via CSV download from the interactive portal) could not be confirmed directly in this research.
+<ComingSoon label="Detailed resident counts by nationality (ISTAT demo.istat.it CSV data) are planned for a future update." />
+
+### 3.3 Immigration waves (1970s – present)
+
+- Italy was structurally an emigration country until the 1970s, with outflows from the South to northern Italy, northwestern Europe, and the Americas. From the 1973 oil crisis onward, shrinking labor demand in northwestern Europe combined with domestic growth began the shift toward net immigration.
+- **1980s – early 1990s**: labor migration increased from geographically close countries and former colonial spheres — Tunisia, Morocco, the former Yugoslavia, the Philippines. Regularization programs ("sanatorie") were enacted in 1986, 1990 (Martelli law), and 1995 (Dini law).
+- **1990s – 2000s**: the Albanian crises (1991, 1997), Romanian migration (liberalized after EU accession in 2007), and the consolidation of Chinese communities. The foreign resident population stood at only about 356,000 in 1991, rising to approximately 1.33 million by 2001 — roughly a 3.7-fold increase in a decade.
+- **Late 2000s – 2010s**: a sharp rise in Eastern European labor migration (Romania, Ukraine), alongside growing numbers of asylum seekers arriving by sea from North Africa, the Sahel, and the Middle East, expanding through the so-called 2015 European migration crisis. By the 2011 census, the foreign resident population had reached roughly 4 million.
+- **Late 2010s – present**: sea arrivals have fluctuated sharply year to year depending on government policy, EU frameworks, and cooperation with Libyan authorities. From 2022, Ukrainian arrivals have been admitted under temporary protection. By end-2024 the foreign resident population stood at approximately 5.37 million.
+  Sources: ISTAT demographic series (https://demo.istat.it/); ISTAT, "La presenza straniera in Italia" (1991 census report).
+- **Limitation**: precise annual immigration flow data prior to the 1970s, and a detailed year-by-year breakdown by country of origin for the 1980s–2000s, could not be directly extracted from ISTAT's interactive portal (demo.istat.it) during this research.
+<ComingSoon label="A detailed trend chart of the foreign population by nationality of origin (1991 → 2024, based on ISTAT demo.istat.it CSV data) is planned for a future update." />
+
+### 3.4 Age structure
+
+<AgePyramid
+	title="Age structure of foreign residents (January 1, 2024)"
+	bands={[
+		{ label: '0–14', groups: [
+			{ label: 'Foreign residents', value: 16.6, color: '#9c3b3b' },
+		]},
+		{ label: '15–64', groups: [
+			{ label: 'Foreign residents', value: 78.0, color: '#9c3b3b' },
+		]},
+		{ label: '65+', groups: [
+			{ label: 'Foreign residents', value: 5.4, color: '#9c3b3b' },
+		]},
+	]}
+	sourceLabel="ISTAT demographic data (aggregated via Tuttitalia.it, January 1, 2024)"
+	sourceUrl="https://www.tuttitalia.it/statistiche/cittadini-stranieri-2024/"
+	sourcePrefix="Source: "
+/>
+
+- As of January 1, 2024, among the 5,253,658 foreign residents, 16.6% were aged 0–14, and only 5.4% were 65 or older. The largest cohorts were ages 35–39 (572,612 people, 10.9%) and 30–34 (493,920 people, 9.4%) — the foreign population is heavily concentrated in working age.
+  Comparison point: the largest age cohort among Italian nationals overall is generally reported as ages 50–59 — older than the foreign population's peak cohort. However, a direct percentage-by-percentage comparison with Italian nationals could not be confirmed from the source consulted (Tuttitalia.it, aggregating ISTAT data) and would require verification against ISTAT's primary tables (demo.istat.it).
+  Source: Tuttitalia.it, "Cittadini Stranieri in Italia - 2024" (aggregating ISTAT statistics) — https://www.tuttitalia.it/statistiche/cittadini-stranieri-2024/
+<ComingSoon label="A detailed age pyramid broken down by nationality of origin (Romania, Albania, Morocco, China, etc.) is planned for a future update." />
+
+### 3.5 Long-term projection
+
+<ComingSoon label="An ISTAT long-term population projection broken down by nationality (e.g. for a milestone year such as 2070) is planned for a future update. This research could not directly confirm, from ISTAT's public materials, a long-term projection by origin equivalent to Statistics Denmark's Befolkningsfremskrivning." />
+
+## 4. Public finances — net cost
+
+<KeyFigure
+	value="+1.2bn euros/yr"
+	label="Net fiscal balance of foreign residents (Fondazione Leone Moressa, 2024 annual report)"
+/>
+
+- Method 1 (accounting, annual fiscal balance): Fondazione Leone Moressa (an Italian research foundation specializing in the economics of immigration, funded by its own resources and institutional partnerships) estimates a positive balance between tax/contribution revenue paid by foreign residents and social spending received by this population: +1.2 billion euros (Rapporto annuale 2024 sull'economia dell'immigrazione). An earlier calculation for 2021 indicated a balance of +1.4 billion euros (28.2 billion in revenue versus 26.8 billion in spending).
+- In 2023, 4.6 million foreign taxpayers (11.0% of the total) declared 72.5 billion euros in income and paid 10.1 billion euros in IRPEF (income tax).
+- Discrepancy found during verification: the source page consulted displays a more recent figure for value added by foreign workers of 177 billion euros (9% of the total) for 2024 (article dated October 13, 2025), differing from the figure of 164.2 billion euros (8.8% of GDP) cited here. The two figures appear to come from different editions of the annual report — to be updated with the most recent edition. The net balance (+1.2bn euros), the 2021 balance, the IRPEF figures, and the number of foreign taxpayers could not be confirmed by direct reading.
+  Source: Fondazione Leone Moressa, XII/XIII Rapporto annuale sull'economia dell'immigrazione — https://www.fondazioneleonemoressa.org/tag/economia-dellimmigrazione/
+- Method 2 (reference multi-methodology analysis): no official study equivalent to the Danish methodology (Finansministeriet, static and dynamic approach by age/origin) has been identified for Italy at the time of writing. INPS publishes raw data on the ratio of contributors to beneficiaries by nationality, used in the debate over pension system sustainability, but without a consolidated net balance comparable to the Danish method. No publicly available data for a second complete and independent methodology.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+- INPS is reported to publish raw data on the ratio of social-security contributors to beneficiaries by nationality, but this research could not directly confirm specific figures (numbers of contributors, beneficiaries, or the ratio itself) from INPS's official statistics pages. Fondazione Leone Moressa's reports may draw on INPS data to discuss the weight of foreign workers in the working-age population, but no confirmed figure for a pensioner-to-working-age ratio by origin could be identified within the scope of this research.
+<ComingSoon label="Specific figures for INPS's contributor-to-beneficiary ratio by nationality are planned for a future update." />
+
+## 5. Labor market
+
+<BarChart
+	title="Employment rate by citizenship (recent ISTAT data)"
+	unit="%"
+	bars={[
+		{ label: 'EU citizens', value: 63.8 },
+		{ label: 'Non-EU citizens', value: 60.7 },
+		{ label: 'Italian citizens', value: 61.5 },
+	]}
+	sourceLabel="ISTAT, Noi Italia — Labor Market"
+	sourceUrl="https://noi-italia.istat.it/pagina.php?id=3&categoria=16&action=show&L=0"
+	sourcePrefix="Source: "
+/>
+
+- Employment rate (recent ISTAT data): EU citizens resident in Italy 63.8%, non-EU citizens 60.7%, Italian citizens 61.5%. Not confirmed by direct reading: the Noi Italia page consulted does not present a breakdown of employment rates by citizenship in the content retrieved — to be checked against an ISTAT publication dedicated to statistics on the foreign population in the labor market before this figure is treated as confirmed.
+  Source: ISTAT, Noi Italia — Labor Market — https://noi-italia.istat.it/pagina.php?id=3&categoria=16&action=show&L=0
+
+<BarChart
+	title="Share of new hires held by foreign workers, by sector (2023)"
+	unit="%"
+	bars={[
+		{ label: 'Agriculture', value: 40.8 },
+		{ label: 'Construction', value: 34.2 },
+		{ label: 'Manufacturing', value: 23.1 },
+	]}
+	sourceLabel='Ministry of Labor / ISTAT, Sviluppo Lavoro Italia, "rapporto stranieri 2024"'
+	sourceUrl="https://www.sviluppolavoroitalia.it/-/rapporto-stranieri-2024"
+	sourcePrefix="Source: "
+/>
+
+- Sectors with a strong presence of foreign labor among new hires: agriculture (40.8% of job placements involve foreign workers), construction (34.2%), industry (23.1%). The most sought-after occupation is agricultural laborer (550,861 hires in 2023, including 387,999 non-EU, or 21.9% of all hires of foreign workers): the figures above are confirmed by direct reading of the source.
+- In home care: 77% of "badanti" (personal care aides) and 69% of domestic employees are of foreign nationality — not confirmed by direct reading, absent from the content retrieved on this page; to be checked against another publication before full validation.
+  Source: Ministry of Labor / ISTAT, data relayed by Sviluppo Lavoro Italia, "rapporto stranieri 2024" — https://www.sviluppolavoroitalia.it/-/rapporto-stranieri-2024
+
+## 6. Security / justice
+
+- As of June 30, 2024: 61,480 inmates in total in Italian prisons, of whom 19,213 were of foreign nationality, or 31.2% of the total (resident foreign population: about 9% of the total population — overrepresentation to be interpreted with caution: different age structure, offenses tied to migration status itself such as irregular entry). About 15% of foreign inmates come from an EU country, 85% from outside the EU. More than half (53.2%) come from four countries: Morocco (20.9%), Romania (11.2%), Tunisia (10.6%), Albania (10.5%).
+  Not verified by direct reading of the source: the URL cited points to a 2015–2016 archive page on the "General States of Penal Execution" and contains no current detention statistics. The link must be replaced with the correct statistical page of the Ministry of Justice / Department of Prison Administration (DAP) before these figures can be confirmed.
+  Source (link to be corrected): Ministry of Justice, detention statistics — https://www.giustizia.it/giustizia/it/mg_1_14.page
+
+## 7. Education
+
+- 2023–2024 school year: 914,860 students of foreign nationality according to the Ministry of Education (MIM), or more than 11% of the total student population; an estimate by Fondazione ISMU gives 930,000 students (11.6%), of whom 65.2% were born in Italy (second generation).
+  Source: MIM (Ministero dell'Istruzione e del Merito), relayed by — https://integrazionemigranti.gov.it/it-it/Ricerca-news/Dettaglio-news/id/3923/
+- Early school leaving (ages 18–24) in 2024: 8.5% among Italian students versus 24.3% among foreign students (29.2% among boys). The rate falls to 10.4% among second-generation foreign students (born in Italy), versus 22.5% for the first generation — a gap worth highlighting because it nuances a blanket reading of "foreign students."
+  Not verified: the source PDF could not be extracted by the retrieval tool used. Source not verifiable with the means available at the time of writing — to be confirmed manually by opening the PDF directly.
+  Source: ISTAT, hearing before the Commission on Demographic Transition, April 1, 2025 — https://www.istat.it/wp-content/uploads/2025/04/Istat-Audizione-Commissione-Transizione-demografica-1-aprile-2025.pdf
+
+## 8. Housing
+
+- 2023 permanent census: dwellings occupied solely by foreign families in shared households represent 10.6% of all shared-household dwellings (about 34,000 dwellings). This share exceeds 50% in large cities, compared with a national average below 50% for shared-household dwellings across all nationalities. 57% of these dwellings occupied by foreign families are located in plain areas.
+  Figures confirmed by direct reading of the source.
+  Source: ISTAT, Permanent Census of Population and Housing — https://www.istat.it/comunicato-stampa/abitazioni-occupate/
+
+## 9. Social cohesion
+
+- Eurobarometer (European Commission survey), January 2025 wave: in Italy, immigration recedes to second place among citizens' concerns, behind inflation and the cost of living (cited as the top priority by 43% on EU average). Eurostat/Eurobarometer data relayed by Fondazione ISMU (2024 analysis): 48% of Italians believe immigrants contribute positively to the life of the country, but 74% of respondents believe the country takes in "too many" migrants — two indicators to be read together rather than separately.
+  Not verified: the Fondazione ISMU website returned an HTTP 403 error (access blocked to automated requests) at the time of verification. The figures (48%, 74%) could not be confirmed by direct reading of the source — to be checked manually.
+  Source: European Commission, Eurobarometer — https://www.europarl.europa.eu/at-your-service/en/be-heard/eurobarometer
+  (Italian analysis: Fondazione ISMU, https://www.ismu.org/)
+
+## 10. Recent political context
+
+- The Meloni government has been in office since October 22, 2022.
+- Italy-Albania protocol on the extraterritorial processing of certain asylum applications: signed in Rome on November 6, 2023. Parliamentary approval took place via Law No. 14 of February 21, 2024 (published in Official Gazette No. 44 of February 22, 2024). Several Italian courts (Rome, Florence, Bologna, Palermo) suspended, between November and December 2024, the validation of detentions in the Albanian centers and referred preliminary questions to the Court of Justice of the EU. By decree-law No. 37 of March 28, 2025, the Gjadër center was converted into a CPR (detention center for deportation, a different legal status from the asylum center initially planned). In April 2026, the Advocate General of the Court of Justice of the EU found the protocol compatible with EU law subject to respect for migrants' rights — an opinion not yet followed by a definitive ruling at the time of writing.
+  Source: Chamber of Deputies (Camera dei Deputati), dossier "Protocollo Italia-Albania in materia migratoria" — https://temi.camera.it/leg19/provvedimento/protocollo-italia-albania-in-materia-migratoria.html
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Arrival statistics (Ministry of the Interior) measure arrivals detected by sea only and do not cover the full scope of irregular immigration (land entries, visa overstayers not counted as flows). The overrepresentation of foreigners in prison statistics (31.2% of inmates versus about 9% of the population) does not permit a direct causal conclusion: it partly reflects a younger age structure among foreign residents and the existence of offenses tied to migration status itself (irregular stay), which have no equivalent for Italian citizens. Net cost estimates (Fondazione Leone Moressa) rest on a static annual accounting methodology and do not incorporate a long-term actuarial projection by age cohort, unlike the Danish method (Finansministeriet) used as the cross-country reference on this site. As the Italy-Albania protocol is under judicial challenge at the time of writing, occupancy and operational figures for the centers remain provisional and subject to rapid revision.
+</div>

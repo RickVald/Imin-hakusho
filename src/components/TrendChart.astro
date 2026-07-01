@@ -1,0 +1,129 @@
+---
+interface Series {
+	label: string;
+	color?: string;
+	points: { year: number; value: number }[];
+}
+
+interface Props {
+	title: string;
+	unit?: string;
+	series: Series[];
+	sourceLabel: string;
+	sourceUrl: string;
+	sourcePrefix?: string;
+}
+
+const {
+	title,
+	unit = '',
+	series,
+	sourceLabel,
+	sourceUrl,
+	sourcePrefix = '出典：',
+} = Astro.props;
+
+const allYears = series.flatMap((s) => s.points.map((p) => p.year));
+const allValues = series.flatMap((s) => s.points.map((p) => p.value));
+const minYear = Math.min(...allYears);
+const maxYear = Math.max(...allYears);
+const minValue = Math.min(0, ...allValues);
+const maxValue = Math.max(...allValues) * 1.12;
+
+const width = 640;
+const height = 300;
+const padLeft = 40;
+const padBottom = 30;
+const padTop = 16;
+const padRight = 78;
+
+const plotW = width - padLeft - padRight;
+const plotH = height - padTop - padBottom;
+
+function x(year: number) {
+	if (maxYear === minYear) return padLeft;
+	return padLeft + ((year - minYear) / (maxYear - minYear)) * plotW;
+}
+function y(value: number) {
+	if (maxValue === minValue) return padTop + plotH;
+	return padTop + plotH - ((value - minValue) / (maxValue - minValue)) * plotH;
+}
+
+const defaultColors = ['#1d3461', '#9c3b3b', '#5a8a6b', '#c9a23f'];
+
+const yTicks = 4;
+const tickValues = Array.from({ length: yTicks + 1 }, (_, i) =>
+	Math.round(minValue + ((maxValue - minValue) * i) / yTicks)
+);
+
+const baselineY = y(minValue);
+---
+
+<figure class="chart chart--trend">
+	<figcaption class="chart__title">{title}</figcaption>
+	<svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={title}>
+		{tickValues.map((tv) => (
+			<g>
+				<line
+					x1={padLeft}
+					x2={width - padRight}
+					y1={y(tv)}
+					y2={y(tv)}
+					class="chart__gridline"
+				/>
+				<text x={padLeft - 8} y={y(tv) + 4} class="chart__axis-label" text-anchor="end">
+					{tv}{unit}
+				</text>
+			</g>
+		))}
+		{allYears
+			.filter((v, i, a) => a.indexOf(v) === i)
+			.map((yr) => (
+				<text x={x(yr)} y={height - padBottom + 18} class="chart__axis-label" text-anchor="middle">
+					{yr}
+				</text>
+			))}
+		{series.map((s, i) => {
+			const color = s.color ?? defaultColors[i % defaultColors.length];
+			const linePath = s.points
+				.map((p, idx) => `${idx === 0 ? 'M' : 'L'} ${x(p.year)} ${y(p.value)}`)
+				.join(' ');
+			const areaPath =
+				`M ${x(s.points[0].year)} ${baselineY} ` +
+				s.points.map((p) => `L ${x(p.year)} ${y(p.value)}`).join(' ') +
+				` L ${x(s.points[s.points.length - 1].year)} ${baselineY} Z`;
+			const last = s.points[s.points.length - 1];
+			return (
+				<g>
+					<path d={areaPath} class="chart__area" fill={color} stroke="none" />
+					<path d={linePath} fill="none" stroke={color} stroke-width="3" stroke-linecap="round" />
+					{s.points.map((p) => (
+						<circle cx={x(p.year)} cy={y(p.value)} r="4" fill={color} stroke="#fff" stroke-width="1.5" />
+					))}
+					<text
+						x={x(last.year) + 10}
+						y={y(last.value) + 4}
+						class="chart__point-label"
+						fill={color}
+					>
+						{last.value}{unit}
+					</text>
+				</g>
+			);
+		})}
+	</svg>
+	<ul class="chart__legend">
+		{series.map((s, i) => (
+			<li>
+				<span
+					class="chart__legend-swatch"
+					style={`background:${s.color ?? defaultColors[i % defaultColors.length]}`}
+				></span>
+				{s.label}
+			</li>
+		))}
+	</ul>
+	<figcaption class="chart__source">
+		{sourcePrefix}<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</figcaption>
+</figure>

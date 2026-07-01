@@ -1,0 +1,124 @@
+---
+interface Scenario {
+	label: string;
+	color: string;
+	value: string;
+	valueLabel: string;
+	bullets: string[];
+}
+
+interface Props {
+	title: string;
+	scenarios: Scenario[];
+	sourceLabel: string;
+	sourceUrl: string;
+	note?: string;
+}
+
+const { title, scenarios, sourceLabel, sourceUrl, note } = Astro.props;
+---
+
+<div class="scenario-compare">
+	<p class="scenario-compare__title">{title}</p>
+	<div class="scenario-compare__cards">
+		{scenarios.map((scenario) => (
+			<div class="scenario-compare__card" style={`--border-color:${scenario.color};--accent-color:${scenario.color}`}>
+				<p class="scenario-compare__label">{scenario.label}</p>
+				<p class="scenario-compare__value">{scenario.value}</p>
+				<p class="scenario-compare__value-label">{scenario.valueLabel}</p>
+				<ul class="scenario-compare__bullets">
+					{scenario.bullets.map((bullet) => (
+						<li>{bullet}</li>
+					))}
+				</ul>
+			</div>
+		))}
+	</div>
+	{note && <p class="scenario-compare__note">{note}</p>}
+	<p class="scenario-compare__source">
+		出典：<a href={sourceUrl} target="_blank" rel="noopener noreferrer">{sourceLabel}</a>
+	</p>
+</div>
+
+<style>
+	.scenario-compare {
+		margin: 1.5rem 0;
+	}
+
+	.scenario-compare__title {
+		font-weight: 600;
+		margin-bottom: 1rem;
+		color: var(--color-ink);
+	}
+
+	.scenario-compare__cards {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.scenario-compare__card {
+		flex: 1 1 260px;
+		background: var(--color-surface-raised);
+		border-top: 4px solid var(--border-color);
+		border-radius: 6px;
+		padding: 1.25rem;
+	}
+
+	.scenario-compare__label {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: var(--color-ink-soft);
+		margin-bottom: 0.75rem;
+	}
+
+	.scenario-compare__value {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--accent-color);
+		line-height: 1.1;
+		margin-bottom: 0.25rem;
+	}
+
+	.scenario-compare__value-label {
+		font-size: 0.8rem;
+		color: var(--color-ink-soft);
+		margin-bottom: 1rem;
+	}
+
+	.scenario-compare__bullets {
+		list-style: disc;
+		padding-left: 1.2rem;
+		margin: 0;
+	}
+
+	.scenario-compare__bullets li {
+		font-size: 0.875rem;
+		color: var(--color-ink-soft);
+		margin-bottom: 0.35rem;
+	}
+
+	.scenario-compare__note {
+		font-style: italic;
+		font-size: 0.8rem;
+		color: var(--color-muted, var(--color-ink-soft));
+		margin-top: 0.75rem;
+	}
+
+	.scenario-compare__source {
+		font-size: 0.75rem;
+		color: var(--color-ink-soft);
+		margin-top: 0.5rem;
+	}
+
+	.scenario-compare__source a {
+		color: inherit;
+		text-decoration: underline;
+	}
+
+	@media (max-width: 640px) {
+		.scenario-compare__cards {
+			flex-direction: column;
+		}
+	}
+</style>

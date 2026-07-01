@@ -1,0 +1,133 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StatsBanner from '../components/StatsBanner.astro';
+import { flagUrl, regionColor } from '../data/flags';
+
+const countries = (await getCollection('countriesJa')).sort((a, b) =>
+	a.data.name.localeCompare(b.data.name, 'ja')
+);
+
+const stats = [
+	{ value: '20', label: '対象国・地域' },
+	{ value: '14', label: '財政コスト算定手法を比較した国' },
+	{ value: '−160億DKK', label: 'デンマーク：移民の公的財政への純負担（年間）' },
+	{ value: '3カ国', label: '近年デモ・住宅危機を経て移民政策を転換（加・豪・NZ）' },
+];
+---
+
+<BaseLayout title="移民白書 — 西欧20カ国の移民統計データベース" lang="ja" altHref="/en/">
+	<div class="hero">
+		<h1>移民観察</h1>
+		<p>西側諸国における近年の移民が財政・労働市場・治安・教育・住宅・社会的結束に与える影響を、公的機関の一次資料に基づき国別に紹介します。</p>
+	</div>
+	<StatsBanner stats={stats} />
+
+	<section class="themes-section">
+		<h2 class="themes-title">テーマ別比較</h2>
+		<p class="themes-subtitle">20カ国を同一指標で横断比較 — ウェブ上に他に存在しないデータ集約ページ</p>
+		<div class="themes-grid">
+			<a href="/themes/cout-fiscal/" class="theme-card">
+				<div class="theme-icon">💴</div>
+				<div class="theme-content">
+					<h3>移民の財政コスト</h3>
+					<p>財務省・中央銀行・OECDの公式データで20カ国を比較。デンマーク・スウェーデン・ノルウェー・ドイツ・米国など</p>
+				</div>
+			</a>
+			<a href="/themes/marche-travail/" class="theme-card">
+				<div class="theme-icon">📊</div>
+				<div class="theme-content">
+					<h3>雇用率格差</h3>
+					<p>移民と現地生まれの雇用率・失業率の差を各国統計局の一次資料で比較。20カ国の公式統計</p>
+				</div>
+			</a>
+			<a href="/themes/education/" class="theme-card">
+				<div class="theme-icon">📚</div>
+				<div class="theme-content">
+					<h3>学力格差（PISA）</h3>
+					<p>移民の子どもと現地の子どもの学力差をPISA 2022・各国教育省データで比較</p>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<ul class="country-grid">
+		{countries.map((country) => (
+			<li>
+				<a
+					href={`/countries/${country.data.slug}/`}
+					style={`--accent:${regionColor[country.data.slug] ?? '#1d3461'}`}
+				>
+					<img class="country-grid__flag" src={flagUrl(country.data.slug)} alt="" width="32" height="24" loading="lazy" />
+					<span class="country-grid__name">{country.data.name}</span>
+				</a>
+			</li>
+		))}
+	</ul>
+
+<style>
+.themes-section {
+	max-width: 1100px;
+	margin: 2.5rem auto 2rem;
+	padding: 0 1.5rem;
+}
+
+.themes-title {
+	font-size: 1.4rem;
+	font-weight: 700;
+	margin-bottom: 0.4rem;
+}
+
+.themes-subtitle {
+	font-size: 0.9rem;
+	color: var(--color-muted);
+	margin-bottom: 1.5rem;
+}
+
+.themes-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1rem;
+}
+
+.theme-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	background: var(--color-surface-raised);
+	border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+	border-radius: 10px;
+	padding: 1.25rem 1.5rem;
+	text-decoration: none;
+	color: var(--color-text);
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+.theme-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+	border-color: var(--color-accent);
+}
+
+.theme-icon {
+	font-size: 1.75rem;
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.theme-content h3 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 0.35rem;
+	color: var(--color-accent);
+}
+
+.theme-content p {
+	font-size: 0.85rem;
+	color: var(--color-muted);
+	line-height: 1.5;
+	margin: 0;
+}
+</style>
+
+</BaseLayout>

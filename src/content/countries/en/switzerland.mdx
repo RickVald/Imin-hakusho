@@ -1,0 +1,257 @@
+---
+slug: switzerland
+name: "Switzerland"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+
+## 1. Official institutions
+
+- OFS/BFS (Federal Statistical Office, Office fédéral de la statistique) — national statistical institute: https://www.bfs.admin.ch
+- SEM (State Secretariat for Migration, Secrétariat d'État aux migrations) — asylum and residence permit statistics
+- KOF (Swiss Economic Institute, ETH Zurich) — economic analyses
+
+## 2. Key datasets
+
+- OFS: resident foreign population by nationality/permit, employment
+- SEM: detailed asylum statistics (monthly reports), one of the most granular series in Europe on residence permits by category (B, C, F, N, etc.)
+- OFS also publishes a police crime statistic (SPC) with a breakdown by nationality — data regularly cited in Swiss public debate, to be presented with the official methodological caveats (demographic structure, residence status)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (December 31, 2025 — total population 9,124,300)"
+	segments={[
+		{ label: 'Swiss nationality', value: 72.3, color: '#1d3461' },
+		{ label: 'Foreign nationality (permanent residents)', value: 27.7, color: '#9c3b3b' },
+	]}
+	sourceLabel="OFS, population trend press release (2025 provisional figures)"
+	sourceUrl="https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z"
+	sourcePrefix="Source: "
+/>
+
+- As of December 31, 2025, Switzerland's permanent resident population stood at 9,124,300 (+73,300 year-on-year, +0.8%). Of these, approximately 2,526,642 are permanent foreign residents, around 27.7% of the total population.
+  Trend: the share of foreign nationals rose from 21.7% (1.624 million) in 2003 and 20.7% (1,554,527) in 2007 to approximately 28% by 2025 — Switzerland has one of the highest shares of resident foreign population in Europe.
+  Source: OFS, population trend press release (published April 1, 2026, 2025 provisional figures) — https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z
+- The majority of permanent foreign residents in Switzerland are EU/EFTA citizens, mainly Italian, German, Portuguese, and French — an important methodological point to keep clearly distinct from extra-European immigration and asylum.
+  Source: OFS, "Composition of the foreign population" (Composition de la population étrangère):
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere/composition.html
+- VERIFIED BY DIRECT READING (2026-06-24) — using a broader measure including naturalized citizens and second generation ("migration status"): in 2024, 41% of the permanent resident population aged 15 or older has a migration background (3,086,000 people), of whom more than a third (1,140,000 people) hold Swiss nationality — i.e., already naturalized. Of the population with a migration background, about four-fifths (2,456,000) are first generation, and the remaining one-fifth (630,000) are Switzerland-born second generation. Figures confirmed exactly by the OFS source.
+  Source: OFS, "Population by migration status" (Population selon le statut migratoire):
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/selon-statut-migratoire.html
+- Asylum (State Secretariat for Migration, SEM): 25,781 asylum applications filed in 2025, down about 7% from 2024. Main applicant nationalities: Afghanistan (6,207 applications, -28.1% year-on-year), Eritrea (3,415 applications, +63.2% year-on-year). Verification note: the SEM page consulted on 2026-06-24 is a navigation/index page that did not display these figures directly at the time of consultation (it points to current statistics as of 2026-05-31) — not positively confirmed by direct reading, to be rechecked via the downloadable SEM tables.
+  Source: SEM, "Asylum statistics" (Statistique en matière d'asile):
+  https://www.sem.admin.ch/sem/fr/home/publiservice/statistik/asylstatistik.html
+
+### 3.2 Origin breakdown (EU/EFTA vs. extra-European)
+
+<StackedBar
+	title="Foreign population, top 5 nationalities (illustrative, approximate figures)"
+	segments={[
+		{ label: 'Italy', value: 348306, color: '#1d3461' },
+		{ label: 'Germany', value: 334111, color: '#9c3b3b' },
+		{ label: 'Portugal', value: 264355, color: '#c9a23f' },
+		{ label: 'France', value: 175757, color: '#5a8a6b' },
+		{ label: 'Kosovo', value: 117350, color: '#6b5b95' },
+	]}
+	sourceLabel="OFS / French Wikipedia, 'Démographie de la Suisse' (aggregated from OFS data)"
+	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+	sourcePrefix="Source: "
+/>
+
+- The top 5 nationalities are Italy (348,306), Germany (334,111), Portugal (264,355), France (175,757), and Kosovo (117,350) — the top four are all EU/EFTA member states, while Kosovo alone is extra-European (former Yugoslavia).
+  Note: this figure is an illustrative aggregate based on a French Wikipedia table compiling OFS primary data; the final version should be cross-checked against OFS's own "Composition de la population étrangère" statistical table.
+- Breakdown by type of residence permit (Swiss permit system, among the most detailed in Europe): permit B/L (residence, +2.9% between Q3 2024 and Q3 2025), permit C (settlement, +0.7%), permit G (cross-border commuters, +1.5%, about 410,000 people in Q3 2025, i.e., +20% over five years), permit L (short-term, -5.8%). Permit F corresponds to temporary admission and permit N to asylum seekers in proceedings — categories distinct from EU/EFTA labor immigration.
+  Source: OFS/SEM, labor force and permit statistics:
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+<ComingSoon label="A precise 100%-share StackedBar distinguishing EU/EFTA-origin residents from extra-European-origin residents (asylum, family reunification, etc.), based on OFS's primary 'Composition de la population étrangère' table, is planned for a future update. The nationality figures in this section rely on a secondary aggregate and require final verification." />
+
+### 3.3 Immigration waves (1950s – present)
+
+- **1951–1970**: Switzerland's largest immigration wave to date. Driven by rapid economic growth, the number of foreigners holding annual or settlement permits reached 2.68 million. Between 1950 and 1970, the number of Italians working in Switzerland quadrupled to 583,855. This wave was initially Italian, later Spanish, and eventually Portuguese.
+  Source: RTS (Swiss public broadcaster), "Historique des migrations en Suisse" — https://www.rts.ch/decouverte/monde-et-societe/monde/migrations/9369277-historique-des-migrations-en-suisse.html
+- **Introduced in 1931, with an annual cantonal quota added in July 1963**: the "seasonal worker" status (saisonnier, "permit A"), limiting stays to the duration of the work season (max. 9 months), with reduced social benefits, no right to change employer or residence, and no family reunification.
+  Source: Historical Dictionary of Switzerland (HLS-DHS-DSS), "Saisonniers" — https://hls-dhs-dss.ch/textes/f/F25738.php
+- **2002**: the seasonal worker status was abolished following the signing of the Switzerland–EU Agreement on the Free Movement of Persons. Since then, EU/EFTA nationals do not need a permit for engagements of 90 days or less.
+  Source: RTS (link above) and "Saisonnier, un statut qui renaît de ses cendres" — https://swissinfo.ch/fre/politique/permis-de-travail_saisonnier--un-statut-qui-rena%C3%AEt-de-ses-cendres/37740086
+- **1990s**: wave of refugees from the conflicts in the former Yugoslavia — a period during which arrivals from Southeast Europe, including Kosovo, became established, which is part of the background to Kosovo's continued presence among Switzerland's top foreign nationalities today (see section 3.2).
+- **2010s – present**: rise in asylum applications linked to the Syrian civil war and the situation in Afghanistan. The main origin countries of the 25,781 asylum applications filed in 2025 are Afghanistan and Eritrea (see section 3.1).
+
+<DecadeTimeline
+	title="Total population of Switzerland over time (1861 → 2024, milestone years)"
+	unit=""
+	decades={[
+		{ label: '1861', value: 2500000 },
+		{ label: '1891', value: 3000000 },
+		{ label: '1926', value: 4000000 },
+		{ label: '1955', value: 5000000 },
+		{ label: '1967', value: 6000000 },
+		{ label: '1994', value: 7000000 },
+		{ label: '2012', value: 8000000 },
+		{ label: '2024', value: 9050000 },
+	]}
+	sourceLabel="French Wikipedia, 'Démographie de la Suisse' (milestone-year data based on OFS population statistics)"
+	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+	sourcePrefix="Source: "
+/>
+
+- The time needed to add one million inhabitants has been shrinking: from 5 to 6 million (1955→1967, 12 years), from 7 to 8 million (1994→2012, 18 years), and from 8 to 9 million (2012→2024, 12 years). Net immigration has been the main driver of population growth since 1945 (see section 4 and the Avenir Suisse analysis).
+- **Limitation**: as in the Austria case, precise decade-by-decade foreign-population share figures for the 1950s–1970s could not be extracted in text form from a primary OFS statistical table during this research.
+<ComingSoon label="A complete decade-by-decade time series of the foreign-population share from the 1950s to 2025 (OFS historical statistics tables) is planned for a future update." />
+
+### 3.4 Age structure (by migration status)
+
+<KeyFigure
+	value="32.9"
+	label="Old-age dependency ratio: people 65+ per 100 people aged 20–64 (2025)"
+/>
+
+- According to OFS, in 2025 the population aged 65 and over exceeded the population under 20 for the first time (1,811,000 aged 65+ versus 1,802,000 under 20, provisional figures). The old-age dependency ratio (population 65+ relative to population 20–64, ×100) reached 32.9 in 2025, up from 25.7 in 2005 and 29.0 in 2015.
+  Source: OFS, "Population trend (2025 provisional figures)" press release (published April 1, 2026) — https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z
+- A full age-structure breakdown by migration status (non-migrant / first generation / second generation) appears to exist in OFS's "statut migratoire" data tables, but could not be extracted in precise text form during this research. OFS notes that the age structure of children under 15 born outside Switzerland is "inverted-pyramid" shaped (narrow at the youngest ages, i.e. dominated by children who immigrated in early childhood), whereas children born in Switzerland show a "rectangular" age structure — a notable descriptive finding showing that age patterns differ structurally by origin.
+  Source: OFS, "Age": https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution/age.html
+<ComingSoon label="A complete AgePyramid showing the age-band breakdown (0–17, 18–39, 40–64, 65+) by migration status (non-migrant / first generation / second generation) is planned for a future update, pending direct verification of OFS's 'Statut migratoire selon diverses caractéristiques' data tables." />
+
+### 3.5 Long-term projection (to 2055)
+
+<TrendChart
+	title="Total population projection (2024 → 2055, three scenarios)"
+	unit=""
+	series={[
+		{ label: 'Reference scenario', color: '#1d3461', points: [{ year: 2024, value: 9050000 }, { year: 2055, value: 10500000 }] },
+		{ label: 'High scenario', color: '#9c3b3b', points: [{ year: 2024, value: 9050000 }, { year: 2055, value: 11700000 }] },
+		{ label: 'Low scenario', color: '#5a8a6b', points: [{ year: 2024, value: 9050000 }, { year: 2055, value: 9300000 }] },
+	]}
+	sourceLabel="OFS, 'Scenarios for the population of Switzerland and the cantons 2025–2055'"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/evolution-future/scenarios-suisse.html"
+	sourcePrefix="Source: "
+/>
+
+<KeyFigure
+	value="10.5 million"
+	label="OFS reference-scenario projection for 2055 (versus 9.05 million at end of 2024)"
+/>
+
+- Under OFS's reference scenario, Switzerland's total population is projected to grow from 9.05 million at the end of 2024 to 10.5 million in 2055, with OFS itself stating that immigration is the main driver of this growth. The high scenario projects 11.7 million; the low scenario, 9.3 million.
+  Source: OFS, "Les scénarios de l'évolution de la population de la Suisse et des cantons" press release — https://www.bfs.admin.ch/bfsstatic/dam/assets/14963222/master
+- From 2035 onward, natural population growth (births minus deaths) is projected to turn negative, meaning all subsequent population growth will come from net migration alone — and OFS expects migration trends to become increasingly dependent on economic conditions as a result.
+- Continued aging: the population aged 65+ is projected to grow by approximately 50% between 2024 and 2055, with the old-age ratio rising from 38 (per 100 people aged 20–64, on a slightly different basis than the figure above) in 2025 to over 50 by 2055.
+  Source: OFS, "Scénarios de l'évolution démographique de la Suisse 2025 à 2055" — https://bevoelkerungsszenarien.bfs.admin.ch/fr
+- Important caveat: as with Denmark's DST and Austria's Statistik Austria, OFS's population projection scenarios do not, in the sources consulted during this research, provide an official year-by-year projection of the population share by origin (Swiss nationality vs. foreign nationality).
+<ComingSoon label="Projected future population shares by origin (Swiss nationality vs. foreign nationality) are planned for a future update." />
+
+## 4. Public finances — net cost
+
+- No Swiss study identified at this stage reaches the level of longitudinal detail of the Danish Ministry of Finance (Finansministeriet) methodology (annual series by age/origin/length of stay). Available analyses are more ad hoc and macroeconomic or sectoral in nature.
+- Methodology 1 — an Ecoplan study (a private economic consultancy) commissioned by the State Secretariat for Economic Affairs (SECO, a federal public body) on the links between regional economic promotion and labor migration: regional economic promotion generates approximately 4% additional labor migration, three-quarters of which is in rural or structurally weak regions; the study does not conclude that supported companies recruit more abroad than other companies.
+  Source (sponsor: SECO):
+  https://www.seco.admin.ch (Ecoplan study "Standortförderung und Zuwanderung" — to be found via the SECO publications portal; direct PDF link not located with certainty at the time of writing, to be verified before final publication).
+- Methodology 2 — a special SECO economic briefing note (2015) on "Immigration and economic growth" (Immigration et croissance économique), analyzing the effect of net immigration on GDP and GDP per capita in Switzerland since the introduction of EU free movement of persons.
+  Source (sponsor: SECO, federal public body):
+  https://www.seco.admin.ch/dam/seco/fr/dokumente/Publikationen_Dienstleistungen/Publikationen_Formulare/Wirtschaftslage/Konjunkturtendenzen/Spezialthema/Immigration%20und%20Wirtschaftwachstum.pdf.download.pdf
+- A study reportedly commissioned by the federal administration (cited in the economic press, exact reference and direct link not confirmed at the time of writing) is said to conclude that a sustained limitation of immigration would worsen Switzerland's structural problems (population aging, labor shortages, rising health costs) — data to be treated with caution until the exact primary source is verified and its sponsor precisely identified.
+- The liberal think tank Avenir Suisse has published analyses on demographic growth linked to net migration (about four-fifths of Swiss demographic growth attributable to the net migration balance), but no net-cost-per-capita study comparable to the Danish methodology has been located on its site at this stage. Sponsor note: Avenir Suisse is funded by Swiss companies and employer organizations (a funding bias to be mentioned). VERIFIED BY DIRECT READING (2026-06-24): the "four-fifths" figure is confirmed exactly by the source (original text: "about four fifths of that increase is attributable to the international net migration balance").
+  Source: Avenir Suisse, "Switzerland Keeps Growing": https://www.avenir-suisse.ch/en/blog-switzerland-keeps-growing/
+- Not publicly available: no official OFS/SECO calculation of the net cost per immigrant (versus native), broken down by permit category, has been located with a verifiable direct link.
+
+### 4.1 Pension system / old-age dependency ratio
+
+<BarChart
+	title="Old-age dependency ratio (population 65+ per 100 people aged 20–64) over time"
+	unit=""
+	bars={[
+		{ label: '2005', value: 25.7 },
+		{ label: '2015', value: 29.0 },
+		{ label: '2025', value: 32.9 },
+	]}
+	sourceLabel="OFS, 'Population trend (2025 provisional figures)' press release"
+	sourceUrl="https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z"
+	sourcePrefix="Source: "
+/>
+
+- The old-age dependency ratio (population 65+ relative to population aged 20–64, ×100) has risen continuously, from 25.7 in 2005 to 29.0 in 2015 and 32.9 in 2025. Fifty years ago Switzerland had one pensioner for every five working-age people; today the ratio is one in three, and OFS projections suggest it could approach one in two by 2055.
+  Source: OFS, "Population trend (2025 provisional figures)" press release (published April 1, 2026) — https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z; OFS, "Scénarios de l'évolution démographique de la Suisse 2025 à 2055" — https://bevoelkerungsszenarien.bfs.admin.ch/fr
+- Important caveat: this old-age dependency ratio is a national aggregate, not broken down by nationality or migration background. As with the Danish case (section 4.1), no official data broken down by origin (Swiss nationality vs. foreign nationality, first vs. second generation) on pension-system dependency or net fiscal contribution rates could be confirmed during this research.
+<ComingSoon label="A pension-system dependency ratio, or a share of net positive fiscal contributors, broken down by origin (Swiss nationality vs. foreign nationality) is planned for a future update." />
+
+## 5. Labor market
+
+<TrendChart
+	title="Year-on-year change in employment (Q2 2025)"
+	unit="%"
+	series={[
+		{ label: 'Foreign workers', color: '#9c3b3b', points: [{ year: 2024, value: 0 }, { year: 2025, value: 2.3 }] },
+		{ label: 'Swiss workers', color: '#1d3461', points: [{ year: 2024, value: 0 }, { year: 2025, value: -0.3 }] },
+	]}
+	sourceLabel="OFS, 'Labor market balance' (Bilan du marché du travail)"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration.html"
+	sourcePrefix="Source: "
+/>
+
+- VERIFIED BY DIRECT READING (2026-06-24) — in Q2 2025, employed foreign workers increased by 2.3% year-on-year, reaching nearly 1.87 million people, while employed Swiss workers decreased by 0.3% over the same period. Figures confirmed exactly by the OFS source.
+  Source: OFS, "Labor market balance" (Bilan du marché du travail) / quarterly employment-unemployment releases:
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/travail-remuneration.html
+- ILO-definition unemployment rate, Q2 2025: 4.6% national average (237,000 people unemployed), but 7.7% for the foreign population versus 3.3% for Swiss residents — a gap of more than double, a clear comparison benchmark between native and foreign populations. Figures confirmed exactly by the OFS source.
+  Source: OFS (link above).
+- Trend by permit type (between Q3 2024 and Q3 2025): +2.9% for permit B/L holders (residence), +1.5% for cross-border commuters (permit G, about 410,000 people), +0.7% for permit C holders (settlement); a decrease of -5.8% for permit L holders (short-term) — illustrating strong heterogeneity by permit category. Verification note: the source OFS page was consulted on 2026-06-24 but the content was truncated by the retrieval tool before these precise figures — not positively confirmed, to be rechecked.
+  Source: OFS/SEM, residence permit statistics:
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+
+## 6. Security / justice
+
+- Police crime statistics (SPC, OFS): breakdown by nationality and residence status available — one of the most detailed datasets in Europe on this point, to be used with methodological rigor.
+- VERIFIED BY DIRECT READING (2026-06-24) — in 2024, 91,929 people were investigated (suspects) for offenses under the Criminal Code, up 1,526 people from 2023 (+1.7%). Breakdown by residence status: 42.3% Swiss nationals, 31.4% foreigners holding a settlement or residence permit (B/C), 6.7% asylum seekers or persons admitted on a provisional/protected basis (permits N/F). Figures confirmed exactly by the OFS source (the trends expressed in percentage points could not be cross-checked in the excerpt consulted).
+  Source: OFS, "Police crime statistics (SPC) — 2024 annual report":
+  https://www.bfs.admin.ch/asset/en/34847184
+- 563,633 criminal offenses were recorded by police in 2024, up 7.9% year-on-year — confirmed by the source. The detail of "+35% cybercrime" could not be cross-checked in the excerpt consulted.
+  Source: OFS (link above).
+- Official OFS methodological caveat: the SPC breaks down data by residence status precisely to distinguish settled residents (permit C), temporary residents (permit B), asylum seekers (permit N), and persons under protection/provisional admission (permit F) — aggregating these categories under the generic term "foreigners" should be avoided, as it conflates very different demographic and migration profiles (e.g., a long-established EU/EFTA resident does not have the same profile as a recent asylum seeker).
+
+## 7. Education
+
+- According to the international PISA survey (OECD), as relayed by OFS, second-generation immigrant-background students in Switzerland achieve results broadly comparable to those of students without a migration background. However, Switzerland stands out for a particularly pronounced performance gap between disadvantaged students and students from privileged backgrounds — among the largest of PISA-participating countries.
+  Source: OECD, PISA survey (data relayed by the specialized Swiss press; direct link to the OECD's 2022/2023 PISA report to be prioritized for the final version: https://www.oecd.org/pisa/; the Swiss national report is also available via the Swiss Coordination Centre for Research in Education (CSRE/SKBF), "Education in Switzerland — 2026 Report" (L'éducation en Suisse — Rapport 2026): https://www.skbf-csre.ch/fileadmin/files/pdf/bildungsberichte/2026/BiBer_2026_FR.pdf
+- Not publicly available with a precise, verified figure at this stage: the exact share of students of foreign nationality or with a migration background by school level (primary/secondary) for the 2024/2025 school year, broken down nationally by OFS, could not be confirmed with a direct link to a precise statistical table in the time available — to be completed via OFS, "Education and science" (Éducation et science):
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/education-science.html
+
+## 8. Housing
+
+- Strong cantonal heterogeneity in the share of foreign population: Geneva (37.6%) is the canton with the highest proportion, followed by Ticino, Basel-Stadt, and Vaud (all above 25%) — to be compared with the national average (27.7% overall but variable depending on the definition used, see section 3).
+  Source: OFS, cantonal resident population data:
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
+- VERIFIED BY DIRECT READING (2026-06-24) — the homeownership rate in Switzerland remains generally low by international comparison (35.8% nationally in 2023, with cantonal variation, e.g., 41.7% in Fribourg), with the majority of Swiss households being renters. Figures confirmed exactly by the OFS source.
+  Source: OFS, "Tenants / owners" (Locataires / propriétaires):
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/construction-logement/logements/conditions-habitation/locataires-proprietaires.html
+- Not publicly available in a directly comparable form: no consolidated and verified national statistic distinguishing the homeownership rate or concentration in social housing between the foreign population and the Swiss population could be located with a direct link in the time available — to be completed later.
+
+## 9. Social cohesion
+
+- OFS publishes a system of migrant integration indicators, systematically comparing, over several years, the socioeconomic situation, social cohesion, and quality of life of the migrant population (first and second generation) with that of the non-migrant population, tracking trends over a ten-year period (publication dated July 24, 2025).
+  Source: OFS, "Integration of migrants in Switzerland: issues and developments in recent years" (L'intégration des migrants en Suisse : enjeux et évolutions ces dernières années):
+  https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration.html
+- Not publicly available with precise, verified figures at this stage: the detailed results (exact rates) of this integration-indicators survey on the native population's perception of social cohesion could not be extracted with certainty in the time available — to be completed by directly consulting the OFS publication of July 24, 2025 mentioned above.
+- Immigration is among the topics of concern cited by the Swiss population in general opinion surveys from 2025, but without a dedicated official barometer sourced with a primary link having been confirmed for this specific point — not publicly available in a form sufficiently rigorous for citation here.
+
+## 10. Recent political context
+
+- Swiss direct democracy: several popular votes on immigration (e.g., the 2014 "against mass immigration" initiative, votes on asylum) — an institutional specificity of Switzerland worth explaining to a Japanese audience, which has no equivalent mechanism.
+- The 2002 entry into force of the Agreement on the Free Movement of Persons came with a structural policy shift — the abolition of the seasonal worker status (see section 3.3) — illustrating how bilateral agreements with the EU shape the broad framework of Swiss immigration policy, a distinctive institutional constraint.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+Switzerland's "foreign population" category aggregates EU/EFTA citizens (free movement, mostly long-established residents from high-income countries) and extra-European immigrants/asylum seekers — two groups with very different socioeconomic profiles. Any analysis should clearly distinguish between these two groups — a frequent conflation to be avoided.
+Both the old-age dependency ratio (section 4.1) and the crime statistics (section 6) are national aggregates that do not control for age-structure differences by nationality/migration background (the foreign population is generally younger than the Swiss-national population) — a point requiring caution in interpretation.
+</div>

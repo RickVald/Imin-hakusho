@@ -1,0 +1,217 @@
+---
+slug: australia
+name: "Australia"
+status:
+  sourcesCollected: true
+  figuresVerified: true
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+import DecadeTimeline from '../../../components/DecadeTimeline.astro';
+
+## 1. Official institutions
+
+- Australian Bureau of Statistics (ABS): https://www.abs.gov.au
+- Department of Home Affairs — visa statistics, net overseas migration, humanitarian program
+- Productivity Commission — independent analyses of the economic impact of immigration (regular reports, an academic reference of quality comparable to the UK's OBR, the Office for Budget Responsibility)
+
+## 2. Key datasets
+
+- ABS: Net Overseas Migration (NOM), census data by country of birth
+- Department of Home Affairs: statistics by visa category (skilled work, students, humanitarian) — Australia's points-based system allows fine-grained disaggregation by reason for admission
+- Productivity Commission: reports on economic and fiscal impact
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition (30 June 2025 — total population 27.6 million)"
+	segments={[
+		{ label: 'Australian-born', value: 68.0, color: '#1d3461' },
+		{ label: 'Overseas-born', value: 32.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="ABS, 'Australia's Population by Country of Birth' (June 2025)"
+	sourceUrl="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release"
+	sourcePrefix="Source: "
+/>
+
+- The overseas-born share of the population reached 32.0% of the total population as of 30 June 2025 (8.8 million out of a total population of 27.6 million).
+- Source: https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release
+
+### 3.2 Country/region of origin breakdown (top 4)
+
+<StackedBar
+	title="Top 4 countries of birth among the overseas-born population (June 2025)"
+	segments={[
+		{ label: 'India', value: 11.0, color: '#c9a23f' },
+		{ label: 'England', value: 11.0, color: '#1d3461' },
+		{ label: 'China', value: 8.3, color: '#9c3b3b' },
+		{ label: 'New Zealand', value: 7.2, color: '#5a8a6b' },
+		{ label: 'All other countries', value: 62.5, color: '#8a8a8a' },
+	]}
+	sourceLabel="ABS, 'Australia's Population by Country of Birth' (June 2025)"
+	sourceUrl="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release"
+	sourcePrefix="Source: "
+/>
+
+- As of 30 June 2025, among the 8.8 million overseas-born residents, the single largest country of birth was India (971,020 people, 3.5% of the total population) — the first time India has held the top spot. England followed (970,950, 3.5%), then China (731,540, 2.6%) and New Zealand (637,680, 2.3%).
+- Over the past decade, the fastest-growing countries of birth have been India, China, the Philippines, and Nepal — younger cohorts on average than the postwar European immigrant generation.
+- Source: ABS, "Australia's Population by Country of Birth" (June 2025) — https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release
+
+### 3.3 Immigration waves (19th century – present)
+
+<TrendChart
+	title="Overseas-born population share (1891 → 2025)"
+	unit="%"
+	series={[
+		{ label: 'Overseas-born share', color: '#9c3b3b', points: [
+			{ year: 1891, value: 32 }, { year: 1947, value: 10 }, { year: 2005, value: 24.2 },
+			{ year: 2015, value: 28.3 }, { year: 2024, value: 31.5 }, { year: 2025, value: 32.0 },
+		]},
+	]}
+	sourceLabel="ABS, 'Australia's Population by Country of Birth' (including historical levels)"
+	sourceUrl="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release"
+	sourcePrefix="Source: "
+/>
+
+- **19th century**: a 19th-century immigration wave, including the gold rushes, pushed the overseas-born share above 32% in 1891 — a historical high not exceeded again until 2025.
+- **Postwar – 1973 (White Australia policy era)**: from federation in 1901, the White Australia Policy strictly limited non-European immigration. After WWII, the Chifley government launched a large-scale immigration program ("populate or perish"), bringing in 2 million arrivals between 1945 and 1965, predominantly Europeans of British origin. The overseas-born share consequently rose again from its postwar low of 10% (1947).
+- **1958–1973 (gradual policy liberalization)**: the 1958 Migration Act abolished the dictation test (a de facto tool for excluding Asian immigrants). In 1966, the Holt government removed racial criteria from citizenship rules. In 1973, the Whitlam government removed race entirely as a factor in immigrant selection, formally ending the White Australia Policy.
+- **Since 1973 (shift to multiculturalism)**: this policy shift was followed by a rise in Asian immigration. Sources: National Museum of Australia, "White Australia policy" — https://www.nma.gov.au/defining-moments/resources/white-australia-policy and "Ending the White Australia policy" — https://www.nma.gov.au/defining-moments/resources/end-of-white-australia-policy; Wikipedia, "Post-war immigration to Australia" — https://en.wikipedia.org/wiki/Post-war_immigration_to_Australia
+- **2005 – present (mainstreaming of Asian immigration)**: the overseas-born share rose steadily from 24.2% (2005) to 28.3% (2015), 31.5% (2024), and 32.0% (2025). 2025 is the first year the 30% threshold has been exceeded since 1893.
+<ComingSoon label="A continuous decade-by-decade time series for the overseas-born population share between 1901 and 2004 is planned for a future update. This research could only confirm the historical reference points for 1891 and 1947 and the continuous data series from 2005 onward, without locating an official statistic bridging the gap." />
+
+### 3.4 Age structure
+
+<AgePyramid
+	title="Age structure by country of birth (2025)"
+	bands={[
+		{ label: '0–14', groups: [
+			{ label: 'Australian-born', value: 8, color: '#1d3461' },
+			{ label: 'Overseas-born', value: 1, color: '#9c3b3b' },
+		]},
+		{ label: '15–64', groups: [
+			{ label: 'Australian-born', value: 66, color: '#1d3461' },
+			{ label: 'Overseas-born', value: 67, color: '#9c3b3b' },
+		]},
+		{ label: '65+', groups: [
+			{ label: 'Australian-born', value: 16, color: '#1d3461' },
+			{ label: 'Overseas-born', value: 32, color: '#9c3b3b' },
+		]},
+	]}
+	sourceLabel="ABS, 'Australia's Population by Country of Birth' (2025)"
+	sourceUrl="https://www.abs.gov.au/statistics/people/population/australias-population-country-birth/latest-release"
+	sourcePrefix="Source: "
+/>
+
+- The median age of the overseas-born population is 43 (2025), about 8 years higher than the Australian-born population's median age of 35. The overseas-born median age fell from 46 (2004) to 43 (2024), consistent with the arrival of younger migrants since border reopening.
+- Differences by country of birth are wide: the median age of Nepal-born residents is a young 30, while Greek- and Italian-born residents are over 70 — reflecting the aging of the postwar European immigrant generation.
+- The 65+ share reaches 32% among the overseas-born, double the 16% among the Australian-born. The 0–14 share is 8% for the Australian-born but just 1% for the overseas-born — partly an artifact of the overseas-born definition itself, since most children of migrants are classified as Australian-born.
+- Source: ABS, "Australia's Population by Country of Birth" and related media release, "9 facts about Australia's overseas-born population" — https://www.abs.gov.au/media-centre/media-releases/9-facts-about-australias-overseas-born-population
+
+### 3.5 Long-term projection
+
+<KeyFigure
+	value="40.5 million"
+	label="2023 Intergenerational Report projection for 2062-63"
+/>
+
+- The 2023 Intergenerational Report (Treasury) projects population growth driven by net migration at 1.1%/year over the next 40 years (versus 1.4%/year over the past 40 years), with the population reaching 40.5 million by 2062-63.
+- Source: https://treasury.gov.au/sites/default/files/2023-08/p2023-435150.pdf
+<ComingSoon label="A detailed long-term population projection broken down by country of birth (Australian-born / overseas-born) is planned for a future update." />
+
+## 4. Public finances — net cost
+
+Methodology 1 — the "lifetime fiscal impact" approach. Sponsor: the Australian Treasury, together with the Centre for Population (housed within Treasury). Report: "The Lifetime Fiscal Impact of the Australian Permanent Migration Program" (December 2021). Principle: tax revenue minus public expenditure (federal plus state/territory) over the migrant's remaining lifetime; the net impact is positive during working life and turns negative after retirement, with age at arrival identified as the single most determinant factor. Reported result: the skilled migration stream shows the most positive net impact, followed by the family stream, then the humanitarian stream (the least positive impact). Methodological note: the precise dollar figures cited in secondary sources could not be directly verified in the full text of the source PDF — to be confirmed by manual reading before citing an exact amount. Source: https://treasury.gov.au/publication/p2021-220773 and https://population.gov.au/publications/research/lifetime-fiscal-impact-australian-permanent-migration-program
+
+Methodology 2 — long-term demographic and fiscal projections. Sponsor: the Australian Treasury. Report: 2023 Intergenerational Report. Does not provide a single net fiscal figure per migrant, but projects population growth driven by net migration at 1.1%/year over 40 years (versus 1.4%/year over the past 40 years), with population reaching 40.5 million by 2062-63. Notable methodological point: the fiscal benefits of migration accrue predominantly at the federal level, while the associated infrastructure and housing costs are borne largely by states and territories — an asymmetry of costs and benefits between levels of government. Source: https://treasury.gov.au/sites/default/files/2023-08/p2023-435150.pdf
+
+Not publicly available: a recent (post-2021) Productivity Commission report quantifying net fiscal impact by visa category was not identified; the strongest reference remains the 2021 Treasury/Centre for Population study.
+
+### 4.1 Pension system / contributor-to-pensioner ratio
+
+<div class="callout-limits">
+<strong>⚠️ Data not available</strong>
+No official statistic directly showing demographic dependency ratios (pensioners relative to working-age population) broken down by country of birth (Australian-born / overseas-born) could be identified during this research. The age-structure data in section 3.4 (65+ share of 32% for the overseas-born versus 16% for the Australian-born) can be used as a proxy indicator of the aging of the overseas-born population, but no formal dependency ratio has been calculated from it.
+</div>
+<ComingSoon label="A formal calculation of the demographic dependency ratio (pensioners relative to working-age population) by country of birth is planned for a future update." />
+
+## 5. Labor market
+
+Australia's points-based visa system enables fine-grained analysis by visa category — a methodological strength of Australian data worth highlighting.
+
+<BarChart
+	title="Unemployment rate by region of birth (data as of November 2024)"
+	unit="%"
+	bars={[
+		{ label: 'Northwest Europe (lowest)', value: 3.0 },
+		{ label: 'North Africa / Middle East (highest)', value: 6.9 },
+	]}
+	sourceLabel="Jobs and Skills Australia, 'Australian Labour Market for Migrants' (January 2025)"
+	sourceUrl="https://www.jobsandskills.gov.au/download/19726/australian-labour-market-migrants-january-2025/3031/australian-labour-market-migrants-january-2025/pdf"
+	sourcePrefix="Source: "
+/>
+
+The ABS Characteristics of Recent Migrants Survey (CoRMS), last conducted in full in November 2019 (covering 1.9 million recent migrants and temporary residents): employment rate averaged 68%; by status, naturalized citizens (since arrival) stood at 76%, permanent visa holders at 66%, and temporary residents at 65%. Full-time employment among those employed: 77% (naturalized citizens), 75% (permanent visa holders), 48% (temporary residents). Limitation: no update has been identified since 2019 (data available only for 2010, 2013, 2016, and 2019) — a more recent edition is not publicly available. Source: https://www.abs.gov.au/statistics/people/people-and-communities/characteristics-recent-migrants/latest-release
+
+Jobs and Skills Australia's "Australian Labour Market for Migrants" (January 2025, data as of November 2024): unemployment rate by region of birth ranged from 3.0% for Northwest Europe (the lowest) to 6.9% for North Africa and the Middle East (the highest). General finding: recently arrived migrants show a higher average unemployment rate than migrants settled for longer periods. This edition provides a breakdown by region of birth but not by precise visa category (skilled/student/humanitarian). Source: https://www.jobsandskills.gov.au/download/19726/australian-labour-market-migrants-january-2025/3031/australian-labour-market-migrants-january-2025/pdf
+
+## 6. Security / justice
+
+<div class="callout-limits">
+<strong>⚠️ No national-level cross-tabulation of country of birth by crime</strong>
+Australia does not publish national crime statistics broken down by country of birth or visa/migration status.
+</div>
+
+The official reference publication, ABS "Recorded Crime – Offenders" (latest edition 2024-25), breaks data down only by age, sex, Indigenous status (in some states), offense type, and involvement in family violence — no country-of-birth or migration-status variable is included. Source: https://www.abs.gov.au/statistics/people/crime-and-justice/recorded-crime-offenders/latest-release
+
+A partial exception at state level: Victoria's Crime Statistics Agency occasionally publishes information on the country of birth of alleged offenders, accompanied by an official methodological warning about the limitations of this data. Source: https://www.crimestatistics.vic.gov.au/media-centre/news/what-is-country-of-birth-information-in-police-recorded-crime-statistics-and-what
+
+Not publicly available at the national level: no official statistical link can be established between migration status and offending in Australia — this is a structural data gap, not an omission by this observatory.
+
+## 7. Education
+
+The Australian university sector shows strong economic dependence on international students — a specific angle worth documenting in connection with the cap announced in 2024.
+
+The share of international student fees in the gross revenue of Australia's 42 universities reached 27.3% in 2024 (AUD 12.33 billion). This share evolved from 24.7% (2022) to 25.4% (2023) and 27.3% (2024). Institutional variation is wide, ranging between 15% and more than 40% of total revenue depending on the university. Source: Department of Education (Australian Government), Finance Tables, parent page https://www.education.gov.au/higher-education-statistics
+
+National Planning Level (NPL) for new international student enrollments: set at 270,000 for 2025, announced on 27 August 2024 by Minister for Education Jason Clare (breakdown: 145,000 for public universities, 30,000 for private providers, 95,000 for the vocational education and training (VET) sector). Set at 295,000 for 2026 (+25,000 versus 2025), still 8% below the post-Covid peak. Source: https://www.education.gov.au/international-education/resources/prisms-factsheet-indicative-allocations-and-ministerial-direction-111
+
+## 8. Housing
+
+A direct link between net migration and the housing crisis has been established by the Australian government itself, motivating the 2024 cap on international students — a notable and well-documented political fact.
+
+The Reserve Bank of Australia (RBA), in its July 2025 Bulletin article "International Students and the Australian Economy," models that a population increase of 50,000 people would raise private rents by approximately 0.5% relative to a baseline projection. RBA's conclusion: international students contribute to rental demand, but their impact is judged to be "more modest than commonly assumed." Source: https://www.rba.gov.au/publications/bulletin/2025/jul/international-students-and-the-australian-economy.html
+
+Not publicly available: a Treasury report quantifying a direct causal link between overall net migration (excluding students) and housing prices was not identified; the RBA figure above, limited to international students, is the strongest quantified data found to date.
+
+## 9. Social cohesion
+
+Scanlon Foundation Research Institute survey, "Mapping Social Cohesion 2024" (2025 edition also available). Sponsor: the Scanlon Foundation Research Institute (a philanthropic foundation/university-affiliated research institute, non-governmental), with the survey conducted in partnership with the Social Research Centre (Australian National University). 2024 findings: attitudes toward immigration and multiculturalism remain broadly positive overall but have declined from recent peaks; public opinion is more divided on the level of immigration, with the perception that it is "too high" correlating more strongly with economic and housing concerns than with attitudes toward diversity itself; overall social cohesion is stable over 12 months but below the long-term average. Worth noting for rigor: this is an independent academic/philanthropic source, not an official government statistic. Source: https://scanloninstitute.org.au/wp-content/uploads/Mapping-Social-Cohesion-2024-Report.pdf
+
+## 10. Recent political context
+
+The cap on international students announced in 2024 by the Albanese government was explicitly justified by pressure on housing — to be documented with precise dates.
+
+Detailed timeline: on 27 August 2024, Minister for Education Jason Clare announced the National Planning Level (NPL) for 2025, set at 270,000 new international student enrollments. On 19 December 2024, Ministerial Direction 111 came into effect, governing the processing of student visa applications under the NPL. In 2025, the NPL was applied at 270,000 (confirmed). On 14 November 2025, Ministerial Direction 115 replaced Direction 111, to support the 2026 NPL. The 2026 NPL was set at 295,000 (+25,000 versus 2025, still -8% relative to the post-Covid peak). Sources: https://www.education.gov.au/international-education/resources/prisms-factsheet-indicative-allocations-and-ministerial-direction-111 and https://minister.homeaffairs.gov.au/JulianHill/Pages/new-ministerial-direction-balance-international-student-distribution.aspx
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+The ABS "12/16-month rule": a person is counted as a net migrant if they remain in Australia (or are absent from it) for 12 months within a rolling 16-month period. This statistical definition differs from the concept of "permanent" migration as defined by visa categories, which can create confusion in the public interpretation of NOM figures.
+
+Revisions: preliminary NOM estimates are regularly revised upward or downward as more complete administrative data (cross-border movements, Home Affairs records) become available; a "provisional" published figure can differ significantly from the final figure.
+
+Time lag: the most recent NOM data is published with a lag of roughly six months to more than a year after the end of the reference period (e.g., 2024-25 data was published on 19 December 2025).
+
+The absence of a national-level cross-tabulation of country of birth by crime (see section 6) and the absence of an update to the CoRMS labor market survey since 2019 (see section 5) constitute major structural limitations for fine-grained analysis by migrant category.
+</div>
+
+Methodological source: https://www.abs.gov.au/articles/measuring-net-overseas-migration-australia

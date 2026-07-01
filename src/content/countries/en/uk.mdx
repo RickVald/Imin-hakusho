@@ -1,0 +1,206 @@
+---
+slug: uk
+name: "United Kingdom"
+status:
+  sourcesCollected: true
+  figuresVerified: false
+---
+
+import BarChart from '../../../components/BarChart.astro';
+import TrendChart from '../../../components/TrendChart.astro';
+import StackedBar from '../../../components/StackedBar.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+import ComingSoon from '../../../components/ComingSoon.astro';
+import AgePyramid from '../../../components/AgePyramid.astro';
+
+## 1. Official institutions
+
+- ONS (Office for National Statistics): https://www.ons.gov.uk
+- Home Office — quarterly immigration statistics ("Immigration system statistics")
+- Migration Observatory (University of Oxford) — independent analysis based on official data, a strong academic reference
+- Office for Budget Responsibility (OBR) — budgetary projections linked to demographics
+
+## 2. Key datasets
+
+- ONS: Labour Force Survey (employment by country of birth), census
+- Home Office: "small boats" (Channel crossings), work/study visas, asylum
+- OBR: reports on the long-term fiscal impact of immigration (net migration and public finance sustainability)
+
+## 3. Demographics
+
+### 3.1 Current population composition
+
+<StackedBar
+	title="Population composition by country of birth (estimate, June 2024)"
+	segments={[
+		{ label: 'Born in the UK', value: 81.0, color: '#1d3461' },
+		{ label: 'Born abroad', value: 19.0, color: '#9c3b3b' },
+	]}
+	sourceLabel="ONS, 'Population estimates by grouped country of birth and nationality, UK, 2024'"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024"
+	sourcePrefix="Source: "
+/>
+
+- A post-Brexit surge in net migration (2021-2023) despite the end of EU free movement — a notable point to explain (a change in the composition of flows, not just volume).
+- **Foreign-born population**: about 19% of the UK population in June 2024 (ONS estimate), up from 16.0% at the 2021 census (England/Wales/Northern Ireland 2021, Scotland 2022) — a rapid rise over three years.
+  Primary source: ONS, "Population estimates by grouped country of birth and nationality, UK, 2024" — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024
+  (Verification status: the dataset description page was consulted, but the precise percentages (19%/16.0%) appear only in the downloadable data file, which could not be extracted by the automated verification tool. Figures not re-confirmed in this pass; manual verification required.)
+
+### 3.2 Breakdown of net migration by nationality (year ending December 2025)
+
+<StackedBar
+	title="Net migration by nationality (year ending December 2025, provisional)"
+	segments={[
+		{ label: 'Non-EU+ nationals (net inflow)', value: 350, color: '#9c3b3b' },
+		{ label: 'EU+ nationals (net outflow, absolute value)', value: 42, color: '#1d3461' },
+		{ label: 'British nationals (net outflow, absolute value)', value: 136, color: '#c9a23f' },
+	]}
+	sourceLabel="ONS, 'Long-term international migration, provisional, year ending December 2025' (units: thousands; EU+/British shown as absolute value of net outflow)"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingdecember2025"
+	sourcePrefix="Source: "
+/>
+
+- **Net migration (legal, long-term)**: 171,000 people for the year ending December 2025 (provisional estimate), down from 331,000 for the year ending December 2024 (revised figure) — almost a halving in one year. The post-Brexit peak (2022-2023) had exceeded 900,000/year before this sharp decline.
+  Primary source: ONS, "Long-term international migration, provisional, year ending December 2025" — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/bulletins/longterminternationalmigrationprovisional/yearendingdecember2025
+- **Breakdown by nationality (year ending December 2025, provisional)**: net migration of non-EU+ nationals = +350,000 (down from +511,000 the previous year, mainly due to a 47% drop in non-EU+ arrivals for work); net migration of EU+ nationals = -42,000; net migration of British nationals = -136,000 (net emigration).
+  Source: ONS, ibid. (link above).
+- **Small boats / Channel crossings (irregular entry)**: about 41,500 people detected in 2025, up 13% from 2024, the second-highest annual total ever recorded, after the 2022 peak (about 46,000 people). Important distinction: this flow is numerically marginal compared with legal entries via visa (tens of thousands versus several hundred thousand visas issued each year), but it occupies a disproportionate place in political debate.
+  Primary source: Migration Observatory (University of Oxford), "People crossing the English Channel in small boats" — https://migrationobservatory.ox.ac.uk/resources/briefings/people-crossing-the-english-channel-in-small-boats/
+- **Asylum applications**: 100,625 people claimed asylum in the UK for the year ending December 2025 (a 4% decrease from the previous year), but this figure remains more than double the 2019 level. The grant rate was 42% for the year ending December 2025, down from 47% a year earlier and a peak of 77% for the year ending September 2022.
+  Primary source: Home Office, "Immigration system statistics, year ending December 2025 — How many people claim asylum in the UK?" — https://www.gov.uk/government/statistics/immigration-system-statistics-year-ending-december-2025/how-many-people-claim-asylum-in-the-uk
+- Methodological note: ONS statistics (net migration, census) and Home Office statistics (asylum, visas, small boats) follow different definitions and periods; they should not be added together directly.
+
+### 3.3 Historical waves of immigration (1945 – present)
+
+<TrendChart
+	title="Cumulative Commonwealth-born resident population arriving before 1971 (illustrative, Migration Observatory estimate)"
+	unit=""
+	series={[
+		{ label: 'Commonwealth-born residents who arrived before 1971 and remain resident (estimate)', color: '#9c3b3b', points: [{ year: 1948, value: 0 }, { year: 1971, value: 500000 }] },
+	]}
+	sourceLabel="Migration Observatory (University of Oxford) — Windrush generation estimate"
+	sourceUrl="https://migrationobservatory.ox.ac.uk/resources/commentaries/windrush-lessons-learned-review-evidence-from-the-migration-observatory-at-the-university-of-oxford/"
+	sourcePrefix="Source: "
+/>
+
+- **The Windrush generation and Commonwealth migration (1948-1971)**: named after the HMT Empire Windrush, which carried the first arrivals in 1948, people who settled in the UK from Caribbean countries between 1948 and 1971 are generally referred to as the "Windrush generation." According to estimates by the Migration Observatory (University of Oxford), over 500,000 people who arrived from Commonwealth countries (including Windrush arrivals) before 1971 remain resident in the UK today.
+- **Commonwealth Immigrants Act 1962**: the first restriction on what had previously been free entry for Commonwealth citizens, introducing an employment-voucher system.
+- **1970s-1990s**: continued family reunification migration from South Asia (India, Pakistan, Bangladesh), alongside ongoing migration from Africa and the Caribbean.
+- **EU membership and the EU8 enlargement (2004)**: the 2004 EU enlargement triggered a surge in free-movement labor migration from eight Central and Eastern European countries (EU8), led by Poland.
+- **Post-Brexit (2020-present)**: the end of EU free movement and the transition to a points-based work/study visa system. By the end of 2024, the number of EU employments had declined by 13% from its peak, with the steepest fall (20%) among EU8 citizens. Despite Brexit, non-EU net migration rose, with net migration reaching a peak above 900,000/year in 2022-2023 (see section 3.2).
+  Sources: Migration Observatory (University of Oxford), "The Migration Observatory and the Decade of Migration" — https://migrationobservatory.ox.ac.uk/resources/reports/the-migration-observatory-and-the-decade-of-migration/; "EU Migration to and from the UK" — https://migrationobservatory.ox.ac.uk/resources/briefings/eu-migration-to-and-from-the-uk/; Migration Observatory commentary on Windrush — https://migrationobservatory.ox.ac.uk/resources/commentaries/windrush-lessons-learned-review-evidence-from-the-migration-observatory-at-the-university-of-oxford/
+- **Limitation**: the chart above is illustrative of a single interval (1948-1971, the Migration Observatory's estimate of over 500,000 resident Commonwealth-born arrivals) and does not constitute a full annual, nationality-disaggregated time series of immigration flows from 1945 to the present, which could not be located as a single primary ONS/Home Office table during this research.
+<ComingSoon label="A complete year-by-nationality time series of immigration flows from 1945 to the present is planned for a future update, using ONS 'International migration historical time series' and the Home Office's long-run Migration Statistics tables." />
+
+### 3.4 Age structure (population pyramid)
+
+- ONS publishes a "country of birth by age" dataset (RM011) based on the 2021 census (England and Wales), accessible via Nomis and the UK Data Service.
+- Limitation: this dataset is provided as a detailed Excel/CSV table from the census authority, and this research could not directly extract a clean, charting-ready age-by-country-of-birth cross-tabulation (4+ bands) using the automated verification tool. Producing a population pyramid by country of birth would require direct download and re-aggregation of this primary data.
+<ComingSoon label="Age structure by country of birth (population pyramid) is planned for a future update, using ONS Census 2021 dataset 'RM011: Country of birth by age' (via Nomis)." />
+
+### 3.5 Long-term population projection
+
+<KeyFigure
+	value="280 → 329"
+	label="Projected old-age dependency ratio (pensionable-age people per 1,000 working-age people), rising from 280 in mid-2024 to 329 by mid-2049 (ONS 2024-based projections)"
+/>
+
+- ONS's latest national population projections (2024-based, published April 2026) project that the old-age dependency ratio (pensionable-age people per 1,000 working-age people) will rise from 280 in mid-2024 to 329 by mid-2049.
+  Source: ONS, "National population projections," 2024-based — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/2024based
+- In addition to the "principal projection," ONS publishes several "variant projections" using alternative assumptions about fertility, mortality, and migration (net migration), e.g., high-migration, low-migration, and combined "young population" variants. However, these variant projections only vary the aggregate volume of net migration as a scenario input; they do not, unlike Denmark's DST, project a future population share by country of birth or origin.
+- Important limitation: ONS population projections are not published as a forecast of the future population share by country of birth (foreign-born versus UK-born) — the only scenario variables are the aggregate volumes of migration, fertility, and mortality; future composition by country of birth is outside the scope of official projections.
+  Source: ONS, "National population projections quality and methods guide" — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/methodologies/nationalpopulationprojectionsqmi
+<ComingSoon label="A projection of future population share by country of birth (foreign-born versus UK-born) does not exist publicly, as it is outside the scope of ONS's official population projections. ONS variant projections vary only the aggregate volume of migration as a scenario input." />
+
+## 4. Public finances — net cost
+
+- Work by Christian Dustmann (UCL/CReAM) — an academic benchmark on the net contribution of EU versus non-EU migrants, frequently cited in UK debate
+- OBR reports on long-term fiscal sustainability
+- No single official study commands consensus: results vary widely depending on the method used (static versus dynamic/lifecycle) and the period covered. Comparative table below.
+
+| Method | Result | Source / period | Sponsor |
+|---|---|---|---|
+| Static, annual accounting approach (1995-2011, academic study) | EU/EEA migrants: positive net fiscal contribution over 2001-2011 (about +£22.1 billion cumulative; they pay about 34% more in taxes than they receive in benefits/services); non-EU/EEA migrants: near-neutral to slightly positive net contribution over 2001-2011 (+£2.9 billion, about 2% more paid than received); over the longer 1995-2011 period, non-EU/EEA migrants converge toward the profile of natives (slightly negative net contribution on average). | Dustmann & Frattini, "The Fiscal Effects of Immigration to the UK," *The Economic Journal*, 2014; CReAM Discussion Paper — https://www.cream-migration.org/publ_uploads/CDP_22_13.pdf | UCL Centre for Research and Analysis of Migration (CReAM), independent academic research (ESRC-funded) (Verification status: the source PDF (811 KB) could not be reliably extracted by the automated verification tool — binary content was decoded incorrectly. Figures not re-confirmed line by line in this pass; manual verification of the PDF required before publication.) |
+| Static versus dynamic (lifecycle), comparative | Static approach: the average non-EEA migrant costs about £1,700 net per year. Dynamic approach (net present value over a lifetime): the same cohort contributes about £28,000 net over their working life — illustrating the strong sensitivity of the result to the method chosen. | Oxford Economics, 2018, summarized by Migration Observatory, "The Fiscal Impact of Immigration in the UK" — https://migrationobservatory.ox.ac.uk/resources/briefings/the-fiscal-impact-of-immigration-in-the-uk/ | Oxford Economics (economic consultancy, independent study) (Verification status: the Migration Observatory page confirms a 2018 Oxford Economics static estimate, but as a national aggregate for non-EEA migrants (about -£9.0 billion for 2016/17), not the per-capita figure of about £1,700/year cited here, nor the dynamic lifetime figure of about £28,000, neither of which appeared in the accessible content of the page. Per-capita figures not re-confirmed in this pass; manual verification of the full Oxford Economics report required before publication.) |
+| Long-term dynamic projection by age cohort at arrival | A migrant arriving at age 25 on an average wage would contribute about £341,000 net over their lifetime (budgetary projection); a rise in net migration reduces the public deficit in the short term (2024-2029 forecast horizon), but the future aging of migrants creates deferred fiscal pressure. | OBR, March 2025 methodological supplement and "Fiscal risks and sustainability report," July 2025 — https://obr.uk/frs/fiscal-risks-and-sustainability-july-2025/ and https://obr.uk/docs/dlm_uploads/FRS-migration-supplementary-forecast-information-release-Mar-2025.pdf | Office for Budget Responsibility (independent statutory public fiscal body) (Verification status: the "Fiscal risks and sustainability July 2025" report consulted directly does not mention this £341,000 figure or a detailed age-cohort analysis — this content likely appears in the March 2025 methodological supplement (second link), not separately verified in this pass. Figure not re-confirmed; manual verification required.) |
+| Critical study, more restrictive assumptions | Estimates an overall negative net fiscal impact of recent immigration over the period studied (methodology contested by academic researchers for assumptions deemed unfavorable to migrants). | Migration Watch UK, "The Fiscal Effects of Immigration to the UK," 2014/2016 — https://www.migrationwatchuk.org/briefing-paper/381 | Migration Watch UK (an advocacy organization for reducing immigration; to be flagged as a stakeholder, not a neutral body) |
+
+- Key takeaway for the Japanese reader: according to academic consensus (Migration Observatory), the net fiscal impact of immigration in the UK — regardless of method — generally remains below 1% of GDP, a real but modest effect compared with major public spending categories (health, pensions).
+
+### 4.1 Old-age dependency ratio / pension system
+
+<BarChart
+	title="Projected old-age dependency ratio (pensionable-age people per 1,000 working-age people)"
+	unit=""
+	bars={[
+		{ label: 'Mid-2024', value: 280 },
+		{ label: 'Mid-2049 (projection)', value: 329 },
+	]}
+	sourceLabel="ONS, 'National population projections,' 2024-based"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationprojections/bulletins/nationalpopulationprojections/2024based"
+	sourcePrefix="Source: "
+/>
+
+- Effect of migration on the dependency ratio: ONS analysis indicates that higher levels of net migration are associated with lower future demographic dependency, but outcomes are more strongly affected by changes in the economic activity rate of older workers (continued labor participation). In other words, net migration volume is one contributing factor in moderating the dependency ratio, but not the sole or dominant determinant.
+  Source: ONS, "Living longer and old-age dependency — what does the future hold?" — https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/ageing/articles/livinglongerandoldagedependencywhatdoesthefuturehold/2019-06-24
+- The OBR identifies the state pension as the largest component of welfare spending, projecting it will rise by 2.7 percentage points of GDP between 2028/29 and 2073/74, driven by population aging and the cost of the triple-lock policy. This is a national-level fiscal projection, not disaggregated by country of birth.
+  Source: Office for Budget Responsibility, demographics reports — https://obr.uk/cross_cutting/demographics/
+<ComingSoon label="Pension-system participation and dependency data broken down by country of birth (migrant versus UK-born) could not be confirmed in ONS/OBR publications and are planned for a future update." />
+
+## 5. Labor market
+
+- The employment rate of people born outside the EU is higher in 2025 than it was in 2019, and their entry into the labor market has accelerated relative to 2019 (ONS notes a change in composition: 13.1% of survey respondents were born outside the EU in Q4 2025, compared with 10.2% in Q3 2019). This figure is expressed as a share of the survey sample, not as a standalone employment rate — detailed employment rates by country of birth are available in the ONS EMP06 dataset.
+  Primary source: ONS, "Employment by country of birth and nationality (EMP06)" — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbycountryofbirthandnationalityemp06
+  (Verification status: the EMP06 dataset description page was consulted, but the precise figures (13.1%/10.2%) appear only in the downloadable Excel file, which could not be extracted by the automated verification tool. Figures not re-confirmed in this pass; manual verification required.)
+- Methodological limitation to flag: the ONS temporarily removed the employment/country-of-birth breakdown from the main A01 dataset during the pandemic due to sample quality issues; the EMP06/A12 series have been reweighted since February 2025, which affects the strict comparability of long-run series.
+  Source: ONS, "Labour Force Survey quality update," September 2025 — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/labourforcesurveyqualityupdate/september2025
+
+## 6. Security / justice
+
+- The Ministry of Justice publishes "Offender management statistics quarterly" every quarter, which cross-references the prison population with **declared nationality** (not country of birth, and not migration status). As of March 31, 2025, prisoners of foreign nationality accounted for about 12% of the prison population in England and Wales (about 10,400 out of about 88,000), a level broadly stable over recent quarters. The most represented nationalities after British, in approximate order, are: Albanian, Irish, Polish, Romanian, Indian.
+  Primary source: gov.uk, "Offender management statistics quarterly" collection — https://www.gov.uk/government/collections/offender-management-statistics-quarterly (Ministry of Justice).
+  (Verification status: the page consulted is the index of the quarterly collection; the detailed "January to March 2025" report containing the precise figures (about 12%, about 10,400 out of about 88,000, nationality ranking) could not be extracted separately in this pass. Figures not re-confirmed line by line; manual verification of the dated report required.)
+- Critical methodological limitation to flag explicitly: this statistic is based on declared nationality, not country of birth or residence status. A "foreign" prisoner may be a long-term legal resident or a dual national; conversely, a prisoner born abroad but naturalized British does not appear in this figure. There is no English national criminal statistic systematically cross-referencing migration status (legal/illegal) with offense.
+
+## 7. Education
+
+- The Department for Education (DfE), via the official "Explore Education Statistics" service, publishes Key Stage 4 (GCSE) results broken down by EAL status (English as an Additional Language — students for whom English is not their first language), which serves as an approximate proxy (not a direct country-of-birth measure). 2024/25 data: https://explore-education-statistics.service.gov.uk/find-statistics/key-stage-4-performance/2024-25 (sponsor: DfE, official data).
+- Finding reported by analyses based on this official data: there is no significant gap in overall average scores ("best-8") between EAL students and native English-speaking students once compositional effects are accounted for, but there is strong internal heterogeneity by language/background group (notably the "White Other" and "Black African" groups perform less well on average) and by length of schooling in the UK — time spent in the British school system is a determining factor, as also observed in Sweden (see Sweden file, section 7).
+- Exact figures broken down by detailed ethnic group and comparison year: not publicly available in verified form in this research — to be cross-checked directly against the DfE data table linked above before citing a precise figure.
+
+## 8. Housing
+
+<BarChart
+	title="Housing tenure (homeownership rate, Census 2021)"
+	unit="%"
+	bars={[
+		{ label: 'UK-born', value: 67 },
+		{ label: 'Foreign-born (converges to about 57% after 10+ years residence)', value: 43 },
+	]}
+	sourceLabel="ONS, 'Analysis of social characteristics of international migrants living in England and Wales: Census 2021'"
+	sourceUrl="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/analysisofsocialcharacteristicsofinternationalmigrantslivinginenglandandwales/census2021"
+	sourcePrefix="Source: "
+/>
+
+- The link between immigration and the housing crisis is increasingly documented politically.
+- ONS, 2021 census (England and Wales): 43% of people born abroad own their home, compared with 67% of people born in the UK — a gap that narrows with length of residence (converging to about 57% homeownership after 10 years of UK residence).
+  Primary source: ONS, "Analysis of social characteristics of international migrants living in England and Wales: Census 2021," published September 18, 2023 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/articles/analysisofsocialcharacteristicsofinternationalmigrantslivinginenglandandwales/census2021
+- Social housing: according to the English Housing Survey (Ministry of Housing, Communities and Local Government, MHCLG), about 15% of social housing occupants were born outside the UK — a share close to, or slightly below, their share of the total population (see section 3, about 19% foreign-born in 2024): no clear overrepresentation observed in social housing relative to the general population on this measure. Source table: English Housing Survey, MHCLG — https://www.gov.uk/government/collections/english-housing-survey Exact figures from the most recent edition should be verified directly on the page above before being cited firmly.
+
+## 9. Social cohesion
+
+- The Community Life Survey (an official DCMS — Department for Culture, Media and Sport — survey on community cohesion, volunteering, and local belonging) ended fieldwork on March 30, 2025 and is being replaced by the "Community and Engagement Survey" (CES), whose 2025/26 pilot report does not yet contain final usable data on perceptions of immigration.
+  Source: gov.uk, "Community Life Survey" collection — https://www.gov.uk/government/collections/community-life-survey--2
+- Limitation to flag explicitly: no direct question on perceptions of immigration was identified in the Community Life Survey/CES (an official state survey in the strict sense). The British Social Attitudes survey (NatCen Social Research), which regularly asks questions about immigration, is partly publicly funded but remains an independent research institute, not an official state statistic — to be used with this caveat if cited in a future version of this file. Official state statistical data on perceptions of immigration: not publicly available in verified form in this research.
+
+## 10. Recent political context
+
+- Brexit (motivated in part by control over EU immigration) was paradoxically followed by a rise in non-EU net migration — an important factual point to explain to the Japanese reader.
+- Debate over the Rwanda Plan / "Stop the Boats," tightening of policy in 2023-2024.
+
+## 11. Data limitations and biases
+
+<div class="callout-limits">
+<strong>⚠️ Limits</strong>
+A change in ONS methodology for estimating net migration in 2019-2021 makes pre/post comparisons difficult — to be flagged. In addition: (1) ONS's official population projections do not forecast future population share by country of birth (see section 3.5) — unlike Denmark's DST, no future origin-disaggregated share exists publicly. (2) for section 4 (net fiscal cost), no single official study commands consensus, and results vary substantially by method — this must be flagged explicitly. (3) the crime statistics in section 6 are based solely on declared nationality, not country of birth or residence status — a distinct limitation to keep in mind.
+</div>
