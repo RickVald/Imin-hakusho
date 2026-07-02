@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://imin-hakusho.jp',
+  site: 'https://imin-hakusho.com',
   i18n: {
       defaultLocale: 'ja',
       locales: ['ja', 'en'],

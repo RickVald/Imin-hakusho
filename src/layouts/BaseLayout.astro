@@ -56,13 +56,18 @@ const footerText =
 			"@type": "WebSite",
 			"name": "移民白書",
 			"alternateName": "Immigration Factbook",
-			"url": "https://imin-hakusho.jp",
+			"url": "https://imin-hakusho.com",
 			"description": "移民が西欧20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータジャーナリズムサイト",
 			"inLanguage": ["ja", "en"]
 		})} />
 
+		<!-- hreflang bidirectionnel : self + alternate -->
+		<link rel="alternate" hreflang={lang} href={canonicalUrl} />
 		{altHref && (
-			<link rel="alternate" hreflang={lang === 'ja' ? 'en' : 'ja'} href={altHref} />
+			<>
+				<link rel="alternate" hreflang={lang === 'ja' ? 'en' : 'ja'} href={altHref} />
+				<link rel="alternate" hreflang="x-default" href={lang === 'ja' ? canonicalUrl : altHref} />
+			</>
 		)}
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -90,6 +95,13 @@ const footerText =
 		<footer class="site-footer">
 			<div class="site-footer__inner">
 				<p>{footerText}</p>
+				<nav class="footer-nav">
+					{lang === 'ja' ? (
+						<a href="/methodologie/">方法論・情報源</a>
+					) : (
+						<a href="/en/methodology/">Methodology & Sources</a>
+					)}
+				</nav>
 			</div>
 		</footer>
 	</body>

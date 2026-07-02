@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Methodology & Sources | Immigration Factbook" lang="en" description="How Immigration Factbook collects, verifies, and presents immigration data. Source hierarchy, definitions, comparison limits, and update process explained.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Methodology</span>
+    </nav>
+    <h1>Methodology & Sources</h1>
+    <p class="intro">How we collect, verify, and present immigration data — source hierarchy, definitions, comparison limits, and update process.</p>
+    <div class="lang-switch"><a href="/methodologie/">🇯🇵 日本語版</a></div>
+  </div>
+
+  <div class="methodology-content">
+
+    <section class="method-section">
+      <h2>1. Editorial policy</h2>
+      <p>Immigration Factbook is an independent database presenting the effects of immigration across 20 Western countries, based exclusively on primary official sources. We receive no funding from any political party, foundation, lobby group, or government.</p>
+      <p>Every figure is drawn directly from official publications of national statistics offices, treasuries, central banks, or international organisations (OECD, Eurostat, etc.). We do not use secondary sources (newspapers, Wikipedia, think-tank summaries, etc.).</p>
+    </section>
+
+    <section class="method-section">
+      <h2>2. Source hierarchy</h2>
+      <div class="source-hierarchy">
+        <div class="source-tier tier-1">
+          <div class="tier-badge">Priority 1</div>
+          <div class="tier-content">
+            <strong>National statistics offices &amp; government agencies</strong>
+            <p>Annual reports and statistical databases from INSEE, Destatis, SCB, DST, CBS, ONS, ABS, etc. The primary source for all data on this site.</p>
+          </div>
+        </div>
+        <div class="source-tier tier-2">
+          <div class="tier-badge">Priority 2</div>
+          <div class="tier-content">
+            <strong>Treasury &amp; central bank official reports</strong>
+            <p>Fiscal and economic analyses from Finansministeriet (Denmark), Ifo Institut (Germany), OBR (UK), Banco de España, etc.</p>
+          </div>
+        </div>
+        <div class="source-tier tier-3">
+          <div class="tier-badge">Priority 3</div>
+          <div class="tier-content">
+            <strong>International organisation databases</strong>
+            <p>OECD, Eurostat, ILO, World Bank data — used as supplementary sources when national methodologies are not harmonised.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <h2>3. Definitions</h2>
+      <dl class="definitions">
+        <div class="def-item">
+          <dt>Definition of "immigrant"</dt>
+          <dd>We follow each country's official definition. The default is "foreign-born", but some countries (France, Belgium, etc.) use "foreign national" as their primary statistical category. The definition used is stated on each country page.</dd>
+        </div>
+        <div class="def-item">
+          <dt>"Immigrant background"</dt>
+          <dd>Refers to persons with at least one foreign-born parent. Used primarily in Scandinavian official statistics.</dd>
+        </div>
+        <div class="def-item">
+          <dt>Fiscal cost methodology</dt>
+          <dd>Net fiscal impact estimates vary significantly by country (static vs dynamic analysis, scope of federal/local/national levels, included benefit items, etc.). We report each country's estimate using the methodology applied by its official institution, and do not directly compare figures across countries with different methodologies.</dd>
+        </div>
+        <div class="def-item">
+          <dt>Employment gap</dt>
+          <dd>Difference in percentage points between the employment rate of immigrants and that of the native-born population. These are unadjusted raw figures that do not control for age, sex, or educational composition. Source: latest published data from each national statistics office.</dd>
+        </div>
+        <div class="def-item">
+          <dt>PISA gap</dt>
+          <dd>Difference in maths scores between students with an immigrant background and native-born students (PISA 2022). "After ESCS correction" means the socio-economic, cultural, and social status index (ESCS) has been statistically removed. Source: OECD PISA 2022 Volume I.</dd>
+        </div>
+        <div class="def-item">
+          <dt>Per-capita crime rates</dt>
+          <dd>Suspect counts or conviction counts divided by each group's population (rate as %). We use per-capita rates rather than absolute counts because groups of very different sizes cannot be meaningfully compared in absolute terms. Source: official data from national police agencies and justice ministries.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="method-section">
+      <h2>4. Limits of international comparison</h2>
+      <ul class="limitations">
+        <li>Definitions of "immigrant" differ across countries — direct numerical comparisons require caution.</li>
+        <li>Fiscal cost estimates vary greatly by methodology; multiple estimates may exist for the same country.</li>
+        <li>Crime statistics are unadjusted raw figures that do not control for age, sex, urban concentration, or socioeconomic status — they do not isolate the effect of immigrant background per se.</li>
+        <li>PISA gaps may reflect differences in school systems and the composition of each country's sample.</li>
+        <li>Where data are unavailable, we write "—" or "no official data published".</li>
+      </ul>
+    </section>
+
+    <section class="method-section">
+      <h2>5. Update process</h2>
+      <p>Figures on each page are updated in line with each national statistics office's annual publication schedule. The date of last update is noted in each page's metadata. Updates are made manually, after direct verification of the primary source, before publication.</p>
+      <p>Until new data become available, we use the most recent published figures and clearly state the reference year. Unverified data are not published.</p>
+    </section>
+
+    <section class="method-section">
+      <h2>6. About this site</h2>
+      <p>Immigration Factbook is an independent database providing official immigration statistics for Western countries in Japanese and English. Launched in 2025. Its aim is to improve access to this category of information for Japanese-speaking readers, for whom very little primary-source material has previously been available.</p>
+      <p>To report an error or contact us, use the feedback form at the bottom of any page.</p>
+    </section>
+
+  </div>
+</main>
+
+<style>
+.methodology-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.method-section {
+  margin-bottom: 3rem;
+}
+.method-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+.method-section p, .method-section li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.source-hierarchy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.source-tier {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+.tier-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.15rem;
+  color: #fff;
+}
+.tier-1 .tier-badge { background: #4caf7d; }
+.tier-2 .tier-badge { background: #d4a017; }
+.tier-3 .tier-badge { background: #666; }
+.tier-content strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.tier-content p { font-size: 0.85rem; color: var(--color-muted); margin: 0; line-height: 1.5; }
+.definitions { display: flex; flex-direction: column; gap: 1.25rem; }
+.def-item dt {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.def-item dd {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  padding-left: 1rem;
+  border-left: 3px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+.limitations {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.limitations li { font-size: 0.9rem; color: var(--color-muted); }
+</style>
+</BaseLayout>

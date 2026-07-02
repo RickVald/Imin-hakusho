@@ -141,6 +141,18 @@ main {
 	color: var(--color-muted);
 }
 
+.footer-nav {
+	margin-top: 0.75rem;
+	display: flex;
+	gap: 1.5rem;
+}
+.footer-nav a {
+	color: var(--color-muted);
+	text-decoration: none;
+	font-size: 0.8rem;
+}
+.footer-nav a:hover { color: var(--color-accent); }
+
 /* ---- Home page ---- */
 
 .hero {

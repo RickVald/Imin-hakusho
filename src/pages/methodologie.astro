@@ -1,0 +1,182 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="方法論と情報源 | 移民白書" lang="ja" description="移民白書のデータ収集・検証・比較方法論。情報源の階層、定義、国際比較の限界、更新プロセスを説明します。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>方法論</span>
+    </nav>
+    <h1>方法論と情報源</h1>
+    <p class="intro">本サイトのデータ収集・検証・比較の方法、情報源の選定基準、および各指標の定義を説明します。</p>
+    <div class="lang-switch"><a href="/en/methodology/">🌐 Read in English</a></div>
+  </div>
+
+  <div class="methodology-content">
+
+    <section class="method-section">
+      <h2>1. 編集方針</h2>
+      <p>移民白書は、西側20カ国における移民の影響を、一次公式資料のみに基づいて提示する独立データベースです。いかなる政治的立場、政党、財団、またはロビー団体からも資金提供を受けていません。</p>
+      <p>すべての数値は、各国の統計局、財務省、中央銀行、または国際機関（OECD、Eurostat等）の公式刊行物から直接取得しています。二次資料（新聞、Wikipedia、シンクタンクの要約等）は使用しません。</p>
+    </section>
+
+    <section class="method-section">
+      <h2>2. 情報源の階層</h2>
+      <div class="source-hierarchy">
+        <div class="source-tier tier-1">
+          <div class="tier-badge">優先度 1</div>
+          <div class="tier-content">
+            <strong>国家統計局・政府機関の公式刊行物</strong>
+            <p>INSEE、Destatis、SCB、DST、CBS、ONS、ABS等の統計局が発行する年次報告書・統計データベース。当サイトの主要情報源。</p>
+          </div>
+        </div>
+        <div class="source-tier tier-2">
+          <div class="tier-badge">優先度 2</div>
+          <div class="tier-content">
+            <strong>財務省・中央銀行の公式報告書</strong>
+            <p>Finansministeriet（デンマーク）、Ifo Institut（ドイツ）、OBR（英国）、Banco de España等の財政・経済分析。</p>
+          </div>
+        </div>
+        <div class="source-tier tier-3">
+          <div class="tier-badge">優先度 3</div>
+          <div class="tier-content">
+            <strong>国際機関のデータベース</strong>
+            <p>OECD、Eurostat、ILO、World Bankのデータ。各国の方法論が統一されていない場合の補完的情報源として使用。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <h2>3. 定義</h2>
+      <dl class="definitions">
+        <div class="def-item">
+          <dt>「移民」の定義</dt>
+          <dd>本サイトでは原則として各国の公式定義に従います。一般的に「外国生まれ（foreign-born）」を使用しますが、一部の国（フランス、ベルギー等）では「外国籍（foreign national）」が公式統計の主要区分として使用されます。各ページに使用定義を明記します。</dd>
+        </div>
+        <div class="def-item">
+          <dt>「移民系（immigrant background）」</dt>
+          <dd>両親のうち少なくとも一方が外国生まれの人物を指す場合に使用。主にスカンジナビア諸国の統計区分。</dd>
+        </div>
+        <div class="def-item">
+          <dt>財政コストの計算方法</dt>
+          <dd>財政への純効果の推計方法は国によって大きく異なります（静的vs動的分析、地方/連邦/国家レベルの範囲、含まれる受給項目の違い等）。本サイトでは各国の公式推計機関が使用した方法論をそのまま報告し、方法論が異なる国間での直接比較は行いません。</dd>
+        </div>
+        <div class="def-item">
+          <dt>雇用率格差</dt>
+          <dd>「移民の雇用率」と「現地生まれの雇用率」の差（パーセントポイント）。年齢・性別・学歴の構成差を補正していない粗値です。各国統計局の最新公表値を使用。</dd>
+        </div>
+        <div class="def-item">
+          <dt>PISA格差</dt>
+          <dd>移民背景を持つ生徒と現地生まれの生徒の数学スコア差（PISA 2022）。「ESCS補正後」は社会経済・文化的地位（ESCS指数）を統計的に除外した後の残差。出典：OECD PISA 2022 Volume I。</dd>
+        </div>
+        <div class="def-item">
+          <dt>犯罪統計における「per capita（人口比）」</dt>
+          <dd>被疑者数・有罪判決数を各グループの人口で割った値（被疑者率%）。各グループの絶対数を比較するのではなく、個人レベルのリスクを反映するためにこの方法を採用しています。出典：各国警察庁・司法省の公式統計。</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="method-section">
+      <h2>4. 国際比較の限界</h2>
+      <ul class="limitations">
+        <li>各国で「移民」の定義が異なるため、直接の数値比較には注意が必要です。</li>
+        <li>財政コストの推計は方法論によって大きく異なり、同一の国でも複数の推計値が存在する場合があります。</li>
+        <li>犯罪統計は年齢・性別・都市部集中・社会経済的地位を補正していない粗値であり、移民背景そのものの影響を示すものではありません。</li>
+        <li>PISA格差は学校教育システムの差異や各国のサンプル構成を反映する場合があります。</li>
+        <li>データが入手不可能な国には「—」または「公式データなし」と明記しています。</li>
+      </ul>
+    </section>
+
+    <section class="method-section">
+      <h2>5. 更新プロセス</h2>
+      <p>各ページの数値は、各国統計局の年次刊行スケジュールに合わせて更新します。最終更新日は各ページのフッターまたはメタデータに記載します。データの更新は手動で行い、一次資料を直接確認した後にのみ公開します。</p>
+      <p>新しいデータが入手可能になるまで、前年度の数値を使用し、参照年を明記します。確認できていないデータは公開しません。</p>
+    </section>
+
+    <section class="method-section">
+      <h2>6. 本サイトについて</h2>
+      <p>移民白書は、西側諸国の移民に関する公式統計を日本語・英語で提供する独立データベースです。2025年に開設。日本語でのこの種の情報へのアクセスを改善することを目的としています。</p>
+      <p>お問い合わせ・誤りの報告：ページ下部のフィードバックフォームをご利用ください。</p>
+    </section>
+
+  </div>
+</main>
+
+<style>
+.methodology-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.method-section {
+  margin-bottom: 3rem;
+}
+.method-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+.method-section p, .method-section li {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.source-hierarchy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.source-tier {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+.tier-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  margin-top: 0.15rem;
+}
+.tier-1 .tier-badge { background: #4caf7d; }
+.tier-2 .tier-badge { background: #d4a017; }
+.tier-3 .tier-badge { background: #666; }
+.tier-content strong { display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.tier-content p { font-size: 0.85rem; color: var(--color-muted); margin: 0; line-height: 1.5; }
+.definitions { display: flex; flex-direction: column; gap: 1.25rem; }
+.def-item dt {
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+.def-item dd {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  padding-left: 1rem;
+  border-left: 3px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+.limitations {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.limitations li { font-size: 0.9rem; color: var(--color-muted); }
+</style>
+</BaseLayout>
