@@ -158,16 +158,21 @@ import KeyFigure from '../../components/KeyFigure.astro';
       <div class="source-badge">出典：BKA、Polizeiliche Kriminalstatistik（PKS）2024</div>
 
       <BarChart
-        title="被疑者数・国籍別（2024年、外国人法に特有の違反を除く）"
-        unit="人"
+        title="被疑者の疑い率・国籍別（2024年、外国人法に特有の違反を除く、人口比推計）"
+        unit="%"
         bars={[
-          { label: 'ドイツ国籍の被疑者', value: 1270858 },
-          { label: '非ドイツ国籍の被疑者', value: 696873, note: 'ドイツの外国籍人口比約15%に対して過剰代表' },
+          { label: 'ドイツ国籍（推計：約8,700万人中1,270,858人）', value: 1.46, note: '人口比推計：約1.46%' },
+          { label: '非ドイツ国籍（推計：約1,300万人中696,873人）', value: 5.36, note: '人口比推計：約5.36% ― 約3.7倍' },
         ]}
-        sourceLabel="BKA、PKS 2024"
+        sourceLabel="BKA PKS 2024（被疑者数）× Destatis 2024人口推計（人口）から本サイト算出"
         sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
         sourcePrefix="出典："
       />
+
+      <div class="data-note important">
+        <strong>⚠️ このグラフの計算方法：</strong>
+        BKA PKS 2024の被疑者数（ドイツ国籍：1,270,858人、非ドイツ国籍：696,873人、外国人法違反を除く）を、Destatis 2024年人口推計（ドイツ国籍：約8,700万人、外国籍居住者：約1,300万人）で割って算出した<strong>人口比推計値</strong>です。非ドイツ国籍の被疑者率はドイツ国籍の約3.7倍となります。ただし、この統計は年齢・性別・社会経済的状況・居住地を統制していません。移民人口は男性・若年層・都市部居住者・低所得層に偏っており、これらの要因だけで差の相当部分が説明される可能性があります。出典：BKA PKS 2024、Destatis 2024年人口推計。
+      </div>
 
       <div class="data-note">
         <strong>PKSを読む上での重要な留意点：</strong>

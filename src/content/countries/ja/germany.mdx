@@ -143,15 +143,20 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 ## 6. 治安・司法
 
 <BarChart
-	title="被疑者数（国籍別、2024年、外国人法に特有の違反を除く）"
-	unit="人"
+	title="被疑者の疑い率・国籍別（2024年、外国人法違反を除く、人口比推計）"
+	unit="%"
 	bars={[
-		{ label: 'ドイツ国籍の被疑者', value: 1270858 },
-		{ label: '非ドイツ国籍の被疑者', value: 696873 },
+		{ label: 'ドイツ国籍（推計：約8,700万人中1,270,858人）', value: 1.46, note: '推計被疑率：約1.46%' },
+		{ label: '非ドイツ国籍（推計：約1,300万人中696,873人）', value: 5.36, note: '推計被疑率：約5.36% ― 約3.7倍' },
 	]}
-	sourceLabel="BKA、Polizeiliche Kriminalstatistik（PKS）2024"
+	sourceLabel="BKA PKS 2024（被疑者数）× Destatis 2024人口推計（人口）から本サイト算出"
 	sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
 />
+
+<div class="callout-limits">
+<strong>⚠️ このグラフの計算方法：</strong>
+BKA PKS 2024の被疑者数（ドイツ国籍：1,270,858人、非ドイツ国籍：696,873人、外国人法違反を除く）をDestatis 2024年人口推計（ドイツ国籍：約8,700万人、外国籍居住者：約1,300万人）で割った<strong>人口比推計値</strong>です。非ドイツ国籍の被疑者率はドイツ国籍の約3.7倍となります。ただし、年齢・性別・社会経済的状況・居住地は統制されていません。移民人口は男性・若年層・都市部居住者・低所得層に偏っており、これらの要因だけで差の相当部分が説明される可能性があります。出典：BKA PKS 2024、Destatis 2024年人口推計。
+</div>
 
 - PKS（BKA）：欧州で最も詳細な報告書の一つであり、国籍と居住資格を区別する。その読み方（移民の年齢・性別構成による影響）については継続的な議論がある。
 - BKAの2024年版PKS統計表によると、ドイツ国籍以外の被疑者（「Tatverdächtige」）は、外国人法違反を含む2024年の全被疑者の約17.6%を占める（2023年は17.9%）。外国人法に特有の違反を除くと、非ドイツ国籍の被疑者は約696,873人、ドイツ国籍の被疑者は1,270,858人。BKA自身は、非ドイツ国籍の人口がドイツ国籍の人口に比べて明らかに若く男性比率が高い人口構成を持つことを指摘しており、この2つの要因は国籍に関わらず統計的に犯罪率の高さと関連している；TVBZ（Tatverdächtigenbelastungszahl、被疑者負荷指数）は、比較においてこの構成上の効果を部分的に中和するために設計されている。

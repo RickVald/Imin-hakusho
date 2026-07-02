@@ -158,16 +158,21 @@ import KeyFigure from '../../../components/KeyFigure.astro';
       <div class="source-badge">Source: BKA, Polizeiliche Kriminalstatistik (PKS) 2024</div>
 
       <BarChart
-        title="Number of suspects by nationality (2024, excluding offences under residence law)"
-        unit="persons"
+        title="Suspect rate by nationality (2024, excluding residence law offences — per-capita estimate)"
+        unit="%"
         bars={[
-          { label: 'German nationals', value: 1270858 },
-          { label: 'Non-German nationals', value: 696873, note: 'Over-represented relative to ~15% foreign national share of population' },
+          { label: 'German nationals (est. 1,270,858 of ~87M)', value: 1.46, note: 'Estimated rate: ~1.46%' },
+          { label: 'Non-German nationals (est. 696,873 of ~13M)', value: 5.36, note: 'Estimated rate: ~5.36% — approx. 3.7× higher' },
         ]}
-        sourceLabel="BKA, PKS 2024"
+        sourceLabel="BKA PKS 2024 (suspect counts) × Destatis 2024 population estimates — calculated by this site"
         sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
         sourcePrefix="Source:"
       />
+
+      <div class="data-note important">
+        <strong>⚠️ How this chart was calculated:</strong>
+        BKA PKS 2024 suspect counts (German nationals: 1,270,858; non-German nationals: 696,873, excluding residence-law offences) were divided by Destatis 2024 population estimates (German nationals: ~87M; foreign-national residents: ~13M) to produce <strong>per-capita rate estimates</strong>. The non-German suspect rate is approximately 3.7× the German rate. However, these figures are not controlled for age, sex, socioeconomic status, or place of residence. The immigrant population skews younger, more male, more urban, and lower-income — factors that independently predict higher crime rates regardless of origin. Source: BKA PKS 2024; Destatis 2024 population estimates.
+      </div>
 
       <div class="data-note">
         <strong>Key caveats for reading the PKS:</strong>
