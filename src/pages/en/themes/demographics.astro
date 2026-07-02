@@ -63,15 +63,15 @@ import KeyFigure from '../../../components/KeyFigure.astro';
         { label: 'France', value: 11.3, note: 'Foreign-born immigrants (2024 provisional, INSEE)' },
         { label: 'Czechia', value: 10.38, note: 'Foreign nationals (Dec 2025, Czech Statistical Office)' },
         { label: 'Italy', value: 9.1, note: 'Foreign nationals (Dec 2024, ISTAT)' },
-        { label: 'Netherlands', value: 0, note: 'Data pending — CBS changed methodology in 2024' },
-        { label: 'Germany (ref.)', value: 0, note: 'Data pending — definition varies significantly (see note)' },
+        { label: 'Netherlands (ref.)', value: 13.5, note: 'Foreign-born (2023 estimate, CBS) — provisional after methodology change; not directly comparable' },
+        { label: 'Germany (ref.)', value: 25.6, note: 'Migration background — Migrationshintergrund (2024, Destatis) — broader definition, not comparable to other countries' },
       ]}
       sourceLabel="National statistics agencies: ABS, Stats NZ, FSO, Statistics Canada, SCB, Statistics Austria, ONS, SSB, US Census Bureau, INE Portugal, INE Spain, Statbel, Statistics Denmark, CSO, Statistics Finland, INSEE, Czech Statistical Office, ISTAT, CBS, Destatis"
       sourceUrl="/"
       sourcePrefix="Sources: "
     />
     <p class="chart-note">
-      Netherlands and Germany show 0% as their data is pending or incomparable (see methodology note below). Germany's "persons with a migration background" (Migrationshintergrund) stands at 25.6% (2024, Destatis/Mikrozensus) but uses a broader definition encompassing persons with at least one foreign-born or immigrant parent, making it non-comparable to the foreign-national or foreign-born measures used by other countries.
+      Netherlands and Germany are shown as reference figures only (grey bars) — their definitions are not directly comparable to the other countries. Germany's 25.6% (Migrationshintergrund) includes anyone with at least one foreign-born parent, making it broader than foreign-born or foreign-national measures. The Netherlands figure (approx. 13.5%) is a provisional estimate following CBS's 2024 methodology change.
     </p>
   </section>
 
@@ -230,9 +230,9 @@ import KeyFigure from '../../../components/KeyFigure.astro';
           </tr>
           <tr>
             <td class="country-name"><a href="/en/countries/netherlands/">Netherlands</a></td>
-            <td class="share-pending">Data pending</td>
-            <td>CBS changed methodology in 2024</td>
-            <td>—</td>
+            <td class="share-pending">~13.5% (ref.)</td>
+            <td>Foreign-born (provisional estimate) — methodology changed in 2024, not directly comparable</td>
+            <td>2023 estimate</td>
             <td>CBS (Statistics Netherlands)</td>
           </tr>
           <tr class="alt">

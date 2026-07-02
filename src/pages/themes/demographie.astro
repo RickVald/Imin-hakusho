@@ -63,15 +63,15 @@ import KeyFigure from '../../components/KeyFigure.astro';
         { label: 'フィンランド', value: 11.7, note: '外国出身（第1世代・第2世代、2025年12月、Statistics Finland）' },
         { label: 'チェコ', value: 10.38, note: '外国籍（2025年12月、ČSÚ）' },
         { label: 'イタリア', value: 9.1, note: '外国籍（2024年12月、ISTAT）' },
-        { label: 'オランダ', value: 0, note: 'データ確認中（CBS、一次資料未確定）' },
-        { label: 'ドイツ（参考）', value: 0, note: 'データ確認中（Destatis、定義により異なる）' },
+        { label: 'オランダ（参考）', value: 13.5, note: '外国生まれ（2023年推計、CBS）— 定義変更後の暫定値、直接比較不可' },
+        { label: 'ドイツ（参考）', value: 25.6, note: '移住背景（Migrationshintergrund）（2024年、Destatis）— 定義が他国と大きく異なるため直接比較不可' },
       ]}
       sourceLabel="各国公式統計機関（ABS、Stats NZ、OFS、StatCan、SCB、Statistik Austria、ONS、SSB、INE、Census Bureau、INE España、Statbel、CSO、DST、INSEE、Statistics Finland、ČSÚ、ISTAT）"
       sourceUrl="/"
       sourcePrefix="出典："
     />
     <p class="chart-note">
-      ※ オランダ・ドイツは比率0%と表示されていますが、データ確認中のため暫定的に除外しています（下表参照）。ドイツは「移住背景（Migrationshintergrund）」を持つ人口が25.6%（2024年、Destatis）に達しますが、定義が他国と大きく異なるため単純比較ができません。
+      ※ オランダの13.5%は2023年推計値（CBS）で、CBSが2024年に分類方法を変更したため他国との直接比較には注意が必要です。ドイツの25.6%は「移住背景（Migrationshintergrund）」（本人または両親の少なくとも一方が移民・外国生まれの場合を含む広い定義）であり、他国の「外国籍」や「外国生まれ」と単純比較できません。
     </p>
   </section>
 
@@ -229,9 +229,9 @@ import KeyFigure from '../../components/KeyFigure.astro';
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
-            <td class="share-pending">データ確認中</td>
-            <td>CBS、一次資料未確定</td>
-            <td>—</td>
+            <td class="share-pending">約13.5%（参考）</td>
+            <td>外国生まれ（暫定推計）※定義変更後</td>
+            <td>2023年推計</td>
             <td>CBS（オランダ統計局）</td>
           </tr>
           <tr class="alt">
