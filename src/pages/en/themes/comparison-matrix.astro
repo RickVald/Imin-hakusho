@@ -15,6 +15,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     </p>
     <div class="lang-switch">
       <a href="/themes/tableau-comparatif/">🇯🇵 日本語で読む</a>
+      <button id="btn-csv" class="csv-btn">⬇ Download CSV</button>
     </div>
   </div>
 
@@ -446,6 +447,52 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   line-height: 1.6;
   color: var(--color-muted, #7c87a3);
 }
+.csv-btn {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  margin-left: 1rem;
+}
+.csv-btn:hover { background: var(--color-accent); color: #fff; }
 </style>
+
+<script>
+document.getElementById('btn-csv')?.addEventListener('click', () => {
+  const rows = [
+    ['Country','Code','Population share','Fiscal impact','Employment gap','PISA gap','Crime','Housing','Asylum'],
+    ['Denmark','DK','12.6%','-DKK 16bn/yr','-14.5pt','-28pt (ESCS)','2.6×','Strained','High'],
+    ['Sweden','SE','21%','+SEK 6bn/yr (cond.)','-16pt','-34pt (ESCS)','~2.5×','Strained','High'],
+    ['Norway','NO','17.5%','-NOK 410k/refugee','-12pt','-36pt (raw)','n/a','Strained','High'],
+    ['Finland','FI','11.7%','n/a','-18pt','-42pt (ESCS)','n/a','Moderate','Moderate'],
+    ['Germany','DE','25.6%','-€2.1bn/yr','-13pt','-32pt (ESCS)','5.36% vs 1.46%','Strained','High'],
+    ['Austria','AT','20.5%','n/a','-11pt','-25pt','n/a','Strained','High'],
+    ['Switzerland','CH','27.7%','n/a','-7pt','-19pt (ESCS)','n/a','Moderate','Low'],
+    ['France','FR','11.3%','n/a','-16pt','~-20pt','18-20% of perps','Strained','Moderate'],
+    ['Belgium','BE','36.6%','n/a','-20pt','-17pt (ESCS)','n/a','Strained','Moderate'],
+    ['Netherlands','NL','24.6%','Negative (refugees)','-15pt','-27pt (ESCS)','3×','Strained','Moderate'],
+    ['United Kingdom','UK','19%','Mixed (OBR)','-8pt','-12pt','~12% of conv.','Strained','Moderate'],
+    ['Ireland','IE','12%','n/a','-6pt','n/a','n/a','Strained','Moderate'],
+    ['Italy','IT','9.1%','INPS positive','-5pt','n/a','n/a','Low','Moderate'],
+    ['Spain','ES','14%','GDP positive','-8pt','-7pt (ESCS)','n/a','Moderate','Moderate'],
+    ['Portugal','PT','14%','n/a','-9pt','-25pt (ESCS)','n/a','Moderate','Low'],
+    ['Czech Republic','CZ','10.4%','n/a','-3pt','n/a','n/a','Low','Low'],
+    ['United States','US','14.3%','Mixed (NAS)','-4pt','-16pt (2nd gen+)','Lower','Moderate','—'],
+    ['Canada','CA','23%','Mixed (PBO)','-7pt','-16pt (2nd gen≈)','n/a','Strained','Moderate'],
+    ['Australia','AU','32%','Mixed (PC)','-4pt','+26pt','n/a','Strained','Moderate'],
+    ['New Zealand','NZ','28.8%','Mixed (Treasury)','-5pt','+16pt','n/a','Strained','Moderate'],
+  ];
+  const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+  const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'immigration-factbook-comparison-matrix.csv';
+  a.click();
+});
+</script>
 
 </BaseLayout>
