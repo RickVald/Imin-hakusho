@@ -1,0 +1,490 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
+---
+
+<BaseLayout title="移民と犯罪統計：欧州公式データと方法論的解説 | 移民白書" lang="ja" altHref="/en/themes/crime/" description="スウェーデン・ノルウェー・デンマーク・オランダ・ドイツ・フランスにおける移民と犯罪の公式統計。BRÅ、SSB、DST、CBS、BKA、SSMSIの一次資料のみを使用し、社会経済的要因を必ず明示。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
+    </nav>
+    <h1>移民と犯罪統計：欧州公式データと方法論的解説</h1>
+    <p class="intro">
+      移民と犯罪の関係は、欧州における公共的議論の中で最も誤情報が多いテーマの一つです。本ページは、各国の公式な警察・司法統計機関が公表したデータのみを使用し、各研究機関が明示する方法論上の留意点を必ず併記します。「差がある」という事実と、「その差が何を意味するか」は、全く別の問いです。
+    </p>
+    <div class="lang-switch">
+      <a href="/en/themes/crime/">🌐 View in English</a>
+    </div>
+  </div>
+
+  <section class="methodology-box">
+    <h2>犯罪統計の比較が困難な理由</h2>
+    <div class="callout-methodology">
+      <ul>
+        <li>
+          <strong>すべての国が出身別データを公表しているわけではない</strong>：フランスは法律（CNIL）により出自・民族による公的統計の作成を禁止している。オーストラリア、ニュージーランド、カナダなどはこの区分を一切公表しない。
+        </li>
+        <li>
+          <strong>過剰代表は原因ではなく相関に過ぎない</strong>：犯罪統計学の基本的な知見として、犯罪は若年・男性・低所得・都市部居住者に集中する。移民はこれらのカテゴリーに人口学的に過剰に代表されており、出身そのものとの因果関係を示すものではない。スウェーデンBRÅ（2021年）、ノルウェーSSB、デンマーク司法省はいずれもこの点を公式に明記している。
+        </li>
+        <li>
+          <strong>「移民」の定義が国によって異なる</strong>：国籍（ドイツBKA、フランスSSMSI）、出生国（スウェーデンBRÅ）、両親の出生国まで含む「移民的背景」（ノルウェーSSB、デンマークDST）、在留資格の有無など、指標が根本的に異なる。
+        </li>
+        <li>
+          <strong>社会経済的要因を統制した場合、差は縮小する</strong>：スウェーデンBRÅ（2021年）では、年齢・性別・可処分所得・教育水準・居住市区町村を統制すると、外国出生の親を持つ国内出生者の過剰代表率が約半分に低下する。ノルウェーSSBでも年齢・性別補正により差は縮小する。
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="charts-section">
+    <h2>国別公式データ</h2>
+
+    <!-- スウェーデン -->
+    <div class="country-block">
+      <h3>スウェーデン — BRÅ（犯罪防止評議会）</h3>
+      <div class="source-badge">出典：BRÅ報告書2021:9「Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund」（2021年8月25日公表、対象期間2007〜2018年）</div>
+
+      <KeyFigure
+        value="約2.5倍"
+        label="外国出生者が犯罪被疑者として登録される頻度（スウェーデン人の両親を持つ国内出生者比、年齢・性別・社会経済的要因を統制する前）"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>BRÅ自身による方法論的留意点（公式）：</strong>
+        外国出生の親を持つスウェーデン国内出生者（第二世代）の過剰代表性については、年齢・性別・可処分所得・教育水準・居住市区町村の種類を統制すると、その<strong>約半分が消失する</strong>。統制後も差は完全には解消しないが、残る差の解釈には社会的排除・居住地の集中などの要因が関わる。両グループともに、被疑者となる人口の割合は2007年から2018年にかけて低下した。
+        <br/>
+        <a href="https://bra.se/rapporter/arkiv/2021-08-25-misstankta-for-brott-bland-personer-med-inrikes-respektive-utrikes-bakgrund" target="_blank" rel="noopener">BRÅ公式ページ →</a>
+      </div>
+
+      <div class="data-note supplementary">
+        補足研究：ESO 2025:4「Särskilt utsatta」— 民族的セグリゲーションと非行の関係について分析。
+        <a href="https://eso.expertgrupp.se/rapporter/2025_4-sarskilt-utsatta/" target="_blank" rel="noopener">ESO報告書 →</a>
+      </div>
+    </div>
+
+    <!-- ノルウェー -->
+    <div class="country-block">
+      <h3>ノルウェー — SSB（中央統計局）</h3>
+      <div class="source-badge">出典：SSB「Innvandrere mindre overrepresentert blant siktede enn før」および「Mer detaljerte tall for siktede med innvandrerbakgrunn」</div>
+
+      <BarChart
+        title="被疑者（siktede）の粗率：出身別（2010〜2013年平均）"
+        unit="%"
+        bars={[
+          { label: '移民的背景のない人々', value: 4.5, note: '基準グループ' },
+          { label: '移民（粗率）', value: 6.7, note: '年齢・性別補正後：5.8%（-13%）' },
+          { label: 'ノルウェー生まれの移民の子（粗率）', value: 11.3, note: '年齢・性別補正後：6.8%（-40%）' },
+        ]}
+        sourceLabel="SSB「Innvandrere mindre overrepresentert blant siktede enn før」"
+        sourceUrl="https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for"
+        sourcePrefix="出典："
+      />
+
+      <div class="data-note">
+        <strong>SSB自身による方法論的留意点（公式）：</strong>
+        犯罪は統計的に若年男性の間でより頻発する傾向があり、移民の中でこのカテゴリーは過剰に代表されている。年齢・性別を補正するだけで差は大幅に縮小する。雇用状況や居住地による補正も差を縮小させるが、説明されない残差が残ることをSSB自身が認めている。過剰代表率は<strong>2002年（移民+62%）から2015年（+21%）へと継続的に低下</strong>している。
+        <br/>
+        <a href="https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for" target="_blank" rel="noopener">SSB公式ページ →</a>
+      </div>
+
+      <div class="data-note supplementary">
+        より近年（2015〜2017年）の概数：被疑者の年平均78,000人のうち、約18%が移民、2.5%がノルウェー生まれの移民の子、68%がその他の居住人口。
+      </div>
+    </div>
+
+    <!-- デンマーク -->
+    <div class="country-block">
+      <h3>デンマーク — DST／司法省研究部門</h3>
+      <div class="source-badge">出典：「Kriminalitet og herkomst 2023」（司法省研究部門、2025年4月、DSTの2023年有罪判決データ使用）</div>
+
+      <KeyFigure
+        value="約2.6倍"
+        label="非欧米諸国出身の移民の子（男性）の刑法犯指数（年齢補正済み、デンマーク男性全体の平均を基準＝1とした場合）"
+        tone="neutral"
+      />
+      <KeyFigure
+        value="約2.9倍"
+        label="非欧米諸国出身の移民の子（男性）の暴力犯罪指数（年齢補正済み）"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>比較の参照点：</strong>
+        これらの指数は出身を問わないデンマーク人男性全体の平均（基準指数＝1）と比較したもので、グループ間の年齢構成の差を補正した上で算出されている。デンマーク統計局（DST）はStatistikbankenで出身別の有罪判決者数を定期的に公表しており、欧州の中でも最も体系的に出身別犯罪統計を公開する機関の一つである。
+        <br/>
+        <a href="https://www.justitsministeriet.dk/wp-content/uploads/2025/05/Kriminalitet-og-herkomst-2023-WT.pdf" target="_blank" rel="noopener">司法省報告書PDF →</a>
+        &nbsp;
+        <a href="https://www.dst.dk/da/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer" target="_blank" rel="noopener">DST Statistikbanken（有罪判決者数） →</a>
+      </div>
+    </div>
+
+    <!-- オランダ -->
+    <div class="country-block">
+      <h3>オランダ — CBS（中央統計局）</h3>
+      <div class="source-badge">出典：CBS「Integratie en samenleven 2024 — Criminaliteit」（2023年暫定データ）</div>
+
+      <BarChart
+        title="12歳以上の人口における登録被疑者の割合（2023年・出身別）"
+        unit="%"
+        bars={[
+          { label: 'オランダ出身者（自国民）', value: 0.6 },
+          { label: '外国生まれ', value: 1.1 },
+          { label: '一方の親が外国生まれの第二世代', value: 1.2 },
+          { label: '両親ともに外国生まれの第二世代', value: 2.8, note: '測定されたカテゴリーの中で最高率' },
+        ]}
+        sourceLabel="CBS「Integratie en samenleven 2024 — Criminaliteit」"
+        sourceUrl="https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/"
+        sourcePrefix="出典："
+      />
+
+      <div class="data-note">
+        <strong>CBS自身による方法論的留意点（公式）：</strong>
+        CBSは2024年に「移住背景（migratieachtergrond）」分類を段階的に廃止し、出生国による分類に置き換えつつある。これにより1999〜2022年の長期系列は中断された。移住理由別（就労／庇護／家族）や、合法／不法在留別の分解はCBSの公開表には存在しない。
+        <br/>
+        <a href="https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/" target="_blank" rel="noopener">CBS公式ページ →</a>
+        &nbsp;
+        <a href="https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-veiligheid-en-criminaliteit-naar-herkomst-" target="_blank" rel="noopener">CBS方法論解説 →</a>
+      </div>
+    </div>
+
+    <!-- ドイツ -->
+    <div class="country-block">
+      <h3>ドイツ — BKA（連邦刑事警察庁）</h3>
+      <div class="source-badge">出典：BKA、Polizeiliche Kriminalstatistik（PKS）2024</div>
+
+      <BarChart
+        title="被疑者数・国籍別（2024年、外国人法に特有の違反を除く）"
+        unit="人"
+        bars={[
+          { label: 'ドイツ国籍の被疑者', value: 1270858 },
+          { label: '非ドイツ国籍の被疑者', value: 696873, note: 'ドイツの外国籍人口比約15%に対して過剰代表' },
+        ]}
+        sourceLabel="BKA、PKS 2024"
+        sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
+        sourcePrefix="出典："
+      />
+
+      <div class="data-note">
+        <strong>PKSを読む上での重要な留意点：</strong>
+        ドイツBKAのPKSは欧州で最も詳細な警察犯罪統計の一つであり、「国籍」と「Zuwanderer（移住者）」を区別する。ただし国籍による分類は外国籍を取得した旧移民を計上せず、逆にドイツ国籍でない観光客・短期在留者も含む。移民の年齢・性別・社会経済的構成による影響については継続的な学術的議論がある。
+        <br/>
+        <a href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html" target="_blank" rel="noopener">BKA PKS 2024 →</a>
+      </div>
+    </div>
+
+    <!-- フランス -->
+    <div class="country-block">
+      <h3>フランス — SSMSI（内務省統計研究所）</h3>
+      <div class="source-badge">出典：内務省SSMSI「2024年の治安と犯罪：統計総括と県別アトラス」</div>
+
+      <div class="data-note important">
+        <strong>フランスの法的枠組み：</strong>
+        フランスは法律（CNIL、情報処理と自由に関する法律）により、出身民族・人種・系譜に基づく公的統計の作成を禁止している。したがってSSMSIが公表するのは「外国籍」対「フランス籍」のみであり、フランス国籍を取得した移民や移民の子は「フランス人」として計上される。
+      </div>
+
+      <BarChart
+        title="加害者として特定された人物に占める外国籍者の割合（2024年、犯罪種別）"
+        unit="%"
+        bars={[
+          { label: '殺人', value: 18 },
+          { label: '故意の傷害（15歳以上被害者）', value: 20 },
+          { label: '性的暴力', value: 13 },
+          { label: '武器を用いた窃盗', value: 22 },
+          { label: '武器を用いない暴力的窃盗', value: 30 },
+          { label: '住居侵入窃盗', value: 38 },
+        ]}
+        sourceLabel="SSMSI「Insécurité et délinquance en 2024 : bilan statistique」"
+        sourceUrl="https://www.interieur.gouv.fr/Interstats/Actualites/Insecurite-et-delinquance-en-2024-bilan-statistique-et-atlas-departemental"
+        sourcePrefix="出典（※本調査時点でURLは403エラー——手動確認が必要）："
+      />
+
+      <div class="data-note">
+        <strong>SSMSI自身による方法論的留意点（公式）：</strong>
+        2024年の居住人口における外国籍者の割合は約8〜9%。上記の比率との差は、外国籍者が特定の犯罪類型に過剰代表されることを示すが、SSMSI自身が指摘するように、二重国籍を持つ加害者を識別できず、外国生まれで現在フランス国籍を取得している人物の犯罪（フランス人として計上）も測定できない。これは近年の移民出身者の実際の割合を過小評価する傾向がある。
+        <br/>
+        <a href="https://www.interieur.gouv.fr/Interstats/Actualites/Insecurite-et-delinquance-en-2024-bilan-statistique-et-atlas-departemental" target="_blank" rel="noopener">内務省SSMSI →</a>
+      </div>
+    </div>
+
+    <!-- イギリス -->
+    <div class="country-block">
+      <h3>イギリス — 司法省（イングランド・ウェールズ）</h3>
+      <div class="source-badge">出典：gov.uk「Offender management statistics quarterly」（司法省）、2025年1〜3月期</div>
+
+      <KeyFigure
+        value="約12%"
+        label="2025年3月31日時点でイングランド・ウェールズの受刑者人口に占める外国籍受刑者の割合（約88,000人中約10,400人）"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>留意点：</strong>
+        この数値は在監者の「国籍」による分類であり、英国国籍を取得した移民はここに含まれない。英国の総人口における外国籍者の比率（約10%）との比較では過剰代表が示唆されるが、年齢・性別・社会経済的要因の補正が行われていない点に注意が必要。出生国別・滞在資格別の詳細な分解は公表されていない。
+        <br/>
+        <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">司法省コレクション →</a>
+      </div>
+    </div>
+
+    <!-- フィンランド -->
+    <div class="country-block">
+      <h3>フィンランド — Tilastokeskus（フィンランド統計局）</h3>
+      <div class="source-badge">出典：フィンランド統計局「Rikos- ja pakkokeinotilasto 2023」</div>
+
+      <div class="data-note">
+        フィンランド統計局は出身（syntyperä）・背景国（taustamaa）別の犯罪統計を StatFinデータベースで公表している。ただし、2017〜2018年以降の年齢・性別調整済みの出身別被疑率は、本調査時点では一次資料での確認ができなかった。データが入手可能になり次第、更新する予定。
+        <br/>
+        <a href="https://stat.fi/fi/julkaisu/cln328ikz5bck0bvzrnax22se" target="_blank" rel="noopener">フィンランド統計局 Rikos-tilasto 2023 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="no-data-section">
+    <h2>出身別データを公表していない国・地域</h2>
+    <div class="callout-no-data">
+      <p>以下の国・地域は、出身・国籍・移民的背景による犯罪統計の分解を公式には公表していない。これは本サイトの調査上の不備ではなく、各国の法的・政策的な選択を反映している。</p>
+      <ul>
+        <li>
+          <strong>フランス</strong> — CNIL法により出自・民族による公的統計の作成が禁止されている。公表されるのは国籍別のみ（上記参照）。
+        </li>
+        <li>
+          <strong>オーストラリア</strong> — 出生国・民族別の犯罪統計は各州警察の管轄であり、連邦レベルでの出身別統計は公表されていない。
+        </li>
+        <li>
+          <strong>ニュージーランド</strong> — 出身・民族別の犯罪統計は出生国別には体系的に公表されていない。
+        </li>
+        <li>
+          <strong>カナダ</strong> — 連邦警察（RCMP）・Statistics Canadaの公式統計では、出生国・移民的背景別の犯罪統計は公表されていない。
+        </li>
+        <li>
+          <strong>スペイン・ポルトガル・イタリア</strong> — 国籍別の一部データは存在するが、社会経済的要因を統制した体系的な分析報告書は確認されていない。
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="summary-section">
+    <h2>公式統計から読み取れること・読み取れないこと</h2>
+    <div class="callout-methodology">
+      <ul>
+        <li><strong>読み取れること</strong>：スウェーデン・ノルウェー・デンマーク・オランダ・ドイツ・フランスの公式統計はいずれも、移民または外国籍者が犯罪被疑者・有罪判決者・受刑者に占める割合が、人口比を上回ることを示している。</li>
+        <li><strong>読み取れないこと（各統計機関が公式に留意点として明記）</strong>：この過剰代表が「移民であること」そのものによるものか、年齢・性別・貧困・居住地の集中・社会的排除などの社会経済的要因によるものかを、粗率から直接読み取ることはできない。社会経済的要因を統制すると差は縮小する（BRÅ、SSB）。</li>
+        <li><strong>経年変化</strong>：ノルウェーSSBのデータでは、補正後の過剰代表率は2002年から2015年にかけて継続的に低下している。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .lang-switch {
+    margin-top: 1.25rem;
+  }
+
+  .lang-switch a {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .lang-switch a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .methodology-box {
+    margin-bottom: 3rem;
+  }
+
+  .callout-methodology {
+    background: var(--color-surface-raised);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout-methodology ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .callout-methodology li {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .callout-methodology li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .country-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-surface-raised);
+  }
+
+  .country-block:last-child {
+    border-bottom: none;
+  }
+
+  .source-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+    padding: 0.2rem 0.65rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .data-note {
+    background: color-mix(in srgb, var(--color-surface-raised) 50%, var(--color-surface));
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    margin-top: 0.75rem;
+  }
+
+  .data-note.important {
+    border-left-color: #e07b39;
+    background: color-mix(in srgb, #e07b3920 60%, var(--color-surface));
+  }
+
+  .data-note.supplementary {
+    border-left-color: var(--color-muted);
+    color: var(--color-muted);
+    font-size: 0.84rem;
+  }
+
+  .data-note a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-size: 0.85rem;
+  }
+
+  .no-data-section {
+    margin-bottom: 3rem;
+  }
+
+  .callout-no-data {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout-no-data p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .callout-no-data ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .callout-no-data li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .callout-no-data li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-muted);
+  }
+
+  .summary-section {
+    margin-bottom: 2rem;
+  }
+</style>
+
+</BaseLayout>

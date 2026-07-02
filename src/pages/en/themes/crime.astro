@@ -1,0 +1,490 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+---
+
+<BaseLayout title="Immigration and Crime Statistics: Official Data from Europe | Immigration Factbook" lang="en" altHref="/themes/securite/" description="Official police and justice statistics on immigration and crime from Sweden, Norway, Denmark, Netherlands, Germany and France. Sources: BRÅ, SSB, DST, CBS, BKA, SSMSI. All figures include mandatory methodological caveats from the publishing agencies.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Thematic Comparisons</span>
+    </nav>
+    <h1>Immigration and Crime: Official Police Statistics with Methodological Notes</h1>
+    <p class="intro">
+      The relationship between immigration and crime is one of the most information-polluted topics in public debate. This page uses only data published by official police and justice statistics agencies, and systematically presents the methodological caveats those agencies themselves attach to their findings. The existence of a statistical gap and the cause of that gap are entirely separate questions.
+    </p>
+    <div class="lang-switch">
+      <a href="/themes/securite/">🌐 日本語で読む</a>
+    </div>
+  </div>
+
+  <section class="methodology-box">
+    <h2>Why Crime Statistics Are Hard to Compare</h2>
+    <div class="callout-methodology">
+      <ul>
+        <li>
+          <strong>Not all countries publish data broken down by origin or nationality.</strong> France is legally prohibited (CNIL) from producing public statistics by ethnic origin or ancestry. Australia, New Zealand, and Canada publish no such breakdown at the national level.
+        </li>
+        <li>
+          <strong>Over-representation is a correlation, not a cause.</strong> A fundamental finding of criminology is that crime is concentrated among young males, low-income groups, and urban residents. Immigrants are disproportionately represented in these demographic categories. Sweden's BRÅ (2021), Norway's SSB, and Denmark's Ministry of Justice all state this explicitly in their official reports.
+        </li>
+        <li>
+          <strong>The definition of "immigrant" varies fundamentally by country.</strong> Statistics use nationality (Germany BKA, France SSMSI), country of birth (Sweden BRÅ), "immigrant background" including parental country of birth (Norway SSB, Denmark DST), or residence status — making direct cross-country comparisons unreliable.
+        </li>
+        <li>
+          <strong>Controlling for socioeconomic factors substantially reduces the gap.</strong> Sweden's BRÅ (2021) found that controlling for age, sex, disposable income, education level, and municipality type reduced the over-representation of second-generation immigrants by approximately half. Norway's SSB similarly found significant reductions after controlling for age and sex.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="charts-section">
+    <h2>Official Data by Country</h2>
+
+    <!-- Sweden -->
+    <div class="country-block">
+      <h3>Sweden — BRÅ (Crime Prevention Council)</h3>
+      <div class="source-badge">Source: BRÅ Report 2021:9 "Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund" (published 25 August 2021, covering 2007–2018)</div>
+
+      <KeyFigure
+        value="~2.5×"
+        label="Frequency at which foreign-born persons are registered as crime suspects compared to Swedish-born persons with two Swedish-born parents (before controlling for socioeconomic factors)"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>BRÅ's own official methodological caveat:</strong>
+        For Swedish-born persons with two foreign-born parents (second generation), the over-representation <strong>falls by approximately half</strong> when controlling for age, sex, disposable income, education level, and municipality type. Even after controlling, a gap remains — but its interpretation requires considering factors such as social exclusion and residential concentration. Both groups saw their share of suspects <strong>decline between 2007 and 2018</strong>.
+        <br/>
+        <a href="https://bra.se/rapporter/arkiv/2021-08-25-misstankta-for-brott-bland-personer-med-inrikes-respektive-utrikes-bakgrund" target="_blank" rel="noopener">BRÅ official report page →</a>
+      </div>
+
+      <div class="data-note supplementary">
+        Supplementary research: ESO 2025:4 "Särskilt utsatta" — analysis of the relationship between ethnic segregation and delinquency.
+        <a href="https://eso.expertgrupp.se/rapporter/2025_4-sarskilt-utsatta/" target="_blank" rel="noopener">ESO report →</a>
+      </div>
+    </div>
+
+    <!-- Norway -->
+    <div class="country-block">
+      <h3>Norway — SSB (Statistics Norway)</h3>
+      <div class="source-badge">Source: SSB "Innvandrere mindre overrepresentert blant siktede enn før" and "Mer detaljerte tall for siktede med innvandrerbakgrunn"</div>
+
+      <BarChart
+        title="Crude suspect rate by background (2010–2013 average)"
+        unit="%"
+        bars={[
+          { label: 'No immigrant background', value: 4.5, note: 'Reference group' },
+          { label: 'Immigrants (crude rate)', value: 6.7, note: 'After age/sex adjustment: 5.8% (−13%)' },
+          { label: 'Norwegian-born children of immigrants (crude)', value: 11.3, note: 'After age/sex adjustment: 6.8% (−40%)' },
+        ]}
+        sourceLabel="SSB 'Innvandrere mindre overrepresentert blant siktede enn før'"
+        sourceUrl="https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for"
+        sourcePrefix="Source:"
+      />
+
+      <div class="data-note">
+        <strong>SSB's own official methodological caveat:</strong>
+        Crime is statistically more common among young males, a category over-represented among immigrants. Controlling for age and sex alone substantially reduces the gap. SSB explicitly acknowledges that unexplained residual differences remain after controlling for employment status and residential area. The over-representation rate has <strong>declined continuously from 2002 (immigrants +62%) to 2015 (+21%)</strong>.
+        <br/>
+        <a href="https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for" target="_blank" rel="noopener">SSB official page →</a>
+      </div>
+
+      <div class="data-note supplementary">
+        More recent figures (2015–2017): Of the annual average of 78,000 suspects, approximately 18% were immigrants, 2.5% were Norwegian-born children of immigrants, and 68% were from the rest of the resident population.
+      </div>
+    </div>
+
+    <!-- Denmark -->
+    <div class="country-block">
+      <h3>Denmark — DST / Ministry of Justice Research Division</h3>
+      <div class="source-badge">Source: "Kriminalitet og herkomst 2023" (Ministry of Justice research division, April 2025, using DST 2023 conviction data)</div>
+
+      <KeyFigure
+        value="~2.6×"
+        label="Crime index for male descendants of non-Western immigrants (age-adjusted, relative to the Danish male population average = 1) for all criminal code offences"
+        tone="neutral"
+      />
+      <KeyFigure
+        value="~2.9×"
+        label="Violent crime index for male descendants of non-Western immigrants (age-adjusted)"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>Methodological note:</strong>
+        These indices compare against the average for all Danish males regardless of origin (reference index = 1) and are calculated after adjusting for differences in age composition between groups. Statistics Denmark (DST) publishes origin-disaggregated conviction data routinely via Statistikbanken and is one of the few European statistical agencies to do so systematically.
+        <br/>
+        <a href="https://www.justitsministeriet.dk/wp-content/uploads/2025/05/Kriminalitet-og-herkomst-2023-WT.pdf" target="_blank" rel="noopener">Ministry of Justice report (PDF) →</a>
+        &nbsp;
+        <a href="https://www.dst.dk/da/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer" target="_blank" rel="noopener">DST Statistikbanken (convictions) →</a>
+      </div>
+    </div>
+
+    <!-- Netherlands -->
+    <div class="country-block">
+      <h3>Netherlands — CBS (Statistics Netherlands)</h3>
+      <div class="source-badge">Source: CBS "Integratie en samenleven 2024 — Criminaliteit" (provisional 2023 data)</div>
+
+      <BarChart
+        title="Registered suspects as share of population aged 12+ (2023, by origin)"
+        unit="%"
+        bars={[
+          { label: 'Dutch-origin population', value: 0.6 },
+          { label: 'Foreign-born', value: 1.1 },
+          { label: 'Second generation — one foreign-born parent', value: 1.2 },
+          { label: 'Second generation — both parents foreign-born', value: 2.8, note: 'Highest rate among measured categories' },
+        ]}
+        sourceLabel="CBS 'Integratie en samenleven 2024 — Criminaliteit'"
+        sourceUrl="https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/"
+        sourcePrefix="Source:"
+      />
+
+      <div class="data-note">
+        <strong>CBS's own official methodological caveat:</strong>
+        CBS phased out the "migratieachtergrond" (migration background) classification in 2024, replacing it with country of birth. This disrupted the long-running 1999–2022 series. No CBS public tables exist for breakdowns by migration motive (employment / asylum / family) or by legal vs. irregular residence status.
+        <br/>
+        <a href="https://longreads.cbs.nl/integratie-en-samenleven-2024/criminaliteit/" target="_blank" rel="noopener">CBS official page →</a>
+        &nbsp;
+        <a href="https://www.cbs.nl/nl-nl/dossier/dossier-asiel-migratie-en-integratie/hoe-verschillen-veiligheid-en-criminaliteit-naar-herkomst-" target="_blank" rel="noopener">CBS methodology note →</a>
+      </div>
+    </div>
+
+    <!-- Germany -->
+    <div class="country-block">
+      <h3>Germany — BKA (Federal Criminal Police Office)</h3>
+      <div class="source-badge">Source: BKA, Polizeiliche Kriminalstatistik (PKS) 2024</div>
+
+      <BarChart
+        title="Number of suspects by nationality (2024, excluding offences under residence law)"
+        unit="persons"
+        bars={[
+          { label: 'German nationals', value: 1270858 },
+          { label: 'Non-German nationals', value: 696873, note: 'Over-represented relative to ~15% foreign national share of population' },
+        ]}
+        sourceLabel="BKA, PKS 2024"
+        sourceUrl="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html"
+        sourcePrefix="Source:"
+      />
+
+      <div class="data-note">
+        <strong>Key caveats for reading the PKS:</strong>
+        The BKA's PKS is one of Europe's most detailed police crime statistics and distinguishes between nationality and "Zuwanderer" (recent arrivals). However, nationality-based classification excludes naturalised former migrants and includes tourists and short-term visitors who are not migrants. The influence of immigrants' age, sex, and socioeconomic composition on the figures is the subject of ongoing academic debate.
+        <br/>
+        <a href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/PKS2024/PKSTabellen/BundTVNationalitaet/bundTVNationalitaet.html" target="_blank" rel="noopener">BKA PKS 2024 →</a>
+      </div>
+    </div>
+
+    <!-- France -->
+    <div class="country-block">
+      <h3>France — SSMSI (Interior Ministry Statistics Institute)</h3>
+      <div class="source-badge">Source: Interior Ministry SSMSI "Insécurité et délinquance en 2024 : bilan statistique et atlas départemental"</div>
+
+      <div class="data-note important">
+        <strong>France's legal framework:</strong>
+        French law (CNIL — Data Processing and Freedoms Act) prohibits the production of public statistics based on ethnic origin, race, or ancestry. SSMSI therefore publishes only "foreign national" vs. "French national" breakdowns. Naturalised immigrants and their French-nationality children are counted as French.
+      </div>
+
+      <BarChart
+        title="Share of foreign nationals among identified offenders, by crime type (2024)"
+        unit="%"
+        bars={[
+          { label: 'Homicide', value: 18 },
+          { label: 'Intentional assault (victims 15+)', value: 20 },
+          { label: 'Sexual violence', value: 13 },
+          { label: 'Theft with a weapon', value: 22 },
+          { label: 'Violent theft without a weapon', value: 30 },
+          { label: 'Residential burglary', value: 38 },
+        ]}
+        sourceLabel="SSMSI 'Insécurité et délinquance en 2024 : bilan statistique'"
+        sourceUrl="https://www.interieur.gouv.fr/Interstats/Actualites/Insecurite-et-delinquance-en-2024-bilan-statistique-et-atlas-departemental"
+        sourcePrefix="Source (Note: URL returned HTTP 403 during verification — manual confirmation required):"
+      />
+
+      <div class="data-note">
+        <strong>SSMSI's own official methodological caveat:</strong>
+        Foreign nationals made up approximately 8–9% of the resident population in 2024. SSMSI itself notes that these statistics cannot identify dual nationals, nor do they capture offences by foreign-born persons who have since acquired French nationality (counted as French). This tends to <strong>underestimate</strong> the actual share of persons with recent immigrant backgrounds in the figures.
+        <br/>
+        <a href="https://www.interieur.gouv.fr/Interstats/Actualites/Insecurite-et-delinquance-en-2024-bilan-statistique-et-atlas-departemental" target="_blank" rel="noopener">Interior Ministry SSMSI →</a>
+      </div>
+    </div>
+
+    <!-- UK -->
+    <div class="country-block">
+      <h3>United Kingdom — Ministry of Justice (England and Wales)</h3>
+      <div class="source-badge">Source: gov.uk "Offender management statistics quarterly" (Ministry of Justice), January–March 2025</div>
+
+      <KeyFigure
+        value="~12%"
+        label="Share of foreign nationals in the prison population of England and Wales as of 31 March 2025 (approx. 10,400 of ~88,000)"
+        tone="neutral"
+      />
+
+      <div class="data-note">
+        <strong>Caveats:</strong>
+        This figure classifies by nationality; naturalised immigrants are not captured. A comparison with the ~10% foreign national share of the UK total population suggests over-representation, but no adjustment is made for age, sex, or socioeconomic factors. No breakdown by country of birth or immigration status is published for this series.
+        <br/>
+        <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">Ministry of Justice collection →</a>
+      </div>
+    </div>
+
+    <!-- Finland -->
+    <div class="country-block">
+      <h3>Finland — Tilastokeskus (Statistics Finland)</h3>
+      <div class="source-badge">Source: Statistics Finland "Rikos- ja pakkokeinotilasto 2023"</div>
+
+      <div class="data-note">
+        Statistics Finland publishes crime data by origin (syntyperä) and background country (taustamaa) in the StatFin database. However, age- and sex-adjusted suspect rates by origin for recent years (2017–2018 onwards) could not be confirmed from primary sources in the course of this study and will be added when available.
+        <br/>
+        <a href="https://stat.fi/fi/julkaisu/cln328ikz5bck0bvzrnax22se" target="_blank" rel="noopener">Statistics Finland — Rikos-tilasto 2023 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="no-data-section">
+    <h2>Countries That Do Not Publish Origin-Disaggregated Crime Statistics</h2>
+    <div class="callout-no-data">
+      <p>The following countries do not publish official crime statistics broken down by immigrant origin, country of birth, or migration background at the national level. This is not a gap in this website's research — it reflects a deliberate legal or policy choice in each jurisdiction.</p>
+      <ul>
+        <li>
+          <strong>France</strong> — The CNIL law prohibits statistics by ethnic origin or ancestry. Only nationality-based breakdowns are published (see above).
+        </li>
+        <li>
+          <strong>Australia</strong> — Crime statistics are managed by state and territory police forces; no national-level breakdown by country of birth or immigrant background is published.
+        </li>
+        <li>
+          <strong>New Zealand</strong> — No systematic national breakdown of crime by country of birth or immigration status is published.
+        </li>
+        <li>
+          <strong>Canada</strong> — Statistics Canada and the RCMP do not publish crime statistics broken down by country of birth or immigrant background.
+        </li>
+        <li>
+          <strong>Spain, Portugal, Italy</strong> — Some nationality-based data exist, but no systematic national reports with socioeconomic controls have been identified.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="summary-section">
+    <h2>What the Official Statistics Show — and What They Cannot Tell Us</h2>
+    <div class="callout-methodology">
+      <ul>
+        <li><strong>What the data show:</strong> Official statistics in Sweden, Norway, Denmark, the Netherlands, Germany, and France all find that immigrants or foreign nationals are over-represented among suspects, convicted persons, or prisoners relative to their population share.</li>
+        <li><strong>What the data cannot show (as explicitly stated by the publishing agencies):</strong> The crude figures cannot determine whether this over-representation is caused by "being an immigrant" or by the demographic, economic, and residential characteristics associated with immigrant status. Controlling for socioeconomic factors reduces the gap substantially (BRÅ, SSB).</li>
+        <li><strong>Trend:</strong> Norway's SSB data show the adjusted over-representation rate declined continuously from 2002 to 2015.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .lang-switch {
+    margin-top: 1.25rem;
+  }
+
+  .lang-switch a {
+    display: inline-block;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid var(--color-accent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .lang-switch a:hover {
+    background: var(--color-accent);
+    color: var(--color-bg);
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+
+  .methodology-box {
+    margin-bottom: 3rem;
+  }
+
+  .callout-methodology {
+    background: var(--color-surface-raised);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout-methodology ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .callout-methodology li {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .callout-methodology li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .country-block {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-surface-raised);
+  }
+
+  .country-block:last-child {
+    border-bottom: none;
+  }
+
+  .source-badge {
+    display: inline-block;
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+    padding: 0.2rem 0.65rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .data-note {
+    background: color-mix(in srgb, var(--color-surface-raised) 50%, var(--color-surface));
+    border-left: 3px solid var(--color-accent);
+    border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    margin-top: 0.75rem;
+  }
+
+  .data-note.important {
+    border-left-color: #e07b39;
+    background: color-mix(in srgb, #e07b3920 60%, var(--color-surface));
+  }
+
+  .data-note.supplementary {
+    border-left-color: var(--color-muted);
+    color: var(--color-muted);
+    font-size: 0.84rem;
+  }
+
+  .data-note a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-size: 0.85rem;
+  }
+
+  .no-data-section {
+    margin-bottom: 3rem;
+  }
+
+  .callout-no-data {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .callout-no-data p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+
+  .callout-no-data ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .callout-no-data li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .callout-no-data li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-muted);
+  }
+
+  .summary-section {
+    margin-bottom: 2rem;
+  }
+</style>
+
+</BaseLayout>
