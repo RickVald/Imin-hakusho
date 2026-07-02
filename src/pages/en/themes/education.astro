@@ -4,7 +4,7 @@ import BarChart from '../../../components/BarChart.astro';
 import KeyFigure from '../../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="PISA 2022: Immigrant Student Achievement Gap by Country — Official OECD Data | Immigration Factbook" lang="en" description="Official OECD PISA 2022 data on math score gaps between immigrant and native-born students across 20 countries. 83% of the raw gap is explained by socioeconomic factors, not origin.">
+<BaseLayout title="PISA 2022: Immigrant Student Achievement Gap by Country — Official OECD Data | Immigration Factbook" lang="en" description="Official OECD PISA 2022 data on math score gaps between immigrant and native-born students across 20 countries. 83% of the raw gap is explained by socioeconomic factors, not origin." type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -204,6 +204,17 @@ import KeyFigure from '../../../components/KeyFigure.astro';
       Positive = native-born outperform immigrants. Negative = immigrants outperform native-born.<br/>
       Source: <a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html" target="_blank" rel="noopener noreferrer">OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance</a>
     </p>
+  </section>
+
+  <section class="methodological-note">
+    <h2>What this data does not show</h2>
+    <ul>
+      <li>On average across the OECD, 83% of the raw PISA gap is explained by socioeconomic factors. However, a residual gap of 17–42 points persists after ESCS correction in several European countries.</li>
+      <li>Gaps vary greatly by country of origin, language of instruction, and parental education. Aggregate figures mask this diversity.</li>
+      <li>Second-generation immigrants (born in the receiving country) tend to score significantly higher than first-generation, though this varies by country.</li>
+      <li>PISA is a snapshot at age 15 and does not reflect lifetime educational outcomes.</li>
+      <li>English-speaking countries (AU, NZ, US, UK) show immigrants outperforming native-born students — a different pattern from most of continental Europe.</li>
+    </ul>
   </section>
 </main>
 
@@ -442,6 +453,32 @@ import KeyFigure from '../../../components/KeyFigure.astro';
 
   .table-note a {
     color: var(--color-accent);
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

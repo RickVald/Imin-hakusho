@@ -4,7 +4,7 @@ import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="PISA 2022：移民の子どもの学力格差 — 20カ国公式データ | 移民白書" lang="ja" description="OECD PISA 2022公式データに基づく移民と現地生徒の数学スコア格差。社会経済補正後の20カ国比較。83%の格差は出身ではなく貧困で説明される。">
+<BaseLayout title="PISA 2022：移民の子どもの学力格差 — 20カ国公式データ | 移民白書" lang="ja" description="OECD PISA 2022公式データに基づく移民と現地生徒の数学スコア格差。社会経済補正後の20カ国比較。83%の格差は出身ではなく貧困で説明される。" type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -204,6 +204,17 @@ import KeyFigure from '../../components/KeyFigure.astro';
       正の値＝現地生徒が移民生徒を上回る。負の値＝移民の子どもが現地生徒を上回る。<br/>
       出典：<a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html" target="_blank" rel="noopener noreferrer">OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance</a>
     </p>
+  </section>
+
+  <section class="methodological-note">
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>PISA格差のOECD平均83%は社会経済的要因で説明されます。ただし、社会経済補正後も一部の国では17〜42点の格差が残ります。</li>
+      <li>格差は移民の出身国・学習言語・親の教育水準によって大きく異なります。集計データはこの多様性を覆い隠します。</li>
+      <li>第2世代移民（受入国生まれ）のスコアは第1世代より大幅に改善する傾向がありますが、国によって異なります。</li>
+      <li>PISA は15歳時点の一時的スナップショットであり、生涯にわたる教育成果を反映するものではありません。</li>
+      <li>英語圏（豪・NZ・米・英）では移民が現地生まれを上回るスコアを記録しており、欧州のパターンとは異なります。</li>
+    </ul>
   </section>
 </main>
 
@@ -439,6 +450,32 @@ import KeyFigure from '../../components/KeyFigure.astro';
 
   .table-note a {
     color: var(--color-accent);
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

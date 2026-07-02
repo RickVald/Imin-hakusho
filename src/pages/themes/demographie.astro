@@ -7,7 +7,8 @@ import KeyFigure from '../../components/KeyFigure.astro';
 <BaseLayout
   title="移民人口比率：西欧20カ国比較（2024年最新データ）| 移民白書"
   lang="ja"
-  description="各国公式統計に基づく移民・外国生まれ人口比率の20カ国比較。オーストラリア32%からイタリア9.1%まで、定義・測定方法の違いとともに解説。">
+  description="各国公式統計に基づく移民・外国生まれ人口比率の20カ国比較。オーストラリア32%からイタリア9.1%まで、定義・測定方法の違いとともに解説。"
+  type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -248,6 +249,15 @@ import KeyFigure from '../../components/KeyFigure.astro';
       ※オランダはCBSが2024年に分類方法を変更しており、最新の比較可能な数値が確認できていません。
     </p>
   </section>
+
+  <section class="methodological-note">
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>「移民」の定義は国によって異なります（外国生まれ vs 外国籍 vs 移民系）。このページでは各国の公式定義を使用しています。</li>
+      <li>人口比率の高さは、移民政策の成功・失敗を直接示すものではありません。歴史的・地理的・経済的要因が各国の水準を形成しています。</li>
+      <li>移民人口の構成（就労・難民・家族・留学生）は国によって大きく異なり、この内訳は人口比率と同様に重要です。</li>
+    </ul>
+  </section>
 </main>
 
 <style>
@@ -473,6 +483,32 @@ import KeyFigure from '../../components/KeyFigure.astro';
     color: var(--color-muted);
     line-height: 1.6;
     margin-top: 0.75rem;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

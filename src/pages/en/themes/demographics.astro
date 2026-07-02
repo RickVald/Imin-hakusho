@@ -7,7 +7,8 @@ import KeyFigure from '../../../components/KeyFigure.astro';
 <BaseLayout
   title="Share of Immigrants by Country: 20-Nation Comparison — Official Data | Immigration Factbook"
   lang="en"
-  description="Systematic comparison of immigrant and foreign-born population shares across 20 Western nations, drawn from each country's official national statistics. Australia 32% to Italy 9.1%.">
+  description="Systematic comparison of immigrant and foreign-born population shares across 20 Western nations, drawn from each country's official national statistics. Australia 32% to Italy 9.1%."
+  type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -249,6 +250,15 @@ import KeyFigure from '../../../components/KeyFigure.astro';
       * Netherlands: CBS discontinued the "migratieachtergrond" classification in 2024; a comparable current figure could not be confirmed.
     </p>
   </section>
+
+  <section class="methodological-note">
+    <h2>What this data does not show</h2>
+    <ul>
+      <li>The definition of "immigrant" varies by country (foreign-born vs foreign national vs immigrant background). This page uses each country's official definition.</li>
+      <li>A high population share does not directly indicate policy success or failure. Historical, geographical, and economic factors shape each country's level.</li>
+      <li>The composition of the immigrant population (labour, refugee, family, student) differs greatly by country and is as important as the share figure itself.</li>
+    </ul>
+  </section>
 </main>
 
 <style>
@@ -474,6 +484,32 @@ import KeyFigure from '../../../components/KeyFigure.astro';
     color: var(--color-muted);
     line-height: 1.6;
     margin-top: 0.75rem;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

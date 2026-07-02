@@ -4,7 +4,7 @@ import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="移民の雇用率格差：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/labour-market/" description="西欧20カ国における移民と現地人の雇用率・失業率格差を公式統計で比較。各国統計局・労働省の一次資料のみを使用。">
+<BaseLayout title="移民の雇用率格差：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/labour-market/" description="西欧20カ国における移民と現地人の雇用率・失業率格差を公式統計で比較。各国統計局・労働省の一次資料のみを使用。" type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -248,6 +248,16 @@ import KeyFigure from '../../components/KeyFigure.astro';
     </div>
   </section>
 
+  <section class="methodological-note">
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>雇用率格差は年齢・性別・学歴・滞在期間・出身地域を補正していない粗値です。これらの変数が格差の相当部分を説明します。</li>
+      <li>格差は差別の存在を直接示すものではなく、資格の未承認、語学力の差、到着後の年数の違いを反映している場合があります。</li>
+      <li>就労移民と難民・家族再結合移民では雇用率が大きく異なりますが、この分類別データは多くの国で公表されていません。</li>
+      <li>滞在年数が長くなるにつれて格差は縮小する傾向がありますが、完全な収束は多くの国で観察されていません。</li>
+    </ul>
+  </section>
+
   <section class="methodology-note">
     <h2>比較上の注意点</h2>
     <ul>
@@ -458,6 +468,32 @@ import KeyFigure from '../../components/KeyFigure.astro';
   .key-figures-row > :global(.key-figure) {
     flex: 1;
     min-width: 200px;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 
