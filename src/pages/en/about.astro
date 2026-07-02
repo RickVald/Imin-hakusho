@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About Immigration Factbook" lang="en" altHref="/a-propos/" description="Immigration Factbook is an independent database of official immigration statistics for 20 Western countries, published in Japanese and English. Editorial policy, funding, and update process explained.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>About</span>
+    </nav>
+    <h1>About Immigration Factbook</h1>
+    <div class="lang-switch"><a href="/a-propos/">🇯🇵 日本語版</a></div>
+  </div>
+
+  <div class="about-content">
+
+    <section class="about-section">
+      <h2>What is this site?</h2>
+      <p>Immigration Factbook (移民白書) is an independent database presenting the effects of immigration across 20 Western countries, based exclusively on primary official sources. It covers fiscal impact, employment, education, crime, and demographics, drawing from national statistics offices, treasuries, central banks, and international organisations (OECD, Eurostat, etc.).</p>
+      <p>The site launched in 2025 with the aim of improving access to this type of information for Japanese-speaking readers. Very little primary-source immigration data for Western countries had previously been available in Japanese.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Editorial policy</h2>
+      <ul class="about-list">
+        <li><strong>Primary sources only</strong>: Every figure is drawn directly from official publications. We do not use newspaper articles, Wikipedia, or think-tank summaries.</li>
+        <li><strong>Neutral tone</strong>: We present data without evaluative adjectives. Readers are left to draw their own conclusions.</li>
+        <li><strong>Methodological transparency</strong>: Each statistic includes its source, reference year, and definition. Where methodologies differ across countries, this is stated explicitly.</li>
+        <li><strong>Explicit limits</strong>: Each page includes a "What this data does not show" section to prevent conflation of correlation and causation.</li>
+        <li><strong>Unverified data is not published</strong>: We do not publish figures that have not been directly verified from a primary source.</li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Funding &amp; independence</h2>
+      <p>Immigration Factbook receives no funding from any political party, government body, foundation, lobby group, or advertiser. The site is independently operated.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Update process</h2>
+      <p>Data on each page is updated manually in line with each national statistics office's annual publication schedule. Updates are made only after direct verification of the primary source. The reference year is stated on each page.</p>
+    </section>
+
+    <section class="about-section">
+      <h2>Reporting errors</h2>
+      <p>If you find a data error or a broken source link, please let us know. Corrections are made promptly after verification.</p>
+      <p>Contact: <a href="mailto:contact@imin-hakusho.com">contact@imin-hakusho.com</a></p>
+    </section>
+
+    <div class="about-links">
+      <a href="/en/methodology/" class="about-link-card">
+        <span class="link-icon">📐</span>
+        <div>
+          <strong>Methodology &amp; Sources</strong>
+          <p>Definitions, source hierarchy, comparison limits, and update process in detail</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<style>
+.about-content {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.about-section {
+  margin-bottom: 2.5rem;
+}
+.about-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+.about-section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.about-section a { color: var(--color-accent); }
+.about-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.about-list li {
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  padding-left: 1.25rem;
+  border-left: 3px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+.about-list strong { color: var(--color-accent); }
+.about-links {
+  margin-top: 2.5rem;
+}
+.about-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s;
+}
+.about-link-card:hover { border-color: var(--color-accent); }
+.link-icon { font-size: 1.5rem; flex-shrink: 0; }
+.about-link-card strong { display: block; color: var(--color-accent); margin-bottom: 0.2rem; }
+.about-link-card p { font-size: 0.82rem; color: var(--color-muted); margin: 0; }
+</style>
+</BaseLayout>

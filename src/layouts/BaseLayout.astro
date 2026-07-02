@@ -7,9 +7,11 @@ interface Props {
 	altHref?: string;
 	description?: string;
 	canonicalUrl?: string;
+	type?: 'WebPage' | 'Article' | 'Dataset';
+	dateModified?: string;
 }
 
-const { title, lang, altHref, description: descriptionProp, canonicalUrl: canonicalUrlProp } = Astro.props;
+const { title, lang, altHref, description: descriptionProp, canonicalUrl: canonicalUrlProp, type = 'WebPage', dateModified } = Astro.props;
 
 const defaultDescription =
 	lang === 'en'
@@ -50,16 +52,57 @@ const footerText =
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
 
-		<!-- JSON-LD Organisation -->
+		<!-- JSON-LD : WebSite + Organization -->
 		<script type="application/ld+json" set:html={JSON.stringify({
 			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "移民白書",
-			"alternateName": "Immigration Factbook",
-			"url": "https://imin-hakusho.com",
-			"description": "移民が西欧20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータジャーナリズムサイト",
-			"inLanguage": ["ja", "en"]
+			"@graph": [
+				{
+					"@type": "WebSite",
+					"@id": "https://imin-hakusho.com/#website",
+					"name": "移民白書",
+					"alternateName": "Immigration Factbook",
+					"url": "https://imin-hakusho.com",
+					"description": "移民が西欧20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータベース",
+					"inLanguage": ["ja", "en"],
+					"potentialAction": {
+						"@type": "SearchAction",
+						"target": "https://imin-hakusho.com/?s={search_term_string}",
+						"query-input": "required name=search_term_string"
+					}
+				},
+				{
+					"@type": "Organization",
+					"@id": "https://imin-hakusho.com/#organization",
+					"name": "移民白書",
+					"alternateName": "Immigration Factbook",
+					"url": "https://imin-hakusho.com",
+					"foundingDate": "2025",
+					"description": "西側諸国の移民に関する公式統計を日本語・英語で提供する独立データベース",
+					"knowsAbout": ["immigration statistics", "migration data", "OECD", "Eurostat"],
+					"publishingPrinciples": "https://imin-hakusho.com/methodologie/"
+				}
+			]
 		})} />
+
+		<!-- JSON-LD : Article ou Dataset selon le type de page -->
+		{(type === 'Article' || type === 'Dataset') && (
+			<script type="application/ld+json" set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": type,
+				"@id": canonicalUrl,
+				"url": canonicalUrl,
+				"name": title,
+				"description": description,
+				"inLanguage": lang === 'ja' ? 'ja' : 'en',
+				"isPartOf": { "@id": "https://imin-hakusho.com/#website" },
+				"publisher": { "@id": "https://imin-hakusho.com/#organization" },
+				...(dateModified ? { "dateModified": dateModified } : {}),
+				...(type === 'Dataset' ? {
+					"creator": { "@id": "https://imin-hakusho.com/#organization" },
+					"license": "https://creativecommons.org/licenses/by/4.0/"
+				} : {})
+			})} />
+		)}
 
 		<!-- hreflang bidirectionnel : self + alternate -->
 		<link rel="alternate" hreflang={lang} href={canonicalUrl} />
@@ -97,9 +140,15 @@ const footerText =
 				<p>{footerText}</p>
 				<nav class="footer-nav">
 					{lang === 'ja' ? (
-						<a href="/methodologie/">方法論・情報源</a>
+						<>
+							<a href="/methodologie/">方法論・情報源</a>
+							<a href="/a-propos/">このサイトについて</a>
+						</>
 					) : (
-						<a href="/en/methodology/">Methodology & Sources</a>
+						<>
+							<a href="/en/methodology/">Methodology & Sources</a>
+							<a href="/en/about/">About</a>
+						</>
 					)}
 				</nav>
 			</div>
