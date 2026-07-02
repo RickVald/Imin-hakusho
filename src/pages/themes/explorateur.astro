@@ -1,0 +1,431 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="国別移民データ探索ツール | 移民白書" lang="ja" description="20カ国から1カ国を選択して、移民が財政・雇用・教育・犯罪・人口に与える影響を5つの指標で即時表示。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>国別探索</span>
+    </nav>
+    <h1>国別移民データ — 探索ツール</h1>
+    <p class="intro">国を選択すると、移民が財政・雇用・教育・安全・人口に与える影響を公式統計データで即時表示します。</p>
+    <div class="lang-switch"><a href="/en/themes/country-explorer/">🌐 English version</a></div>
+  </div>
+
+  <div class="selector-wrapper">
+    <label for="country-select">国を選択：</label>
+    <select id="country-select">
+      <option value="">-- 国を選択してください --</option>
+      <option value="dk">🇩🇰 デンマーク</option>
+      <option value="se">🇸🇪 スウェーデン</option>
+      <option value="no">🇳🇴 ノルウェー</option>
+      <option value="fi">🇫🇮 フィンランド</option>
+      <option value="de">🇩🇪 ドイツ</option>
+      <option value="at">🇦🇹 オーストリア</option>
+      <option value="ch">🇨🇭 スイス</option>
+      <option value="fr">🇫🇷 フランス</option>
+      <option value="be">🇧🇪 ベルギー</option>
+      <option value="nl">🇳🇱 オランダ</option>
+      <option value="uk">🇬🇧 イギリス</option>
+      <option value="ie">🇮🇪 アイルランド</option>
+      <option value="it">🇮🇹 イタリア</option>
+      <option value="es">🇪🇸 スペイン</option>
+      <option value="pt">🇵🇹 ポルトガル</option>
+      <option value="cz">🇨🇿 チェコ</option>
+      <option value="us">🇺🇸 アメリカ</option>
+      <option value="ca">🇨🇦 カナダ</option>
+      <option value="au">🇦🇺 オーストラリア</option>
+      <option value="nz">🇳🇿 ニュージーランド</option>
+    </select>
+  </div>
+
+  <div id="results" class="results hidden">
+    <div class="country-header">
+      <img id="country-flag" src="" alt="" width="48" height="36" />
+      <h2 id="country-name"></h2>
+      <a id="country-link" href="#" class="country-detail-link">詳細ページへ →</a>
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-card" id="card-population">
+        <div class="metric-icon">🌍</div>
+        <div class="metric-label">移民人口比率</div>
+        <div class="metric-value" id="val-population"></div>
+        <div class="metric-note" id="note-population"></div>
+      </div>
+      <div class="metric-card" id="card-fiscal">
+        <div class="metric-icon">💴</div>
+        <div class="metric-label">財政コスト</div>
+        <div class="metric-value" id="val-fiscal"></div>
+        <div class="metric-note" id="note-fiscal"></div>
+      </div>
+      <div class="metric-card" id="card-employment">
+        <div class="metric-icon">📊</div>
+        <div class="metric-label">雇用格差</div>
+        <div class="metric-value" id="val-employment"></div>
+        <div class="metric-note" id="note-employment"></div>
+      </div>
+      <div class="metric-card" id="card-education">
+        <div class="metric-icon">📚</div>
+        <div class="metric-label">学力格差（PISA）</div>
+        <div class="metric-value" id="val-education"></div>
+        <div class="metric-note" id="note-education"></div>
+      </div>
+      <div class="metric-card" id="card-crime">
+        <div class="metric-icon">🔒</div>
+        <div class="metric-label">犯罪統計</div>
+        <div class="metric-value" id="val-crime"></div>
+        <div class="metric-note" id="note-crime"></div>
+      </div>
+    </div>
+    <p class="sources-note">すべてのデータは一次公式資料（各国統計局・財務省・OECD・BKA・BRÅ等）に基づきます。</p>
+  </div>
+
+  <div id="placeholder" class="placeholder">
+    <div class="placeholder-icon">🗺️</div>
+    <p>上のメニューから国を選択してください</p>
+  </div>
+</main>
+
+<script>
+const DATA = {
+  dk: {
+    name: "デンマーク",
+    flag: "dk",
+    slug: "denmark",
+    population: { value: "12.6%", note: "移民・外国生まれ（2023年、DST）", signal: "yellow" },
+    fiscal:     { value: "−160億 DKK/年", note: "移民の財政純負担（Finansministeriet 2023）", signal: "red" },
+    employment: { value: "−14.5pt", note: "雇用率格差：移民 vs 現地生まれ（DST 2023）", signal: "red" },
+    education:  { value: "−28pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "2.6×", note: "移民系の犯罪率指数（現地生まれ=1、DST）", signal: "red" },
+  },
+  se: {
+    name: "スウェーデン",
+    flag: "se",
+    slug: "sweden",
+    population: { value: "21%", note: "外国生まれ（2023年、SCB）", signal: "red" },
+    fiscal:     { value: "+60億 SEK/年", note: "財政純効果（KI 2020、条件付き）", signal: "yellow" },
+    employment: { value: "−16pt", note: "雇用率格差（SCB 2023）", signal: "red" },
+    education:  { value: "−34pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "〜2.5×", note: "犯罪被疑者率の差（BRÅ 2021報告）", signal: "red" },
+  },
+  no: {
+    name: "ノルウェー",
+    flag: "no",
+    slug: "norway",
+    population: { value: "17.5%", note: "外国生まれ（2023年、SSB）", signal: "red" },
+    fiscal:     { value: "−41万 NOK/難民", note: "生涯財政純負担 R3カテゴリ（SSB 2017）", signal: "red" },
+    employment: { value: "−12pt", note: "雇用率格差（SSB 2023）", signal: "red" },
+    education:  { value: "−36pt", note: "PISA 2022 数学スコア格差（粗値）", signal: "red" },
+    crime:      { value: "—", note: "国別統計なし（公式）", signal: "gray" },
+  },
+  fi: {
+    name: "フィンランド",
+    flag: "fi",
+    slug: "finland",
+    population: { value: "11.7%", note: "外国生まれ（2023年、Statistics Finland）", signal: "yellow" },
+    fiscal:     { value: "調査中", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−18pt", note: "雇用率格差（Statistics Finland 2023）", signal: "red" },
+    education:  { value: "−42pt", note: "PISA 2022 数学スコア格差（ESCS補正後、最大）", signal: "red" },
+    crime:      { value: "—", note: "国別統計なし（公式）", signal: "gray" },
+  },
+  de: {
+    name: "ドイツ",
+    flag: "de",
+    slug: "germany",
+    population: { value: "25.6%", note: "外国生まれ（2023年、Destatis）", signal: "red" },
+    fiscal:     { value: "−21億 €/年", note: "財政純負担（Ifo Institut 2023）", signal: "red" },
+    employment: { value: "−13pt", note: "雇用率格差（Destatis 2023）", signal: "red" },
+    education:  { value: "−32pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "5.36%", note: "非ドイツ人の被疑者率 vs 1.46%（BKA PKS 2024）、3.7×", signal: "red" },
+  },
+  at: {
+    name: "オーストリア",
+    flag: "at",
+    slug: "austria",
+    population: { value: "20.5%", note: "外国生まれ（2023年、Statistik Austria）", signal: "red" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−11pt", note: "雇用率格差（AMS 2023）", signal: "red" },
+    education:  { value: "−25pt", note: "PISA 2022 数学スコア格差（推計）", signal: "red" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  ch: {
+    name: "スイス",
+    flag: "ch",
+    slug: "switzerland",
+    population: { value: "27.7%", note: "外国生まれ（2023年、OFS）", signal: "red" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−7pt", note: "雇用率格差（OFS 2023）", signal: "yellow" },
+    education:  { value: "−19pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "yellow" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  fr: {
+    name: "フランス",
+    flag: "fr",
+    slug: "france",
+    population: { value: "11.3%", note: "外国生まれ（2023年、INSEE）", signal: "yellow" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−16pt", note: "雇用率格差（INSEE 2023）", signal: "red" },
+    education:  { value: "〜−20pt", note: "PISA 2022 数学スコア格差（ESCS補正後、推計）", signal: "red" },
+    crime:      { value: "18–20%", note: "外国人の犯罪者割合（SSMSI 2022）; 外国人は人口の8–9%", signal: "red" },
+  },
+  be: {
+    name: "ベルギー",
+    flag: "be",
+    slug: "belgium",
+    population: { value: "36.6%", note: "移民系（外国生まれ＋子、2023年、Statbel）", signal: "red" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−20pt", note: "雇用率格差（Statbel 2023）", signal: "red" },
+    education:  { value: "−17pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  nl: {
+    name: "オランダ",
+    flag: "nl",
+    slug: "netherlands",
+    population: { value: "24.6%", note: "移民系（2023年、CBS）", signal: "red" },
+    fiscal:     { value: "動機別−", note: "難民系は純負担（CPB 2023）", signal: "red" },
+    employment: { value: "−15pt", note: "雇用率格差（CBS 2023）", signal: "red" },
+    education:  { value: "−27pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "3×", note: "非西洋系の犯罪率（CBS 統計）", signal: "red" },
+  },
+  uk: {
+    name: "イギリス",
+    flag: "gb",
+    slug: "uk",
+    population: { value: "19%", note: "外国生まれ（2023年、ONS）", signal: "yellow" },
+    fiscal:     { value: "混合（OBR）", note: "EEA移民は純貢献、非EEAは純負担（OBR 2023）", signal: "yellow" },
+    employment: { value: "−8pt", note: "雇用率格差（ONS 2023）", signal: "yellow" },
+    education:  { value: "−12pt", note: "PISA 2022 数学スコア格差（移民は改善傾向）", signal: "yellow" },
+    crime:      { value: "〜12%", note: "外国籍の有罪判決割合（MoJ 2022）; 人口比19%", signal: "green" },
+  },
+  ie: {
+    name: "アイルランド",
+    flag: "ie",
+    slug: "ireland",
+    population: { value: "12%", note: "外国生まれ（2023年、CSO）", signal: "yellow" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−6pt", note: "雇用率格差（CSO 2023）", signal: "yellow" },
+    education:  { value: "—", note: "データなし", signal: "gray" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  it: {
+    name: "イタリア",
+    flag: "it",
+    slug: "italy",
+    population: { value: "9.1%", note: "外国生まれ（2023年、ISTAT）", signal: "yellow" },
+    fiscal:     { value: "INPS＋", note: "外国人労働者の年金貢献は純プラス（INPS 2023）", signal: "green" },
+    employment: { value: "−5pt", note: "雇用率格差（ISTAT 2023）", signal: "yellow" },
+    education:  { value: "—", note: "データなし", signal: "gray" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  es: {
+    name: "スペイン",
+    flag: "es",
+    slug: "spain",
+    population: { value: "14%", note: "外国生まれ（2023年、INE）", signal: "yellow" },
+    fiscal:     { value: "成長＋", note: "GDP成長への貢献（Banco de España 2023）", signal: "green" },
+    employment: { value: "−8pt", note: "雇用率格差（INE 2023）", signal: "yellow" },
+    education:  { value: "−7pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "yellow" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  pt: {
+    name: "ポルトガル",
+    flag: "pt",
+    slug: "portugal",
+    population: { value: "14%", note: "外国生まれ（2023年、INE）", signal: "yellow" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−9pt", note: "雇用率格差（INE 2023）", signal: "yellow" },
+    education:  { value: "−25pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  cz: {
+    name: "チェコ",
+    flag: "cz",
+    slug: "czechia",
+    population: { value: "10.4%", note: "外国生まれ（2023年、ČSÚ）", signal: "yellow" },
+    fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
+    employment: { value: "−3pt", note: "雇用率格差（ČSÚ 2023）", signal: "green" },
+    education:  { value: "—", note: "データなし", signal: "gray" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  us: {
+    name: "アメリカ",
+    flag: "us",
+    slug: "usa",
+    population: { value: "14.3%", note: "外国生まれ（2023年、Census Bureau）", signal: "yellow" },
+    fiscal:     { value: "複合", note: "連邦財政＋（NAS 2017）、州・地方財政は負担", signal: "yellow" },
+    employment: { value: "−4pt", note: "雇用率格差（BLS 2023）", signal: "yellow" },
+    education:  { value: "−16pt", note: "PISA 2022 数学スコア格差（移民第2世代は改善）", signal: "green" },
+    crime:      { value: "低い", note: "移民の犯罪率は現地生まれより低い（Cato Institute）", signal: "green" },
+  },
+  ca: {
+    name: "カナダ",
+    flag: "ca",
+    slug: "canada",
+    population: { value: "23%", note: "外国生まれ（2023年、Statistics Canada）", signal: "red" },
+    fiscal:     { value: "複合", note: "技能移民は純貢献（PBO 2023）", signal: "yellow" },
+    employment: { value: "−7pt", note: "雇用率格差（Statistics Canada 2023）", signal: "yellow" },
+    education:  { value: "−16pt", note: "PISA 2022（移民第2世代は同等以上）", signal: "green" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  au: {
+    name: "オーストラリア",
+    flag: "au",
+    slug: "australia",
+    population: { value: "32%", note: "外国生まれ（2023年、ABS）", signal: "red" },
+    fiscal:     { value: "複合", note: "技能移民は純貢献（PC Report 2023）", signal: "yellow" },
+    employment: { value: "−4pt", note: "雇用率格差（ABS 2023）", signal: "yellow" },
+    education:  { value: "−26pt", note: "PISA 2022 数学スコア格差（移民は現地生まれより高い）", signal: "green" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+  nz: {
+    name: "ニュージーランド",
+    flag: "nz",
+    slug: "new-zealand",
+    population: { value: "28.8%", note: "外国生まれ（2023年、Stats NZ）", signal: "red" },
+    fiscal:     { value: "複合", note: "技能移民は純貢献（Treasury NZ）", signal: "yellow" },
+    employment: { value: "−5pt", note: "雇用率格差（Stats NZ 2023）", signal: "yellow" },
+    education:  { value: "−16pt", note: "PISA 2022（移民は現地生まれより高い）", signal: "green" },
+    crime:      { value: "—", note: "詳細内訳なし", signal: "gray" },
+  },
+};
+
+const SIGNAL_CLASS = { red: "signal-red", yellow: "signal-yellow", green: "signal-green", gray: "signal-gray" };
+
+const select = document.getElementById("country-select");
+const results = document.getElementById("results");
+const placeholder = document.getElementById("placeholder");
+
+select.addEventListener("change", () => {
+  const code = select.value;
+  if (!code) {
+    results.classList.add("hidden");
+    placeholder.classList.remove("hidden");
+    return;
+  }
+  const d = DATA[code];
+  document.getElementById("country-flag").src = `https://flagcdn.com/w40/${d.flag}.png`;
+  document.getElementById("country-flag").alt = d.name;
+  document.getElementById("country-name").textContent = d.name;
+  document.getElementById("country-link").href = `/countries/${d.slug}/`;
+
+  for (const key of ["population","fiscal","employment","education","crime"]) {
+    const metric = d[key];
+    document.getElementById(`val-${key}`).textContent = metric.value;
+    document.getElementById(`note-${key}`).textContent = metric.note;
+    const card = document.getElementById(`card-${key}`);
+    card.className = "metric-card " + (SIGNAL_CLASS[metric.signal] || "");
+  }
+
+  results.classList.remove("hidden");
+  placeholder.classList.add("hidden");
+});
+</script>
+
+<style>
+.selector-wrapper {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.selector-wrapper label {
+  font-weight: 700;
+  white-space: nowrap;
+  color: var(--color-accent);
+}
+#country-select {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--color-surface-raised);
+  color: var(--color-text);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#country-select:focus {
+  outline: 2px solid var(--color-accent);
+}
+.results {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.hidden { display: none; }
+.country-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.country-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+}
+.country-detail-link {
+  margin-left: auto;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 1px solid var(--color-accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+}
+.country-detail-link:hover { background: var(--color-accent); color: #fff; }
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.metric-card {
+  background: var(--color-surface-raised);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border-top: 4px solid var(--color-muted);
+  transition: transform 0.15s;
+}
+.metric-card:hover { transform: translateY(-2px); }
+.signal-red    { border-top-color: #e05252; }
+.signal-yellow { border-top-color: #d4a017; }
+.signal-green  { border-top-color: #4caf7d; }
+.signal-gray   { border-top-color: #666; }
+.metric-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.metric-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.metric-note {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+.sources-note {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-align: center;
+}
+.placeholder {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-muted);
+}
+.placeholder-icon { font-size: 3rem; margin-bottom: 1rem; }
+</style>
+</BaseLayout>
