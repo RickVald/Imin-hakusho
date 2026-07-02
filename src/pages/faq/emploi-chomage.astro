@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+---
+<BaseLayout title="移民と失業率の関係は？20カ国の公式統計 | 移民白書" lang="ja" description="ベルギー−20ptからチェコ−3ptまで、20カ国の公式統計による移民と現地生まれの雇用率格差を可視化。方法論上の限界と解釈の注意点を解説。">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
+    <h1>移民と失業率の関係は？20カ国の公式統計</h1>
+    <p class="intro">20カ国の公式統計において、移民の雇用率は現地生まれより低い。格差はベルギーの−20ptからチェコの−3ptまで幅広く、受け入れ政策・移民プロファイル・統合政策によって異なる。</p>
+    <div class="lang-switch"><a href="/en/faq/employment-gap/">🌐 English version</a></div>
+  </div>
+
+  <section>
+    <h2>20カ国の雇用率格差（2023年）</h2>
+    <BarChart
+      title="移民と現地生まれの雇用率格差（パーセントポイント）2023年"
+      sourceLabel="各国統計局（Statbel、SCB、INSEE、ONS等）2023年"
+      sourceUrl="/faq/emploi-chomage/"
+      sourcePrefix="出典："
+      unit="pt"
+      bars={[
+        { label: "ベルギー 🇧🇪", value: -20 },
+        { label: "フィンランド 🇫🇮", value: -18 },
+        { label: "スウェーデン 🇸🇪", value: -16 },
+        { label: "フランス 🇫🇷", value: -16 },
+        { label: "オランダ 🇳🇱", value: -15 },
+        { label: "デンマーク 🇩🇰", value: -14.5 },
+        { label: "ドイツ 🇩🇪", value: -13 },
+        { label: "ノルウェー 🇳🇴", value: -12 },
+        { label: "オーストリア 🇦🇹", value: -11 },
+        { label: "ポルトガル 🇵🇹", value: -9 },
+        { label: "イギリス 🇬🇧", value: -8 },
+        { label: "スペイン 🇪🇸", value: -8 },
+        { label: "カナダ 🇨🇦", value: -7 },
+        { label: "スイス 🇨🇭", value: -7 },
+        { label: "アイルランド 🇮🇪", value: -6 },
+        { label: "イタリア 🇮🇹", value: -5 },
+        { label: "ニュージーランド 🇳🇿", value: -5 },
+        { label: "アメリカ 🇺🇸", value: -4 },
+        { label: "オーストラリア 🇦🇺", value: -4 },
+        { label: "チェコ 🇨🇿", value: -3 },
+      ]}
+    />
+  </section>
+
+  <section>
+    <h2>主要データポイント（一次資料別）</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>国</th>
+          <th>格差（pt）</th>
+          <th>出典</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ベルギー</td><td>−20</td><td><a href="https://statbel.fgov.be" rel="noopener">Statbel 2023</a></td></tr>
+        <tr><td>フィンランド</td><td>−18</td><td><a href="https://www.stat.fi" rel="noopener">Statistics Finland 2023</a></td></tr>
+        <tr><td>スウェーデン</td><td>−16</td><td><a href="https://www.scb.se" rel="noopener">SCB 2023</a></td></tr>
+        <tr><td>フランス</td><td>−16</td><td><a href="https://www.insee.fr" rel="noopener">INSEE 2023</a></td></tr>
+        <tr><td>イギリス</td><td>−8</td><td><a href="https://www.ons.gov.uk" rel="noopener">ONS 2023</a></td></tr>
+        <tr><td>オーストラリア</td><td>−4</td><td><a href="https://www.abs.gov.au" rel="noopener">ABS 2023</a></td></tr>
+        <tr><td>チェコ</td><td>−3</td><td><a href="https://www.czso.cz" rel="noopener">ČSÚ 2023</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>方法論上の限界</h2>
+    <ul>
+      <li><strong>学歴・職業資格の非制御：</strong>移民集団と現地生まれの学歴分布が異なる。低学歴層の比率が高ければ、出身地にかかわらず雇用率は低くなる。</li>
+      <li><strong>滞在年数の非制御：</strong>新規到着者は語学・資格承認・ネットワーク構築に時間を要する。長期在住者は格差が縮小する傾向があるが、集計統計では混在する。</li>
+      <li><strong>出身国・移民カテゴリの非均質性：</strong>EU内労働移民、難民、技能移民では雇用率が根本的に異なる。国別の移民構成の違いが格差の規模の差を説明する部分がある。</li>
+      <li><strong>「移民」定義の国別差異：</strong>外国生まれ、外国籍、第2世代を含むかどうかが国によって異なる。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>雇用率格差は、移民に対する差別の証拠ではない。差別が存在する可能性はあるが、学歴・語学能力・滞在年数・職業資格承認の問題が混在しており、統計から切り分けることはできない。</li>
+      <li>格差の大きさは移民受け入れ政策の「成否」を示すものではない。難民を多く受け入れる国では格差が大きくなる傾向があるが、これは難民の属性（紛争地帯出身、語学ゼロからのスタート）を反映する。</li>
+      <li>チェコやオーストラリアの格差が小さいことは、統合政策の優秀さを直接証明しない。移民の属性（技能労働者の比率）と採用時の選抜プロセスが大きく影響している。</li>
+      <li>雇用率格差と経済的影響の関係は自動的ではない。移民は労働供給の増加と同時に需要の増加をもたらし、総合的な雇用水準への影響は雇用率格差から直接導出できない。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料リスト</h2>
+    <ul>
+      <li>Statbel — <a href="https://statbel.fgov.be" rel="noopener">statbel.fgov.be</a></li>
+      <li>Statistics Finland — <a href="https://www.stat.fi" rel="noopener">stat.fi</a></li>
+      <li>SCB (Sweden) — <a href="https://www.scb.se" rel="noopener">scb.se</a></li>
+      <li>INSEE (France) — <a href="https://www.insee.fr" rel="noopener">insee.fr</a></li>
+      <li>ONS (UK) — <a href="https://www.ons.gov.uk" rel="noopener">ons.gov.uk</a></li>
+      <li>ABS (Australia) — <a href="https://www.abs.gov.au" rel="noopener">abs.gov.au</a></li>
+      <li>ČSÚ (Czech Republic) — <a href="https://www.czso.cz" rel="noopener">czso.cz</a></li>
+    </ul>
+  </section>
+</main>
+</BaseLayout>

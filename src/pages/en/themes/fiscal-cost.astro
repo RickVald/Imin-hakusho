@@ -4,7 +4,7 @@ import BarChart from '../../../components/BarChart.astro';
 import KeyFigure from '../../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="Net Fiscal Impact of Immigration: 20-Country Comparison | Immigration Factbook" lang="en" altHref="/themes/cout-fiscal/" description="Official data on the net fiscal impact of immigration across 20 Western countries. Treasury, central banks, OECD primary sources only.">
+<BaseLayout title="Net Fiscal Impact of Immigration: 20-Country Comparison | Immigration Factbook" lang="en" altHref="/themes/cout-fiscal/" description="Official data on the net fiscal impact of immigration across 20 Western countries. Treasury, central banks, OECD primary sources only." type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -210,6 +210,16 @@ import KeyFigure from '../../../components/KeyFigure.astro';
         </tbody>
       </table>
     </div>
+  </section>
+
+  <section class="methodological-note">
+    <h2>What this data does not show</h2>
+    <ul>
+      <li>Methodologies differ across countries — figures cannot be directly compared between nations.</li>
+      <li>Net fiscal impact varies greatly by migrant profile (work, refugee, family) and length of stay.</li>
+      <li>Fiscal cost is only one dimension of immigration's effects. Labour market, demographic, and cultural contributions are not captured here.</li>
+      <li>Some countries have no official estimates, making comparisons partial.</li>
+    </ul>
   </section>
 
   <section class="methodology-note">
@@ -450,6 +460,32 @@ import KeyFigure from '../../../components/KeyFigure.astro';
     padding: 0.6rem 1rem;
     background: var(--color-surface-raised);
     border-radius: 4px;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

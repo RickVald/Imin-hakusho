@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Sweden immigration crime statistics: what BRÅ data actually shows | 移民白書" lang="en" description="Analysis of Sweden's BRÅ 2021 crime report: suspect rates by immigrant background, socioeconomic controls, and what the data cannot establish.">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/en/">Immigration Observatory</a> › <span>FAQ</span></nav>
+    <h1>Sweden immigration crime statistics: what BRÅ data actually shows</h1>
+    <p class="intro">Sweden's Crime Prevention Council (BRÅ) 2021 report shows that people with immigrant backgrounds are suspects at roughly 2.5 times the rate of native-born Swedes. After controlling for socioeconomic factors, the gap narrows substantially but does not disappear.</p>
+    <div class="lang-switch"><a href="/faq/criminalite-suede/">🌐 日本語版</a></div>
+  </div>
+
+  <section>
+    <h2>BRÅ official data (2021 report)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Indicator</th>
+          <th>Figure</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Suspect rate, immigrant background (unadjusted)</td>
+          <td>~2.5× native-born rate</td>
+          <td><a href="https://www.bra.se" rel="noopener">BRÅ 2021:1</a></td>
+        </tr>
+        <tr>
+          <td>After adjusting for age, sex, socioeconomic status, residential area</td>
+          <td>Gap narrows but persists</td>
+          <td><a href="https://www.bra.se" rel="noopener">BRÅ 2021:1 methodology notes</a></td>
+        </tr>
+        <tr>
+          <td>Calculation basis</td>
+          <td>Per capita rate (not absolute numbers)</td>
+          <td>BRÅ methodology</td>
+        </tr>
+        <tr>
+          <td>Most recent comparable publication</td>
+          <td>No new report since 2005</td>
+          <td>BRÅ (attributed to political pressure)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Effect of socioeconomic controls</h2>
+    <p>According to BRÅ's methodology notes, statistically controlling for age, sex, socioeconomic status, and residential area substantially reduces the gap between immigrant-background and native-born suspect rates. A residual gap remains after full adjustment.</p>
+    <ul>
+      <li>Age composition: immigrant populations have a higher share of young adults (the age group with the highest crime rates across all populations)</li>
+      <li>Sex ratio: a higher male proportion in immigrant cohorts affects raw figures</li>
+      <li>Socioeconomic status: concentration in low-income, high-unemployment areas is the largest explanatory variable</li>
+      <li>Residential area: concentration in urban and high-poverty districts</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Methodological limits</h2>
+    <ul>
+      <li><strong>Uncontrolled confounders:</strong> Comparisons that do not fully control for socioeconomic status, urban density, and age produce inflated apparent differences.</li>
+      <li><strong>Data discontinuity:</strong> BRÅ has not published this type of report since 2005. Systematic current statistics do not exist, making time-series comparisons impossible.</li>
+      <li><strong>Suspects vs. convictions:</strong> Suspect rates measure police activity and investigation, not convictions. Local policing intensity and enforcement patterns may affect who is counted as a suspect.</li>
+      <li><strong>Heterogeneity of offences:</strong> An index combining all crime types mixes minor infractions with serious offences.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What this data does not show</h2>
+    <ul>
+      <li>National or ethnic origin does not cause crime. The correlation is largely explained by the socioeconomic conditions in which many immigrants find themselves (poverty, unemployment, social exclusion).</li>
+      <li>The residual gap that persists after adjustment cannot be attributed to specific causes using available data. "Culture," "genetics," or "religion" are not operationalised as variables and cannot be invoked as explanations.</li>
+      <li>Swedish statistics reflect Sweden's specific context (scale of refugee intake, integration policies). Direct extrapolation to other countries is unjustified.</li>
+      <li>Because the data ends in 2005, current trends are unknown. Extrapolation from outdated data lacks evidential basis.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Primary source</h2>
+    <ul>
+      <li>Brottsförebyggande rådet / BRÅ (2021). <em>Invandrares och invandrares avkomlingars representation i brottsstatistiken</em>. Rapport 2021:1. <a href="https://www.bra.se" rel="noopener">www.bra.se</a></li>
+    </ul>
+  </section>
+</main>
+</BaseLayout>

@@ -4,7 +4,7 @@ import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="移民と犯罪統計：欧州公式データと方法論的解説 | 移民白書" lang="ja" altHref="/en/themes/crime/" description="スウェーデン・ノルウェー・デンマーク・オランダ・ドイツ・フランスにおける移民と犯罪の公式統計。BRÅ、SSB、DST、CBS、BKA、SSMSIの一次資料のみを使用し、社会経済的要因を必ず明示。">
+<BaseLayout title="移民と犯罪統計：欧州公式データと方法論的解説 | 移民白書" lang="ja" altHref="/en/themes/crime/" description="スウェーデン・ノルウェー・デンマーク・オランダ・ドイツ・フランスにおける移民と犯罪の公式統計。BRÅ、SSB、DST、CBS、BKA、SSMSIの一次資料のみを使用し、社会経済的要因を必ず明示。" type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -282,6 +282,16 @@ import KeyFigure from '../../components/KeyFigure.astro';
       </ul>
     </div>
   </section>
+
+  <section class="methodological-note">
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>本ページのデータは年齢・性別・社会経済的地位・居住地域を補正していない粗値です。これらの変数が格差の相当部分を説明します。</li>
+      <li>被疑者率・有罪判決率は、警察の活動パターンや起訴方針の差異を反映する場合があります。</li>
+      <li>移民背景と犯罪の相関は、因果関係を意味しません。</li>
+      <li>国籍や出身地は犯罪の原因ではなく、社会経済的状況と関連する代理変数として機能しています。</li>
+    </ul>
+  </section>
 </main>
 
 <style>
@@ -489,6 +499,32 @@ import KeyFigure from '../../components/KeyFigure.astro';
 
   .summary-section {
     margin-bottom: 2rem;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

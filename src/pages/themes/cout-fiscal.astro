@@ -4,7 +4,7 @@ import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="移民の財政コスト：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/fiscal-cost/" description="西欧20カ国における移民の財政的純負担・純貢献を公式データで比較。財務省・中央銀行・OECD等の一次資料のみを使用。">
+<BaseLayout title="移民の財政コスト：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/fiscal-cost/" description="西欧20カ国における移民の財政的純負担・純貢献を公式データで比較。財務省・中央銀行・OECD等の一次資料のみを使用。" type="Dataset">
 
 <main class="theme-page">
   <div class="page-header">
@@ -210,6 +210,16 @@ import KeyFigure from '../../components/KeyFigure.astro';
         </tbody>
       </table>
     </div>
+  </section>
+
+  <section class="methodological-note">
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>各国の推計手法は異なるため、数値を国間で直接比較することはできません。</li>
+      <li>財政への純効果は、移民の受入プロフィール（就労・難民・家族等）と滞在期間によって大きく変わります。</li>
+      <li>財政コストは移民の影響の一側面にすぎません。労働市場、人口動態、文化的貢献は本データには含まれません。</li>
+      <li>一部の国では公式推計が存在しないため、比較は部分的なものにとどまります。</li>
+    </ul>
   </section>
 
   <section class="methodology-note">
@@ -454,6 +464,32 @@ import KeyFigure from '../../components/KeyFigure.astro';
     padding: 0.6rem 1rem;
     background: var(--color-surface-raised);
     border-radius: 4px;
+  }
+
+  .methodological-note {
+    max-width: 800px;
+    margin: 3rem auto 2rem;
+    padding: 1.5rem 2rem;
+    background: color-mix(in srgb, var(--color-accent) 6%, var(--color-surface));
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 8px 8px 0;
+  }
+  .methodological-note h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 0.75rem;
+  }
+  .methodological-note ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .methodological-note li {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.55;
   }
 </style>
 

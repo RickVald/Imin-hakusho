@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="スウェーデンの移民犯罪統計は本当か？BRÅ公式データ | 移民白書" lang="ja" description="BRÅ2021年報告書のデータを検証。移民系の被疑者率、補正後の格差、方法論上の注意点を一次資料に基づき解説。">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
+    <h1>スウェーデンの移民犯罪統計は本当か？BRÅ公式データ</h1>
+    <p class="intro">スウェーデン犯罪予防委員会（BRÅ）の2021年報告書は、移民系住民の被疑者率が現地生まれの約2.5倍であることを示す。ただし社会経済的要因を補正すると格差は縮小する。</p>
+    <div class="lang-switch"><a href="/en/faq/sweden-crime/">🌐 English version</a></div>
+  </div>
+
+  <section>
+    <h2>BRÅ公式データ（2021年報告書）</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>指標</th>
+          <th>数値</th>
+          <th>出典</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>移民系の被疑者率（粗値）</td>
+          <td>現地生まれの約2.5倍</td>
+          <td><a href="https://www.bra.se" rel="noopener">BRÅ 2021:1</a></td>
+        </tr>
+        <tr>
+          <td>年齢・性別・社会経済的地位・居住地域補正後</td>
+          <td>格差は縮小するが残存</td>
+          <td><a href="https://www.bra.se" rel="noopener">BRÅ 2021:1 方法論注記</a></td>
+        </tr>
+        <tr>
+          <td>計算基準</td>
+          <td>絶対数ではなく人口比（per capita）</td>
+          <td>BRÅ 方法論</td>
+        </tr>
+        <tr>
+          <td>最新報告の時期</td>
+          <td>2005年以降公表なし</td>
+          <td>BRÅ（政治的圧力の影響とされる）</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>補正後の変化</h2>
+    <p>BRÅの方法論注記によれば、年齢・性別・社会経済的地位・居住地域を統計的に制御した場合、移民系と現地生まれの被疑者率格差は大幅に縮小する。ただし補正後も残差が存在する。</p>
+    <ul>
+      <li>年齢構成：移民集団は若年層（犯罪率が高い年代）の比率が高い</li>
+      <li>性別：男性比率の差が粗値に影響する</li>
+      <li>社会経済的地位：低所得・高失業地域への集中が最大の説明変数</li>
+      <li>居住地域：都市部・高貧困地域への集中</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>方法論上の限界</h2>
+    <ul>
+      <li><strong>未補正の交絡因子：</strong>社会経済的地位、都市密度、年齢を完全に制御しない比較では、移民系の過大代表が生じる。</li>
+      <li><strong>データの不連続：</strong>2005年以降BRÅはこの種の報告を公表していない。最新の体系的統計が存在しないため、時系列比較ができない。</li>
+      <li><strong>被疑者 vs 有罪判決：</strong>被疑者率は逮捕・捜査の統計であり、有罪判決率とは異なる。警察の活動傾向や地域別取り締まり強度が影響する可能性がある。</li>
+      <li><strong>犯罪の種類の非均質性：</strong>全犯罪を合算した指数では、軽微な違反から重大犯罪まで混在する。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>この統計が示さないこと</h2>
+    <ul>
+      <li>国籍・民族的出自は犯罪の原因ではない。相関は、移民が置かれる社会経済的状況（貧困、失業、社会的排除）によって大部分が説明される。</li>
+      <li>補正後に残る残差格差の原因は、現在利用可能なデータでは特定されていない。「文化」「遺伝」「宗教」等の要因は統計的に検証されておらず、説明変数として導入できない。</li>
+      <li>スウェーデンの統計はスウェーデン特有の文脈（難民受け入れ規模、統合政策）に基づく。他国への直接適用は不当。</li>
+      <li>データが2005年で途切れているため、現在の傾向は不明。外挿は根拠を欠く。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>Brottsförebyggande rådet / BRÅ (2021). <em>Invandrares och invandrares avkomlingars representation i brottsstatistiken</em>. Rapport 2021:1. <a href="https://www.bra.se" rel="noopener">www.bra.se</a></li>
+    </ul>
+  </section>
+</main>
+</BaseLayout>

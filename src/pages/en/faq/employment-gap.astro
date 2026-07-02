@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+---
+<BaseLayout title="Immigrants and unemployment: what official statistics show across 20 countries | 移民白書" lang="en" description="Employment rate gaps between immigrants and native-born across 20 countries, from Belgium −20pt to Czech Republic −3pt. Official 2023 data with methodology notes.">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/en/">Immigration Observatory</a> › <span>FAQ</span></nav>
+    <h1>Immigrants and unemployment: what official statistics show across 20 countries</h1>
+    <p class="intro">In all 20 countries surveyed, immigrants have lower employment rates than native-born residents. The gap ranges from −20 percentage points in Belgium to −3 in Czech Republic, reflecting differences in intake policy, migrant profile, and integration support.</p>
+    <div class="lang-switch"><a href="/faq/emploi-chomage/">🌐 日本語版</a></div>
+  </div>
+
+  <section>
+    <h2>Employment rate gap across 20 countries (2023)</h2>
+    <BarChart
+      title="Employment rate gap: immigrants vs. native-born (percentage points, 2023)"
+      sourceLabel="National statistics offices (Statbel, SCB, INSEE, ONS, etc.) 2023"
+      sourceUrl="/en/faq/employment-gap/"
+      sourcePrefix="Source: "
+      unit="pt"
+      bars={[
+        { label: "Belgium 🇧🇪", value: -20 },
+        { label: "Finland 🇫🇮", value: -18 },
+        { label: "Sweden 🇸🇪", value: -16 },
+        { label: "France 🇫🇷", value: -16 },
+        { label: "Netherlands 🇳🇱", value: -15 },
+        { label: "Denmark 🇩🇰", value: -14.5 },
+        { label: "Germany 🇩🇪", value: -13 },
+        { label: "Norway 🇳🇴", value: -12 },
+        { label: "Austria 🇦🇹", value: -11 },
+        { label: "Portugal 🇵🇹", value: -9 },
+        { label: "United Kingdom 🇬🇧", value: -8 },
+        { label: "Spain 🇪🇸", value: -8 },
+        { label: "Canada 🇨🇦", value: -7 },
+        { label: "Switzerland 🇨🇭", value: -7 },
+        { label: "Ireland 🇮🇪", value: -6 },
+        { label: "Italy 🇮🇹", value: -5 },
+        { label: "New Zealand 🇳🇿", value: -5 },
+        { label: "United States 🇺🇸", value: -4 },
+        { label: "Australia 🇦🇺", value: -4 },
+        { label: "Czech Republic 🇨🇿", value: -3 },
+      ]}
+    />
+  </section>
+
+  <section>
+    <h2>Key data points by primary source</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Gap (pp)</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Belgium</td><td>−20</td><td><a href="https://statbel.fgov.be" rel="noopener">Statbel 2023</a></td></tr>
+        <tr><td>Finland</td><td>−18</td><td><a href="https://www.stat.fi" rel="noopener">Statistics Finland 2023</a></td></tr>
+        <tr><td>Sweden</td><td>−16</td><td><a href="https://www.scb.se" rel="noopener">SCB 2023</a></td></tr>
+        <tr><td>France</td><td>−16</td><td><a href="https://www.insee.fr" rel="noopener">INSEE 2023</a></td></tr>
+        <tr><td>United Kingdom</td><td>−8</td><td><a href="https://www.ons.gov.uk" rel="noopener">ONS 2023</a></td></tr>
+        <tr><td>Australia</td><td>−4</td><td><a href="https://www.abs.gov.au" rel="noopener">ABS 2023</a></td></tr>
+        <tr><td>Czech Republic</td><td>−3</td><td><a href="https://www.czso.cz" rel="noopener">ČSÚ 2023</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Methodological limits</h2>
+    <ul>
+      <li><strong>Qualification levels not controlled:</strong> Immigrant and native-born populations have different educational distributions. A higher share of low-education workers will reduce employment rates regardless of origin.</li>
+      <li><strong>Length of residence not controlled:</strong> Recent arrivals require time for language acquisition, credential recognition, and network building. Long-term residents show narrower gaps, but aggregate statistics conflate these groups.</li>
+      <li><strong>Heterogeneous migrant categories:</strong> EU labour migrants, refugees, and skilled migrants have fundamentally different employment profiles. Differences in the composition of immigrant populations explain part of the cross-country variation in gap size.</li>
+      <li><strong>Country-specific definitions of "immigrant":</strong> Whether foreign-born, foreign nationals, or second-generation migrants are included varies across national statistical systems.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What this data does not show</h2>
+    <ul>
+      <li>The employment gap is not evidence of discrimination against immigrants. Discrimination may exist, but educational attainment, language proficiency, length of residence, and credential recognition issues are simultaneously at work and cannot be disaggregated from the statistics alone.</li>
+      <li>A large gap does not indicate immigration policy failure. Countries receiving large numbers of refugees tend to show larger gaps — this reflects the characteristics of refugees (origin in conflict zones, starting from zero in the host-country language), not policy effectiveness.</li>
+      <li>Smaller gaps in Czech Republic or Australia do not directly prove superior integration policy. The composition of migrant inflows (high share of skilled workers) and pre-arrival selection processes are major contributing factors.</li>
+      <li>The employment rate gap does not automatically translate into a net economic drag. Immigrants simultaneously increase labour supply and aggregate demand; the net effect on overall employment cannot be read off from the gap figure alone.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Primary sources</h2>
+    <ul>
+      <li>Statbel (Belgium) — <a href="https://statbel.fgov.be" rel="noopener">statbel.fgov.be</a></li>
+      <li>Statistics Finland — <a href="https://www.stat.fi" rel="noopener">stat.fi</a></li>
+      <li>SCB (Sweden) — <a href="https://www.scb.se" rel="noopener">scb.se</a></li>
+      <li>INSEE (France) — <a href="https://www.insee.fr" rel="noopener">insee.fr</a></li>
+      <li>ONS (United Kingdom) — <a href="https://www.ons.gov.uk" rel="noopener">ons.gov.uk</a></li>
+      <li>ABS (Australia) — <a href="https://www.abs.gov.au" rel="noopener">abs.gov.au</a></li>
+      <li>ČSÚ (Czech Republic) — <a href="https://www.czso.cz" rel="noopener">czso.cz</a></li>
+    </ul>
+  </section>
+</main>
+</BaseLayout>
