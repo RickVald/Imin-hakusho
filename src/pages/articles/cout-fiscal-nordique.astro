@@ -1,0 +1,385 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
+import TrendChart from '../../components/TrendChart.astro';
+---
+
+<BaseLayout
+  title="デンマーク移民の財政コスト：非西洋系移民が年間160億クローネの純負担 — 公式データ解説 | 移民白書"
+  lang="ja"
+  description="デンマーク・スウェーデン・ノルウェー・フィンランドの公式データで見る移民の財政純負担。非欧米系移民が年間160億DKK（デンマーク）、難民1人当たり410万NOK（ノルウェー）のコストを政府機関の一次資料から解説。"
+>
+
+<main class="article-page">
+  <nav class="breadcrumb">
+    <a href="/">移民白書</a> <span>›</span> <a href="/themes/cout-fiscal/">財政コスト</a> <span>›</span> <span>北欧4カ国の実態</span>
+  </nav>
+
+  <header class="article-header">
+    <h1>移民の財政コスト：北欧4カ国の公式データが示す現実</h1>
+    <p class="article-lead">
+      デンマークは世界で唯一、移民の公的財政への純負担を出身別に毎年公式算定している国である。その結果は明白だ——非欧米系移民・子孫は年間270億DKK（約5,800億円）の純負担を財政にもたらしており、欧米系の純貢献110億DKKを差し引いた全体の純負担は年間160億DKKに達する。この数字はヨーロッパでは広く参照されているが、日本ではほぼ完全に無名だ。北欧4カ国の公式データを検証する。
+    </p>
+    <p class="article-meta">データ基準年：デンマーク2019年（2023年9月改訂）、ノルウェー2015-2100年推計、スウェーデン2022年、フィンランド調査中</p>
+  </header>
+
+  <!-- ===== SECTION 1 : DANEMARK ===== -->
+  <section class="article-section">
+    <h2>1. デンマーク——世界唯一の体系的な年次算定</h2>
+
+    <p>
+      デンマーク財務省（Finansministeriet）は2007年頃から、移民および移民の子孫が公的財政に与える純負担を毎年算定・公表している。算定は出身（欧米系／非欧米系）と居住期間別に分解されており、ヨーロッパで最も詳細かつ長期にわたる手法として国際的に位置づけられている。他国の研究者や政策機関も、この手法を比較分析の基準として参照している。
+    </p>
+
+    <p>
+      最新の公表報告書（2019年データ、2023年9月改訂版）によれば、移民および移民の子孫全体の純負担は年間約マイナス160億DKKである。この「マイナス」は財政への純コストを意味する——つまり、このグループが受け取る給付・サービスの合計が、納める税・社会保険料の合計を年間160億DKK上回るということだ。
+    </p>
+
+    <KeyFigure
+      value="−160億DKK/年"
+      label="移民・移民の子孫全体による公的財政への純負担（2019年データ、2023年9月改訂）"
+    />
+
+    <BarChart
+      title="公的財政への純負担（出身別、2019年データ・2023年9月改訂）"
+      unit="億DKK/年"
+      bars={[
+        { label: '欧米系移民・子孫', value: 11, note: '純財政貢献' },
+        { label: '非欧米系移民・子孫', value: -27, note: 'うちMENAPT諸国: −24億DKK' },
+        { label: '全体合計', value: -16 },
+      ]}
+      sourceLabel="財務省「Indvandreres nettobidrag til de offentlige finanser i 2019」（2023年9月改訂）"
+      sourceUrl="https://fm.dk/media/5cnhiydz/indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019_revideret-september-2023-a.pdf"
+    />
+
+    <p>
+      データが示す対比は鮮明だ。欧米系移民・子孫は年間110億DKKの純貢献（プラス）をもたらしている。一方、非欧米系移民・子孫は年間270億DKKの純負担（マイナス）を生じさせており、そのうち中東・北アフリカ・パキスタン・トルコ（MENAPT諸国）出身者が240億DKKを占める。
+    </p>
+
+    <p>
+      より長期の視点では、2018年の推計によれば非欧米系移民の生涯にわたる年間平均純負担は1人当たり約31,000DKK、欧米系移民は逆に年間約20,000DKKの純貢献となっていた。就労目的で来た欧米系移民と、庇護・家族移住で来た非欧米系移民の差が財政データに明確に反映されている。
+    </p>
+
+    <div class="callout-methodo">
+      <strong>この数字の読み方</strong><br>
+      デンマーク財務省が算定する「財政純負担」は単年度の静的なスナップショットである。移民は到着初年度に最も大きな財政負担をもたらし、居住年数が増えるにつれて就労率・税収が上がり負担は改善する傾向がある。また、欧米系と非欧米系の差は単なる文化的背景の違いではなく、入国カテゴリー（就労 vs. 庇護・家族結合）の差に大きく起因している。「欧米系＝コスト小、非欧米系＝コスト大」という区分は、ある意味で「就労移民 vs. 非就労系移民」という区分の代理変数でもある。
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 : AUTRES PAYS ===== -->
+  <section class="article-section">
+    <h2>2. スウェーデン・ノルウェー・フィンランド——より限定的なデータ</h2>
+
+    <h3>スウェーデン：40年間の時系列、ただし粒度は粗い</h3>
+
+    <p>
+      スウェーデンにはデンマーク型の毎年の公式算定は存在しないが、政府委託の研究機関・コンユンクトゥールインスティテュート（Konjunkturinstitutet）が2024年に長期分析（Specialstudie 117）を公表した。対象期間は1983年から2022年の約40年間で、外国出生者全体の財政的純負担を時系列で追っている。
+    </p>
+
+    <KeyFigure
+      value="+60億SEK/年"
+      label="外国出生者全体の財政純負担（2022年・最新年、GDP比0.1%、1人当たり約2,700SEK）"
+    />
+
+    <p>
+      調査対象期間の最新年（2022年）では、外国出生者全体の財政収支はわずかにプラス（純貢献）に転じている——1980年代以降では構造的に赤字だったが直近年で改善した。ただしこれは移民全体の集計値であり、EU域内からの就労移民が引き上げている可能性がある。
+    </p>
+
+    <p>
+      別の算定（ESO委託、ヨーテボリ大学Joakim Ruist研究）では、難民および難民家族のみを対象に生涯平均の純負担を算定しており、2015/2018年データで1人当たり74,000SEK（約110万円）という結果が出ている。スウェーデン居住1年目の純負担は1人当たり約190,000SEKで、7年目には約95,000SEKまで低下するという時系列データも示されている。
+    </p>
+
+    <h3>ノルウェー：難民1人当たりの生涯コストを推計</h3>
+
+    <p>
+      ノルウェー統計局（SSB）は2017年、財務省の委託（NOU 2017:2「高水準移民の長期的影響」）に基づき、DEMECモデルを用いた財政推計を公表した（Holmøy & Strøm、Rapporter 2017/31）。2015年に追加で5,000人を受け入れた場合の純現在価値（2015年から2100年、2012年クローネ基準）を出身グループ別に算定している。
+    </p>
+
+    <KeyFigure
+      value="+410万NOK/人"
+      label="R3グループ（庇護・欧州外家族移住中心）出身者1人当たりの純財政コスト（生涯現在価値・2012年クローネ）"
+    />
+
+    <BarChart
+      title="追加移民の純財政コスト（生涯現在価値・出身グループ別、2012年クローネ）"
+      unit="万NOK/人"
+      bars={[
+        { label: 'R1：西欧・北米・オーストラリア', value: -80, note: '純財政貢献（マイナスはプラスを意味する）' },
+        { label: 'R2：東欧（EU加盟国）', value: 80 },
+        { label: 'R3：その他の国々（庇護・欧州外家族移住中心）', value: 410 },
+      ]}
+      sourceLabel="SSB Rapporter 2017/31（Holmøy & Strøm、NOU 2017:2委託）"
+      sourceUrl="https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0"
+    />
+
+    <p>
+      ノルウェーのデータは単年度の年間コストではなく、2015年から2100年にわたる生涯現在価値として算定されている点がデンマークと方法論的に異なる。R3グループ（庇護申請者・欧州外家族移住者が中心）は1人当たり410万NOK（約5,700万円、2012年クローネ基準）の純コストと推計されており、西欧・北米・オーストラリア出身者（R1）が逆に80万NOKの純貢献をもたらすのとは対照的だ。
+    </p>
+
+    <h3>フィンランド：現在調査中、2027年公表予定</h3>
+
+    <p>
+      フィンランドでは、移民の財政効果に関する体系的な公式算定はまだ存在しない。フィンランド財務省傘下の政府系経済研究機関VATT（Valtion taloudellinen tutkimuskeskus）が2025年2月、滞在許可の種類・出身国別に分類した財政効果研究を開始したと発表しており、結果は2027年上半期に公表される見込みだ。北欧4カ国の中で唯一、この問いに対する公式回答がまだ出ていない国である。
+    </p>
+
+    <div class="callout-methodo">
+      <strong>データ比較上の注意</strong><br>
+      デンマーク（年間純負担）、スウェーデン（年間純負担）、ノルウェー（生涯現在価値）は算定方式が根本的に異なる。デンマークの「−160億DKK/年」はある1年間のフローだが、ノルウェーの「410万NOK/人」は2015年から2100年までの生涯ストック（割引現在価値）である。これらを直接比較することはできない。
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3 : METHODOLOGIE ===== -->
+  <section class="article-section">
+    <h2>3. データの読み方——避けられない方法論的留意事項</h2>
+
+    <p>
+      移民の「財政コスト」を扱うデータは、何を測っているかによって結果が劇的に変わる。以下の4点は、このデータを読む際の必須の前提知識だ。
+    </p>
+
+    <div class="callout-methodo">
+      <strong>① 単年度 vs. 生涯コスト</strong><br>
+      デンマーク財務省の算定は特定の1年間の収支スナップショット。移民は到着年に最大のコストをもたらし、年数が経つと改善する。生涯平均で見ると単年度より小さくなることが多い。どの時間軸で見るかで数字は大きく変わる。
+    </div>
+
+    <div class="callout-methodo">
+      <strong>② EU系 vs. 非EU系の差が決定的</strong><br>
+      北欧3カ国のデータに共通するのは、EU域内（または西欧・北米・オーストラリア）出身の移民が財政にプラスの影響を与える傾向がある一方、非EU・非欧米出身の移民（特に庇護申請者・家族結合移民）がマイナスの影響を与えているという構図だ。「移民一般」という括りで論じることは、この決定的な差を消してしまう。
+    </div>
+
+    <div class="callout-methodo">
+      <strong>③ 到着年齢が最重要因子</strong><br>
+      オーストラリア財務省の分析を含む複数の研究が、移民の財政的影響において到着時の年齢が最も決定的な変数であることを示している。若年就労年齢で到着した移民は財政への純貢献が最も大きく、高齢者・子供として到着した移民はコストが大きい。
+    </div>
+
+    <div class="callout-methodo">
+      <strong>④「欧米系／非欧米系」区分の限界</strong><br>
+      デンマークが使用する「vestlige（欧米系）／ikke-vestlige（非欧米系）」という分類は、一部の研究者から粒度が粗すぎると批判されている。この2区分はある程度「就労系入国 vs. 保護系入国」の代理指標として機能しているが、同じ「非欧米系」でも出身国・在留資格・到着年齢によって財政的影響は大きく異なる。デンマークのデータ自体が、MENAPT諸国とそれ以外の非欧米系では負担額に差があることを示している。
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4 : JAPON ===== -->
+  <section class="article-section">
+    <h2>4. 日本の文脈——何を学べるか</h2>
+
+    <p>
+      日本は2024年、育成就労制度（旧・技能実習制度の実質的な改組）を施行した。外国人材受け入れの枠組みを拡大する方向での政策転換である。少子高齢化に伴う労働力不足の圧力を背景に、今後さらなる受け入れ拡大の議論が続くことが予想される。
+    </p>
+
+    <p>
+      北欧4カ国のデータが示すのは、「移民を受け入れるかどうか」よりも「誰を・どのカテゴリーで受け入れるか」が財政的影響を左右するという事実だ。デンマークもスウェーデンも、就労目的で来た欧米系移民は財政にプラスの影響を与えている。マイナスが集中しているのは、庇護申請者・家族結合移民・非就労系入国者のカテゴリーである。
+    </p>
+
+    <p>
+      デンマークは2001年以降、段階的に移民政策を厳格化してきた——家族呼び寄せ要件の引き上げ、語学・文化統合テストの義務化、「パラダイムシフト」法（2019年）による難民政策目標の「統合」から「帰還」への転換などである。社会民主主義国家でありながら、この方向転換は左右の政党連立を超えて実施された。その背景にあったのが、財務省が毎年公表するこの財政データだった。
+    </p>
+
+    <p>
+      フィンランドが2027年を目標に初めてこの種の調査を実施しようとしていることは、北欧各国においてもこのデータの政策的重要性が改めて認識されていることを示している。日本においても、受け入れ規模の拡大議論と並行して、「どのカテゴリーの移民が財政にどのような影響を与えるか」を定量的に把握する仕組みを整備することが、長期的な政策設計の前提として不可欠である。
+    </p>
+
+    <p>
+      なお、本サイトはデータを提示することを目的としており、特定の政策方向を推奨するものではない。読者自身が数字を検討し、判断を形成されることを期待している。
+    </p>
+  </section>
+
+  <!-- ===== SOURCES ===== -->
+  <section class="article-section sources-section">
+    <h2>一次資料・出典</h2>
+    <ul class="sources-list">
+      <li>
+        <strong>デンマーク財務省（Finansministeriet）</strong> —「Indvandreres nettobidrag til de offentlige finanser i 2019」（2023年9月改訂）<br>
+        <a href="https://fm.dk/media/5cnhiydz/indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019_revideret-september-2023-a.pdf" target="_blank" rel="noopener">PDF直接リンク</a> |
+        <a href="https://fm.dk/udgivelser/2023/september/oekonomisk-analyse-indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019-revideret-version-september-2023/" target="_blank" rel="noopener">公表ページ</a>
+      </li>
+      <li>
+        <strong>スウェーデン・コンユンクトゥールインスティテュート（Konjunkturinstitutet）</strong> — Specialstudie 117「Invandrades nettobidrag till de offentliga finanserna 1983–2022」（2024年）<br>
+        <a href="https://www.konj.se/media/kpgnt5iw/specialstudie-117-invandrades-nettobidrag-till-de-offentliga-finanserna-1983-2022.pdf" target="_blank" rel="noopener">PDF直接リンク</a>
+      </li>
+      <li>
+        <strong>スウェーデン・ESO（財務省傘下独立委員会）</strong> — Joakim Ruist（ヨーテボリ大学）「難民の財政負担」（2015/2018年）<br>
+        <a href="https://eso.expertgrupp.se/" target="_blank" rel="noopener">ESO公式サイト</a>
+      </li>
+      <li>
+        <strong>ノルウェー統計局（SSB）</strong> — Holmøy & Strøm、Rapporter 2017/31「Virkninger på offentlige finanser av endringer i antall innvandrere」（NOU 2017:2委託）<br>
+        <a href="https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0" target="_blank" rel="noopener">PDF直接リンク</a> |
+        <a href="https://www.ssb.no/offentlig-sektor/artikler-og-publikasjoner/kostnaden-for-det-offentlige-av-flere-innvandrere" target="_blank" rel="noopener">SSB概要ページ</a>
+      </li>
+      <li>
+        <strong>フィンランド・VATT（政府系経済研究機関）</strong> — 進行中の研究、2027年上半期公表予定<br>
+        <a href="https://vatt.fi/-/selvitys-maahanmuuton-vaikutuksista-julkiseen-talouteen" target="_blank" rel="noopener">VATT発表ページ（フィンランド語）</a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== LINKS ===== -->
+  <section class="article-section related-section">
+    <h2>各国の詳細データ</h2>
+    <div class="country-links">
+      <a href="/countries/denmark/" class="country-link">🇩🇰 デンマーク — 詳細データ</a>
+      <a href="/countries/sweden/" class="country-link">🇸🇪 スウェーデン — 詳細データ</a>
+      <a href="/countries/norway/" class="country-link">🇳🇴 ノルウェー — 詳細データ</a>
+      <a href="/countries/finland/" class="country-link">🇫🇮 フィンランド — 詳細データ</a>
+    </div>
+    <p class="theme-link-p"><a href="/themes/cout-fiscal/">← 財政コスト：西欧20カ国比較に戻る</a></p>
+  </section>
+</main>
+
+</BaseLayout>
+
+<style>
+  .article-page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 1.5rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  .article-header {
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+    padding-bottom: 1.5rem;
+  }
+
+  .article-header h1 {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    color: var(--color-ink);
+  }
+
+  .article-lead {
+    font-size: 1.1rem;
+    color: var(--color-ink-soft);
+    border-left: 3px solid var(--color-primary);
+    padding-left: 1rem;
+    margin: 0 0 1rem;
+    line-height: 1.7;
+  }
+
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--color-ink-soft);
+    opacity: 0.7;
+  }
+
+  .article-section {
+    margin-bottom: 3rem;
+  }
+
+  .article-section h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-ink);
+  }
+
+  .article-section h3 {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.75rem;
+    color: var(--color-ink);
+  }
+
+  .article-section p {
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: var(--color-ink);
+  }
+
+  .callout-methodo {
+    background: var(--color-surface-raised, #f8f9fa);
+    border-left: 3px solid var(--color-gold, #c9a23f);
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--color-ink);
+  }
+
+  .callout-methodo strong {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-gold, #c9a23f);
+  }
+
+  .sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sources-list li {
+    margin-bottom: 1.25rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-surface-raised, #f8f9fa);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .sources-list a {
+    color: var(--color-primary);
+  }
+
+  .country-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .country-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 4px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.15s;
+  }
+
+  .country-link:hover {
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .theme-link-p {
+    margin-top: 0.5rem;
+  }
+
+  .theme-link-p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 640px) {
+    .article-header h1 {
+      font-size: 1.4rem;
+    }
+
+    .article-lead {
+      font-size: 1rem;
+    }
+  }
+</style>

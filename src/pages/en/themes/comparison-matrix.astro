@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Immigration Impact Matrix: 20 Countries × 7 Themes | Immigration Factbook" lang="en" description="Official data from 20 countries compared across 7 themes: fiscal cost, employment gap, PISA scores, crime statistics, housing impact and asylum levels. A cross-country analytical matrix.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Thematic comparisons</span>
+    </nav>
+    <h1>Immigration Impact Matrix — 20-Country, 7-Theme Comparison</h1>
+    <p class="intro">
+      This matrix organises official statistics from 20 countries across 7 thematic dimensions. Colours indicate the overall signal in each category: red = negative impact documented, green = positive impact or low level, grey = data not publicly available. For individual figures and sources, consult each country page.
+    </p>
+    <div class="lang-switch">
+      <a href="/themes/tableau-comparatif/">🇯🇵 日本語で読む</a>
+    </div>
+  </div>
+
+  <section class="matrix-section">
+
+    <div class="legend">
+      <span class="legend-item"><span class="dot green"></span> Positive / low burden</span>
+      <span class="legend-item"><span class="dot red"></span> Negative / high burden</span>
+      <span class="legend-item"><span class="dot yellow"></span> Mixed / partial data</span>
+      <span class="legend-item"><span class="dot gray"></span> Data not publicly available</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th class="theme-col">Theme</th>
+            <th title="Denmark"><img src="https://flagcdn.com/w20/dk.png" alt="DK" loading="lazy" /><br/>DK</th>
+            <th title="Sweden"><img src="https://flagcdn.com/w20/se.png" alt="SE" loading="lazy" /><br/>SE</th>
+            <th title="Norway"><img src="https://flagcdn.com/w20/no.png" alt="NO" loading="lazy" /><br/>NO</th>
+            <th title="Finland"><img src="https://flagcdn.com/w20/fi.png" alt="FI" loading="lazy" /><br/>FI</th>
+            <th title="Germany"><img src="https://flagcdn.com/w20/de.png" alt="DE" loading="lazy" /><br/>DE</th>
+            <th title="Austria"><img src="https://flagcdn.com/w20/at.png" alt="AT" loading="lazy" /><br/>AT</th>
+            <th title="Switzerland"><img src="https://flagcdn.com/w20/ch.png" alt="CH" loading="lazy" /><br/>CH</th>
+            <th title="France"><img src="https://flagcdn.com/w20/fr.png" alt="FR" loading="lazy" /><br/>FR</th>
+            <th title="Belgium"><img src="https://flagcdn.com/w20/be.png" alt="BE" loading="lazy" /><br/>BE</th>
+            <th title="Netherlands"><img src="https://flagcdn.com/w20/nl.png" alt="NL" loading="lazy" /><br/>NL</th>
+            <th title="United Kingdom"><img src="https://flagcdn.com/w20/gb.png" alt="UK" loading="lazy" /><br/>UK</th>
+            <th title="Ireland"><img src="https://flagcdn.com/w20/ie.png" alt="IE" loading="lazy" /><br/>IE</th>
+            <th title="Italy"><img src="https://flagcdn.com/w20/it.png" alt="IT" loading="lazy" /><br/>IT</th>
+            <th title="Spain"><img src="https://flagcdn.com/w20/es.png" alt="ES" loading="lazy" /><br/>ES</th>
+            <th title="Portugal"><img src="https://flagcdn.com/w20/pt.png" alt="PT" loading="lazy" /><br/>PT</th>
+            <th title="Czechia"><img src="https://flagcdn.com/w20/cz.png" alt="CZ" loading="lazy" /><br/>CZ</th>
+            <th title="United States"><img src="https://flagcdn.com/w20/us.png" alt="US" loading="lazy" /><br/>US</th>
+            <th title="Canada"><img src="https://flagcdn.com/w20/ca.png" alt="CA" loading="lazy" /><br/>CA</th>
+            <th title="Australia"><img src="https://flagcdn.com/w20/au.png" alt="AU" loading="lazy" /><br/>AU</th>
+            <th title="New Zealand"><img src="https://flagcdn.com/w20/nz.png" alt="NZ" loading="lazy" /><br/>NZ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. Population share -->
+          <tr>
+            <td class="theme-label"><a href="/en/themes/demographics/">Population share<br/><small>% immigrant-born</small></a></td>
+            <td class="cell-yellow">12.6%</td>
+            <td class="cell-red">21%</td>
+            <td class="cell-red">17.5%</td>
+            <td class="cell-yellow">11.7%</td>
+            <td class="cell-red">25.6%</td>
+            <td class="cell-red">20.5%</td>
+            <td class="cell-red">27.7%</td>
+            <td class="cell-yellow">11.3%</td>
+            <td class="cell-red">36.6%</td>
+            <td class="cell-red">24.6%</td>
+            <td class="cell-yellow">19%</td>
+            <td class="cell-yellow">12%</td>
+            <td class="cell-yellow">9.1%</td>
+            <td class="cell-yellow">14%</td>
+            <td class="cell-yellow">14%</td>
+            <td class="cell-yellow">10.4%</td>
+            <td class="cell-yellow">14.3%</td>
+            <td class="cell-red">23%</td>
+            <td class="cell-red">32%</td>
+            <td class="cell-red">28.8%</td>
+          </tr>
+
+          <!-- 2. Fiscal cost -->
+          <tr>
+            <td class="theme-label"><a href="/en/themes/fiscal-cost/">Fiscal impact<br/><small>Net fiscal effect</small></a></td>
+            <td class="cell-red">−DKK 16bn</td>
+            <td class="cell-yellow">+SEK 6bn</td>
+            <td class="cell-red">R3: +NOK 4.1M</td>
+            <td class="cell-gray">ongoing study</td>
+            <td class="cell-red">−€2.1bn/yr</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-red">by motive −</td>
+            <td class="cell-yellow">OBR mixed</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">INPS +</td>
+            <td class="cell-green">GDP +</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">NAS mixed</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-green">skilled +</td>
+            <td class="cell-gray">N/A</td>
+          </tr>
+
+          <!-- 3. Employment gap -->
+          <tr>
+            <td class="theme-label"><a href="/en/themes/labour-market/">Employment gap<br/><small>Natives vs immigrants</small></a></td>
+            <td class="cell-red">−10 pt</td>
+            <td class="cell-red">−10.5 pt</td>
+            <td class="cell-red">−12 pt</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-red">women −35 pt</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-red">−5 pt unempl.</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-green">small gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">regional var.</td>
+            <td class="cell-gray">N/A</td>
+          </tr>
+
+          <!-- 4. PISA gap -->
+          <tr>
+            <td class="theme-label"><a href="/en/themes/education/">PISA gap<br/><small>PISA 2022 maths</small></a></td>
+            <td class="cell-red">+28 pts gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-red">−51 pts</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-red">large gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-gray">small sample</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow">medium gap</td>
+            <td class="cell-green">+26 pts over</td>
+            <td class="cell-green">outperform</td>
+          </tr>
+
+          <!-- 5. Crime statistics -->
+          <tr>
+            <td class="theme-label"><a href="/en/themes/crime/">Crime data<br/><small>Origin-disaggregated</small></a></td>
+            <td class="cell-red">×2.6 (adj.)</td>
+            <td class="cell-red">×2.5 (raw)</td>
+            <td class="cell-yellow">over-repr. ↓</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-red">foreign over-repr.</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">by nationality</td>
+            <td class="cell-yellow">nationality only</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-gray">no national data</td>
+            <td class="cell-gray">N/A</td>
+          </tr>
+
+          <!-- 6. Housing impact -->
+          <tr>
+            <td class="theme-label">Housing impact<br/><small>Documented housing effects</small></td>
+            <td class="cell-red">5 parallel soc.</td>
+            <td class="cell-red">65 vuln. areas</td>
+            <td class="cell-yellow">overcrowd. 26%</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-red">QPV cluster</td>
+            <td class="cell-yellow">large reg. var.</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-red">demand pressure</td>
+            <td class="cell-red">demand surge</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-gray">N/A</td>
+            <td class="cell-yellow">gap exists</td>
+            <td class="cell-red">housing pressure</td>
+            <td class="cell-yellow">+0.5% rents</td>
+            <td class="cell-yellow">gap exists</td>
+          </tr>
+
+          <!-- 7. Asylum levels -->
+          <tr>
+            <td class="theme-label">Asylum claims<br/><small>Recent claim level</small></td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-green">low (↓)</td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-red">high</td>
+            <td class="cell-red">high (↓)</td>
+            <td class="cell-yellow">25,781</td>
+            <td class="cell-red">153,600</td>
+            <td class="cell-red">39,615 ↑</td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-red">high</td>
+            <td class="cell-red">surge → ↓</td>
+            <td class="cell-red">high</td>
+            <td class="cell-red">high</td>
+            <td class="cell-green">2,677</td>
+            <td class="cell-green">low</td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-yellow">medium</td>
+            <td class="cell-green">low</td>
+            <td class="cell-green">low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="matrix-note">
+      Note: Colour coding for population share is informational only and does not imply a value judgement. For fiscal, gap, housing and asylum rows: red = negative impact documented in official data; green = positive impact or low level; yellow = mixed or partial data; grey = no publicly available official data found.
+    </p>
+  </section>
+
+  <section class="profiles-section">
+    <h2>Country profiles identified</h2>
+    <div class="profiles-grid">
+
+      <div class="profile-card profile-nordic">
+        <h3>Nordic restrictive model (DK / SE / NO)</h3>
+        <p>Immigrant share 17–21%. Non-Western immigrants show consistently negative fiscal balances (Denmark: −DKK 16bn/yr; Norway: +NOK 4.1M per person from Group 3 countries). Employment and PISA gaps are large and well-documented. Data transparency is Europe's highest. Policy has shifted towards selection since the late 2010s.</p>
+        <p class="profile-signal">Signal: Fiscal, employment and education dimensions all document negative net impacts for non-EU immigrants.</p>
+      </div>
+
+      <div class="profile-card profile-anglosphere">
+        <h3>Anglosphere points-based model (AU / NZ / CA)</h3>
+        <p>Immigrant share 23–32%. Australia and New Zealand show PISA reversal — immigrants outperform native-born students. Skilled migrants produce positive fiscal contributions; humanitarian and family streams show mixed results. Per-category breakdown is central to the policy design.</p>
+        <p class="profile-signal">Signal: Skills-selection visibly shapes integration outcomes.</p>
+      </div>
+
+      <div class="profile-card profile-southeurope">
+        <h3>Southern European transition model (IT / ES / PT)</h3>
+        <p>Immigrant share 9–14%. Fiscal data are limited, but Banco de España documents a positive GDP contribution. PISA gaps are moderate. Asylum claims are high (Italy is the Mediterranean entry point). Statistical transparency is lower than in Nordic countries.</p>
+        <p class="profile-signal">Signal: Labour immigration increasingly filling demographic gaps from very low birth rates.</p>
+      </div>
+
+      <div class="profile-card profile-central">
+        <h3>Central European emerging model (CZ / AT)</h3>
+        <p>Austria: 20.5% immigrant share, asylum claims peaked at Europe's highest per-capita levels in 2022–23. Czechia: 10.4%, with Ukrainian refugees making up 54% of all foreign nationals. Fiscal and PISA data are under construction or unavailable. Integration infrastructure is still developing.</p>
+        <p class="profile-signal">Signal: Rapid inflows after decades of low immigration — data systems lagging behind reality.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="methodology-note">
+    <h2>Methodological note</h2>
+    <p>Each cell is a summary of data found in the country pages and involves simplification. Measurement methods, reference years and definitions of "immigrant" vary across countries. Always consult individual country pages for precise figures, sources and methodological caveats. A grey cell means "no publicly available primary source confirmed" — not "no impact exists".</p>
+  </section>
+</main>
+
+<style>
+.matrix-section { margin: 2rem 0; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.dot.green  { background: #2dd4bf; }
+.dot.red    { background: #e8636b; }
+.dot.yellow { background: #f0b429; }
+.dot.gray   { background: #7c87a3; }
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  min-width: 900px;
+}
+
+.matrix-table th {
+  background: var(--color-surface-raised, #1e2535);
+  padding: 0.4rem 0.25rem;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--color-border, #2a3348);
+  font-size: 0.68rem;
+}
+
+.matrix-table th img {
+  display: block;
+  margin: 0 auto 2px;
+  width: 20px;
+  height: auto;
+}
+
+.matrix-table td {
+  padding: 0.3rem 0.4rem;
+  text-align: center;
+  border: 1px solid var(--color-border, #2a3348);
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+.theme-col {
+  width: 110px;
+  min-width: 110px;
+  text-align: left !important;
+}
+
+.theme-label {
+  text-align: left;
+  font-size: 0.73rem;
+  font-weight: 500;
+  padding: 0.4rem 0.5rem;
+  white-space: nowrap;
+}
+
+.theme-label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.theme-label a:hover {
+  text-decoration: underline;
+}
+
+.theme-label small {
+  display: block;
+  font-weight: 400;
+  color: var(--color-muted, #7c87a3);
+  font-size: 0.63rem;
+}
+
+.cell-green  { background: #1a3d38; color: #2dd4bf; }
+.cell-red    { background: #3d1a1e; color: #e8636b; }
+.cell-yellow { background: #3d320a; color: #f0b429; }
+.cell-gray   { background: var(--color-surface, #141927); color: var(--color-muted, #7c87a3); font-size: 0.63rem; }
+
+.matrix-note {
+  font-size: 0.75rem;
+  color: var(--color-muted, #7c87a3);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.profiles-section {
+  margin: 3rem 0;
+}
+
+.profiles-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.profile-card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #2a3348);
+  background: var(--color-surface-raised, #1e2535);
+}
+
+.profile-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent, #2dd4bf);
+}
+
+.profile-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text, #e2e8f0);
+  margin-bottom: 0.5rem;
+}
+
+.profile-signal {
+  font-size: 0.76rem !important;
+  color: var(--color-muted, #7c87a3) !important;
+  border-top: 1px solid var(--color-border, #2a3348);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.methodology-note {
+  margin: 2.5rem 0;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #2a3348);
+  background: var(--color-surface, #141927);
+}
+
+.methodology-note h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.methodology-note p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-muted, #7c87a3);
+}
+</style>
+
+</BaseLayout>

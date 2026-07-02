@@ -1,0 +1,451 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="移民影響マトリクス：西欧20カ国×7テーマ比較 | 移民白書" lang="ja" description="デンマーク・スウェーデン・ノルウェー・フランスなど20カ国の移民データを7テーマで比較。財政・雇用・PISA・犯罪・住宅・庇護の公式統計マトリクス。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
+    </nav>
+    <h1>移民影響マトリクス — 20カ国×7テーマ比較</h1>
+    <p class="intro">
+      このマトリクスは、20カ国の公式統計から得られたデータを7つのテーマ別に整理したものです。色は各テーマにおける概況を示します（赤＝負の影響、緑＝正の影響、灰＝データ非公開）。個別の数値と出典は各国ページをご参照ください。
+    </p>
+    <div class="lang-switch">
+      <a href="/en/themes/comparison-matrix/">🌐 Read in English</a>
+    </div>
+  </div>
+
+  <section class="matrix-section">
+
+    <div class="legend">
+      <span class="legend-item"><span class="dot green"></span> 正の影響・貢献</span>
+      <span class="legend-item"><span class="dot red"></span> 負の影響・コスト</span>
+      <span class="legend-item"><span class="dot yellow"></span> 混合・部分的</span>
+      <span class="legend-item"><span class="dot gray"></span> データ非公開</span>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th class="theme-col">テーマ</th>
+            <th title="デンマーク"><img src="https://flagcdn.com/w20/dk.png" alt="DK" loading="lazy" /><br/>DK</th>
+            <th title="スウェーデン"><img src="https://flagcdn.com/w20/se.png" alt="SE" loading="lazy" /><br/>SE</th>
+            <th title="ノルウェー"><img src="https://flagcdn.com/w20/no.png" alt="NO" loading="lazy" /><br/>NO</th>
+            <th title="フィンランド"><img src="https://flagcdn.com/w20/fi.png" alt="FI" loading="lazy" /><br/>FI</th>
+            <th title="ドイツ"><img src="https://flagcdn.com/w20/de.png" alt="DE" loading="lazy" /><br/>DE</th>
+            <th title="オーストリア"><img src="https://flagcdn.com/w20/at.png" alt="AT" loading="lazy" /><br/>AT</th>
+            <th title="スイス"><img src="https://flagcdn.com/w20/ch.png" alt="CH" loading="lazy" /><br/>CH</th>
+            <th title="フランス"><img src="https://flagcdn.com/w20/fr.png" alt="FR" loading="lazy" /><br/>FR</th>
+            <th title="ベルギー"><img src="https://flagcdn.com/w20/be.png" alt="BE" loading="lazy" /><br/>BE</th>
+            <th title="オランダ"><img src="https://flagcdn.com/w20/nl.png" alt="NL" loading="lazy" /><br/>NL</th>
+            <th title="イギリス"><img src="https://flagcdn.com/w20/gb.png" alt="UK" loading="lazy" /><br/>UK</th>
+            <th title="アイルランド"><img src="https://flagcdn.com/w20/ie.png" alt="IE" loading="lazy" /><br/>IE</th>
+            <th title="イタリア"><img src="https://flagcdn.com/w20/it.png" alt="IT" loading="lazy" /><br/>IT</th>
+            <th title="スペイン"><img src="https://flagcdn.com/w20/es.png" alt="ES" loading="lazy" /><br/>ES</th>
+            <th title="ポルトガル"><img src="https://flagcdn.com/w20/pt.png" alt="PT" loading="lazy" /><br/>PT</th>
+            <th title="チェコ"><img src="https://flagcdn.com/w20/cz.png" alt="CZ" loading="lazy" /><br/>CZ</th>
+            <th title="アメリカ"><img src="https://flagcdn.com/w20/us.png" alt="US" loading="lazy" /><br/>US</th>
+            <th title="カナダ"><img src="https://flagcdn.com/w20/ca.png" alt="CA" loading="lazy" /><br/>CA</th>
+            <th title="オーストラリア"><img src="https://flagcdn.com/w20/au.png" alt="AU" loading="lazy" /><br/>AU</th>
+            <th title="ニュージーランド"><img src="https://flagcdn.com/w20/nz.png" alt="NZ" loading="lazy" /><br/>NZ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 1. 人口比率 -->
+          <tr>
+            <td class="theme-label"><a href="/themes/demographie/">人口比率<br/><small>移民の人口割合</small></a></td>
+            <td class="cell-yellow">12.6%</td>
+            <td class="cell-red">21%</td>
+            <td class="cell-red">17.5%</td>
+            <td class="cell-yellow">11.7%</td>
+            <td class="cell-red">25.6%</td>
+            <td class="cell-red">20.5%</td>
+            <td class="cell-red">27.7%</td>
+            <td class="cell-yellow">11.3%</td>
+            <td class="cell-red">36.6%</td>
+            <td class="cell-red">24.6%</td>
+            <td class="cell-yellow">19%</td>
+            <td class="cell-yellow">12%</td>
+            <td class="cell-yellow">9.1%</td>
+            <td class="cell-yellow">14%</td>
+            <td class="cell-yellow">14%</td>
+            <td class="cell-yellow">10.4%</td>
+            <td class="cell-yellow">14.3%</td>
+            <td class="cell-red">23%</td>
+            <td class="cell-red">32%</td>
+            <td class="cell-red">28.8%</td>
+          </tr>
+
+          <!-- 2. 財政コスト -->
+          <tr>
+            <td class="theme-label"><a href="/themes/cout-fiscal/">財政コスト<br/><small>財政への純効果</small></a></td>
+            <td class="cell-red">−160億DKK</td>
+            <td class="cell-yellow">+60億SEK</td>
+            <td class="cell-red">R3：+410万NOK</td>
+            <td class="cell-gray">調査中</td>
+            <td class="cell-red">−21億€/年</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-red">動機別−</td>
+            <td class="cell-yellow">OBR混合</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">INPS＋</td>
+            <td class="cell-green">成長＋</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">NAS混合</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-green">技能系＋</td>
+            <td class="cell-gray">非公開</td>
+          </tr>
+
+          <!-- 3. 雇用格差 -->
+          <tr>
+            <td class="theme-label"><a href="/themes/marche-travail/">雇用格差<br/><small>就業率の差</small></a></td>
+            <td class="cell-red">−10pt</td>
+            <td class="cell-red">−10.5pt</td>
+            <td class="cell-red">−12pt</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-red">難民女−35pt</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-red">−5pt失業</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-green">格差小</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">地域差大</td>
+            <td class="cell-gray">非公開</td>
+          </tr>
+
+          <!-- 4. PISA格差 -->
+          <tr>
+            <td class="theme-label"><a href="/themes/education/">PISA格差<br/><small>PISA 2022学力差</small></a></td>
+            <td class="cell-red">+28pt</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-red">−51pt</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-red">格差大</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-gray">小規模</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow">格差中</td>
+            <td class="cell-green">+26pt超過</td>
+            <td class="cell-green">超過</td>
+          </tr>
+
+          <!-- 5. 犯罪統計 -->
+          <tr>
+            <td class="theme-label"><a href="/themes/securite/">犯罪統計<br/><small>出身別データの有無</small></a></td>
+            <td class="cell-red">×2.6（年齢補正）</td>
+            <td class="cell-red">×2.5（粗率）</td>
+            <td class="cell-yellow">過剰代表↓</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-red">外国籍過多</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">国籍別あり</td>
+            <td class="cell-yellow">国籍別のみ</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-gray">全国なし</td>
+            <td class="cell-gray">非公開</td>
+          </tr>
+
+          <!-- 6. 住宅影響 -->
+          <tr>
+            <td class="theme-label">住宅影響<br/><small>住宅への文書化された影響</small></td>
+            <td class="cell-red">並行社会5地区</td>
+            <td class="cell-red">脆弱地区65</td>
+            <td class="cell-yellow">過密26%</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-red">QPV集中</td>
+            <td class="cell-yellow">地区差大</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-red">需要圧力</td>
+            <td class="cell-red">需要急増</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-gray">非公開</td>
+            <td class="cell-yellow">格差あり</td>
+            <td class="cell-red">住宅圧力</td>
+            <td class="cell-yellow">+0.5%家賃</td>
+            <td class="cell-yellow">格差あり</td>
+          </tr>
+
+          <!-- 7. 庇護申請 -->
+          <tr>
+            <td class="theme-label">庇護申請<br/><small>近年の申請水準</small></td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-green">低水準（↓）</td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-red">高水準</td>
+            <td class="cell-red">高水準（↓）</td>
+            <td class="cell-yellow">25,781件</td>
+            <td class="cell-red">153,600件</td>
+            <td class="cell-red">39,615件↑</td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-red">高水準</td>
+            <td class="cell-red">急増→↓</td>
+            <td class="cell-red">高水準</td>
+            <td class="cell-red">高水準</td>
+            <td class="cell-green">2,677件</td>
+            <td class="cell-green">低水準</td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-yellow">中水準</td>
+            <td class="cell-green">低水準</td>
+            <td class="cell-green">低水準</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="matrix-note">
+      ※「人口比率」の色区分は情報提供のみを目的としており、高低の価値判断ではありません。財政・格差・住宅・庇護については、赤＝公式データが示す負の影響、緑＝正の影響または低水準、黄＝混合・部分的データ、灰＝公式データ非公開。
+    </p>
+  </section>
+
+  <section class="profiles-section">
+    <h2>プロファイル類型</h2>
+    <div class="profiles-grid">
+
+      <div class="profile-card profile-nordic">
+        <h3>🧊 北欧型（DK / SE / NO）</h3>
+        <p>移民比率17〜21%、非欧米系移民の財政コストは一貫してマイナス（DKは−160億DKK、NOは+410万NOK/人）。雇用格差10〜12ポイント、PISA格差も顕著。データは非常に詳細で透明性が高い。2010年代後半以降、政策が選別的に転換。</p>
+        <p class="profile-signal">信号：財政・雇用・教育でいずれも負の影響が文書化されている。</p>
+      </div>
+
+      <div class="profile-card profile-anglosphere">
+        <h3>🌏 英語圏ポイント制型（AU / NZ / CA）</h3>
+        <p>移民比率23〜32%と高い。オーストラリア・ニュージーランドではPISA格差が逆転（移民が現地生徒を上回る）。財政的には技能系移民が正の貢献。家族・難民との差が大きく、入国区分別の分析が政策の鍵。</p>
+        <p class="profile-signal">信号：スキル選抜が統合指標に明確に反映されている。</p>
+      </div>
+
+      <div class="profile-card profile-southeurope">
+        <h3>🌊 南欧移行型（IT / ES / PT）</h3>
+        <p>移民比率9〜14%と北欧・英語圏より低い。財政データは限定的だが、スペイン銀行はGDP成長への正の貢献を示す。PISA格差は中程度。庇護申請は高水準（ITは地中海ルートの玄関口）。データの透明性は北欧より低い。</p>
+        <p class="profile-signal">信号：人口高齢化補完の文脈で労働移民の重要性が増している。</p>
+      </div>
+
+      <div class="profile-card profile-central">
+        <h3>🏗️ 中欧台頭型（CZ / AT）</h3>
+        <p>オーストリアは移民比率20.5%・庇護申請急増（2022〜23年が欧州最高水準）。チェコは10.4%・ウクライナ難民が外国籍者の54%。財政・PISA等のデータは構築中または非公開。政策的対応が遅れており、統合インフラが整備段階。</p>
+        <p class="profile-signal">信号：急増後のデータ整備が今後の重要な研究対象。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="methodology-note">
+    <h2>方法論上の注記</h2>
+    <p>このマトリクスの各セルは、各国ページに掲載された一次資料に基づく概要であり、単純化を含みます。同一テーマでも国によって測定方法・対象年次・出身区分の定義が異なります。各セルの詳細な数値・出典・方法論上の限界は、必ず各国ページでご確認ください。灰色のセルは「移民の影響がない」のではなく「公開された一次資料が確認できない」ことを意味します。</p>
+  </section>
+</main>
+
+<style>
+.matrix-section { margin: 2rem 0; }
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.dot.green  { background: #2dd4bf; }
+.dot.red    { background: #e8636b; }
+.dot.yellow { background: #f0b429; }
+.dot.gray   { background: #7c87a3; }
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+  min-width: 900px;
+}
+
+.matrix-table th {
+  background: var(--color-surface-raised, #1e2535);
+  padding: 0.4rem 0.25rem;
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--color-border, #2a3348);
+  font-size: 0.68rem;
+}
+
+.matrix-table th img {
+  display: block;
+  margin: 0 auto 2px;
+  width: 20px;
+  height: auto;
+}
+
+.matrix-table td {
+  padding: 0.3rem 0.4rem;
+  text-align: center;
+  border: 1px solid var(--color-border, #2a3348);
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+.theme-col {
+  width: 110px;
+  min-width: 110px;
+  text-align: left !important;
+}
+
+.theme-label {
+  text-align: left;
+  font-size: 0.73rem;
+  font-weight: 500;
+  padding: 0.4rem 0.5rem;
+  white-space: nowrap;
+}
+
+.theme-label a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.theme-label a:hover {
+  text-decoration: underline;
+}
+
+.theme-label small {
+  display: block;
+  font-weight: 400;
+  color: var(--color-muted, #7c87a3);
+  font-size: 0.63rem;
+}
+
+.cell-green  { background: #1a3d38; color: #2dd4bf; }
+.cell-red    { background: #3d1a1e; color: #e8636b; }
+.cell-yellow { background: #3d320a; color: #f0b429; }
+.cell-gray   { background: var(--color-surface, #141927); color: var(--color-muted, #7c87a3); font-size: 0.63rem; }
+
+.matrix-note {
+  font-size: 0.75rem;
+  color: var(--color-muted, #7c87a3);
+  margin-top: 0.75rem;
+  line-height: 1.5;
+}
+
+.profiles-section {
+  margin: 3rem 0;
+}
+
+.profiles-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.profiles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.profile-card {
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #2a3348);
+  background: var(--color-surface-raised, #1e2535);
+}
+
+.profile-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent, #2dd4bf);
+}
+
+.profile-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text, #e2e8f0);
+  margin-bottom: 0.5rem;
+}
+
+.profile-signal {
+  font-size: 0.76rem !important;
+  color: var(--color-muted, #7c87a3) !important;
+  border-top: 1px solid var(--color-border, #2a3348);
+  padding-top: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.methodology-note {
+  margin: 2.5rem 0;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--color-border, #2a3348);
+  background: var(--color-surface, #141927);
+}
+
+.methodology-note h2 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.methodology-note p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-muted, #7c87a3);
+}
+</style>
+
+</BaseLayout>
