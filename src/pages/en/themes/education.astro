@@ -1,0 +1,448 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+---
+
+<BaseLayout title="PISA 2022: Immigrant Student Achievement Gap by Country — Official OECD Data | Immigration Factbook" lang="en" description="Official OECD PISA 2022 data on math score gaps between immigrant and native-born students across 20 countries. 83% of the raw gap is explained by socioeconomic factors, not origin.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Compare by Theme</span>
+    </nav>
+    <h1>PISA 2022: Immigrant vs Native Student Performance — 20-Country Comparison</h1>
+    <p class="intro">
+      OECD PISA 2022 is the most comprehensive international dataset measuring academic performance gaps between students with an immigrant background and native-born students. On average across OECD countries, immigrant students score 29 points lower in mathematics than native-born peers. After controlling for socioeconomic status (ESCS index), this gap shrinks to just 5 points. <strong>83% of the raw gap is explained by socioeconomic factors — not by immigrant origin itself.</strong>
+    </p>
+    <p class="intro-sub">
+      Definition: "Immigrant students" = at least one parent born abroad (second generation) or student born abroad (first generation). ESCS = Economic, Social and Cultural Status index combining household income, parental education, and cultural resources at home.
+    </p>
+    <div class="lang-switch">
+      <a href="/themes/education/">🌐 日本語で見る</a>
+    </div>
+  </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="29 pts → 5 pts" label="OECD average math gap: immigrant vs native students (raw → after socioeconomic control)" tone="accent" />
+      <KeyFigure value="83%" label="Share of the gap explained by socioeconomic factors (ESCS), not immigrant origin" tone="accent" />
+    </div>
+
+    <BarChart
+      title="Persistent gap after socioeconomic control (math, PISA 2022) — European countries"
+      unit=" pts"
+      bars={[
+        { label: 'Finland', value: 42, note: 'After ESCS control: +42 pts (raw gap: +65 pts)' },
+        { label: 'Sweden', value: 34, note: 'After ESCS control: +34 pts (raw gap: +63 pts)' },
+        { label: 'Norway', value: 36, note: 'Raw gap: +36 pts (adjusted figure not published)' },
+        { label: 'Germany', value: 32, note: 'After ESCS control: +32 pts (raw gap: +59 pts)' },
+        { label: 'Denmark', value: 28, note: 'After ESCS control: +28 pts (raw gap: +54 pts)' },
+        { label: 'Netherlands', value: 27, note: 'After ESCS control: +27 pts (raw gap: +58 pts)' },
+        { label: 'France', value: 20, note: 'After ESCS control: ~+20 pts (raw gap: +51 pts)' },
+        { label: 'Switzerland', value: 19, note: 'After ESCS control: +19 pts (raw gap: +53 pts)' },
+        { label: 'Belgium', value: 17, note: 'After ESCS control: +17 pts (raw gap: >55 pts)' },
+        { label: 'Portugal', value: 25, note: 'After ESCS control: +25 pts (raw gap: +32 pts)' },
+        { label: 'Spain', value: 7, note: 'After ESCS control: +7 pts (raw gap: +32 pts) — ESCS explains >60% of gap' },
+      ]}
+      sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
+      sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
+      sourcePrefix="Source: "
+    />
+    <p class="chart-note">
+      Positive values = native-born students outperform immigrant students. Values shown are after ESCS socioeconomic control. Norway: adjusted figure not published; raw gap shown. Italy and Ireland: gap becomes non-significant after control (not shown).
+    </p>
+
+    <BarChart
+      title="Countries where immigrant students outperform native-born peers (points-based immigration) — PISA 2022"
+      unit=" pts"
+      bars={[
+        { label: 'Australia', value: -26, note: 'Immigrant students outperform native-born by 26 pts (after ESCS control)' },
+        { label: 'New Zealand', value: -16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control)' },
+        { label: 'United States', value: -16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control)' },
+        { label: 'United Kingdom', value: -12, note: 'Immigrant students outperform native-born by 12 pts (after ESCS control)' },
+      ]}
+      sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
+      sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
+      sourcePrefix="Source: "
+    />
+    <p class="chart-note">
+      Negative values = immigrant students outperform native-born peers. These countries use points-based immigration systems that select for education and skills, resulting in highly educated immigrant parents whose children benefit from greater cultural capital.
+    </p>
+  </section>
+
+  <section class="methodology-note">
+    <h2>Key methodological notes</h2>
+    <ul>
+      <li><strong>Definition of "immigrant student"</strong>: OECD defines this as having at least one parent born abroad (second generation) or being born abroad oneself (first generation). National statistics may use different definitions (citizenship, foreign-born, etc.).</li>
+      <li><strong>ESCS index</strong>: Economic, Social and Cultural Status — a composite of household wealth, parental education, and cultural resources (e.g., books at home). Controlling for ESCS isolates the effect of immigrant background from poverty.</li>
+      <li><strong>Points-based immigration effect</strong>: Australia, New Zealand, Canada, and the UK select immigrants based on education, skills, and language ability. Their immigrant populations have above-average education levels, and their children inherit greater academic capital.</li>
+      <li><strong>Language environment</strong>: In the 8 European countries with large persistent gaps, 60–85% of immigrant students speak a language other than the host country's at home. This is a major driver of the gap that remains after ESCS control.</li>
+      <li><strong>First vs second generation</strong>: Data from Norway, Italy, and Denmark show that second-generation immigrants (born in the host country) have substantially smaller gaps — convergence across generations is the norm.</li>
+    </ul>
+  </section>
+
+  <section class="table-section">
+    <h2>PISA 2022 Math Gap: Country-by-Country Data</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Raw gap (pts)</th>
+            <th>After ESCS control (pts)</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name">Finland</td>
+            <td class="gap">+65</td>
+            <td class="gap">+42</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">Norway</td>
+            <td class="gap">+36</td>
+            <td class="gap-muted">Not published</td>
+            <td>Large gap (adjusted N/A)</td>
+          </tr>
+          <tr>
+            <td class="country-name">Sweden</td>
+            <td class="gap">+63</td>
+            <td class="gap">+34</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">Germany</td>
+            <td class="gap">+59</td>
+            <td class="gap">+32</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr>
+            <td class="country-name">Denmark</td>
+            <td class="gap">+54</td>
+            <td class="gap">+28</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">Netherlands</td>
+            <td class="gap">+58</td>
+            <td class="gap">+27</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr>
+            <td class="country-name">Portugal</td>
+            <td class="gap">+32</td>
+            <td class="gap">+25</td>
+            <td>Moderate persistent gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">France</td>
+            <td class="gap">+51</td>
+            <td class="gap">~+20</td>
+            <td>Large persistent gap</td>
+          </tr>
+          <tr>
+            <td class="country-name">Switzerland</td>
+            <td class="gap">+53</td>
+            <td class="gap">+19</td>
+            <td>Moderate persistent gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">Belgium</td>
+            <td class="gap">&gt;+55</td>
+            <td class="gap">+17</td>
+            <td>Moderate persistent gap</td>
+          </tr>
+          <tr>
+            <td class="country-name">Spain</td>
+            <td class="gap">+32</td>
+            <td class="gap">+7</td>
+            <td>Small residual gap</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">Italy</td>
+            <td class="gap">+30</td>
+            <td class="gap-muted">Not significant</td>
+            <td>Gap eliminated by ESCS</td>
+          </tr>
+          <tr>
+            <td class="country-name">Ireland</td>
+            <td class="gap">+8</td>
+            <td class="gap-muted">Not significant</td>
+            <td>Gap eliminated by ESCS</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">United Kingdom</td>
+            <td class="gap-positive">−12</td>
+            <td class="gap-positive">−12</td>
+            <td>Immigrant advantage</td>
+          </tr>
+          <tr>
+            <td class="country-name">United States</td>
+            <td class="gap-muted">Not significant</td>
+            <td class="gap-positive">−16</td>
+            <td>Immigrant advantage</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name">New Zealand</td>
+            <td class="gap-positive">−16</td>
+            <td class="gap-positive">−16</td>
+            <td>Immigrant advantage</td>
+          </tr>
+          <tr>
+            <td class="country-name">Australia</td>
+            <td class="gap-positive">−26</td>
+            <td class="gap-positive">−26</td>
+            <td>Immigrant advantage</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      Positive = native-born outperform immigrants. Negative = immigrants outperform native-born.<br/>
+      Source: <a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html" target="_blank" rel="noopener noreferrer">OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance</a>
+    </p>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .intro-sub {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 80ch;
+    border-left: 3px solid var(--color-surface-raised);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lang-switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .lang-switch a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .lang-switch a:hover {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .table-section {
+    margin-bottom: 3rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 600px;
+  }
+
+  .comparison-table thead tr {
+    background: var(--color-surface-raised);
+  }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .country-name {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .country-name a:hover {
+    text-decoration: underline;
+  }
+
+  .gap {
+    font-weight: 700;
+    color: #e8636b;
+  }
+
+  .gap-positive {
+    font-weight: 700;
+    color: #2dd4bf;
+  }
+
+  .gap-muted {
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .table-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+
+  .table-note a {
+    color: var(--color-accent);
+  }
+</style>
+
+</BaseLayout>

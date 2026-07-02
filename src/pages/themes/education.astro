@@ -4,245 +4,206 @@ import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
-<BaseLayout title="移民の子どもの学力格差：PISA国別データ | 移民白書" lang="ja" description="PISA 2022データに基づく西欧20カ国の移民の子どもと現地の子どもの学力格差比較。各国教育省・OECDの一次資料のみを使用。">
+<BaseLayout title="PISA 2022：移民の子どもの学力格差 — 20カ国公式データ | 移民白書" lang="ja" description="OECD PISA 2022公式データに基づく移民と現地生徒の数学スコア格差。社会経済補正後の20カ国比較。83%の格差は出身ではなく貧困で説明される。">
 
 <main class="theme-page">
   <div class="page-header">
     <nav class="breadcrumb">
       <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
     </nav>
-    <h1>PISA学力格差：移民の子ども vs 現地の子ども</h1>
+    <h1>PISA 2022：移民の子どもの学力格差 — 20カ国公式データ</h1>
     <p class="intro">
-      OECDのPISA（生徒の学習到達度調査）2022は、移民を背景に持つ15歳の生徒と現地出身の生徒の学力差を国別に測定する最も体系的なデータです。このページでは、各国で確認されたデータを一次資料に基づいて集約します。「データ非公開」は算出されていないことを示し、本サイトの欠落ではありません。
+      OECDのPISA 2022は、移民背景を持つ15歳の生徒と現地出身生徒の学力差を国際比較できる最も体系的なデータです。OECD平均では、移民の子どもは数学で現地の子どもより29点低いスコアを記録します。しかし、家庭の社会経済的状況（ESCS）を統制すると、この差は5点まで縮小します。つまり、<strong>格差の83%は移民という出身ではなく、貧困・家庭環境などの社会経済的要因で説明されます</strong>。
     </p>
     <p class="intro-sub">
-      注：「移民の子ども」の定義はPISAでは自己申告の移民資格（第一世代：外国生まれ、第二世代：国内生まれで両親が外国生まれ）を使用します。各国の国内統計は異なる定義を用いることがあります。また、多くの国でこの格差は社会経済的要因によって大部分が説明されることが確認されています。
+      注：OECD定義では「移民の子ども」＝少なくとも一方の親が外国生まれ（第二世代）または本人が外国生まれ（第一世代）。ESCS（Economic, Social and Cultural Status）＝家庭の収入・親の学歴・文化的資源を総合した指標。
     </p>
+    <div class="lang-switch">
+      <a href="/en/themes/education/">🌐 Read in English</a>
+    </div>
   </div>
 
   <section class="charts-section">
     <div class="key-figures-row">
-      <KeyFigure value="+36pt" label="フィンランド：第1世代移民の低学力層割合の増加幅（数学、PISA 2022）" tone="accent" />
-      <KeyFigure value="−51pt" label="フランス：移民出身生徒の数学スコア差（生の差、OECD PISA 2022）" tone="accent" />
-      <KeyFigure value="20pt差" label="ノルウェー：移民と非移民の高校修了率格差（IMDi 2025）" tone="accent" />
+      <KeyFigure value="29 pts → 5 pts" label="OCDE平均：移民と現地生徒の数学格差（補正前→社会経済補正後）" tone="accent" />
+      <KeyFigure value="83%" label="格差のうち社会経済的要因（ESCS）で説明される割合" tone="accent" />
     </div>
 
     <BarChart
-      title="移民の子どもの学力・教育格差：国別指標（各指標の詳細は下表参照）"
-      unit=""
+      title="社会経済補正後も残る格差（数学、PISA 2022）— 欧州8カ国"
+      unit=" pts"
       bars={[
-        { label: 'フィンランド：第1世代（数学低学力層）', value: 58, note: '低学力層割合58%（現地人22%）— PISA 2022' },
-        { label: 'フィンランド：第2世代（数学低学力層）', value: 43, note: '低学力層割合43%（現地人22%）— PISA 2022' },
-        { label: 'フランス：移民出身の数学スコア差', value: -51, note: '現地生まれ基準に対する差（生の値）— OECD PISA 2022' },
-        { label: 'スウェーデン：高校進学資格取得率差', value: -14.3, note: '外国系背景73.3% vs 現地人87.6%— Skolverket 2024年' },
-        { label: 'ノルウェー：高校修了率差（移民）', value: -20, note: '移民65% vs 現地人85%— IMDi 2025年' },
-        { label: 'イタリア：早期離学率差', value: 15.8, note: '外国籍24.3% vs 伊国籍8.5%— ISTAT 2025年' },
-        { label: 'ポルトガル：留年率（現地比）', value: 4, note: '移民の子どもは現地比約4倍— CNE 2023年（倍率）' },
-        { label: 'オランダ：高水準コース合格率差', value: -17, note: 'トルコ・モロッコ系69-70% vs 全体86%— CBS 2024年' },
+        { label: 'フィンランド', value: 42, note: '社会経済補正後 +42 pts（補正前 +65 pts）' },
+        { label: 'スウェーデン', value: 34, note: '社会経済補正後 +34 pts（補正前 +63 pts）' },
+        { label: 'ノルウェー', value: 36, note: '補正前 +36 pts（補正後データ非公開）' },
+        { label: 'ドイツ', value: 32, note: '社会経済補正後 +32 pts（補正前 +59 pts）' },
+        { label: 'デンマーク', value: 28, note: '社会経済補正後 +28 pts（補正前 +54 pts）' },
+        { label: 'オランダ', value: 27, note: '社会経済補正後 +27 pts（補正前 +58 pts）' },
+        { label: 'フランス', value: 20, note: '社会経済補正後 約+20 pts（補正前 +51 pts）' },
+        { label: 'スイス', value: 19, note: '社会経済補正後 +19 pts（補正前 +53 pts）' },
+        { label: 'ベルギー', value: 17, note: '社会経済補正後 +17 pts（補正前 >55 pts）' },
+        { label: 'ポルトガル', value: 25, note: '社会経済補正後 +25 pts（補正前 +32 pts）' },
+        { label: 'スペイン', value: 7, note: '社会経済補正後 +7 pts（補正前 +32 pts）— ESCSが格差の60%以上を説明' },
       ]}
-      sourceLabel="OECD PISA 2022・各国統計局・教育機関（各国ページ参照）"
-      sourceUrl="/themes/education/"
+      sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
+      sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
       sourcePrefix="出典："
     />
     <p class="chart-note">
-      ⚠️ 注：各指標の単位・対象が異なります（スコア差・割合・倍率）。フランスの−51点はスコア差、フィンランドは低学力層の割合（%）、ポルトガルは倍率です。詳細は下表をご参照ください。
+      正の値＝現地生徒が移民生徒を上回る点数。色は赤（現地生徒優位）。社会経済的要因（ESCS）統制後の値を使用。ノルウェーは補正後データ非公開のため補正前値を掲載。
+    </p>
+
+    <BarChart
+      title="移民の子どもが現地生徒を上回る国（点数制移民政策）— PISA 2022"
+      unit=" pts"
+      bars={[
+        { label: 'オーストラリア', value: -26, note: '移民が現地生徒より26 pts上回る（社会経済補正後）' },
+        { label: 'ニュージーランド', value: -16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
+        { label: 'アメリカ', value: -16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
+        { label: 'イギリス', value: -12, note: '移民が現地生徒より12 pts上回る（社会経済補正後）' },
+      ]}
+      sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
+      sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
+      sourcePrefix="出典："
+    />
+    <p class="chart-note">
+      負の値＝移民の子どもが現地生徒を上回る。これらの国は学歴・スキルによる点数制移民政策を採用しており、高学歴の親を持つ子どもが多い。
     </p>
   </section>
 
+  <section class="methodology-note">
+    <h2>方法論上の重要注意点</h2>
+    <ul>
+      <li><strong>「移民の子ども」の定義</strong>：OECD定義では、少なくとも一方の親が外国生まれ（第二世代）または本人が外国生まれ（第一世代）。各国の国内統計は異なる定義（国籍、外国生まれ等）を用いる場合があります。</li>
+      <li><strong>ESCS（社会経済文化的指標）</strong>：家庭の収入・親の学歴・自宅にある文化的資源（本の数等）を組み合わせたOECDの複合指標。これを統制することで移民出身そのものの影響を測定できます。</li>
+      <li><strong>点数制移民政策の効果</strong>：オーストラリア・ニュージーランド・カナダ・イギリス等は学歴・スキル・言語能力を基準に移民を選別するため、移民の平均学歴が高く、その子どもも高い教育資本を持つ傾向があります。</li>
+      <li><strong>言語環境の影響</strong>：格差が大きい8カ国（欧州）では、移民の子どもの60〜85%が家庭で受入国言語以外を使用しています。これがESCS統制後にも格差が残る主要な説明因子の一つです。</li>
+      <li><strong>第一世代と第二世代</strong>：ノルウェー・イタリア・デンマーク等のデータは、第二世代（国内生まれ）では格差が大幅に縮小することを示しています。</li>
+    </ul>
+  </section>
+
   <section class="table-section">
-    <h2>学力格差：国別データ一覧</h2>
+    <h2>PISA 2022 数学格差：国別データ一覧</h2>
     <div class="table-wrapper">
       <table class="comparison-table">
         <thead>
           <tr>
             <th>国</th>
-            <th>主要指標</th>
-            <th>現地の子ども</th>
-            <th>移民の子ども</th>
-            <th>格差・備考</th>
-            <th>出典機関</th>
+            <th>格差（補正前）</th>
+            <th>格差（ESCS補正後）</th>
+            <th>分類</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
-            <td>低学力層の割合（数学）</td>
-            <td>22%</td>
-            <td>第2世代：43%<br/>第1世代：58%</td>
-            <td class="gap">+21〜+36pt</td>
-            <td>フィンランド政府（Valtioneuvosto）「PISA 2022」</td>
+            <td class="gap">+65 pts</td>
+            <td class="gap">+42 pts</td>
+            <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
-            <td>低学力層の割合（読解）</td>
-            <td>（公表なし）</td>
-            <td>第2世代：39%<br/>第1世代：61%</td>
-            <td class="gap">第1世代に大きな格差</td>
-            <td>フィンランド政府（Valtioneuvosto）「PISA 2022」</td>
+            <td class="country-name">ノルウェー</td>
+            <td class="gap">+36 pts</td>
+            <td class="gap-muted">データ非公開</td>
+            <td>大きな格差（補正後不明）</td>
           </tr>
           <tr>
-            <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
-            <td>数学の生の成績差（PISA2022）</td>
-            <td>基準（0点）</td>
-            <td>移民出身（第1・第2世代合計）：−51点</td>
-            <td class="gap">生の差51点（OECD平均29点）<br/>社会経済的要因を統制すると17点に縮小</td>
-            <td>OECD「PISA 2022 Results」（Vol.I）</td>
-          </tr>
-          <tr class="alt">
             <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
-            <td>高校進学資格取得率</td>
-            <td>87.6%</td>
-            <td>外国系背景：73.3%</td>
-            <td class="gap">14.3pt差<br/>（就学期間が主要因）</td>
-            <td>Skolverket（国立教育庁）2024年春データ</td>
-          </tr>
-          <tr>
-            <td class="country-name"><a href="/countries/ja/norway/">ノルウェー</a></td>
-            <td>高校修了率</td>
-            <td>その他の人口：85%</td>
-            <td>移民：65%<br/>ノルウェー生まれの移民の子：84%</td>
-            <td class="gap">移民は20pt差<br/>第2世代はほぼ解消（1pt差）</td>
-            <td>IMDi「Indikatorrapport 2025」</td>
+            <td class="gap">+63 pts</td>
+            <td class="gap">+34 pts</td>
+            <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/germany/">ドイツ</a></td>
-            <td>自宅でドイツ語を話す割合</td>
-            <td>（ネイティブ）</td>
-            <td>移民的背景あり：52%（2022年）<br/>第1世代のみ：13%（2022年）</td>
-            <td class="gap">2012年：72%→2022年：52%（全体で低下傾向）<br/>言語使用が成績差の主要説明因子とKMKが指摘</td>
-            <td>各州文部大臣会議（KMK）PISA 2022プレスリリース（2023年12月）</td>
+            <td class="gap">+59 pts</td>
+            <td class="gap">+32 pts</td>
+            <td>大きな残余格差</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
+            <td class="gap">+32 pts</td>
+            <td class="gap">+25 pts</td>
+            <td>中程度の残余格差</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
+            <td class="gap">+54 pts</td>
+            <td class="gap">+28 pts</td>
+            <td>大きな残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
-            <td>havo/vwo（高水準コース）進学率（中等3年）</td>
-            <td>全体：49%</td>
-            <td>第2世代（両親が外国生まれ）：41%（2023/24）<br/>外国生まれ：46%</td>
-            <td class="gap">上昇傾向：2011/12年の30%→41%</td>
-            <td>CBS「Leerlingen met buitenlandse herkomst」（2024年）</td>
+            <td class="gap">+58 pts</td>
+            <td class="gap">+27 pts</td>
+            <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
-            <td>havo/vwo試験合格率（2022/23）</td>
-            <td>全体：86%</td>
-            <td>トルコ系：69%<br/>モロッコ系：70%<br/>スリナム系：74%</td>
-            <td class="gap">最大17pt差</td>
-            <td>CBS（同上）</td>
+            <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
+            <td class="gap">+51 pts</td>
+            <td class="gap">約+20 pts</td>
+            <td>大きな残余格差</td>
           </tr>
           <tr>
-            <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a>（ワロン・ブリュッセル）</td>
-            <td>PISA2022（ワロン・ブリュッセル連合）</td>
-            <td colspan="2">社会経済的格差が最大級。移民出身・自国出身の格差は2018年以降拡大傾向（正確な点数値は未確認）</td>
-            <td class="gap">定性的記述のみ</td>
-            <td>OECD／PISA2022（ワロン・ブリュッセル連合発表）</td>
+            <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
+            <td class="gap">+53 pts</td>
+            <td class="gap">+19 pts</td>
+            <td>中程度の残余格差</td>
           </tr>
           <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
-            <td>早期離学率（18-24歳）</td>
-            <td>イタリア人生徒：8.5%</td>
-            <td>外国籍生徒：24.3%（男子29.2%）<br/>第2世代（イタリア生まれ）：10.4%<br/>第1世代：22.5%</td>
-            <td class="gap">全体で15.8pt差<br/>第2世代はほぼ収束（1.9pt差）</td>
-            <td>ISTAT、人口移行委員会証言（2025年4月）</td>
+            <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a></td>
+            <td class="gap">&gt;+55 pts</td>
+            <td class="gap">+17 pts</td>
+            <td>中程度の残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/spain/">スペイン</a></td>
-            <td>外国籍生徒の割合（2024-25学年度）</td>
-            <td colspan="2">外国籍生徒：全体の12.9%（112万人）。国籍別の学力差の公式統計なし</td>
-            <td class="gap">早期離学率の国籍別データは非公開</td>
-            <td>教育・職業訓練・スポーツ省（2025年6月）</td>
+            <td class="gap">+32 pts</td>
+            <td class="gap">+7 pts</td>
+            <td>小さな残余格差</td>
           </tr>
           <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
-            <td>留年率</td>
-            <td>ポルトガル人の同級生</td>
-            <td>移民の子ども：約4倍（CNE、2023年）</td>
-            <td class="gap">留年率で4倍差<br/>外国籍生徒は全体の13.9%（2023-24）</td>
-            <td>国家教育評議会（CNE）2023年</td>
-          </tr>
-          <tr>
-            <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
-            <td>中等教育修了率（25歳時点、2020年）</td>
-            <td>データなし（直接比較未確認）</td>
-            <td>デンマーク小学校卒業の移民：58.1%<br/>移民の子孫：70.4%</td>
-            <td class="gap">移民の子孫は移民本人より+12.3pt<br/>2013年以来移民は最低水準</td>
-            <td>デンマーク統計局（Statistikbanken）STATUSU1表</td>
-          </tr>
-          <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/austria/">オーストリア</a></td>
-            <td>ドイツ語以外を日常使用言語とする生徒の割合（2023/24）</td>
-            <td colspan="2">全体の26%。ウィーンでは約50%。成績差の公式数値は未確認</td>
-            <td class="gap">言語的背景データのみ<br/>学力差の公式統計は非公開</td>
-            <td>Statistik Austria「Bildung in Zahlen 2023/24」</td>
-          </tr>
-          <tr>
-            <td class="country-name"><a href="/countries/ja/czechia/">チェコ</a></td>
-            <td>外国籍生徒数（2024/25）</td>
-            <td colspan="2">外国籍生徒17万3,121人（全体の7.49%）。学力差の公式統計は非公開</td>
-            <td class="gap">在籍データのみ<br/>学力差比較データは非公開</td>
-            <td>ČSÚ／MŠMT</td>
-          </tr>
-          <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/canada/">カナダ</a></td>
-            <td>PISA2022：移民背景を持つ15歳の割合</td>
-            <td>非移民出身生徒は平均以上</td>
-            <td>移民背景あり：34%（社会経済的不利が高い割合）<br/>ただし成績差は小さい（OECD参加国中）</td>
-            <td class="gap">格差は小さい<br/>社会経済・言語統制後は移民生徒が非移民を上回る国が多い</td>
-            <td>OECD「PISA 2022 Results」カナダ国別ノート</td>
-          </tr>
-          <tr>
-            <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
-            <td>英語学習者（EL）生徒の割合</td>
-            <td colspan="2">EL生徒：10.6%（530万人、2021年秋）。EL/非EL間の学力差の最新データは今後追加予定</td>
-            <td class="gap">ELは移民の不完全な代理指標</td>
-            <td>NCES「Fast Facts: English Learners」</td>
-          </tr>
-          <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
-            <td>PISA成績：第2世代移民</td>
-            <td colspan="2">第2世代移民は移民的背景のない生徒と概ね同等。ただし社会経済的格差はPISA参加国最大級の一つ</td>
-            <td class="gap">第2世代は格差ほぼ解消<br/>社会階層格差が主要因</td>
-            <td>OECD PISA（OFS転載）</td>
-          </tr>
-          <tr>
-            <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
-            <td>EAL（英語を母語としない）生徒の成績</td>
-            <td colspan="2">構成効果を考慮するとEAL生徒と英語母語生徒の平均成績に有意差なし（DfE分析）。言語・出自・在籍期間による内部異質性が大きい</td>
-            <td class="gap">全国平均では格差小<br/>サブグループで差異あり</td>
-            <td>教育省（DfE）Explore Education Statistics</td>
-          </tr>
-          <tr class="alt">
-            <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
-            <td>国際教育の規模</td>
-            <td colspan="2">大学総収入の27.3%が留学生学費（2024年）。移民の子どもと現地の子どもの学力差の国別データは未確認</td>
-            <td class="gap">学力差データ非公開<br/>（留学生経済インパクトのみ確認）</td>
-            <td>オーストラリア政府教育省</td>
+            <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
+            <td class="gap">+30 pts</td>
+            <td class="gap-muted">非有意</td>
+            <td>ESCSで格差はほぼ解消</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/ireland/">アイルランド</a></td>
-            <td class="no-data">データ非公開</td>
-            <td class="no-data" colspan="2">国籍・出生国別の学業成績の公的統計なし（CSOが確認）</td>
-            <td class="gap no-data">データ非公開</td>
-            <td>CSO（確認済み）</td>
+            <td class="gap">+8 pts</td>
+            <td class="gap-muted">非有意</td>
+            <td>ESCSで格差は解消</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
+            <td class="gap-positive">−12 pts</td>
+            <td class="gap-positive">−12 pts</td>
+            <td>移民の子どもが優位</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
+            <td class="gap-muted">非有意</td>
+            <td class="gap-positive">−16 pts</td>
+            <td>移民の子どもが優位</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/new-zealand/">ニュージーランド</a></td>
-            <td class="no-data">データ非公開</td>
-            <td class="no-data" colspan="2">移民の子どもと現地の子どもの学力差の体系的公式統計は未確認</td>
-            <td class="gap no-data">データ非公開</td>
-            <td>—</td>
+            <td class="gap-positive">−16 pts</td>
+            <td class="gap-positive">−16 pts</td>
+            <td>移民の子どもが優位</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
+            <td class="gap-positive">−26 pts</td>
+            <td class="gap-positive">−26 pts</td>
+            <td>移民の子どもが優位</td>
           </tr>
         </tbody>
       </table>
     </div>
-  </section>
-
-  <section class="methodology-note">
-    <h2>データ解釈上の注意点</h2>
-    <ul>
-      <li><strong>社会経済的要因の影響</strong>：多くの国で、生の学力格差の大部分は移民資格そのものではなく、家庭の社会経済的状況・言語環境・就学期間によって説明されます。フランスでは生の差51点が統制後17点に縮小します。</li>
-      <li><strong>第1世代と第2世代の違い</strong>：ノルウェー・イタリア・デンマークのデータは、第2世代（国内生まれ）では格差が大幅に縮小することを示しています。</li>
-      <li><strong>就学期間の効果</strong>：スウェーデンの研究では、到着後の就学期間の長さが学力に最も強く影響することが確認されています。</li>
-      <li><strong>PISA vs 国内指標</strong>：PISAは国際比較可能ですが15歳のみを対象とします。高校修了率・早期離学率などの国内指標はより広い年齢層を対象とします。</li>
-    </ul>
+    <p class="table-note">
+      正の値＝現地生徒が移民生徒を上回る。負の値＝移民の子どもが現地生徒を上回る。<br/>
+      出典：<a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html" target="_blank" rel="noopener noreferrer">OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance</a>
+    </p>
   </section>
 </main>
 
@@ -297,6 +258,88 @@ import KeyFigure from '../../components/KeyFigure.astro';
     margin-top: 0.5rem;
   }
 
+  .lang-switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .lang-switch a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .lang-switch a:hover {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
   .table-section {
     margin-bottom: 3rem;
   }
@@ -319,7 +362,7 @@ import KeyFigure from '../../components/KeyFigure.astro';
     width: 100%;
     border-collapse: collapse;
     font-size: 0.88rem;
-    min-width: 900px;
+    min-width: 600px;
   }
 
   .comparison-table thead tr {
@@ -357,7 +400,7 @@ import KeyFigure from '../../components/KeyFigure.astro';
 
   .comparison-table td {
     padding: 0.75rem 1rem;
-    vertical-align: top;
+    vertical-align: middle;
     line-height: 1.5;
   }
 
@@ -374,77 +417,28 @@ import KeyFigure from '../../components/KeyFigure.astro';
 
   .gap {
     font-weight: 700;
-    color: #ff9800;
-    font-size: 0.88rem;
+    color: #e8636b;
   }
 
-  .no-data {
+  .gap-positive {
+    font-weight: 700;
+    color: #2dd4bf;
+  }
+
+  .gap-muted {
     color: var(--color-muted);
     font-style: italic;
-    font-weight: 400;
   }
 
-  .methodology-note {
-    background: var(--color-surface-raised);
-    border-radius: 8px;
-    padding: 1.5rem 2rem;
-    margin-top: 2rem;
-  }
-
-  .methodology-note h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-
-  .methodology-note ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .methodology-note li {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    padding-left: 1.25rem;
-    position: relative;
-    color: var(--color-text);
-  }
-
-  .methodology-note li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-  }
-
-  .charts-section {
-    margin-bottom: 3rem;
-  }
-
-  .key-figures-row {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-  }
-
-  .key-figures-row > :global(.key-figure) {
-    flex: 1;
-    min-width: 200px;
-  }
-
-  .chart-note {
+  .table-note {
     font-size: 0.82rem;
     color: var(--color-muted);
-    line-height: 1.5;
+    line-height: 1.6;
     margin-top: 0.75rem;
-    padding: 0.6rem 1rem;
-    background: var(--color-surface-raised);
-    border-radius: 4px;
+  }
+
+  .table-note a {
+    color: var(--color-accent);
   }
 </style>
 
