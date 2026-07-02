@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="FAQ — Immigration Statistics | Immigration Factbook" lang="en" altHref="/faq/" description="Frequently asked questions about immigration costs, crime statistics, PISA education gaps, and employment — answered with official data from national statistics offices.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>FAQ</span>
+    </nav>
+    <h1>Frequently Asked Questions</h1>
+    <p class="intro">Common questions about immigration answered with official statistics. Every answer is based on primary official sources, with methodological limits stated explicitly.</p>
+    <div class="lang-switch"><a href="/faq/">🇯🇵 日本語版</a></div>
+  </div>
+
+  <div class="faq-grid">
+    <a href="/en/faq/fiscal-cost/" class="faq-card">
+      <div class="faq-icon">💴</div>
+      <div class="faq-content">
+        <h2>Do immigrants cost more than they contribute?</h2>
+        <p>Official estimates from Denmark, Norway, Germany, Sweden, Canada and more. Primary data from finance ministries, central banks, and SSB.</p>
+        <span class="faq-link">Read the answer →</span>
+      </div>
+    </a>
+
+    <a href="/en/faq/sweden-crime/" class="faq-card">
+      <div class="faq-icon">🔒</div>
+      <div class="faq-content">
+        <h2>Sweden immigration crime statistics: what BRÅ data actually shows</h2>
+        <p>Explainer on the BRÅ 2021 official report. Per-capita rates, methodological caveats, and what the data does and does not prove.</p>
+        <span class="faq-link">Read the answer →</span>
+      </div>
+    </a>
+
+    <a href="/en/faq/pisa-immigrant-students/" class="faq-card">
+      <div class="faq-icon">📚</div>
+      <div class="faq-content">
+        <h2>Do immigrant students underperform?</h2>
+        <p>OECD PISA 2022 data by country. 83% explained by socioeconomic factors on average, but significant residual gaps persist in several European countries.</p>
+        <span class="faq-link">Read the answer →</span>
+      </div>
+    </a>
+
+    <a href="/en/faq/denmark-policy-shift/" class="faq-card">
+      <div class="faq-icon">🇩🇰</div>
+      <div class="faq-content">
+        <h2>Why did Denmark shift its immigration policy?</h2>
+        <p>Official data from Finansministeriet, DST, and policy documents. A factual timeline of what changed after 2001 and why.</p>
+        <span class="faq-link">Read the answer →</span>
+      </div>
+    </a>
+
+    <a href="/en/faq/employment-gap/" class="faq-card">
+      <div class="faq-icon">📊</div>
+      <div class="faq-content">
+        <h2>Immigrants and unemployment: what do official statistics show?</h2>
+        <p>Employment rate gaps across 20 countries from national statistics offices. From Belgium −20pt to Czech Republic −3pt.</p>
+        <span class="faq-link">Read the answer →</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<style>
+.faq-grid {
+  max-width: 860px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.faq-card:hover {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+.faq-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.faq-content h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+.faq-content p {
+  font-size: 0.87rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
+.faq-link {
+  font-size: 0.82rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+</style>
+</BaseLayout>

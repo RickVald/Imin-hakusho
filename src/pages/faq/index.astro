@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="よくある質問 — 移民統計 | 移民白書" lang="ja" altHref="/en/faq/" description="移民の財政コスト、犯罪統計、学力格差、雇用に関するよくある質問に公式統計データで回答。スウェーデン・デンマーク・ドイツ等の一次資料に基づく。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>よくある質問</span>
+    </nav>
+    <h1>よくある質問</h1>
+    <p class="intro">移民に関してよく検索される質問に、公式統計データで回答します。すべての回答は一次公式資料に基づき、方法論的な限界も明示しています。</p>
+    <div class="lang-switch"><a href="/en/faq/">🌐 English version</a></div>
+  </div>
+
+  <div class="faq-grid">
+    <a href="/faq/cout-fiscal/" class="faq-card">
+      <div class="faq-icon">💴</div>
+      <div class="faq-content">
+        <h2>移民は財政負担になるのか？</h2>
+        <p>デンマーク、ノルウェー、ドイツ、スウェーデン、カナダ等の公式推計を比較。財政省・中央銀行・SSBの一次データ。</p>
+        <span class="faq-link">回答を読む →</span>
+      </div>
+    </a>
+
+    <a href="/faq/criminalite-suede/" class="faq-card">
+      <div class="faq-icon">🔒</div>
+      <div class="faq-content">
+        <h2>スウェーデンの移民犯罪統計は本当か？</h2>
+        <p>BRÅ（スウェーデン犯罪予防評議会）の2021年公式報告書を解説。per capita率と方法論的注意点。</p>
+        <span class="faq-link">回答を読む →</span>
+      </div>
+    </a>
+
+    <a href="/faq/pisa-enfants-immigres/" class="faq-card">
+      <div class="faq-icon">📚</div>
+      <div class="faq-content">
+        <h2>移民の子どもは学力が低いのか？</h2>
+        <p>OECD PISA 2022のデータで国別比較。83%は社会経済要因で説明されるが、補正後も格差が残る国は多い。</p>
+        <span class="faq-link">回答を読む →</span>
+      </div>
+    </a>
+
+    <a href="/faq/politique-danemark/" class="faq-card">
+      <div class="faq-icon">🇩🇰</div>
+      <div class="faq-content">
+        <h2>デンマークはなぜ移民政策を転換したのか？</h2>
+        <p>財政省・DST・政策文書の一次資料で2001年以降の政策転換の背景を解説。</p>
+        <span class="faq-link">回答を読む →</span>
+      </div>
+    </a>
+
+    <a href="/faq/emploi-chomage/" class="faq-card">
+      <div class="faq-icon">📊</div>
+      <div class="faq-content">
+        <h2>移民と失業率の関係は？</h2>
+        <p>20カ国の雇用率格差を各国統計局データで比較。ベルギー−20pt〜チェコ−3ptまでの幅。</p>
+        <span class="faq-link">回答を読む →</span>
+      </div>
+    </a>
+  </div>
+</main>
+
+<style>
+.faq-grid {
+  max-width: 860px;
+  margin: 2rem auto 3rem;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.faq-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.faq-card:hover {
+  border-color: var(--color-accent);
+  transform: translateX(4px);
+}
+.faq-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; margin-top: 0.1rem; }
+.faq-content h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.4rem;
+}
+.faq-content p {
+  font-size: 0.87rem;
+  color: var(--color-muted);
+  line-height: 1.55;
+  margin-bottom: 0.6rem;
+}
+.faq-link {
+  font-size: 0.82rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+</style>
+</BaseLayout>
