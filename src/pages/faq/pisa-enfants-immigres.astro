@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="移民の子どもは学力が低いのか？PISA2022国別データ | 移民白書" lang="ja" description="OECD PISA 2022のデータで移民系生徒の学力格差を検証。社会経済補正後に格差の83%が縮小する事実と国別の差異を解説。">
@@ -105,5 +105,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>OECD (2023). <em>PISA 2022 Results Volume I: The State of Learning and Equity in Education</em>. Chapter 5: "Immigrant background and student performance". <a href="https://www.oecd.org/pisa" rel="noopener">www.oecd.org/pisa</a></li>
     </ul>
   </section>
+<div class="related-countries">
+  <h2>関連国ページ</h2>
+  <div class="related-links">
+    <a href="/countries/finland/">🇫🇮 フィンランド — 詳細データ</a>
+    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
+    <a href="/countries/australia/">🇦🇺 オーストラリア — 詳細データ</a>
+    <a href="/countries/germany/">🇩🇪 ドイツ — 詳細データ</a>
+  </div>
+</div>
 </main>
+<style>
+.related-countries {
+  max-width: 800px;
+  margin: 2.5rem auto 1rem;
+  padding: 0 1.5rem;
+}
+.related-countries h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
 </BaseLayout>

@@ -1,4 +1,4 @@
----
+﻿---
 slug: norway
 name: "Norway"
 status:
@@ -15,58 +15,58 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 
 ## 1. Official institutions
 
-- Statistics Norway (Statistisk sentralbyrå, SSB) — national statistical institute: https://www.ssb.no
-- UDI (Utlendingsdirektoratet) — Directorate of Immigration
-- IMDi (Integrerings- og mangfoldsdirektoratet) — Directorate of Integration and Diversity
+- Statistics Norway (Statistisk sentralbyrÃ¥, SSB) â€” national statistical institute: https://www.ssb.no
+- UDI (Utlendingsdirektoratet) â€” Directorate of Immigration
+- IMDi (Integrerings- og mangfoldsdirektoratet) â€” Directorate of Integration and Diversity
 
 ## 2. Key datasets
 
 - SSB publishes analyses of net fiscal contribution by origin group (methodologically close to the Danish approach)
 - UDI: asylum and residence permit statistics
 - IMDi: integration indicators (employment, education by origin and length of residence)
-- SSB StatBank API (table 05182 "Persons, by region, sex, immigration category"; tables 07111 and 07459 "Population by age"; tables 14740–14744 "Population projections") — source for sections 3.3, 3.4, and 3.5 of this page
+- SSB StatBank API (table 05182 "Persons, by region, sex, immigration category"; tables 07111 and 07459 "Population by age"; tables 14740â€“14744 "Population projections") â€” source for sections 3.3, 3.4, and 3.5 of this page
 
 ## 3. Demographics
 
 ### 3.1 Current population composition
 
 <StackedBar
-	title="Population composition (January 1, 2026 — estimated total population 5,627,400)"
+	title="Population composition (January 1, 2026 â€” estimated total population 5,627,400)"
 	segments={[
 		{ label: 'Norwegian background', value: 78.2, color: '#1d3461' },
 		{ label: 'Immigrants', value: 17.5, color: '#9c3b3b' },
 		{ label: 'Norwegian-born to immigrant parents', value: 4.2, color: '#c9a23f' },
 	]}
-	sourceLabel='SSB, "Innvandrere og norskfødte med innvandrerforeldre"'
+	sourceLabel='SSB, "Innvandrere og norskfÃ¸dte med innvandrerforeldre"'
 	sourceUrl="https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre"
 	sourcePrefix="Source: "
 />
 
-- As of January 1, 2026, Norway had 987,120 immigrants (innvandrere — born abroad to two parents born abroad), 17.5% of the total population, plus 238,507 people born in Norway to immigrant parents (4.2%).
-  Source: SSB, "Innvandrere og norskfødte med innvandrerforeldre" — https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre
+- As of January 1, 2026, Norway had 987,120 immigrants (innvandrere â€” born abroad to two parents born abroad), 17.5% of the total population, plus 238,507 people born in Norway to immigrant parents (4.2%).
+  Source: SSB, "Innvandrere og norskfÃ¸dte med innvandrerforeldre" â€” https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre
 
 ### 3.2 Origin breakdown
 
 <StackedBar
-	title="Immigrants by region of origin (January 1, 2026 — main groups)"
+	title="Immigrants by region of origin (January 1, 2026 â€” main groups)"
 	segments={[
 		{ label: 'Asia', value: 5.1, color: '#9c3b3b' },
 		{ label: 'Eastern Europe (EU members since 2004)', value: 3.9, color: '#c9a23f' },
 		{ label: 'Africa', value: 2.0, color: '#5a8a6b' },
 		{ label: 'Other regions', value: 6.5, color: '#1d3461' },
 	]}
-	sourceLabel='SSB, "Innvandrere og norskfødte med innvandrerforeldre"'
+	sourceLabel='SSB, "Innvandrere og norskfÃ¸dte med innvandrerforeldre"'
 	sourceUrl="https://www.ssb.no/befolkning/innvandrere/statistikk/innvandrere-og-norskfodte-med-innvandrerforeldre"
 	sourcePrefix="Source: "
 />
 
-- Breakdown by origin (share of total population): Asia 288,439 people (5.1%), Eastern European countries that joined the EU from 2004 onward 218,757 (3.9%), Africa 112,410 (2.0%). "Other regions" is the residual after subtracting these three groups from the total immigrant population — a figure calculated by this observatory, not an official SSB category.
+- Breakdown by origin (share of total population): Asia 288,439 people (5.1%), Eastern European countries that joined the EU from 2004 onward 218,757 (3.9%), Africa 112,410 (2.0%). "Other regions" is the residual after subtracting these three groups from the total immigrant population â€” a figure calculated by this observatory, not an official SSB category.
   Same SSB source as above.
 
-### 3.3 Immigration waves (1970 – present)
+### 3.3 Immigration waves (1970 â€“ present)
 
 <TrendChart
-	title="Number of immigrants and their Norwegian-born children (1970 → 2026)"
+	title="Number of immigrants and their Norwegian-born children (1970 â†’ 2026)"
 	unit=""
 	series={[
 		{ label: 'Immigrants + their children (total)', color: '#9c3b3b', points: [
@@ -85,26 +85,26 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 	sourcePrefix="Source: "
 />
 
-- Between 1970 and 2026, the combined number of immigrants and their Norwegian-born children increased roughly 20.7-fold (59,196 → 1,225,627). Immigrants alone (born abroad) increased roughly 17.3-fold (57,041 → 987,120).
+- Between 1970 and 2026, the combined number of immigrants and their Norwegian-born children increased roughly 20.7-fold (59,196 â†’ 1,225,627). Immigrants alone (born abroad) increased roughly 17.3-fold (57,041 â†’ 987,120).
 - Main historical phases: labor migration (including from Pakistan) dominated the 1970s. Unlike Denmark's Tamil refugee wave or the Netherlands' Suriname independence in 1975, Norway has no single comparably large discrete event, but from the 1980s onward asylum arrivals grew; the 1990s saw refugees from the former Yugoslavia (Bosnian war); the 2000s brought Eastern European labor migration following EU enlargement (2004, 2007); the 2010s saw refugees linked to the Syrian civil war and the situation in Afghanistan; and from 2022, Ukrainian arrivals have been received under temporary collective protection status.
-  Source: SSB StatBank API (table 05182) — https://data.ssb.no/api/v0/en/table/05182
-- **Limitation**: table 05182 only provides data from 1970 onward, so the 1945–1969 period could not be confirmed during this research. A detailed breakdown by origin and decade (e.g. the exact scale of 1970s Pakistani migration or 1980s Vietnamese refugee arrivals) was also not retrievable through the API queries used here.
-<ComingSoon label="Immigrant population data for 1945–1969, and a detailed decade-by-decade breakdown by country of origin (Pakistan, Vietnam, former Yugoslavia, etc.), are planned for a future update." />
+  Source: SSB StatBank API (table 05182) â€” https://data.ssb.no/api/v0/en/table/05182
+- **Limitation**: table 05182 only provides data from 1970 onward, so the 1945â€“1969 period could not be confirmed during this research. A detailed breakdown by origin and decade (e.g. the exact scale of 1970s Pakistani migration or 1980s Vietnamese refugee arrivals) was also not retrievable through the API queries used here.
+<ComingSoon label="Immigrant population data for 1945â€“1969, and a detailed decade-by-decade breakdown by country of origin (Pakistan, Vietnam, former Yugoslavia, etc.), are planned for a future update." />
 
 ### 3.4 Age structure (population pyramid)
 
 <AgePyramid
-	title="Age structure (January 1, 2026 — share within each group)"
+	title="Age structure (January 1, 2026 â€” share within each group)"
 	bands={[
-		{ label: '0–19', groups: [
+		{ label: '0â€“19', groups: [
 			{ label: 'Total Norwegian population', value: 22.0, color: '#1d3461' },
 			{ label: 'Immigrants + their children', value: 23.6, color: '#9c3b3b' },
 		]},
-		{ label: '20–44', groups: [
+		{ label: '20â€“44', groups: [
 			{ label: 'Total Norwegian population', value: 33.2, color: '#1d3461' },
 			{ label: 'Immigrants + their children', value: 44.0, color: '#9c3b3b' },
 		]},
-		{ label: '45–66', groups: [
+		{ label: '45â€“66', groups: [
 			{ label: 'Total Norwegian population', value: 27.8, color: '#1d3461' },
 			{ label: 'Immigrants + their children', value: 27.3, color: '#9c3b3b' },
 		]},
@@ -118,13 +118,13 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 	sourcePrefix="Source: "
 />
 
-- Immigrants and their children are strongly concentrated in the 20–44 age range (44.0%, versus 33.2% for the total Norwegian population). The 67+ share among immigrants and their children is only 5.8%, far below the 17.0% for the total population — reflecting a comparatively young, working-age-concentrated immigrant population.
-- Note: this banding is an aggregate constructed by this observatory from SSB's raw age tables (separate figures for ages 0, 1–5, 6–12, 13–15, 16–19, 20–44, 45–66, 67–79, 80+), not an official SSB classification as such.
+- Immigrants and their children are strongly concentrated in the 20â€“44 age range (44.0%, versus 33.2% for the total Norwegian population). The 67+ share among immigrants and their children is only 5.8%, far below the 17.0% for the total population â€” reflecting a comparatively young, working-age-concentrated immigrant population.
+- Note: this banding is an aggregate constructed by this observatory from SSB's raw age tables (separate figures for ages 0, 1â€“5, 6â€“12, 13â€“15, 16â€“19, 20â€“44, 45â€“66, 67â€“79, 80+), not an official SSB classification as such.
 
 ### 3.5 Long-term projection
 
 <TrendChart
-	title="Projected total population of Norway (2026 → 2100, medium scenario MMM)"
+	title="Projected total population of Norway (2026 â†’ 2100, medium scenario MMM)"
 	unit=""
 	series={[
 		{ label: 'Total population (MMM scenario)', color: '#1d3461', points: [
@@ -142,15 +142,15 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 />
 
 - Under SSB's medium scenario (MMM: medium fertility, medium mortality, medium migration), annual net migration is projected at 17,071 in 2050 and 15,113 in 2100.
-  Source: SSB, "Befolkningsframskrivinger" — https://www.ssb.no/en/befolkning/befolkningsframskrivinger/statistikk/nasjonale-befolkningsframskrivinger
-- **Limitation**: SSB's published projection materials do not explicitly state the projected share of immigrants and their descendants in 2050 or 2100 — only the underlying components (fertility, mortality, net migration) are detailed. Unlike Denmark's DST, which officially publishes a projected share of Danish-origin population over time, no direct official projection of the future population share by origin in Norway could be confirmed during this research.
+  Source: SSB, "Befolkningsframskrivinger" â€” https://www.ssb.no/en/befolkning/befolkningsframskrivinger/statistikk/nasjonale-befolkningsframskrivinger
+- **Limitation**: SSB's published projection materials do not explicitly state the projected share of immigrants and their descendants in 2050 or 2100 â€” only the underlying components (fertility, mortality, net migration) are detailed. Unlike Denmark's DST, which officially publishes a projected share of Danish-origin population over time, no direct official projection of the future population share by origin in Norway could be confirmed during this research.
 <ComingSoon label="A projected population share by origin (immigrants and descendants) for 2050 and 2100 is planned for a future update. SSB's projection pages publish the underlying components (births, deaths, migration) but not a direct origin-based population share forecast that could be confirmed during this research." />
 
-## 4. Public finances — net cost
+## 4. Public finances â€” net cost
 
 <KeyFigure
 	value="+4.1m NOK"
-	label="Net present-value cost per person from the R3 group ('rest of world'), for an additional cohort of immigrants in 2015 (measured 2015–2100, 2012 NOK)"
+	label="Net present-value cost per person from the R3 group ('rest of world'), for an additional cohort of immigrants in 2015 (measured 2015â€“2100, 2012 NOK)"
 />
 
 <BarChart
@@ -161,20 +161,20 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 		{ label: 'R2: Eastern Europe (EU members)', value: 80 },
 		{ label: 'R3: Rest of world (mainly asylum and non-European family migration)', value: 410 },
 	]}
-	sourceLabel="SSB Rapporter 2017/31 (Holmøy & Strøm, commissioned under NOU 2017:2)"
+	sourceLabel="SSB Rapporter 2017/31 (HolmÃ¸y & StrÃ¸m, commissioned under NOU 2017:2)"
 	sourceUrl="https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0"
 	sourcePrefix="Source: "
 />
 
-- Methodology 1 (SSB, commissioned by the Ministry of Finance / NOU 2017:2, "Long-term Consequences of High Immigration"). The Holmøy & Strøm report (SSB, Rapporter 2017/31), using the DEMEC model, calculated the net present value (2012 NOK) of an additional cohort of 5,000 immigrants arriving in 2015, measured over 2015–2100:
-  - Group R1 (Western Europe, North America, Australia): −0.8 million NOK (i.e. a positive net fiscal contribution)
+- Methodology 1 (SSB, commissioned by the Ministry of Finance / NOU 2017:2, "Long-term Consequences of High Immigration"). The HolmÃ¸y & StrÃ¸m report (SSB, Rapporter 2017/31), using the DEMEC model, calculated the net present value (2012 NOK) of an additional cohort of 5,000 immigrants arriving in 2015, measured over 2015â€“2100:
+  - Group R1 (Western Europe, North America, Australia): âˆ’0.8 million NOK (i.e. a positive net fiscal contribution)
   - Group R2 (Eastern European EU member states): net cost of +0.8 million NOK
   - Group R3 (rest of world, including most asylum and non-European family migration): net cost of +4.1 million NOK
   Direct link: https://www.ssb.no/nasjonalregnskap-og-konjunkturer/artikler-og-publikasjoner/_attachment/327853?_ts=15f779396d0
   SSB summary: https://www.ssb.no/offentlig-sektor/artikler-og-publikasjoner/kostnaden-for-det-offentlige-av-flere-innvandrere
-- Methodology 2 (alternative sponsor): data not publicly available — as of this writing, no independent second methodology (e.g. from a private research institute or another ministry) with comparable figures and a directly verifiable link has been identified. A topic for future research (e.g. NHO, Civita, or an update following NOU 2017:2).
+- Methodology 2 (alternative sponsor): data not publicly available â€” as of this writing, no independent second methodology (e.g. from a private research institute or another ministry) with comparable figures and a directly verifiable link has been identified. A topic for future research (e.g. NHO, Civita, or an update following NOU 2017:2).
 <ComingSoon label="An independent second fiscal-cost methodology (e.g. from NHO or Civita) is planned for a future update. No post-NOU 2017:2 update has been identified at this stage." />
-- Comparison point: the report explicitly states that immigration from high-income countries (Western Europe, North America) eases fiscal pressure (aging, tax revenue), while immigration from lower-income countries increases it — so the breakdown by origin is well established, but no formal breakdown by legal/illegal status or by work/family/asylum category is included in this report.
+- Comparison point: the report explicitly states that immigration from high-income countries (Western Europe, North America) eases fiscal pressure (aging, tax revenue), while immigration from lower-income countries increases it â€” so the breakdown by origin is well established, but no formal breakdown by legal/illegal status or by work/family/asylum category is included in this report.
 
 ### 4.1 Pension system / contributor-to-pensioner ratio
 
@@ -182,8 +182,8 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 	title="Demographic dependency ratios (2026, national level, not broken down by origin)"
 	unit="%"
 	bars={[
-		{ label: 'Old-age dependency ratio (65+ ÷ 20–64)', value: 32.8 },
-		{ label: 'Total dependency ratio (0–19 + 65+ ÷ 20–64)', value: 70.2 },
+		{ label: 'Old-age dependency ratio (65+ Ã· 20â€“64)', value: 32.8 },
+		{ label: 'Total dependency ratio (0â€“19 + 65+ Ã· 20â€“64)', value: 70.2 },
 	]}
 	sourceLabel="Calculated by this observatory from SSB StatBank API table 07459 raw data"
 	sourceUrl="https://data.ssb.no/api/v0/en/table/07459"
@@ -197,7 +197,7 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 ## 5. Labor market
 
 <TrendChart
-	title="Employment rate trend (2015 → 2024, ages 20–66)"
+	title="Employment rate trend (2015 â†’ 2024, ages 20â€“66)"
 	unit="%"
 	series={[
 		{ label: 'Immigrants', color: '#9c3b3b', points: [{ year: 2015, value: 66 }, { year: 2024, value: 68 }] },
@@ -209,33 +209,33 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 	sourcePrefix="Source: "
 />
 
-- In 2024, the employment rate (ages 20–66) was 68% among immigrants and 74% among Norwegian-born children of immigrants, versus 80% among people without an immigrant background.
-  Source: IMDi, Indikatorrapport 2025, "Arbeid" (Labor) section — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/arbeid/
+- In 2024, the employment rate (ages 20â€“66) was 68% among immigrants and 74% among Norwegian-born children of immigrants, versus 80% among people without an immigrant background.
+  Source: IMDi, Indikatorrapport 2025, "Arbeid" (Labor) section â€” https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/arbeid/
 - Gender gap (2024): 71% of immigrant men and 65% of immigrant women were employed; the gap is particularly pronounced among immigrant women from Asia, Africa, and parts of Europe outside the EU/EEA/UK.
   Same IMDi source.
 - Trend over time: the employment gap between immigrants and the rest of the population narrowed from 14 points (2015) to 12 points (2024), as immigrant employment grew slightly faster than the rest of the population since 2015.
   Same IMDi source.
-- Breakdown by migration motive (work vs. family vs. asylum): not publicly available in a single consolidated form on this IMDi page — the indicator is aggregated by origin and length of residence, not by initial permit category.
+- Breakdown by migration motive (work vs. family vs. asylum): not publicly available in a single consolidated form on this IMDi page â€” the indicator is aggregated by origin and length of residence, not by initial permit category.
 
 ## 6. Security / justice
 
-- Over 2010–2013, the gross rate of persons charged (siktede): 6.7% among immigrants, 11.3% among Norwegian-born children of immigrants, versus 4.5% among people without an immigrant background.
-  After age and sex adjustment: 5.8% (immigrants, −13% relative to the gross rate) and 6.8% (children of immigrants, −40%).
-  Source: SSB, "Innvandrere mindre overrepresentert blant siktede enn før" — https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
-- Trend over time (age/sex-adjusted over-representation): 62% (immigrants) and 141% (children of immigrants) in 2002, versus 21% and 76% respectively in 2015 — a continuous decline since the early 2000s.
+- Over 2010â€“2013, the gross rate of persons charged (siktede): 6.7% among immigrants, 11.3% among Norwegian-born children of immigrants, versus 4.5% among people without an immigrant background.
+  After age and sex adjustment: 5.8% (immigrants, âˆ’13% relative to the gross rate) and 6.8% (children of immigrants, âˆ’40%).
+  Source: SSB, "Innvandrere mindre overrepresentert blant siktede enn fÃ¸r" â€” https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
+- Trend over time (age/sex-adjusted over-representation): 62% (immigrants) and 141% (children of immigrants) in 2002, versus 21% and 76% respectively in 2015 â€” a continuous decline since the early 2000s.
   Same SSB source.
-- More recent period (2015–2017): of an annual average of 78,000 persons charged, around 18% were immigrants and 2.5% were Norwegian-born children of immigrants; 68% belonged to the rest of the resident population, and 12% were not formally residents of Norway.
-  Source: SSB, "Mer detaljerte tall for siktede med innvandrerbakgrunn" — https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/mer-detaljerte-tall-for-siktede-med-innvandrerbakgrunn
+- More recent period (2015â€“2017): of an annual average of 78,000 persons charged, around 18% were immigrants and 2.5% were Norwegian-born children of immigrants; 68% belonged to the rest of the resident population, and 12% were not formally residents of Norway.
+  Source: SSB, "Mer detaljerte tall for siktede med innvandrerbakgrunn" â€” https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/mer-detaljerte-tall-for-siktede-med-innvandrerbakgrunn
 - SSB's official methodological caveats: crime is statistically more frequent among young men, a category over-represented among immigrants; adjusting for employment status and place of residence partly reduces but does not eliminate an unexplained residual gap. These statistics cover only offenses known to the authorities and exclude unregistered asylum seekers.
 - Legal/illegal distinction: no SSB statistic disaggregating the "not formally resident" category by legal versus illegal residence status is publicly available.
 
 ## 7. Education
 
-- 2024 completion rate for upper secondary education (videregående opplæring): 65% among immigrants, 84% among Norwegian-born children of immigrants, and 85% among the rest of the population.
-  Source: IMDi, Indikatorrapport 2025, "Utdanning og kvalifisering" (Education and Qualification) section — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/utdanning-og-kvalifisering/
-- Effect of length of residence: among immigrant students who had 3–5 years of residence when entering upper secondary school in 2018, 57% had graduated by 2024; this rate rises to 77% for those with 10 or more years of residence.
+- 2024 completion rate for upper secondary education (videregÃ¥ende opplÃ¦ring): 65% among immigrants, 84% among Norwegian-born children of immigrants, and 85% among the rest of the population.
+  Source: IMDi, Indikatorrapport 2025, "Utdanning og kvalifisering" (Education and Qualification) section â€” https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/utdanning-og-kvalifisering/
+- Effect of length of residence: among immigrant students who had 3â€“5 years of residence when entering upper secondary school in 2018, 57% had graduated by 2024; this rate rises to 77% for those with 10 or more years of residence.
   Same IMDi source.
-- Preschool enrollment (ages 1–5, children from minority-language households): participation rose from 78% in 2015 to 90% in 2024.
+- Preschool enrollment (ages 1â€“5, children from minority-language households): participation rose from 78% in 2015 to 90% in 2024.
   Same IMDi source.
 - Overall trend: participation in education among children and youth with an immigrant background has improved at every level since 2015 (preschool, upper secondary, higher education), though average primary school grades remain lower than for the rest of the population.
   Same IMDi source.
@@ -243,48 +243,54 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 ## 8. Housing
 
 - Overcrowding (trangboddhet), 2024: 14% of immigrants in "group 1" (Western Europe/North America/Australia/New Zealand) and 26% of immigrants in "group 2" (Asia, Africa, Latin America, non-EU Eastern Europe) live in overcrowded housing, versus 7% in the rest of the population.
-  Source: IMDi, Indikatorrapport 2025, "Økonomi og levekår" (Economy and Living Conditions) section — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
-- Tenure status, 2024: 38% (group 1) and 43% (group 2) of immigrants are renters, versus about 12% in the rest of the population — i.e. a markedly lower homeownership rate among immigrants.
+  Source: IMDi, Indikatorrapport 2025, "Ã˜konomi og levekÃ¥r" (Economy and Living Conditions) section â€” https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
+- Tenure status, 2024: 38% (group 1) and 43% (group 2) of immigrants are renters, versus about 12% in the rest of the population â€” i.e. a markedly lower homeownership rate among immigrants.
   Same IMDi source.
 - Income (comparison point), 2023: median income of 372,000 NOK for immigrants versus 481,000 NOK for the overall population, a gap of 109,000 NOK.
   Same IMDi source.
-- Persistent poverty (2021–2023, ages 0–39 in persistently low-income households): 27% among immigrants and 24% among Norwegian-born children of immigrants, versus 7% in the rest of the population.
+- Persistent poverty (2021â€“2023, ages 0â€“39 in persistently low-income households): 27% among immigrants and 24% among Norwegian-born children of immigrants, versus 7% in the rest of the population.
   Same IMDi source.
 
 ## 9. Social cohesion
 
 - Self-reported economic hardship, 2024: 19% of immigrants report difficulty making ends meet, versus 6% in the rest of the population.
-  Source: IMDi, Indikatorrapport 2025, "Økonomi og levekår" section — https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
+  Source: IMDi, Indikatorrapport 2025, "Ã˜konomi og levekÃ¥r" section â€” https://www.imdi.no/tall-og-fakta/tall-om-integreringen-i-norge/indikatorrapport-2025/okonomi-og-levekar/
 - Effect of length of residence on integration: longer residence in Norway is associated with better outcomes on most indicators (Norwegian language skills, upper secondary completion, employment, income, housing, civic participation).
   Same IMDi source.
-- Specific social cohesion indicators (interpersonal/institutional trust, sense of belonging, perceived discrimination) with precise figures and a direct link: data not publicly available as of this writing — further research needed into SSB's survey "Levekårsundersøkelsen blant personer med innvandrerbakgrunn" (Living Conditions Survey among People with an Immigrant Background; latest edition to be checked on ssb.no).
+- Specific social cohesion indicators (interpersonal/institutional trust, sense of belonging, perceived discrimination) with precise figures and a direct link: data not publicly available as of this writing â€” further research needed into SSB's survey "LevekÃ¥rsundersÃ¸kelsen blant personer med innvandrerbakgrunn" (Living Conditions Survey among People with an Immigrant Background; latest edition to be checked on ssb.no).
 <ComingSoon label="Specific social cohesion indicators (interpersonal trust, sense of belonging, perceived discrimination figures) are planned for a future update. The latest edition of SSB's living conditions survey needs to be checked." />
 
 ## 10. Recent political context
 
 - Stricter requirements for permanent residence: from September 2025, applicants for permanent residence permits must pass an oral Norwegian test at level A2 and a civic knowledge test, replacing the previous requirement to simply attend a course.
-  Source: Norwegian government report to the OECD — https://www.imdi.no/tall-og-fakta/rapporter/migration-and-integration-2024-2025/ (see also regjeringen.no: https://www.regjeringen.no/en/documents/migrasjon-og-integrering-20242025/id3146744/)
-- Reduction in the resettlement refugee quota (overføringsflyktninger): from 1,000 places in 2024 to 500 in 2025.
+  Source: Norwegian government report to the OECD â€” https://www.imdi.no/tall-og-fakta/rapporter/migration-and-integration-2024-2025/ (see also regjeringen.no: https://www.regjeringen.no/en/documents/migrasjon-og-integrering-20242025/id3146744/)
+- Reduction in the resettlement refugee quota (overfÃ¸ringsflyktninger): from 1,000 places in 2024 to 500 in 2025.
   Same source.
 - The Storting (parliament) has asked the government to prepare additional tightening measures that could be activated quickly: raising permanent residence requirements, raising income requirements for family reunification, and extending the residence period required before naturalization.
-  Source: Storting, Dokument 8:94 S (2024–2025) — https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Representantforslag/2024-2025/dok8-202425-094s/?all=true
-- Political comparison point: the NGO NOAS describes Norway's asylum policy as already one of the strictest in Europe, even before this latest round of tightening (verified quote: "the reality is that Norway already applies one of the strictest practices in Europe"). However, the NOAS article does not explicitly mention alignment with Denmark or Sweden — this specific country comparison, present in an earlier version of this page, was not supported by the cited source and has been removed. This general comparative assessment comes from an NGO (NOAS), not a government source, and should be treated as analysis rather than official statistics.
-  Source: NOAS — https://www.noas.no/norge-forer-allerede-en-av-europas-strengeste-praksiser-like-fullt-strammes-det-ytterligere-inn/
-- Official summary reference document: Meld. St. 1 (2025–2026), the government's budget statement including migration policy guidelines — https://www.regjeringen.no/en/documents/meld.-st.-1-20252026/id3123808/
+  Source: Storting, Dokument 8:94 S (2024â€“2025) â€” https://www.stortinget.no/no/Saker-og-publikasjoner/Publikasjoner/Representantforslag/2024-2025/dok8-202425-094s/?all=true
+- Political comparison point: the NGO NOAS describes Norway's asylum policy as already one of the strictest in Europe, even before this latest round of tightening (verified quote: "the reality is that Norway already applies one of the strictest practices in Europe"). However, the NOAS article does not explicitly mention alignment with Denmark or Sweden â€” this specific country comparison, present in an earlier version of this page, was not supported by the cited source and has been removed. This general comparative assessment comes from an NGO (NOAS), not a government source, and should be treated as analysis rather than official statistics.
+  Source: NOAS â€” https://www.noas.no/norge-forer-allerede-en-av-europas-strengeste-praksiser-like-fullt-strammes-det-ytterligere-inn/
+- Official summary reference document: Meld. St. 1 (2025â€“2026), the government's budget statement including migration policy guidelines â€” https://www.regjeringen.no/en/documents/meld.-st.-1-20252026/id3123808/
 
 ## 11. Data limitations and biases
 
 <div class="callout-limits">
-<strong>⚠️ Limits</strong>
+<strong>âš ï¸ Limits</strong>
 SSB's definitions: "innvandrer" (immigrant) refers to a person born abroad to two parents born abroad (and all four grandparents born abroad). Norwegian-born children of immigrants form a separate statistical category. International comparisons should account for the fact that other countries (e.g. Denmark) use similar but not identical definitions.
 
 Demographic composition: gross differences in employment, income, housing, and crime between immigrants and the rest of the population partly reflect differing age and sex structures (more young men in certain immigrant groups). SSB and IMDi generally also publish adjusted figures, but not systematically for every indicator (e.g. the housing and education figures presented here are raw rates by origin group).
 
 Aggregation by "group": IMDi groups countries of origin into "group 1" (Western Europe, North America, Australia, New Zealand) and "group 2" (rest of world, including most asylum and non-European family migration), which masks significant heterogeneity within each group.
 
-Coverage of crime statistics: SSB data covers only offenses known to the authorities (siktede) and explicitly excludes unregistered persons in irregular status or asylum seekers whose case did not generate an official report — an under-coverage bias for the illegal/unregularized component of the immigrant population.
+Coverage of crime statistics: SSB data covers only offenses known to the authorities (siktede) and explicitly excludes unregistered persons in irregular status or asylum seekers whose case did not generate an official report â€” an under-coverage bias for the illegal/unregularized component of the immigrant population.
 
 Uneven data availability by topic: the net fiscal cost data (section 4) is based on a 2017 SSB report (NOU 2017:2), with no independent second methodology update identified to date. Social cohesion indicators (section 9) lack recent figures with a direct verifiable link. Dependency ratios broken down by origin (section 4.1) and projected future population shares by origin (section 3.5) could likewise not be confirmed from public primary sources. These gaps are documented as "data not publicly available" in the relevant sections rather than filled by estimation.
 
-Source for explicit methodological limitations: SSB itself notes, in its own crime publications, that "crime is more frequent among young men" and that residual differences after adjustment remain unexplained — https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
+Source for explicit methodological limitations: SSB itself notes, in its own crime publications, that "crime is more frequent among young men" and that residual differences after adjustment remain unexplained â€” https://www.ssb.no/sosiale-forhold-og-kriminalitet/artikler-og-publikasjoner/innvandrere-mindre-overrepresentert-blant-siktede-enn-for
 </div>
+
+
+## Related FAQ
+
+- [Do immigrants cost more than they contribute?](/en/faq/fiscal-cost/)
+- [Immigrants and unemployment: official statistics across 20 countries](/en/faq/employment-gap/)

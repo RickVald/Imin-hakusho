@@ -104,6 +104,34 @@ const footerText =
 			})} />
 		)}
 
+		<!-- JSON-LD : BreadcrumbList -->
+		{(() => {
+			const parts = Astro.url.pathname.replace(/\/$/, '').split('/').filter(Boolean);
+			if (parts.length === 0) return null;
+			const labels: Record<string, string> = {
+				en: 'Immigration Factbook', themes: lang === 'ja' ? 'テーマ別比較' : 'Themes',
+				faq: lang === 'ja' ? 'よくある質問' : 'FAQ', countries: lang === 'ja' ? '国別データ' : 'Countries',
+				articles: lang === 'ja' ? '記事' : 'Articles', methodologie: '方法論',
+				methodology: 'Methodology', 'a-propos': 'このサイトについて', about: 'About',
+			};
+			const items = [{ name: lang === 'ja' ? '移民白書' : 'Immigration Factbook', url: lang === 'ja' ? 'https://imin-hakusho.com/' : 'https://imin-hakusho.com/en/' }];
+			let path = '';
+			for (const part of parts) {
+				if (part === 'en') { path = '/en'; continue; }
+				path += '/' + part;
+				const name = labels[part] ?? part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+				items.push({ name, url: 'https://imin-hakusho.com' + path + '/' });
+			}
+			if (items.length < 2) return null;
+			return <script type="application/ld+json" set:html={JSON.stringify({
+				"@context": "https://schema.org",
+				"@type": "BreadcrumbList",
+				"itemListElement": items.map((item, i) => ({
+					"@type": "ListItem", "position": i + 1, "name": item.name, "item": item.url
+				}))
+			})} />;
+		})()}
+
 		<!-- hreflang bidirectionnel : self + alternate -->
 		<link rel="alternate" hreflang={lang} href={canonicalUrl} />
 		{altHref && (
@@ -141,12 +169,14 @@ const footerText =
 				<nav class="footer-nav">
 					{lang === 'ja' ? (
 						<>
-							<a href="/methodologie/">方法論・情報源</a>
+							<a href="/methodologie/">方法論</a>
+							<a href="/sources/">一次資料一覧</a>
 							<a href="/a-propos/">このサイトについて</a>
 						</>
 					) : (
 						<>
-							<a href="/en/methodology/">Methodology & Sources</a>
+							<a href="/en/methodology/">Methodology</a>
+							<a href="/en/sources/">Sources</a>
 							<a href="/en/about/">About</a>
 						</>
 					)}

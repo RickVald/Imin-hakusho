@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="スウェーデンの移民犯罪統計は本当か？BRÅ公式データ | 移民白書" lang="ja" description="BRÅ2021年報告書のデータを検証。移民系の被疑者率、補正後の格差、方法論上の注意点を一次資料に基づき解説。">
@@ -82,5 +82,42 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>Brottsförebyggande rådet / BRÅ (2021). <em>Invandrares och invandrares avkomlingars representation i brottsstatistiken</em>. Rapport 2021:1. <a href="https://www.bra.se" rel="noopener">www.bra.se</a></li>
     </ul>
   </section>
+<div class="related-countries">
+  <h2>関連国ページ</h2>
+  <div class="related-links">
+    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
+    <a href="/countries/netherlands/">🇳🇱 オランダ — 詳細データ</a>
+    <a href="/countries/denmark/">🇩🇰 デンマーク — 詳細データ</a>
+  </div>
+</div>
 </main>
+<style>
+.related-countries {
+  max-width: 800px;
+  margin: 2.5rem auto 1rem;
+  padding: 0 1.5rem;
+}
+.related-countries h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
 </BaseLayout>

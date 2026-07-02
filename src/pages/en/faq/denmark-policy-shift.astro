@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="Why did Denmark shift its immigration policy? | 移民白書" lang="en" description="Denmark's immigration policy shift documented through official statistics and a chronology of legislative measures from 2001 to 2023. Primary sources only.">
@@ -112,5 +112,42 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <li>Udlændinge- og Integrationsministeriet. <em>Lovgivning om integration og udlændinge</em>. <a href="https://www.uim.dk" rel="noopener">www.uim.dk</a></li>
     </ul>
   </section>
+<div class="related-countries">
+  <h2>Related country pages</h2>
+  <div class="related-links">
+    <a href="/en/countries/denmark/">🇩🇰 Denmark — full data</a>
+    <a href="/en/countries/sweden/">🇸🇪 Sweden — full data</a>
+    <a href="/en/countries/norway/">🇳🇴 Norway — full data</a>
+  </div>
+</div>
 </main>
+<style>
+.related-countries {
+  max-width: 800px;
+  margin: 2.5rem auto 1rem;
+  padding: 0 1.5rem;
+}
+.related-countries h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
+}
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
 </BaseLayout>
