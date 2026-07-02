@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
 <BaseLayout title="移民の子どもの学力格差：PISA国別データ | 移民白書" lang="ja" description="PISA 2022データに基づく西欧20カ国の移民の子どもと現地の子どもの学力格差比較。各国教育省・OECDの一次資料のみを使用。">
@@ -17,6 +19,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       注：「移民の子ども」の定義はPISAでは自己申告の移民資格（第一世代：外国生まれ、第二世代：国内生まれで両親が外国生まれ）を使用します。各国の国内統計は異なる定義を用いることがあります。また、多くの国でこの格差は社会経済的要因によって大部分が説明されることが確認されています。
     </p>
   </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="+36pt" label="フィンランド：第1世代移民の低学力層割合の増加幅（数学、PISA 2022）" tone="accent" />
+      <KeyFigure value="−51pt" label="フランス：移民出身生徒の数学スコア差（生の差、OECD PISA 2022）" tone="accent" />
+      <KeyFigure value="20pt差" label="ノルウェー：移民と非移民の高校修了率格差（IMDi 2025）" tone="accent" />
+    </div>
+
+    <BarChart
+      title="移民の子どもの学力・教育格差：国別指標（各指標の詳細は下表参照）"
+      unit=""
+      bars={[
+        { label: 'フィンランド：第1世代（数学低学力層）', value: 58, note: '低学力層割合58%（現地人22%）— PISA 2022' },
+        { label: 'フィンランド：第2世代（数学低学力層）', value: 43, note: '低学力層割合43%（現地人22%）— PISA 2022' },
+        { label: 'フランス：移民出身の数学スコア差', value: -51, note: '現地生まれ基準に対する差（生の値）— OECD PISA 2022' },
+        { label: 'スウェーデン：高校進学資格取得率差', value: -14.3, note: '外国系背景73.3% vs 現地人87.6%— Skolverket 2024年' },
+        { label: 'ノルウェー：高校修了率差（移民）', value: -20, note: '移民65% vs 現地人85%— IMDi 2025年' },
+        { label: 'イタリア：早期離学率差', value: 15.8, note: '外国籍24.3% vs 伊国籍8.5%— ISTAT 2025年' },
+        { label: 'ポルトガル：留年率（現地比）', value: 4, note: '移民の子どもは現地比約4倍— CNE 2023年（倍率）' },
+        { label: 'オランダ：高水準コース合格率差', value: -17, note: 'トルコ・モロッコ系69-70% vs 全体86%— CBS 2024年' },
+      ]}
+      sourceLabel="OECD PISA 2022・各国統計局・教育機関（各国ページ参照）"
+      sourceUrl="/themes/education/"
+      sourcePrefix="出典："
+    />
+    <p class="chart-note">
+      ⚠️ 注：各指標の単位・対象が異なります（スコア差・割合・倍率）。フランスの−51点はスコア差、フィンランドは低学力層の割合（%）、ポルトガルは倍率です。詳細は下表をご参照ください。
+    </p>
+  </section>
 
   <section class="table-section">
     <h2>学力格差：国別データ一覧</h2>
@@ -388,6 +419,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     position: absolute;
     left: 0;
     color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
   }
 </style>
 

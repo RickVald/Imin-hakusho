@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
 <BaseLayout title="移民の財政コスト：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/fiscal-cost/" description="西欧20カ国における移民の財政的純負担・純貢献を公式データで比較。財務省・中央銀行・OECD等の一次資料のみを使用。">
@@ -20,6 +22,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <a href="/en/themes/fiscal-cost/">🌐 View in English</a>
     </div>
   </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="−160億DKK/年" label="デンマーク：非欧米系移民の純財政負担（財務省、2023年）" />
+      <KeyFigure value="−2.1億EUR/年" label="ドイツ：2015年難民コホートの純財政負担（DIW/IAB）" />
+      <KeyFigure value="+9,000億USD" label="米国：移民増加による連邦赤字削減効果・10年累計（CBO、2024年）" />
+    </div>
+
+    <BarChart
+      title="移民の財政純負担・純貢献：国別比較（単位：十億EUR相当、概算）"
+      unit="Bn€"
+      bars={[
+        { label: 'オランダ（累積1995-2019）', value: -400, note: 'van de Beek et al. / CBSミクロデータ' },
+        { label: 'デンマーク（非欧米系）', value: -3.6, note: '財務省・270億DKK/年 ≈ EUR換算' },
+        { label: 'ドイツ（2015年難民）', value: -2.1, note: 'DIW/IAB、2030年まで平均' },
+        { label: 'オーストリア（庇護申請者）', value: -8.1, note: 'EcoAustria、2015年以降累積' },
+        { label: 'スウェーデン', value: -0.6, note: 'Konjunkturinstitutet、外国出生者全体' },
+        { label: 'オーストリア（移民全体）', value: 1.4, note: 'EcoAustria、労働移民含む累積' },
+        { label: 'ベルギー', value: 3.0, note: 'OECD、移民全体' },
+        { label: 'イタリア', value: 1.2, note: 'レオーネ・モレッサ財団、年間' },
+      ]}
+      sourceLabel="各国財務省・OECD・研究機関（各国ページ参照）"
+      sourceUrl="/themes/cout-fiscal/"
+      sourcePrefix="出典："
+    />
+    <p class="chart-note">
+      ⚠️ 注：各国で算出方式・対象範囲・期間が大きく異なります。オランダの数値は1995〜2019年の累積現在価値、他国は年間または特定期間の累計です。直接比較には注意が必要です。
+    </p>
+  </section>
 
   <section class="table-section">
     <h2>財政コスト・純貢献：国別公式データ一覧</h2>
@@ -397,6 +428,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     position: absolute;
     left: 0;
     color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
   }
 </style>
 

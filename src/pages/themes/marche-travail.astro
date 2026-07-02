@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
 ---
 
 <BaseLayout title="移民の雇用率格差：西欧20カ国比較 | 移民白書" lang="ja" altHref="/en/themes/labour-market/" description="西欧20カ国における移民と現地人の雇用率・失業率格差を公式統計で比較。各国統計局・労働省の一次資料のみを使用。">
@@ -17,6 +19,54 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <a href="/en/themes/labour-market/">🌐 View in English</a>
     </div>
   </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="+10.5pt" label="スウェーデン：移民と現地人の失業率格差（SCB AKU、2024年）" tone="accent" />
+      <KeyFigure value="20〜24pt" label="ベルギー：北アフリカ系移民と現地人の雇用率格差（Statbel、2022年）" tone="accent" />
+      <KeyFigure value="31.3%" label="オーストリア：アフガン・シリア・イラク出身者の失業率（Statistik Austria、2024年）" tone="accent" />
+    </div>
+
+    <BarChart
+      title="失業率：現地人 vs 移民（国別比較、%）"
+      unit="%"
+      bars={[
+        { label: 'スウェーデン：現地人', value: 5.7, note: 'SCB AKU 2024年平均' },
+        { label: 'スウェーデン：外国出生者', value: 16.2, note: 'SCB AKU 2024年平均' },
+        { label: 'スイス：スイス人', value: 3.3, note: 'OFS 2025年Q2' },
+        { label: 'スイス：外国籍者', value: 7.7, note: 'OFS 2025年Q2' },
+        { label: 'フランス：移民系譜なし', value: 7.0, note: 'INSEE/DGEF 2024年' },
+        { label: 'フランス：移民', value: 12.0, note: 'INSEE/DGEF 2024年' },
+        { label: 'ポルトガル：全人口', value: 6.6, note: 'INE 2025年Q1' },
+        { label: 'ポルトガル：外国籍者', value: 11.9, note: 'INE 2025年Q1' },
+        { label: 'オーストリア：自国籍者', value: 5.7, note: 'Statistik Austria 2024年' },
+        { label: 'オーストリア：外国籍者', value: 10.5, note: 'Statistik Austria 2024年' },
+        { label: 'オーストリア：アフガン・シリア・イラク系', value: 31.3, note: 'ÖIF 2024年' },
+      ]}
+      sourceLabel="SCB（スウェーデン）・OFS（スイス）・INSEE・INE・Statistik Austria"
+      sourceUrl="/themes/marche-travail/"
+      sourcePrefix="出典："
+    />
+
+    <BarChart
+      title="雇用率格差：現地人 vs 移民（国別比較、%）"
+      unit="%"
+      bars={[
+        { label: 'ノルウェー：移民的背景なし', value: 80, note: 'IMDi 2024年' },
+        { label: 'ノルウェー：移民', value: 68, note: 'IMDi 2024年' },
+        { label: 'フィンランド：フィンランド系', value: 79, note: '統計局 2023年' },
+        { label: 'フィンランド：外国出身', value: 70.3, note: '統計局 2023年' },
+        { label: 'ベルギー：ベルギー出身', value: 75.8, note: 'Statbel 2022年' },
+        { label: 'ベルギー：北アフリカ出身', value: 51.3, note: 'Statbel 2022年' },
+        { label: 'オーストリア：移民背景なし', value: 76.4, note: 'Statistik Austria 2024年' },
+        { label: 'オーストリア：移民背景あり', value: 69.0, note: 'Statistik Austria 2024年' },
+        { label: 'オーストリア：アフガン・シリア・イラク系', value: 44.1, note: 'ÖIF 2024年' },
+      ]}
+      sourceLabel="各国統計局（各国ページ参照）"
+      sourceUrl="/themes/marche-travail/"
+      sourcePrefix="出典："
+    />
+  </section>
 
   <section class="table-section">
     <h2>雇用率・失業率格差：国別公式統計一覧</h2>
@@ -392,6 +442,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     position: absolute;
     left: 0;
     color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
   }
 </style>
 

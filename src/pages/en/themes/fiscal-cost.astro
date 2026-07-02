@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
 ---
 
 <BaseLayout title="Net Fiscal Impact of Immigration: 20-Country Comparison | Immigration Factbook" lang="en" altHref="/themes/cout-fiscal/" description="Official data on the net fiscal impact of immigration across 20 Western countries. Treasury, central banks, OECD primary sources only.">
@@ -20,6 +22,35 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <a href="/themes/cout-fiscal/">🌐 日本語で見る</a>
     </div>
   </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="−DKK 16bn/yr" label="Denmark: net fiscal cost of non-Western immigrants (Finance Ministry, 2023)" />
+      <KeyFigure value="−€2.1bn/yr" label="Germany: net fiscal cost of 2015 refugee cohort (DIW/IAB)" />
+      <KeyFigure value="+$900bn" label="USA: cumulative federal deficit reduction from immigration surge (CBO, 2024)" />
+    </div>
+
+    <BarChart
+      title="Net Fiscal Cost / Contribution by Country (approx. €bn equivalent)"
+      unit="Bn€"
+      bars={[
+        { label: 'Netherlands (cumulative 1995–2019)', value: -400, note: 'van de Beek et al. / CBS microdata' },
+        { label: 'Austria (post-2015 asylum migrants)', value: -8.1, note: 'EcoAustria, cumulative through 2020' },
+        { label: 'Germany (2015 refugee cohort)', value: -2.1, note: 'DIW/IAB, annual avg. through 2030' },
+        { label: 'Denmark (non-Western immigrants)', value: -3.6, note: 'Finance Ministry, DKK 27bn/yr ≈ EUR' },
+        { label: 'Sweden (all foreign-born)', value: -0.6, note: 'Konjunkturinstitutet, SEK 6bn/yr' },
+        { label: 'Austria (all migration forms)', value: 1.4, note: 'EcoAustria, cumulative through 2020' },
+        { label: 'Italy (annual)', value: 1.2, note: 'Fondazione Leone Moressa, 2024 report' },
+        { label: 'Belgium (all immigrants)', value: 3.0, note: 'OECD International Migration Outlook' },
+      ]}
+      sourceLabel="National Finance Ministries, OECD, research institutions (see country pages)"
+      sourceUrl="/en/themes/fiscal-cost/"
+      sourcePrefix="Source: "
+    />
+    <p class="chart-note">
+      ⚠️ Methodologies differ significantly: the Netherlands figure is a 1995–2019 cumulative lifetime present value; other figures are annual flows or specific-period cumulative totals. Direct comparison requires caution.
+    </p>
+  </section>
 
   <section class="table-section">
     <h2>Fiscal Cost / Contribution: Country-by-Country Official Data</h2>
@@ -393,6 +424,32 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     position: absolute;
     left: 0;
     color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
   }
 </style>
 

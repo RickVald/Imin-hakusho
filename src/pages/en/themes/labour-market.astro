@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
 ---
 
 <BaseLayout title="Immigration Employment Gap: 20-Country Official Statistics | Immigration Factbook" lang="en" altHref="/themes/marche-travail/" description="Official employment and unemployment rate gaps between immigrants and native-born populations across 20 Western countries. Primary sources from national statistics offices only.">
@@ -17,6 +19,54 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <a href="/themes/marche-travail/">🌐 日本語で見る</a>
     </div>
   </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure value="+10.5pp" label="Sweden: unemployment gap between immigrants and native-born (SCB AKU, 2024)" tone="accent" />
+      <KeyFigure value="20–24pp" label="Belgium: employment gap for North African-origin vs Belgian-origin (Statbel, 2022)" tone="accent" />
+      <KeyFigure value="31.3%" label="Austria: unemployment rate among Afghan/Syrian/Iraqi-origin population (Statistik Austria, 2024)" tone="accent" />
+    </div>
+
+    <BarChart
+      title="Unemployment Rate: Native-born vs Immigrants by Country (%)"
+      unit="%"
+      bars={[
+        { label: 'Sweden — Native-born', value: 5.7, note: 'SCB AKU 2024 annual average' },
+        { label: 'Sweden — Foreign-born', value: 16.2, note: 'SCB AKU 2024 annual average' },
+        { label: 'Switzerland — Swiss residents', value: 3.3, note: 'OFS Q2 2025' },
+        { label: 'Switzerland — Foreign nationals', value: 7.7, note: 'OFS Q2 2025' },
+        { label: 'France — Without immigrant background', value: 7.0, note: 'INSEE/DGEF 2024' },
+        { label: 'France — Immigrants', value: 12.0, note: 'INSEE/DGEF 2024' },
+        { label: 'Portugal — Total population', value: 6.6, note: 'INE Q1 2025' },
+        { label: 'Portugal — Foreign nationals', value: 11.9, note: 'INE Q1 2025' },
+        { label: 'Austria — Austrian nationals', value: 5.7, note: 'Statistik Austria 2024' },
+        { label: 'Austria — Foreign nationals', value: 10.5, note: 'Statistik Austria 2024' },
+        { label: 'Austria — Afghan/Syrian/Iraqi origin', value: 31.3, note: 'ÖIF 2024' },
+      ]}
+      sourceLabel="SCB (Sweden), OFS (Switzerland), INSEE, INE, Statistik Austria"
+      sourceUrl="/en/themes/labour-market/"
+      sourcePrefix="Source: "
+    />
+
+    <BarChart
+      title="Employment Rate: Native-born vs Immigrants by Country (%)"
+      unit="%"
+      bars={[
+        { label: 'Norway — Without immigrant background', value: 80, note: 'IMDi 2024' },
+        { label: 'Norway — Immigrants', value: 68, note: 'IMDi 2024' },
+        { label: 'Finland — Finnish-origin', value: 79, note: 'Statistics Finland 2023' },
+        { label: 'Finland — Foreign-origin', value: 70.3, note: 'Statistics Finland 2023' },
+        { label: 'Belgium — Belgian-origin', value: 75.8, note: 'Statbel 2022' },
+        { label: 'Belgium — North African origin', value: 51.3, note: 'Statbel 2022' },
+        { label: 'Austria — Without migration background', value: 76.4, note: 'Statistik Austria 2024' },
+        { label: 'Austria — With migration background', value: 69.0, note: 'Statistik Austria 2024' },
+        { label: 'Austria — Afghan/Syrian/Iraqi origin', value: 44.1, note: 'ÖIF 2024' },
+      ]}
+      sourceLabel="National statistics offices (see individual country pages)"
+      sourceUrl="/en/themes/labour-market/"
+      sourcePrefix="Source: "
+    />
+  </section>
 
   <section class="table-section">
     <h2>Employment / Unemployment Gaps: Country-by-Country Official Statistics</h2>
@@ -365,6 +415,22 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     position: absolute;
     left: 0;
     color: var(--color-accent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
   }
 </style>
 
