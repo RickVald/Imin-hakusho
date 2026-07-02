@@ -48,6 +48,20 @@ const stats = [
 					<p>移民の子どもと現地の子どもの学力差をPISA 2022・各国教育省データで比較</p>
 				</div>
 			</a>
+			<a href="/themes/securite/" class="theme-card">
+				<div class="theme-icon">🔒</div>
+				<div class="theme-content">
+					<h3>犯罪統計（公式データ）</h3>
+					<p>欧州各国の警察・司法省公式データで移民と犯罪の関係を方法論的に分析</p>
+				</div>
+			</a>
+			<span class="theme-card theme-card--disabled">
+				<div class="theme-icon">🌍</div>
+				<div class="theme-content">
+					<h3>移民人口比率（20カ国）<span class="coming-soon">近日公開</span></h3>
+					<p>西側20カ国の移民人口比率・推移を国際機関データで横断比較</p>
+				</div>
+			</span>
 		</div>
 	</section>
 
@@ -127,6 +141,25 @@ const stats = [
 	color: var(--color-muted);
 	line-height: 1.5;
 	margin: 0;
+}
+
+.theme-card--disabled {
+	opacity: 0.55;
+	cursor: default;
+	pointer-events: none;
+}
+
+.coming-soon {
+	display: inline-block;
+	margin-left: 0.5rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	background: var(--color-accent);
+	color: #fff;
+	border-radius: 4px;
+	padding: 0.1rem 0.4rem;
+	vertical-align: middle;
+	opacity: 0.75;
 }
 </style>
 

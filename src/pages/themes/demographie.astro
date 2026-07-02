@@ -1,0 +1,479 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BarChart from '../../components/BarChart.astro';
+import KeyFigure from '../../components/KeyFigure.astro';
+---
+
+<BaseLayout
+  title="移民人口比率：西欧20カ国比較（2024年最新データ）| 移民白書"
+  lang="ja"
+  description="各国公式統計に基づく移民・外国生まれ人口比率の20カ国比較。オーストラリア32%からイタリア9.1%まで、定義・測定方法の違いとともに解説。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>テーマ別比較</span>
+    </nav>
+    <h1>移民人口比率 — 西欧20カ国比較（最新公式データ）</h1>
+    <p class="intro">
+      本ページは、西欧・英語圏20カ国における移民・外国生まれ人口が総人口に占める比率を、各国の公式統計から体系的に比較する、日本語では初の試みです。データはオーストラリア統計局（ABS）、スイス連邦統計局（OFS）、カナダ統計局（StatCan）など各国の一次統計機関から直接抽出しました。
+    </p>
+    <p class="intro-sub">
+      重要：各国の定義は異なります（「外国生まれ」「外国籍」「移民的背景を持つ人口」など）。数値は同一基準で直接比較できるものではありません。定義・出典は下表を参照してください。
+    </p>
+    <div class="lang-switch">
+      <a href="/en/themes/demographics/">🌐 Read in English</a>
+    </div>
+  </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure
+        value="32.0%"
+        label="最高水準：オーストラリア（2025年、外国生まれ人口比率）"
+        tone="accent"
+      />
+      <KeyFigure
+        value="9.1%"
+        label="最低水準：イタリア（2024年、外国籍人口比率）"
+        tone="primary"
+      />
+    </div>
+
+    <BarChart
+      title="移民・外国生まれ人口比率（20カ国、最新公式データ）"
+      unit="%"
+      bars={[
+        { label: 'オーストラリア', value: 32.0, note: '外国生まれ（2025年、ABS）' },
+        { label: 'ニュージーランド', value: 28.8, note: '外国生まれ（2023年国勢調査、Stats NZ）' },
+        { label: 'スイス', value: 27.7, note: '外国籍永住居住者（2025年、OFS）' },
+        { label: 'カナダ', value: 23.0, note: '移民（2021年国勢調査、StatCan）' },
+        { label: 'スウェーデン', value: 21.0, note: '外国生まれ（2024年、SCB）' },
+        { label: 'オーストリア', value: 20.5, note: '外国籍（2026年4月、Statistik Austria）' },
+        { label: 'イギリス', value: 19.0, note: '外国生まれ（2024年6月、ONS）' },
+        { label: 'ノルウェー', value: 17.5, note: '移民（両親ともに外国生まれ）（2026年1月、SSB）' },
+        { label: 'ポルトガル', value: 14.0, note: '外国籍（2025年12月、INE）' },
+        { label: 'アメリカ', value: 14.3, note: '外国生まれ（2023年、US Census Bureau）' },
+        { label: 'スペイン', value: 13.96, note: '外国籍（2025年1月、INE）' },
+        { label: 'ベルギー', value: 13.8, note: '非ベルギー国籍者（2026年1月、Statbel）' },
+        { label: 'アイルランド', value: 12.0, note: '外国籍（2022年国勢調査、CSO）' },
+        { label: 'デンマーク', value: 12.6, note: '移民（移民の子孫3.7%を除く）（2025年1月、DST）' },
+        { label: 'フランス', value: 11.3, note: '外国生まれ（2024年暫定値、INSEE）' },
+        { label: 'フィンランド', value: 11.7, note: '外国出身（第1世代・第2世代、2025年12月、Statistics Finland）' },
+        { label: 'チェコ', value: 10.38, note: '外国籍（2025年12月、ČSÚ）' },
+        { label: 'イタリア', value: 9.1, note: '外国籍（2024年12月、ISTAT）' },
+        { label: 'オランダ', value: 0, note: 'データ確認中（CBS、一次資料未確定）' },
+        { label: 'ドイツ（参考）', value: 0, note: 'データ確認中（Destatis、定義により異なる）' },
+      ]}
+      sourceLabel="各国公式統計機関（ABS、Stats NZ、OFS、StatCan、SCB、Statistik Austria、ONS、SSB、INE、Census Bureau、INE España、Statbel、CSO、DST、INSEE、Statistics Finland、ČSÚ、ISTAT）"
+      sourceUrl="/"
+      sourcePrefix="出典："
+    />
+    <p class="chart-note">
+      ※ オランダ・ドイツは比率0%と表示されていますが、データ確認中のため暫定的に除外しています（下表参照）。ドイツは「移住背景（Migrationshintergrund）」を持つ人口が25.6%（2024年、Destatis）に達しますが、定義が他国と大きく異なるため単純比較ができません。
+    </p>
+  </section>
+
+  <section class="methodology-note">
+    <h2>方法論上の重要注意点</h2>
+    <ul>
+      <li><strong>「外国生まれ」と「外国籍」の違い</strong>：「外国生まれ」（オーストラリア、ニュージーランド、スウェーデン、イギリス、アメリカ、フランスなど）は出生国に基づく指標で、帰化した移民も含みます。「外国籍」（スイス、オーストリア、ポルトガル、スペイン、イタリア、チェコなど）は国籍に基づき、帰化後は対象外となります。このため「外国生まれ」の方が通常は数値が高くなります。</li>
+      <li><strong>ノルウェーの定義</strong>：ノルウェーのSSBが使用する「移民（innvandrere）」は「両親ともに外国生まれで本人も外国生まれ」という定義であり、他国の「外国生まれ」（一方の親のみでも対象になる場合がある）より狭い定義です。</li>
+      <li><strong>デンマークの複合指標</strong>：デンマーク統計局（DST）は「移民（indvandrere）」12.6%と「移民の子孫（efterkommere）」3.7%を別々に集計しています。合計は16.3%ですが、本グラフでは移民のみの12.6%を表示しています。</li>
+      <li><strong>ドイツの「移住背景（Migrationshintergrund）」</strong>：ドイツのDestatis／Mikrozensusによる「移住背景を持つ人口」（25.6%、2024年）は本人が外国生まれであるか、両親の少なくとも一方が移民・外国生まれの場合を含む広い定義であり、他国の「外国籍」や「外国生まれ」と単純比較できません。</li>
+      <li><strong>オランダの測定方法の変更</strong>：CBSは2024年に「移住背景（migratieachtergrond）」という分類を廃止しました。最新の公式な総人口比は本調査では確認できなかったため、「データ確認中」としています。</li>
+      <li><strong>ベルギー・カナダの注記</strong>：ベルギーは「外国生まれのベルギー人」22.8%を合わせると合計36.6%になりますが、ここでは「非ベルギー国籍者」13.8%を使用しています。カナダの23.0%は2021年国勢調査に基づくもので、その後の大規模な移民増加（2023年：人口増加の97.6%が国際人口移動に由来）は反映されていません。</li>
+    </ul>
+  </section>
+
+  <section class="table-section">
+    <h2>国別データ一覧</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>国</th>
+            <th>比率</th>
+            <th>使用定義</th>
+            <th>調査年</th>
+            <th>出典機関</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
+            <td class="share">32.0%</td>
+            <td>外国生まれ</td>
+            <td>2025年6月</td>
+            <td>ABS（オーストラリア統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/new-zealand/">ニュージーランド</a></td>
+            <td class="share">28.8%</td>
+            <td>外国生まれ</td>
+            <td>2023年国勢調査</td>
+            <td>Stats NZ</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
+            <td class="share">27.7%</td>
+            <td>外国籍永住居住者</td>
+            <td>2025年12月</td>
+            <td>OFS（連邦統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/canada/">カナダ</a></td>
+            <td class="share">23.0%</td>
+            <td>移民（immigrants）</td>
+            <td>2021年国勢調査</td>
+            <td>StatCan（カナダ統計局）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
+            <td class="share">21.0%</td>
+            <td>外国生まれ</td>
+            <td>2024年12月</td>
+            <td>SCB（スウェーデン統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/austria/">オーストリア</a></td>
+            <td class="share">20.5%</td>
+            <td>外国籍</td>
+            <td>2026年4月</td>
+            <td>Statistik Austria</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
+            <td class="share">19.0%</td>
+            <td>外国生まれ</td>
+            <td>2024年6月（ONS推計）</td>
+            <td>ONS（国家統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/norway/">ノルウェー</a></td>
+            <td class="share">17.5%</td>
+            <td>移民（両親ともに外国生まれ）</td>
+            <td>2026年1月</td>
+            <td>SSB（ノルウェー統計局）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
+            <td class="share">14.3%</td>
+            <td>外国生まれ</td>
+            <td>2023年（ACS）</td>
+            <td>US Census Bureau</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
+            <td class="share">14.0%</td>
+            <td>外国籍</td>
+            <td>2025年12月</td>
+            <td>INE（ポルトガル統計局）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/spain/">スペイン</a></td>
+            <td class="share">13.96%</td>
+            <td>外国籍</td>
+            <td>2025年1月</td>
+            <td>INE（スペイン国家統計院）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a></td>
+            <td class="share">13.8%</td>
+            <td>非ベルギー国籍者</td>
+            <td>2026年1月</td>
+            <td>Statbel</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
+            <td class="share">12.6%</td>
+            <td>移民（移民の子孫3.7%を別途集計）</td>
+            <td>2025年1月</td>
+            <td>DST（デンマーク統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/ireland/">アイルランド</a></td>
+            <td class="share">12.0%</td>
+            <td>外国籍</td>
+            <td>2022年国勢調査</td>
+            <td>CSO（中央統計局）</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
+            <td class="share">11.7%</td>
+            <td>外国出身（第1・第2世代）</td>
+            <td>2025年12月</td>
+            <td>Statistics Finland</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
+            <td class="share">11.3%</td>
+            <td>外国生まれ（移民）</td>
+            <td>2024年（暫定値）</td>
+            <td>INSEE</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/czechia/">チェコ</a></td>
+            <td class="share">10.38%</td>
+            <td>外国籍</td>
+            <td>2025年12月</td>
+            <td>ČSÚ（チェコ統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
+            <td class="share">9.1%</td>
+            <td>外国籍</td>
+            <td>2024年12月</td>
+            <td>ISTAT</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
+            <td class="share-pending">データ確認中</td>
+            <td>CBS、一次資料未確定</td>
+            <td>—</td>
+            <td>CBS（オランダ統計局）</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/countries/ja/germany/">ドイツ</a></td>
+            <td class="share-pending">25.6%（参考）</td>
+            <td>移住背景（Migrationshintergrund）※定義注意</td>
+            <td>2024年（Mikrozensus）</td>
+            <td>Destatis</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      ※ドイツの「移住背景」は本人または両親の少なくとも一方が移民・外国生まれの場合を含む広い定義であり、他国の数値と直接比較できません。<br/>
+      ※オランダはCBSが2024年に分類方法を変更しており、最新の比較可能な数値が確認できていません。
+    </p>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .intro-sub {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 80ch;
+    border-left: 3px solid var(--color-surface-raised);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lang-switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .lang-switch a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .lang-switch a:hover {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .table-section {
+    margin-bottom: 3rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 700px;
+  }
+
+  .comparison-table thead tr {
+    background: var(--color-surface-raised);
+  }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a:hover {
+    text-decoration: underline;
+  }
+
+  .share {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .share-pending {
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .table-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+</style>
+
+</BaseLayout>

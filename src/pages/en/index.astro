@@ -41,6 +41,27 @@ const stats = [
 					<p>Employment and unemployment rate gaps between immigrants and native-born, from official national statistics offices across 20 countries</p>
 				</div>
 			</a>
+			<a href="/en/themes/education/" class="theme-card">
+				<div class="theme-icon">📚</div>
+				<div class="theme-content">
+					<h3>PISA Education Gap</h3>
+					<p>Achievement gap between immigrant and native-born students — PISA 2022 data and national education ministry sources across 20 countries</p>
+				</div>
+			</a>
+			<a href="/en/themes/crime/" class="theme-card">
+				<div class="theme-icon">🔒</div>
+				<div class="theme-content">
+					<h3>Crime Statistics</h3>
+					<p>Official police and justice ministry data on immigration and crime across European countries, with methodological analysis</p>
+				</div>
+			</a>
+			<span class="theme-card theme-card--disabled">
+				<div class="theme-icon">🌍</div>
+				<div class="theme-content">
+					<h3>Demographics<span class="coming-soon">Coming soon</span></h3>
+					<p>Share of immigrant population and trends across 20 Western countries, sourced from international organisations</p>
+				</div>
+			</span>
 		</div>
 	</section>
 
@@ -120,6 +141,25 @@ const stats = [
 	color: var(--color-muted);
 	line-height: 1.5;
 	margin: 0;
+}
+
+.theme-card--disabled {
+	opacity: 0.55;
+	cursor: default;
+	pointer-events: none;
+}
+
+.coming-soon {
+	display: inline-block;
+	margin-left: 0.5rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	background: var(--color-accent);
+	color: #fff;
+	border-radius: 4px;
+	padding: 0.1rem 0.4rem;
+	vertical-align: middle;
+	opacity: 0.75;
 }
 </style>
 

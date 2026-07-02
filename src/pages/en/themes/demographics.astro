@@ -1,0 +1,480 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BarChart from '../../../components/BarChart.astro';
+import KeyFigure from '../../../components/KeyFigure.astro';
+---
+
+<BaseLayout
+  title="Share of Immigrants by Country: 20-Nation Comparison — Official Data | Immigration Factbook"
+  lang="en"
+  description="Systematic comparison of immigrant and foreign-born population shares across 20 Western nations, drawn from each country's official national statistics. Australia 32% to Italy 9.1%.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Thematic Comparisons</span>
+    </nav>
+    <h1>Share of Immigrants in the Population — 20-Country Official Comparison</h1>
+    <p class="intro">
+      This page provides a systematic comparison of the share of immigrants or foreign-born residents in the total population across 20 Western and English-speaking nations, drawn directly from each country's official national statistics agency. Data sources include the Australian Bureau of Statistics (ABS), the Swiss Federal Statistical Office (FSO/OFS), Statistics Canada, and equivalent bodies in each country.
+    </p>
+    <p class="intro-sub">
+      Important: Definitions vary significantly across countries ("foreign-born", "foreign nationals", "persons with a migration background", etc.). These figures are not directly comparable on a like-for-like basis. Definitions and sources are shown in the table below.
+    </p>
+    <div class="lang-switch">
+      <a href="/themes/demographie/">🌐 日本語で読む</a>
+    </div>
+  </div>
+
+  <section class="charts-section">
+    <div class="key-figures-row">
+      <KeyFigure
+        value="32.0%"
+        label="Highest: Australia (2025, foreign-born share of population)"
+        tone="accent"
+      />
+      <KeyFigure
+        value="9.1%"
+        label="Lowest in this comparison: Italy (2024, foreign nationals share)"
+        tone="primary"
+      />
+    </div>
+
+    <BarChart
+      title="Immigrant / Foreign-Born Population Share — 20 Countries, Latest Official Data"
+      unit="%"
+      bars={[
+        { label: 'Australia', value: 32.0, note: 'Foreign-born (June 2025, ABS)' },
+        { label: 'New Zealand', value: 28.8, note: 'Foreign-born (2023 Census, Stats NZ)' },
+        { label: 'Switzerland', value: 27.7, note: 'Foreign nationals — permanent residents (Dec 2025, FSO)' },
+        { label: 'Canada', value: 23.0, note: 'Immigrants (2021 Census, Statistics Canada)' },
+        { label: 'Sweden', value: 21.0, note: 'Foreign-born (Dec 2024, Statistics Sweden)' },
+        { label: 'Austria', value: 20.5, note: 'Foreign nationals (April 2026, Statistics Austria)' },
+        { label: 'United Kingdom', value: 19.0, note: 'Foreign-born (June 2024 estimate, ONS)' },
+        { label: 'Norway', value: 17.5, note: 'Immigrants (both parents foreign-born) (Jan 2026, SSB)' },
+        { label: 'United States', value: 14.3, note: 'Foreign-born (2023 ACS, US Census Bureau)' },
+        { label: 'Portugal', value: 14.0, note: 'Foreign nationals (Dec 2025, INE Portugal)' },
+        { label: 'Spain', value: 13.96, note: 'Foreign nationals (Jan 2025, INE Spain)' },
+        { label: 'Belgium', value: 13.8, note: 'Non-Belgian nationals (Jan 2026, Statbel)' },
+        { label: 'Denmark', value: 12.6, note: 'Immigrants (excl. descendants 3.7%) (Jan 2025, Statistics Denmark)' },
+        { label: 'Ireland', value: 12.0, note: 'Non-Irish nationals (2022 Census, CSO)' },
+        { label: 'Finland', value: 11.7, note: 'Foreign-origin (1st & 2nd gen.) (Dec 2025, Statistics Finland)' },
+        { label: 'France', value: 11.3, note: 'Foreign-born immigrants (2024 provisional, INSEE)' },
+        { label: 'Czechia', value: 10.38, note: 'Foreign nationals (Dec 2025, Czech Statistical Office)' },
+        { label: 'Italy', value: 9.1, note: 'Foreign nationals (Dec 2024, ISTAT)' },
+        { label: 'Netherlands', value: 0, note: 'Data pending — CBS changed methodology in 2024' },
+        { label: 'Germany (ref.)', value: 0, note: 'Data pending — definition varies significantly (see note)' },
+      ]}
+      sourceLabel="National statistics agencies: ABS, Stats NZ, FSO, Statistics Canada, SCB, Statistics Austria, ONS, SSB, US Census Bureau, INE Portugal, INE Spain, Statbel, Statistics Denmark, CSO, Statistics Finland, INSEE, Czech Statistical Office, ISTAT, CBS, Destatis"
+      sourceUrl="/"
+      sourcePrefix="Sources: "
+    />
+    <p class="chart-note">
+      Netherlands and Germany show 0% as their data is pending or incomparable (see methodology note below). Germany's "persons with a migration background" (Migrationshintergrund) stands at 25.6% (2024, Destatis/Mikrozensus) but uses a broader definition encompassing persons with at least one foreign-born or immigrant parent, making it non-comparable to the foreign-national or foreign-born measures used by other countries.
+    </p>
+  </section>
+
+  <section class="methodology-note">
+    <h2>Key Methodological Notes</h2>
+    <ul>
+      <li><strong>Foreign-born vs. foreign nationals</strong>: "Foreign-born" (Australia, New Zealand, Sweden, UK, USA, France, etc.) counts place of birth and includes naturalised immigrants. "Foreign nationals" (Switzerland, Austria, Portugal, Spain, Italy, Czechia, etc.) counts current citizenship and excludes those who have naturalised. As a result, "foreign-born" figures are generally higher than "foreign national" figures for the same country.</li>
+      <li><strong>Norway's narrow definition</strong>: Statistics Norway (SSB) defines "immigrants" (innvandrere) as persons where both parents were born abroad and who were themselves born abroad. This is narrower than most "foreign-born" definitions used elsewhere, which may include persons with only one foreign-born parent.</li>
+      <li><strong>Denmark's two-tier count</strong>: Statistics Denmark (DST) separately tracks "immigrants" (indvandrere, 12.6%) and "descendants" (efterkommere, 3.7%). The combined figure is 16.3%. This chart uses the immigrants-only figure for consistency with other countries' first-generation measures.</li>
+      <li><strong>Germany's migration background</strong>: Destatis/Mikrozensus reports 25.6% of the population had a "migration background" (Migrationshintergrund) in 2024 — meaning the person themselves, or at least one parent, was an immigrant or foreign-born. This broader definition is not comparable to the foreign-national or foreign-born measures used by other countries in this comparison.</li>
+      <li><strong>Netherlands — methodology change</strong>: CBS (Statistics Netherlands) discontinued the "migration background" (migratieachtergrond) classification in 2024. A comparable, up-to-date foreign-born or foreign-national share could not be confirmed from primary sources for this edition.</li>
+      <li><strong>Belgium's layered count</strong>: Statbel counts three groups: Belgians of Belgian origin (63.4%), Belgians of foreign origin (22.8%), and non-Belgian nationals (13.8%). This page uses the 13.8% non-Belgian nationals figure. The combined "foreign-origin" population (Belgians of foreign origin + non-Belgians) reaches 36.6%.</li>
+      <li><strong>Canada — data lag</strong>: The 23.0% figure reflects the 2021 Census. Since then, Canada experienced record population growth (3.2% in 2023), with 97.6% of that growth attributable to international migration. The current share is likely higher but has not yet been confirmed by a new census.</li>
+    </ul>
+  </section>
+
+  <section class="table-section">
+    <h2>Country-by-Country Data</h2>
+    <div class="table-wrapper">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Share</th>
+            <th>Definition used</th>
+            <th>Reference year</th>
+            <th>Source</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="country-name"><a href="/en/countries/australia/">Australia</a></td>
+            <td class="share">32.0%</td>
+            <td>Foreign-born</td>
+            <td>June 2025</td>
+            <td>ABS (Australian Bureau of Statistics)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/new-zealand/">New Zealand</a></td>
+            <td class="share">28.8%</td>
+            <td>Foreign-born</td>
+            <td>2023 Census</td>
+            <td>Stats NZ</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/switzerland/">Switzerland</a></td>
+            <td class="share">27.7%</td>
+            <td>Foreign nationals (permanent residents)</td>
+            <td>December 2025</td>
+            <td>FSO (Federal Statistical Office)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/canada/">Canada</a></td>
+            <td class="share">23.0%</td>
+            <td>Immigrants</td>
+            <td>2021 Census</td>
+            <td>Statistics Canada</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/sweden/">Sweden</a></td>
+            <td class="share">21.0%</td>
+            <td>Foreign-born</td>
+            <td>December 2024</td>
+            <td>Statistics Sweden (SCB)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/austria/">Austria</a></td>
+            <td class="share">20.5%</td>
+            <td>Foreign nationals</td>
+            <td>April 2026</td>
+            <td>Statistics Austria</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/uk/">United Kingdom</a></td>
+            <td class="share">19.0%</td>
+            <td>Foreign-born</td>
+            <td>June 2024 (ONS estimate)</td>
+            <td>ONS (Office for National Statistics)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/norway/">Norway</a></td>
+            <td class="share">17.5%</td>
+            <td>Immigrants (both parents foreign-born)</td>
+            <td>January 2026</td>
+            <td>SSB (Statistics Norway)</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/usa/">United States</a></td>
+            <td class="share">14.3%</td>
+            <td>Foreign-born</td>
+            <td>2023 (ACS)</td>
+            <td>US Census Bureau</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/portugal/">Portugal</a></td>
+            <td class="share">14.0%</td>
+            <td>Foreign nationals</td>
+            <td>December 2025</td>
+            <td>INE (Statistics Portugal)</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/spain/">Spain</a></td>
+            <td class="share">13.96%</td>
+            <td>Foreign nationals</td>
+            <td>January 2025</td>
+            <td>INE (National Statistics Institute of Spain)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/belgium/">Belgium</a></td>
+            <td class="share">13.8%</td>
+            <td>Non-Belgian nationals</td>
+            <td>January 2026</td>
+            <td>Statbel</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/denmark/">Denmark</a></td>
+            <td class="share">12.6%</td>
+            <td>Immigrants (descendants 3.7% tracked separately)</td>
+            <td>January 2025</td>
+            <td>Statistics Denmark (DST)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/ireland/">Ireland</a></td>
+            <td class="share">12.0%</td>
+            <td>Non-Irish nationals</td>
+            <td>2022 Census</td>
+            <td>CSO (Central Statistics Office)</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/finland/">Finland</a></td>
+            <td class="share">11.7%</td>
+            <td>Foreign-origin (1st &amp; 2nd generation)</td>
+            <td>December 2025</td>
+            <td>Statistics Finland</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/france/">France</a></td>
+            <td class="share">11.3%</td>
+            <td>Foreign-born (immigrants)</td>
+            <td>2024 (provisional)</td>
+            <td>INSEE</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/czechia/">Czechia</a></td>
+            <td class="share">10.38%</td>
+            <td>Foreign nationals</td>
+            <td>December 2025</td>
+            <td>Czech Statistical Office (ČSÚ)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/italy/">Italy</a></td>
+            <td class="share">9.1%</td>
+            <td>Foreign nationals</td>
+            <td>December 2024</td>
+            <td>ISTAT</td>
+          </tr>
+          <tr>
+            <td class="country-name"><a href="/en/countries/netherlands/">Netherlands</a></td>
+            <td class="share-pending">Data pending</td>
+            <td>CBS changed methodology in 2024</td>
+            <td>—</td>
+            <td>CBS (Statistics Netherlands)</td>
+          </tr>
+          <tr class="alt">
+            <td class="country-name"><a href="/en/countries/germany/">Germany</a></td>
+            <td class="share-pending">25.6% (ref. only)</td>
+            <td>Migration background (Migrationshintergrund) — see note</td>
+            <td>2024 (Mikrozensus)</td>
+            <td>Destatis</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">
+      * Germany's "migration background" figure includes persons where at least one parent was an immigrant or foreign-born — a broader definition not comparable to foreign-national or foreign-born measures used by other countries.<br/>
+      * Netherlands: CBS discontinued the "migratieachtergrond" classification in 2024; a comparable current figure could not be confirmed.
+    </p>
+  </section>
+</main>
+
+<style>
+  .theme-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .page-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+  }
+
+  .breadcrumb a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .breadcrumb span {
+    margin: 0 0.4rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .intro {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    max-width: 80ch;
+  }
+
+  .intro-sub {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    max-width: 80ch;
+    border-left: 3px solid var(--color-surface-raised);
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lang-switch {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .lang-switch a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+
+  .lang-switch a:hover {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  }
+
+  .charts-section {
+    margin-bottom: 3rem;
+  }
+
+  .key-figures-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .key-figures-row > :global(.key-figure) {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .chart-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-top: 0.75rem;
+    margin-bottom: 2rem;
+    padding: 0.6rem 1rem;
+    background: var(--color-surface-raised);
+    border-radius: 4px;
+  }
+
+  .methodology-note {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .methodology-note h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .methodology-note ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .methodology-note li {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    padding-left: 1.25rem;
+    position: relative;
+    color: var(--color-text);
+  }
+
+  .methodology-note li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+  }
+
+  .table-section {
+    margin-bottom: 3rem;
+  }
+
+  .table-section h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-surface-raised);
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    min-width: 700px;
+  }
+
+  .comparison-table thead tr {
+    background: var(--color-surface-raised);
+  }
+
+  .comparison-table thead th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .comparison-table tbody tr {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-surface-raised);
+    transition: background 0.15s;
+  }
+
+  .comparison-table tbody tr:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table tbody tr.alt {
+    background: color-mix(in srgb, var(--color-surface-raised) 30%, var(--color-surface));
+  }
+
+  .comparison-table tbody tr.alt:hover {
+    background: color-mix(in srgb, var(--color-surface-raised) 60%, transparent);
+  }
+
+  .comparison-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+
+  .country-name a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .country-name a:hover {
+    text-decoration: underline;
+  }
+
+  .share {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .share-pending {
+    color: var(--color-muted);
+    font-style: italic;
+  }
+
+  .table-note {
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+</style>
+
+</BaseLayout>
