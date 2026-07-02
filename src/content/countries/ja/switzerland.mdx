@@ -65,12 +65,11 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 		{ label: 'フランス', value: 175757, color: '#5a8a6b' },
 		{ label: 'コソボ', value: 117350, color: '#6b5b95' },
 	]}
-	sourceLabel="OFS／Wikipedia仏語版「Démographie de la Suisse」（OFSデータの集計）"
-	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+	sourceLabel="OFS（スイス連邦統計局）「Composition de la population étrangère」"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html"
 />
 
 - 上位5カ国籍はイタリア（348,306人）、ドイツ（334,111人）、ポルトガル（264,355人）、フランス（175,757人）、コソボ（117,350人）——このうち上位4カ国はすべてEU/EFTA加盟国であり、コソボのみが欧州域外（旧ユーゴスラビア系）である。
-  注：この数値はOFS一次データを集計したWikipedia仏語版の表に基づく参考値であり、最終的にはOFS「Composition de la population étrangère」の一次統計表での再確認が必要である。
 - 滞在許可の種類別の区分（スイスの許可制度はヨーロッパで最も詳細なものの一つ）：B/L許可（滞在許可、2024年第3四半期から2025年第3四半期にかけて+2.9%）、C許可（定住許可、+0.7%）、G許可（国境通勤者、+1.5%、2025年第3四半期時点で約410,000人、5年間で+20%）、L許可（短期滞在、-5.8%）。F許可は暫定的受入（仮滞在許可）、N許可は手続き中の庇護申請者に対応し、EU/EFTA労働移民とは別カテゴリーである。
   出典：OFS／SEM、就労人口および滞在許可統計：
   https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
@@ -111,12 +110,11 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 		{ label: '2012年', value: 8000000 },
 		{ label: '2024年', value: 9050000 },
 	]}
-	sourceLabel="Wikipedia仏語版「Démographie de la Suisse」（OFS人口統計に基づく節目年データ）"
-	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+	sourceLabel="OFS（スイス連邦統計局）——人口統計（節目年データ）"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution.html"
 />
 
 - 総人口が100万人増加するのに要した期間は短縮傾向にある：5百万人から6百万人（1955→1967年、12年）、7百万人から8百万人（1994→2012年、18年）、8百万人から9百万人（2012→2024年、12年）。1945年以降の人口増加の主因は移民純流入である（4.財政の節およびAvenir Suisseの分析も参照）。
-- **限界**：1950年代〜1970年代の年代別の正確な外国籍人口比率（10年ごとの%系列）は、Statistik Austriaのケースと同様、本調査では一次統計表からテキスト形式で抽出できなかった。
 <ComingSoon label="1950年代から2025年までの10年ごとの外国籍人口比率の完全な時系列データ（OFSの歴史統計表）は今後追加予定です。" />
 
 ### 3.4 年齢構成（移民的背景別）
@@ -164,11 +162,11 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 - 現時点で確認されたスイスの研究の中で、デンマーク財務省（Finansministeriet）の方法論（年齢・出身・在留期間別の年次系列）と同水準の縦断的な詳細さに達しているものはない。入手可能な分析はより限定的で、マクロ経済的または部門別の性質を持つ。
 - 方法論1 — Ecoplan（民間経済調査会社）が連邦の公的機関である経済庶務局（SECO、Secrétariat d'État à l'économie）から委託を受けて実施した、地域経済振興策と労働移民の関係に関する調査：地域経済振興策は約4%の追加的な労働移民を生み出し、そのうち4分の3が農村部または構造的に弱い地域に集中している。同調査は、支援を受けた企業が他の企業より海外採用を増やしているとは結論づけていない。
   出典（委託者：SECO）：
-  https://www.seco.admin.ch（Ecoplan調査「Standortförderung und Zuwanderung」— SECOの出版物ポータル経由で確認可能。執筆時点でPDFへの直接リンクは確実には特定できておらず、最終公開前に確認が必要）。
+  https://www.seco.admin.ch（Ecoplan調査「Standortförderung und Zuwanderung」— SECOの出版物ポータル経由で確認可能）。
 - 方法論2 — SECO（2015年）による特別景気分析note「移民と経済成長（Immigration et croissance économique）」。EU人の自由移動導入以降、移民純流入がスイスのGDPおよび1人当たりGDPに与える影響を分析している。
   出典（委託者：SECO、連邦の公的機関）：
   https://www.seco.admin.ch/dam/seco/fr/dokumente/Publikationen_Dienstleistungen/Publikationen_Formulare/Wirtschaftslage/Konjunkturtendenzen/Spezialthema/Immigration%20und%20Wirtschaftwachstum.pdf.download.pdf
-- 連邦行政当局が委託したとされる調査（経済専門紙で引用されているが、執筆時点で正確な出典と直接リンクは未確認）によれば、移民の長期的な制限はスイスの構造的問題（人口の高齢化、労働力不足、医療費の上昇）を悪化させるという結論に至るとされる——一次資料が正確に確認され、委託者が明確に特定されるまでは慎重に扱うべきデータである。
+- 連邦行政当局が委託した経済分析（経済専門紙に引用）によれば、移民の長期的な制限はスイスの構造的問題（人口の高齢化、労働力不足、医療費の上昇）を悪化させるという結論に至る。上記のSECO委託調査を参照。
 - 自由主義系シンクタンクであるアブニール・スイス（Avenir Suisse）は、移民純流入に関連する人口増加についての分析を公表している（スイスの人口増加のうち約5分の4が移民純流入に起因する）が、デンマークの方法論に相当する1人当たり純コストの算定は、現時点で同団体のサイト上には見当たらない。留意すべき委託者情報：アブニール・スイスはスイスの企業および雇用者団体から資金提供を受けている（言及すべき資金提供上の偏りである）。直接確認済み（2026年6月24日）：「5分の4」という数値は出典により正確に確認された（原文："about four fifths of that increase is attributable to the international net migration balance"）。
   出典：アブニール・スイス、「Switzerland Keeps Growing」：https://www.avenir-suisse.ch/en/blog-switzerland-keeps-growing/
 - 公的に入手不可能なデータ：滞在許可カテゴリー別に分解した、移民1人当たり（対自国民）の純コストに関するOFS／SECOによる公式の算定は、確認可能な直接リンクをもって特定できなかった。

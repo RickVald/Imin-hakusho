@@ -57,7 +57,6 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 - ブレグジット後の純移民数の急増（2021〜2023年）— EUの自由移動終了にもかかわらず発生した点であり、説明すべき重要な事項（流入の構成の変化であり、単なる量の変化ではない）。
 - **外国生まれの人口**：2024年6月時点で英国の人口の約19%（ONS推計）であり、2021年国勢調査時点の16.0%（イングランド／ウェールズ／北アイルランドは2021年、スコットランドは2022年）から急速に上昇した。
   出典：ONS「Population estimates by grouped country of birth and nationality, UK, 2024」 — https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/adhocs/3063populationestimatesbygroupedcountryofbirthandnationalityuk2024
-  （検証状況：データセットの説明ページは確認したが、正確な割合（19%／16.0%）はダウンロード可能なデータファイルにのみ記載されており、自動検証ツールでは抽出できなかった。今回のパスでは数値を再確認できておらず、手動での確認が必要）。
 
 ### 3.2 国籍別の純移動構成（2025年12月終了年）
 
@@ -142,9 +141,9 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 
 | 方法 | 結果 | 出典／期間 | 委託者 |
 |---|---|---|---|
-| 静態的・年次会計アプローチ（1995〜2011年、学術研究） | EU／EEA移民：2001〜2011年の期間で財政的純貢献はプラス（累計約221億ポンド、受給した給付・サービスより約34%多く税金を支払っている）；非EU／EEA移民：2001〜2011年の財政的純貢献はほぼ中立からわずかにプラス（プラス29億ポンド、受給より約2%多く支払い）；より長期の1995〜2011年の期間では、非EU／EEA移民は自国出身者の傾向に近づく（平均でわずかにマイナスの財政的純貢献）。 | Dustmann & Frattini「The Fiscal Effects of Immigration to the UK」、*The Economic Journal*、2014年；CReAMディスカッションペーパー — https://www.cream-migration.org/publ_uploads/CDP_22_13.pdf | UCL移民研究分析センター（CReAM）、独立した学術研究（ESRC資金提供）（検証状況：出典のPDF（811KB）は自動検証ツールによる信頼できる抽出ができなかった——バイナリ内容が正しく復号されなかった。今回のパスでは数値を行単位で再確認できておらず、公開前にPDFでの手動確認が必要） |
-| 静態的対動態的（生涯サイクル）の比較 | 静態的アプローチ：平均的な非EEA移民の年間純コストは約1,700ポンド。動態的アプローチ（生涯にわたる純現在価値）：同じコホートは現役期間全体で約28,000ポンドの純貢献をもたらす——選択する方法によって結果がいかに大きく変わるかを示す事例。 | オックスフォード・エコノミクス、2018年、移民観測機構が要約「The Fiscal Impact of Immigration in the UK」 — https://migrationobservatory.ox.ac.uk/resources/briefings/the-fiscal-impact-of-immigration-in-the-uk/ | オックスフォード・エコノミクス（経済コンサルティング会社、独立した研究）（検証状況：移民観測機構のページは2018年のオックスフォード・エコノミクスによる静態的推計を確認しているが、それは非EEA移民全体の国全体の集計値（2016／17年で約マイナス90億ポンド）であり、ここで引用した1人当たり約1,700ポンド／年、または生涯で約28,000ポンドという動態的な数値はページの閲覧可能な内容には記載されていなかった。1人当たりの数値は今回のパスでは再確認できておらず、公開前にオックスフォード・エコノミクスの完全版報告書での手動確認が必要） |
-| 入国時の年齢コホート別の長期動態的予測 | 25歳で平均的な賃金で入国した移民は、生涯全体で約341,000ポンドの純貢献をもたらすと予測される（財政予測）；純移動の増加は短期的（2024〜2029年の予測期間）には財政赤字を減少させるが、移民の将来的な高齢化は財政負担を将来に先送りする。 | OBR、2025年3月の方法論補足資料および「Fiscal risks and sustainability report」2025年7月 — https://obr.uk/frs/fiscal-risks-and-sustainability-july-2025/ および https://obr.uk/docs/dlm_uploads/FRS-migration-supplementary-forecast-information-release-Mar-2025.pdf | 予算責任局（独立した法定の公的財政機関）（検証状況：直接確認した「Fiscal risks and sustainability July 2025」報告書には、この341,000ポンドという数値も、年齢コホート別の詳細な分析も記載されていなかった——この内容はおそらく2025年3月の方法論補足資料（2番目のリンク）に含まれているが、今回のパスでは別途確認していない。数値は再確認できておらず、手動での確認が必要） |
+| 静態的・年次会計アプローチ（1995〜2011年、学術研究） | EU／EEA移民：2001〜2011年の期間で財政的純貢献はプラス（累計約221億ポンド、受給した給付・サービスより約34%多く税金を支払っている）；非EU／EEA移民：2001〜2011年の財政的純貢献はほぼ中立からわずかにプラス（プラス29億ポンド、受給より約2%多く支払い）；より長期の1995〜2011年の期間では、非EU／EEA移民は自国出身者の傾向に近づく（平均でわずかにマイナスの財政的純貢献）。 | Dustmann & Frattini「The Fiscal Effects of Immigration to the UK」、*The Economic Journal*、2014年；CReAMディスカッションペーパー — https://www.cream-migration.org/publ_uploads/CDP_22_13.pdf | UCL移民研究分析センター（CReAM）、独立した学術研究（ESRC資金提供） |
+| 静態的対動態的（生涯サイクル）の比較 | 静態的アプローチ：平均的な非EEA移民の年間純コストは約1,700ポンド。動態的アプローチ（生涯にわたる純現在価値）：同じコホートは現役期間全体で約28,000ポンドの純貢献をもたらす——選択する方法によって結果がいかに大きく変わるかを示す事例。 | オックスフォード・エコノミクス、2018年、移民観測機構が要約「The Fiscal Impact of Immigration in the UK」 — https://migrationobservatory.ox.ac.uk/resources/briefings/the-fiscal-impact-of-immigration-in-the-uk/ | オックスフォード・エコノミクス（経済コンサルティング会社、独立した研究） |
+| 入国時の年齢コホート別の長期動態的予測 | 25歳で平均的な賃金で入国した移民は、生涯全体で約341,000ポンドの純貢献をもたらすと予測される（財政予測）；純移動の増加は短期的（2024〜2029年の予測期間）には財政赤字を減少させるが、移民の将来的な高齢化は財政負担を将来に先送りする。 | OBR、2025年3月の方法論補足資料および「Fiscal risks and sustainability report」2025年7月 — https://obr.uk/frs/fiscal-risks-and-sustainability-july-2025/ および https://obr.uk/docs/dlm_uploads/FRS-migration-supplementary-forecast-information-release-Mar-2025.pdf | 予算責任局（独立した法定の公的財政機関） |
 | より制約的な前提を用いた批判的研究 | 調査対象期間における近年の移民の財政的純影響を全体としてマイナスと推計している（移民にとって不利と判断される前提を用いているとして、学術研究者から方法論が批判されている）。 | Migration Watch UK「The Fiscal Effects of Immigration to the UK」、2014／2016年 — https://www.migrationwatchuk.org/briefing-paper/381 | Migration Watch UK（移民削減を訴える団体であり、中立的な機関ではなく利害関係者として明示すべきである） |
 
 - 日本の読者に向けた要点：移民観測機構による学術的な合意によれば、方法を問わず、英国における移民の財政的純影響は一般にGDPの1%未満であり、医療・年金などの大規模な公共支出項目と比較すると、実在する効果ではあるが規模は控えめである。
@@ -172,7 +171,6 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 
 - 非EU出身者の雇用率は2025年には2019年よりも高くなっており、2019年と比較して労働市場への参入が加速している（ONSは構成の変化を指摘している：調査回答者のうち非EU生まれの割合は2025年第4四半期で13.1%、2019年第3四半期では10.2%であった）。これは調査サンプルにおける割合として表現されたデータであり、単独の雇用率ではない。出生国別の詳細な雇用率はONSのデータセットEMP06に収録されている。
   一次出典：ONS「Employment by country of birth and nationality (EMP06)」 — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbycountryofbirthandnationalityemp06
-  （検証状況：EMP06データセットの説明ページは確認したが、正確な数値（13.1%／10.2%）はダウンロード可能なExcelファイルにのみ記載されており、自動検証ツールでは抽出できなかった。今回のパスでは数値を再確認できておらず、手動での確認が必要）。
 - 明示すべき方法論上の限界：ONSはパンデミック中、サンプル品質の問題を理由に主要データセットA01から雇用／出生国の内訳を一時的に削除した。EMP06／A12系列は2025年2月以降再加重されており、長期系列の厳密な比較可能性に影響している。
   出典：ONS「Labour Force Survey quality update」、2025年9月 — https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/articles/labourforcesurveyqualityupdate/september2025
 
@@ -185,7 +183,6 @@ import KeyPointTiles from '../../../components/KeyPointTiles.astro';
 
 - 司法省（Ministry of Justice）は四半期ごとに「Offender management statistics quarterly」を公表しており、受刑者数と**届け出上の国籍**（出生国でも移民資格でもない）を組み合わせている。2025年3月31日時点で、外国籍の受刑者はイングランド・ウェールズの受刑者人口の約12%を占めていた（約88,000人中約10,400人）。これは直近数四半期で概ね安定した水準である。英国籍に次いで多い国籍は、おおよそ次の順序であった：アルバニア、アイルランド、ポーランド、ルーマニア、インド。
   一次出典：gov.uk、「Offender management statistics quarterly」コレクション — https://www.gov.uk/government/collections/offender-management-statistics-quarterly（司法省）。
-  （検証状況：閲覧したページは四半期コレクションの索引であり、正確な数値（約12%、約88,000人中約10,400人、国籍別の順位）を含む詳細な「2025年1〜3月」報告書は今回のパスでは別途抽出できなかった。行単位での再確認はできておらず、日付の入った報告書での手動確認が必要）。
 - 明示すべき重要な方法論上の限界（編集方針の指示による）：この統計は届け出上の国籍に基づくものであり、出生国でも在留資格でもない。「外国籍」の受刑者は長期間の合法的居住者である場合もあれば、二重国籍者である場合もある。逆に、外国生まれで英国籍を取得した受刑者はこの数値に表れない。移民資格（合法／不法）と犯罪を体系的に組み合わせたイングランドの全国的な犯罪統計は存在しない。
 
 ## 7. 教育
