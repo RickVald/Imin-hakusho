@@ -26,6 +26,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <span class="legend-item"><span class="dot red"></span> 負の影響・コスト</span>
       <span class="legend-item"><span class="dot yellow"></span> 混合・部分的</span>
       <span class="legend-item"><span class="dot gray"></span> データ非公開</span>
+      <span class="legend-item"><span style="font-size:0.65rem;font-weight:800;background:rgba(45,212,191,0.2);color:#2dd4bf;padding:1px 4px;border-radius:2px;">A</span> 一次資料・精確な数値</span><span class="legend-item"><span style="font-size:0.65rem;font-weight:800;background:rgba(240,180,41,0.18);color:#f0b429;padding:1px 4px;border-radius:2px;">B</span> 公式資料・定性評価</span>
     </div>
 
     <div class="table-wrapper">
@@ -59,114 +60,114 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <!-- 1. 人口比率 -->
           <tr>
             <td class="theme-label"><a href="/themes/demographie/">人口比率<br/><small>移民の人口割合</small></a></td>
-            <td class="cell-yellow">12.6%</td>
-            <td class="cell-red">21%</td>
-            <td class="cell-red">17.5%</td>
-            <td class="cell-yellow">11.7%</td>
-            <td class="cell-red">25.6%</td>
-            <td class="cell-red">20.5%</td>
-            <td class="cell-red">27.7%</td>
-            <td class="cell-yellow">11.3%</td>
-            <td class="cell-red">36.6%</td>
-            <td class="cell-red">24.6%</td>
-            <td class="cell-yellow">19%</td>
-            <td class="cell-yellow">12%</td>
-            <td class="cell-yellow">9.1%</td>
-            <td class="cell-yellow">14%</td>
-            <td class="cell-yellow">14%</td>
-            <td class="cell-yellow">10.4%</td>
-            <td class="cell-yellow">14.3%</td>
-            <td class="cell-red">23%</td>
-            <td class="cell-red">32%</td>
-            <td class="cell-red">28.8%</td>
+            <td class="cell-yellow" data-conf="A">12.6%</td>
+            <td class="cell-red" data-conf="A">21%</td>
+            <td class="cell-red" data-conf="A">17.5%</td>
+            <td class="cell-yellow" data-conf="A">11.7%</td>
+            <td class="cell-red" data-conf="A">25.6%</td>
+            <td class="cell-red" data-conf="A">20.5%</td>
+            <td class="cell-red" data-conf="A">27.7%</td>
+            <td class="cell-yellow" data-conf="A">11.3%</td>
+            <td class="cell-red" data-conf="A">36.6%</td>
+            <td class="cell-red" data-conf="A">24.6%</td>
+            <td class="cell-yellow" data-conf="A">19%</td>
+            <td class="cell-yellow" data-conf="A">12%</td>
+            <td class="cell-yellow" data-conf="A">9.1%</td>
+            <td class="cell-yellow" data-conf="A">14%</td>
+            <td class="cell-yellow" data-conf="A">14%</td>
+            <td class="cell-yellow" data-conf="A">10.4%</td>
+            <td class="cell-yellow" data-conf="A">14.3%</td>
+            <td class="cell-red" data-conf="A">23%</td>
+            <td class="cell-red" data-conf="A">32%</td>
+            <td class="cell-red" data-conf="A">28.8%</td>
           </tr>
 
           <!-- 2. 財政コスト -->
           <tr>
             <td class="theme-label"><a href="/themes/cout-fiscal/">財政コスト<br/><small>財政への純効果</small></a></td>
-            <td class="cell-red">−160億DKK</td>
-            <td class="cell-yellow">+60億SEK</td>
-            <td class="cell-red">R3：+410万NOK</td>
+            <td class="cell-red" data-conf="A">−160億DKK</td>
+            <td class="cell-yellow" data-conf="A">+60億SEK</td>
+            <td class="cell-red" data-conf="A">R3：+410万NOK</td>
             <td class="cell-gray">調査中</td>
-            <td class="cell-red">−21億€/年</td>
+            <td class="cell-red" data-conf="A">−21億€/年</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-red">動機別−</td>
-            <td class="cell-yellow">OBR混合</td>
+            <td class="cell-red" data-conf="B">動機別−</td>
+            <td class="cell-yellow" data-conf="B">OBR混合</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">INPS＋</td>
-            <td class="cell-green">成長＋</td>
+            <td class="cell-yellow" data-conf="B">INPS＋</td>
+            <td class="cell-green" data-conf="B">成長＋</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">NAS混合</td>
+            <td class="cell-yellow" data-conf="B">NAS混合</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-green">技能系＋</td>
+            <td class="cell-green" data-conf="B">技能系＋</td>
             <td class="cell-gray">非公開</td>
           </tr>
 
           <!-- 3. 雇用格差 -->
           <tr>
             <td class="theme-label"><a href="/themes/marche-travail/">雇用格差<br/><small>就業率の差</small></a></td>
-            <td class="cell-red">−10pt</td>
-            <td class="cell-red">−10.5pt</td>
-            <td class="cell-red">−12pt</td>
+            <td class="cell-red" data-conf="A">−10pt</td>
+            <td class="cell-red" data-conf="A">−10.5pt</td>
+            <td class="cell-red" data-conf="A">−12pt</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-red">難民女−35pt</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-red">−5pt失業</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-green">格差小</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">地域差大</td>
+            <td class="cell-red" data-conf="A">難民女−35pt</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-red" data-conf="A">−5pt失業</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-green" data-conf="B">格差小</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">地域差大</td>
             <td class="cell-gray">非公開</td>
           </tr>
 
           <!-- 4. PISA格差 -->
           <tr>
             <td class="theme-label"><a href="/themes/education/">PISA格差<br/><small>PISA 2022学力差</small></a></td>
-            <td class="cell-red">+28pt</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-red">−51pt</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-red">格差大</td>
-            <td class="cell-yellow">格差中</td>
+            <td class="cell-red" data-conf="A">+28pt</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-red" data-conf="A">−51pt</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-red" data-conf="B">格差大</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
             <td class="cell-gray">小規模</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-yellow">格差中</td>
-            <td class="cell-green">+26pt超過</td>
-            <td class="cell-green">超過</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-yellow" data-conf="B">格差中</td>
+            <td class="cell-green" data-conf="A">+26pt超過</td>
+            <td class="cell-green" data-conf="B">超過</td>
           </tr>
 
           <!-- 5. 犯罪統計 -->
           <tr>
             <td class="theme-label"><a href="/themes/securite/">犯罪統計<br/><small>出身別データの有無</small></a></td>
-            <td class="cell-red">×2.6（年齢補正）</td>
-            <td class="cell-red">×2.5（粗率）</td>
-            <td class="cell-yellow">過剰代表↓</td>
+            <td class="cell-red" data-conf="A">×2.6（年齢補正）</td>
+            <td class="cell-red" data-conf="A">×2.5（粗率）</td>
+            <td class="cell-yellow" data-conf="B">過剰代表↓</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-red">外国籍過多</td>
+            <td class="cell-red" data-conf="A">外国籍過多</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">国籍別あり</td>
-            <td class="cell-yellow">国籍別のみ</td>
+            <td class="cell-yellow" data-conf="B">国籍別あり</td>
+            <td class="cell-yellow" data-conf="B">国籍別のみ</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
             <td class="cell-gray">非公開</td>
@@ -184,51 +185,51 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <!-- 6. 住宅影響 -->
           <tr>
             <td class="theme-label">住宅影響<br/><small>住宅への文書化された影響</small></td>
-            <td class="cell-red">並行社会5地区</td>
-            <td class="cell-red">脆弱地区65</td>
-            <td class="cell-yellow">過密26%</td>
+            <td class="cell-red" data-conf="A">並行社会5地区</td>
+            <td class="cell-red" data-conf="A">脆弱地区65</td>
+            <td class="cell-yellow" data-conf="A">過密26%</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">格差あり</td>
-            <td class="cell-yellow">格差あり</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-red">QPV集中</td>
-            <td class="cell-yellow">地区差大</td>
-            <td class="cell-yellow">格差あり</td>
-            <td class="cell-red">需要圧力</td>
-            <td class="cell-red">需要急増</td>
-            <td class="cell-yellow">格差あり</td>
-            <td class="cell-yellow">格差あり</td>
-            <td class="cell-yellow">格差あり</td>
+            <td class="cell-red" data-conf="A">QPV集中</td>
+            <td class="cell-yellow" data-conf="B">地区差大</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
+            <td class="cell-red" data-conf="B">需要圧力</td>
+            <td class="cell-red" data-conf="B">需要急増</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
             <td class="cell-gray">非公開</td>
-            <td class="cell-yellow">格差あり</td>
-            <td class="cell-red">住宅圧力</td>
-            <td class="cell-yellow">+0.5%家賃</td>
-            <td class="cell-yellow">格差あり</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
+            <td class="cell-red" data-conf="B">住宅圧力</td>
+            <td class="cell-yellow" data-conf="A">+0.5%家賃</td>
+            <td class="cell-yellow" data-conf="B">格差あり</td>
           </tr>
 
           <!-- 7. 庇護申請 -->
           <tr>
             <td class="theme-label">庇護申請<br/><small>近年の申請水準</small></td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-green">低水準（↓）</td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-red">高水準</td>
-            <td class="cell-red">高水準（↓）</td>
-            <td class="cell-yellow">25,781件</td>
-            <td class="cell-red">153,600件</td>
-            <td class="cell-red">39,615件↑</td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-red">高水準</td>
-            <td class="cell-red">急増→↓</td>
-            <td class="cell-red">高水準</td>
-            <td class="cell-red">高水準</td>
-            <td class="cell-green">2,677件</td>
-            <td class="cell-green">低水準</td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-yellow">中水準</td>
-            <td class="cell-green">低水準</td>
-            <td class="cell-green">低水準</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-green" data-conf="A">低水準（↓）</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-red" data-conf="B">高水準</td>
+            <td class="cell-red" data-conf="B">高水準（↓）</td>
+            <td class="cell-yellow" data-conf="A">25,781件</td>
+            <td class="cell-red" data-conf="A">153,600件</td>
+            <td class="cell-red" data-conf="A">39,615件↑</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-red" data-conf="B">高水準</td>
+            <td class="cell-red" data-conf="B">急増→↓</td>
+            <td class="cell-red" data-conf="B">高水準</td>
+            <td class="cell-red" data-conf="B">高水準</td>
+            <td class="cell-green" data-conf="A">2,677件</td>
+            <td class="cell-green" data-conf="A">低水準</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-yellow" data-conf="B">中水準</td>
+            <td class="cell-green" data-conf="B">低水準</td>
+            <td class="cell-green" data-conf="B">低水準</td>
           </tr>
         </tbody>
       </table>
@@ -274,6 +275,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h2>方法論上の注記</h2>
     <p>このマトリクスの各セルは、各国ページに掲載された一次資料に基づく概要であり、単純化を含みます。同一テーマでも国によって測定方法・対象年次・出身区分の定義が異なります。各セルの詳細な数値・出典・方法論上の限界は、必ず各国ページでご確認ください。灰色のセルは「移民の影響がない」のではなく「公開された一次資料が確認できない」ことを意味します。</p>
   </section>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "name": "移民白書 — 20カ国比較マトリクス",
+  "description": "西欧・北米・オセアニア20カ国の移民統計を7テーマ（財政・雇用・PISA・犯罪・住宅・庇護）で比較した公式データカタログ。",
+  "url": "https://imin-hakusho.com/themes/tableau-comparatif/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "移民白書",
+    "url": "https://imin-hakusho.com"
+  },
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "name": "移民影響マトリクス — 20カ国×7テーマ",
+      "description": "各国の公式統計・国際機関データに基づく移民統計の横断比較。",
+      "url": "https://imin-hakusho.com/themes/tableau-comparatif/",
+      "keywords": ["移民", "統計", "財政影響", "雇用格差", "PISA", "犯罪", "住宅", "庇護申請"],
+      "temporalCoverage": "2020/2024",
+      "spatialCoverage": "Western Europe, North America, Oceania",
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://imin-hakusho.com/themes/tableau-comparatif/"
+      }
+    }
+  ]
+}
+</script>
 </main>
 
 <style>
@@ -459,6 +492,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   margin-left: 1rem;
 }
 .csv-btn:hover { background: var(--color-accent); color: #fff; }
+
+/* Confidence badges */
+.matrix-table td { position: relative; }
+td[data-conf]::before {
+  content: attr(data-conf);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.5rem;
+  font-weight: 800;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+td[data-conf="A"]::before { background: rgba(45,212,191,0.2); color: #2dd4bf; }
+td[data-conf="B"]::before { background: rgba(240,180,41,0.18); color: #f0b429; }
 </style>
 
 <script>

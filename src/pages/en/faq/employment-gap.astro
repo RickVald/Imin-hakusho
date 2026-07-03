@@ -107,6 +107,38 @@ import BarChart from '../../../components/BarChart.astro';
     <a href="/en/countries/denmark/">🇩🇰 Denmark — full data</a>
   </div>
 </div>
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the employment gap between immigrants and native-born workers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In all 20 Western countries surveyed, immigrants have lower employment rates than native-born residents. The gap ranges from −20 percentage points in Belgium to −3 points in Czech Republic. Key figures: Denmark −10 pt (Danmarks Statistik 2023), Sweden −10.5 pt (SCB 2023), Norway −12 pt (SSB 2023), Germany: refugee women −35 pt (Bundesagentur für Arbeit). Sources: national statistics offices, 2023 data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why are employment gaps higher in some countries than others?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The size of the employment gap reflects differences in intake policy (points-based selection vs. family/humanitarian intake), host-country language distance, recognition of foreign qualifications, integration support infrastructure, and migrant composition (share of refugee vs. labour migrants). Countries with skills-based selection (Australia, Canada, Czech Republic) show smaller gaps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does employment gap data NOT show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Raw employment gap figures are not adjusted for age, sex, educational level, or years since arrival. They do not establish that immigrant background causes lower employment — socioeconomic factors, discrimination, and structural barriers contribute independently. The gap also does not capture quality of employment or wage levels."
+      }
+    }
+  ]
+}
+</script>
 </main>
 <style>
 .related-countries {

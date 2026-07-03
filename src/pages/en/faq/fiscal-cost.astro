@@ -102,6 +102,38 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <a href="/en/countries/sweden/">🇸🇪 Sweden — full data</a>
   </div>
 </div>
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do immigrants cost more than they contribute fiscally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Official data shows divergent results across countries. Denmark: −16 billion DKK/year net cost to public finances (Finansministeriet 2023). Norway: −410,000 NOK per refugee over a lifetime (SSB 2017, category R3). Germany: −2.1 billion €/year (Ifo Institut 2023). Sweden: +6 billion SEK for labour migrants only (Konjunkturinstitutet 2020). Italy: net contribution to the INPS pension system (INPS 2023). Results vary widely depending on the country, the migrant profile (labour migrants vs. refugees vs. family reunification), and the methodology used (static vs. dynamic models, scope of public spending included)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do fiscal cost estimates differ so much between countries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Differences arise from four main factors: (1) Scope: some countries include education and healthcare costs while others exclude them; (2) Model type: static models measure current tax and benefit flows, dynamic models project lifetime contributions including descendants; (3) Population scope: 'all immigrants', 'non-Western immigrants', 'refugees', and 'labour migrants' have fundamentally different fiscal profiles; (4) Business cycle: results vary by economic conditions at measurement time. Figures from different countries cannot be added together or directly compared."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does fiscal cost data NOT show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fiscal statistics do not capture labour shortages filled by immigration, demographic trends, or cultural factors. Whether a fiscal balance is positive or negative is not the sole criterion for evaluating immigration policy. Correlation vs. causation: fiscal deficits during high immigration periods do not mean immigration caused the deficit — recessions and ageing populations may be concurrent factors."
+      }
+    }
+  ]
+}
+</script>
 </main>
 <style>
 .related-countries {

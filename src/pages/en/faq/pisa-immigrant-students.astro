@@ -114,6 +114,38 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <a href="/en/countries/germany/">🇩🇪 Germany — full data</a>
   </div>
 </div>
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do immigrant students underperform in school compared to native-born students?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "OECD PISA 2022 data shows a raw average maths score gap of −29 points between immigrant-background and native-born students across OECD countries. After controlling for socioeconomic status (ESCS index), this gap narrows to −5 points, meaning 83% of the raw gap is explained by socioeconomic factors rather than immigrant background per se. Australia and New Zealand are notable exceptions where immigrant students outperform native-born peers by 26+ points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which countries have the largest PISA gaps for immigrant students?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to OECD PISA 2022, Denmark shows a +28 point gap (immigrants below native-born), France shows −51 points. Nordic countries (Sweden, Norway, Finland) and Central European countries (Germany, Austria) show large gaps. English-speaking countries (Australia +26 pts, New Zealand) show reversed gaps where immigrants outperform. Source: OECD PISA 2022 Volume I."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does PISA data not show about immigrant students?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PISA scores measure academic performance at one point in time and cannot establish causation. Gaps may reflect the socioeconomic composition of immigrant populations, differences in school systems, selection effects (which immigrant groups are measured in each country), and recency of arrival. PISA 2022 also does not track long-term outcomes or second-generation performance trajectories."
+      }
+    }
+  ]
+}
+</script>
 </main>
 <style>
 .related-countries {

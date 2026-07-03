@@ -90,6 +90,38 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <a href="/en/countries/denmark/">🇩🇰 Denmark — full data</a>
   </div>
 </div>
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do Sweden's official crime statistics show about immigrants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sweden's Crime Prevention Council (Brottsförebyggande rådet / BRÅ) 2021 report shows that people with immigrant backgrounds are registered as suspects at roughly 2.5 times the rate of native-born Swedes. After controlling for socioeconomic factors (income, urban concentration, unemployment), the gap narrows substantially but does not disappear. The report is the only large-scale official study of its kind published in Sweden and has not been updated since 2021. Source: BRÅ 2021, Rapport 2021:1."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Sweden's BRÅ report prove that immigration causes crime?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The BRÅ report documents a statistical over-representation of people with immigrant backgrounds among criminal suspects, but explicitly states it cannot establish causation. The remaining gap after socioeconomic controls may reflect unmeasured socioeconomic factors, discrimination in policing, or other structural factors. The report itself warns against causal interpretation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there equivalent crime statistics for other countries?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Denmark (DST) and Norway (SSB) publish origin-disaggregated crime data. Denmark shows a 2.6× ratio after age correction. Germany's BKA publishes nationality-disaggregated suspect data (5.36% suspect rate for non-German nationals vs. 1.46% for German nationals in 2023). Most Western countries — including the UK, USA, Canada, and Australia — do not publish comparable national-level data by immigration background."
+      }
+    }
+  ]
+}
+</script>
 </main>
 <style>
 .related-countries {

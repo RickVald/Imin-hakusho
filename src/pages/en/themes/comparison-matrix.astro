@@ -26,6 +26,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <span class="legend-item"><span class="dot red"></span> Negative / high burden</span>
       <span class="legend-item"><span class="dot yellow"></span> Mixed / partial data</span>
       <span class="legend-item"><span class="dot gray"></span> Data not publicly available</span>
+      <span class="legend-item"><span style="font-size:0.65rem;font-weight:800;background:rgba(45,212,191,0.2);color:#2dd4bf;padding:1px 4px;border-radius:2px;">A</span> Primary source, precise figure</span><span class="legend-item"><span style="font-size:0.65rem;font-weight:800;background:rgba(240,180,41,0.18);color:#f0b429;padding:1px 4px;border-radius:2px;">B</span> Official source, qualitative</span>
     </div>
 
     <div class="table-wrapper">
@@ -59,114 +60,114 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
           <!-- 1. Population share -->
           <tr>
             <td class="theme-label"><a href="/en/themes/demographics/">Population share<br/><small>% immigrant-born</small></a></td>
-            <td class="cell-yellow">12.6%</td>
-            <td class="cell-red">21%</td>
-            <td class="cell-red">17.5%</td>
-            <td class="cell-yellow">11.7%</td>
-            <td class="cell-red">25.6%</td>
-            <td class="cell-red">20.5%</td>
-            <td class="cell-red">27.7%</td>
-            <td class="cell-yellow">11.3%</td>
-            <td class="cell-red">36.6%</td>
-            <td class="cell-red">24.6%</td>
-            <td class="cell-yellow">19%</td>
-            <td class="cell-yellow">12%</td>
-            <td class="cell-yellow">9.1%</td>
-            <td class="cell-yellow">14%</td>
-            <td class="cell-yellow">14%</td>
-            <td class="cell-yellow">10.4%</td>
-            <td class="cell-yellow">14.3%</td>
-            <td class="cell-red">23%</td>
-            <td class="cell-red">32%</td>
-            <td class="cell-red">28.8%</td>
+            <td class="cell-yellow" data-conf="A">12.6%</td>
+            <td class="cell-red" data-conf="A">21%</td>
+            <td class="cell-red" data-conf="A">17.5%</td>
+            <td class="cell-yellow" data-conf="A">11.7%</td>
+            <td class="cell-red" data-conf="A">25.6%</td>
+            <td class="cell-red" data-conf="A">20.5%</td>
+            <td class="cell-red" data-conf="A">27.7%</td>
+            <td class="cell-yellow" data-conf="A">11.3%</td>
+            <td class="cell-red" data-conf="A">36.6%</td>
+            <td class="cell-red" data-conf="A">24.6%</td>
+            <td class="cell-yellow" data-conf="A">19%</td>
+            <td class="cell-yellow" data-conf="A">12%</td>
+            <td class="cell-yellow" data-conf="A">9.1%</td>
+            <td class="cell-yellow" data-conf="A">14%</td>
+            <td class="cell-yellow" data-conf="A">14%</td>
+            <td class="cell-yellow" data-conf="A">10.4%</td>
+            <td class="cell-yellow" data-conf="A">14.3%</td>
+            <td class="cell-red" data-conf="A">23%</td>
+            <td class="cell-red" data-conf="A">32%</td>
+            <td class="cell-red" data-conf="A">28.8%</td>
           </tr>
 
           <!-- 2. Fiscal cost -->
           <tr>
             <td class="theme-label"><a href="/en/themes/fiscal-cost/">Fiscal impact<br/><small>Net fiscal effect</small></a></td>
-            <td class="cell-red">−DKK 16bn</td>
-            <td class="cell-yellow">+SEK 6bn</td>
-            <td class="cell-red">R3: +NOK 4.1M</td>
+            <td class="cell-red" data-conf="A">−DKK 16bn</td>
+            <td class="cell-yellow" data-conf="A">+SEK 6bn</td>
+            <td class="cell-red" data-conf="A">R3: +NOK 4.1M</td>
             <td class="cell-gray">ongoing study</td>
-            <td class="cell-red">−€2.1bn/yr</td>
+            <td class="cell-red" data-conf="A">−€2.1bn/yr</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-red">by motive −</td>
-            <td class="cell-yellow">OBR mixed</td>
+            <td class="cell-red" data-conf="B">by motive −</td>
+            <td class="cell-yellow" data-conf="B">OBR mixed</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">INPS +</td>
-            <td class="cell-green">GDP +</td>
+            <td class="cell-yellow" data-conf="B">INPS +</td>
+            <td class="cell-green" data-conf="B">GDP +</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">NAS mixed</td>
+            <td class="cell-yellow" data-conf="B">NAS mixed</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-green">skilled +</td>
+            <td class="cell-green" data-conf="B">skilled +</td>
             <td class="cell-gray">N/A</td>
           </tr>
 
           <!-- 3. Employment gap -->
           <tr>
             <td class="theme-label"><a href="/en/themes/labour-market/">Employment gap<br/><small>Natives vs immigrants</small></a></td>
-            <td class="cell-red">−10 pt</td>
-            <td class="cell-red">−10.5 pt</td>
-            <td class="cell-red">−12 pt</td>
+            <td class="cell-red" data-conf="A">−10 pt</td>
+            <td class="cell-red" data-conf="A">−10.5 pt</td>
+            <td class="cell-red" data-conf="A">−12 pt</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-red">women −35 pt</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-red">−5 pt unempl.</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-green">small gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">regional var.</td>
+            <td class="cell-red" data-conf="A">women −35 pt</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-red" data-conf="A">−5 pt unempl.</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-green" data-conf="B">small gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">regional var.</td>
             <td class="cell-gray">N/A</td>
           </tr>
 
           <!-- 4. PISA gap -->
           <tr>
             <td class="theme-label"><a href="/en/themes/education/">PISA gap<br/><small>PISA 2022 maths</small></a></td>
-            <td class="cell-red">+28 pts gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-red">−51 pts</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-red">large gap</td>
-            <td class="cell-yellow">medium gap</td>
+            <td class="cell-red" data-conf="A">+28 pts gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-red" data-conf="A">−51 pts</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-red" data-conf="B">large gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
             <td class="cell-gray">small sample</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-yellow">medium gap</td>
-            <td class="cell-green">+26 pts over</td>
-            <td class="cell-green">outperform</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-yellow" data-conf="B">medium gap</td>
+            <td class="cell-green" data-conf="A">+26 pts over</td>
+            <td class="cell-green" data-conf="B">outperform</td>
           </tr>
 
           <!-- 5. Crime statistics -->
           <tr>
             <td class="theme-label"><a href="/en/themes/crime/">Crime data<br/><small>Origin-disaggregated</small></a></td>
-            <td class="cell-red">×2.6 (adj.)</td>
-            <td class="cell-red">×2.5 (raw)</td>
-            <td class="cell-yellow">over-repr. ↓</td>
+            <td class="cell-red" data-conf="A">×2.6 (adj.)</td>
+            <td class="cell-red" data-conf="A">×2.5 (raw)</td>
+            <td class="cell-yellow" data-conf="B">over-repr. ↓</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-red">foreign over-repr.</td>
+            <td class="cell-red" data-conf="A">foreign over-repr.</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">by nationality</td>
-            <td class="cell-yellow">nationality only</td>
+            <td class="cell-yellow" data-conf="B">by nationality</td>
+            <td class="cell-yellow" data-conf="B">nationality only</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
             <td class="cell-gray">N/A</td>
@@ -184,51 +185,51 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
           <!-- 6. Housing impact -->
           <tr>
             <td class="theme-label">Housing impact<br/><small>Documented housing effects</small></td>
-            <td class="cell-red">5 parallel soc.</td>
-            <td class="cell-red">65 vuln. areas</td>
-            <td class="cell-yellow">overcrowd. 26%</td>
+            <td class="cell-red" data-conf="A">5 parallel soc.</td>
+            <td class="cell-red" data-conf="A">65 vuln. areas</td>
+            <td class="cell-yellow" data-conf="A">overcrowd. 26%</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">gap exists</td>
-            <td class="cell-yellow">gap exists</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-red">QPV cluster</td>
-            <td class="cell-yellow">large reg. var.</td>
-            <td class="cell-yellow">gap exists</td>
-            <td class="cell-red">demand pressure</td>
-            <td class="cell-red">demand surge</td>
-            <td class="cell-yellow">gap exists</td>
-            <td class="cell-yellow">gap exists</td>
-            <td class="cell-yellow">gap exists</td>
+            <td class="cell-red" data-conf="A">QPV cluster</td>
+            <td class="cell-yellow" data-conf="B">large reg. var.</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
+            <td class="cell-red" data-conf="B">demand pressure</td>
+            <td class="cell-red" data-conf="B">demand surge</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
             <td class="cell-gray">N/A</td>
-            <td class="cell-yellow">gap exists</td>
-            <td class="cell-red">housing pressure</td>
-            <td class="cell-yellow">+0.5% rents</td>
-            <td class="cell-yellow">gap exists</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
+            <td class="cell-red" data-conf="B">housing pressure</td>
+            <td class="cell-yellow" data-conf="A">+0.5% rents</td>
+            <td class="cell-yellow" data-conf="B">gap exists</td>
           </tr>
 
           <!-- 7. Asylum levels -->
           <tr>
             <td class="theme-label">Asylum claims<br/><small>Recent claim level</small></td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-green">low (↓)</td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-red">high</td>
-            <td class="cell-red">high (↓)</td>
-            <td class="cell-yellow">25,781</td>
-            <td class="cell-red">153,600</td>
-            <td class="cell-red">39,615 ↑</td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-red">high</td>
-            <td class="cell-red">surge → ↓</td>
-            <td class="cell-red">high</td>
-            <td class="cell-red">high</td>
-            <td class="cell-green">2,677</td>
-            <td class="cell-green">low</td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-yellow">medium</td>
-            <td class="cell-green">low</td>
-            <td class="cell-green">low</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-green" data-conf="A">low (↓)</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-red" data-conf="B">high</td>
+            <td class="cell-red" data-conf="B">high (↓)</td>
+            <td class="cell-yellow" data-conf="A">25,781</td>
+            <td class="cell-red" data-conf="A">153,600</td>
+            <td class="cell-red" data-conf="A">39,615 ↑</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-red" data-conf="B">high</td>
+            <td class="cell-red" data-conf="B">surge → ↓</td>
+            <td class="cell-red" data-conf="B">high</td>
+            <td class="cell-red" data-conf="B">high</td>
+            <td class="cell-green" data-conf="A">2,677</td>
+            <td class="cell-green" data-conf="A">low</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-yellow" data-conf="B">medium</td>
+            <td class="cell-green" data-conf="B">low</td>
+            <td class="cell-green" data-conf="B">low</td>
           </tr>
         </tbody>
       </table>
@@ -274,6 +275,38 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h2>Methodological note</h2>
     <p>Each cell is a summary of data found in the country pages and involves simplification. Measurement methods, reference years and definitions of "immigrant" vary across countries. Always consult individual country pages for precise figures, sources and methodological caveats. A grey cell means "no publicly available primary source confirmed" — not "no impact exists".</p>
   </section>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "name": "Immigration Factbook — 20-Country Comparison Matrix",
+  "description": "Official immigration statistics for 20 Western countries across 7 themes: fiscal cost, employment gap, PISA scores, crime, housing, asylum.",
+  "url": "https://imin-hakusho.com/en/themes/comparison-matrix/",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "creator": {
+    "@type": "Organization",
+    "name": "Immigration Factbook",
+    "url": "https://imin-hakusho.com"
+  },
+  "dataset": [
+    {
+      "@type": "Dataset",
+      "name": "Immigration Impact Matrix — 20 Countries × 7 Themes",
+      "description": "Cross-country comparison of immigration statistics from official national and international sources.",
+      "url": "https://imin-hakusho.com/en/themes/comparison-matrix/",
+      "keywords": ["immigration", "statistics", "fiscal impact", "employment gap", "PISA", "crime", "housing", "asylum"],
+      "temporalCoverage": "2020/2024",
+      "spatialCoverage": "Western Europe, North America, Oceania",
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://imin-hakusho.com/en/themes/comparison-matrix/"
+      }
+    }
+  ]
+}
+</script>
 </main>
 
 <style>
@@ -459,6 +492,27 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   margin-left: 1rem;
 }
 .csv-btn:hover { background: var(--color-accent); color: #fff; }
+
+/* Confidence badges */
+.matrix-table td { position: relative; }
+td[data-conf]::before {
+  content: attr(data-conf);
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.5rem;
+  font-weight: 800;
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+td[data-conf="A"]::before { background: rgba(45,212,191,0.2); color: #2dd4bf; }
+td[data-conf="B"]::before { background: rgba(240,180,41,0.18); color: #f0b429; }
 </style>
 
 <script>
