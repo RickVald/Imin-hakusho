@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Editorial Charter | Immigration Factbook" lang="en" altHref="/charte-editoriale/" description="Immigration Factbook's editorial standards — data selection criteria, anti-cherry-picking policy, correction procedure, and disclaimer.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Editorial Charter</span>
+    </nav>
+    <h1>Editorial Charter</h1>
+    <p class="intro">Data selection criteria, anti-cherry-picking policy, correction procedure, and disclaimer for Immigration Factbook.</p>
+    <div class="lang-switch"><a href="/charte-editoriale/">🇯🇵 日本語版</a></div>
+  </div>
+
+  <div class="charter-content">
+
+    <section class="charter-section">
+      <h2>1. Data selection criteria</h2>
+      <p>Data published on this site must meet all of the following criteria.</p>
+      <ul class="charter-list">
+        <li><strong>Primary or established secondary source</strong>: We prioritise official publications from national statistics offices, treasuries, central banks, and international organisations (OECD, Eurostat). Where primary data is unavailable, peer-reviewed research or institutional reports (Pew Research, National Academies, etc.) may be used — always identified as such.</li>
+        <li><strong>Directly verified</strong>: We only publish figures we have verified directly against the source document. Figures known only from articles or secondary citations are not published.</li>
+        <li><strong>Reference year and definition statable</strong>: We do not publish unquantified claims such as "immigrants have lower employment rates." Every figure is accompanied by a number, a reference year, and the definition used.</li>
+        <li><strong>Methodology disclosed</strong>: Statistics whose calculation method is undisclosed are not published.</li>
+      </ul>
+    </section>
+
+    <section class="charter-section">
+      <h2>2. Anti-cherry-picking policy</h2>
+      <p>Immigration statistics are politically sensitive. We take special care to prevent selection bias in data choices.</p>
+      <ul class="charter-list">
+        <li><strong>All major estimates published when multiple exist</strong>: For metrics such as fiscal cost, where several official estimates exist with different methodologies, we list the main estimates side by side and explain the methodological differences rather than selecting the one most convenient to any conclusion.</li>
+        <li><strong>Unfavourable data is not suppressed</strong>: If new official data contradicts a finding already published on this site, we update the page rather than ignoring it.</li>
+        <li><strong>Regional variation and trends not hidden</strong>: Where significant within-country variation or time-series trends exist, we do not hide them behind aggregate figures.</li>
+        <li><strong>Correlation and causation not conflated</strong>: Every page includes a "What this data does not show" section making the limits of the statistics explicit.</li>
+      </ul>
+    </section>
+
+    <section class="charter-section">
+      <h2>3. Correction procedure</h2>
+      <p>When an error is reported or discovered, the following process applies.</p>
+      <ol class="charter-steps">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Verify</strong>: The reported error is checked directly against the primary source.
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Correct</strong>: If confirmed, the correction is applied within 72 hours in normal circumstances.
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Log</strong>: Material corrections are recorded in the <a href="/en/changelog/">Changelog</a> (data corrections, definition changes, source substitutions). Minor wording fixes are not logged.
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Acknowledge</strong>: Where a contact address was provided, we reply to confirm the correction.
+          </div>
+        </li>
+      </ol>
+      <p>Report an error: <a href="mailto:contact@imin-hakusho.com">contact@imin-hakusho.com</a></p>
+    </section>
+
+    <section class="charter-section">
+      <h2>4. "No official data" policy</h2>
+      <p>Where data is unavailable, we display "No official data published." We do not substitute estimates, projections, or unofficial figures in place of missing official data. This means some countries and topics will remain blank until primary data is published and verified.</p>
+    </section>
+
+    <section class="charter-section">
+      <h2>5. Disclaimer</h2>
+      <ul class="charter-list">
+        <li>All figures are drawn from official sources, but we cannot fully exclude errors in the source itself or gaps in our update schedule.</li>
+        <li>This site makes no policy recommendations. Interpretation and conclusions are left to the reader.</li>
+        <li>International comparisons are constrained by methodological differences across countries. See the <a href="/en/methodology/">Methodology page</a> for details.</li>
+        <li>Immigration Factbook receives no funding from any political party, government body, foundation, lobby group, or advertiser.</li>
+      </ul>
+    </section>
+
+    <div class="charter-links">
+      <a href="/en/methodology/" class="charter-link-card">
+        <span class="link-icon">📐</span>
+        <div>
+          <strong>Methodology & Sources</strong>
+          <p>Source hierarchy, definitions, comparison limits, and update process in detail</p>
+        </div>
+      </a>
+      <a href="/en/changelog/" class="charter-link-card">
+        <span class="link-icon">📋</span>
+        <div>
+          <strong>Changelog</strong>
+          <p>Public log of all data updates and corrections</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<style>
+.charter-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.charter-section {
+  margin-bottom: 2.75rem;
+}
+.charter-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+.charter-section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.charter-section a { color: var(--color-accent); }
+.charter-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.charter-list li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  padding-left: 1.25rem;
+  border-left: 3px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+.charter-list strong { color: var(--color-accent); }
+.charter-steps {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.charter-steps li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-body {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-top: 0.3rem;
+}
+.step-body strong { color: var(--color-accent); }
+.step-body a { color: var(--color-accent); }
+.charter-links {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.charter-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s;
+}
+.charter-link-card:hover { border-color: var(--color-accent); }
+.link-icon { font-size: 1.4rem; flex-shrink: 0; }
+.charter-link-card strong { display: block; color: var(--color-accent); margin-bottom: 0.2rem; font-size: 0.95rem; }
+.charter-link-card p { font-size: 0.82rem; color: var(--color-muted); margin: 0; }
+</style>
+</BaseLayout>

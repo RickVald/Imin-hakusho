@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Journal des modifications | 移民白書" lang="ja" altHref="/en/changelog/" description="Historique des mises à jour des données et corrections apportées à 移民白書 — journal public de toutes les modifications.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>更新履歴</span>
+    </nav>
+    <h1>更新履歴</h1>
+    <p class="intro">データ更新・修正・新規ページの公開履歴。一次資料の確認後に行われたすべての変更を記録します。</p>
+    <div class="lang-switch"><a href="/en/changelog/">🌐 English version</a></div>
+  </div>
+
+  <div class="changelog-content">
+
+    <section class="changelog-year">
+      <h2>2025</h2>
+
+      <div class="changelog-entry">
+        <div class="entry-date">2025年12月</div>
+        <div class="entry-body">
+          <div class="entry-title">ドイツ犯罪統計 — 絶対数から人口比率へ修正</div>
+          <p>ドイツ連邦刑事庁（BKA）2023年データを絶対件数から人口比率（被疑者率%）に変更。ドイツ国籍者1.46% vs 非ドイツ国籍者5.36%（3.7倍）。異なる人口規模のグループを絶対数で比較することの誤解を防ぐため。</p>
+          <div class="entry-meta">
+            <span class="meta-tag changed">修正</span>
+            <span class="meta-pages">治安ページ（日本語・英語）、ドイツ国別ページ</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">2025年12月</div>
+        <div class="entry-body">
+          <div class="entry-title">オランダ・ドイツ 人口動態 0%表示を修正</div>
+          <p>人口動態ページのオランダ（0% → 13.5%、暫定値）およびドイツ（0% → 25.6%）の表示を実際のデータに更新。ドイツの定義注記（国籍ベース、出生地ベースより広い）を追加。</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">修正</span>
+            <span class="meta-pages">人口動態ページ（日本語・英語）</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">2025年11月</div>
+        <div class="entry-body">
+          <div class="entry-title">新規ページ公開 — FAQ・方法論・情報源・About・国別エクスプローラー</div>
+          <p>FAQ（5問）、方法論、情報源リスト、サイト概要、国別エクスプローラー、比較マトリクスのCSVエクスポート機能を日本語・英語で公開。</p>
+          <div class="entry-meta">
+            <span class="meta-tag new">新規</span>
+            <span class="meta-pages">16ページ追加</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">2025年10月</div>
+        <div class="entry-body">
+          <div class="entry-title">サイト開設 — 西側20カ国の移民統計データベース</div>
+          <p>財政コスト・雇用・教育・治安・人口動態の5テーマにわたる20カ国の移民統計データベースを日本語・英語で公開。一次公式資料を主要情報源として使用。</p>
+          <div class="entry-meta">
+            <span class="meta-tag new">新規</span>
+            <span class="meta-pages">初回公開 — 60ページ</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="changelog-note">
+      <p>このページに記載されていない修正や誤りを発見された場合は、<a href="mailto:contact@imin-hakusho.com">contact@imin-hakusho.com</a> までご連絡ください。すべての報告は確認後に対応します。</p>
+    </div>
+
+  </div>
+</main>
+
+<style>
+.changelog-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.changelog-year h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+.changelog-entry {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+.entry-date {
+  flex-shrink: 0;
+  width: 100px;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  padding-top: 0.15rem;
+}
+.entry-body { flex: 1; }
+.entry-title {
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+.entry-body p {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+.entry-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.meta-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  color: #fff;
+}
+.meta-tag.new { background: #4caf7d; }
+.meta-tag.changed { background: #d4a017; }
+.meta-tag.fixed { background: #2196f3; }
+.meta-tag.removed { background: #e53935; }
+.meta-pages {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+.changelog-note {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface-raised);
+  border-radius: 8px;
+  border-left: 4px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+.changelog-note p {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+.changelog-note a { color: var(--color-accent); }
+</style>
+</BaseLayout>

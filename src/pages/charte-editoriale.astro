@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Charte éditoriale | 移民白書" lang="ja" altHref="/en/editorial-charter/" description="移民白書の編集規範 — データ選択基準、誤りの修正手順、偏向防止ポリシー、免責事項。">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/">移民白書</a> <span>›</span> <span>編集規範</span>
+    </nav>
+    <h1>編集規範</h1>
+    <p class="intro">本サイトのデータ選択基準、偏向防止ポリシー、誤りの修正手順、および免責事項。</p>
+    <div class="lang-switch"><a href="/en/editorial-charter/">🌐 English version</a></div>
+  </div>
+
+  <div class="charter-content">
+
+    <section class="charter-section">
+      <h2>1. データ選択の基準</h2>
+      <p>掲載するデータは以下の基準をすべて満たす必要があります。</p>
+      <ul class="charter-list">
+        <li><strong>一次資料または確立された二次資料に基づく</strong>：国家統計局、財務省、中央銀行、OECD・Eurostatなどの国際機関の公式刊行物を優先します。一次資料が入手困難な場合のみ、Pew Research、National Academiesなどの査読済み研究・機関報告を使用し、その旨を明示します。</li>
+        <li><strong>直接確認済み</strong>：原典文書を直接確認したデータのみを掲載します。記事や二次引用のみで確認したデータは公開しません。</li>
+        <li><strong>参照年と定義が明示できる</strong>：「移民の雇用率は低い」のような定量化されていない記述は掲載しません。数値、参照年、使用された定義を必ず示します。</li>
+        <li><strong>方法論が開示されている</strong>：算出方法が不明な統計は掲載しません。</li>
+      </ul>
+    </section>
+
+    <section class="charter-section">
+      <h2>2. チェリーピッキング防止ポリシー</h2>
+      <p>移民統計は政治的に敏感なテーマであるため、データ選択における偏向防止を特に重視します。</p>
+      <ul class="charter-list">
+        <li><strong>複数の推計が存在する場合は全て掲載</strong>：財政コストなど複数の公式推計が存在する場合、特定の結論に都合の良いものだけを選択せず、主要な推計を並記し、方法論の違いを説明します。</li>
+        <li><strong>不利なデータを除外しない</strong>：既掲載の結論と矛盾する公式データが発表された場合、それを無視せずにページを更新します。</li>
+        <li><strong>地域差・時系列変動を隠さない</strong>：国内の地域差や時系列での変化が重要な場合、集計値のみで隠蔽しません。</li>
+        <li><strong>相関と因果を混同しない</strong>：各ページに「この統計が示さないこと」セクションを設け、統計から導ける結論の限界を明示します。</li>
+      </ul>
+    </section>
+
+    <section class="charter-section">
+      <h2>3. 誤りの修正手順</h2>
+      <p>誤りの報告を受けた場合、または自ら誤りを発見した場合の対応手順は以下の通りです。</p>
+      <ol class="charter-steps">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>確認</strong>：報告された誤りを一次資料で直接確認します。
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>修正</strong>：誤りが確認されれば、原則として72時間以内に修正します。
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>記録</strong>：重大な修正は<a href="/changelog/">更新履歴</a>に記載します（データの修正、定義の変更、情報源の差し替えなど）。軽微な文言修正は記録しません。
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>通知</strong>：誤りを報告した方へ修正完了を返信します（メール連絡先が提供されている場合）。
+          </div>
+        </li>
+      </ol>
+      <p>誤りの報告：<a href="mailto:contact@imin-hakusho.com">contact@imin-hakusho.com</a></p>
+    </section>
+
+    <section class="charter-section">
+      <h2>4. 「公式データなし」の表示方針</h2>
+      <p>データが入手できない場合は「公式データなし（未公表）」と明示します。推測値や非公式な推計値を「データ」として掲載することはしません。この方針の結果として、一部の国・テーマでは空欄が残ります。</p>
+    </section>
+
+    <section class="charter-section">
+      <h2>5. 免責事項</h2>
+      <ul class="charter-list">
+        <li>本サイトのデータはすべて公式機関の公表値に基づきますが、原典の誤りや更新漏れの可能性を完全に排除することはできません。</li>
+        <li>本サイトは政策提言を行いません。データの解釈と結論は読者に委ねられます。</li>
+        <li>国際比較は方法論の差異により限界があります。詳細は<a href="/methodologie/">方法論ページ</a>を参照してください。</li>
+        <li>本サイトはいかなる政党、政府機関、財団、ロビー団体からも資金提供を受けていません。</li>
+      </ul>
+    </section>
+
+    <div class="charter-links">
+      <a href="/methodologie/" class="charter-link-card">
+        <span class="link-icon">📐</span>
+        <div>
+          <strong>方法論と情報源</strong>
+          <p>情報源の階層、定義、更新プロセスの詳細</p>
+        </div>
+      </a>
+      <a href="/changelog/" class="charter-link-card">
+        <span class="link-icon">📋</span>
+        <div>
+          <strong>更新履歴</strong>
+          <p>すべてのデータ更新と修正の公開ログ</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<style>
+.charter-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.charter-section {
+  margin-bottom: 2.75rem;
+}
+.charter-section h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+}
+.charter-section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  margin-bottom: 0.75rem;
+}
+.charter-section a { color: var(--color-accent); }
+.charter-list {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.charter-list li {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  padding-left: 1.25rem;
+  border-left: 3px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+.charter-list strong { color: var(--color-accent); }
+.charter-steps {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.charter-steps li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.step-num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-body {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-top: 0.3rem;
+}
+.step-body strong { color: var(--color-accent); }
+.step-body a { color: var(--color-accent); }
+.charter-links {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+.charter-link-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 10px;
+  padding: 1.1rem 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.15s;
+}
+.charter-link-card:hover { border-color: var(--color-accent); }
+.link-icon { font-size: 1.4rem; flex-shrink: 0; }
+.charter-link-card strong { display: block; color: var(--color-accent); margin-bottom: 0.2rem; font-size: 0.95rem; }
+.charter-link-card p { font-size: 0.82rem; color: var(--color-muted); margin: 0; }
+</style>
+</BaseLayout>

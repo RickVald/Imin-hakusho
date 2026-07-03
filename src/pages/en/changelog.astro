@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Changelog | Immigration Factbook" lang="en" altHref="/changelog/" description="Public record of all data updates and corrections on Immigration Factbook — every change logged after primary-source verification.">
+
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb">
+      <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Changelog</span>
+    </nav>
+    <h1>Changelog</h1>
+    <p class="intro">A public log of all data updates, corrections, and new pages. Every change recorded after primary-source verification.</p>
+    <div class="lang-switch"><a href="/changelog/">🇯🇵 日本語版</a></div>
+  </div>
+
+  <div class="changelog-content">
+
+    <section class="changelog-year">
+      <h2>2025</h2>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Dec 2025</div>
+        <div class="entry-body">
+          <div class="entry-title">Germany crime statistics — absolute counts replaced with per-capita rates</div>
+          <p>BKA 2023 suspect data converted from absolute counts to per-capita rates (suspect rate %). German nationals: 1.46% vs non-German nationals: 5.36% (ratio: 3.7×). Absolute counts are misleading when comparing groups of very different sizes. Per-capita rates reflect individual-level risk.</p>
+          <div class="entry-meta">
+            <span class="meta-tag changed">Correction</span>
+            <span class="meta-pages">Crime page (JP + EN), Germany country page</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Dec 2025</div>
+        <div class="entry-body">
+          <div class="entry-title">Demographics — Netherlands and Germany 0% values corrected</div>
+          <p>Netherlands updated from 0% to 13.5% (provisional, CBS 2023). Germany updated from 0% to 25.6% with methodology note clarifying the broader nationality-based definition used by Destatis.</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">Fix</span>
+            <span class="meta-pages">Demographics page (JP + EN)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Nov 2025</div>
+        <div class="entry-body">
+          <div class="entry-title">New pages — FAQ, Methodology, Sources, About, Country Explorer</div>
+          <p>Published FAQ (5 questions), Methodology, Sources list, About, Country Explorer tool, and CSV export on the Comparison Matrix — all in Japanese and English.</p>
+          <div class="entry-meta">
+            <span class="meta-tag new">New</span>
+            <span class="meta-pages">16 pages added</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Oct 2025</div>
+        <div class="entry-body">
+          <div class="entry-title">Site launch — immigration statistics database for 20 Western countries</div>
+          <p>Published database covering fiscal impact, employment, education, crime, and demographics for 20 Western countries in Japanese and English. Primary official sources used throughout.</p>
+          <div class="entry-meta">
+            <span class="meta-tag new">Launch</span>
+            <span class="meta-pages">Initial release — 60 pages</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="changelog-note">
+      <p>If you notice an error or an omission not listed here, please contact us at <a href="mailto:contact@imin-hakusho.com">contact@imin-hakusho.com</a>. All reports are reviewed and addressed after verification.</p>
+    </div>
+
+  </div>
+</main>
+
+<style>
+.changelog-content {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+}
+.changelog-year h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+.changelog-entry {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+}
+.entry-date {
+  flex-shrink: 0;
+  width: 90px;
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  padding-top: 0.15rem;
+}
+.entry-body { flex: 1; }
+.entry-title {
+  font-weight: 700;
+  font-size: 0.97rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+.entry-body p {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+}
+.entry-meta {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.meta-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0.15rem 0.5rem;
+  color: #fff;
+}
+.meta-tag.new { background: #4caf7d; }
+.meta-tag.changed { background: #d4a017; }
+.meta-tag.fixed { background: #2196f3; }
+.meta-tag.removed { background: #e53935; }
+.meta-pages {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+.changelog-note {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--color-surface-raised);
+  border-radius: 8px;
+  border-left: 4px solid color-mix(in srgb, var(--color-accent) 40%, transparent);
+}
+.changelog-note p {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin: 0;
+  line-height: 1.65;
+}
+.changelog-note a { color: var(--color-accent); }
+</style>
+</BaseLayout>
