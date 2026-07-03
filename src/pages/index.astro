@@ -1,40 +1,70 @@
-﻿---
+---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import StatsBanner from '../components/StatsBanner.astro';
 import { flagUrl, regionColor } from '../data/flags';
 
 const countries = (await getCollection('countriesJa')).sort((a, b) =>
 	a.data.name.localeCompare(b.data.name, 'ja')
 );
-
-const stats = [
-	{ value: '20', label: '対象国・地域' },
-	{ value: '14', label: '財政コスト算定手法を比較した国' },
-	{ value: '−160億DKK', label: 'デンマーク：移民の公的財政への純負担（年間）' },
-	{ value: '3カ国', label: '近年デモ・住宅危機を経て移民政策を転換（加・豪・NZ）' },
-];
 ---
 
-<BaseLayout title="移民白書 — 西欧20カ国の移民統計データベース" lang="ja" altHref="/en/" description="欧州・北米・オセアニア20カ国の移民統計を公式一次資料で横断比較。財政コスト（デンマーク−160億DKK）・雇用格差・PISA学力差・犯罪率・人口動態。独立データベース、日本語・英語対応。">
+<BaseLayout title="移民白書 — 西側20カ国の移民統計データベース" lang="ja" altHref="/en/" description="欧州・北米・オセアニア20カ国の移民統計を公式一次資料で横断比較。財政コスト・雇用格差・PISA学力差・犯罪率・人口動態。独立データベース、日本語・英語対応。">
+
 	<div class="hero">
-		<h1>移民観察</h1>
-		<p>西側諸国における近年の移民が財政・労働市場・治安・教育・住宅・社会的結束に与える影響を、公的機関の一次資料に基づき国別に紹介します。</p>
+		<div class="hero__badge">公式一次資料 · 統計局 · 財務省 · OECD · Eurostat</div>
+		<h1>西側20カ国の移民が<br>社会に与える影響、<br><em>公式データだけで。</em></h1>
+		<p class="hero__sub">財政コスト・雇用格差・PISA学力差・犯罪統計・人口動態を、各国政府・国際機関の一次資料のみで横断比較。政治的バイアスなし、数字だけ。</p>
+		<div class="hero__ctas">
+			<a href="/themes/country-explorer/" class="cta-primary">🔍 国別データを探索 →</a>
+			<a href="/themes/comparison-matrix/" class="cta-ghost">📊 20カ国マトリックス</a>
+		</div>
 	</div>
-	<StatsBanner stats={stats} />
+
+	<div class="stat-section">
+		<div class="stat-section__label"><span class="stat-dot stat-dot--fiscal"></span>主要データ — 最新公式資料</div>
+		<div class="stat-cards">
+			<a href="/themes/fiscal-cost/" class="stat-card">
+				<div class="stat-card__cat"><span class="stat-dot stat-dot--fiscal"></span>財政コスト</div>
+				<div class="stat-card__value">−160億<span class="stat-unit">DKK/年</span></div>
+				<div class="stat-card__desc">デンマーク — 移民・子孫全体の年間財政純負担</div>
+				<div class="stat-card__source">Finansministeriet 2023</div>
+			</a>
+			<a href="/themes/crime/" class="stat-card">
+				<div class="stat-card__cat"><span class="stat-dot stat-dot--crime"></span>犯罪統計</div>
+				<div class="stat-card__value">3.7<span class="stat-unit">×</span></div>
+				<div class="stat-card__desc">ドイツ — 非独国籍者のドイツ人に対する被疑者率比</div>
+				<div class="stat-card__source">BKA PKS 2023</div>
+			</a>
+			<a href="/themes/education/" class="stat-card">
+				<div class="stat-card__cat"><span class="stat-dot stat-dot--edu"></span>PISA教育格差</div>
+				<div class="stat-card__value">83<span class="stat-unit">%</span></div>
+				<div class="stat-card__desc">粗格差のうち社会経済的要因で説明可能な割合</div>
+				<div class="stat-card__source">OECD PISA 2022</div>
+			</a>
+			<a href="/themes/demographics/" class="stat-card">
+				<div class="stat-card__cat"><span class="stat-dot stat-dot--demo"></span>人口比率</div>
+				<div class="stat-card__value">32<span class="stat-unit">%</span></div>
+				<div class="stat-card__desc">オーストラリア — 外国生まれ人口比率（20カ国最高）</div>
+				<div class="stat-card__source">ABS 2024</div>
+			</a>
+		</div>
+	</div>
 
 	<section class="themes-section">
-		<h2 class="themes-title">テーマ別比較</h2>
-		<p class="themes-subtitle">20カ国を同一指標で横断比較 — 一次公式資料による西側諸国移民統計の横断比較データベース</p>
+		<div class="section-header">
+			<span class="section-dot"></span>
+			<h2>テーマ別分析</h2>
+			<span class="section-sub">20カ国を同一指標で横断比較</span>
+		</div>
 		<div class="themes-grid">
-			<a href="/themes/cout-fiscal/" class="theme-card">
+			<a href="/themes/fiscal-cost/" class="theme-card">
 				<div class="theme-icon">💴</div>
 				<div class="theme-content">
 					<h3>移民の財政コスト</h3>
 					<p>財務省・中央銀行・OECDの公式データで20カ国を比較。デンマーク・スウェーデン・ノルウェー・ドイツ・米国など</p>
 				</div>
 			</a>
-			<a href="/themes/marche-travail/" class="theme-card">
+			<a href="/themes/labour-market/" class="theme-card">
 				<div class="theme-icon">📊</div>
 				<div class="theme-content">
 					<h3>雇用率格差</h3>
@@ -48,7 +78,7 @@ const stats = [
 					<p>移民の子どもと現地の子どもの学力差をPISA 2022・各国教育省データで比較</p>
 				</div>
 			</a>
-			<a href="/themes/securite/" class="theme-card">
+			<a href="/themes/crime/" class="theme-card">
 				<div class="theme-icon">🔒</div>
 				<div class="theme-content">
 					<h3>犯罪統計（公式データ）</h3>
@@ -59,24 +89,24 @@ const stats = [
 				<div class="theme-icon">❓</div>
 				<div class="theme-content">
 					<h3>よくある質問</h3>
-					<p>「移民はお金がかかるのか？」「犯罪は増えるのか？」公式データで5つの頻出疑問に回答</p>
+					<p>「移民はお金がかかるのか？」「犯罪は増えるのか？」公式データで頻出疑問に回答</p>
 				</div>
 			</a>
-			<a href="/themes/explorateur/" class="theme-card">
+			<a href="/themes/country-explorer/" class="theme-card">
 				<div class="theme-icon">🔍</div>
 				<div class="theme-content">
 					<h3>国別データ探索ツール</h3>
 					<p>国を選択して5つの主要指標を即時表示。財政・雇用・教育・犯罪・人口を一画面で確認</p>
 				</div>
 			</a>
-			<a href="/themes/tableau-comparatif/" class="theme-card">
+			<a href="/themes/comparison-matrix/" class="theme-card">
 				<div class="theme-icon">🗂️</div>
 				<div class="theme-content">
 					<h3>総合比較マトリックス</h3>
 					<p>20カ国 × 7テーマを一覧で比較。財政・雇用・教育・安全・人口を一枚で把握</p>
 				</div>
 			</a>
-			<a href="/themes/demographie/" class="theme-card">
+			<a href="/themes/demographics/" class="theme-card">
 				<div class="theme-icon">🌍</div>
 				<div class="theme-content">
 					<h3>移民人口比率（20カ国）</h3>
@@ -86,37 +116,241 @@ const stats = [
 		</div>
 	</section>
 
-	<ul class="country-grid">
-		{countries.map((country) => (
-			<li>
-				<a
-					href={`/countries/${country.data.slug}/`}
-					style={`--accent:${regionColor[country.data.slug] ?? '#1d3461'}`}
-				>
-					<img class="country-grid__flag" src={flagUrl(country.data.slug)} alt="" width="32" height="24" loading="lazy" />
-					<span class="country-grid__name">{country.data.name}</span>
-				</a>
-			</li>
-		))}
-	</ul>
+	<section class="countries-section">
+		<div class="section-header">
+			<span class="section-dot"></span>
+			<h2>国別ページ</h2>
+			<span class="section-sub">国を選んで詳細データを確認</span>
+		</div>
+		<ul class="country-grid">
+			{countries.map((country) => (
+				<li>
+					<a
+						href={`/countries/${country.data.slug}/`}
+						style={`--accent:${regionColor[country.data.slug] ?? '#1d3461'}`}
+					>
+						<img class="country-grid__flag" src={flagUrl(country.data.slug)} alt="" width="32" height="24" loading="lazy" />
+						<span class="country-grid__name">{country.data.name}</span>
+					</a>
+				</li>
+			))}
+		</ul>
+	</section>
+
+</BaseLayout>
 
 <style>
-.themes-section {
+/* ── Hero ── */
+.hero {
+	text-align: center;
+	padding: 4rem 1.5rem 2.5rem;
+	max-width: 820px;
+	margin: 0 auto;
+}
+
+.hero__badge {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: var(--color-accent);
+	background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+	border-radius: 999px;
+	padding: 0.35em 1.1em;
+	margin-bottom: 1.6rem;
+}
+
+.hero h1 {
+	font-size: clamp(2rem, 5.5vw, 3.4rem);
+	font-weight: 900;
+	line-height: 1.22;
+	margin: 0 0 1.1rem;
+	letter-spacing: -0.025em;
+}
+
+.hero h1 em {
+	font-style: normal;
+	color: var(--color-primary);
+}
+
+.hero__sub {
+	font-size: 1rem;
+	color: var(--color-ink-soft);
+	line-height: 1.8;
+	max-width: 36em;
+	margin: 0 auto 2rem;
+}
+
+.hero__ctas {
+	display: flex;
+	gap: 0.85rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.cta-primary {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	background: var(--color-accent);
+	color: #fff;
+	font-weight: 700;
+	font-size: 0.95rem;
+	padding: 0.75em 1.6em;
+	border-radius: 8px;
+	text-decoration: none;
+	transition: opacity 0.15s, transform 0.15s;
+}
+.cta-primary:hover { opacity: 0.88; transform: translateY(-1px); color: #fff; }
+
+.cta-ghost {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	background: transparent;
+	color: var(--color-ink);
+	font-weight: 600;
+	font-size: 0.95rem;
+	padding: 0.75em 1.6em;
+	border-radius: 8px;
+	border: 1px solid var(--color-border);
+	text-decoration: none;
+	transition: border-color 0.15s, color 0.15s;
+}
+.cta-ghost:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* ── Stat section ── */
+.stat-section {
 	max-width: 1100px;
-	margin: 2.5rem auto 2rem;
+	margin: 0 auto 3rem;
 	padding: 0 1.5rem;
 }
 
-.themes-title {
-	font-size: 1.4rem;
+.stat-section__label {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.7rem;
 	font-weight: 700;
-	margin-bottom: 0.4rem;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--color-muted);
+	margin-bottom: 0.9rem;
 }
 
-.themes-subtitle {
-	font-size: 0.9rem;
+.stat-dot {
+	display: inline-block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+.stat-dot--fiscal { background: var(--color-gold); }
+.stat-dot--crime  { background: var(--color-accent); }
+.stat-dot--edu    { background: var(--color-teal); }
+.stat-dot--demo   { background: var(--color-primary); }
+
+.stat-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+}
+
+.stat-card {
+	background: var(--color-surface-raised);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 1.25rem 1.4rem;
+	text-decoration: none;
+	color: var(--color-text);
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.stat-card:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+	border-color: var(--color-primary);
+}
+
+.stat-card__cat {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
 	color: var(--color-muted);
-	margin-bottom: 1.5rem;
+}
+
+.stat-card__value {
+	font-size: 2.3rem;
+	font-weight: 900;
+	line-height: 1.1;
+	color: var(--color-ink);
+	letter-spacing: -0.02em;
+}
+
+.stat-unit {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: var(--color-muted);
+	margin-left: 0.1em;
+}
+
+.stat-card__desc {
+	font-size: 0.82rem;
+	color: var(--color-ink-soft);
+	line-height: 1.5;
+}
+
+.stat-card__source {
+	font-size: 0.68rem;
+	color: var(--color-muted);
+	margin-top: auto;
+	padding-top: 0.6rem;
+	border-top: 1px solid var(--color-border);
+}
+
+/* ── Section headers ── */
+.section-header {
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+	margin-bottom: 1.25rem;
+}
+
+.section-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: var(--color-accent);
+	border-radius: 2px;
+	flex-shrink: 0;
+	position: relative;
+	top: -1px;
+}
+
+.section-header h2 {
+	font-size: 1.2rem;
+	font-weight: 800;
+	margin: 0;
+}
+
+.section-sub {
+	font-size: 0.82rem;
+	color: var(--color-muted);
+}
+
+/* ── Themes ── */
+.themes-section {
+	max-width: 1100px;
+	margin: 0 auto 3rem;
+	padding: 0 1.5rem;
 }
 
 .themes-grid {
@@ -137,51 +371,51 @@ const stats = [
 	color: var(--color-text);
 	transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
 }
-
 .theme-card:hover {
 	transform: translateY(-2px);
 	box-shadow: 0 4px 16px rgba(0,0,0,0.2);
 	border-color: var(--color-accent);
 }
+.theme-icon { font-size: 1.75rem; line-height: 1; flex-shrink: 0; }
+.theme-content h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; color: var(--color-accent); }
+.theme-content p { font-size: 0.85rem; color: var(--color-muted); line-height: 1.5; margin: 0; }
 
-.theme-icon {
-	font-size: 1.75rem;
-	line-height: 1;
-	flex-shrink: 0;
+/* ── Countries ── */
+.countries-section {
+	max-width: 1100px;
+	margin: 0 auto 4rem;
+	padding: 0 1.5rem;
 }
 
-.theme-content h3 {
-	font-size: 1rem;
-	font-weight: 700;
-	margin-bottom: 0.35rem;
-	color: var(--color-accent);
-}
-
-.theme-content p {
-	font-size: 0.85rem;
-	color: var(--color-muted);
-	line-height: 1.5;
+.country-grid {
+	list-style: none;
 	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+	gap: 0.75rem;
 }
-
-.theme-card--disabled {
-	opacity: 0.55;
-	cursor: default;
-	pointer-events: none;
-}
-
-.coming-soon {
-	display: inline-block;
-	margin-left: 0.5rem;
-	font-size: 0.7rem;
+.country-grid li { margin: 0; }
+.country-grid a {
+	--accent: var(--color-primary);
+	display: flex;
+	align-items: center;
+	gap: 0.65rem;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-top: 3px solid var(--accent);
+	border-radius: 10px;
+	padding: 0.85rem 1rem;
+	text-decoration: none;
+	color: var(--color-ink);
 	font-weight: 600;
-	background: var(--color-accent);
-	color: #fff;
-	border-radius: 4px;
-	padding: 0.1rem 0.4rem;
-	vertical-align: middle;
-	opacity: 0.75;
+	transition: transform 0.13s, box-shadow 0.13s;
 }
+.country-grid a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+	color: var(--color-ink);
+}
+.country-grid__flag { border-radius: 3px; flex-shrink: 0; }
+.country-grid__name { font-size: 0.9rem; }
 </style>
-
-</BaseLayout>

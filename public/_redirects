@@ -1,0 +1,50 @@
+# 301 redirects — French slugs → English slugs
+# Top-level pages
+/methodologie/ /methodology/ 301
+/methodologie /methodology/ 301
+/a-propos/ /about/ 301
+/a-propos /about/ 301
+/charte-editoriale/ /editorial-charter/ 301
+/charte-editoriale /editorial-charter/ 301
+
+# Theme pages
+/themes/cout-fiscal/ /themes/fiscal-cost/ 301
+/themes/cout-fiscal /themes/fiscal-cost/ 301
+/themes/marche-travail/ /themes/labour-market/ 301
+/themes/marche-travail /themes/labour-market/ 301
+/themes/securite/ /themes/crime/ 301
+/themes/securite /themes/crime/ 301
+/themes/demographie/ /themes/demographics/ 301
+/themes/demographie /themes/demographics/ 301
+/themes/explorateur/ /themes/country-explorer/ 301
+/themes/explorateur /themes/country-explorer/ 301
+/themes/tableau-comparatif/ /themes/comparison-matrix/ 301
+/themes/tableau-comparatif /themes/comparison-matrix/ 301
+
+# FAQ pages
+/faq/cout-fiscal/ /faq/fiscal-cost/ 301
+/faq/cout-fiscal /faq/fiscal-cost/ 301
+/faq/criminalite-suede/ /faq/sweden-crime/ 301
+/faq/criminalite-suede /faq/sweden-crime/ 301
+/faq/emploi-chomage/ /faq/employment-gap/ 301
+/faq/emploi-chomage /faq/employment-gap/ 301
+/faq/pisa-enfants-immigres/ /faq/pisa-immigrant-students/ 301
+/faq/pisa-enfants-immigres /faq/pisa-immigrant-students/ 301
+/faq/politique-danemark/ /faq/denmark-policy-shift/ 301
+/faq/politique-danemark /faq/denmark-policy-shift/ 301
+/faq/belgique-population-immigree/ /faq/belgium-immigrant-population/ 301
+/faq/belgique-population-immigree /faq/belgium-immigrant-population/ 301
+/faq/usa-immigration-criminalite/ /faq/us-immigration-crime-statistics/ 301
+/faq/usa-immigration-criminalite /faq/us-immigration-crime-statistics/ 301
+/faq/australie-population-etrangere/ /faq/australia-foreign-born-population/ 301
+/faq/australie-population-etrangere /faq/australia-foreign-born-population/ 301
+/faq/danemark-fiscalite-immigration/ /faq/denmark-fiscal-impact/ 301
+/faq/danemark-fiscalite-immigration /faq/denmark-fiscal-impact/ 301
+/faq/allemagne-criminalite-immigration/ /faq/germany-immigration-crime/ 301
+/faq/allemagne-criminalite-immigration /faq/germany-immigration-crime/ 301
+/faq/comparaison-immigration/ /faq/immigration-statistics-comparison/ 301
+/faq/comparaison-immigration /faq/immigration-statistics-comparison/ 301
+
+# Articles
+/articles/cout-fiscal-nordique/ /articles/nordic-fiscal-cost/ 301
+/articles/cout-fiscal-nordique /articles/nordic-fiscal-cost/ 301

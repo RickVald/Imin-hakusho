@@ -59,7 +59,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <tbody>
           <!-- 1. 人口比率 -->
           <tr>
-            <td class="theme-label"><a href="/themes/demographie/">人口比率<br/><small>定義は国により異なる</small></a></td>
+            <td class="theme-label"><a href="/themes/demographics/">人口比率<br/><small>定義は国により異なる</small></a></td>
             <td class="cell-yellow" data-conf="A">12.6%</td>
             <td class="cell-red" data-conf="A">21%</td>
             <td class="cell-red" data-conf="A">17.5%</td>
@@ -84,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
           <!-- 2. 財政コスト -->
           <tr>
-            <td class="theme-label"><a href="/themes/cout-fiscal/">財政コスト<br/><small>財政への純効果</small></a></td>
+            <td class="theme-label"><a href="/themes/fiscal-cost/">財政コスト<br/><small>財政への純効果</small></a></td>
             <td class="cell-red" data-conf="A">−160億DKK</td>
             <td class="cell-yellow" data-conf="A">+60億SEK</td>
             <td class="cell-red" data-conf="A" title="R3グループ（庇護・非欧州家族移民）一人あたり純現在価値、2015コホート、2015〜2100年（SSB / Holmøy &amp; Strøm 2017）">−410万NOK*</td>
@@ -109,7 +109,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
           <!-- 3. 雇用格差 -->
           <tr>
-            <td class="theme-label"><a href="/themes/marche-travail/">雇用格差<br/><small>就業率の差</small></a></td>
+            <td class="theme-label"><a href="/themes/labour-market/">雇用格差<br/><small>就業率の差</small></a></td>
             <td class="cell-red" data-conf="A">−10pt</td>
             <td class="cell-red" data-conf="A">−10.5pt</td>
             <td class="cell-red" data-conf="A">−12pt</td>
@@ -159,7 +159,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
           <!-- 5. 犯罪統計 -->
           <tr>
-            <td class="theme-label"><a href="/themes/securite/">犯罪統計<br/><small>出身別データの有無</small></a></td>
+            <td class="theme-label"><a href="/themes/crime/">犯罪統計<br/><small>出身別データの有無</small></a></td>
             <td class="cell-red" data-conf="A">×2.6（年齢補正）</td>
             <td class="cell-red" data-conf="A">×2.5（粗率）</td>
             <td class="cell-yellow" data-conf="B">過剰代表↓</td>
@@ -282,7 +282,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   "@type": "DataCatalog",
   "name": "移民白書 — 20カ国比較マトリクス",
   "description": "西欧・北米・オセアニア20カ国の移民統計を7テーマ（財政・雇用・PISA・犯罪・住宅・庇護）で比較した公式データカタログ。",
-  "url": "https://imin-hakusho.com/themes/tableau-comparatif/",
+  "url": "https://imin-hakusho.com/themes/comparison-matrix/",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "creator": {
     "@type": "Organization",
@@ -294,14 +294,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       "@type": "Dataset",
       "name": "移民影響マトリクス — 20カ国×7テーマ",
       "description": "各国の公式統計・国際機関データに基づく移民統計の横断比較。",
-      "url": "https://imin-hakusho.com/themes/tableau-comparatif/",
+      "url": "https://imin-hakusho.com/themes/comparison-matrix/",
       "keywords": ["移民", "統計", "財政影響", "雇用格差", "PISA", "犯罪", "住宅", "庇護申請"],
       "temporalCoverage": "2020/2024",
       "spatialCoverage": "Western Europe, North America, Oceania",
       "distribution": {
         "@type": "DataDownload",
         "encodingFormat": "text/csv",
-        "contentUrl": "https://imin-hakusho.com/themes/tableau-comparatif/"
+        "contentUrl": "https://imin-hakusho.com/themes/comparison-matrix/"
       }
     }
   ]
