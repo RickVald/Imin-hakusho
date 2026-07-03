@@ -111,7 +111,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <tr><td><a href="/en/countries/austria/">&#x1F1E6;&#x1F1F9; Austria</a></td><td>20.5%</td><td>-11 pt</td><td>-25 pt</td><td>No official estimate</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/switzerland/">&#x1F1E8;&#x1F1ED; Switzerland</a></td><td>27.7%</td><td>-7 pt</td><td>-19 pt</td><td>No official estimate</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/france/">&#x1F1EB;&#x1F1F7; France</a></td><td>11.3%</td><td>-16 pt</td><td>~-20 pt</td><td>No official estimate</td><td>18-20% of perps (SSMSI)</td></tr>
-        <tr><td><a href="/en/countries/belgium/">&#x1F1E7;&#x1F1EA; Belgium</a></td><td>36.6%</td><td>-20 pt</td><td>-17 pt</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/belgium/">&#x1F1E7;&#x1F1EA; Belgium</a></td><td>13.8%*</td><td>-20 pt</td><td>-17 pt</td><td>No official estimate</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/netherlands/">&#x1F1F3;&#x1F1F1; Netherlands</a></td><td>24.6%</td><td>-15 pt</td><td>-27 pt</td><td>Negative (refugees, CPB)</td><td>3&times; ratio (CBS)</td></tr>
         <tr><td><a href="/en/countries/uk/">&#x1F1EC;&#x1F1E7; United Kingdom</a></td><td>19%</td><td>-8 pt</td><td>-12 pt</td><td>Mixed (EEA+, non-EEA-)</td><td>~12% of convictions (MoJ)</td></tr>
         <tr><td><a href="/en/countries/ireland/">&#x1F1EE;&#x1F1EA; Ireland</a></td><td>12%</td><td>-6 pt</td><td>No data</td><td>No official estimate</td><td>No official data</td></tr>
@@ -119,7 +119,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <tr><td><a href="/en/countries/spain/">&#x1F1EA;&#x1F1F8; Spain</a></td><td>14%</td><td>-8 pt</td><td>-7 pt</td><td>Positive GDP contribution</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/portugal/">&#x1F1F5;&#x1F1F9; Portugal</a></td><td>14%</td><td>-9 pt</td><td>-25 pt</td><td>No official estimate</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/czechia/">&#x1F1E8;&#x1F1FF; Czech Republic</a></td><td>10.4%</td><td>-3 pt</td><td>No data</td><td>No official estimate</td><td>No official data</td></tr>
-        <tr><td><a href="/en/countries/usa/">&#x1F1FA;&#x1F1F8; United States</a></td><td>14.3%</td><td>-4 pt</td><td>-16 pt</td><td>Mixed (federal+, state-)</td><td>Lower than native-born (DOJ)</td></tr>
+        <tr><td><a href="/en/countries/usa/">&#x1F1FA;&#x1F1F8; United States</a></td><td>14.3%</td><td>-4 pt</td><td>-16 pt</td><td>Mixed (federal+, state-)</td><td>No systematic federal cross-tabulation</td></tr>
         <tr><td><a href="/en/countries/canada/">&#x1F1E8;&#x1F1E6; Canada</a></td><td>23%</td><td>-7 pt</td><td>-16 pt</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/australia/">&#x1F1E6;&#x1F1FA; Australia</a></td><td>32%</td><td>-4 pt</td><td>+26 pt (above native-born)</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/new-zealand/">&#x1F1F3;&#x1F1FF; New Zealand</a></td><td>28.8%</td><td>-5 pt</td><td>+16 pt (above native-born)</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
@@ -198,7 +198,7 @@ const DATA = {
   },
   be: {
     name: "Belgium", flag: "be", slug: "belgium",
-    population: { value: "36.6%", note: "Immigrant-background population (2023, Statbel)", signal: "red" },
+    population: { value: "13.8%", note: "Non-Belgian nationals (Jan 2026, Statbel). Note: the broader foreign-origin population (including naturalised citizens) reaches 36.6%.", signal: "yellow" },
     fiscal:     { value: "Not published", note: "No official estimate", signal: "gray" },
     employment: { value: "−20pt", note: "Employment rate gap (Statbel 2023)", signal: "red" },
     education:  { value: "−17pt", note: "PISA 2022 maths gap after ESCS correction", signal: "red" },
@@ -266,7 +266,7 @@ const DATA = {
     fiscal:     { value: "Mixed", note: "Federal net positive (NAS 2017); state/local net negative", signal: "yellow" },
     employment: { value: "−4pt", note: "Employment rate gap (BLS 2023)", signal: "yellow" },
     education:  { value: "−16pt", note: "PISA 2022 gap (2nd generation improves significantly)", signal: "green" },
-    crime:      { value: "Lower", note: "Immigrants have lower crime rates than native-born (Cato Institute / DOJ data)", signal: "green" },
+    crime:      { value: "—", note: "No systematic federal cross-tabulation of crime by immigration status (see USA page for detail)", signal: "gray" },
   },
   ca: {
     name: "Canada", flag: "ca", slug: "canada",
