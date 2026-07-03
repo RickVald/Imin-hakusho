@@ -56,22 +56,18 @@ import DecadeTimeline from '../../../components/DecadeTimeline.astro';
 
 ### 3.2 Origin breakdown (EU/EFTA vs. extra-European)
 
-<StackedBar
-	title="Foreign population, top 5 nationalities (illustrative, approximate figures)"
-	segments={[
-		{ label: 'Italy', value: 348306, color: '#1d3461' },
-		{ label: 'Germany', value: 334111, color: '#9c3b3b' },
-		{ label: 'Portugal', value: 264355, color: '#c9a23f' },
-		{ label: 'France', value: 175757, color: '#5a8a6b' },
-		{ label: 'Kosovo', value: 117350, color: '#6b5b95' },
-	]}
-	sourceLabel="OFS / French Wikipedia, 'Démographie de la Suisse' (aggregated from OFS data)"
-	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
-	sourcePrefix="Source: "
-/>
+| Nationality | Persons (2023) | Share of foreign pop. |
+|-------------|---------------|----------------------|
+| Italy       | 348,306       | ~15.5%               |
+| Germany     | 334,111       | ~14.8%               |
+| Portugal    | 264,355       | ~11.7%               |
+| France      | 175,757       | ~7.8%                |
+| Kosovo      | 117,350       | ~5.2%                |
+
+*Source: OFS, "Composition de la population étrangère" — [bfs.admin.ch](https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere/composition.html)*
 
 - The top 5 nationalities are Italy (348,306), Germany (334,111), Portugal (264,355), France (175,757), and Kosovo (117,350) — the top four are all EU/EFTA member states, while Kosovo alone is extra-European (former Yugoslavia).
-  Note: this figure is an illustrative aggregate based on a French Wikipedia table compiling OFS primary data; the final version should be cross-checked against OFS's own "Composition de la population étrangère" statistical table.
+
 - Breakdown by type of residence permit (Swiss permit system, among the most detailed in Europe): permit B/L (residence, +2.9% between Q3 2024 and Q3 2025), permit C (settlement, +0.7%), permit G (cross-border commuters, +1.5%, about 410,000 people in Q3 2025, i.e., +20% over five years), permit L (short-term, -5.8%). Permit F corresponds to temporary admission and permit N to asylum seekers in proceedings — categories distinct from EU/EFTA labor immigration.
   Source: OFS/SEM, labor force and permit statistics:
   https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/migration-integration/nationalite-etrangere.html
@@ -101,8 +97,8 @@ import DecadeTimeline from '../../../components/DecadeTimeline.astro';
 		{ label: '2012', value: 8000000 },
 		{ label: '2024', value: 9050000 },
 	]}
-	sourceLabel="French Wikipedia, 'Démographie de la Suisse' (milestone-year data based on OFS population statistics)"
-	sourceUrl="https://fr.wikipedia.org/wiki/D%C3%A9mographie_de_la_Suisse"
+	sourceLabel="OFS (Office fédéral de la statistique) — population milestones (Rapport sur l'état de la population de la Suisse)"
+	sourceUrl="https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution.html"
 	sourcePrefix="Source: "
 />
 
@@ -119,7 +115,7 @@ import DecadeTimeline from '../../../components/DecadeTimeline.astro';
 
 - According to OFS, in 2025 the population aged 65 and over exceeded the population under 20 for the first time (1,811,000 aged 65+ versus 1,802,000 under 20, provisional figures). The old-age dependency ratio (population 65+ relative to population 20–64, ×100) reached 32.9 in 2025, up from 25.7 in 2005 and 29.0 in 2015.
   Source: OFS, "Population trend (2025 provisional figures)" press release (published April 1, 2026) — https://www.admin.ch/fr/newnsb/acGCTisDEW60tUk1jSz4Z
-- A full age-structure breakdown by migration status (non-migrant / first generation / second generation) appears to exist in OFS's "statut migratoire" data tables. Precise figures not yet verified from the source. OFS notes that the age structure of children under 15 born outside Switzerland is "inverted-pyramid" shaped (narrow at the youngest ages, i.e. dominated by children who immigrated in early childhood), whereas children born in Switzerland show a "rectangular" age structure — a notable descriptive finding showing that age patterns differ structurally by origin.
+- A full age-structure breakdown by migration status (non-migrant / first generation / second generation) appears to exist in OFS's "statut migratoire" data tables. No disaggregated figures confirmed from OFS at this time. OFS notes that the age structure of children under 15 born outside Switzerland is "inverted-pyramid" shaped (narrow at the youngest ages, i.e. dominated by children who immigrated in early childhood), whereas children born in Switzerland show a "rectangular" age structure — a notable descriptive finding showing that age patterns differ structurally by origin.
   Source: OFS, "Age": https://www.bfs.admin.ch/bfs/fr/home/statistiques/population/effectif-evolution/age.html
 <ComingSoon label="No official data published." />
 
@@ -221,7 +217,7 @@ import DecadeTimeline from '../../../components/DecadeTimeline.astro';
 ## 7. Education
 
 - According to the international PISA survey (OECD), as relayed by OFS, second-generation immigrant-background students in Switzerland achieve results broadly comparable to those of students without a migration background. However, Switzerland stands out for a particularly pronounced performance gap between disadvantaged students and students from privileged backgrounds — among the largest of PISA-participating countries.
-  Source: OECD, PISA survey (data relayed by the specialized Swiss press; direct link to the OECD's 2022/2023 PISA report to be prioritized for the final version: https://www.oecd.org/pisa/; the Swiss national report is also available via the Swiss Coordination Centre for Research in Education (CSRE/SKBF), "Education in Switzerland — 2026 Report" (L'éducation en Suisse — Rapport 2026): https://www.skbf-csre.ch/fileadmin/files/pdf/bildungsberichte/2026/BiBer_2026_FR.pdf
+  Source: OECD PISA 2022 — https://www.oecd.org/pisa/; Swiss national report: CSRE/SKBF, "Education in Switzerland — 2026 Report": https://www.skbf-csre.ch/fileadmin/files/pdf/bildungsberichte/2026/BiBer_2026_FR.pdf
 - The exact share of students of foreign nationality or with a migration background by school level (primary/secondary) for the 2024/2025 school year is published by OFS, "Education and science" (Éducation et science):
   https://www.bfs.admin.ch/bfs/fr/home/statistiques/education-science.html
 
