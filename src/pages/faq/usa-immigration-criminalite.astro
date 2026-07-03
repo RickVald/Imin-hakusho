@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="米国の移民と犯罪：連邦公式データが示すもの | 移民白書" lang="ja" altHref="/en/faq/us-immigration-crime-statistics/" description="米国は移民ステータス別の系統的な連邦犯罪統計を公表していません。存在するデータと、それが示せないものを解説します。">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <h1>米国の移民と犯罪：連邦公式データが示すもの</h1>
+    <p class="intro">スウェーデン、デンマーク、ノルウェーとは異なり、米国は移民ステータス別に分類された系統的な連邦犯罪統計を公表していません。このページでは連邦レベルで存在するデータと、そこから確立できないことを説明します。</p>
+    <div class="lang-switch"><a href="/en/faq/us-immigration-crime-statistics/">🌐 Read in English</a></div>
+  </div>
+
+  <section>
+    <h2>存在する連邦データ</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>データソース</th>
+          <th>カバー範囲</th>
+          <th>カバーしないもの</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.bjs.gov" rel="noopener">司法統計局（BJS）</a></td>
+          <td>人種・民族別収監率；被害調査（NCVS）</td>
+          <td>出生地・移民ステータス別の系統的な分類なし</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.fbi.gov/services/cjis/ucr" rel="noopener">FBI統一犯罪報告（UCR）/ NIBRS</a></td>
+          <td>年齢・性別・人種別の逮捕・犯罪データ</td>
+          <td>移民ステータス変数は収集されていない</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.ice.gov" rel="noopener">ICE / DHS</a></td>
+          <td>強制送還・法執行データ；犯罪歴を持つ外国人の追放</td>
+          <td>一般人口の犯罪率とは比較不可；法執行の優先事項を反映、犯罪発生率ではない</td>
+        </tr>
+        <tr>
+          <td>州レベルデータ（州により異なる）</td>
+          <td>一部の州は市民権別収監率を公表（例：テキサスDPS）</td>
+          <td>全国代表性なし；カバー範囲と方法論は州により異なる</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>系統的な連邦クロス集計が存在しない理由</h2>
+    <ul>
+      <li>移民ステータスはFBIのUCR/NIBRSの逮捕データベースでは変数として収集されていません。</li>
+      <li>国勢調査局の米国地域社会調査（ACS）は出生地と市民権を収集しますが、連邦レベルで刑事司法行政データとリンクされていません。</li>
+      <li>司法省は、米国生まれ対外国生まれ、または正規対非正規人口の犯罪率を比較する定期報告書を公表していません。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>学術研究と州レベル研究が示すもの</h2>
+    <p>連邦クロス集計がない中、学術研究者はリンクされた行政データや州レベルの資料を使用しています。査読済み研究（Chalfin 2014、Butcher &amp; Piehl 2007、Adelman et al. 2017など）は一貫して、移民（非正規移民を含む）が米国生まれのアメリカ人より低い収監率であることを示しています。ただし、これらは公式連邦統計ではなく、特定の方法論的選択を反映しています。</p>
+  </section>
+
+  <section>
+    <h2>比較における意味</h2>
+    <ul>
+      <li>米国は、移民系別の国別一人当たり被疑者率または有罪判決率を公表しているスウェーデン（BRÅ）、デンマーク（DST）、ノルウェー（SSB）とこの指標では比較できません。</li>
+      <li>移民白書では、存在しない形の数値を提示するのではなく、米国の移民ステータス別犯罪セルを「系統的な連邦クロス集計なし」として記載しています。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>Bureau of Justice Statistics. <em>National Crime Victimization Survey (NCVS)</em>. <a href="https://www.bjs.gov" rel="noopener">bjs.gov</a></li>
+      <li>FBI. <em>Crime in the United States / NIBRS</em>. <a href="https://www.fbi.gov/services/cjis/ucr" rel="noopener">fbi.gov</a></li>
+      <li>Texas Department of Public Safety. <em>Conviction and Arrest Rates of Undocumented Immigrants</em>（年次）. <a href="https://www.dps.texas.gov" rel="noopener">dps.texas.gov</a></li>
+    </ul>
+  </section>
+
+  <div class="related-countries">
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a href="/countries/usa/">🇺🇸 米国 ― 全データ</a>
+      <a href="/faq/criminalite-suede/">スウェーデンBRÅ犯罪データ</a>
+      <a href="/themes/crime/">犯罪テーマ ― 全カ国</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "米国政府は移民ステータス別の犯罪統計を公表していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ。米国は移民ステータスまたは出生地別に分類された系統的な連邦犯罪統計を公表していません。FBIの統一犯罪報告（UCR）/NIBRSデータベースは年齢・性別・人種別の逮捕を記録しますが、移民ステータスは変数として収集されていません。司法統計局は、全国レベルで米国生まれ対外国生まれの人口の犯罪率を比較する定期報告書を公表していません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "利用可能な米国データは移民と犯罪について何を示していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "連邦クロス集計がない中、リンクされた行政データを使用した査読済み学術研究（Butcher & Piehl 2007、Chalfin 2014、Adelman et al. 2017）は一貫して、移民（非正規移民を含む）が米国生まれのアメリカ人より低い収監率であることを示しています。最も引用される州レベルの公式データであるテキサスDPSも、正規・非正規移民の双方が米国生まれのテキサス市民より低い有罪判決率を示しています。これらの知見は、異なる指標と人口を使用するスウェーデンBRÅやデンマークDSTなどの欧州各国統計と直接比較することはできません。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
+.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
+  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
+</BaseLayout>

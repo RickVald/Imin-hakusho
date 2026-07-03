@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Belgium immigrant population share: what official figures actually measure | Immigration Factbook" lang="en" altHref="/faq/belgique-population-immigree/" description="Belgium's Statbel reports 13.8% non-Belgian nationals and 36.6% foreign-origin population (including naturalised citizens). Both figures are official — they measure different things.">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/en/">Immigration Factbook</a> › <span>FAQ</span></nav>
+    <h1>Belgium immigrant population share: what official figures actually measure</h1>
+    <p class="intro">Belgium has two widely cited figures for its immigrant population: 13.8% and 36.6%. Both are official. They measure different things, and conflating them is a common source of confusion.</p>
+    <div class="lang-switch"><a href="/faq/belgique-population-immigree/">🌐 日本語版</a></div>
+  </div>
+
+  <section>
+    <h2>The two official figures (Statbel 2026)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Figure</th>
+          <th>What it measures</th>
+          <th>Source</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>13.8%</strong></td>
+          <td>Non-Belgian nationals — people currently holding non-Belgian citizenship, registered in population registers (January 2026)</td>
+          <td><a href="https://statbel.fgov.be" rel="noopener">Statbel 2026</a></td>
+        </tr>
+        <tr>
+          <td><strong>36.6%</strong></td>
+          <td>Population of foreign origin — persons born abroad <em>or</em> with at least one parent born abroad, regardless of current nationality (includes naturalised citizens)</td>
+          <td><a href="https://statbel.fgov.be" rel="noopener">Statbel / census-based estimate</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Why the gap is so large</h2>
+    <p>Belgium has a high naturalisation rate. Many people born abroad or with foreign-born parents have acquired Belgian citizenship and are therefore <em>not</em> counted in the 13.8% figure. They are counted in the 36.6% figure.</p>
+    <ul>
+      <li>The 13.8% figure counts current legal nationality — it excludes all naturalised citizens.</li>
+      <li>The 36.6% figure counts ancestry — it includes naturalised citizens and their children if they were themselves born abroad or have a parent born abroad.</li>
+      <li>Neither figure is wrong. They answer different questions.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Which figure to use?</h2>
+    <ul>
+      <li>For legal/administrative comparisons (labour market access, voting rights, social entitlements): use <strong>13.8%</strong> (current nationality).</li>
+      <li>For long-run demographic analysis or integration studies: use <strong>36.6%</strong> (foreign origin), but note it conflates first- and second-generation migrants and naturalised citizens — three very different groups.</li>
+      <li>For cross-country comparisons with Denmark, Sweden, or Norway: their published figures are typically "foreign-born" (place of birth, regardless of nationality). Belgium's 13.8% (nationality) is <em>not</em> directly comparable to those figures.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Primary source</h2>
+    <ul>
+      <li>Statbel (2026). <em>Population étrangère en Belgique — chiffres au 1er janvier 2026</em>. <a href="https://statbel.fgov.be" rel="noopener">statbel.fgov.be</a></li>
+    </ul>
+  </section>
+
+  <div class="related-countries">
+    <h2>Related pages</h2>
+    <div class="related-links">
+      <a href="/en/countries/belgium/">🇧🇪 Belgium — full data</a>
+      <a href="/en/themes/demographics/">Demographics theme</a>
+      <a href="/en/themes/comparison-matrix/">20-country matrix</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What percentage of Belgium's population is immigrant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Belgium has two official figures. 13.8% are non-Belgian nationals (people with non-Belgian citizenship, Statbel January 2026). 36.6% are of foreign origin (born abroad or with at least one parent born abroad, including naturalised citizens). Both figures are official (Statbel). The gap reflects Belgium's high naturalisation rate — many people of foreign origin have acquired Belgian citizenship and are therefore counted in the 36.6% figure but not the 13.8% figure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is 36.6% or 13.8% the correct figure for Belgium's immigrant population?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Both are correct — they measure different things. 13.8% counts current non-Belgian nationals (legal nationality). 36.6% counts people of foreign origin (ancestry, including naturalised citizens). For administrative and legal comparisons, use 13.8%. For long-run demographic analysis, use 36.6% with appropriate caveats. For cross-country comparisons using 'foreign-born' as the measure (used by Denmark, Sweden, Norway), neither figure is directly comparable."
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
+.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
+  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
+</BaseLayout>

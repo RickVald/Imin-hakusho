@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="ベルギーの移民人口比率：公式統計が実際に測定するもの | 移民白書" lang="ja" altHref="/en/faq/belgium-immigrant-population/" description="ベルギーのStatbelは13.8%（非ベルギー国籍者）と36.6%（外国系、帰化者を含む）の2つの公式数値を発表しています。両方とも正確ですが、異なるものを測定しています。">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <h1>ベルギーの移民人口比率：公式統計が実際に測定するもの</h1>
+    <p class="intro">ベルギーの移民人口について広く引用される2つの数値があります：13.8%と36.6%。どちらも公式統計です。異なるものを測定しており、混同は誤解の一般的な原因です。</p>
+    <div class="lang-switch"><a href="/en/faq/belgium-immigrant-population/">🌐 Read in English</a></div>
+  </div>
+
+  <section>
+    <h2>2つの公式数値（Statbel 2026年）</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>数値</th>
+          <th>測定対象</th>
+          <th>出典</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>13.8%</strong></td>
+          <td>非ベルギー国籍者 ― 現在非ベルギー国籍を保有し、人口登録に登録されている人（2026年1月時点）</td>
+          <td><a href="https://statbel.fgov.be" rel="noopener">Statbel 2026</a></td>
+        </tr>
+        <tr>
+          <td><strong>36.6%</strong></td>
+          <td>外国系人口 ― 外国生まれ、または少なくとも一方の親が外国生まれの人（帰化市民を含む、現在の国籍を問わない）</td>
+          <td><a href="https://statbel.fgov.be" rel="noopener">Statbel / センサスベース推計</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>なぜ差が大きいのか</h2>
+    <p>ベルギーは帰化率が高い国です。外国生まれまたは外国生まれの親を持つ多くの人がベルギー国籍を取得しており、そのため13.8%の数値には含まれません。36.6%の数値には含まれます。</p>
+    <ul>
+      <li>13.8%は現在の法的国籍を数えます ― 帰化市民は全員除外されます。</li>
+      <li>36.6%は出身地を数えます ― 帰化市民と、外国生まれまたは外国生まれの親を持つその子供が含まれます。</li>
+      <li>どちらの数値も誤りではありません。異なる問いに答えています。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>どちらの数値を使うべきか</h2>
+    <ul>
+      <li>法的・行政的比較（労働市場へのアクセス、投票権、社会給付）：<strong>13.8%</strong>（現在の国籍）を使用。</li>
+      <li>長期的な人口動態分析や統合研究：<strong>36.6%</strong>（外国系）を使用しますが、一世・二世移民と帰化市民という非常に異なる3グループが混在していることに注意が必要です。</li>
+      <li>デンマーク、スウェーデン、ノルウェーとの国際比較：これらの国は「外国生まれ（foreign-born）」を使用しています。ベルギーの13.8%（国籍ベース）はこれらの数値と直接比較できません。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>Statbel (2026). <em>Population étrangère en Belgique — chiffres au 1er janvier 2026</em>. <a href="https://statbel.fgov.be" rel="noopener">statbel.fgov.be</a></li>
+    </ul>
+  </section>
+
+  <div class="related-countries">
+    <h2>関連ページ</h2>
+    <div class="related-links">
+      <a href="/countries/belgium/">🇧🇪 ベルギー ― 全データ</a>
+      <a href="/themes/demographie/">人口動態テーマ</a>
+      <a href="/themes/tableau-comparatif/">20カ国比較マトリクス</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "ベルギーの移民人口は何パーセントですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ベルギーには2つの公式数値があります。13.8%は非ベルギー国籍者（ベルギー国籍以外の国籍を持つ人、Statbel 2026年1月）です。36.6%は外国系（外国生まれ、または少なくとも一方の親が外国生まれ、帰化市民を含む）です。両方ともStatbelの公式統計です。差はベルギーの高い帰化率を反映しており、外国系の多くの人がベルギー国籍を取得し、36.6%の数値には含まれますが13.8%には含まれません。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
+.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
+  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+</style>
+</BaseLayout>
