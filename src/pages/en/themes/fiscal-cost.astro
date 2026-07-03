@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import BarChart from '../../../components/BarChart.astro';
 import KeyFigure from '../../../components/KeyFigure.astro';
@@ -38,7 +38,7 @@ import KeyFigure from '../../../components/KeyFigure.astro';
         { label: 'Austria (post-2015 asylum migrants)', value: -8.1, note: 'EcoAustria, cumulative through 2020' },
         { label: 'Germany (2015 refugee cohort)', value: -2.1, note: 'DIW/IAB, annual avg. through 2030' },
         { label: 'Denmark (non-Western immigrants)', value: -3.6, note: 'Finance Ministry, DKK 27bn/yr ≈ EUR' },
-        { label: 'Sweden (all foreign-born)', value: -0.6, note: 'Konjunkturinstitutet, SEK 6bn/yr' },
+        { label: 'Sweden (labour migrants only)', value: 0.6, note: 'Konjunkturinstitutet 2020, +SEK 6bn/yr contribution' },
         { label: 'Austria (all migration forms)', value: 1.4, note: 'EcoAustria, cumulative through 2020' },
         { label: 'Italy (annual)', value: 1.2, note: 'Fondazione Leone Moressa, 2024 report' },
         { label: 'Belgium (all immigrants)', value: 3.0, note: 'OECD International Migration Outlook' },
@@ -76,14 +76,14 @@ import KeyFigure from '../../../components/KeyFigure.astro';
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/en/countries/sweden/">Sweden</a></td>
-            <td class="figure negative">+SEK 6bn/year (net cost)</td>
+            <td class="figure positive">+SEK 6bn/year (contribution, labour migrants only)</td>
             <td>Konjunkturinstitutet (National Institute of Economic Research)</td>
-            <td>All foreign-born</td>
-            <td>2022 data</td>
+            <td>Labour migrants only (work permit holders). Total balance for all immigrant categories not officially published.</td>
+            <td>2020 study (KI / Konjunkturinstitutet)</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/en/countries/norway/">Norway</a></td>
-            <td class="figure negative">+NOK 4.1m/person (Group R3)</td>
+            <td class="figure negative">−NOK 4.1m/person (Group R3)</td>
             <td>SSB (Holmøy &amp; Strøm, commissioned by Finance Ministry / NOU 2017:2)</td>
             <td>Net present value cost per immigrant. R1 (Western Europe, North America, Australia): net fiscal contribution (negative cost)</td>
             <td>2015 additional immigrants, 2015–2100 projection</td>

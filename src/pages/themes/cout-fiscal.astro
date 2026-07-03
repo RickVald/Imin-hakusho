@@ -1,4 +1,4 @@
----
+﻿---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BarChart from '../../components/BarChart.astro';
 import KeyFigure from '../../components/KeyFigure.astro';
@@ -38,7 +38,7 @@ import KeyFigure from '../../components/KeyFigure.astro';
         { label: 'デンマーク（非欧米系）', value: -3.6, note: '財務省・270億DKK/年 ≈ EUR換算' },
         { label: 'ドイツ（2015年難民）', value: -2.1, note: 'DIW/IAB、2030年まで平均' },
         { label: 'オーストリア（庇護申請者）', value: -8.1, note: 'EcoAustria、2015年以降累積' },
-        { label: 'スウェーデン', value: -0.6, note: 'Konjunkturinstitutet、外国出生者全体' },
+        { label: 'スウェーデン（就労移民のみ）', value: 0.6, note: 'Konjunkturinstitutet 2020、+60億SEK寄与' },
         { label: 'オーストリア（移民全体）', value: 1.4, note: 'EcoAustria、労働移民含む累積' },
         { label: 'ベルギー', value: 3.0, note: 'OECD、移民全体' },
         { label: 'イタリア', value: 1.2, note: 'レオーネ・モレッサ財団、年間' },
@@ -76,14 +76,14 @@ import KeyFigure from '../../components/KeyFigure.astro';
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
-            <td class="figure negative">+60億SEK/年（純負担）</td>
+            <td class="figure positive">+60億SEK/年（寄与、就労移民のみ）</td>
             <td>Konjunkturinstitutet（国立経済研究所）</td>
             <td>外国出生者全体</td>
             <td>2022年データ</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/norway/">ノルウェー</a></td>
-            <td class="figure negative">+410万NOK/人（R3グループ）</td>
+            <td class="figure negative">−410万NOK/人（R3グループ）</td>
             <td>SSB（Holmøy &amp; Strøm、財務省委託）</td>
             <td>R3グループ（その他の国々）出身者1人当たり純現在価値コスト。西欧・北米出身（R1）は純貢献</td>
             <td>2015年追加移民・2015-2100年推計</td>
