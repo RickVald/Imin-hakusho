@@ -83,9 +83,51 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   </div>
 
   <div id="placeholder" class="placeholder">
-    <div class="placeholder-icon">🗺️</div>
+    <div class="placeholder-icon">&#x1F5FA;&#xFE0F;</div>
     <p>Select a country from the menu above</p>
   </div>
+
+  <section class="static-summary">
+    <h2>Key Indicators — 20 Countries at a Glance</h2>
+    <p class="static-note">Summary of official primary-source figures. Select a country above for detail and source links.</p>
+    <div class="table-scroll">
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Immigrant share</th>
+          <th>Employment gap</th>
+          <th>PISA gap (maths)</th>
+          <th>Fiscal data</th>
+          <th>Crime data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="/en/countries/denmark/">&#x1F1E9;&#x1F1F0; Denmark</a></td><td>12.6%</td><td>-14.5 pt</td><td>-28 pt</td><td>-DKK 16bn/yr</td><td>2.6&times; ratio (DST)</td></tr>
+        <tr><td><a href="/en/countries/sweden/">&#x1F1F8;&#x1F1EA; Sweden</a></td><td>21%</td><td>-16 pt</td><td>-34 pt</td><td>+SEK 6bn/yr (KI)</td><td>~2.5&times; ratio (BR&#x00C5;)</td></tr>
+        <tr><td><a href="/en/countries/norway/">&#x1F1F3;&#x1F1F4; Norway</a></td><td>17.5%</td><td>-12 pt</td><td>-36 pt</td><td>-NOK 410k/refugee lifetime</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/finland/">&#x1F1EB;&#x1F1EE; Finland</a></td><td>11.7%</td><td>-18 pt</td><td>-42 pt (largest OECD gap)</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/germany/">&#x1F1E9;&#x1F1EA; Germany</a></td><td>25.6%</td><td>-13 pt</td><td>-32 pt</td><td>-&#x20AC;2.1bn/yr (Ifo)</td><td>3.7&times; suspect ratio (BKA)</td></tr>
+        <tr><td><a href="/en/countries/austria/">&#x1F1E6;&#x1F1F9; Austria</a></td><td>20.5%</td><td>-11 pt</td><td>-25 pt</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/switzerland/">&#x1F1E8;&#x1F1ED; Switzerland</a></td><td>27.7%</td><td>-7 pt</td><td>-19 pt</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/france/">&#x1F1EB;&#x1F1F7; France</a></td><td>11.3%</td><td>-16 pt</td><td>~-20 pt</td><td>No official estimate</td><td>18-20% of perps (SSMSI)</td></tr>
+        <tr><td><a href="/en/countries/belgium/">&#x1F1E7;&#x1F1EA; Belgium</a></td><td>36.6%</td><td>-20 pt</td><td>-17 pt</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/netherlands/">&#x1F1F3;&#x1F1F1; Netherlands</a></td><td>24.6%</td><td>-15 pt</td><td>-27 pt</td><td>Negative (refugees, CPB)</td><td>3&times; ratio (CBS)</td></tr>
+        <tr><td><a href="/en/countries/uk/">&#x1F1EC;&#x1F1E7; United Kingdom</a></td><td>19%</td><td>-8 pt</td><td>-12 pt</td><td>Mixed (EEA+, non-EEA-)</td><td>~12% of convictions (MoJ)</td></tr>
+        <tr><td><a href="/en/countries/ireland/">&#x1F1EE;&#x1F1EA; Ireland</a></td><td>12%</td><td>-6 pt</td><td>No data</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/italy/">&#x1F1EE;&#x1F1F9; Italy</a></td><td>9.1%</td><td>-5 pt</td><td>No data</td><td>Positive (INPS contributions)</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/spain/">&#x1F1EA;&#x1F1F8; Spain</a></td><td>14%</td><td>-8 pt</td><td>-7 pt</td><td>Positive GDP contribution</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/portugal/">&#x1F1F5;&#x1F1F9; Portugal</a></td><td>14%</td><td>-9 pt</td><td>-25 pt</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/czechia/">&#x1F1E8;&#x1F1FF; Czech Republic</a></td><td>10.4%</td><td>-3 pt</td><td>No data</td><td>No official estimate</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/usa/">&#x1F1FA;&#x1F1F8; United States</a></td><td>14.3%</td><td>-4 pt</td><td>-16 pt</td><td>Mixed (federal+, state-)</td><td>Lower than native-born (DOJ)</td></tr>
+        <tr><td><a href="/en/countries/canada/">&#x1F1E8;&#x1F1E6; Canada</a></td><td>23%</td><td>-7 pt</td><td>-16 pt</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/australia/">&#x1F1E6;&#x1F1FA; Australia</a></td><td>32%</td><td>-4 pt</td><td>+26 pt (above native-born)</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/new-zealand/">&#x1F1F3;&#x1F1FF; New Zealand</a></td><td>28.8%</td><td>-5 pt</td><td>+16 pt (above native-born)</td><td>Mixed (skilled migrants +)</td><td>No official data</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="static-note">Employment gap = difference in employment rate between immigrants and native-born. PISA gap = adjusted for socioeconomic status (ESCS). Sources: national statistics offices, OECD PISA 2022, ministry publications. See individual country pages for full citations.</p>
+  </section>
 </main>
 
 <script>
@@ -381,5 +423,45 @@ select.addEventListener("change", () => {
   color: var(--color-muted);
 }
 .placeholder-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+.static-summary {
+  max-width: 1100px;
+  margin: 3rem auto 2rem;
+  padding: 0 1.5rem;
+}
+.static-summary h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.static-note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.table-scroll { overflow-x: auto; }
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+.summary-table th {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  color: var(--color-text);
+  font-weight: 700;
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  white-space: nowrap;
+}
+.summary-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+  vertical-align: top;
+}
+.summary-table tr:hover td { background: color-mix(in srgb, var(--color-accent) 5%, transparent); }
+.summary-table td:first-child a { color: var(--color-accent); text-decoration: none; font-weight: 600; }
+.summary-table td:first-child a:hover { text-decoration: underline; }
 </style>
 </BaseLayout>

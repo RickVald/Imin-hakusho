@@ -15,15 +15,15 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 
 ## 1. Official institutions
 
-- Statistics Sweden (Statistiska centralbyrÃ¥n, SCB) — national statistical institute: https://www.scb.se
-- The Swedish National Council for Crime Prevention (Brottsförebyggande rÃ¥det, BRÃ…)
+- Statistics Sweden (Statistiska centralbyr¥¥n, SCB) — national statistical institute: https://www.scb.se
+- The Swedish National Council for Crime Prevention (Brottsförebyggande r¥¥det, BR¥…)
 - The Swedish Migration Agency (Migrationsverket) — migration and asylum statistics
-- The Swedish Police Authority (Polisen) — maintains the official list of "vulnerable areas" (utsatta omrÃ¥den)
+- The Swedish Police Authority (Polisen) — maintains the official list of "vulnerable areas" (utsatta omr¥¥den)
 
 ## 2. Key datasets
 
 - SCB: employment rate by country of birth and length of residence
-- BRÃ… reports (2005 and 2021 editions): crime and origin, with breakdowns by socioeconomic factors
+- BR¥… reports (2005 and 2021 editions): crime and origin, with breakdowns by socioeconomic factors
 - Official police list of "vulnerable areas," revised periodically
 
 ## 3. Demographics
@@ -175,12 +175,12 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 
 ## 6. Security / justice
 
-- BRÃ…'s 2021 report addresses the overrepresentation of certain groups in crime statistics by origin, with a breakdown by socioeconomic factors — an important methodological point requiring explanation.
-- Report 2021:9, "Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund" (BRÃ…, published August 25, 2021, covering 2007–2018): being registered as a crime suspect is approximately 2.5 times more frequent among foreign-born people than among Swedish-born people with two Swedish-born parents. The share of suspects in the population declined in both groups between 2007 and 2018 (a temporal comparison). For Swedish-born people with two foreign-born parents, roughly half of the overrepresentation disappears once age, sex, disposable income, education level, and municipality type are controlled for — though the gap does not fully close even after adjustment.
+- BR¥…'s 2021 report addresses the overrepresentation of certain groups in crime statistics by origin, with a breakdown by socioeconomic factors — an important methodological point requiring explanation.
+- Report 2021:9, "Misstänkta för brott bland personer med inrikes respektive utrikes bakgrund" (BR¥…, published August 25, 2021, covering 2007–2018): being registered as a crime suspect is approximately 2.5 times more frequent among foreign-born people than among Swedish-born people with two Swedish-born parents. The share of suspects in the population declined in both groups between 2007 and 2018 (a temporal comparison). For Swedish-born people with two foreign-born parents, roughly half of the overrepresentation disappears once age, sex, disposable income, education level, and municipality type are controlled for — though the gap does not fully close even after adjustment.
   Official report (PDF): https://bra.se/download/18.45e4b8e192705389a34b52/1729514247826/2021_9_Misstankta_for_brott_bland_personer_med_inrikes_respektive_utrikes_bakgrund.pdf
   Reference page: https://bra.se/rapporter/arkiv/2021-08-25-misstankta-for-brott-bland-personer-med-inrikes-respektive-utrikes-bakgrund
 - Complementary study, ESO 2025:4, "Särskilt utsatta," on the link between ethnic segregation and delinquency: https://eso.expertgrupp.se/rapporter/2025_4-sarskilt-utsatta/
-- A breakdown of crime statistics by legal/illegal residence status: not publicly confirmed (BRÃ…'s statistics classify by native-born/foreign-born origin, not by legality of residence status).
+- A breakdown of crime statistics by legal/illegal residence status: not publicly confirmed (BR¥…'s statistics classify by native-born/foreign-born origin, not by legality of residence status).
 <ComingSoon label="No official data published." />
 
 ## 7. Education
@@ -204,25 +204,25 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 ## 8. Housing
 
 <BarChart
-	title="Number of 'vulnerable areas' (utsatta omrÃ¥den) — 2023 vs. 2025 editions"
+	title="Number of 'vulnerable areas' (utsatta omr¥¥den) — 2023 vs. 2025 editions"
 	unit=" areas"
 	bars={[
 		{ label: '2023 edition (total)', value: 59 },
 		{ label: '2025 edition (total)', value: 65, note: 'of which 46 vulnerable, 19 especially vulnerable' },
 	]}
-	sourceLabel="Swedish Police Authority (Polisen), 'Lägesbild över utsatta omrÃ¥den 2025'"
+	sourceLabel="Swedish Police Authority (Polisen), 'Lägesbild över utsatta omr¥¥den 2025'"
 	sourceUrl="https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf"
 	sourcePrefix="Source: "
 />
 
-- Residential segregation is documented through the Police Authority's "vulnerable areas" (utsatta omrÃ¥den) classification.
+- Residential segregation is documented through the Police Authority's "vulnerable areas" (utsatta omr¥¥den) classification.
 - Lägesbild 2025 (Police Authority, a report to the government): a total of 65 areas classified, of which 46 are "vulnerable" and 19 "especially vulnerable" — up from 59 in the previous 2023 edition. Part of this increase is due to 7 areas being reclassified into smaller sub-areas, so the year-over-year comparison requires a methodological caveat.
   Official report (PDF): https://polisen.se/siteassets/dokument/organiserad_brottslighet/utsatta-omraden/lagesbild-over-utsatta-omraden-2025.pdf
-- Population composition of "exclusion areas" (utanförskapsomrÃ¥den) (Boverket, report 2024:18): 55% of residents are foreign-born, 40% born in a non-European country (2023 data). Compared with the national average foreign-born share of 21% (see Section 3), this shows clear concentration in these areas.
+- Population composition of "exclusion areas" (utanförskapsomr¥¥den) (Boverket, report 2024:18): 55% of residents are foreign-born, 40% born in a non-European country (2023 data). Compared with the national average foreign-born share of 21% (see Section 3), this shows clear concentration in these areas.
   Source: Boverket — https://www.boverket.se/globalassets/publikationer/dokument/2024/boendesegregationens-utveckling.pdf
 - Nationally, the majority of Sweden's 2.1 million foreign-born residents actually live in areas with favorable socioeconomic conditions ("area type 4," approximately 845,000 people) — segregation is concentrated in a minority of areas, not across the immigrant population as a whole.
   Source: SCB — https://www.scb.se/hitta-statistik/artiklar/2023/segregationen-synlig-aven-i-vara-dagliga-resmonster/
-- Complementary report: Boverket 2025:13, "Livsvillkor i utanförskapsomrÃ¥den" — https://www.boverket.se/globalassets/publikationer/dokument/2025/livsvillkor-i-utanforskapsomraden2.pdf
+- Complementary report: Boverket 2025:13, "Livsvillkor i utanförskapsomr¥¥den" — https://www.boverket.se/globalassets/publikationer/dokument/2025/livsvillkor-i-utanforskapsomraden2.pdf
 
 ## 9. Social cohesion
 
@@ -249,8 +249,8 @@ import AgePyramid from '../../../components/AgePyramid.astro';
 ## 11. Data limitations and biases
 
 <div class="callout-limits">
-<strong>âš ï¸ Limits</strong>
-BRÃ…'s crime statistics are themselves a politically sensitive subject within Sweden (their publication has been a subject of debate) — worth noting for transparency.
+<strong>€š ï¸ Limits</strong>
+BR¥…'s crime statistics are themselves a politically sensitive subject within Sweden (their publication has been a subject of debate) — worth noting for transparency.
 </div>
 
 
