@@ -1,0 +1,125 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Germany immigration crime statistics: BKA official data | Immigration Factbook" lang="en" altHref="/faq/allemagne-criminalite-immigration/" description="Germany's Federal Criminal Police (BKA) 2023: non-German nationals show a 5.36% suspect rate vs 1.46% for German nationals — a 3.7× ratio. Age, urban concentration, and socioeconomic factors explain most of the gap.">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/en/">Immigration Factbook</a> › <span>FAQ</span></nav>
+    <h1>Germany immigration crime statistics: BKA official data</h1>
+    <p class="intro">Germany's Federal Criminal Police Office (Bundeskriminalamt, BKA) publishes nationality-disaggregated suspect statistics annually. The 2023 data shows non-German nationals have a suspect rate approximately 3.7× higher than German nationals — a gap substantially explained by age structure, urban concentration, and socioeconomic differences.</p>
+    <div class="lang-switch"><a href="/faq/allemagne-criminalite-immigration/">🌐 日本語版</a></div>
+  </div>
+
+  <section>
+    <h2>Key figures (BKA PKS 2023)</h2>
+    <table>
+      <thead>
+        <tr><th>Indicator</th><th>Figure</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Non-German nationals — suspect rate (per capita)</td>
+          <td><strong>5.36%</strong></td>
+          <td><a href="https://www.bka.de" rel="noopener">BKA PKS 2023</a></td>
+        </tr>
+        <tr>
+          <td>German nationals — suspect rate (per capita)</td>
+          <td><strong>1.46%</strong></td>
+          <td>BKA PKS 2023</td>
+        </tr>
+        <tr>
+          <td>Ratio (non-German / German)</td>
+          <td>~3.7×</td>
+          <td>BKA PKS 2023 (calculated)</td>
+        </tr>
+        <tr>
+          <td>Data type</td>
+          <td>Police crime statistics (PKS) — suspects, not convictions</td>
+          <td>BKA</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Factors explaining the gap</h2>
+    <ul>
+      <li><strong>Age composition:</strong> Non-German nationals have a higher share of young men — the demographic group with the highest crime rates across all populations. This alone accounts for a substantial portion of the raw ratio.</li>
+      <li><strong>Urban concentration:</strong> Most non-German nationals live in large cities, which have higher crime rates overall regardless of population origin.</li>
+      <li><strong>Socioeconomic status:</strong> Average income and employment rates are lower among non-German nationals. Poverty correlates with crime rates across all nationalities.</li>
+      <li><strong>Suspects vs. convictions:</strong> PKS counts suspects, not convictions. Policing intensity and reporting patterns can affect who is counted.</li>
+      <li><strong>Nationality vs. immigrant background:</strong> Second-generation immigrants born in Germany often hold German nationality and are counted in the "German national" category. BKA does not classify by immigrant background — only by nationality.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cross-country comparison</h2>
+    <table>
+      <thead>
+        <tr><th>Country</th><th>Ratio (immigrant / native-born)</th><th>Source &amp; measure</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Germany</td><td>3.7× suspect rate</td><td>BKA PKS 2023 (by nationality)</td></tr>
+        <tr><td>Sweden</td><td>~2.5× suspect rate</td><td>BRÅ 2021 (by immigrant background)</td></tr>
+        <tr><td>Denmark</td><td>2.6× suspect rate (age-adjusted)</td><td>DST (immigrants &amp; descendants vs. Danish-origin)</td></tr>
+        <tr><td>United States</td><td>No systematic federal cross-tabulation</td><td>FBI UCR / BJS (no immigration status variable)</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Direct comparison requires caution: Germany classifies by nationality; Sweden and Denmark classify by immigrant background. These are different population categories.</p>
+  </section>
+
+  <section>
+    <h2>Primary source</h2>
+    <ul>
+      <li>Bundeskriminalamt (2023). <em>Polizeiliche Kriminalstatistik (PKS) 2023</em>. <a href="https://www.bka.de" rel="noopener">www.bka.de</a></li>
+    </ul>
+  </section>
+
+  <div class="related-countries">
+    <h2>Related pages</h2>
+    <div class="related-links">
+      <a href="/en/countries/germany/">🇩🇪 Germany — full data</a>
+      <a href="/en/faq/sweden-crime/">Sweden BRÅ crime data</a>
+      <a href="/en/faq/us-immigration-crime-statistics/">US immigration crime data</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What do Germany's official crime statistics show about non-German nationals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Germany's Federal Criminal Police (BKA) Polizeiliche Kriminalstatistik (PKS) 2023 shows a suspect rate of 5.36% for non-German nationals vs. 1.46% for German nationals — a ratio of approximately 3.7×. This is a per-capita rate (not absolute counts). The gap is substantially explained by differences in age structure (non-German nationals have a higher share of young men), urban concentration, and socioeconomic status. BKA classifies by nationality, not by immigrant background, so second-generation immigrants with German citizenship are counted in the German national category."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Germany's immigration crime data compare to Sweden and Denmark?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Germany (BKA PKS 2023): 3.7× ratio by nationality. Sweden (BRÅ 2021): ~2.5× by immigrant background (born abroad or both parents born abroad). Denmark (DST): 2.6× age-adjusted by immigrant/descendant category. Direct comparison is not valid because the population categories differ: Germany uses nationality, while Sweden and Denmark use immigrant background — which includes naturalised citizens that Germany counts in the 'German' category."
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
+.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
+  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+</style>
+</BaseLayout>

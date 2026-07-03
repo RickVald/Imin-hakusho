@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="移民 統計 国別 比較：西側20カ国の公式データ | 移民白書" lang="ja" altHref="/en/faq/immigration-statistics-comparison/" description="デンマーク・スウェーデン・ノルウェー・ドイツ・フランス・ベルギー・米国・オーストラリアなど20カ国の移民統計を財政・雇用・教育・犯罪で比較。すべて一次公式資料。">
+<main class="theme-page">
+  <div class="page-header">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <h1>移民 統計 国別 比較：西側20カ国の公式データ</h1>
+    <p class="intro">移民白書は、西側20カ国の移民が財政・雇用・教育・犯罪・人口動態に与える影響を、各国統計局・財務省・国際機関の一次公式資料のみを使用して比較します。</p>
+    <div class="lang-switch"><a href="/en/faq/immigration-statistics-comparison/">🌐 Read in English</a></div>
+  </div>
+
+  <section>
+    <h2>テーマ別 主要比較（最新公式データ）</h2>
+
+    <h3>財政コスト</h3>
+    <table>
+      <thead>
+        <tr><th>国</th><th>財政純負担・純貢献</th><th>対象</th><th>出典</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇩🇰 デンマーク</td><td>−160億DKK/年</td><td>移民・子孫全体</td><td>Finansministeriet 2023</td></tr>
+        <tr><td>🇳🇴 ノルウェー</td><td>−410万NOK/人（R3）</td><td>庇護・非欧州家族移民（NPV）</td><td>SSB / Holmøy &amp; Strøm 2017</td></tr>
+        <tr><td>🇩🇪 ドイツ</td><td>−21億€/年</td><td>2015年難民コホート</td><td>Ifo Institut 2023</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>+60億SEK/年（就労移民のみ）</td><td>就労移民限定</td><td>Konjunkturinstitutet 2020</td></tr>
+      </tbody>
+    </table>
+
+    <h3>人口比率（定義は国により異なる）</h3>
+    <table>
+      <thead>
+        <tr><th>国</th><th>比率</th><th>使用定義</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇦🇺 オーストラリア</td><td>約32%</td><td>外国生まれ（ABS 2024）</td></tr>
+        <tr><td>🇳🇿 ニュージーランド</td><td>約28.8%</td><td>外国生まれ</td></tr>
+        <tr><td>🇨🇭 スイス</td><td>27.7%</td><td>外国籍者（OFS 2023）</td></tr>
+        <tr><td>🇩🇪 ドイツ</td><td>25.6%</td><td>移民背景（広義、Destatis 2023）</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>21%</td><td>外国生まれ（SCB 2024）</td></tr>
+        <tr><td>🇧🇪 ベルギー</td><td>13.8%*</td><td>非ベルギー国籍者（Statbel 2026）。外国系（帰化含む）は36.6%</td></tr>
+        <tr><td>🇫🇷 フランス</td><td>11.3%</td><td>外国籍者（INSEE 2023）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>PISA 2022 数学格差（社会経済補正後）</h3>
+    <table>
+      <thead>
+        <tr><th>国</th><th>格差（補正後）</th><th>方向</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇫🇮 フィンランド</td><td>−42 pts</td><td>現地生徒が移民より上</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>−34 pts</td><td>現地生徒が移民より上</td></tr>
+        <tr><td>🇦🇺 オーストラリア</td><td>+26 pts</td><td>移民が現地生徒を上回る</td></tr>
+        <tr><td>🇳🇿 ニュージーランド</td><td>+16 pts</td><td>移民が現地生徒を上回る</td></tr>
+      </tbody>
+    </table>
+
+    <h3>犯罪（被疑者率比率、粗値）</h3>
+    <table>
+      <thead>
+        <tr><th>国</th><th>比率</th><th>指標・出典</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇩🇪 ドイツ</td><td>3.7×</td><td>非独国籍 vs 独国籍（BKA PKS 2023）</td></tr>
+        <tr><td>🇩🇰 デンマーク</td><td>2.6×（年齢補正後）</td><td>移民・子孫 vs デンマーク系（DST）</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>約2.5×</td><td>移民系 vs 現地生まれ（BRÅ 2021）</td></tr>
+        <tr><td>🇺🇸 米国</td><td>連邦統計なし</td><td>FBI UCR／BJS（移民ステータス別なし）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>比較における注意点</h2>
+    <ul>
+      <li><strong>定義の差：</strong>「移民」の定義は国によって異なります（外国生まれ、外国籍者、移民背景）。同じ「移民比率20%」でも、測定対象が異なります。</li>
+      <li><strong>財政推計の方法論：</strong>各国で静的・動的モデルの差、対象範囲の差（地方・連邦・全国）、含まれる給付項目の差があります。数値を直接合算・比較することはできません。</li>
+      <li><strong>犯罪統計：</strong>すべての数値は年齢・性別・社会経済的地位の未補正粗値です。移民であること自体の効果を示すものではありません。</li>
+    </ul>
+  </section>
+
+  <div class="related-countries">
+    <h2>詳細ページ</h2>
+    <div class="related-links">
+      <a href="/themes/explorateur/">国別データエクスプローラー</a>
+      <a href="/themes/tableau-comparatif/">20カ国比較マトリクス</a>
+      <a href="/themes/cout-fiscal/">財政コスト</a>
+      <a href="/themes/demographie/">人口動態</a>
+      <a href="/themes/education/">PISA教育格差</a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "移民統計を国別に比較する際に注意すべき点は？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "国際比較には3つの主な注意点があります。(1) 定義の差：「移民」は外国生まれ、外国籍者、移民背景など国により異なります。(2) 財政推計の方法論：静的・動的モデルの差、対象範囲の差があるため直接比較できません。(3) 犯罪統計は未補正の粗値で、年齢・社会経済的地位の差を反映しています。移民白書では各国の定義と方法論を各ページに明記しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "どの国が移民統計の最も詳細な公式データを公表していますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "北欧諸国（デンマーク、スウェーデン、ノルウェー、フィンランド）は財政・雇用・教育・犯罪にわたる最も詳細で透明性の高い公式統計を公表しています。デンマーク（Finansministeriet）とノルウェー（SSB）は財政純負担の公式推計を定期的に公表する数少ない国です。ドイツ（BKA）は国籍別犯罪統計を毎年公表しています。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
+.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
+.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.related-links a {
+  background: var(--color-surface-raised);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
+  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
+  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+}
+.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
+h3 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin: 1.5rem 0 0.5rem; }
+</style>
+</BaseLayout>
