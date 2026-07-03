@@ -33,41 +33,41 @@ import KeyFigure from '../../components/KeyFigure.astro';
       title="社会経済補正後も残る格差（数学、PISA 2022）— 欧州8カ国"
       unit=" pts"
       bars={[
-        { label: 'フィンランド', value: 42, note: '社会経済補正後 +42 pts（補正前 +65 pts）' },
-        { label: 'スウェーデン', value: 34, note: '社会経済補正後 +34 pts（補正前 +63 pts）' },
-        { label: 'ノルウェー', value: 36, note: '補正前 +36 pts（補正後データ非公開）' },
-        { label: 'ドイツ', value: 32, note: '社会経済補正後 +32 pts（補正前 +59 pts）' },
-        { label: 'デンマーク', value: 28, note: '社会経済補正後 +28 pts（補正前 +54 pts）' },
-        { label: 'オランダ', value: 27, note: '社会経済補正後 +27 pts（補正前 +58 pts）' },
-        { label: 'フランス', value: 20, note: '社会経済補正後 約+20 pts（補正前 +51 pts）' },
-        { label: 'スイス', value: 19, note: '社会経済補正後 +19 pts（補正前 +53 pts）' },
-        { label: 'ベルギー', value: 17, note: '社会経済補正後 +17 pts（補正前 >55 pts）' },
-        { label: 'ポルトガル', value: 25, note: '社会経済補正後 +25 pts（補正前 +32 pts）' },
-        { label: 'スペイン', value: 7, note: '社会経済補正後 +7 pts（補正前 +32 pts）— ESCSが格差の60%以上を説明' },
+        { label: 'フィンランド', value: -42, note: '社会経済補正後 −42 pts（補正前 −65 pts）' },
+        { label: 'スウェーデン', value: -34, note: '社会経済補正後 −34 pts（補正前 −63 pts）' },
+        { label: 'ノルウェー', value: -36, note: '補正前 −36 pts（補正後データ非公開）' },
+        { label: 'ドイツ', value: -32, note: '社会経済補正後 −32 pts（補正前 −59 pts）' },
+        { label: 'デンマーク', value: -28, note: '社会経済補正後 −28 pts（補正前 −54 pts）' },
+        { label: 'オランダ', value: -27, note: '社会経済補正後 −27 pts（補正前 −58 pts）' },
+        { label: 'フランス', value: -20, note: '社会経済補正後 約−20 pts（補正前 −51 pts）' },
+        { label: 'スイス', value: -19, note: '社会経済補正後 −19 pts（補正前 −53 pts）' },
+        { label: 'ベルギー', value: -17, note: '社会経済補正後 −17 pts（補正前 >−55 pts）' },
+        { label: 'ポルトガル', value: -25, note: '社会経済補正後 −25 pts（補正前 −32 pts）' },
+        { label: 'スペイン', value: -7, note: '社会経済補正後 −7 pts（補正前 −32 pts）— ESCSが格差の60%以上を説明' },
       ]}
       sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
       sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
       sourcePrefix="出典："
     />
     <p class="chart-note">
-      正の値＝現地生徒が移民生徒を上回る点数。色は赤（現地生徒優位）。社会経済的要因（ESCS）統制後の値を使用。ノルウェーは補正後データ非公開のため補正前値を掲載。
+      負の値＝移民の子どもが現地生徒を下回る（移民に不利な格差）。社会経済的要因（ESCS）統制後の値を使用。ノルウェーは補正後データ非公開のため補正前値を掲載。
     </p>
 
     <BarChart
       title="移民の子どもが現地生徒を上回る国（点数制移民政策）— PISA 2022"
       unit=" pts"
       bars={[
-        { label: 'オーストラリア', value: -26, note: '移民が現地生徒より26 pts上回る（社会経済補正後）' },
-        { label: 'ニュージーランド', value: -16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
-        { label: 'アメリカ', value: -16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
-        { label: 'イギリス', value: -12, note: '移民が現地生徒より12 pts上回る（社会経済補正後）' },
+        { label: 'オーストラリア', value: 26, note: '移民が現地生徒より26 pts上回る（社会経済補正後）' },
+        { label: 'ニュージーランド', value: 16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
+        { label: 'アメリカ', value: 16, note: '移民が現地生徒より16 pts上回る（社会経済補正後）' },
+        { label: 'イギリス', value: 12, note: '移民が現地生徒より12 pts上回る（社会経済補正後）' },
       ]}
       sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
       sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
       sourcePrefix="出典："
     />
     <p class="chart-note">
-      負の値＝移民の子どもが現地生徒を上回る。これらの国は学歴・スキルによる点数制移民政策を採用しており、高学歴の親を持つ子どもが多い。
+      正の値＝移民の子どもが現地生徒を上回る（移民に有利な結果）。これらの国は学歴・スキルによる点数制移民政策を採用しており、高学歴の親を持つ子どもが多い。
     </p>
   </section>
 
@@ -97,104 +97,104 @@ import KeyFigure from '../../components/KeyFigure.astro';
         <tbody>
           <tr>
             <td class="country-name"><a href="/countries/ja/finland/">フィンランド</a></td>
-            <td class="gap">+65 pts</td>
-            <td class="gap">+42 pts</td>
+            <td class="gap">-65 pts</td>
+            <td class="gap">-42 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name">ノルウェー</td>
-            <td class="gap">+36 pts</td>
+            <td class="gap">-36 pts</td>
             <td class="gap-muted">データ非公開</td>
             <td>大きな格差（補正後不明）</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/sweden/">スウェーデン</a></td>
-            <td class="gap">+63 pts</td>
-            <td class="gap">+34 pts</td>
+            <td class="gap">-63 pts</td>
+            <td class="gap">-34 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/germany/">ドイツ</a></td>
-            <td class="gap">+59 pts</td>
-            <td class="gap">+32 pts</td>
+            <td class="gap">-59 pts</td>
+            <td class="gap">-32 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/portugal/">ポルトガル</a></td>
-            <td class="gap">+32 pts</td>
-            <td class="gap">+25 pts</td>
+            <td class="gap">-32 pts</td>
+            <td class="gap">-25 pts</td>
             <td>中程度の残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/denmark/">デンマーク</a></td>
-            <td class="gap">+54 pts</td>
-            <td class="gap">+28 pts</td>
+            <td class="gap">-54 pts</td>
+            <td class="gap">-28 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/netherlands/">オランダ</a></td>
-            <td class="gap">+58 pts</td>
-            <td class="gap">+27 pts</td>
+            <td class="gap">-58 pts</td>
+            <td class="gap">-27 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/france/">フランス</a></td>
-            <td class="gap">+51 pts</td>
-            <td class="gap">約+20 pts</td>
+            <td class="gap">-51 pts</td>
+            <td class="gap">約-20 pts</td>
             <td>大きな残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/switzerland/">スイス</a></td>
-            <td class="gap">+53 pts</td>
-            <td class="gap">+19 pts</td>
+            <td class="gap">-53 pts</td>
+            <td class="gap">-19 pts</td>
             <td>中程度の残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/belgium/">ベルギー</a></td>
             <td class="gap">&gt;+55 pts</td>
-            <td class="gap">+17 pts</td>
+            <td class="gap">-17 pts</td>
             <td>中程度の残余格差</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/spain/">スペイン</a></td>
-            <td class="gap">+32 pts</td>
-            <td class="gap">+7 pts</td>
+            <td class="gap">-32 pts</td>
+            <td class="gap">-7 pts</td>
             <td>小さな残余格差</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/italy/">イタリア</a></td>
-            <td class="gap">+30 pts</td>
+            <td class="gap">-30 pts</td>
             <td class="gap-muted">非有意</td>
             <td>ESCSで格差はほぼ解消</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/ireland/">アイルランド</a></td>
-            <td class="gap">+8 pts</td>
+            <td class="gap">-8 pts</td>
             <td class="gap-muted">非有意</td>
             <td>ESCSで格差は解消</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/uk/">イギリス</a></td>
-            <td class="gap-positive">−12 pts</td>
-            <td class="gap-positive">−12 pts</td>
+            <td class="gap-positive">+12 pts</td>
+            <td class="gap-positive">+12 pts</td>
             <td>移民の子どもが優位</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/usa/">アメリカ</a></td>
             <td class="gap-muted">非有意</td>
-            <td class="gap-positive">−16 pts</td>
+            <td class="gap-positive">+16 pts</td>
             <td>移民の子どもが優位</td>
           </tr>
           <tr class="alt">
             <td class="country-name"><a href="/countries/ja/new-zealand/">ニュージーランド</a></td>
-            <td class="gap-positive">−16 pts</td>
-            <td class="gap-positive">−16 pts</td>
+            <td class="gap-positive">+16 pts</td>
+            <td class="gap-positive">+16 pts</td>
             <td>移民の子どもが優位</td>
           </tr>
           <tr>
             <td class="country-name"><a href="/countries/ja/australia/">オーストラリア</a></td>
-            <td class="gap-positive">−26 pts</td>
-            <td class="gap-positive">−26 pts</td>
+            <td class="gap-positive">+26 pts</td>
+            <td class="gap-positive">+26 pts</td>
             <td>移民の子どもが優位</td>
           </tr>
         </tbody>

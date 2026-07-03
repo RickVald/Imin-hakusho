@@ -33,41 +33,41 @@ import KeyFigure from '../../../components/KeyFigure.astro';
       title="Persistent gap after socioeconomic control (math, PISA 2022) — European countries"
       unit=" pts"
       bars={[
-        { label: 'Finland', value: 42, note: 'After ESCS control: +42 pts (raw gap: +65 pts)' },
-        { label: 'Sweden', value: 34, note: 'After ESCS control: +34 pts (raw gap: +63 pts)' },
-        { label: 'Norway', value: 36, note: 'Raw gap: +36 pts (adjusted figure not published)' },
-        { label: 'Germany', value: 32, note: 'After ESCS control: +32 pts (raw gap: +59 pts)' },
-        { label: 'Denmark', value: 28, note: 'After ESCS control: +28 pts (raw gap: +54 pts)' },
-        { label: 'Netherlands', value: 27, note: 'After ESCS control: +27 pts (raw gap: +58 pts)' },
-        { label: 'France', value: 20, note: 'After ESCS control: ~+20 pts (raw gap: +51 pts)' },
-        { label: 'Switzerland', value: 19, note: 'After ESCS control: +19 pts (raw gap: +53 pts)' },
-        { label: 'Belgium', value: 17, note: 'After ESCS control: +17 pts (raw gap: >55 pts)' },
-        { label: 'Portugal', value: 25, note: 'After ESCS control: +25 pts (raw gap: +32 pts)' },
-        { label: 'Spain', value: 7, note: 'After ESCS control: +7 pts (raw gap: +32 pts) — ESCS explains >60% of gap' },
+        { label: 'Finland', value: -42, note: 'After ESCS control: −42 pts (raw gap: −65 pts)' },
+        { label: 'Sweden', value: -34, note: 'After ESCS control: −34 pts (raw gap: −63 pts)' },
+        { label: 'Norway', value: -36, note: 'Raw gap: −36 pts (adjusted figure not published)' },
+        { label: 'Germany', value: -32, note: 'After ESCS control: −32 pts (raw gap: −59 pts)' },
+        { label: 'Denmark', value: -28, note: 'After ESCS control: −28 pts (raw gap: −54 pts)' },
+        { label: 'Netherlands', value: -27, note: 'After ESCS control: −27 pts (raw gap: −58 pts)' },
+        { label: 'France', value: -20, note: 'After ESCS control: ~−20 pts (raw gap: −51 pts)' },
+        { label: 'Switzerland', value: -19, note: 'After ESCS control: −19 pts (raw gap: −53 pts)' },
+        { label: 'Belgium', value: -17, note: 'After ESCS control: −17 pts (raw gap: >−55 pts)' },
+        { label: 'Portugal', value: -25, note: 'After ESCS control: −25 pts (raw gap: −32 pts)' },
+        { label: 'Spain', value: -7, note: 'After ESCS control: −7 pts (raw gap: −32 pts) — ESCS explains >60% of gap' },
       ]}
       sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
       sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
       sourcePrefix="Source: "
     />
     <p class="chart-note">
-      Positive values = native-born students outperform immigrant students. Values shown are after ESCS socioeconomic control. Norway: adjusted figure not published; raw gap shown. Italy and Ireland: gap becomes non-significant after control (not shown).
+      Negative values = immigrant students score below native-born peers (gap unfavorable to immigrants). Values shown are after ESCS socioeconomic control. Norway: adjusted figure not published; raw gap shown. Italy and Ireland: gap becomes non-significant after control (not shown).
     </p>
 
     <BarChart
       title="Countries where immigrant students outperform native-born peers (points-based immigration) — PISA 2022"
       unit=" pts"
       bars={[
-        { label: 'Australia', value: -26, note: 'Immigrant students outperform native-born by 26 pts (after ESCS control)' },
-        { label: 'New Zealand', value: -16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control)' },
-        { label: 'United States', value: -16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control)' },
-        { label: 'United Kingdom', value: -12, note: 'Immigrant students outperform native-born by 12 pts (after ESCS control)' },
+        { label: 'Australia', value: 26, note: 'Immigrant students outperform native-born by 26 pts (after ESCS control) — immigrant advantage' },
+        { label: 'New Zealand', value: 16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control) — immigrant advantage' },
+        { label: 'United States', value: 16, note: 'Immigrant students outperform native-born by 16 pts (after ESCS control) — immigrant advantage' },
+        { label: 'United Kingdom', value: 12, note: 'Immigrant students outperform native-born by 12 pts (after ESCS control) — immigrant advantage' },
       ]}
       sourceLabel="OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance"
       sourceUrl="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html"
       sourcePrefix="Source: "
     />
     <p class="chart-note">
-      Negative values = immigrant students outperform native-born peers. These countries use points-based immigration systems that select for education and skills, resulting in highly educated immigrant parents whose children benefit from greater cultural capital.
+      Positive values = immigrant students outperform native-born peers. These countries use points-based immigration systems that select for education and skills, resulting in highly educated immigrant parents whose children benefit from greater cultural capital.
     </p>
   </section>
 
@@ -97,111 +97,111 @@ import KeyFigure from '../../../components/KeyFigure.astro';
         <tbody>
           <tr>
             <td class="country-name">Finland</td>
-            <td class="gap">+65</td>
-            <td class="gap">+42</td>
+            <td class="gap">-65</td>
+            <td class="gap">-42</td>
             <td>Large persistent gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">Norway</td>
-            <td class="gap">+36</td>
+            <td class="gap">-36</td>
             <td class="gap-muted">Not published</td>
             <td>Large gap (adjusted N/A)</td>
           </tr>
           <tr>
             <td class="country-name">Sweden</td>
-            <td class="gap">+63</td>
-            <td class="gap">+34</td>
+            <td class="gap">-63</td>
+            <td class="gap">-34</td>
             <td>Large persistent gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">Germany</td>
-            <td class="gap">+59</td>
-            <td class="gap">+32</td>
+            <td class="gap">-59</td>
+            <td class="gap">-32</td>
             <td>Large persistent gap</td>
           </tr>
           <tr>
             <td class="country-name">Denmark</td>
-            <td class="gap">+54</td>
-            <td class="gap">+28</td>
+            <td class="gap">-54</td>
+            <td class="gap">-28</td>
             <td>Large persistent gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">Netherlands</td>
-            <td class="gap">+58</td>
-            <td class="gap">+27</td>
+            <td class="gap">-58</td>
+            <td class="gap">-27</td>
             <td>Large persistent gap</td>
           </tr>
           <tr>
             <td class="country-name">Portugal</td>
-            <td class="gap">+32</td>
-            <td class="gap">+25</td>
+            <td class="gap">-32</td>
+            <td class="gap">-25</td>
             <td>Moderate persistent gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">France</td>
-            <td class="gap">+51</td>
-            <td class="gap">~+20</td>
+            <td class="gap">-51</td>
+            <td class="gap">~-20</td>
             <td>Large persistent gap</td>
           </tr>
           <tr>
             <td class="country-name">Switzerland</td>
-            <td class="gap">+53</td>
-            <td class="gap">+19</td>
+            <td class="gap">-53</td>
+            <td class="gap">-19</td>
             <td>Moderate persistent gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">Belgium</td>
-            <td class="gap">&gt;+55</td>
-            <td class="gap">+17</td>
+            <td class="gap">&gt;-55</td>
+            <td class="gap">-17</td>
             <td>Moderate persistent gap</td>
           </tr>
           <tr>
             <td class="country-name">Spain</td>
-            <td class="gap">+32</td>
-            <td class="gap">+7</td>
+            <td class="gap">-32</td>
+            <td class="gap">-7</td>
             <td>Small residual gap</td>
           </tr>
           <tr class="alt">
             <td class="country-name">Italy</td>
-            <td class="gap">+30</td>
+            <td class="gap">-30</td>
             <td class="gap-muted">Not significant</td>
             <td>Gap eliminated by ESCS</td>
           </tr>
           <tr>
             <td class="country-name">Ireland</td>
-            <td class="gap">+8</td>
+            <td class="gap">-8</td>
             <td class="gap-muted">Not significant</td>
             <td>Gap eliminated by ESCS</td>
           </tr>
           <tr class="alt">
             <td class="country-name">United Kingdom</td>
-            <td class="gap-positive">−12</td>
-            <td class="gap-positive">−12</td>
+            <td class="gap-positive">+12</td>
+            <td class="gap-positive">+12</td>
             <td>Immigrant advantage</td>
           </tr>
           <tr>
             <td class="country-name">United States</td>
             <td class="gap-muted">Not significant</td>
-            <td class="gap-positive">−16</td>
+            <td class="gap-positive">+16</td>
             <td>Immigrant advantage</td>
           </tr>
           <tr class="alt">
             <td class="country-name">New Zealand</td>
-            <td class="gap-positive">−16</td>
-            <td class="gap-positive">−16</td>
+            <td class="gap-positive">+16</td>
+            <td class="gap-positive">+16</td>
             <td>Immigrant advantage</td>
           </tr>
           <tr>
             <td class="country-name">Australia</td>
-            <td class="gap-positive">−26</td>
-            <td class="gap-positive">−26</td>
+            <td class="gap-positive">+26</td>
+            <td class="gap-positive">+26</td>
             <td>Immigrant advantage</td>
           </tr>
         </tbody>
       </table>
     </div>
     <p class="table-note">
-      Positive = native-born outperform immigrants. Negative = immigrants outperform native-born.<br/>
+      Negative = gap (native-born outperform immigrants). Positive = immigrant advantage (immigrants outperform).<br/>
       Source: <a href="https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en/full-report/immigrant-background-and-student-performance_f469d45e.html" target="_blank" rel="noopener noreferrer">OECD PISA 2022 Results Volume I — Immigrant Background and Student Performance</a>
     </p>
   </section>
