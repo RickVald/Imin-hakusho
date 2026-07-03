@@ -79,7 +79,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <div class="metric-note" id="note-crime"></div>
       </div>
     </div>
-    <p class="sources-note">All data sourced from primary official sources (national statistics offices, treasuries, OECD, BKA, BRÅ, etc.).</p>
+    <p class="sources-note">Data sourced primarily from official statistics; institutional or academic sources are labelled where used.</p>
   </div>
 
   <div id="placeholder" class="placeholder">
@@ -105,7 +105,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <tbody>
         <tr><td><a href="/en/countries/denmark/">&#x1F1E9;&#x1F1F0; Denmark</a></td><td>12.6%</td><td>-14.5 pt</td><td>-28 pt</td><td>-DKK 16bn/yr</td><td>2.6&times; ratio (DST)</td></tr>
         <tr><td><a href="/en/countries/sweden/">&#x1F1F8;&#x1F1EA; Sweden</a></td><td>21%</td><td>-16 pt</td><td>-34 pt</td><td>+SEK 6bn/yr (KI)</td><td>~2.5&times; ratio (BR&#x00C5;)</td></tr>
-        <tr><td><a href="/en/countries/norway/">&#x1F1F3;&#x1F1F4; Norway</a></td><td>17.5%</td><td>-12 pt</td><td>-36 pt</td><td>-NOK 410k/refugee lifetime</td><td>No official data</td></tr>
+        <tr><td><a href="/en/countries/norway/">&#x1F1F3;&#x1F1F4; Norway</a></td><td>17.5%</td><td>-12 pt</td><td>-36 pt</td><td>−NOK 4.1m/person (R3, SSB 2017)</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/finland/">&#x1F1EB;&#x1F1EE; Finland</a></td><td>11.7%</td><td>-18 pt</td><td>-42 pt (largest OECD gap)</td><td>No official estimate</td><td>No official data</td></tr>
         <tr><td><a href="/en/countries/germany/">&#x1F1E9;&#x1F1EA; Germany</a></td><td>25.6%</td><td>-13 pt</td><td>-32 pt</td><td>-&#x20AC;2.1bn/yr (Ifo)</td><td>3.7&times; suspect ratio (BKA)</td></tr>
         <tr><td><a href="/en/countries/austria/">&#x1F1E6;&#x1F1F9; Austria</a></td><td>20.5%</td><td>-11 pt</td><td>-25 pt</td><td>No official estimate</td><td>No official data</td></tr>
@@ -151,7 +151,7 @@ const DATA = {
   no: {
     name: "Norway", flag: "no", slug: "norway",
     population: { value: "17.5%", note: "Foreign-born (2023, SSB)", signal: "red" },
-    fiscal:     { value: "−NOK 410k/refugee", note: "Lifetime net fiscal cost, R3 category (SSB 2017)", signal: "red" },
+    fiscal:     { value: "−NOK 4.1m/person", note: "Net present value, R3 group (asylum & non-European family migration), 2015 cohort, 2015–2100 (SSB / Holmøy & Strøm 2017)", signal: "red" },
     employment: { value: "−12pt", note: "Employment rate gap (SSB 2023)", signal: "red" },
     education:  { value: "−36pt", note: "PISA 2022 maths raw gap", signal: "red" },
     crime:      { value: "—", note: "No disaggregated official data", signal: "gray" },

@@ -79,7 +79,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <div class="metric-note" id="note-crime"></div>
       </div>
     </div>
-    <p class="sources-note">すべてのデータは一次公式資料（各国統計局・財務省・OECD・BKA・BRÅ等）に基づきます。</p>
+    <p class="sources-note">データは主として一次公式資料に基づきます。一次資料が入手困難な場合は、学術・機関資料を明示のうえで使用しています。</p>
   </div>
 
   <div id="placeholder" class="placeholder">
@@ -115,7 +115,7 @@ const DATA = {
     flag: "no",
     slug: "norway",
     population: { value: "17.5%", note: "外国生まれ（2023年、SSB）", signal: "red" },
-    fiscal:     { value: "−41万 NOK/難民", note: "生涯財政純負担 R3カテゴリ（SSB 2017）", signal: "red" },
+    fiscal:     { value: "−410万 NOK/人（R3）", note: "純現在価値、R3グループ（庇護・非欧州家族移民）、2015コホート、2015〜2100年（SSB / Holmøy & Strøm 2017）", signal: "red" },
     employment: { value: "−12pt", note: "雇用率格差（SSB 2023）", signal: "red" },
     education:  { value: "−36pt", note: "PISA 2022 数学スコア格差（粗値）", signal: "red" },
     crime:      { value: "—", note: "国別統計なし（公式）", signal: "gray" },
@@ -174,7 +174,7 @@ const DATA = {
     name: "ベルギー",
     flag: "be",
     slug: "belgium",
-    population: { value: "36.6%", note: "移民系（外国生まれ＋子、2023年、Statbel）", signal: "red" },
+    population: { value: "13.8%*", note: "非ベルギー国籍者（Statbel 2026年1月）。外国系（帰化市民含む）は36.6%", signal: "yellow" },
     fiscal:     { value: "非公開", note: "公式推計なし", signal: "gray" },
     employment: { value: "−20pt", note: "雇用率格差（Statbel 2023）", signal: "red" },
     education:  { value: "−17pt", note: "PISA 2022 数学スコア格差（ESCS補正後）", signal: "red" },

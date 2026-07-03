@@ -59,7 +59,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <tbody>
           <!-- 1. 人口比率 -->
           <tr>
-            <td class="theme-label"><a href="/themes/demographie/">人口比率<br/><small>移民の人口割合</small></a></td>
+            <td class="theme-label"><a href="/themes/demographie/">人口比率<br/><small>定義は国により異なる</small></a></td>
             <td class="cell-yellow" data-conf="A">12.6%</td>
             <td class="cell-red" data-conf="A">21%</td>
             <td class="cell-red" data-conf="A">17.5%</td>
@@ -68,7 +68,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <td class="cell-red" data-conf="A">20.5%</td>
             <td class="cell-red" data-conf="A">27.7%</td>
             <td class="cell-yellow" data-conf="A">11.3%</td>
-            <td class="cell-red" data-conf="A">36.6%</td>
+            <td class="cell-yellow" data-conf="A" title="非ベルギー国籍者（Statbel 2026年1月）。外国系（帰化市民含む）は36.6%">13.8%*</td>
             <td class="cell-red" data-conf="A">24.6%</td>
             <td class="cell-yellow" data-conf="A">19%</td>
             <td class="cell-yellow" data-conf="A">12%</td>
@@ -87,7 +87,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <td class="theme-label"><a href="/themes/cout-fiscal/">財政コスト<br/><small>財政への純効果</small></a></td>
             <td class="cell-red" data-conf="A">−160億DKK</td>
             <td class="cell-yellow" data-conf="A">+60億SEK</td>
-            <td class="cell-red" data-conf="A">R3：+410万NOK</td>
+            <td class="cell-red" data-conf="A" title="R3グループ（庇護・非欧州家族移民）一人あたり純現在価値、2015コホート、2015〜2100年（SSB / Holmøy &amp; Strøm 2017）">−410万NOK*</td>
             <td class="cell-gray">調査中</td>
             <td class="cell-red" data-conf="A">−21億€/年</td>
             <td class="cell-gray">非公開</td>
@@ -246,7 +246,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <div class="profile-card profile-nordic">
         <h3>🧊 北欧型（DK / SE / NO）</h3>
-        <p>移民比率17〜21%、非欧米系移民の財政コストは一貫してマイナス（DKは−160億DKK、NOは+410万NOK/人）。雇用格差10〜12ポイント、PISA格差も顕著。データは非常に詳細で透明性が高い。2010年代後半以降、政策が選別的に転換。</p>
+        <p>移民比率17〜21%、非欧米系移民の財政コストは一貫してマイナス（DKは−160億DKK、NOは−410万NOK/人（R3））。雇用格差10〜12ポイント、PISA格差も顕著。データは非常に詳細で透明性が高い。2010年代後半以降、政策が選別的に転換。</p>
         <p class="profile-signal">信号：財政・雇用・教育でいずれも負の影響が文書化されている。</p>
       </div>
 
@@ -521,13 +521,13 @@ document.getElementById('btn-csv')?.addEventListener('click', () => {
     ['Country','Code','Population share','Fiscal impact','Employment gap','PISA gap','Crime','Housing','Asylum'],
     ['Denmark','DK','12.6%','-DKK 16bn/yr','-14.5pt','-28pt (ESCS)','2.6×','Strained','High'],
     ['Sweden','SE','21%','+SEK 6bn/yr (cond.)','-16pt','-34pt (ESCS)','~2.5×','Strained','High'],
-    ['Norway','NO','17.5%','-NOK 410k/refugee','-12pt','-36pt (raw)','n/a','Strained','High'],
+    ['Norway','NO','17.5%','-NOK 4.1m/person R3 (NPV 2015-2100)','-12pt','-36pt (raw)','n/a','Strained','High'],
     ['Finland','FI','11.7%','n/a','-18pt','-42pt (ESCS)','n/a','Moderate','Moderate'],
     ['Germany','DE','25.6%','-€2.1bn/yr','-13pt','-32pt (ESCS)','5.36% vs 1.46%','Strained','High'],
     ['Austria','AT','20.5%','n/a','-11pt','-25pt','n/a','Strained','High'],
     ['Switzerland','CH','27.7%','n/a','-7pt','-19pt (ESCS)','n/a','Moderate','Low'],
     ['France','FR','11.3%','n/a','-16pt','~-20pt','18-20% of perps','Strained','Moderate'],
-    ['Belgium','BE','36.6%','n/a','-20pt','-17pt (ESCS)','n/a','Strained','Moderate'],
+    ['Belgium','BE','13.8% non-nationals (36.6% foreign-origin)','n/a','-20pt','-17pt (ESCS)','n/a','Strained','Moderate'],
     ['Netherlands','NL','24.6%','Negative (refugees)','-15pt','-27pt (ESCS)','3×','Strained','Moderate'],
     ['United Kingdom','UK','19%','Mixed (OBR)','-8pt','-12pt','~12% of conv.','Strained','Moderate'],
     ['Ireland','IE','12%','n/a','-6pt','n/a','n/a','Strained','Moderate'],
