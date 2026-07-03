@@ -59,16 +59,16 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <tbody>
           <!-- 1. Population share -->
           <tr>
-            <td class="theme-label"><a href="/en/themes/demographics/">Population share<br/><small>% immigrant-born</small></a></td>
-            <td class="cell-yellow" data-conf="A">12.6%</td>
-            <td class="cell-red" data-conf="A">21%</td>
-            <td class="cell-red" data-conf="A">17.5%</td>
-            <td class="cell-yellow" data-conf="A">11.7%</td>
-            <td class="cell-red" data-conf="A">25.6%</td>
-            <td class="cell-red" data-conf="A">20.5%</td>
-            <td class="cell-red" data-conf="A">27.7%</td>
-            <td class="cell-yellow" data-conf="A">11.3%</td>
-            <td class="cell-red" data-conf="A">36.6%</td>
+            <td class="theme-label"><a href="/en/themes/demographics/">Population share<br/><small>Definition varies by country</small></a></td>
+            <td class="cell-yellow" data-conf="A" title="Foreign-born (DST 2024)">12.6%</td>
+            <td class="cell-red" data-conf="A" title="Foreign-born (SCB 2024)">21%</td>
+            <td class="cell-red" data-conf="A" title="Foreign-born (SSB 2024)">17.5%</td>
+            <td class="cell-yellow" data-conf="A" title="Foreign-born (Statistics Finland 2024)">11.7%</td>
+            <td class="cell-red" data-conf="A" title="Migration background — broad definition (Destatis 2023)">25.6%</td>
+            <td class="cell-red" data-conf="A" title="Foreign-born (Statistik Austria 2024)">20.5%</td>
+            <td class="cell-red" data-conf="A" title="Foreign nationals (OFS 2023)">27.7%</td>
+            <td class="cell-yellow" data-conf="A" title="Foreign nationals (INSEE 2023)">11.3%</td>
+            <td class="cell-yellow" data-conf="A" title="Non-Belgian nationals (Statbel Jan 2026). Note: 36.6% if foreign-origin including naturalised citizens is included.">13.8%*</td>
             <td class="cell-red" data-conf="A">24.6%</td>
             <td class="cell-yellow" data-conf="A">19%</td>
             <td class="cell-yellow" data-conf="A">12%</td>
@@ -85,9 +85,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
           <!-- 2. Fiscal cost -->
           <tr>
             <td class="theme-label"><a href="/en/themes/fiscal-cost/">Fiscal impact<br/><small>Net fiscal effect</small></a></td>
-            <td class="cell-red" data-conf="A">−DKK 16bn</td>
-            <td class="cell-yellow" data-conf="A">+SEK 6bn</td>
-            <td class="cell-red" data-conf="A">R3: +NOK 4.1M</td>
+            <td class="cell-red" data-conf="A" title="−DKK 16bn/yr, all immigrants and descendants (Finansministeriet 2023). Non-Western: −27bn; Western: +11bn.">−DKK 16bn</td>
+            <td class="cell-yellow" data-conf="A" title="+SEK 6bn for labour migrants only (Konjunkturinstitutet 2020). Refugees: net cost. Total balance not officially published.">+SEK 6bn*</td>
+            <td class="cell-red" data-conf="A" title="−4.1m NOK net present value per person, R3 group (asylum &amp; non-European family migration), 2015 cohort, 2015–2100 (SSB / Holmøy &amp; Strøm 2017).">−4.1m NOK</td>
             <td class="cell-gray">ongoing study</td>
             <td class="cell-red" data-conf="A">−€2.1bn/yr</td>
             <td class="cell-gray">N/A</td>
@@ -236,7 +236,9 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     </div>
 
     <p class="matrix-note">
-      Note: Colour coding for population share is informational only and does not imply a value judgement. For fiscal, gap, housing and asylum rows: red = negative impact documented in official data; green = positive impact or low level; yellow = mixed or partial data; grey = no publicly available official data found.
+      Note: Colour coding for population share is informational only and does not imply a value judgement. For fiscal, gap, housing and asylum rows: red = negative impact documented in official data; green = positive impact or low level; yellow = mixed or partial data; grey = no publicly available official data found.<br/>
+      <strong>Population share definitions vary by country</strong> — hover each cell for the definition used. Belgium (*) = 13.8% non-Belgian nationals; 36.6% if foreign-origin including naturalised citizens is counted. Germany uses migration background (broad definition). Switzerland and France use foreign nationals. Denmark, Sweden, Norway use foreign-born. Direct cross-country comparison of population shares requires caution.<br/>
+      <strong>Fiscal row (Norway):</strong> Figure shown is −4.1m NOK net present value per person for group R3 (asylum seekers and non-European family migration), 2015 cohort, measured 2015–2100 (SSB 2017). This is not a per-year national total. <strong>Sweden fiscal (*)</strong>: +SEK 6bn applies to labour migrants only; total balance for all immigrant categories is not officially published.
     </p>
   </section>
 
@@ -246,7 +248,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
       <div class="profile-card profile-nordic">
         <h3>Nordic restrictive model (DK / SE / NO)</h3>
-        <p>Immigrant share 17–21%. Non-Western immigrants show consistently negative fiscal balances (Denmark: −DKK 16bn/yr; Norway: +NOK 4.1M per person from Group 3 countries). Employment and PISA gaps are large and well-documented. Data transparency is Europe's highest. Policy has shifted towards selection since the late 2010s.</p>
+        <p>Immigrant share 17–21%. Non-Western immigrants show consistently negative fiscal balances (Denmark: −DKK 16bn/yr for all immigrants and descendants, Finansministeriet 2023; Norway: −4.1m NOK net present value per person for group R3, SSB 2017). Employment and PISA gaps are large and well-documented. Data transparency is Europe's highest. Policy has shifted towards selection since the late 2010s.</p>
         <p class="profile-signal">Signal: Fiscal, employment and education dimensions all document negative net impacts for non-EU immigrants.</p>
       </div>
 
@@ -521,13 +523,13 @@ document.getElementById('btn-csv')?.addEventListener('click', () => {
     ['Country','Code','Population share','Fiscal impact','Employment gap','PISA gap','Crime','Housing','Asylum'],
     ['Denmark','DK','12.6%','-DKK 16bn/yr','-14.5pt','-28pt (ESCS)','2.6×','Strained','High'],
     ['Sweden','SE','21%','+SEK 6bn/yr (cond.)','-16pt','-34pt (ESCS)','~2.5×','Strained','High'],
-    ['Norway','NO','17.5%','-NOK 410k/refugee','-12pt','-36pt (raw)','n/a','Strained','High'],
+    ['Norway','NO','17.5%','-4.1m NOK/person R3 (NPV 2015-2100)','-12pt','-36pt (raw)','n/a','Strained','High'],
     ['Finland','FI','11.7%','n/a','-18pt','-42pt (ESCS)','n/a','Moderate','Moderate'],
     ['Germany','DE','25.6%','-€2.1bn/yr','-13pt','-32pt (ESCS)','5.36% vs 1.46%','Strained','High'],
     ['Austria','AT','20.5%','n/a','-11pt','-25pt','n/a','Strained','High'],
     ['Switzerland','CH','27.7%','n/a','-7pt','-19pt (ESCS)','n/a','Moderate','Low'],
     ['France','FR','11.3%','n/a','-16pt','~-20pt','18-20% of perps','Strained','Moderate'],
-    ['Belgium','BE','36.6%','n/a','-20pt','-17pt (ESCS)','n/a','Strained','Moderate'],
+    ['Belgium','BE','13.8% non-nationals (36.6% foreign-origin)','n/a','-20pt','-17pt (ESCS)','n/a','Strained','Moderate'],
     ['Netherlands','NL','24.6%','Negative (refugees)','-15pt','-27pt (ESCS)','3×','Strained','Moderate'],
     ['United Kingdom','UK','19%','Mixed (OBR)','-8pt','-12pt','~12% of conv.','Strained','Moderate'],
     ['Ireland','IE','12%','n/a','-6pt','n/a','n/a','Strained','Moderate'],
@@ -535,7 +537,7 @@ document.getElementById('btn-csv')?.addEventListener('click', () => {
     ['Spain','ES','14%','GDP positive','-8pt','-7pt (ESCS)','n/a','Moderate','Moderate'],
     ['Portugal','PT','14%','n/a','-9pt','-25pt (ESCS)','n/a','Moderate','Low'],
     ['Czech Republic','CZ','10.4%','n/a','-3pt','n/a','n/a','Low','Low'],
-    ['United States','US','14.3%','Mixed (NAS)','-4pt','-16pt (2nd gen+)','Lower','Moderate','—'],
+    ['United States','US','14.3%','Mixed (NAS)','-4pt','-16pt (2nd gen+)','No systematic federal cross-tabulation','Moderate','—'],
     ['Canada','CA','23%','Mixed (PBO)','-7pt','-16pt (2nd gen≈)','n/a','Strained','Moderate'],
     ['Australia','AU','32%','Mixed (PC)','-4pt','+26pt','n/a','Strained','Moderate'],
     ['New Zealand','NZ','28.8%','Mixed (Treasury)','-5pt','+16pt','n/a','Strained','Moderate'],
