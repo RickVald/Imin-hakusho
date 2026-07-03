@@ -17,6 +17,83 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <div class="changelog-content">
 
     <section class="changelog-year">
+      <h2>2026</h2>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jul 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">Editorial consistency — framing, source policy, and Explorer data</div>
+          <p>Homepage stat updated: "14 countries with comparable net-cost methodologies" → "14 countries with fiscal-impact estimates (methodologies vary — not directly comparable)". Methodology pages (EN + JP): removed "exclusively on primary official sources" — replaced with accurate statement that academic/institutional sources are used and labelled where primary data is unavailable. Country Explorer intro: same correction. Explorer USA crime: "Lower than native-born (DOJ)" → "No systematic federal cross-tabulation" — matches USA country page. Explorer Belgium: aligned to 13.8% (non-Belgian nationals) to match Demographics page; 36.6% foreign-origin population noted in tooltip.</p>
+          <div class="entry-meta">
+            <span class="meta-tag changed">Correction</span>
+            <span class="meta-pages">Homepage, Methodology (EN+JP), Country Explorer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jul 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">FAQ Sweden/BRÅ — internal contradiction corrected</div>
+          <p>The FAQ previously stated "No new report since 2005" and "data ends in 2005" while simultaneously citing BRÅ 2021. Corrected: the BRÅ 2021 report (Rapport 2021:1) covers data from 2007–2018. The previous comparable study dates from 2005 (1997–2001 data). No updated report has been published since 2021. Timeline now consistent across all sections of the FAQ and its JSON-LD structured data.</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">Fix</span>
+            <span class="meta-pages">FAQ Sweden crime (EN)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jul 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">FAQ fiscal cost — Denmark scope and Norway figure corrected</div>
+          <p>Denmark row: scope corrected from "All immigrants (non-Western)" to "All immigrants and descendants"; figure now shows full breakdown (total −16bn DKK/yr; non-Western −27bn; Western +11bn). Norway row: figure corrected from −410,000 NOK to −4.1 million NOK per person (net present value, 2012 NOK, 2015–2100) for group R3 (asylum seekers and non-European family migration) — the FAQ had the correct source but a value off by a factor of 10.</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">Fix</span>
+            <span class="meta-pages">FAQ fiscal cost (EN)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jul 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">Encoding fixes — DE, FR, DK, SE, NO English country pages</div>
+          <p>Corrected mojibake encoding in 5 EN country pages: ü/å/ø/ç/ô/à/Å/Ø characters were stored as invalid byte sequences (C2 A5 C2 XX pattern instead of correct C3 XX UTF-8). Also fixed euro sign (€‚¬ → €) and warning emoji corruption in Germany. 52 individual character fixes across 5 files.</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">Fix</span>
+            <span class="meta-pages">Germany, France, Denmark, Sweden, Norway (EN)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jul 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">Source quality — Wikipedia citations and draft phrases removed</div>
+          <p>Removed Wikipedia citations from Australia EN (post-war immigration section) and Sweden EN (immigration history section). Removed draft phrases from crime page (Finland: "could not be confirmed from primary sources / will be added when available" → factual limitation statement), Germany country page (BMI verification caveat), and Belgium country page (prison population: "not yet extracted / unverified / pending" → "no directly verified figure from a primary source"). Denmark fiscal hero label corrected: −16bn DKK now identified as all immigrants and descendants, with non-Western/Western breakdown shown.</p>
+          <div class="entry-meta">
+            <span class="meta-tag fixed">Fix</span>
+            <span class="meta-pages">Australia, Sweden, Germany, Belgium (EN); Crime page; Fiscal cost page</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="changelog-entry">
+        <div class="entry-date">Jan 2026</div>
+        <div class="entry-body">
+          <div class="entry-title">Belgium population data updated to January 2026 (Statbel)</div>
+          <p>Non-Belgian nationals: 13.8% (Statbel, January 2026 reference date). Foreign-origin population (including naturalised citizens): 36.6%.</p>
+          <div class="entry-meta">
+            <span class="meta-tag changed">Update</span>
+            <span class="meta-pages">Belgium country page, Demographics page</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="changelog-year">
       <h2>2025</h2>
 
       <div class="changelog-entry">
