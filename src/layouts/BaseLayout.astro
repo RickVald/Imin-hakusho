@@ -94,7 +94,7 @@ const footerText =
 				"name": title,
 				"description": description,
 				"inLanguage": lang === 'ja' ? 'ja' : 'en',
-				"isPartOf": { "@id": "https://imin-hakusho.com/#website" },
+				...(type === 'Article' ? { "isPartOf": { "@id": "https://imin-hakusho.com/#website" } } : {}),
 				"publisher": { "@id": "https://imin-hakusho.com/#organization" },
 				...(dateModified ? { "dateModified": dateModified } : {}),
 				...(type === 'Dataset' ? {
