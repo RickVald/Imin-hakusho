@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="移民影響マトリクス：西欧20カ国×7テーマ比較 | 移民白書" lang="ja" altHref="/en/themes/comparison-matrix/" description="デンマーク・スウェーデン・ノルウェー・フランスなど20カ国の移民データを7テーマで比較。財政・雇用・PISA・犯罪・住宅・庇護の公式統計マトリクス。">
+<BaseLayout title="移民影響マトリクス：西欧20カ国×7テーマ比較 | 移民白書" lang="ja" altHref="/en/themes/comparison-matrix/" type="Dataset" description="デンマーク・スウェーデン・ノルウェー・フランスなど20カ国の移民データを7テーマで比較。財政・雇用・PISA・犯罪・住宅・庇護の公式統計マトリクス。">
 
 <main class="theme-page">
   <div class="page-header">
@@ -276,39 +276,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p>このマトリクスの各セルは、各国ページに掲載された一次資料に基づく概要であり、単純化を含みます。同一テーマでも国によって測定方法・対象年次・出身区分の定義が異なります。各セルの詳細な数値・出典・方法論上の限界は、必ず各国ページでご確認ください。灰色のセルは「移民の影響がない」のではなく「公開された一次資料が確認できない」ことを意味します。</p>
   </section>
 
-<script type="application/ld+json" is:inline>
-{
-  "@context": "https://schema.org",
-  "@type": "DataCatalog",
-  "@id": "https://imin-hakusho.com/themes/comparison-matrix/#catalog",
-  "name": "移民白書 — 20カ国比較マトリクス",
-  "description": "西欧・北米・オセアニア20カ国の移民統計を7テーマ（財政・雇用・PISA・犯罪・住宅・庇護）で比較した公式データカタログ。",
-  "url": "https://imin-hakusho.com/themes/comparison-matrix/",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "creator": {
-    "@type": "Organization",
-    "name": "移民白書",
-    "url": "https://imin-hakusho.com"
-  },
-  "dataset": [
-    {
-      "@type": "Dataset",
-      "name": "移民影響マトリクス — 20カ国×7テーマ",
-      "description": "各国の公式統計・国際機関データに基づく移民統計の横断比較。",
-      "url": "https://imin-hakusho.com/themes/comparison-matrix/",
-      "isPartOf": { "@id": "https://imin-hakusho.com/themes/comparison-matrix/#catalog" },
-      "keywords": ["移民", "統計", "財政影響", "雇用格差", "PISA", "犯罪", "住宅", "庇護申請"],
-      "temporalCoverage": "2020/2024",
-      "spatialCoverage": "Western Europe, North America, Oceania",
-      "distribution": {
-        "@type": "DataDownload",
-        "encodingFormat": "text/csv",
-        "contentUrl": "https://imin-hakusho.com/themes/comparison-matrix/"
-      }
-    }
-  ]
-}
-</script>
 </main>
 
 <style>

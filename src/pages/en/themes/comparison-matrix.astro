@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Immigration Impact Matrix: 20 Countries × 7 Themes | Immigration Factbook" lang="en" altHref="/themes/comparison-matrix/" description="Official data from 20 countries compared across 7 themes: fiscal cost, employment gap, PISA scores, crime statistics, housing impact and asylum levels. A cross-country analytical matrix.">
+<BaseLayout title="Immigration Impact Matrix: 20 Countries × 7 Themes | Immigration Factbook" lang="en" altHref="/themes/comparison-matrix/" type="Dataset" description="Official data from 20 countries compared across 7 themes: fiscal cost, employment gap, PISA scores, crime statistics, housing impact and asylum levels. A cross-country analytical matrix.">
 
 <main class="theme-page">
   <div class="page-header">
@@ -278,39 +278,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <p>Each cell is a summary of data found in the country pages and involves simplification. Measurement methods, reference years and definitions of "immigrant" vary across countries. Always consult individual country pages for precise figures, sources and methodological caveats. A grey cell means "no publicly available primary source confirmed" — not "no impact exists".</p>
   </section>
 
-<script type="application/ld+json" is:inline>
-{
-  "@context": "https://schema.org",
-  "@type": "DataCatalog",
-  "@id": "https://imin-hakusho.com/en/themes/comparison-matrix/#catalog",
-  "name": "Immigration Factbook — 20-Country Comparison Matrix",
-  "description": "Official immigration statistics for 20 Western countries across 7 themes: fiscal cost, employment gap, PISA scores, crime, housing, asylum.",
-  "url": "https://imin-hakusho.com/en/themes/comparison-matrix/",
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "creator": {
-    "@type": "Organization",
-    "name": "Immigration Factbook",
-    "url": "https://imin-hakusho.com"
-  },
-  "dataset": [
-    {
-      "@type": "Dataset",
-      "name": "Immigration Impact Matrix — 20 Countries × 7 Themes",
-      "description": "Cross-country comparison of immigration statistics from official national and international sources.",
-      "url": "https://imin-hakusho.com/en/themes/comparison-matrix/",
-      "isPartOf": { "@id": "https://imin-hakusho.com/en/themes/comparison-matrix/#catalog" },
-      "keywords": ["immigration", "statistics", "fiscal impact", "employment gap", "PISA", "crime", "housing", "asylum"],
-      "temporalCoverage": "2020/2024",
-      "spatialCoverage": "Western Europe, North America, Oceania",
-      "distribution": {
-        "@type": "DataDownload",
-        "encodingFormat": "text/csv",
-        "contentUrl": "https://imin-hakusho.com/en/themes/comparison-matrix/"
-      }
-    }
-  ]
-}
-</script>
 </main>
 
 <style>
