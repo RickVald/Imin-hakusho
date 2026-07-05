@@ -1,124 +1,476 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="デンマーク 移民 財政負担：公式データが示すもの | 移民白書" lang="ja" altHref="/en/faq/denmark-fiscal-impact/" description="デンマーク財務省（2023年）によると、移民・子孫の財政純負担は年間−160億DKK。非西洋系では−270億DKK、西洋系では+110億DKK。公式一次資料のみ使用。">
-<main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>デンマーク 移民 財政負担：公式データが示すもの</h1>
-    <p class="intro">デンマーク財務省（Finansministeriet）は移民・子孫が公共財政に与える純負担を定期的に公表しています。最新データ（2023年）では、年間−160億DKKの純負担。ただし、出身地域によって大きく異なります。</p>
-    <div class="lang-switch"><a href="/en/faq/denmark-fiscal-impact/">🌐 Read in English</a></div>
+<BaseLayout
+  title="デンマーク移民の財政純負担：財務省公式データ完全解説 | 移民白書"
+  lang="ja"
+  altHref="/en/faq/denmark-fiscal-impact/"
+  description="デンマーク財務省（2023年）によると、移民・子孫の財政純負担は年間−160億DKK。非西洋系では−270億DKK、西洋系では+110億DKK。公式一次資料のみ使用。"
+>
+
+<!-- ── Hero ── -->
+<div class="faq-hero">
+  <div class="faq-hero__badge">公式一次資料 · Finansministeriet 2023</div>
+  <h1>デンマーク移民の財政純負担<br><em>年間 −160億DKK</em></h1>
+  <p class="faq-hero__sub">デンマーク財務省（Finansministeriet）は移民・子孫が公共財政に与える純負担をヨーロッパで最も詳細に公式算定・公表している機関です。出身地域・居住年数・世代別に分解された最新データ（2023年改訂）を解説します。</p>
+  <div class="faq-hero__meta">
+    <a href="/en/faq/denmark-fiscal-impact/" class="lang-pill">🌐 Read in English</a>
+    <span class="meta-sep">·</span>
+    <span class="meta-source">出典：Finansministeriet 2023（2019年データ、2023年9月改訂）</span>
   </div>
+</div>
 
-  <section>
-    <h2>主要数値（Finansministeriet 2023年）</h2>
-    <table>
-      <thead>
-        <tr><th>グループ</th><th>財政純負担（年間）</th><th>出典</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>移民・子孫 合計</strong></td>
-          <td><strong>−160億DKK/年</strong></td>
-          <td><a href="https://www.fm.dk" rel="noopener">Finansministeriet 2023</a></td>
-        </tr>
-        <tr>
-          <td>非西洋系移民・子孫</td>
-          <td>−270億DKK/年</td>
-          <td>Finansministeriet 2023</td>
-        </tr>
-        <tr>
-          <td>西洋系移民・子孫</td>
-          <td>+110億DKK/年（純貢献）</td>
-          <td>Finansministeriet 2023</td>
-        </tr>
-        <tr>
-          <td>参照年</td>
-          <td>2019年データ（2023年9月改訂）</td>
-          <td>—</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+<!-- ── Body ── -->
+<div class="faq-body">
 
-  <section>
-    <h2>この数値が意味すること</h2>
-    <ul>
-      <li><strong>合計値（−160億DKK）は移民全体の平均</strong>です。出身地域によって符号が逆転します。西洋系（EU諸国・北米・オーストラリア等）は+110億DKK（純貢献）、非西洋系は−270億DKK（純負担）。</li>
-      <li><strong>財政効果は入国動機によって大きく異なります。</strong>就労移民は一般的に貢献がより大きく、難民や家族呼び寄せは純負担になる傾向があります。</li>
-      <li>Finansministerietの算出方法は<strong>静的モデル</strong>（現行の税収・給付のフロー）を使用しており、動的な将来予測（長期的な経済貢献や後世代の影響）は含まれていません。</li>
-      <li>デンマークはこの種の公式推計を定期的に公表する<strong>世界で最も透明性の高い国の一つ</strong>です。同等の公式推計は、ノルウェー（SSB）、ドイツ（Ifo研究所）以外の多くの国では存在しません。</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>他国との比較</h2>
-    <p>移民の財政的純負担を公式に算定・公表している国は限られています。</p>
-    <table>
-      <thead>
-        <tr><th>国</th><th>推計値</th><th>対象</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>デンマーク</td><td>−160億DKK/年</td><td>移民・子孫全体</td></tr>
-        <tr><td>ノルウェー</td><td>−410万NOK/人（R3グループ）</td><td>庇護・非欧州家族移民（純現在価値）</td></tr>
-        <tr><td>ドイツ</td><td>−21億€/年</td><td>2015年難民コホート</td></tr>
-        <tr><td>スウェーデン</td><td>+60億SEK/年（就労移民のみ）</td><td>就労移民限定（全移民の合計は非公開）</td></tr>
-      </tbody>
-    </table>
-    <p>注：各国の算出方法・対象範囲が異なるため、数値を直接比較することはできません。</p>
-  </section>
-
-  <section>
-    <h2>一次資料</h2>
-    <ul>
-      <li>Finansministeriet (2023). <em>Indvandreres nettobidrag til de offentlige finanser</em>. <a href="https://www.fm.dk" rel="noopener">www.fm.dk</a></li>
-    </ul>
-  </section>
-
-  <div class="related-countries">
-    <h2>関連ページ</h2>
-    <div class="related-links">
-      <a href="/countries/denmark/">🇩🇰 デンマーク ― 全データ</a>
-      <a href="/themes/fiscal-cost/">財政コスト ― 全カ国比較</a>
-      <a href="/faq/fiscal-cost/">財政コストFAQ</a>
+  <!-- ── 3 stat cards ── -->
+  <div class="key-stats-row">
+    <div class="kstat kstat--cost">
+      <div class="kstat__value">−160億DKK</div>
+      <div class="kstat__label">移民・子孫 合計 — 年間財政純負担</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
+    </div>
+    <div class="kstat kstat--cost">
+      <div class="kstat__value">−270億DKK</div>
+      <div class="kstat__label">非西洋系移民・子孫 — 年間純負担</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
+    </div>
+    <div class="kstat kstat--contrib">
+      <div class="kstat__value">+110億DKK</div>
+      <div class="kstat__label">西洋系移民・子孫 — 年間純貢献</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
     </div>
   </div>
 
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "デンマークで移民の財政負担はどのくらいですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "デンマーク財務省（Finansministeriet 2023年）によると、移民・子孫全体の財政純負担は年間−160億DKKです。出身地域別では、非西洋系移民・子孫が−270億DKK/年の純負担、西洋系移民・子孫が+110億DKK/年の純貢献となっています。参照年は2019年データ（2023年9月改訂）。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "デンマークの移民財政負担の算出方法は？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Finansministerietは静的モデルを使用しており、現行の税収・社会給付のフローを対象としています。動的な将来予測（子孫世代の貢献や経済成長効果）は含まれていません。デンマークはこの種の公式推計を定期的に公表する世界で最も透明性の高い国の一つです。"
-        }
+  <!-- ── Q1 ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>−160億DKKとは何を意味するのか</h2>
+    <ul>
+      <li><strong>合計値（−160億DKK）は移民全体の平均</strong>です。出身地域によって符号が逆転します。西洋系（EU諸国・北米・オーストラリア等）は+110億DKK（純貢献）、非西洋系は−270億DKK（純負担）。</li>
+      <li><strong>財政効果は入国動機に強く依存します。</strong>就労移民は一般的に貢献がより大きく、難民・家族呼び寄せは純負担になる傾向があります——これは北欧全国で記録されているパターンです。</li>
+      <li>Finansministerietの算出は<strong>静的モデル</strong>（現行の税収・給付フロー）を使用しており、将来の生涯貢献額・子孫の経済効果・長期GDP効果は含まれていません。</li>
+      <li>デンマークはこの種の公式推計を毎年公表する<strong>世界で最も透明性の高い国の一つ</strong>です。同等の公式推計はノルウェー（SSB）、ドイツ（Ifo/IAB）程度にしか存在しません。</li>
+    </ul>
+  </section>
+
+  <!-- ── Q2 ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>2019年以降、状況は改善しているのか</h2>
+    <ul>
+      <li>2019年データ（2023年9月改訂）が2025年時点でFinansministerietが公表している<strong>最新の公式算定</strong>です。</li>
+      <li>雇用は改善しています：MENAPT諸国出身の就業者数は2019年第4四半期の62,800人から<strong>2024年第4四半期には80,800人</strong>（+29%）に増加しており、純負担の縮小を示唆していますが、新たな公式算定は未公表です。</li>
+      <li>次回更新では負担額が縮小する可能性が高いですが、西洋系と非西洋系の符号の逆転は構造的であり、解消は見込まれません。</li>
+    </ul>
+  </section>
+
+  <!-- ── 他国比較 ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>他国との比較</h2>
+    <p class="section-note">各国の算出方法・対象範囲・基準年が異なるため、数値の直接比較には注意が必要です。</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>国</th><th>公式推計値</th><th>対象</th></tr>
+        </thead>
+        <tbody>
+          <tr class="row-highlight"><td><strong>デンマーク</strong></td><td><strong>−160億DKK/年</strong></td><td>移民・子孫全体</td></tr>
+          <tr><td>ノルウェー</td><td>−410万NOK/人（R3グループ）</td><td>庇護・非欧州家族移民（純現在価値）</td></tr>
+          <tr><td>ドイツ</td><td>−21億€/年</td><td>2015年難民コホート</td></tr>
+          <tr><td>スウェーデン</td><td>+60億SEK/年</td><td>就労移民のみ（全体は非公表）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── 一次資料 ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>一次資料</h2>
+    <div class="source-block">
+      <div class="source-block__icon">📄</div>
+      <div>
+        <div class="source-block__title">Finansministeriet (2023). <em>Indvandreres nettobidrag til de offentlige finanser i 2019</em> — 2023年9月改訂版</div>
+        <div class="source-block__links">
+          <a href="https://fm.dk/media/5cnhiydz/indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019_revideret-september-2023-a.pdf" rel="noopener" target="_blank">PDFレポート →</a>
+          <a href="https://fm.dk/udgivelser/2023/september/oekonomisk-analyse-indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019-revideret-version-september-2023/" rel="noopener" target="_blank">公表ページ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Explore ── -->
+  <div class="explore-section">
+    <div class="explore-section__header">
+      <span class="explore-dot"></span>
+      <h2>さらに探索する</h2>
+    </div>
+    <div class="explore-grid">
+      <a href="/countries/denmark/" class="explore-card">
+        <span class="explore-icon">🇩🇰</span>
+        <div>
+          <div class="explore-card__title">デンマーク — 全データ</div>
+          <div class="explore-card__desc">人口・雇用・治安・教育・住宅の公式統計</div>
+        </div>
+      </a>
+      <a href="/themes/fiscal-cost/" class="explore-card">
+        <span class="explore-icon">💰</span>
+        <div>
+          <div class="explore-card__title">財政コスト — 20カ国比較</div>
+          <div class="explore-card__desc">各国の財政純負担を横断比較</div>
+        </div>
+      </a>
+      <a href="/themes/comparison-matrix/" class="explore-card">
+        <span class="explore-icon">🗂️</span>
+        <div>
+          <div class="explore-card__title">20カ国比較マトリクス</div>
+          <div class="explore-card__desc">全テーマを一覧で比較</div>
+        </div>
+      </a>
+      <a href="/faq/denmark-policy-shift/" class="explore-card">
+        <span class="explore-icon">⚖️</span>
+        <div>
+          <div class="explore-card__title">デンマークの政策転換</div>
+          <div class="explore-card__desc">なぜデンマークは移民政策を変えたのか</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div><!-- /faq-body -->
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "デンマークで移民の財政負担はどのくらいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "デンマーク財務省（Finansministeriet 2023年）によると、移民・子孫全体の財政純負担は年間−160億DKKです。出身地域別では、非西洋系移民・子孫が−270億DKK/年の純負担、西洋系移民・子孫が+110億DKK/年の純貢献となっています。参照年は2019年データ（2023年9月改訂）。"
       }
-    ]
-  }
-  </script>
-</main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+    },
+    {
+      "@type": "Question",
+      "name": "デンマークの移民財政負担の算出方法は？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Finansministerietは静的モデルを使用しており、現行の税収・社会給付のフローを対象としています。動的な将来予測（子孫世代の貢献や経済成長効果）は含まれていません。デンマークはこの種の公式推計を定期的に公表する世界で最も透明性の高い国の一つです。"
+      }
+    }
+  ]
 }
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
+</script>
+
 </BaseLayout>
+
+<style>
+/* ── Hero ── */
+.faq-hero {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.faq-hero__badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-radius: 999px;
+  padding: 0.32em 1em;
+  margin-bottom: 1.5rem;
+}
+
+.faq-hero h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.3;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.faq-hero h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.faq-hero__sub {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  line-height: 1.9;
+  max-width: 36em;
+  margin: 0 auto 1.2rem;
+}
+
+.faq-hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.lang-pill {
+  display: inline-block;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.25em 0.85em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+}
+.lang-pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.meta-sep { color: var(--color-border); }
+
+/* ── Body ── */
+.faq-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+/* ── Key stat cards ── */
+.key-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.kstat {
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.kstat--cost {
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface-raised));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-top: 3px solid var(--color-accent);
+}
+
+.kstat--contrib {
+  background: color-mix(in srgb, var(--color-teal) 8%, var(--color-surface-raised));
+  border: 1px solid color-mix(in srgb, var(--color-teal) 25%, transparent);
+  border-top: 3px solid var(--color-teal);
+}
+
+.kstat__value {
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.kstat--cost .kstat__value { color: var(--color-accent); }
+.kstat--contrib .kstat__value { color: var(--color-teal); }
+
+.kstat__label {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+}
+
+.kstat__source {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Sections ── */
+.faq-section { margin-bottom: 2.5rem; }
+
+.faq-section h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.h2-marker {
+  display: inline-block;
+  width: 4px;
+  height: 1.1em;
+  background: var(--color-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.faq-section ul {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.faq-section li {
+  font-size: 0.93rem;
+  line-height: 1.85;
+  color: var(--color-ink-soft);
+}
+
+.faq-section li strong { color: var(--color-ink); }
+
+.section-note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+
+/* ── Table ── */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.compare-table th {
+  background: var(--color-surface-raised);
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.compare-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink-soft);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+
+.row-highlight td {
+  background: color-mix(in srgb, var(--color-gold) 6%, transparent);
+  color: var(--color-ink);
+}
+
+/* ── Source block ── */
+.source-block {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.1rem 1.4rem;
+}
+
+.source-block__icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.source-block__title {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.source-block__links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.source-block__links a {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.source-block__links a:hover { color: var(--color-accent); }
+
+/* ── Explore ── */
+.explore-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.explore-section__header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.explore-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.explore-section__header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.explore-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: transform 0.13s, border-color 0.13s;
+}
+.explore-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.explore-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+
+.explore-card__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.explore-card__desc {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin-top: 0.15rem;
+}
+</style>
