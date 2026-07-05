@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="ベルギーの移民人口比率：公式統計が実際に測定するもの | 移民白書" lang="ja" altHref="/en/faq/belgium-immigrant-population/" description="ベルギーのStatbelは13.8%（非ベルギー国籍者）と36.6%（外国系、帰化者を含む）の2つの公式数値を発表しています。両方とも正確ですが、異なるものを測定しています。">
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>ベルギーの移民人口比率：公式統計が実際に測定するもの</h1>
-    <p class="intro">ベルギーの移民人口について広く引用される2つの数値があります：13.8%と36.6%。どちらも公式統計です。異なるものを測定しており、混同は誤解の一般的な原因です。</p>
-    <div class="lang-switch"><a href="/en/faq/belgium-immigrant-population/">🌐 Read in English</a></div>
+    <div class="theme-hero__badge">Statbel（ベルギー統計局）2026年 — 公式センサスデータ</div>
+    <h1>ベルギーの移民人口比率<br>公式統計が実際に測定するもの<em>13.8%と36.6%</em></h1>
+    <p class="theme-hero__sub">ベルギーでは13.8%と36.6%という2つの公式数値が広く引用される。どちらも正確だが、異なるものを測定している。混同は誤解の最も一般的な原因。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/belgium-immigrant-population/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/belgium/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">13.8<small>%</small></span>
+      <span class="hstat__label">非ベルギー国籍者</span>
+      <span class="hstat__source">Statbel 2026</span>
+    </a>
+    <a class="hstat" href="/countries/belgium/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">36.6<small>%</small></span>
+      <span class="hstat__label">外国系（帰化者含む）</span>
+      <span class="hstat__source">Statbel / センサス推計</span>
+    </a>
+    <a class="hstat" href="/faq/employment-gap/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−20<small>pt</small></span>
+      <span class="hstat__label">雇用率格差（20カ国中最大）</span>
+      <span class="hstat__source">Statbel 2023</span>
+    </a>
   </div>
 
   <section>
@@ -61,14 +83,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>関連ページ</h2>
-    <div class="related-links">
-      <a href="/countries/belgium/">🇧🇪 ベルギー ― 全データ</a>
-      <a href="/themes/demographics/">人口動態テーマ</a>
-      <a href="/themes/comparison-matrix/">20カ国比較マトリクス</a>
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/belgium/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇧🇪 ベルギー — 全データ</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態テーマ</a>
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 20カ国比較マトリクス</a>
+      <a href="/faq/employment-gap/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💼 雇用率格差FAQ</a>
     </div>
-  </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 
   <script type="application/ld+json" is:inline>
   {
@@ -77,26 +101,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "ベルギーの移民人口は何パーセントですか？",
+        "name": "ベルギーの移民人口は13.8%と36.6%のどちらが正しいですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ベルギーには2つの公式数値があります。13.8%は非ベルギー国籍者（ベルギー国籍以外の国籍を持つ人、Statbel 2026年1月）です。36.6%は外国系（外国生まれ、または少なくとも一方の親が外国生まれ、帰化市民を含む）です。両方ともStatbelの公式統計です。差はベルギーの高い帰化率を反映しており、外国系の多くの人がベルギー国籍を取得し、36.6%の数値には含まれますが13.8%には含まれません。"
+          "text": "両方とも正確ですが、異なるものを測定しています。13.8%（Statbel 2026年）は現在非ベルギー国籍を保有する人の比率です。36.6%は外国生まれ、または少なくとも一方の親が外国生まれの人（帰化市民を含む）の比率です。ベルギーは帰化率が高いため、両数値の差が大きくなっています。"
         }
       }
     ]
   }
   </script>
 </main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

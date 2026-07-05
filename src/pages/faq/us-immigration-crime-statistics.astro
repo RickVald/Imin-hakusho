@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="米国の移民と犯罪：連邦公式データが示すもの | 移民白書" lang="ja" altHref="/en/faq/us-immigration-crime-statistics/" description="米国は移民ステータス別の系統的な連邦犯罪統計を公表していません。存在するデータと、それが示せないものを解説します。">
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>米国の移民と犯罪：連邦公式データが示すもの</h1>
-    <p class="intro">スウェーデン、デンマーク、ノルウェーとは異なり、米国は移民ステータス別に分類された系統的な連邦犯罪統計を公表していません。このページでは連邦レベルで存在するデータと、そこから確立できないことを説明します。</p>
-    <div class="lang-switch"><a href="/en/faq/us-immigration-crime-statistics/">🌐 Read in English</a></div>
+    <div class="theme-hero__badge">BJS（司法統計局）· FBI UCR/NIBRS · ICE/DHS — 米国連邦公式データ</div>
+    <h1>米国の移民と犯罪<br>連邦公式データが示すもの<em>系統的なクロス集計は存在しない</em></h1>
+    <p class="theme-hero__sub">スウェーデン・デンマーク・ノルウェーと異なり、米国は移民ステータス別に分類された系統的な連邦犯罪統計を公表していない。存在するデータと、そこから確立できないことを解説する。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/us-immigration-crime-statistics/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/faq/germany-immigration-crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">3.7<small>×</small></span>
+      <span class="hstat__label">ドイツ（比較）</span>
+      <span class="hstat__source">BKA PKS 2023</span>
+    </a>
+    <a class="hstat" href="/faq/sweden-crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">2.5<small>×</small></span>
+      <span class="hstat__label">スウェーデン（比較）</span>
+      <span class="hstat__source">BRÅ 2021</span>
+    </a>
+    <a class="hstat" href="/countries/usa/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">N/A</span>
+      <span class="hstat__label">米国（連邦集計なし）</span>
+      <span class="hstat__source">FBI UCR / BJS</span>
+    </a>
   </div>
 
   <section>
@@ -76,50 +98,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>関連ページ</h2>
-    <div class="related-links">
-      <a href="/countries/usa/">🇺🇸 米国 ― 全データ</a>
-      <a href="/faq/sweden-crime/">スウェーデンBRÅ犯罪データ</a>
-      <a href="/themes/crime/">犯罪テーマ ― 全カ国</a>
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/usa/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇺🇸 米国 — 全データ</a>
+      <a href="/faq/germany-immigration-crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇪 ドイツ犯罪統計FAQ</a>
+      <a href="/faq/sweden-crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン犯罪統計FAQ</a>
+      <a href="/themes/crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🔍 犯罪テーマ — 全カ国比較</a>
     </div>
-  </div>
-
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "米国政府は移民ステータス別の犯罪統計を公表していますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "いいえ。米国は移民ステータスまたは出生地別に分類された系統的な連邦犯罪統計を公表していません。FBIの統一犯罪報告（UCR）/NIBRSデータベースは年齢・性別・人種別の逮捕を記録しますが、移民ステータスは変数として収集されていません。司法統計局は、全国レベルで米国生まれ対外国生まれの人口の犯罪率を比較する定期報告書を公表していません。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "利用可能な米国データは移民と犯罪について何を示していますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "連邦クロス集計がない中、リンクされた行政データを使用した査読済み学術研究（Butcher & Piehl 2007、Chalfin 2014、Adelman et al. 2017）は一貫して、移民（非正規移民を含む）が米国生まれのアメリカ人より低い収監率であることを示しています。最も引用される州レベルの公式データであるテキサスDPSも、正規・非正規移民の双方が米国生まれのテキサス市民より低い有罪判決率を示しています。これらの知見は、異なる指標と人口を使用するスウェーデンBRÅやデンマークDSTなどの欧州各国統計と直接比較することはできません。"
-        }
-      }
-    ]
-  }
-  </script>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

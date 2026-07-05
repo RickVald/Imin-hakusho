@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="移民の子どもは学力が低いのか？PISA2022国別データ | 移民白書" lang="ja" altHref="/en/faq/pisa-immigrant-students/" description="OECD PISA 2022のデータで移民系生徒の学力格差を検証。社会経済補正後に格差の83%が縮小する事実と国別の差異を解説。">
 <main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
-    <h1>移民の子どもは学力が低いのか？PISA2022国別データ</h1>
-    <p class="intro">OECD PISA 2022のデータでは、移民系生徒と現地生まれの平均スコア差は粗値−29ptだが、社会経済的地位を補正すると−5ptに縮小する。格差の構造は国によって大きく異なる。</p>
-    <div class="lang-switch"><a href="/en/faq/pisa-immigrant-students/">🌐 English version</a></div>
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">OECD PISA 2022 — Volume I 公式報告書</div>
+    <h1>移民の子どもは学力が低いのか？<br>PISA 2022 国別データ<em>格差の83%は社会経済要因</em></h1>
+    <p class="theme-hero__sub">OECD平均では移民系生徒と現地生まれの粗差は−29pt。ただし社会経済的地位を補正すると−5ptに縮小。オーストラリア・ニュージーランドでは移民系が現地生まれを上回る。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/pisa-immigrant-students/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/themes/education/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−29<small>pt</small></span>
+      <span class="hstat__label">粗値格差（OECD平均）</span>
+      <span class="hstat__source">PISA 2022 Vol.I</span>
+    </a>
+    <a class="hstat" href="/themes/education/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">−5<small>pt</small></span>
+      <span class="hstat__label">社会経済補正後格差</span>
+      <span class="hstat__source">PISA 2022 Vol.I</span>
+    </a>
+    <a class="hstat" href="/themes/education/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">83<small>%</small></span>
+      <span class="hstat__label">社会経済要因で説明される割合</span>
+      <span class="hstat__source">OECD PISA 2022</span>
+    </a>
   </div>
 
   <section>
@@ -105,43 +127,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>OECD (2023). <em>PISA 2022 Results Volume I: The State of Learning and Equity in Education</em>. Chapter 5: "Immigrant background and student performance". <a href="https://www.oecd.org/pisa" rel="noopener">www.oecd.org/pisa</a></li>
     </ul>
   </section>
-<div class="related-countries">
-  <h2>関連国ページ</h2>
-  <div class="related-links">
-    <a href="/countries/finland/">🇫🇮 フィンランド — 詳細データ</a>
-    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
-    <a href="/countries/australia/">🇦🇺 オーストラリア — 詳細データ</a>
-    <a href="/countries/germany/">🇩🇪 ドイツ — 詳細データ</a>
-  </div>
-</div>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/finland/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇫🇮 フィンランド — 詳細データ</a>
+      <a href="/countries/sweden/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン — 詳細データ</a>
+      <a href="/countries/australia/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇦🇺 オーストラリア — 詳細データ</a>
+      <a href="/countries/germany/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇪 ドイツ — 詳細データ</a>
+      <a href="/themes/education/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📚 PISA教育格差 — 全カ国比較</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries {
-  max-width: 800px;
-  margin: 2.5rem auto 1rem;
-  padding: 0 1.5rem;
-}
-.related-countries h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-.related-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

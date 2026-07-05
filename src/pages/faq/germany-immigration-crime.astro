@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="ドイツ 移民 犯罪 統計：BKA公式データが示すもの | 移民白書" lang="ja" altHref="/en/faq/germany-immigration-crime/" description="ドイツ連邦犯罪局（BKA）2023年データ：非ドイツ国籍者の被疑者率5.36%に対し、ドイツ国籍者は1.46%。年齢・居住地補正後の差は縮小。公式一次資料のみ使用。">
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>ドイツ 移民 犯罪 統計：BKA公式データが示すもの</h1>
-    <p class="intro">ドイツ連邦犯罪局（Bundeskriminalamt、BKA）は国籍別の被疑者統計を毎年公表しています。2023年データでは、非ドイツ国籍者の被疑者率はドイツ国籍者の約3.7倍。ただし、この差は年齢構成・居住地集中・社会経済的地位の違いで大部分が説明されます。</p>
-    <div class="lang-switch"><a href="/en/faq/germany-immigration-crime/">🌐 Read in English</a></div>
+    <div class="theme-hero__badge">BKA（ドイツ連邦犯罪局）警察犯罪統計（PKS）2023年</div>
+    <h1>ドイツ 移民 犯罪 統計<br>BKA公式データが示すもの<em>被疑者率 約3.7倍</em></h1>
+    <p class="theme-hero__sub">BKA 2023年データでは非ドイツ国籍者の被疑者率はドイツ国籍者の約3.7倍。ただしこの差は年齢構成・居住地集中・社会経済的地位の違いで大部分が説明される。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/germany-immigration-crime/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">5.36<small>%</small></span>
+      <span class="hstat__label">非ドイツ国籍 被疑者率</span>
+      <span class="hstat__source">BKA PKS 2023</span>
+    </a>
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">1.46<small>%</small></span>
+      <span class="hstat__label">ドイツ国籍 被疑者率</span>
+      <span class="hstat__source">BKA PKS 2023</span>
+    </a>
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">3.7<small>×</small></span>
+      <span class="hstat__label">比率（非独／独）</span>
+      <span class="hstat__source">BKA PKS 2023（計算値）</span>
+    </a>
   </div>
 
   <section>
@@ -74,14 +96,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>関連ページ</h2>
-    <div class="related-links">
-      <a href="/countries/germany/">🇩🇪 ドイツ ― 全データ</a>
-      <a href="/faq/sweden-crime/">スウェーデン犯罪統計FAQ</a>
-      <a href="/themes/fiscal-cost/">財政コスト ― 全カ国</a>
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/germany/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇪 ドイツ — 全データ</a>
+      <a href="/faq/sweden-crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン犯罪統計FAQ</a>
+      <a href="/faq/denmark-fiscal-impact/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇰 デンマーク財政負担FAQ</a>
+      <a href="/themes/crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🔍 犯罪テーマ — 全カ国比較</a>
     </div>
-  </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 
   <script type="application/ld+json" is:inline>
   {
@@ -108,16 +132,4 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
   </script>
 </main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="移民 統計 国別 比較：西側20カ国の公式データ | 移民白書" lang="ja" altHref="/en/faq/immigration-statistics-comparison/" description="デンマーク・スウェーデン・ノルウェー・ドイツ・フランス・ベルギー・米国・オーストラリアなど20カ国の移民統計を財政・雇用・教育・犯罪で比較。すべて一次公式資料。">
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>移民 統計 国別 比較：西側20カ国の公式データ</h1>
-    <p class="intro">移民白書は、西側20カ国の移民が財政・雇用・教育・犯罪・人口動態に与える影響を、各国統計局・財務省・国際機関の一次公式資料のみを使用して比較します。</p>
-    <div class="lang-switch"><a href="/en/faq/immigration-statistics-comparison/">🌐 Read in English</a></div>
+    <div class="theme-hero__badge">Finansministeriet · BKA · BRÅ · DST · OECD PISA · ABS · Statbel · 各国統計局</div>
+    <h1>移民 統計 国別 比較<br>西側20カ国の公式データ<em>財政・犯罪・教育・人口</em></h1>
+    <p class="theme-hero__sub">移民白書は西側20カ国の移民が財政・雇用・教育・犯罪・人口動態に与える影響を、各国統計局・財務省・国際機関の一次公式資料のみを使用して比較します。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/immigration-statistics-comparison/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/faq/denmark-fiscal-impact/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−160億<small>DKK</small></span>
+      <span class="hstat__label">デンマーク財政純負担</span>
+      <span class="hstat__source">Finansministeriet 2023</span>
+    </a>
+    <a class="hstat" href="/faq/germany-immigration-crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">3.7<small>×</small></span>
+      <span class="hstat__label">ドイツ犯罪率比（BKA）</span>
+      <span class="hstat__source">BKA PKS 2023</span>
+    </a>
+    <a class="hstat" href="/countries/australia/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">32<small>%</small></span>
+      <span class="hstat__label">オーストラリア外国生まれ</span>
+      <span class="hstat__source">ABS 2024</span>
+    </a>
   </div>
 
   <section>
@@ -78,16 +100,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>詳細ページ</h2>
-    <div class="related-links">
-      <a href="/themes/country-explorer/">国別データエクスプローラー</a>
-      <a href="/themes/comparison-matrix/">20カ国比較マトリクス</a>
-      <a href="/themes/fiscal-cost/">財政コスト</a>
-      <a href="/themes/demographics/">人口動態</a>
-      <a href="/themes/education/">PISA教育格差</a>
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">詳細ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/themes/country-explorer/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🗺 国別データエクスプローラー</a>
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 20カ国比較マトリクス</a>
+      <a href="/themes/fiscal-cost/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 財政コスト</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態</a>
+      <a href="/themes/education/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📚 PISA教育格差</a>
     </div>
-  </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 
   <script type="application/ld+json" is:inline>
   {
@@ -99,32 +122,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         "name": "移民統計を国別に比較する際に注意すべき点は？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "国際比較には3つの主な注意点があります。(1) 定義の差：「移民」は外国生まれ、外国籍者、移民背景など国により異なります。(2) 財政推計の方法論：静的・動的モデルの差、対象範囲の差があるため直接比較できません。(3) 犯罪統計は未補正の粗値で、年齢・社会経済的地位の差を反映しています。移民白書では各国の定義と方法論を各ページに明記しています。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "どの国が移民統計の最も詳細な公式データを公表していますか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "北欧諸国（デンマーク、スウェーデン、ノルウェー、フィンランド）は財政・雇用・教育・犯罪にわたる最も詳細で透明性の高い公式統計を公表しています。デンマーク（Finansministeriet）とノルウェー（SSB）は財政純負担の公式推計を定期的に公表する数少ない国です。ドイツ（BKA）は国籍別犯罪統計を毎年公表しています。"
+          "text": "「移民」の定義は国によって異なります（外国生まれ、外国籍者、移民背景）。財政推計の方法論（静的・動的モデル、対象範囲）も国によって大きく異なるため、数値の直接比較はできません。犯罪統計はすべて年齢・性別・社会経済的地位の未補正粗値です。"
         }
       }
     ]
   }
   </script>
 </main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-h3 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin: 1.5rem 0 0.5rem; }
-</style>
 </BaseLayout>

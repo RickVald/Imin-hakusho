@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="オーストラリアの外国生まれ人口 2025年：ABS公式データ | 移民白書" lang="ja" altHref="/en/faq/australia-foreign-born-population/" description="オーストラリアの外国生まれ人口は総人口の約32%（ABS 2024年）に達し、比較可能な20カ国中最高水準です。ABS公式データを解説します。">
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
-    <h1>オーストラリアの外国生まれ人口 2025年：ABS公式データ</h1>
-    <p class="intro">オーストラリアの外国生まれ人口は、オーストラリア統計局（ABS）によると総人口の約32%に達し、移民白書が追跡する20カ国中最高水準です。これは数十年にわたって運用されてきたポイント制移民制度を反映しています。</p>
-    <div class="lang-switch"><a href="/en/faq/australia-foreign-born-population/">🌐 Read in English</a></div>
+    <div class="theme-hero__badge">ABS（オーストラリア統計局）2021年国勢調査 · 2024年推計</div>
+    <h1>オーストラリアの外国生まれ人口<br>ABS公式データ<em>20カ国中 最高水準 約32%</em></h1>
+    <p class="theme-hero__sub">オーストラリアの外国生まれ人口は総人口の約32%（ABS 2024年）。移民白書が追跡する20カ国中最高水準。数十年にわたるポイント制移民制度の結果。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/australia-foreign-born-population/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/australia/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">32<small>%</small></span>
+      <span class="hstat__label">外国生まれ人口比率</span>
+      <span class="hstat__source">ABS 2024</span>
+    </a>
+    <a class="hstat" href="/countries/australia/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">820万<small>人</small></span>
+      <span class="hstat__label">海外生まれ居住者総数</span>
+      <span class="hstat__source">ABS 2024</span>
+    </a>
+    <a class="hstat" href="/themes/demographics/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">1位</span>
+      <span class="hstat__label">20カ国中の順位（最高）</span>
+      <span class="hstat__source">移民白書 国際比較</span>
+    </a>
   </div>
 
   <section>
@@ -74,51 +96,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>関連ページ</h2>
-    <div class="related-links">
-      <a href="/countries/australia/">🇦🇺 オーストラリア ― 全データ</a>
-      <a href="/countries/new-zealand/">🇳🇿 ニュージーランド ― 全データ</a>
-      <a href="/themes/demographics/">人口動態テーマ</a>
-      <a href="/themes/comparison-matrix/">20カ国比較マトリクス</a>
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/australia/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇦🇺 オーストラリア — 全データ</a>
+      <a href="/countries/new-zealand/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇳🇿 ニュージーランド — 詳細データ</a>
+      <a href="/countries/canada/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇨🇦 カナダ — 詳細データ</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態テーマ</a>
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 20カ国比較マトリクス</a>
     </div>
-  </div>
-
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "オーストラリアの人口の何パーセントが外国生まれですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "オーストラリア統計局（ABS 2024年）によると、オーストラリアの人口の約32%が外国生まれ（海外生まれ）です。これは移民白書が追跡する比較可能な20カ国中最高水準です。海外生まれ居住者総数は約820万人です。主要出身国はイングランド、インド、中国、ニュージーランド、フィリピンです（ABS 2021年国勢調査）。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "なぜオーストラリアは移民人口が多いのですか？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "オーストラリアの高い外国生まれ比率はいくつかの要因を反映しています：(1) 1973年以来実施されているポイント制移民制度（スキル労働者を体系的に選定）；(2) 地理的孤立による不正規移民の少なさ（移民の大多数が正式ルートで入国）；(3) 第二次世界大戦後の欧州からの移住プログラム、1973年の白豪主義政策廃止後の永住定住の波。年間永住移民プログラムは現在約18万5,000人を目標としています（2024〜25年）。出典：オーストラリア内務省。"
-        }
-      }
-    ]
-  }
-  </script>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

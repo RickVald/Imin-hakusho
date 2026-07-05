@@ -5,17 +5,16 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 <BaseLayout title="Immigration Impact Matrix: 20 Countries × 7 Themes | Immigration Factbook" lang="en" altHref="/themes/comparison-matrix/" type="Dataset" description="Official data from 20 countries compared across 7 themes: fiscal cost, employment gap, PISA scores, crime statistics, housing impact and asylum levels. A cross-country analytical matrix.">
 
 <main class="theme-page">
-  <div class="page-header">
+  <div class="theme-hero">
     <nav class="breadcrumb">
       <a href="/en/">Immigration Factbook</a> <span>›</span> <span>Thematic comparisons</span>
     </nav>
-    <h1>Immigration Impact Matrix — 20-Country, 7-Theme Comparison</h1>
-    <p class="intro">
-      This matrix organises official statistics from 20 countries across 7 thematic dimensions. Colours indicate the overall signal in each category: red = negative impact documented, green = positive impact or low level, grey = data not publicly available. For individual figures and sources, consult each country page.
-    </p>
-    <div class="lang-switch">
-      <a href="/themes/comparison-matrix/">🇯🇵 日本語で読む</a>
-      <button id="btn-csv" class="csv-btn">⬇ Download CSV</button>
+    <div class="theme-hero__badge">BKA · BRÅ · DST · SSB · Finansministeriet · OECD · Eurostat</div>
+    <h1>Immigration Impact Matrix<br><em>20 Countries × 7 Themes at a Glance</em></h1>
+    <p class="theme-hero__sub">Official data organised as a cross-country matrix. Red = negative impact documented, green = positive, grey = no public data. Consult each country page for individual figures.</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/themes/comparison-matrix/">🌐 日本語</a></span>
+      <button id="btn-csv" class="csv-btn" style="background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:6px;padding:0.3rem 0.75rem;font-size:0.78rem;color:var(--color-ink-soft);cursor:pointer;">⬇ CSV</button>
     </div>
   </div>
 

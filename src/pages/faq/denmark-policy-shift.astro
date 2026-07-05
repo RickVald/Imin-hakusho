@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="デンマークはなぜ移民政策を転換したのか？ | 移民白書" lang="ja" altHref="/en/faq/denmark-policy-shift/" description="デンマークの移民政策転換を公式統計と政策年表で検証。財政・雇用・犯罪データと2001年以降の主要措置を一次資料に基づき整理。">
 <main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
-    <h1>デンマークはなぜ移民政策を転換したのか？</h1>
-    <p class="intro">デンマークは2001年以降、欧州で最も制限的な移民・統合政策の一つを採用してきた。その背景にある公式統計データと政策転換の時系列を一次資料に基づき整理する。</p>
-    <div class="lang-switch"><a href="/en/faq/denmark-policy-shift/">🌐 English version</a></div>
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">Finansministeriet · DST · Udlændinge- og Integrationsministeriet</div>
+    <h1>デンマークはなぜ<br>移民政策を転換したのか？<em>公式統計で検証</em></h1>
+    <p class="theme-hero__sub">2001年以降、欧州で最も制限的な移民政策の一つを採用してきたデンマーク。背景にある財政・雇用・犯罪データと政策年表を一次資料に基づき整理する。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/denmark-policy-shift/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/faq/denmark-fiscal-impact/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−160億<small>DKK</small></span>
+      <span class="hstat__label">財政純負担/年</span>
+      <span class="hstat__source">Finansministeriet 2023</span>
+    </a>
+    <a class="hstat" href="/themes/labour-market/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">−14.5<small>pt</small></span>
+      <span class="hstat__label">移民系の雇用率格差</span>
+      <span class="hstat__source">DST 2023</span>
+    </a>
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">2.6<small>×</small></span>
+      <span class="hstat__label">犯罪率指数（現地生まれ比）</span>
+      <span class="hstat__source">DST（年齢補正後）</span>
+    </a>
   </div>
 
   <section>
@@ -112,42 +134,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>Udlændinge- og Integrationsministeriet. <em>Lovgivning om integration og udlændinge</em>. <a href="https://www.uim.dk" rel="noopener">www.uim.dk</a></li>
     </ul>
   </section>
-<div class="related-countries">
-  <h2>関連国ページ</h2>
-  <div class="related-links">
-    <a href="/countries/denmark/">🇩🇰 デンマーク — 詳細データ</a>
-    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
-    <a href="/countries/norway/">🇳🇴 ノルウェー — 詳細データ</a>
-  </div>
-</div>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/denmark/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇰 デンマーク — 詳細データ</a>
+      <a href="/countries/sweden/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン — 詳細データ</a>
+      <a href="/countries/norway/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇳🇴 ノルウェー — 詳細データ</a>
+      <a href="/faq/denmark-fiscal-impact/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 デンマーク財政負担FAQ</a>
+      <a href="/themes/fiscal-cost/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 財政コスト — 全カ国</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries {
-  max-width: 800px;
-  margin: 2.5rem auto 1rem;
-  padding: 0 1.5rem;
-}
-.related-countries h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-.related-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

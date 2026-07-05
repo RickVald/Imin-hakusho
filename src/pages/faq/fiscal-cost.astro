@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="移民は財政負担になるのか？公式データで検証 | 移民白書" lang="ja" altHref="/en/faq/fiscal-cost/" description="欧州・北米の公式統計から移民の財政収支を検証。国別の純負担・純貢献データと方法論上の限界を解説。">
 <main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
-    <h1>移民は財政負担になるのか？公式データで検証</h1>
-    <p class="intro">欧州・北米の公式統計は移民の財政収支について異なる結果を示す。国によって純負担となる場合と純貢献となる場合があり、その差は移民プロファイルと方法論に依存する。</p>
-    <div class="lang-switch"><a href="/en/faq/fiscal-cost/">🌐 English version</a></div>
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">Finansministeriet · SSB · Ifo Institut · Konjunkturinstitutet · INPS · PBO</div>
+    <h1>移民は財政負担になるのか？<br>公式データで検証<em>国によって正反対の結果</em></h1>
+    <p class="theme-hero__sub">欧州・北米6カ国の公式推計を比較。デンマーク・ノルウェー・ドイツでは純負担、スウェーデン（就労移民）・イタリア・カナダでは純貢献。差の大半は移民プロファイルに依存する。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/fiscal-cost/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/faq/denmark-fiscal-impact/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−160億<small>DKK</small></span>
+      <span class="hstat__label">デンマーク 財政純負担/年</span>
+      <span class="hstat__source">Finansministeriet 2023</span>
+    </a>
+    <a class="hstat" href="/countries/germany/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−21億<small>€</small></span>
+      <span class="hstat__label">ドイツ 財政純負担/年</span>
+      <span class="hstat__source">Ifo Institut 2023</span>
+    </a>
+    <a class="hstat" href="/countries/sweden/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">+60億<small>SEK</small></span>
+      <span class="hstat__label">スウェーデン（就労移民）</span>
+      <span class="hstat__source">Konjunkturinstitutet 2020</span>
+    </a>
   </div>
 
   <section>
@@ -93,43 +115,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>Parliamentary Budget Office Canada / PBO (2023). <a href="https://www.pbo-dpb.ca" rel="noopener">www.pbo-dpb.ca</a></li>
     </ul>
   </section>
-<div class="related-countries">
-  <h2>関連国ページ</h2>
-  <div class="related-links">
-    <a href="/countries/denmark/">🇩🇰 デンマーク — 詳細データ</a>
-    <a href="/countries/norway/">🇳🇴 ノルウェー — 詳細データ</a>
-    <a href="/countries/germany/">🇩🇪 ドイツ — 詳細データ</a>
-    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
-  </div>
-</div>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/denmark/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇰 デンマーク — 詳細データ</a>
+      <a href="/countries/norway/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇳🇴 ノルウェー — 詳細データ</a>
+      <a href="/countries/germany/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇪 ドイツ — 詳細データ</a>
+      <a href="/countries/sweden/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン — 詳細データ</a>
+      <a href="/faq/denmark-fiscal-impact/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 デンマーク財政負担FAQ</a>
+      <a href="/themes/fiscal-cost/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 財政コスト — 全カ国</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries {
-  max-width: 800px;
-  margin: 2.5rem auto 1rem;
-  padding: 0 1.5rem;
-}
-.related-countries h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-.related-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>

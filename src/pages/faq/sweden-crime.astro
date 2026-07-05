@@ -1,13 +1,35 @@
-﻿---
+---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="スウェーデンの移民犯罪統計は本当か？BRÅ公式データ | 移民白書" lang="ja" altHref="/en/faq/sweden-crime/" description="BRÅ2021年報告書のデータを検証。移民系の被疑者率、補正後の格差、方法論上の注意点を一次資料に基づき解説。">
 <main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>よくある質問</span></nav>
-    <h1>スウェーデンの移民犯罪統計は本当か？BRÅ公式データ</h1>
-    <p class="intro">スウェーデン犯罪予防委員会（BRÅ）の2021年報告書は、移民系住民の被疑者率が現地生まれの約2.5倍であることを示す。ただし社会経済的要因を補正すると格差は縮小する。</p>
-    <div class="lang-switch"><a href="/en/faq/sweden-crime/">🌐 English version</a></div>
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">BRÅ（スウェーデン犯罪予防委員会）2021年公式報告書</div>
+    <h1>スウェーデンの移民犯罪統計<br>BRÅ公式データが示すこと<em>約2.5倍の被疑者率</em></h1>
+    <p class="theme-hero__sub">BRÅ 2021年報告書は移民系住民の被疑者率が現地生まれの約2.5倍であることを示す。社会経済的要因を補正すると格差は縮小するが残存する。2005年以降の更新データなし。</p>
+    <div class="theme-hero__meta">
+      <span class="lang-pill"><a href="/en/faq/sweden-crime/">🌐 English</a></span>
+      <span class="meta-note">一次公式資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">2.5<small>×</small></span>
+      <span class="hstat__label">被疑者率（粗値）</span>
+      <span class="hstat__source">BRÅ 2021:1</span>
+    </a>
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">↓ 縮小</span>
+      <span class="hstat__label">補正後に格差は縮小</span>
+      <span class="hstat__source">年齢・性別・社会経済補正</span>
+    </a>
+    <a class="hstat" href="/themes/crime/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">2005<small>年〜</small></span>
+      <span class="hstat__label">データ未更新</span>
+      <span class="hstat__source">BRÅ（更新停止）</span>
+    </a>
   </div>
 
   <section>
@@ -82,42 +104,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <li>Brottsförebyggande rådet / BRÅ (2021). <em>Invandrares och invandrares avkomlingars representation i brottsstatistiken</em>. Rapport 2021:1. <a href="https://www.bra.se" rel="noopener">www.bra.se</a></li>
     </ul>
   </section>
-<div class="related-countries">
-  <h2>関連国ページ</h2>
-  <div class="related-links">
-    <a href="/countries/sweden/">🇸🇪 スウェーデン — 詳細データ</a>
-    <a href="/countries/netherlands/">🇳🇱 オランダ — 詳細データ</a>
-    <a href="/countries/denmark/">🇩🇰 デンマーク — 詳細データ</a>
-  </div>
-</div>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/sweden/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇸🇪 スウェーデン — 詳細データ</a>
+      <a href="/countries/denmark/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇰 デンマーク — 詳細データ</a>
+      <a href="/countries/netherlands/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇳🇱 オランダ — 詳細データ</a>
+      <a href="/faq/germany-immigration-crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇪 ドイツ犯罪統計FAQ</a>
+      <a href="/themes/crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🔍 犯罪テーマ — 全カ国比較</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
 </main>
-<style>
-.related-countries {
-  max-width: 800px;
-  margin: 2.5rem auto 1rem;
-  padding: 0 1.5rem;
-}
-.related-countries h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-.related-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: border-color 0.15s;
-}
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-</style>
 </BaseLayout>
