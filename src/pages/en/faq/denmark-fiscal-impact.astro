@@ -1,124 +1,479 @@
-﻿---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Denmark immigration fiscal impact: official Ministry of Finance data | Immigration Factbook" lang="en" altHref="/faq/denmark-fiscal-impact/" description="Denmark's Finance Ministry (2023) puts the net fiscal cost of immigrants and descendants at −DKK 16bn/year. Non-Western: −27bn; Western: +11bn. Official primary data only.">
-<main class="theme-page">
-  <div class="page-header">
-    <nav class="breadcrumb"><a href="/en/">Immigration Factbook</a> › <span>FAQ</span></nav>
-    <h1>Denmark immigration fiscal impact: official Ministry of Finance data</h1>
-    <p class="intro">Denmark's Finance Ministry (Finansministeriet) publishes the most comprehensive official accounting of immigration's net fiscal effect in Europe. The 2023 figure: −DKK 16bn/year for all immigrants and descendants combined. The breakdown by origin reverses the sign entirely.</p>
-    <div class="lang-switch"><a href="/faq/denmark-fiscal-impact/">🌐 日本語版</a></div>
+<BaseLayout
+  title="Denmark immigration fiscal impact: official Ministry of Finance data | Immigration Factbook"
+  lang="en"
+  altHref="/faq/denmark-fiscal-impact/"
+  description="Denmark's Finance Ministry (2023) puts the net fiscal cost of immigrants and descendants at −DKK 16bn/year. Non-Western: −27bn; Western: +11bn. Official primary data only."
+>
+
+<!-- ── Hero ── -->
+<div class="faq-hero">
+  <div class="faq-hero__badge">Official primary source · Finansministeriet 2023</div>
+  <h1>Denmark: net fiscal cost of immigration<br><em>−DKK 16 billion per year</em></h1>
+  <p class="faq-hero__sub">Denmark's Finance Ministry (Finansministeriet) publishes the most comprehensive official accounting of immigration's net fiscal effect in Europe — broken down by origin, residence duration, and generation.</p>
+  <div class="faq-hero__meta">
+    <a href="/faq/denmark-fiscal-impact/" class="lang-pill">🌐 日本語版</a>
+    <span class="meta-sep">·</span>
+    <span class="meta-source">Source: Finansministeriet 2023 (2019 data, revised Sept. 2023)</span>
+  </div>
+</div>
+
+<!-- ── Key figures ── -->
+<div class="faq-body">
+  <div class="key-stats-row">
+    <div class="kstat kstat--cost">
+      <div class="kstat__value">−16bn DKK</div>
+      <div class="kstat__label">All immigrants &amp; descendants — net annual fiscal balance</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
+    </div>
+    <div class="kstat kstat--cost">
+      <div class="kstat__value">−27bn DKK</div>
+      <div class="kstat__label">Non-Western immigrants &amp; descendants — net annual cost</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
+    </div>
+    <div class="kstat kstat--contrib">
+      <div class="kstat__value">+11bn DKK</div>
+      <div class="kstat__label">Western immigrants &amp; descendants — net annual contribution</div>
+      <div class="kstat__source">Finansministeriet 2023</div>
+    </div>
   </div>
 
-  <section>
-    <h2>Key figures (Finansministeriet 2023)</h2>
-    <table>
-      <thead>
-        <tr><th>Group</th><th>Net fiscal balance (annual)</th><th>Source</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>All immigrants &amp; descendants</strong></td>
-          <td><strong>−DKK 16bn/year</strong></td>
-          <td><a href="https://www.fm.dk" rel="noopener">Finansministeriet 2023</a></td>
-        </tr>
-        <tr>
-          <td>Non-Western immigrants &amp; descendants</td>
-          <td>−DKK 27bn/year (net cost)</td>
-          <td>Finansministeriet 2023</td>
-        </tr>
-        <tr>
-          <td>Western immigrants &amp; descendants</td>
-          <td>+DKK 11bn/year (net contribution)</td>
-          <td>Finansministeriet 2023</td>
-        </tr>
-        <tr>
-          <td>Reference year</td>
-          <td>2019 data (revised September 2023)</td>
-          <td>—</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section>
-    <h2>What this means</h2>
+  <!-- ── FAQ ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>What does −DKK 16bn mean in practice?</h2>
     <ul>
-      <li><strong>The −DKK 16bn aggregate is an average across all immigrants</strong>. It masks a sign reversal between Western and non-Western immigrants. Western immigrants (EU, North America, Australia) contribute +DKK 11bn; non-Western immigrants cost −DKK 27bn.</li>
+      <li><strong>The −DKK 16bn aggregate is an average across all immigrants.</strong> It masks a sign reversal between Western and non-Western immigrants. Western immigrants (EU, North America, Australia) contribute +DKK 11bn; non-Western immigrants cost −DKK 27bn.</li>
       <li><strong>Fiscal outcome depends heavily on immigration motive.</strong> Labour migrants generally produce positive contributions; refugees and family reunification migrants produce net costs — a pattern documented across all Nordic countries.</li>
       <li>Finansministeriet uses a <strong>static model</strong> measuring current-year tax and benefit flows. It does not project lifetime contributions, descendants' economic effects, or long-run GDP impacts.</li>
       <li>Denmark is <strong>one of the most transparent countries in the world</strong> for this type of accounting. Equivalent official estimates are published only by Norway (SSB) and Germany (Ifo/IAB) among Western countries.</li>
     </ul>
   </section>
 
-  <section>
-    <h2>Cross-country comparison</h2>
-    <table>
-      <thead>
-        <tr><th>Country</th><th>Official estimate</th><th>Scope</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Denmark</td><td>−DKK 16bn/year</td><td>All immigrants &amp; descendants</td></tr>
-        <tr><td>Norway</td><td>−NOK 4.1m/person (R3 group)</td><td>Asylum &amp; non-European family migration, net present value</td></tr>
-        <tr><td>Germany</td><td>−€2.1bn/year</td><td>2015 refugee cohort</td></tr>
-        <tr><td>Sweden</td><td>+SEK 6bn/year (contribution)</td><td>Labour migrants only; total not published</td></tr>
-      </tbody>
-    </table>
-    <p class="table-note">Direct cross-country comparison requires caution: methodologies, scopes, and reference years differ significantly.</p>
-  </section>
-
-  <section>
-    <h2>Primary source</h2>
+  <!-- ── What about employment trends? ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>Has the figure improved since 2019?</h2>
     <ul>
-      <li>Finansministeriet (2023). <em>Indvandreres nettobidrag til de offentlige finanser</em>. <a href="https://www.fm.dk" rel="noopener">www.fm.dk</a></li>
+      <li>The 2019 dataset (revised 2023) is the <strong>most recent official calculation</strong> published by Finansministeriet as of 2025.</li>
+      <li>Employment of non-Western immigrants has improved: the number of MENAPT-origin workers rose from 62,800 (Q4 2019) to <strong>80,800 (Q4 2024)</strong> — a +29% increase that suggests the net cost has narrowed, but no new official accounting has been published to confirm this.</li>
+      <li>A future update would likely show a lower negative balance, but the sign reversal between Western and non-Western immigrants is structural and unlikely to disappear.</li>
     </ul>
   </section>
 
-  <div class="related-countries">
-    <h2>Related pages</h2>
-    <div class="related-links">
-      <a href="/en/countries/denmark/">🇩🇰 Denmark — full data</a>
-      <a href="/en/themes/fiscal-cost/">Fiscal impact — all countries</a>
-      <a href="/en/faq/fiscal-cost/">Fiscal cost FAQ</a>
+  <!-- ── Cross-country ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>Cross-country comparison</h2>
+    <p class="section-note">Direct comparison requires caution — methodologies, scope, and reference years differ significantly.</p>
+    <div class="compare-table-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr><th>Country</th><th>Official estimate</th><th>Scope</th></tr>
+        </thead>
+        <tbody>
+          <tr class="row-highlight"><td><strong>Denmark</strong></td><td><strong>−DKK 16bn/year</strong></td><td>All immigrants &amp; descendants</td></tr>
+          <tr><td>Norway</td><td>−NOK 4.1m/person (R3 group)</td><td>Asylum &amp; non-European family migration, NPV</td></tr>
+          <tr><td>Germany</td><td>−€2.1bn/year</td><td>2015 refugee cohort</td></tr>
+          <tr><td>Sweden</td><td>+SEK 6bn/year</td><td>Labour migrants only; total not published</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── Primary source ── -->
+  <section class="faq-section">
+    <h2><span class="h2-marker"></span>Primary source</h2>
+    <div class="source-block">
+      <div class="source-block__icon">📄</div>
+      <div>
+        <div class="source-block__title">Finansministeriet (2023). <em>Indvandreres nettobidrag til de offentlige finanser i 2019</em> — revised September 2023</div>
+        <div class="source-block__links">
+          <a href="https://fm.dk/media/5cnhiydz/indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019_revideret-september-2023-a.pdf" rel="noopener" target="_blank">PDF report →</a>
+          <a href="https://fm.dk/udgivelser/2023/september/oekonomisk-analyse-indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019-revideret-version-september-2023/" rel="noopener" target="_blank">Publication page →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Related navigation ── -->
+  <div class="explore-section">
+    <div class="explore-section__header">
+      <span class="explore-dot"></span>
+      <h2>Explore further</h2>
+    </div>
+    <div class="explore-grid">
+      <a href="/en/countries/denmark/" class="explore-card">
+        <span class="explore-icon">🇩🇰</span>
+        <div>
+          <div class="explore-card__title">Denmark — full data</div>
+          <div class="explore-card__desc">Demographics, employment, crime, education, housing</div>
+        </div>
+      </a>
+      <a href="/en/themes/fiscal-cost/" class="explore-card">
+        <span class="explore-icon">💰</span>
+        <div>
+          <div class="explore-card__title">Fiscal cost — 20 countries</div>
+          <div class="explore-card__desc">Cross-country net fiscal impact comparison</div>
+        </div>
+      </a>
+      <a href="/en/themes/comparison-matrix/" class="explore-card">
+        <span class="explore-icon">🗂️</span>
+        <div>
+          <div class="explore-card__title">20-Country Matrix</div>
+          <div class="explore-card__desc">All themes at a glance</div>
+        </div>
+      </a>
+      <a href="/en/faq/denmark-policy-shift/" class="explore-card">
+        <span class="explore-icon">⚖️</span>
+        <div>
+          <div class="explore-card__title">Denmark's policy shift</div>
+          <div class="explore-card__desc">Why did Denmark tighten its immigration policy?</div>
+        </div>
+      </a>
     </div>
   </div>
 
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the fiscal cost of immigration in Denmark?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Denmark's Finance Ministry (Finansministeriet 2023) puts the net fiscal cost of all immigrants and descendants at −DKK 16bn/year (2019 data, revised 2023). Broken down: non-Western immigrants and descendants cost −DKK 27bn/year; Western immigrants and descendants contribute +DKK 11bn/year. Denmark is one of the few countries in the world that publishes this type of annual official accounting."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Why does Denmark's immigration fiscal figure differ so much by origin?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The difference is driven primarily by immigration motive and employment rate. Western immigrants (EU, North America, Oceania) arrive mainly as labour migrants with high employment rates and tax contributions. Non-Western immigrants include a higher share of refugees and family reunification migrants with lower initial employment rates and higher social benefit receipt. Finansministeriet documents this breakdown annually."
-        }
+</div><!-- /faq-body -->
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the fiscal cost of immigration in Denmark?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Denmark's Finance Ministry (Finansministeriet 2023) puts the net fiscal cost of all immigrants and descendants at −DKK 16bn/year (2019 data, revised 2023). Broken down: non-Western immigrants and descendants cost −DKK 27bn/year; Western immigrants and descendants contribute +DKK 11bn/year. Denmark is one of the few countries in the world that publishes this type of annual official accounting."
       }
-    ]
-  }
-  </script>
-</main>
-<style>
-.related-countries { max-width: 800px; margin: 2.5rem auto 1rem; padding: 0 1.5rem; }
-.related-countries h2 { font-size: 1rem; font-weight: 700; color: var(--color-accent); margin-bottom: 0.75rem; }
-.related-links { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-.related-links a {
-  background: var(--color-surface-raised);
-  border: 1px solid color-mix(in srgb, var(--color-accent) 20%, transparent);
-  border-radius: 8px; padding: 0.5rem 1rem; font-size: 0.85rem;
-  color: var(--color-accent); text-decoration: none; transition: border-color 0.15s;
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Denmark's immigration fiscal figure differ so much by origin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The difference is driven primarily by immigration motive and employment rate. Western immigrants (EU, North America, Oceania) arrive mainly as labour migrants with high employment rates and tax contributions. Non-Western immigrants include a higher share of refugees and family reunification migrants with lower initial employment rates and higher social benefit receipt. Finansministeriet documents this breakdown annually."
+      }
+    }
+  ]
 }
-.related-links a:hover { border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface)); }
-.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
-</style>
+</script>
+
 </BaseLayout>
+
+<style>
+/* ── Hero ── */
+.faq-hero {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.faq-hero__badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  border-radius: 999px;
+  padding: 0.32em 1em;
+  margin-bottom: 1.5rem;
+}
+
+.faq-hero h1 {
+  font-size: clamp(1.7rem, 4.5vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1.25;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+}
+
+.faq-hero h1 em {
+  font-style: normal;
+  color: var(--color-accent);
+}
+
+.faq-hero__sub {
+  font-size: 0.95rem;
+  color: var(--color-ink-soft);
+  line-height: 1.8;
+  max-width: 36em;
+  margin: 0 auto 1.2rem;
+}
+
+.faq-hero__meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.lang-pill {
+  display: inline-block;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.25em 0.85em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+  text-decoration: none;
+}
+.lang-pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.meta-sep { color: var(--color-border); }
+
+/* ── Body ── */
+.faq-body {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+/* ── Key stat cards ── */
+.key-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.kstat {
+  border-radius: 10px;
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.kstat--cost {
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface-raised));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  border-top: 3px solid var(--color-accent);
+}
+
+.kstat--contrib {
+  background: color-mix(in srgb, var(--color-teal) 8%, var(--color-surface-raised));
+  border: 1px solid color-mix(in srgb, var(--color-teal) 25%, transparent);
+  border-top: 3px solid var(--color-teal);
+}
+
+.kstat__value {
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.kstat--cost .kstat__value { color: var(--color-accent); }
+.kstat--contrib .kstat__value { color: var(--color-teal); }
+
+.kstat__label {
+  font-size: 0.82rem;
+  color: var(--color-ink-soft);
+  line-height: 1.45;
+}
+
+.kstat__source {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Sections ── */
+.faq-section {
+  margin-bottom: 2.5rem;
+}
+
+.faq-section h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.h2-marker {
+  display: inline-block;
+  width: 4px;
+  height: 1.1em;
+  background: var(--color-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.faq-section ul {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.faq-section li {
+  font-size: 0.93rem;
+  line-height: 1.75;
+  color: var(--color-ink-soft);
+}
+
+.faq-section li strong {
+  color: var(--color-ink);
+}
+
+.section-note {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+
+/* ── Table ── */
+.compare-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.compare-table th {
+  background: var(--color-surface-raised);
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.compare-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-ink-soft);
+}
+
+.compare-table tr:last-child td { border-bottom: none; }
+
+.row-highlight td {
+  background: color-mix(in srgb, var(--color-gold) 6%, transparent);
+  color: var(--color-ink);
+}
+
+/* ── Source block ── */
+.source-block {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1.1rem 1.4rem;
+}
+
+.source-block__icon { font-size: 1.4rem; flex-shrink: 0; }
+
+.source-block__title {
+  font-size: 0.88rem;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+.source-block__links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.source-block__links a {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.source-block__links a:hover { color: var(--color-accent); }
+
+/* ── Explore section ── */
+.explore-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.explore-section__header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1.5rem 0 1.25rem;
+}
+
+.explore-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.explore-section__header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.explore-card {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--color-surface-raised);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: transform 0.13s, border-color 0.13s;
+}
+.explore-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  color: var(--color-ink);
+}
+
+.explore-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+
+.explore-card__title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.explore-card__desc {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+  margin-top: 0.15rem;
+}
+</style>
