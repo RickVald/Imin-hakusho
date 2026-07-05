@@ -1,7 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { flagUrl } from '../../../data/flags';
 
 export async function getStaticPaths() {
@@ -14,15 +13,368 @@ export async function getStaticPaths() {
 
 const { country } = Astro.props;
 const { Content } = await render(country);
+
+const themeColor: Record<string, string> = {
+	fiscal: 'var(--color-gold)',
+	crime:  'var(--color-accent)',
+	work:   'var(--color-primary)',
+	demo:   'var(--color-teal)',
+	edu:    'var(--color-violet)',
+};
 ---
 
-<BaseLayout title={`Immigration in ${country.data.name} — Official Statistics | Immigration Factbook`} lang="en" altHref={`/countries/${country.data.slug}/`}>
-	<Breadcrumbs items={[{ label: 'Immigration Observatory', href: '/en/' }, { label: country.data.name }]} />
-	<h1 class="country-title">
-		<img class="country-title__flag" src={flagUrl(country.data.slug, 80)} alt="" width="48" height="36" />
-		{country.data.name}
-	</h1>
-	<div class="country-page">
-		<Content />
+<BaseLayout
+	title={`Immigration in ${country.data.name} — Official Statistics | Immigration Factbook`}
+	lang="en"
+	altHref={`/countries/${country.data.slug}/`}
+	type="Article"
+>
+
+<!-- ── Hero ── -->
+<div class="country-hero">
+	<div class="hero-badge">Official primary sources only · Statistics offices · Finance ministries · OECD · Eurostat</div>
+
+	<div class="hero-head">
+		<img
+			class="hero-flag"
+			src={flagUrl(country.data.slug, 160)}
+			alt=""
+			width="72"
+			height="54"
+		/>
+		<h1>{country.data.name}</h1>
 	</div>
+
+	<p class="hero-sub">Fiscal cost, employment gaps, crime statistics, and demographics in {country.data.name} — analysed using official primary sources from national statistics offices and international organisations.</p>
+
+	{country.data.keyStats && country.data.keyStats.length > 0 && (
+		<div class="hero-stats">
+			{country.data.keyStats.map((stat) => (
+				<a
+					href={stat.href ?? '#'}
+					class="hstat"
+					style={`--dot: ${themeColor[stat.theme ?? 'fiscal'] ?? 'var(--color-primary)'}`}
+				>
+					<span class="hstat__value">{stat.value}</span>
+					<span class="hstat__label">{stat.label}</span>
+					<span class="hstat__source">{stat.source}</span>
+				</a>
+			))}
+		</div>
+	)}
+</div>
+
+<!-- ── Article content ── -->
+<div class="country-page">
+	<Content />
+</div>
+
+<!-- ── Explore more ── -->
+<div class="explore-section">
+	<div class="explore-section__header">
+		<span class="explore-dot"></span>
+		<h2>Explore further</h2>
+	</div>
+
+	<div class="explore-grid">
+		<a href="/en/themes/comparison-matrix/" class="explore-card">
+			<span class="explore-icon">🗂️</span>
+			<div>
+				<div class="explore-card__title">20-Country Matrix</div>
+				<div class="explore-card__desc">All themes at a glance</div>
+			</div>
+		</a>
+		<a href="/en/themes/fiscal-cost/" class="explore-card">
+			<span class="explore-icon">💰</span>
+			<div>
+				<div class="explore-card__title">Fiscal Cost</div>
+				<div class="explore-card__desc">Cross-country net fiscal impact comparison</div>
+			</div>
+		</a>
+		<a href="/en/themes/crime/" class="explore-card">
+			<span class="explore-icon">🔒</span>
+			<div>
+				<div class="explore-card__title">Crime Statistics</div>
+				<div class="explore-card__desc">Official police & justice ministry data</div>
+			</div>
+		</a>
+		<a href="/en/themes/labour-market/" class="explore-card">
+			<span class="explore-icon">📊</span>
+			<div>
+				<div class="explore-card__title">Employment Gap</div>
+				<div class="explore-card__desc">Immigrant vs. native-born employment rates</div>
+			</div>
+		</a>
+		<a href="/en/themes/demographics/" class="explore-card">
+			<span class="explore-icon">🌍</span>
+			<div>
+				<div class="explore-card__title">Demographics</div>
+				<div class="explore-card__desc">Immigrant population share & projections</div>
+			</div>
+		</a>
+		<a href="/en/themes/country-explorer/" class="explore-card">
+			<span class="explore-icon">🔍</span>
+			<div>
+				<div class="explore-card__title">Country Explorer</div>
+				<div class="explore-card__desc">5 key metrics on one screen</div>
+			</div>
+		</a>
+	</div>
+
+	{country.data.relatedFaq && country.data.relatedFaq.length > 0 && (
+		<div class="faq-links">
+			<div class="faq-links__label">📖 Related Q&amp;A</div>
+			{country.data.relatedFaq.map((item) => (
+				<a href={item.href} class="faq-link">{item.label} →</a>
+			))}
+		</div>
+	)}
+
+	<div class="back-home">
+		<a href="/en/" class="back-btn">← All countries</a>
+	</div>
+</div>
+
 </BaseLayout>
+
+<style>
+/* ── Hero ── */
+.country-hero {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 3rem 1.5rem 2rem;
+	text-align: center;
+}
+
+.hero-badge {
+	display: inline-block;
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.13em;
+	text-transform: uppercase;
+	color: var(--color-accent);
+	background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+	border-radius: 999px;
+	padding: 0.32em 1em;
+	margin-bottom: 1.6rem;
+}
+
+.hero-head {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.hero-flag {
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+	flex-shrink: 0;
+}
+
+.hero-head h1 {
+	font-size: clamp(2.2rem, 6vw, 3.8rem);
+	font-weight: 900;
+	line-height: 1.15;
+	margin: 0;
+	letter-spacing: -0.02em;
+}
+
+.hero-sub {
+	font-size: 0.95rem;
+	color: var(--color-ink-soft);
+	line-height: 1.8;
+	max-width: 36em;
+	margin: 0 auto 2rem;
+}
+
+/* ── Stat cards ── */
+.hero-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 0.85rem;
+	margin-top: 0.5rem;
+	text-align: left;
+}
+
+.hstat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	background: var(--color-surface-raised);
+	border: 1px solid var(--color-border);
+	border-top: 3px solid var(--dot);
+	border-radius: 10px;
+	padding: 1.1rem 1.2rem;
+	text-decoration: none;
+	color: var(--color-ink);
+	transition: transform 0.15s, box-shadow 0.15s;
+}
+.hstat:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+	color: var(--color-ink);
+}
+
+.hstat__value {
+	font-size: 2rem;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	color: var(--dot);
+}
+
+.hstat__label {
+	font-size: 0.8rem;
+	color: var(--color-ink-soft);
+	line-height: 1.45;
+}
+
+.hstat__source {
+	font-size: 0.65rem;
+	color: var(--color-muted);
+	margin-top: auto;
+	padding-top: 0.5rem;
+	border-top: 1px solid var(--color-border);
+}
+
+/* ── Article content ── */
+.country-page {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 0 1.5rem 3rem;
+}
+
+/* ── Explore section ── */
+.explore-section {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 0 1.5rem 4rem;
+	border-top: 1px solid var(--color-border);
+	margin-top: 1rem;
+}
+
+.explore-section__header {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+	margin: 2rem 0 1.25rem;
+}
+
+.explore-dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: var(--color-accent);
+	border-radius: 2px;
+	flex-shrink: 0;
+}
+
+.explore-section__header h2 {
+	font-size: 1.2rem;
+	font-weight: 800;
+	margin: 0;
+}
+
+.explore-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 0.75rem;
+	margin-bottom: 2rem;
+}
+
+.explore-card {
+	display: flex;
+	align-items: center;
+	gap: 0.9rem;
+	background: var(--color-surface-raised);
+	border: 1px solid var(--color-border);
+	border-radius: 10px;
+	padding: 1rem 1.25rem;
+	text-decoration: none;
+	color: var(--color-ink);
+	transition: transform 0.13s, border-color 0.13s;
+}
+.explore-card:hover {
+	transform: translateY(-2px);
+	border-color: var(--color-primary);
+	color: var(--color-ink);
+}
+
+.explore-icon {
+	font-size: 1.5rem;
+	flex-shrink: 0;
+	line-height: 1;
+}
+
+.explore-card__title {
+	font-size: 0.9rem;
+	font-weight: 700;
+	color: var(--color-primary);
+}
+
+.explore-card__desc {
+	font-size: 0.78rem;
+	color: var(--color-muted);
+	margin-top: 0.15rem;
+}
+
+/* ── FAQ links ── */
+.faq-links {
+	background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+	border-radius: 10px;
+	padding: 1.1rem 1.4rem;
+	margin-bottom: 2rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1.25rem;
+}
+
+.faq-links__label {
+	font-size: 0.75rem;
+	font-weight: 700;
+	color: var(--color-muted);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	width: 100%;
+}
+
+.faq-link {
+	font-size: 0.88rem;
+	font-weight: 600;
+	color: var(--color-primary-soft);
+	text-decoration: none;
+}
+.faq-link:hover {
+	color: var(--color-accent);
+}
+
+/* ── Back home ── */
+.back-home {
+	display: flex;
+	justify-content: center;
+}
+
+.back-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	background: transparent;
+	color: var(--color-ink-soft);
+	font-size: 0.88rem;
+	font-weight: 600;
+	padding: 0.65em 1.4em;
+	border: 1px solid var(--color-border);
+	border-radius: 8px;
+	text-decoration: none;
+	transition: border-color 0.15s, color 0.15s;
+}
+.back-btn:hover {
+	border-color: var(--color-primary);
+	color: var(--color-primary);
+}
+</style>

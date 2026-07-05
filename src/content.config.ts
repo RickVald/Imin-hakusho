@@ -12,12 +12,27 @@ const statusSchema = z
 	})
 	.default({});
 
+const keyStatSchema = z.object({
+	value: z.string(),
+	label: z.string(),
+	source: z.string(),
+	theme: z.enum(['fiscal', 'crime', 'work', 'demo', 'edu']).optional(),
+	href: z.string().optional(),
+});
+
+const relatedFaqSchema = z.object({
+	label: z.string(),
+	href: z.string(),
+});
+
 const countriesJa = defineCollection({
 	loader: glob({ pattern: '*.{md,mdx}', base: './src/content/countries/ja' }),
 	schema: z.object({
 		slug: z.string(),
 		name: z.string(),
 		status: statusSchema,
+		keyStats: z.array(keyStatSchema).optional(),
+		relatedFaq: z.array(relatedFaqSchema).optional(),
 	}),
 });
 
@@ -27,6 +42,8 @@ const countriesEn = defineCollection({
 		slug: z.string(),
 		name: z.string(),
 		status: statusSchema,
+		keyStats: z.array(keyStatSchema).optional(),
+		relatedFaq: z.array(relatedFaqSchema).optional(),
 	}),
 });
 
