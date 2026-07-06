@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="デンマークの移民割合は16.3%｜人口・財政・犯罪の公式統計 | 移民白書"
+  lang="ja"
+  description="デンマークの移民・子孫は総人口の16.3%（DST 2025）。外国生まれ9.6%、子孫3.0%、非欧米系比率など公式データをDST一次資料で整理。"
+>
+<main class="theme-page">
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">DST（デンマーク統計局）2025年 — 公式人口統計</div>
+    <h1>デンマークの移民割合は何%か？<em>移民・子孫合計16.3%</em></h1>
+    <p class="theme-hero__sub">DST 2025年データによるとデンマークの移民・子孫は総人口の16.3%。外国生まれ（移民）は9.6%、子孫（デンマーク生まれだが両親が移民）は3.0%。定義と出典を明記。</p>
+    <div class="theme-hero__meta">
+      <span class="meta-note">DST一次資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/denmark/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">16.3<small>%</small></span>
+      <span class="hstat__label">移民・子孫（総人口比）</span>
+      <span class="hstat__source">DST 2025</span>
+    </a>
+    <a class="hstat" href="/countries/denmark/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">9.6<small>%</small></span>
+      <span class="hstat__label">移民のみ（外国生まれ）</span>
+      <span class="hstat__source">DST 2025</span>
+    </a>
+    <a class="hstat" href="/faq/denmark-fiscal-impact/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−160億<small>DKK</small></span>
+      <span class="hstat__label">年間財政純負担</span>
+      <span class="hstat__source">財務省 2023</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>主要数値（DST 2025年1月1日時点）</h2>
+    <table>
+      <thead>
+        <tr><th>区分</th><th>人数</th><th>総人口比</th><th>出典</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>移民</strong>（外国生まれ・外国籍の両親を持つ）</td>
+          <td>約57万8千人</td>
+          <td>9.6%</td>
+          <td><a href="https://www.dst.dk" rel="noopener">DST 2025</a></td>
+        </tr>
+        <tr>
+          <td><strong>移民の子孫</strong>（デンマーク生まれ・両親が移民）</td>
+          <td>約18万3千人</td>
+          <td>3.0%</td>
+          <td>DST 2025</td>
+        </tr>
+        <tr>
+          <td><strong>移民・子孫合計</strong></td>
+          <td>約76万1千人</td>
+          <td><strong>16.3%</strong></td>
+          <td>DST 2025</td>
+        </tr>
+        <tr>
+          <td>うち非欧米系（移民・子孫）</td>
+          <td>約38万5千人</td>
+          <td>6.4%</td>
+          <td>DST 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>DSTの定義：なぜ「移民」と「子孫」を区別するのか</h2>
+    <p>デンマーク統計局（DST）は他の北欧諸国とは異なる区分を用いている。</p>
+    <ul>
+      <li><strong>移民（indvandrere）</strong>：外国生まれで、両親ともに外国生まれまたは外国籍の人。デンマーク国籍を取得した帰化者も含まれる。</li>
+      <li><strong>移民の子孫（efterkommere）</strong>：デンマーク生まれだが、両親が移民に分類される人。</li>
+      <li>比較上の注意：スウェーデン（SCB）やノルウェー（SSB）の「外国生まれ（utrikes födda）」とは定義が異なる。デンマークの9.6%をそのまま他国の外国生まれ比率と比較することは適切でない。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>出身地域別内訳（DST 2024年）</h2>
+    <table>
+      <thead>
+        <tr><th>出身地域</th><th>移民人口（概算）</th><th>主な出身国</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>欧米・オーストラリア（R1相当）</td><td>約19万人</td><td>ポーランド、ドイツ、ルーマニア</td></tr>
+        <tr><td>中東・北アフリカ・南アジア</td><td>約21万人</td><td>トルコ、シリア、パキスタン</td></tr>
+        <tr><td>その他アジア・アフリカ</td><td>約17万人</td><td>ソマリア、イラク、中国</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">出典：DST「Indvandrere i Danmark 2024」公式報告書。概算値。</p>
+  </section>
+
+  <section>
+    <h2>他の指標との関連</h2>
+    <ul>
+      <li><a href="/faq/denmark-fiscal-impact/"><strong>財政コスト</strong></a>：財務省2023年推計では移民・子孫全体の年間財政純負担は約160億DKK。ただしEU/北欧出身者は純貢献、非欧米系は純負担という内訳がある。</li>
+      <li><a href="/faq/denmark-policy-shift/"><strong>政策転換</strong></a>：2001年以降、デンマークは欧州で最も厳格な移民規制を導入した国の一つ。財政・雇用・犯罪データが政策議論の根拠とされた。</li>
+      <li><a href="/themes/crime/"><strong>犯罪統計</strong></a>：非欧米系移民・子孫の犯罪指数は年齢補正後で2.6倍（司法省2025年）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>Danmarks Statistik (2025). <em>Indvandrere i Danmark 2025</em>. <a href="https://www.dst.dk" rel="noopener">dst.dk</a></li>
+      <li>Danmarks Statistik (2024). <em>Statistikbanken — Befolkning og valg</em>. <a href="https://www.dst.dk/da/Statistik/emner/befolkning-og-valg" rel="noopener">dst.dk</a></li>
+    </ul>
+  </section>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/denmark/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇩🇰 デンマーク — 全データ</a>
+      <a href="/faq/denmark-fiscal-impact/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 財政コストFAQ</a>
+      <a href="/faq/denmark-policy-shift/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📋 政策転換FAQ</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態テーマ</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "デンマークの移民割合は何%ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "デンマーク統計局（DST）の2025年データによると、移民（外国生まれ・外国籍の両親を持つ人）は総人口の9.6%（約57万8千人）、移民の子孫（デンマーク生まれだが両親が移民）は3.0%（約18万3千人）で、移民・子孫合計は16.3%（約76万1千人）です。うち非欧米系は6.4%（約38万5千人）。出典：DST「Indvandrere i Danmark 2025」。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "デンマークの移民・子孫の主な出身地はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DST 2024年データによると、欧米・オーストラリア出身（ポーランド、ドイツ、ルーマニアが多い）が約19万人、中東・北アフリカ・南アジア出身（トルコ、シリア、パキスタン）が約21万人、その他アジア・アフリカ（ソマリア、イラク、中国）が約17万人です。非欧米系は移民全体の約3分の2を占めます。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+</style>
+</BaseLayout>

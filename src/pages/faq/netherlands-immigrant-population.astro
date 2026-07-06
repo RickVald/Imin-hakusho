@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="オランダの移民割合は14.5%｜外国籍・移民的背景の公式統計 | 移民白書"
+  lang="ja"
+  description="オランダの外国籍は252万人（14.5%、CBS 2024）。移民的背景（一世＋二世）で見ると27.2%。CBS公式統計で出身国・雇用・財政負担を整理。"
+>
+<main class="theme-page">
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">CBS（オランダ統計局）2024年 — 公式人口統計</div>
+    <h1>オランダの移民割合は何%か？<em>外国籍14.5%・移民的背景27.2%</em></h1>
+    <p class="theme-hero__sub">CBS 2024年データによるとオランダの外国籍人口は252万人（14.5%）。ただし移民的背景（一世＋二世）で計算すると27.2%（476万人）と大きく異なる。定義の違いを一次資料で整理。</p>
+    <div class="theme-hero__meta">
+      <span class="meta-note">CBS一次資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/netherlands/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">14.5<small>%</small></span>
+      <span class="hstat__label">外国籍人口比率</span>
+      <span class="hstat__source">CBS 2024</span>
+    </a>
+    <a class="hstat" href="/countries/netherlands/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">27.2<small>%</small></span>
+      <span class="hstat__label">移民的背景（一世＋二世）</span>
+      <span class="hstat__source">CBS 2024</span>
+    </a>
+    <a class="hstat" href="/themes/demographics/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">476<small>万人</small></span>
+      <span class="hstat__label">移民的背景の人口</span>
+      <span class="hstat__source">CBS 2024</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>2つの公式数値（CBS 2024年）</h2>
+    <table>
+      <thead>
+        <tr><th>指標</th><th>数値</th><th>定義</th><th>出典</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>外国籍</strong></td>
+          <td><strong>252万人（14.5%）</strong></td>
+          <td>現在オランダ国籍を保有しない人</td>
+          <td><a href="https://www.cbs.nl" rel="noopener">CBS 2024</a></td>
+        </tr>
+        <tr>
+          <td><strong>移民的背景・一世</strong></td>
+          <td>約246万人（14.1%）</td>
+          <td>外国生まれで少なくとも一方の親も外国生まれ</td>
+          <td>CBS 2024</td>
+        </tr>
+        <tr>
+          <td><strong>移民的背景・二世</strong></td>
+          <td>約230万人（13.2%）</td>
+          <td>オランダ生まれで少なくとも一方の親が外国生まれ</td>
+          <td>CBS 2024</td>
+        </tr>
+        <tr>
+          <td><strong>移民的背景合計</strong></td>
+          <td><strong>476万人（27.2%）</strong></td>
+          <td>一世＋二世の合計</td>
+          <td>CBS 2024</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>上位出身国・地域（CBS 2024年）</h2>
+    <table>
+      <thead>
+        <tr><th>出身国・地域</th><th>移民的背景人口（概算）</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇹🇷 トルコ</td><td>約44万人</td></tr>
+        <tr><td>🇲🇦 モロッコ</td><td>約43万人</td></tr>
+        <tr><td>🇸🇷 スリナム</td><td>約35万人</td></tr>
+        <tr><td>🇮🇩 インドネシア</td><td>約30万人</td></tr>
+        <tr><td>🇩🇪 ドイツ</td><td>約25万人</td></tr>
+        <tr><td>🇵🇱 ポーランド</td><td>約20万人</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">出典：CBS「Bevolking; generatie, geslacht, leeftijd en migratieachtergrond, 1 januari」2024年。概算値。</p>
+  </section>
+
+  <section>
+    <h2>定義の違いが重要な理由</h2>
+    <ul>
+      <li><strong>外国籍（14.5%）</strong>はオランダ国籍を持たない人のみ。帰化済みのトルコ・モロッコ系オランダ人は含まれない。行政・法的比較に適切。</li>
+      <li><strong>移民的背景（27.2%）</strong>はCBSの「migratieachtergrond」概念で、一世・二世を含む。国際比較や統合研究に使われるが、一世と二世（多くがオランダ育ち）を同一グループとして扱うことには批判もある。</li>
+      <li><strong>比較上の注意</strong>：フランス（11.3%、外国生まれ）、ドイツ（14.6%、外国籍）と比較する際は定義の違いを確認する必要がある。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>CBS (2024). <em>Bevolking; generatie, geslacht, leeftijd en migratieachtergrond</em>. <a href="https://www.cbs.nl" rel="noopener">cbs.nl</a></li>
+      <li>CBS (2024). <em>StatLine — Bevolking naar nationaliteit</em>. <a href="https://opendata.cbs.nl" rel="noopener">opendata.cbs.nl</a></li>
+    </ul>
+  </section>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/netherlands/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇳🇱 オランダ — 全データ</a>
+      <a href="/faq/belgium-immigrant-population/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇧🇪 ベルギーの移民割合</a>
+      <a href="/faq/france-immigrant-population/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇫🇷 フランスの移民割合</a>
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 20カ国比較</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "オランダの移民（外国人）の割合は何%ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CBS（オランダ統計局）の2024年データによると、オランダの外国籍人口は252万人（14.5%）です。ただし移民的背景（migratieachtergrond）の概念で見ると、一世（246万人、14.1%）と二世（230万人、13.2%）の合計は476万人（27.2%）となります。定義によって大きく異なるため、使用目的に応じた指標の選択が重要です。外国籍比率（14.5%）は行政・法的比較に、移民的背景（27.2%）は統合研究に適しています。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "オランダで最も多い外国出身の人々はどこから来ていますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CBS 2024年データによる移民的背景人口の上位出身国：トルコ（約44万人）、モロッコ（約43万人）、スリナム（約35万人）、インドネシア（約30万人）、ドイツ（約25万人）、ポーランド（約20万人）。トルコ・モロッコ系は1960〜70年代のゲストワーカー政策の流れを汲む歴史的移民コミュニティで、その多くはすでに2世・3世に達しています。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+</style>
+</BaseLayout>

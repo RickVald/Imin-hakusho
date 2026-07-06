@@ -1,0 +1,147 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="フランスの移民割合は11.3%｜人口・出身国・雇用の公式統計 | 移民白書"
+  lang="ja"
+  description="フランスの移民（外国生まれ）は772.6万人、総人口の11.3%（INSEE 2024）。外国籍は600万人。出身国・雇用・方法論上の注意点をINSEE一次資料で整理。"
+>
+<main class="theme-page">
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">INSEE（フランス国立統計経済研究所）2024年 — 公式人口統計</div>
+    <h1>フランスの移民割合は何%か？<em>外国生まれ11.3%・773万人</em></h1>
+    <p class="theme-hero__sub">INSEE 2024年データによるとフランスの移民（外国生まれ）は772.6万人、総人口の11.3%。フランスは民族・宗教統計を法律で禁止しており、出生国・国籍ベースのデータのみが公式に存在する。</p>
+    <div class="theme-hero__meta">
+      <span class="meta-note">INSEE一次資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/france/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">11.3<small>%</small></span>
+      <span class="hstat__label">移民比率（外国生まれ）</span>
+      <span class="hstat__source">INSEE 2024</span>
+    </a>
+    <a class="hstat" href="/countries/france/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">772.6<small>万人</small></span>
+      <span class="hstat__label">移民人口</span>
+      <span class="hstat__source">INSEE 2024</span>
+    </a>
+    <a class="hstat" href="/countries/france/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">600<small>万人</small></span>
+      <span class="hstat__label">外国籍（うち帰化前）</span>
+      <span class="hstat__source">INSEE 2024</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>主要数値（INSEE 2024年）</h2>
+    <table>
+      <thead>
+        <tr><th>指標</th><th>数値</th><th>出典</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>移民人口</strong>（外国生まれ、フランス在住）</td>
+          <td><strong>772.6万人（11.3%）</strong></td>
+          <td><a href="https://www.insee.fr/fr/statistiques/8651304" rel="noopener">INSEE Première n°2076, 2024</a></td>
+        </tr>
+        <tr>
+          <td>外国籍者（移民のうち帰化未了）</td>
+          <td>600万人（9.1%）</td>
+          <td>INSEE 2024</td>
+        </tr>
+        <tr>
+          <td>帰化済み（移民でフランス国籍取得済）</td>
+          <td>約172万人</td>
+          <td>INSEE 2024</td>
+        </tr>
+        <tr>
+          <td>移民の年平均成長率（2009〜2024年）</td>
+          <td>2.4%/年（外国籍は3.2%/年）</td>
+          <td>INSEE 2024</td>
+        </tr>
+        <tr>
+          <td>移民の子孫（TeO2調査）</td>
+          <td>約3.9%（参考値）</td>
+          <td>INED-INSEE TeO2, 2019〜2020</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>重要な方法論上の注意</h2>
+    <ul>
+      <li><strong>民族・宗教統計は法律で禁止</strong>：フランスでは1978年以降、出身地・宗教・民族に基づく公的統計の収集が禁止されている（情報処理・自由・公民の自由に関する法律）。そのため他国（デンマーク、オランダ等）のような詳細な出身国別統計は存在しない。</li>
+      <li><strong>「移民」の定義</strong>：INSEEの定義では、移民＝外国で生まれた人（国籍を問わない）。フランス国籍を取得した帰化者も移民に含まれる。</li>
+      <li><strong>「外国籍」との違い</strong>：外国籍（étranger）はフランス国籍を持たない人。外国生まれのフランス国籍者（帰化者）は移民だが外国籍ではない。フランス生まれの外国籍者（例：外国人夫婦の子）は外国籍だが移民ではない。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>他国との比較</h2>
+    <table>
+      <thead>
+        <tr><th>国</th><th>比率</th><th>定義</th><th>出典</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>🇩🇪 ドイツ</td><td>25.6%</td><td>移民的背景（二世含む）</td><td>Destatis 2023</td></tr>
+        <tr><td>🇸🇪 スウェーデン</td><td>21%</td><td>外国生まれ</td><td>SCB 2024</td></tr>
+        <tr><td>🇧🇪 ベルギー</td><td>13.8%</td><td>外国籍のみ</td><td>Statbel 2026</td></tr>
+        <tr><td>🇫🇷 フランス</td><td>11.3%</td><td>外国生まれ（移民）</td><td>INSEE 2024</td></tr>
+        <tr><td>🇮🇹 イタリア</td><td>8.7%</td><td>外国籍のみ</td><td>Istat 2023</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">定義が異なるため直接比較は不適切。詳細は<a href="/themes/comparison-matrix/">20カ国比較マトリクス</a>を参照。</p>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>INSEE (2024). <em>En 2024, la France compte 6 millions d'étrangers, dont 900 000 nés en France — Insee Première n°2076</em>. <a href="https://www.insee.fr/fr/statistiques/8651304" rel="noopener">insee.fr</a></li>
+      <li>INED-INSEE (2020). <em>Trajectoires et Origines 2 (TeO2)</em>. <a href="https://www.ined.fr" rel="noopener">ined.fr</a></li>
+    </ul>
+  </section>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/countries/france/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇫🇷 フランス — 全データ</a>
+      <a href="/faq/belgium-immigrant-population/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇧🇪 ベルギーの移民割合</a>
+      <a href="/faq/italy-immigrant-population/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🇮🇹 イタリアの移民割合</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態テーマ</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "フランスの移民（外国人）の割合は何%ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "INSEE（フランス国立統計経済研究所）の2024年データ（Insee Première n°2076）によると、フランスの移民（外国生まれ）は772.6万人で、総人口の11.3%を占めます。このうち現在も外国籍を保有する人は約600万人（9.1%）、フランス国籍を取得した帰化者は約172万人です。移民人口は2009〜2024年に年平均2.4%で増加しました（外国籍は3.2%/年）。フランスは民族・宗教に基づく統計収集を法律で禁止しているため、出身地域別の詳細データは公式には存在しません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "フランスの「移民」と「外国籍」の違いは何ですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "INSEEの定義では、「移民（immigré）」は外国で生まれた人で、現在フランスに在住している人を指します（国籍を問わず、帰化済みのフランス国籍者も含む）。「外国籍（étranger）」はフランス国籍を持たない人を指します。重複はありますが一致しません：外国生まれでフランス国籍取得済みの人は移民ですが外国籍ではない。フランス生まれの外国籍者は外国籍ですが移民ではない。INSEE 2024年：移民772.6万人（11.3%）、外国籍600万人（9.1%）。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+</style>
+</BaseLayout>

@@ -906,3 +906,56 @@ main {
 	color: var(--color-muted);
 	font-style: italic;
 }
+
+/* ── Stat cards (shared) ── */
+.hero-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+	gap: 0.85rem;
+	margin-top: 0.5rem;
+	text-align: left;
+}
+
+.hstat {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	background: var(--color-surface-raised);
+	border: 1px solid var(--color-border);
+	border-top: 3px solid var(--dot);
+	border-radius: 10px;
+	padding: 1.1rem 1.2rem;
+	text-decoration: none;
+	color: var(--color-ink);
+	transition: transform 0.15s, box-shadow 0.15s;
+}
+.hstat:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+	color: var(--color-ink);
+}
+
+.hstat__dot { display: none; }
+
+.hstat__value {
+	font-size: 2rem;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.02em;
+	color: var(--dot);
+}
+
+.hstat__label {
+	font-size: 0.8rem;
+	color: var(--color-ink-soft);
+	line-height: 1.45;
+}
+
+.hstat__source {
+	font-size: 0.65rem;
+	color: var(--color-muted);
+	margin-top: auto;
+	padding-top: 0.5rem;
+	border-top: 1px solid var(--color-border);
+}
