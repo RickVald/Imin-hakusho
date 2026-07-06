@@ -16,7 +16,7 @@ const { title, lang, altHref, description: descriptionProp, canonicalUrl: canoni
 const defaultDescription =
 	lang === 'en'
 		? 'Immigration data from official sources for 20 Western countries. Fiscal impact, labor market, crime, education, housing — facts only.'
-		: '西欧20カ国の移民データを一次公式資料のみで分析。財政・労働・治安・教育・住宅の実態を数字で把握する。';
+		: '西側20カ国の移民データを一次公式資料のみで分析。財政・労働・治安・教育・住宅の実態を数字で把握する。';
 
 const description = descriptionProp ?? defaultDescription;
 const canonicalUrl = canonicalUrlProp ?? Astro.url.href;
@@ -62,7 +62,7 @@ const footerText =
 					"name": "移民白書",
 					"alternateName": "Immigration Factbook",
 					"url": "https://imin-hakusho.com",
-					"description": "移民が西欧20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータベース",
+					"description": "移民が西側20カ国の財政・労働市場・治安・教育・住宅に与える影響を、公式一次資料のみに基づいて分析するデータベース",
 					"inLanguage": ["ja", "en"],
 					"potentialAction": {
 						"@type": "SearchAction",
@@ -133,10 +133,10 @@ const footerText =
 		})()}
 
 		<!-- hreflang bidirectionnel : self + alternate -->
-		<link rel="alternate" hreflang={lang} href={canonicalUrl} />
+		<link rel="alternate" hreflang={lang === 'ja' ? 'ja-JP' : 'en'} href={canonicalUrl} />
 		{altHref && (
 			<>
-				<link rel="alternate" hreflang={lang === 'ja' ? 'en' : 'ja'} href={altHref} />
+				<link rel="alternate" hreflang={lang === 'ja' ? 'en' : 'ja-JP'} href={altHref} />
 				<link rel="alternate" hreflang="x-default" href={lang === 'ja' ? canonicalUrl : altHref} />
 			</>
 		)}

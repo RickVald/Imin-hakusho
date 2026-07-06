@@ -14,6 +14,16 @@ export async function getStaticPaths() {
 const { country } = Astro.props;
 const { Content } = await render(country);
 
+const { name, populationShare, populationShareSource, populationCount, mainSource } = country.data;
+
+const pageTitle = populationShare
+	? `${name}の移民割合は${populationShare}｜人口・犯罪・財政の公式統計 | 移民白書`
+	: `${name}の移民統計 — 公式データ完全分析 | 移民白書`;
+
+const pageDescription = populationShare && populationCount && mainSource
+	? `${name}の移民人口は${populationCount}（総人口の${populationShare}）。出身国・雇用・犯罪・財政負担を${mainSource}の一次資料で整理。`
+	: `移民が${name}の財政・労働市場・治安・教育に与える影響を、公式一次資料のみで分析。`;
+
 const themeColor: Record<string, string> = {
 	fiscal: 'var(--color-gold)',
 	crime:  'var(--color-accent)',
@@ -24,9 +34,8 @@ const themeColor: Record<string, string> = {
 ---
 
 <BaseLayout
-	title={country.data.populationShare
-		? `${country.data.name}の移民割合は${country.data.populationShare}？公式統計完全解説 | 移民白書`
-		: `${country.data.name}の移民統計 — 公式データ完全分析 | 移民白書`}
+	title={pageTitle}
+	description={pageDescription}
 	lang="ja"
 	altHref={`/en/countries/${country.data.slug}/`}
 	type="Article"
@@ -44,7 +53,12 @@ const themeColor: Record<string, string> = {
 			width="72"
 			height="54"
 		/>
-		<h1>{country.data.name}</h1>
+		<h1>
+			{name}
+			{populationShare && (
+				<em class="h1-detail">の移民割合は{populationShare}｜人口・犯罪・財政・雇用</em>
+			)}
+		</h1>
 	</div>
 
 	{country.data.populationShare && (
@@ -193,6 +207,17 @@ const themeColor: Record<string, string> = {
 	line-height: 1.15;
 	margin: 0;
 	letter-spacing: -0.02em;
+}
+
+.h1-detail {
+	display: block;
+	font-size: clamp(0.85rem, 2vw, 1rem);
+	font-weight: 500;
+	font-style: normal;
+	letter-spacing: 0;
+	color: var(--color-ink-soft);
+	margin-top: 0.35rem;
+	line-height: 1.5;
 }
 
 .hero-share {
