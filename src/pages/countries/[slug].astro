@@ -53,12 +53,7 @@ const themeColor: Record<string, string> = {
 			width="72"
 			height="54"
 		/>
-		<h1>
-			{name}
-			{populationShare && (
-				<em class="h1-detail">の移民割合は{populationShare}｜人口・犯罪・財政・雇用</em>
-			)}
-		</h1>
+		<h1>{name}{populationShare && <em class="h1-detail">の移民割合は{populationShare}｜人口・犯罪・財政・雇用</em>}</h1>
 	</div>
 
 	{country.data.populationShare && (
