@@ -24,7 +24,9 @@ const themeColor: Record<string, string> = {
 ---
 
 <BaseLayout
-	title={`${country.data.name}の移民統計 — 公式データ完全分析 | 移民白書`}
+	title={country.data.populationShare
+		? `${country.data.name}の移民割合は${country.data.populationShare}？公式統計完全解説 | 移民白書`
+		: `${country.data.name}の移民統計 — 公式データ完全分析 | 移民白書`}
 	lang="ja"
 	altHref={`/en/countries/${country.data.slug}/`}
 	type="Article"
@@ -44,6 +46,16 @@ const themeColor: Record<string, string> = {
 		/>
 		<h1>{country.data.name}</h1>
 	</div>
+
+	{country.data.populationShare && (
+		<div class="hero-share">
+			<span class="hero-share__label">外国人口比率</span>
+			<span class="hero-share__value">{country.data.populationShare}</span>
+			{country.data.populationShareSource && (
+				<span class="hero-share__source">{country.data.populationShareSource}</span>
+			)}
+		</div>
+	)}
 
 	<p class="hero-sub">移民が{country.data.name}の財政・労働市場・治安・教育に与える影響を、財務省・統計局・OECDなど公式一次資料のみで分析。</p>
 
@@ -181,6 +193,41 @@ const themeColor: Record<string, string> = {
 	line-height: 1.15;
 	margin: 0;
 	letter-spacing: -0.02em;
+}
+
+.hero-share {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.2rem;
+	background: color-mix(in srgb, var(--color-teal) 10%, transparent);
+	border: 1px solid color-mix(in srgb, var(--color-teal) 35%, transparent);
+	border-radius: 16px;
+	padding: 0.9rem 2.2rem;
+	margin: 0.75rem auto 1.25rem;
+}
+
+.hero-share__label {
+	font-size: 0.65rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--color-teal);
+	opacity: 0.8;
+}
+
+.hero-share__value {
+	font-size: 2.6rem;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.03em;
+	color: var(--color-teal);
+}
+
+.hero-share__source {
+	font-size: 0.62rem;
+	color: var(--color-muted);
+	margin-top: 0.15rem;
 }
 
 .hero-sub {

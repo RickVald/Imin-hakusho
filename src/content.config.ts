@@ -33,6 +33,8 @@ const countriesJa = defineCollection({
 		status: statusSchema,
 		keyStats: z.array(keyStatSchema).optional(),
 		relatedFaq: z.array(relatedFaqSchema).optional(),
+		populationShare: z.string().optional(),
+		populationShareSource: z.string().optional(),
 	}),
 });
 
