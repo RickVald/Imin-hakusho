@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="移民の財政負担が大きい国ランキング：欧米・オセアニア公式統計比較 | 移民白書"
+  lang="ja"
+  description="移民の財政純負担が最も大きいのはデンマーク（非欧米系で−160億DKK/年）、ノルウェー（R3グループで−410万NOK/人）。4カ国の財務省・政府系機関の一次資料で比較。"
+>
+<main class="theme-page">
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">財務省・政府系経済研究機関 公式推計</div>
+    <h1>移民の財政負担が大きい国ランキング<em>欧米・オセアニア4カ国の公式推計比較</em></h1>
+    <p class="theme-hero__sub">移民全体の財政純負担を政府系機関が公式推計しているのは現時点でデンマーク・スウェーデン・ノルウェー・ドイツなど一部の国のみ。共通するのは「非欧米系・庇護申請者系移民」が純負担、「EU・欧米系移民」が純貢献という構図。</p>
+    <div class="theme-hero__meta">
+      <span class="meta-note">財務省・政府系機関一次資料のみ使用</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/denmark/" style="--dot:var(--color-accent)">
+      <span class="hstat__value">−160億<small>DKK/年</small></span>
+      <span class="hstat__label">デンマーク（移民・子孫全体）</span>
+      <span class="hstat__source">財務省 2023</span>
+    </a>
+    <a class="hstat" href="/countries/norway/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">−410万<small>NOK/人</small></span>
+      <span class="hstat__label">ノルウェー R3グループ（生涯現在価値）</span>
+      <span class="hstat__source">SSB 2017</span>
+    </a>
+    <a class="hstat" href="/countries/germany/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">−21億<small>EUR/年</small></span>
+      <span class="hstat__label">ドイツ（平均、2012年）</span>
+      <span class="hstat__source">Ifo Institut</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>公式財政推計比較（入手可能なデータ）</h2>
+    <p style="font-size:0.85rem;color:var(--color-ink-soft);margin-bottom:1rem;">⚠️ 算定方式・対象期間・移民定義が国によって異なるため、数値の直接比較はできない。</p>
+    <table>
+      <thead>
+        <tr><th>国</th><th>純財政効果</th><th>対象</th><th>算定機関</th><th>参照年</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="/countries/denmark/">🇩🇰 デンマーク</a></td>
+          <td class="figure negative"><strong>−160億DKK/年</strong><br><small>（非欧米系のみ：−360億DKK/年）</small></td>
+          <td>移民・子孫全体 vs. デンマーク系</td>
+          <td>Finansministeriet（財務省）</td>
+          <td>2023年単年推計</td>
+        </tr>
+        <tr class="alt">
+          <td><a href="/countries/norway/">🇳🇴 ノルウェー</a></td>
+          <td class="figure negative"><strong>R3：−410万NOK/人</strong><br><small>R1（欧米系）：+80万NOK/人（純貢献）</small></td>
+          <td>出身グループ別・生涯現在価値</td>
+          <td>SSB（Holmøy & Strøm、財務省委託）</td>
+          <td>2015〜2100年推計</td>
+        </tr>
+        <tr>
+          <td><a href="/countries/sweden/">🇸🇪 スウェーデン</a></td>
+          <td class="figure negative"><strong>−730億SEK/年</strong><br><small>（移民純負担分、財政赤字全体の約半分）</small></td>
+          <td>移民・子孫、2019年推計</td>
+          <td>Ekonomifakta（Confederation of Swedish Enterprise）</td>
+          <td>2019年（最新公式推計）</td>
+        </tr>
+        <tr class="alt">
+          <td><a href="/countries/germany/">🇩🇪 ドイツ</a></td>
+          <td class="figure negative"><strong>−21億EUR/年（平均）</strong><br><small>（入国年別で変動大）</small></td>
+          <td>外国生まれ移民全体の平均</td>
+          <td>Ifo Institut（政府委託研究）</td>
+          <td>2012年データ</td>
+        </tr>
+        <tr>
+          <td>🇫🇮 フィンランド</td>
+          <td class="no-data">推計なし（2027年公表予定）</td>
+          <td>調査中</td>
+          <td>VATT（財務省傘下）</td>
+          <td>2025年調査開始</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table-note">出典：Finansministeriet (2023)「Indvandrernes bidrag til de offentlige finanser」、SSB Rapporter 2017/31（NOU 2017:2委託）、Ifo Institut。</p>
+  </section>
+
+  <section>
+    <h2>すべての国に共通する構造：出身地域別の決定的差</h2>
+    <p>データが公表されているすべての国で、出身地域によって財政効果が正反対になる：</p>
+    <table>
+      <thead>
+        <tr><th>出身グループ</th><th>財政効果の傾向</th><th>主な理由</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>EU・欧米・オセアニア出身（R1相当）</strong></td>
+          <td style="color:var(--color-teal)"><strong>純貢献（プラス）</strong></td>
+          <td>高就業率・高賃金・税負担大、社会保障受給少</td>
+        </tr>
+        <tr class="alt">
+          <td><strong>非欧米・庇護系出身（R3相当）</strong></td>
+          <td style="color:var(--color-accent)"><strong>純負担（マイナス）</strong></td>
+          <td>低就業率・語学障壁・社会保障依存度高</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>「移民全体の財政効果」という括りで論じることは、この決定的な差を隠してしまう。政策議論において出身地域・在留資格種別の区別が重要な理由はここにある。</p>
+  </section>
+
+  <section>
+    <h2>算定方式の違い：なぜ比較が難しいか</h2>
+    <ul>
+      <li><strong>単年度フロー vs. 生涯現在価値</strong>：デンマーク・スウェーデンは特定の1年間の収支。ノルウェーは2015〜2100年にわたる生涯現在価値（割引率2.5%）。後者は教育・年金等の長期効果を織り込む。</li>
+      <li><strong>含める/含めない項目</strong>：公共財（警察・国防・インフラ）を人口按分で計上するかどうか、移民の子孫（二世）を含めるかどうかで数値が大きく変わる。</li>
+      <li><strong>反事実的シナリオ</strong>：「移民がいなかった場合」を何と仮定するか（移民なしで他の財源で代替、移民なしで人口減少を受け入れ、など）で結果が異なる。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>Finansministeriet（デンマーク財務省、2023）. <em>Indvandrernes bidrag til de offentlige finanser</em>. <a href="https://fm.dk" rel="noopener">fm.dk</a></li>
+      <li>Holmøy, E. & Strøm, B.（SSB Rapporter 2017/31）. <em>Betydningen for offentlige finanser av innvandring til Norge</em>. <a href="https://www.ssb.no" rel="noopener">ssb.no</a></li>
+      <li>Ifo Institut（2017）. <em>Kosten und Nutzen der Zuwanderung aus fiskalischer Sicht</em>.</li>
+    </ul>
+  </section>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/themes/fiscal-cost/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 財政コストテーマ</a>
+      <a href="/articles/nordic-fiscal-cost/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📄 北欧財政コスト詳細</a>
+      <a href="/faq/immigrant-country-ranking/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 移民が多い国ランキング</a>
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🗂️ 20カ国比較マトリクス</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "移民の財政負担が最も大きい国はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "政府系機関が公式推計を行っている国の中では、デンマークが最も詳細なデータを公開している。財務省（Finansministeriet）2023年推計によると、移民・子孫全体では年間−160億DKK（約3,400億円）の純負担、うち非欧米系のみでは−360億DKK。ノルウェーではSSB（Holmøy & Strøm 2017）が非欧米系（R3グループ）の生涯現在価値を−410万NOK/人と推計。ただし算定方式が異なるため国際比較は困難。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "すべての移民が財政負担になるのですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "いいえ。データが公表されているすべての国で、出身地域によって財政効果が正反対になる。EU・欧米・オセアニア出身の移民（デンマークR1グループ）は高い就業率と賃金により純財政貢献（プラス）をもたらす傾向がある。一方、非欧米系・庇護申請者系移民（R3グループ）は就業率の低さ・語学障壁・社会保障依存度の高さから純負担（マイナス）になる傾向がある。デンマークではR1移民が+140億DKK、非欧米系が−360億DKKという内訳。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.alt { background: var(--color-surface-raised); }
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+.figure { font-weight: 700; }
+.figure.negative { color: var(--color-accent); }
+.no-data { color: var(--color-muted); font-style: italic; }
+</style>
+</BaseLayout>

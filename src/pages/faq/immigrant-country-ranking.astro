@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="移民が多い国ランキング：欧米・オセアニア20カ国の公式統計比較 | 移民白書"
+  lang="ja"
+  description="外国生まれ・外国籍人口比率が最も高い国はオーストラリア32%、次いでニュージーランド28.8%、スイス27.7%（2023〜2025年各国統計局データ）。欧米・オセアニア20カ国を一次資料で比較。"
+>
+<main class="theme-page">
+  <div class="theme-hero">
+    <nav class="breadcrumb"><a href="/">移民白書</a> › <span>FAQ</span></nav>
+    <div class="theme-hero__badge">各国統計局公式データ 2023〜2025年</div>
+    <h1>移民が多い国ランキング<em>欧米・オセアニア20カ国の外国籍・外国生まれ人口比率</em></h1>
+    <p class="theme-hero__sub">外国生まれまたは外国籍人口比率が最も高いのはオーストラリアの32.0%、次いでニュージーランド28.8%、スイス27.7%。欧米・オセアニア20カ国を各国統計局の一次資料で比較。定義の違いに注意。</p>
+    <div class="theme-hero__meta">
+      <span class="meta-note">各国一次資料のみ使用（Eurostat・各国統計局）</span>
+    </div>
+  </div>
+
+  <div class="hero-stats" style="max-width:800px;margin:0 auto 2rem;padding:0 1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;">
+    <a class="hstat" href="/countries/australia/" style="--dot:var(--color-primary)">
+      <span class="hstat__value">32.0<small>%</small></span>
+      <span class="hstat__label">オーストラリア（1位）</span>
+      <span class="hstat__source">ABS 2021国勢調査</span>
+    </a>
+    <a class="hstat" href="/countries/switzerland/" style="--dot:var(--color-teal)">
+      <span class="hstat__value">27.7<small>%</small></span>
+      <span class="hstat__label">スイス（3位）</span>
+      <span class="hstat__source">FSO 2023</span>
+    </a>
+    <a class="hstat" href="/countries/germany/" style="--dot:var(--color-gold)">
+      <span class="hstat__value">25.6<small>%</small></span>
+      <span class="hstat__label">ドイツ（4位）</span>
+      <span class="hstat__source">Destatis 2023</span>
+    </a>
+  </div>
+
+  <section>
+    <h2>外国籍・外国生まれ人口比率ランキング（欧米・オセアニア20カ国）</h2>
+    <p style="font-size:0.85rem;color:var(--color-ink-soft);margin-bottom:1rem;">⚠️ 各国で指標の定義が異なる（外国生まれ、外国籍、移民的背景など）。直接比較は慎重に。定義は各行に記載。</p>
+    <table>
+      <thead>
+        <tr><th>順位</th><th>国</th><th>比率</th><th>指標定義</th><th>出典・参照年</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><a href="/countries/australia/">🇦🇺 オーストラリア</a></td><td><strong>32.0%</strong></td><td>外国生まれ</td><td>ABS 国勢調査 2021</td></tr>
+        <tr class="alt"><td>2</td><td><a href="/countries/new-zealand/">🇳🇿 ニュージーランド</a></td><td><strong>28.8%</strong></td><td>外国生まれ</td><td>Stats NZ 2023</td></tr>
+        <tr><td>3</td><td><a href="/countries/switzerland/">🇨🇭 スイス</a></td><td><strong>27.7%</strong></td><td>外国生まれ</td><td>FSO 2023</td></tr>
+        <tr class="alt"><td>4</td><td><a href="/countries/germany/">🇩🇪 ドイツ</a></td><td><strong>25.6%</strong></td><td>移民的背景（二世含む）</td><td>Destatis 2023</td></tr>
+        <tr><td>5</td><td><a href="/countries/canada/">🇨🇦 カナダ</a></td><td><strong>23.0%</strong></td><td>外国生まれ</td><td>StatCan 2021</td></tr>
+        <tr class="alt"><td>6</td><td><a href="/countries/austria/">🇦🇹 オーストリア</a></td><td><strong>21.5%</strong></td><td>外国生まれ</td><td>Statistik Austria 2023</td></tr>
+        <tr><td>7</td><td><a href="/countries/sweden/">🇸🇪 スウェーデン</a></td><td><strong>21.0%</strong></td><td>外国生まれ</td><td>SCB 2024</td></tr>
+        <tr class="alt"><td>8</td><td><a href="/countries/ireland/">🇮🇪 アイルランド</a></td><td><strong>20.4%</strong></td><td>外国生まれ</td><td>CSO 2022</td></tr>
+        <tr><td>9</td><td><a href="/countries/netherlands/">🇳🇱 オランダ</a></td><td><strong>14.5%</strong></td><td>外国籍</td><td>CBS 2024</td></tr>
+        <tr class="alt"><td>10</td><td><a href="/countries/uk/">🇬🇧 イギリス</a></td><td><strong>14.2%</strong></td><td>外国生まれ</td><td>ONS 2023</td></tr>
+        <tr><td>11</td><td><a href="/countries/denmark/">🇩🇰 デンマーク</a></td><td><strong>16.3%</strong></td><td>移民・子孫（DST定義）</td><td>DST 2025</td></tr>
+        <tr class="alt"><td>12</td><td><a href="/countries/belgium/">🇧🇪 ベルギー</a></td><td><strong>13.8%</strong></td><td>外国籍</td><td>Statbel 2026</td></tr>
+        <tr><td>13</td><td><a href="/countries/norway/">🇳🇴 ノルウェー</a></td><td><strong>16.0%</strong></td><td>外国生まれ</td><td>SSB 2024</td></tr>
+        <tr class="alt"><td>14</td><td><a href="/countries/usa/">🇺🇸 アメリカ</a></td><td><strong>13.9%</strong></td><td>外国生まれ</td><td>Census Bureau 2023</td></tr>
+        <tr><td>15</td><td><a href="/countries/france/">🇫🇷 フランス</a></td><td><strong>11.3%</strong></td><td>外国生まれ（移民）</td><td>INSEE 2024</td></tr>
+        <tr class="alt"><td>16</td><td><a href="/countries/spain/">🇪🇸 スペイン</a></td><td><strong>11.2%</strong></td><td>外国籍</td><td>INE 2024</td></tr>
+        <tr><td>17</td><td><a href="/countries/portugal/">🇵🇹 ポルトガル</a></td><td><strong>10.7%</strong></td><td>外国籍</td><td>INE 2023</td></tr>
+        <tr class="alt"><td>18</td><td><a href="/countries/finland/">🇫🇮 フィンランド</a></td><td><strong>8.9%</strong></td><td>外国籍</td><td>Statistics Finland 2024</td></tr>
+        <tr><td>19</td><td><a href="/countries/italy/">🇮🇹 イタリア</a></td><td><strong>8.7%</strong></td><td>外国籍</td><td>Istat 2023</td></tr>
+        <tr class="alt"><td>20</td><td><a href="/countries/czechia/">🇨🇿 チェコ</a></td><td><strong>5.5%</strong></td><td>外国籍</td><td>ČSÚ 2023</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">※ 指標の定義が国により異なるため、順位は参考値。外国生まれ（foreign-born）と外国籍（foreign nationality）と移民的背景（migration background）では数値が大きく異なる場合がある。詳細は<a href="/themes/comparison-matrix/">比較マトリクス</a>参照。</p>
+  </section>
+
+  <section>
+    <h2>なぜ定義によって順位が変わるのか</h2>
+    <ul>
+      <li><strong>外国生まれ（foreign-born）</strong>：出生国が現在の居住国以外の人。帰化してその国の国籍を取得した人も含む。オーストラリア・カナダ・スウェーデンなど英語圏・北欧で主流。</li>
+      <li><strong>外国籍（foreign nationality）</strong>：現在その国の国籍を保有しない人。帰化者は除外。イタリア・スペイン・ポルトガルなど南欧で主流。外国生まれ比率より小さくなる傾向がある。</li>
+      <li><strong>移民的背景（migration background）</strong>：外国生まれの人＋両親が外国生まれの二世も含む。ドイツ（Destatis）やオランダ（CBS）で用いられる。数値が最も大きくなる定義。</li>
+    </ul>
+    <p>例：ドイツは「外国籍」では約12%だが、「移民的背景（二世含む）」では25.6%。同じ国でも定義によって2倍以上の差が生じる。</p>
+  </section>
+
+  <section>
+    <h2>移民受入国の類型</h2>
+    <table>
+      <thead>
+        <tr><th>類型</th><th>代表国</th><th>特徴</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>伝統的移民国</strong></td>
+          <td>🇦🇺 🇳🇿 🇨🇦</td>
+          <td>ポイント制など選択的移民政策で高比率を維持。外国生まれ25〜32%。</td>
+        </tr>
+        <tr class="alt">
+          <td><strong>ゲストワーカー型</strong></td>
+          <td>🇨🇭 🇩🇪 🇦🇹</td>
+          <td>戦後の労働力不足で招いたゲストワーカーが定住化。定義次第で比率が大きく変わる。</td>
+        </tr>
+        <tr>
+          <td><strong>庇護・EU移民型</strong></td>
+          <td>🇸🇪 🇩🇰 🇳🇴</td>
+          <td>EU域内移動＋庇護申請者の流入。政策転換の議論が活発。</td>
+        </tr>
+        <tr class="alt">
+          <td><strong>歴史的移出国転換型</strong></td>
+          <td>🇮🇹 🇪🇸 🇵🇹</td>
+          <td>1990〜2000年代に移入国へ転換。比率は低〜中程度（8〜11%）。</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>一次資料</h2>
+    <ul>
+      <li>ABS（オーストラリア統計局）. <em>2021 Census of Population and Housing</em>. <a href="https://www.abs.gov.au" rel="noopener">abs.gov.au</a></li>
+      <li>Destatis（ドイツ連邦統計局）. <em>Mikrozensus 2023 — Bevölkerung mit Migrationshintergrund</em>. <a href="https://www.destatis.de" rel="noopener">destatis.de</a></li>
+      <li>SCB（スウェーデン統計局）. <em>Befolkningsstatistik 2024</em>. <a href="https://www.scb.se" rel="noopener">scb.se</a></li>
+      <li>Eurostat. <em>Population by citizenship and country of birth</em>. <a href="https://ec.europa.eu/eurostat" rel="noopener">ec.europa.eu/eurostat</a></li>
+    </ul>
+  </section>
+
+  <section class="explore-section" style="max-width:800px;margin:2.5rem auto 1rem;padding:0 1.5rem;">
+    <h2 style="font-size:1rem;font-weight:700;color:var(--color-accent);margin-bottom:0.75rem;">関連ページ</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:1.5rem;">
+      <a href="/themes/comparison-matrix/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">📊 20カ国比較マトリクス</a>
+      <a href="/themes/demographics/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">👥 人口動態テーマ</a>
+      <a href="/faq/immigrant-fiscal-burden-ranking/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">💰 財政負担ランキング</a>
+      <a href="/themes/crime/" style="background:var(--color-surface-raised);border:1px solid color-mix(in srgb,var(--color-accent) 20%,transparent);border-radius:8px;padding:0.5rem 1rem;font-size:0.85rem;color:var(--color-accent);text-decoration:none;">🔒 犯罪統計テーマ</a>
+    </div>
+    <a href="/" style="display:inline-block;background:var(--color-surface-raised);border:1px solid var(--color-border);border-radius:8px;padding:0.5rem 1.25rem;font-size:0.85rem;color:var(--color-ink-soft);text-decoration:none;">← ホームへ戻る</a>
+  </section>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "移民（外国人）が最も多い国はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "外国生まれ人口比率が最も高い国はオーストラリア（32.0%、ABS 2021国勢調査）、次いでニュージーランド（28.8%）、スイス（27.7%）、ドイツ（25.6%、移民的背景含む）、カナダ（23.0%）です。ただし各国で指標の定義が異なるため、直接比較には注意が必要です。外国生まれ（foreign-born）、外国籍（foreign nationality）、移民的背景（migration background）では数値が大きく異なります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "ヨーロッパで移民が最も多い国はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "欧州で外国生まれまたは外国籍人口比率が最も高いのはスイス（27.7%、FSO 2023）、次いでドイツ（25.6%、移民的背景、Destatis 2023）、オーストリア（21.5%）、スウェーデン（21%、SCB 2024）。ドイツの25.6%は「移民的背景（外国生まれの二世含む）」という広い定義によるもの。外国籍のみで比較するとドイツは約12%となる。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "移民が最も少ない国はどこですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "欧米・オセアニア20カ国の中で外国籍・外国生まれ人口比率が最も低いのはチェコ（5.5%、ČSÚ 2023）、次いでイタリア（8.7%、Istat 2023）、フィンランド（8.9%）。ただし比率の低さは「受入数が少ない」ことと「帰化率が高い」こと、どちらかまたは両方の要因による場合がある。"
+        }
+      }
+    ]
+  }
+  </script>
+</main>
+<style>
+.alt { background: var(--color-surface-raised); }
+.table-note { font-size: 0.82rem; color: var(--color-muted); margin-top: 0.5rem; }
+</style>
+</BaseLayout>
