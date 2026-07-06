@@ -16,9 +16,15 @@ const { Content } = await render(country);
 
 const { name, populationShare, populationShareSource, populationCount, mainSource } = country.data;
 
-const pageTitle = populationShare
-	? `${name}の移民割合は${populationShare}｜人口・犯罪・財政の公式統計 | 移民白書`
-	: `${name}の移民統計 — 公式データ完全分析 | 移民白書`;
+const pageTitle = country.data.titleOverride
+	?? (populationShare
+		? `${name}の移民割合は${populationShare}｜人口・犯罪・財政の公式統計 | 移民白書`
+		: `${name}の移民統計 — 公式データ完全分析 | 移民白書`);
+
+const h1Main = country.data.h1Override
+	?? (populationShare ? `${name}の移民割合は${populationShare}` : name);
+
+const heroLabel = country.data.heroLabel ?? '外国人口比率';
 
 const pageDescription = populationShare && populationCount && mainSource
 	? `${name}の移民人口は${populationCount}（総人口の${populationShare}）。出身国・雇用・犯罪・財政負担を${mainSource}の一次資料で整理。`
@@ -53,12 +59,13 @@ const themeColor: Record<string, string> = {
 			width="72"
 			height="54"
 		/>
-		<h1>{name}{populationShare && <em class="h1-detail">の移民割合は{populationShare}｜人口・犯罪・財政・雇用</em>}</h1>
+		<h1>{h1Main}</h1>
+		{populationShare && <p class="h1-detail">人口・犯罪・財政・雇用の公式統計</p>}
 	</div>
 
 	{country.data.populationShare && (
 		<div class="hero-share">
-			<span class="hero-share__label">外国人口比率</span>
+			<span class="hero-share__label">{heroLabel}</span>
 			<span class="hero-share__value">{country.data.populationShare}</span>
 			{country.data.populationShareSource && (
 				<span class="hero-share__source">{country.data.populationShareSource}</span>
@@ -205,10 +212,10 @@ const themeColor: Record<string, string> = {
 }
 
 .h1-detail {
-	display: block;
 	font-size: clamp(0.85rem, 2vw, 1rem);
 	font-weight: 500;
 	font-style: normal;
+	margin: 0.2rem 0 0;
 	letter-spacing: 0;
 	color: var(--color-ink-soft);
 	margin-top: 0.35rem;

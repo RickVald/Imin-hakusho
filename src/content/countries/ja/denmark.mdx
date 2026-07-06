@@ -8,6 +8,9 @@ populationShare: "16.3%"
 populationShareSource: "DST 2025（移民・子孫）"
 populationCount: "約77万人"
 mainSource: "DST"
+titleOverride: "デンマークの移民・子孫比率は16.3%｜財政負担・犯罪・雇用の公式統計 | 移民白書"
+h1Override: "デンマークの移民・子孫比率は16.3%"
+heroLabel: "移民・子孫比率"
 keyStats:
   - value: "−160億DKK"
     label: "年間財政純負担（移民・子孫全体）"
@@ -161,7 +164,7 @@ import ScenarioCompare from '../../../components/ScenarioCompare.astro';
 - 注：この地域区分はDSTの公式分類ではなく、各地域の主要国（北西欧10カ国・東欧バルカン10カ国・中東北アフリカ南アジア8カ国）を本観察サイトが独自に合算した参考値である。すべての国を網羅していないため、DSTが公式に用いる「欧米／非欧米」区分の完全な代替ではない。
 - 東欧・バルカン圏は1980年から2026年で約13.8倍（13,460人→186,051人）と最も高い相対成長を示し、近年はポーランド・ルーマニア・ウクライナが中心。中東・北アフリカ・南アジア圏も1990〜2010年に急増（49,719人→106,147人）した後、増加が緩やかになっている。
 - **限界**：1945年〜1979年の期間は、DSTのFOLK2表が1980年以降のデータしか提供していないため、本調査では確認できなかった。
-<ComingSoon label="???????(???)" />
+<ComingSoon label="出身地域別の詳細な歴史的推移グラフ（DSTのFOLK2表データを整理中）" />
 
 ### 3.4 年齢構成（人口ピラミッド）
 
@@ -217,7 +220,7 @@ import ScenarioCompare from '../../../components/ScenarioCompare.astro';
 - DSTはこの推計について「単一の中心シナリオに基づく決定論的予測」であることを明示しており、フランスの「le-français-moyen」のような複数シナリオ（現状維持／統合促進など）比較は採用していない。不確実性の主要因は将来の外国籍移民流入と出生率の動向とされる。
   出典：DST「Befolkningsfremskrivning：Præcision og pålidelighed」— https://www.dst.dk/da/Statistik/dokumentation/statistikdokumentation/befolkningsfremskrivning/praecision-og-paalidelighed
 - DREAM研究所は補完的に代替シナリオ（ウクライナ避難民の帰还速度や出生率の前提を変えた場合等）を作成しているが、これらは「予測の前提に対する感度を示すための参考」であり、中心シナリオより確率が高い／低いものとして解釈すべきではないとDREAM自身が明記している。
-<ComingSoon label="???????(???)" />
+<ComingSoon label="出身別の詳細シナリオ比較データを整理中です（DREAM研究所データ）" />
 
 <ScenarioCompare
 	title="将来人口シナリオの比較（DST公式推計）"
@@ -251,9 +254,9 @@ import ScenarioCompare from '../../../components/ScenarioCompare.astro';
 	title="公的財政への純負担（出身別、2019年データ・2023年9月改訂）"
 	unit="億DKK/年"
 	bars={[
-		{ label: '欧米系移民・子孫', value: 11 },
-		{ label: '非欧米系移民・子孫', value: -27, note: 'うちMENAPT諸国: -24億DKK' },
-		{ label: '全体合計', value: -16 },
+		{ label: '欧米系移民・子孫', value: 110 },
+		{ label: '非欧米系移民・子孫', value: -270, note: 'うちMENAPT諸国: -240億DKK' },
+		{ label: '全体合計', value: -160 },
 	]}
 	sourceLabel="財務省「Indvandreres nettobidrag til de offentlige finanser i 2019」（2023年9月改訂）"
 	sourceUrl="https://fm.dk/media/5cnhiydz/indvandreres-nettobidrag-til-de-offentlige-finanser-i-2019_revideret-september-2023-a.pdf"
@@ -285,7 +288,7 @@ import ScenarioCompare from '../../../components/ScenarioCompare.astro';
 
 - これは年金制度に特化した「現役世代対年金受給者」比率そのものではなく、25-64歳人口のうち財政に対して正の純負担（受け取る給付より納める税・社会保険料が多い）となっている人の割合を示す代替指標である。デンマーク系の74%に対し、非欧米系移民は43%。
 - 出身別に分解された人口学的依存度（高齢者・子供 対 労働年齢人口の比率）は、デンマーク全体では2023年の73%から2045年に91%へ上昇するとの推計があるが、この全国指標は出身別には分解されておらず、一次資料（DST／財務省）への直接の参照は本調査では確認できなかった。
-<ComingSoon label="???????(???)" />
+<ComingSoon label="出身別の年金・依存度の詳細データ（財務省報告書より整理中）" />
 
 ## 5. 労働市場
 
